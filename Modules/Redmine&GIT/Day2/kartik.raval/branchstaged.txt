@@ -1,4 +1,6 @@
 Create branch 
 Chechout
 Done checkout development
-Extea (D)evelopment branch deleted
+Extra (D)evelopment branch deleted
+Push done 
+Now pull from remote to local
