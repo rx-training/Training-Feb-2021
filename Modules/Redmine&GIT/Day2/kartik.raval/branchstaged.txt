@@ -7,3 +7,4 @@ Now pull from remote to local
 Text added in local development 
 Now merge from development to main
 fetch
+staged
