@@ -1,0 +1,4 @@
+Folder created in repository
+File created in repository
+Apply stage 
+Restrict commit to remote
