@@ -5,3 +5,4 @@ Done checkout development
 Extra (D)evelopment branch deleted
 Push done 
 Now pull from remote to local
+New text added in remote main
