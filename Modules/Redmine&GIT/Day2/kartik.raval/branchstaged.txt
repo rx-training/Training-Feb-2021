@@ -4,4 +4,5 @@ Done checkout development
 Extra (D)evelopment branch deleted
 Push done 
 Now pull from remote to local
-Text added in local development
+Text added in local development 
+Now merge from development to main
