@@ -1,10 +1,10 @@
 Create branch 
-
-Chechout
+Checkout
 Done checkout development
 Extra (D)evelopment branch deleted
 Push done 
 Now pull from remote to local
+Text added in local development 
 Now merge from development to main
-New text added in remote main
-
+fetch
+staged done
