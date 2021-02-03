@@ -7,4 +7,4 @@ Push done
 Now pull from remote to local
 Now merge from development to main
 New text added in remote main
-fetch update
+fetch update after command
