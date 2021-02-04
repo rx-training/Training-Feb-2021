@@ -1,0 +1,10 @@
+Name: Harshit
+Surname: Sampat
+
+Here is the paragraph for the IOT from the internet
+
+Windows IoT, formerly Windows Embedded, is a family of operating systems from Microsoft designed for use in embedded 
+systems. Microsoft currently has three different subfamilies of operating systems for embedded devices targeting 
+a wide market, ranging from small-footprint, real-time devices to point of sale (POS) devices like kiosks. 
+Windows Embedded operating systems are available to original equipment manufacturers(OEMs), who make it available to 
+end users preloaded with their hardware.

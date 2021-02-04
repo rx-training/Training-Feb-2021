@@ -1,0 +1,9 @@
+This is only text file
+
+Name: Harshit
+
+Here is some inforamtion about Dataa Sci from wiki
+
+Data science is a "concept to unify statistics, data analysis and their related methods" in order to "understand and 
+analyze actual phenomena" with data. It uses techniques and theories drawn from many fields within the context of 
+mathematics, statistics, computer science, domain knowledge and information science.
