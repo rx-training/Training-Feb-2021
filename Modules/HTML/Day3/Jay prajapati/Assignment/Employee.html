@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form{
+            background-color: #aaa9f5;
+            border-radius: 20px;
+            padding:40px;
+            width: 60%;
+            margin: auto;
+        }
+        form{
+            font-family: Arial, Helvetica, sans-serif;
+            margin:auto;
+            /* width: 60%; */
+        }
+        form label{
+            font-size: 20px;
+            
+        }
+        h1{
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        input, #city{
+            margin-bottom: 10px;
+            display: block;
+            border: none;
+            border-radius: 5px;
+            height: 30px;
+            width: 100%;
+            padding-left: 5px;
+        }
+        #city{
+            font-size: 20px;
+        }
+        
+        .dist{
+            width: 30%;
+        }
+        #submit{
+            height: 35px;   
+            width: 100%;
+            
+            margin: auto; 
+            margin-top: 40px !important;            
+            font-size: 25px;
+            font-weight: bold;
+            border: 1px solid #6fd1d1;
+            background-color: rgb(107, 165, 192);
+
+        }
+        #submit:hover{
+            background-color: rgb(40, 199, 172);
+        }
+        .input{
+            height:20px;
+        }
+        
+    </style>
+</head>
+<body>
+   <div class="form">
+    <form>
+        <h1>Employee Details</h1>
+        <label>Name : </label>
+        <input type="text" placeholder="eg. Jay Prajapati">
+
+        <label>Age :</label>
+        <input type="number" placeholder="eg. 22">
+
+        <label>Genger :</label><br>
+        <input type="radio" name="gender" style="display: inline;width: auto;" class="input" id="male" value="male">
+
+        <label for="male">Male</label>
+        <input type="radio" name="gender" style="display: inline;width: auto;"class="input" id="female" value="female">
+        <label for="female">Female</label>
+        <input type="radio" name="gender" style="display: inline;width: auto;"class="input" id="other" value="other">
+        <label for="other">Other</label><br>
+
+        <label>Designation :</label>
+        <input type="text" placeholder="eg. Software Engineer">
+
+        <label>Salary :</label>
+        <input type="text" placeholder="eg.50000">
+
+        <label for="city">Location :</label>
+        <select id="city" name="city">
+            <option value="Default">Select</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Ganghinagar">Gandhinagar</option>
+            <option value="Vijapur">Vijapur</option>
+            <option vlaue="Mehsana">Mehsana</option>
+            <option value="Baroda">Baroda</option>
+            <option value="Surat">Surat</option>
+            <option value="Modasa">Modasa</option>
+            <option value="Himmatnagar">Himmatnagar</option>
+        </select>
+
+        <label>Email ID :</label>
+        <input type="email" placeholder="eg. xyz@gmail.com">
+
+        <label>Date Of Joining :</label>
+        <input type="date" class="dist" >
+
+        <label>Contact Number :</label>
+        <input type="text" class="dist" placeholder="eg. 5843875035">
+
+        <input type="submit" id="submit"value="submit">
+
+    </form>
+   </div>
+</body>
+</html>
