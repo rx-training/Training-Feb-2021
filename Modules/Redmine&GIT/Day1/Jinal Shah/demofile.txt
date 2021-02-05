@@ -1,7 +1,0 @@
-I have created "Jinal Shah" folder
-and created one file named "demofile.txt" in that particular folder.
-I have commited this file and push it
-i'm adding these lines from the github remote repository.
-and now i am going to pull this for my local repository.
-Take these changes into your localsystem and add more changes after that and then commit
-Adding this new lines as per request and now again going to commit and pull request.
