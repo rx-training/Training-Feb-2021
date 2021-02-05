@@ -2,30 +2,38 @@
 <head>
     <style type="text/css">
     ul { list-style-type: none;}
-    ul li { display: horizantal; padding; 10px;}
+    ul li { display: inline-block; padding; 40px;}
+    p {color: red;}
+
+p.ex1 {display: none;}
+p.ex2 {display: inline;}
+p.ex3 {display: block;}
+p.ex4 {display: inline-block;}
+div * {
+  background-color: blue;
+}
     </style>
 </head>
 <body>
-    <table>
-        <tr>
-            <td>
-                CITY Name:
-            </td>
-            <ul>
-                <li>delhi</li>
-                <li>uttrakhand</li>
-                <li>himachal</li>
-                <li>gujarat</li>
-                <li>chandigarh</li>
-            </ul>
-        </tr>
-    </table>
-    <ul>
-        <li>delhi</li>
-        <li>uttrakhand</li>
-        <li>himachal</li>
-        <li>gujarat</li>
-        <li>chandigarh</li>
-    </ul>
+    <h1>The display property</h1>
+
+    <h2>display: none;</h2>
+    <div>
+        <p>delhi uttrakhand himachal gujarat chandigarh</p>
+    </div>
+    <h2>display: inline:</h2>
+    <div>
+        <p>delhi uttrakhand himachal gujarat chandigarh</p>
+    </div>
+    <h2>display: block;</h2>
+    <div>
+       <p>delhi uttrakhand himachal gujarat chandigarh</p> 
+    </div>
+    <h2>display: inline-block;</h2>
+    <div>
+        <p>delhi uttrakhand himachal gujarat chandigarh</p>
+    </div>
+    
+      
 </body>
 </html>
