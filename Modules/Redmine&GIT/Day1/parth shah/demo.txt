@@ -1,0 +1,7 @@
+It is demo file to check that the push or pull function is working or not. 
+lets see its working or not.
+now i am going to learn push function 
+dont considered this file this is just a demo 
+i will send assighnment through new file
+ohk now here i m checking from local side that it going to push again or not 
+checking push again and send it to remote area.
