@@ -14,8 +14,14 @@
                     Name:
                 </td>
                 <td>
-                    <input type="text" placeholder="NAME" name="">
+                <input type="text" list="mydatalist">
+                    <datalist id="mydatalist">
+                        <option label="Mr." value="Mr."></option>
+                        <option label="Mrs." value="Mrs."></option>
+                        <option label="Miss." value="Miss."></option>
+                    </datalist>
                 </td>
+                
             </tr>
             <tr>
                 <td>
@@ -107,5 +113,6 @@
                 </td>
             </tr>
         </table>
+        <label for="meter-Data">Meter:</label>
     </form>
 </body>
