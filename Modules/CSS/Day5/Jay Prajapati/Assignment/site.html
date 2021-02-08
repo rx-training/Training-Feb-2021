@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            margin: 0px;
+        }
+        #head{
+            background-color: thistle;
+            text-align: center;
+            position: fixed;
+            margin: 0px;
+            top: 0px;
+            width: 100%;
+            backface-visibility: hidden;
+        }
+        #head h1 a{
+            text-decoration: none;
+        }
+        #head h1 a:hover{
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+        }
+        #sidebar{
+            position: fixed;
+            top:79px;
+            left: 0px;
+            margin: 0px;
+            height:100%;
+            width: 15%;
+            background-color: teal;
+            /* padding-right: 20px; */
+        }
+        #sidebar ul{
+            list-style-type: none;
+            padding-left: 0;
+            margin-left: 0;
+        }
+        #sidebar ul a{
+            text-decoration: none;
+        }
+        #sidebar ul li{
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px 10px 20px;
+            font-size: 25px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: rgb(194, 194, 194);
+
+
+        }
+        #sidebar ul li:hover{
+            /* background-color: blueviolet; */
+            color: white;
+        }
+        #main{
+            position: relative;
+            top: 79px;
+            float: right;
+            width: 85%;
+            z-index: -1;
+        }
+        
+        #main{
+            margin: 0;
+        }
+        #main p{
+            margin: 0px;
+            padding: 10px 100px 10px 100px;
+        }
+        #main h2{
+            position: sticky;
+            margin: 0px;
+            padding: 10px;
+            top: 79px;
+            backface-visibility: hidden;
+            background-color: white;
+            display: block;
+            text-align: center;
+            /* text-transform: capitalize; */
+        }
+        #footer{
+            /* position: relative; */
+            text-align: center;
+            text-transform: capitalize;
+            bottom: 0px;
+            height: 200px;
+            width: 100%;
+            background: #999999;
+        }
+        #footer address{
+            padding: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <header id="head">
+        <h1><a href="#">Sample Webpage</a></h1>
+    </header>
+
+<!-- Side Navigation bar -->
+        <div id="sidebar">
+            <ul>
+                <a href="#"><li>Home</li></a>
+                <a href="#aboutUs"><li>About Us</li></a>
+                <a href="#footer"><li>Contact Us</li></a>
+            </ul>
+        </div>
+<!-- Main content of the page and footer -->
+
+        <div id="main">
+                <section id="home">
+                    <h2>
+                        Home
+                    </h2>
+                    <p>
+                        This text is really long and the height of its container is only 100 pixels. Therefore, a
+                        scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                        magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
+                        eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+                        eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
+                        praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber
+                        tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat
+                        facer possim assum.
+                        This text is really long and the height of its container is only 100 pixels. Therefore, a
+                        scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                        magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
+                        eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+                        eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
+                        praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber
+                        tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat
+                        facer possim assum.
+                        This text is really long and the height of its container is only 100 pixels. Therefore, a
+                        scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                        magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
+                        eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+                        eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
+                        praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber
+                        tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat
+                        facer possim assum.
+                        This text is really long and the height of its container is only 100 pixels. Therefore, a
+                        scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                        magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
+                        eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+                        eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
+                        praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber
+                        tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat
+                        facer possim assum.
+                        This text is really long and the height of its container is only 100 pixels. Therefore, a
+                        scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                        magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
+                        eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+                        eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
+                        praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber
+                        tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat
+                        facer possim assum.
+                    </p>
+                </section>
+                <hr>
+                <section id="aboutUs">
+                    <h2>AboutUs</h2>
+                    <p>
+                        This text is really long and the height of its container is only 100 pixels. Therefore, a
+                        scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                        magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
+                        eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+                        eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
+                        praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber
+                        tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat
+                        facer possim assum.
+                        Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
+                        This text is really long and the height of its container is only 100 pixels. Therefore, a
+                        scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                        magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
+                        eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+                        eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
+                        praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber
+                        tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat
+                        facer possim assum.
+                        Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
+                        This text is really long and the height of its container is only 100 pixels. Therefore, a
+                        scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                        magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
+                        eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+                        eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
+                        praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber
+                        tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat
+                        facer possim assum.
+                        Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
+                        This text is really long and the height of its container is only 100 pixels. Therefore, a
+                        scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                        magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
+                        eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+                        eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
+                        praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber
+                        tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat
+                        facer possim assum.
+                        Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
+                        This text is really long and the height of its container is only 100 pixels. Therefore, a
+                        scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                        magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
+                        eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+                        eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
+                        praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber
+                        tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat
+                        facer possim assum.
+                        Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
+                        This text is really long and the height of its container is only 100 pixels. Therefore, a
+                        scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                        magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
+                        eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+                        eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
+                        praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber
+                        tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat
+                        facer possim assum.
+                        Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
+                        This text is really long and the height of its container is only 100 pixels. Therefore, a
+                        scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                        magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
+                        eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+                        eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
+                        praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber
+                        tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat
+                        facer possim assum.
+                        Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
+                        This text is really long and the height of its container is only 100 pixels. Therefore, a
+                        scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                        magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
+                        eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+                        eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
+                        praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber
+                        tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat
+                        facer possim assum.
+                        Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
+                        This text is really long and the height of its container is only 100 pixels. Therefore, a
+                        scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                        magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
+                        eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+                        eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
+                        praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber
+                        tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat
+                        facer possim assum.
+                        Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
+                        This text is really long and the height of its container is only 100 pixels. Therefore, a
+                        scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet,
+                        consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                        magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
+                        eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+                        eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
+                        praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber
+                        tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat
+                        facer possim assum.
+                        Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
+                    </p>
+                </section>
+                
+                
+                <footer id="footer">
+                    <h2>Footer</h2>
+                    <address>
+                        ABC123@gmail.com<br><br>
+                        +61 348739 38398
+
+                    </address>
+                </footer>
+        </div>
+
+</body>
+</html>
