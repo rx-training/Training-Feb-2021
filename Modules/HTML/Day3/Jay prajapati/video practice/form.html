@@ -8,10 +8,41 @@
 </head>
 <body>
     <form id="myform">
-        <label></label>
+        <label for="date">Enter Date :</label>
+        <input type="date" id="date"><br>
+        <label for="time">Enter time :</label>
+        <input type="time" id="time"><br>
+        <label for="month">Enter Month :</label>
+        <input type="month" id="date"><br>
+        <label for="week">Enter week :</label>
+        <input type="week" id="week"><br>
+        <label for="myrange">Range :</label>
+        <input type="range" id="myrange" min="0" max="10"><br>
+        <label for="search-data">Search :</label>
+        <input type="search" id="search-data"><br>
+        <label for="tel-date">telephone :</label>
+        <input type="tel" id="tel-data"><br>
+        <label for="Email">Enter Email :</label>
+        <input type="email" id="Email"><br>
+        <label for="color-data">select color :</label>
+        <input type="color" id="color-data"><br>
 
+        <label for="datalist">Date List :</label>
+        <input type="text" list="myDataList"  placeholder="Enter name e.g. Mr Jay">
+        <datalist id="myDataList">
+            <option label="Mr." value="Mr."></option>
+            <option label="Mrs." value="Mrs."></option>
+            <option label="Ms." value="Ms."></option>
+        </datalist><br>
 
+        <label for="progress-bar">Progress Bar :</label>
+        <progress min="0" max="10" value="5"></progress><br>
+        <label for="meter-data">Meter Bar :</label>
+        <meter id="meter-data" min="0" max="100" value="50" low="20" high="80"></meter><br>
+
+        <input type="submit" value="Submit"><br><br>
     </form>
+
     <label for="othertext">Other Text :</label>
     <input id="othertext" form="myform">
 </body>
