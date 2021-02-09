@@ -1,0 +1,34 @@
+body {
+    background-color: aliceblue;
+  }
+  
+  h1 {
+    color: crimson;
+    text-align: center;
+  }
+  
+  p {
+    font-family: verdana;
+    font-size: 20px;
+    padding: 20px 20px 15px;
+  }
+  /* id selector */
+  #ul1{
+      text-decoration: cyan;
+  }
+
+  /* class selector */
+  .licircle{
+        list-style-type: circle;
+  }
+  .lisquare{
+    list-style-type: square;
+}
+
+/* pseudo classes
+first-child class */
+.lisquare :first-child { color: darkcyan;  padding: 5px 5px 5px;}
+
+/*nth child class */
+ul :nth-child(odd){ background-color : #d5c1ff}
+ul :nth-child(even){ background-color : #ffffff}
