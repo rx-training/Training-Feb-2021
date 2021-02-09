@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radixweb Layout</title>
+    <style>
+        .header{
+            background-color: red;
+            height: 80px;
+           display: flex;
+        }
+        .header ul{
+            position: relative;
+            top: 19px;
+        }
+        .header li{
+            display: inline;
+            padding: 10px;
+            margin-left: 50px;
+            color: aliceblue; 
+            background: burlywood;
+        }
+        .header li a:hover {
+            background-color: rgb(211, 202, 202);
+        }
+        .footer{
+            position: relative;
+            top: -20px;
+            background: palevioletred;
+            height: 80px;
+        }
+        .footer h2{
+            text-align: center;
+        }
+        .column {
+            float: left;
+            padding: 17px;
+        
+        }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .navbar{
+            overflow: scroll;
+            background: yellow;
+            float: left;
+            width: 20%;
+            padding: 13px;
+            height: 230px;
+        }
+        .content{
+            overflow:scroll;
+            width: 77%;
+            background: rgba(216, 108, 20, 0.562);
+            padding: 7px;
+            height: 242px;
+            
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .navbar ul{
+            list-style: none;
+        }
+        .navbar li a:hover {
+            background-color: rgb(211, 202, 202);
+        }
+        h1{
+            text-align: center;
+        }
+        .footer p{
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="Radixweblogonew.jpg" alt="" width="296px" >
+        <ul>
+            <li><a href="Redmine.html">Redmine&git</a></li>
+            <li><a href="HTML.html">HTML5</a></li>
+            <li><a href="CSS.html">CSS</a></li>
+        </ul>
+    </div>
+    <div class="clearfix">
+        <div class="column navbar">
+            <ul>    
+                <li>Day 3</li>
+                <li>Assignment</li>
+                <ul>
+                    <li><a href="HTML_Day3_Assignment._employee.html">Employee form</a></li>
+                </ul>
+                <li>Practice</li>
+                <ul>
+                    <li><a href="HTML_Day3_Practice_RepordCard.html">Report card</a></li>
+                    <li><a href="HTML_Day3_Practice_Login.html">Login with article</a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="column content">
+           <p>
+            <!doctype html>
+<html>
+    <br><br>
+    <head>
+        <style>
+            h1{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <nav>
+                <a href = "Login&Articletag.html">Home</a>     |                           
+                <a href = "Aboutus.html">About us</a> |
+                <a href = "Contactus.html">Contact us</a>
+            </nav>
+        </form>
+        
+        <br><br>
+        <h1>Login Page</h1>
+        <form style="padding-left: 550px;">
+            <label for="Username">Username</label>
+            <input type="text" name="Username" id="Username" placeholder="Username">
+            <br><br>
+            <label for="Password">Password</label>
+            <input type="password" name="Password" id="Password" placeholder="Password">
+            <br><br>
+                <input type="Submit" value="Submit">
+       </form>
+        <br><br>
+        <form>
+            <article style="border-style: groove;">
+                <h3 style="color: red;">Latest News</h3>
+                <article>
+                <h2 style="color: blue;">Haryana farmers getting pro-farmer slogans printed on wedding cards</h2>
+                <h4>Slogans like "no farmers, no food" and photos of peasant leader Sir Chhotu Ram and freedom fighter Bhagat Singh too are finding their way on to the invitation cards amid peak wedding season.</h4>
+                <p>Some farmers in Haryana have found a novel way to support the ongoing agitation against the Centre’s new agri laws by getting catchy slogans like “no farmers, no food” and photos of peasant leader Sir Chhotu Ram printed on wedding invitation cards.
+                    According to a printing press owner in Kaithal, photos of freedom fighter Bhagat Singh too are finding their way on to the invitation cards amid peak wedding season.
+                    “We are getting requests from many farmer families and some others as well to have slogans like ‘no farmers, no food’ and photos of Sir Chhotu Ram and Bhagat Singh printed on the wedding cards,” said the owner.
+                </p>
+            </article> 
+            </article>
+        </form>      
+    </body>
+</html>
+           </p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>www.radixweb.com</p>
+        <h2>Footer</h2>
+    </div>
+</body>
+</html>

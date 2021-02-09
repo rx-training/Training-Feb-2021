@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radixweb Layout</title>
+    <style>
+        .header{
+            background-color: red;
+            height: 80px;
+           display: flex;
+        }
+        .header ul{
+            position: relative;
+            top: 19px;
+        }
+        .header li{
+            display: inline;
+            padding: 10px;
+            margin-left: 50px;
+            color: aliceblue; 
+            background: burlywood;
+        }
+        .header li a:hover {
+            background-color: rgb(211, 202, 202);
+        }
+        .footer{
+            position: relative;
+            top: -20px;
+            background: palevioletred;
+            height: 80px;
+        }
+        .footer h2{
+            text-align: center;
+        }
+        .column {
+            float: left;
+            padding: 17px;
+        }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .navbar{
+            overflow: scroll;
+            background: yellow;
+            float: left;
+            width: 20%;
+            padding: 13px;
+            height: 230px;
+        }
+        .content{
+            overflow:scroll;
+            width: 77%;
+            background: rgba(216, 108, 20, 0.562);
+            padding: 7px;
+            height: 242px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .navbar ul{
+            list-style: none;
+        }
+        .navbar li a:hover {
+            background-color: rgb(211, 202, 202);
+        }
+        h1{
+            text-align: center;
+        }
+        .footer p{
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="Radixweblogonew.jpg" alt="" width="296px" >
+        <ul>
+            <li><a href="Redmine.html">Redmine&git</a></li>
+            <li><a href="HTML.html">HTML5</a></li>
+            <li><a href="CSS.html">CSS</a></li>
+        </ul>
+    </div>
+    <div class="clearfix">
+        <div class="column navbar">
+            <ul>    
+                <li>Day 4</li>
+                <li>Assignment</li>
+                <ul>
+                    <li><a href="CSS_Day4_Assignment_resume.html">Resume</a></li>
+                </ul>
+                <li>Practice</li>
+                <ul>
+                    <li><a href="CSS_Day4_Practice_Border.html">Border</a></li>
+                    <li><a href="CSS_Day4_Practice_City.html">Horizontal List</a></li>
+                    <li><a href="CSS_Day4_Practice_HeadingColor.html">Heading border-color</a></li>
+                    <li><a href="CSS_Day4_Practice_Selector.html">Universal selector</a></li>
+                    <li><a href="CSS_Day4_Practice_TextAlign.html">Text align</a></li>
+                </ul>
+                <li>Day 5</li>
+                <li>Assignment</li>
+                <ul>
+                    <li><a href="CSS_Day5_Assignment_Layout.html">Basic Layout</a></li>
+                </ul>
+                <li>Practice</li>
+                <ul>
+                    <li><a href="CSS_Day5_Practice_Overflow.html">Overflow</a></li>
+                    <li><a href="CSS_Day5_Practice_Position.html">Position</a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="column content">
+            <p>
+                <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       
+        .child1{
+            position: relative;
+            top: 0px;
+            left: 5px;
+            padding: 0px;
+            border: 3px solid #73AD21;
+        }
+        .child2{
+            position: fixed;
+            right: 0px;
+            bottom: 0px;
+            border: 3px solid red;
+        }
+        .sibling{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+        .child3{
+            position: static;
+            border-style: dotted;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child1">
+            <h2>child1 (Relative)</h2>
+            <p>
+                An element with position: relative; is positioned relative to its normal position.
+                Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.
+            </p>
+        </div>
+        <div class="child2">
+            <h2 style="color: red;">This div is placed bottom because <b>position:fixed</b> is used</h2>
+            <img src="Rose.jpg" alt="Rose" width="200px" height="200px">
+            <p>
+                An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element.
+                A fixed element does not leave a gap in the page where it would normally have been located.
+            </p>
+
+            <div class="sibling">
+                <h2>Sibling (Absolute)</h2>
+                <ul>
+                    <li>Tea</li>
+                    <li>Coffee</li>
+                    <li>Cold drinks</li>
+                </ul>
+            </div>
+        </div>
+        <div class="child3">
+            <h2>child3 (static)</h2>
+            <table style="border-style:groove;">
+                <tr>
+                    <th>Name</th>
+                </tr>
+                <tr>
+                    <td>Welcome</td>
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
+            </p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>www.radixweb.com</p>
+        <h2>Footer</h2>
+    </div>
+</body>
+</html>
