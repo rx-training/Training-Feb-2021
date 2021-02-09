@@ -1,0 +1,132 @@
+
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Navigation Bar Style */
+#nav{
+    position: fixed;
+    top:0px;
+    padding-right: 50px;
+    width: 100%;
+    background-color: azure;
+    z-index: 1;
+}
+#nav a{
+    display: inline-block;
+    float: right;
+    padding: 12px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #444444;
+}
+#nav a:hover{
+    background-color: rgb(129, 129, 129);
+    color: cornsilk;
+}
+
+
+/* Main Content body */
+
+#main{
+    display: flex;
+    position: absolute;
+    top: 50px;
+    flex-direction: column;
+    background-color: darkcyan;
+}
+
+#section{
+    background-color: rgb(224, 210, 210);
+}
+
+.main-body{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+
+}
+#sidebar{
+    position: sticky;
+    top: 0px;
+    flex:15%;
+    background-color: #bbbbbb;
+    flex-grow: "1";
+}
+#sidebar ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    color: rgb(211, 160, 31);
+    
+
+}
+#sidebar ul a{
+    text-decoration: none;
+    color: rgb(40, 70, 206);
+}
+#sidebar ul li{
+    font-size: 20px;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+#sidebar ul li ul li{
+    display: block;
+    font-size: 15px;
+    color: rgb(29, 100, 64);
+    font-weight: bold;
+}
+#sidebar li a{
+    display: block;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
+    color: dimgray;
+    font-weight: bold;
+    text-align: center;
+
+}
+#sidebar li a:hover {
+    text-align: center;
+    background-color: floralwhite;
+}
+/* #sidebar ul li:hover{
+    background-color: darkturquoise;
+} */
+
+
+#main-container{
+    background-color: darkseagreen;
+    flex-grow: "5";
+    flex: 85%;
+
+}
+#main-container h2{
+    text-align: center;
+    background-color: ivory;
+    border-radius: 5px;
+    padding: 10px;
+}
+#myFrame{
+    margin: 10px;
+    background-color: gainsboro;
+}
+#footer{
+    background-color: darkkhaki;
+    width: 100%;
+    display: block;
+}
+
+#footer h2,p{
+    text-align: center;
+}
+
+#footer address{
+    text-align: center;
+    margin-bottom: 20px;
+}
