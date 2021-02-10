@@ -1,0 +1,20 @@
+
+
+
+welcome to the Anuj's Kitchen
+
+    VEG-ITEMS
+    1) paneer
+    2)Chhole
+    4)Roti 
+    5)Nan
+    6)chhash
+    
+    
+    Here are the some non-veg offers invited by the Anuj's Kitchen
+
+    1)CHICKEN
+    2)MUTTON
+    3)Eggs
+
+
