@@ -2,13 +2,50 @@
 <html>
     <head>
         <title>Album Gallery</title>
+        <style text="text/css">
+        *{
+            box-sizing: border-box;
+        }
+
+        .gallery{
+            border: 1px solid #ccc;
+        }
+
+        .gallery img{
+            width: 100%;
+            height: auto;
+        }
+        .des{
+            padding: 15px;
+            text-align: center;
+        }
+
+        .responsive{
+            padding: 0 6px;
+            float: left;
+            width: 25%;
+        }
+        @media only screen and (max: width 700px;){
+            .responsive{
+                width: 50%;
+                margin: 6px;
+            }
+            @media only screen and (max: width 500px;){
+            .responsive{
+                width: 100%;
+            }
+        }
+            
+        }
+        
+        </style>
 
     </head>
     <body>
         <h1>Album Gallery</h1>
         <div class="responsive">
             <div class="gallery">
-                <a href="img4.jpg" target="_blank"><img src="img4.jpg"></a>
+                <a href="img4.jpg" target="_blank"><img src="img4.jpg" width="300" height="200"></a>
                 <div class="des">Add the description of image here</div>
 
             </div>
@@ -16,7 +53,7 @@
 
         <div class="responsive">
             <div class="gallery">
-                <a href="img2.jpg" target="_blank"><img src="img2.jpg"></a>
+                <a href="img4.jpg" target="_blank"><img src="img4.jpg"width="300" height="200"></a>
                 <div class="des">Add the description of image here</div>
 
             </div>
@@ -24,7 +61,7 @@
 
         <div class="responsive">
             <div class="gallery">
-                <a href="img3.jpg" target="_blank"><img src="img3.jpg"></a>
+                <a href="img4.jpg" target="_blank"><img src="img4.jpg"width="300" height="200"></a>
                 <div class="des">Add the description of image here</div>
 
             </div>
@@ -32,7 +69,7 @@
 
         <div class="responsive">
             <div class="gallery">
-                <a href="img4.jpg" target="_blank"><img src="img4.jpg"></a>
+                <a href="img4.jpg" target="_blank"><img src="img4.jpg"width="300" height="200"></a>
                 <div class="des">Add the description of image here</div>
 
             </div>
