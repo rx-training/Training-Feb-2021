@@ -1,58 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-div.gallery {
-  margin: 5px;
-  border: 1px solid #ccc;
-  float: left;
-  width: 180px;
-}
-
-div.gallery:hover {
-  border: 1px solid #777;
-}
-
-div.gallery img {
-  width: 100%;
-  height: auto;
-}
-
-div.desc {
-  padding: 15px;
-  text-align: center;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            box-sizing: border-box;
+        }
+        .flexcontainer{
+            display: flex;
+            flex-wrap: wrap;
+            padding:0 0.5vw;
+            width: 200%;
+        }
+        .flexcontainer > div{
+            padding:1vw 0.34vw;
+            flex:24.3%;
+            max-width: 24.3%;
+        }
+        .flexcontainer > div img{
+            margin-top:0.5vw;
+        }
+        @media (max-width:800px){
+            .flexcontainer > div{
+                flex:49.3%;
+                max-width: 49.3%;
+            }
+        }
+        @media (max-width:678px){
+            .flexcontainer > div{
+                flex:100%;
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="flexcontainer">
+        <div>
+            <img src="https://images.unsplash.com/photo-1519337265831-281ec6cc8514?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="" width="100%">
+            <img src="https://as.ftcdn.net/r/v1/pics/5b3813c657f90f46a3e9f02fc813ffc04fb215bf/home/discover_collections/20Dec/photos.webp" alt="" width="100%">
+            <img src="https://as.ftcdn.net/r/v1/pics/5828f9175e646dc7226e7b77fd33b45457ab6ceb/home/discover_collections/20Dec/premium.webp" alt="" width="100%">
+            <img src="https://as.ftcdn.net/r/v1/pics/59bc20b06843b2bc1130692b400c7e6ce8f76de4/home/discover_collections/20Dec/audio.webp" alt="" width="100%">
+            <img src="https://as.ftcdn.net/r/v1/pics/bd206ddee4d641f93ac569c3b899e269b2b7fe91/home/discover_collections/20Dec/vector.webp" alt="" width="100%">
+            <img src="https://as.ftcdn.net/r/v1/pics/172f6987d2e557bfef178ac7cb42a6cc81bc42a8/home/discover_collections/20Dec/templates.webp" alt="" width="100%">
+            <img src="https://t3.ftcdn.net/jpg/02/50/59/70/240_F_250597018_XTtjCkwHaIk5MxWEdLyfYcnT4sNdcw5z.jpg" alt="" width="100%">
+        </div>
 
-<div class="gallery">
-  <a target="_blank" href="img_5terre.jpg">
-    <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
-  </a>
-  <div class="desc">Add a description of the image here</div>
-</div>
+        <div>
+            <img src="https://t4.ftcdn.net/jpg/02/85/29/75/240_F_285297581_5koQaSgXSsrIb7ohCHDajdQZobGJfUqa.jpg" alt="" width="100%">
+            <img src="https://t4.ftcdn.net/jpg/03/40/98/49/240_F_340984929_dJtJgImdITJrpNpOE45GY0xdkktsyZwR.jpg" alt="" width="100%">
+            <img src="https://t4.ftcdn.net/jpg/03/14/14/11/240_F_314141146_OLdlWE1SkeUyquNjSa45S6pxAmss6VbK.jpg" alt="" width="100%">
+            <img src="https://t3.ftcdn.net/jpg/01/97/38/64/240_F_197386409_Ads9KFmCESSdwmxcAF8oXWKwIegQB6kB.jpg" alt="" width="100%">
+            <img src="https://t3.ftcdn.net/jpg/02/99/03/42/240_F_299034266_tgb9OvpYKihn1M4kavirTIKGLf4ObnjL.jpg" alt="" width="100%">
+            <img src="https://c4.wallpaperflare.com/wallpaper/836/600/999/do-not-remove-this-tag-wallpaper-preview.jpg" alt="" width="100%">
+        </div>
 
-<div class="gallery">
-  <a target="_blank" href="img_forest.jpg">
-    <img src="img_forest.jpg" alt="Forest" width="600" height="400">
-  </a>
-  <div class="desc">Add a description of the image here</div>
-</div>
+     
 
-<div class="gallery">
-  <a target="_blank" href="img_lights.jpg">
-    <img src="img_lights.jpg" alt="Northern Lights" width="600" height="400">
-  </a>
-  <div class="desc">Add a description of the image here</div>
-</div>
-
-<div class="gallery">
-  <a target="_blank" href="img_mountains.jpg">
-    <img src="img_mountains.jpg" alt="Mountains" width="600" height="400">
-  </a>
-  <div class="desc">Add a description of the image here</div>
-</div>
-
+    </div>
 </body>
 </html>
