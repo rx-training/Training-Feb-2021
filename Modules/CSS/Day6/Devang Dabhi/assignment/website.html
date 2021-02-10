@@ -20,10 +20,13 @@
         {
           display: inline;
         }
-
+header{
+  background-color: skyblue;
+}
 	div   
         {
           display: inline-block;
+          float: left;
         }
 
                 </style>
@@ -33,25 +36,26 @@
 <header>
 <p><img src="ssec.jpg" alt="SSEC-logo"  height= 150; width=150></p>   
     <p><ul>
-            <li ><a href="#html">HTML</a></li>
-            <li ><a href="#css">CSS</a></li>
-            <li ><a href="#bootstrap">BOOTSTRAP</a></li>
+            <li ><a href="website.html">HTML</a></li>
+            <li ><a href="css.html">CSS</a></li>
+            <li ><a href="bootstrap.html">BOOTSTRAP</a></li>
           </ul> 
         </p> 
 </header>
 <hr>
 
-<div class="a1" style="border:1px solid blue; height: 400 ;width: 250;background-color: yellow;">
+<div class="a1" style="border:1px solid blue; height: 700 ;width: 250;background-color: yellow;">
   <button type="button" class="collapsible">Day 3</button>
   <div class="content">
       <button type="button" class="collapsible">Practice</button>
       <div class="content">
           <ul>
-              <li><a onclick="setUrlArticle()">Article News</a></li>
-              <li><a onclick="setUrlDepartment()">Departments</a></li>
-              <li><a onclick="setUrlReport()">Student Report Card</a></li>
-              <li><a onclick="setUrlLogin()">Login Form</a></li>
-              <li><a onclick="setUrlMenu()">Horizontal Menu</a></li>
+            <li><a onclick="setUrlArticle()">Article tag</a></li>
+            <li><a onclick="setUrlHR()">HR</a></li>
+            <li><a onclick="setUrlReport()">Student Report Card</a></li>
+            <li><a onclick="setUrlLogin()">Login Form</a></li>
+            <li><a onclick="setUrlMenu()">Horizontal Menu</a></li>
+        
           </ul>
       </div>
       <button type="button" class="collapsible">Assignment</button>
@@ -63,16 +67,20 @@
       <button type="button" class="collapsible">Video Task</button>
       <div class="content">
           <ul>
-              <li><a onclick="setUrlVideoTask()">Task 1</a></li>
+              <li><a onclick="setUrlVideoTask1()">Task 1</a></li>
+              <li><a onclick="setUrlVideoTask2()">Task 2</a></li>
+
           </ul>
       </div>
   </div>
 </div>   
-<iframe id="myFrame" src="" width="700px" height="700px" style="border:1px solid black;">
+
+<iframe id="myFrame" src="" width="1050px" height="700px" style="border:1px solid black;">
 </iframe>
 <hr>
-<footer style="border:1px solid blue; height: 200 ;background-color: rgb(70, 66, 73);">
-    This is footer section
+
+<footer style="border:1px solid blue; height: 100 ;background-color: rgb(70, 66, 73);">
+    <h1>Devang Dabhi</h1>
 </footer>
 <script>
   var coll = document.getElementsByClassName("collapsible");
@@ -93,7 +101,7 @@
   function setUrlArticle(){
       document.getElementById("myFrame").src = "file:///E:/Fork%20Repository-Devang%20Dabhi/Modules/HTML/Day3/Devang%20Dabhi/Practice/article_tag.html";
   }
-  function setUrlDepartment(){
+  function setUrlHR(){
       document.getElementById("myFrame").src = "file:///E:/Fork%20Repository-Devang%20Dabhi/Modules/HTML/Day3/Devang%20Dabhi/Practice/HR.html";
   }
   function setUrlReport(){
@@ -108,9 +116,13 @@
   function setUrlEmployeeForm(){
       document.getElementById("myFrame").src = "file:///E:/Fork%20Repository-Devang%20Dabhi/Modules/HTML/Day3/Devang%20Dabhi/Assignment/Employee_Details.html";
   }
-  function setUrlVideoTask(){
+  function setUrlVideoTask1(){
       document.getElementById("myFrame").src = "file:///E:/Fork%20Repository-Devang%20Dabhi/Modules/HTML/Day3/Devang%20Dabhi/Practice/practice.html.html";
   }
+  function setUrlVideoTask2(){
+      document.getElementById("myFrame").src = "file:///E:/Fork%20Repository-Devang%20Dabhi/Modules/HTML/Day3/Devang%20Dabhi/Practice/Form.practice.html";
+  }
+  
   </script>
 </body>
 </html>
