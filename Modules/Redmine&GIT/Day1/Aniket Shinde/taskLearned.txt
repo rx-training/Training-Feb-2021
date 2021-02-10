@@ -1,6 +1,0 @@
-1.I have learned how to create repository.
-2. Clone the repository using "git clone urlofrepository" command
-3. Opened repository in vscode using "code ." command
-4. Learned to commit changes.
-5. push the changes to remote
-6. pull the changes made on remote
