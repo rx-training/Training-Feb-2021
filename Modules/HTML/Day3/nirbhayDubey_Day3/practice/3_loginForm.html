@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(to bottom right, #da1b60,#dc1e5c,#e44041,#ee582b,#fb7b0d);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        form{
+            border-radius: 5px;
+            box-shadow: 2px 2px 15px;
+            background: transparent;
+            width:40vw;
+            color: white;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin:7vw auto;
+            padding:3vw;
+        }
+        input{
+            font-size:1vw;
+            border-style: none;
+            outline-style: none;
+            border-bottom: 2px solid white;
+            background: none;
+            color: white;
+            padding:0.5vw;
+            text-align: center;
+        }
+        input[type="submit"]{
+            margin-top: 2vw;
+            font-size:1.3vw;
+            outline-style: none;
+            border:2px solid white;
+            border-radius: 10px;
+            background: transparent;
+            color:white;    
+            width:12vw;
+            padding:0.5vw;
+        }
+        input[type="reset"]{
+            font-size:1.3vw;
+            border:2px solid white;
+            border-radius: 10px;
+            outline-style: none;
+            background: white;
+            color:#dc1e5c;    
+            width:12vw;
+            padding:0.5vw;
+            transition: width 1px;
+        }
+        ::placeholder{
+            color: rgb(218, 214, 214);
+            text-align: center;
+        }
+        input[type="submit"]:hover{
+            background:white;
+            color:#dc1e5c;
+        }
+        input[type="reset"]:hover{
+            background:rgb(231, 230, 230);
+            color:#dc1e5c;
+        }
+    </style>
+</head>
+<body>
+        <form action="1_reportCard.html" method="post">
+            <p style="font-size:2vw;font-weight: 600;">Welcome back,</p>
+            <input type="text" name="uname" placeholder="Username..." required/><br><br>
+            <input type="password" name="upass" placeholder="Password..." required/><br><br>
+            <input type="submit" value="Login" />
+            <input type="reset" value="Reset"  />
+        </form>
+</body>
+</html>

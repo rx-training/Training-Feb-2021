@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox image gallery</title>
+   
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+    h1{
+        font-size: xx-large;
+        font-style: italic;
+    }
+    p{
+        font-size: x-large;
+    }
+    body {
+      margin: 0;
+      font-family: Arial;
+      background-color: rgb(183, 191, 199);
+    }
+    
+    .header {
+      text-align: center;
+      padding: 32px;
+      background-color: whitesmoke;
+    }
+    
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 4px;
+    }
+    
+    
+    .column {
+      flex: 25%;
+      max-width: 25%;
+      padding: 0 4px;
+    }
+    
+    .column img {
+      margin-top: 8px;
+      vertical-align: middle;
+    }
+    
+    
+    @media (max-width: 800px) {
+      .column {
+        flex: 50%;
+        max-width: 50%;
+      }
+    }
+    
+    
+    @media (max-width: 600px) {
+      .column {
+        flex: 100%;
+        max-width: 100%;
+      }
+    }
+    </style>
+    <body>
+    
+    
+    <div class="header">
+      <h1> Responsive Car Images </h1><hr>
+      <p>Please resize the browser so you can see how its work</p>
+    </div>
+    
+    
+    <div class="row"> 
+      <div class="column">
+        <img src="images/13.jpg" style="width:100%">
+        <img src="images/2.jpg" style="width:100%">
+        <img src="images/4.jpg"style="width:100%">
+        <img src="images/5.jpg" style="width:100%">
+        <img src="images/10.jpg" style="width:100%">
+        <img src="images/8.jpg" style="width:100%">
+        <img src="images/14.jpg"style="width:100%">
+      </div>
+      
+      <div class="column">
+        <img src="images/14.jpg"style="width:100%">
+        <img src="images/13.jpg" style="width:100%">
+        <img src="images/15.jpg"style="width:100%">
+        <img src="images/11.jpg"style="width:100%">
+        <img src="images/10.jpg" style="width:100%">
+        <img src="images/12.jfif" style="width:100%">
+        <img src="images/5.jpg" style="width:100%">
+      </div> 
+       
+      <div class="column">
+        <img src="images/4.jpg" style="width:100%">
+        <img src="images/2.jpg" style="width:100%">
+        <img src="images/11.jpg" style="width:100%">
+        <img src="images/3.jpg" style="width:100%">
+        <img src="images/13.jpg" style="width:100%">
+        <img src="images/11.jpg" style="width:100%">
+        <img src="images/8.jpg" style="width:100%">
+      </div>
+      
+      <div class="column">
+        <img src="images/10.jpg" style="width:100%">
+        <img src="images/11.jpg" style="width:100%">
+        <img src="images/5.jpg" style="width:100%">
+        <img src="images/3.jpg" style="width:100%">
+        <img src="images/4.jpg" style="width:100%">
+        <img src="images/12.jfif" style="width:100%">
+        <img src="images/2.jpg" style="width:100%">
+      </div>
+    </div>
+    
+    </body>
+    </html>
+    

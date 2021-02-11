@@ -1,0 +1,6 @@
+my name is anuj pal.(this is the data which is pushed to the remote/git repository)
+
+
+
+
+today is tuesday.(this is the data which we take from the git to the local directory)

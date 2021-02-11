@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: url("../images/background.png") no-repeat center fixed;
+    background-size: cover;
+}
+
+/* navbar css */
+.navbar{
+    display: flex;
+    flex-wrap: wrap;
+    background-color:#000;
+    box-shadow: 0px 0px 10px #818181;
+}
+.navbar .logo{
+    display: flex;
+    width: 20%;
+    justify-content: center;
+}
+.navbar .navlist{
+    display: flex;
+    width: 80%;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+.navbar .navlist > div{
+    flex:10%;
+    padding: 1vw;
+    text-align: center;
+    color: #818181;
+    font-family:"Lato",sans-serif;
+    font-size:18px;
+}
+.navbar .navlist div a{
+    text-decoration: none;
+    color: #818181;
+}
+.navbar .navlist > div a:hover{
+    color:#fff;
+}
+
+/* Menu css */
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+}
+.menu .sidebar{
+    width:22%;
+    height: 100%;
+    position: fixed;
+    margin-top: 2px;
+    background-color:#000;
+    box-shadow: 0 1px 10px #818181;
+}
+.menu .menubar{
+    left:22%;
+    right: 0;
+    height: 100%;
+    position: fixed;
+}
+.menu .menubar iframe{
+    margin:4px 0 0 3px;
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar ul {
+}
+.sidebar ul  li{
+    padding:30px;
+    font-size:25px;
+    font-family: "Lato", sans-serif;
+}
+.sidebar ul ul li{
+    list-style-type:square;
+    color: #818181;
+    font-size:18px;
+    padding:10px;
+    margin-left: 10px;
+}
+.sidebar ul ul ul li{
+    list-style-type:circle;;
+    padding:20px 0 0 10px;
+    font-size:15px;
+    color: #818181;
+}
+.sidebar ul ul ul ol li{
+    list-style: decimal;
+    padding:10px 0 0 10px;
+    font-size:14px;
+    color: #fff;
+}
+.sidebar ul ul ul ol a:hover{
+    font-weight: bold;
+}
+
+.sidebar a{
+    color: rgb(238, 238, 238);
+}
+
+
+@media (max-width:800px){
+    .navbar .logo{
+        width: 100%;
+        flex-direction: row;
+    }
+    .navbar .navlist{
+        width: 100%;
+    }
+    .navbar .navlist > div{
+        flex:100%;
+    }
+    .menu .sidebar{
+        display: none;
+    }
+    .menu .menubar{
+        width: 100%;
+        height: 100%;
+        left: 0;
+        position: fixed;
+    }
+}
