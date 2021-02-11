@@ -1,0 +1,10 @@
+Github
+Sign in 
+Open repository
+Fork and it will be like created with username
+Clone
+Cmd then git clone url
+Open vs code using code .
+Under modules open day1 create folder using name and create txt file
+Checking error and done staged changes to all and also done authentication credential
+now updating on remote to get changes on local
