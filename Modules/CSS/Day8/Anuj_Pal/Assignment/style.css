@@ -1,0 +1,108 @@
+.container
+{
+    display: grid;
+    overflow: scroll;
+    height: 100vh;
+    /* display: flex; */
+    grid-template-columns: 1fr ifr 1fr 1fr;
+    grid-template-rows: 0.1fr 1.5fr 0.2fr;
+ 
+    grid-template-areas: "nav nav nav nav"
+    "sidebar main main main"
+    "footer footer footer footer";
+}
+
+nav{
+    grid-area: nav;
+    background-color: rgb(230, 230, 120);
+}
+
+.main{
+    grid-area: main;
+background-color: cyan;
+clear: both;
+    
+}
+
+.sidebar
+{
+    grid-area: sidebar;
+    background-color: rgb(220, 173, 233);
+    border: 2px solid chocolate;
+    height: 450px;
+    overflow: scroll;
+   
+
+}
+
+footer
+{
+    grid-area: footer;
+    background-color: rgb(16, 63, 7);
+}
+.navbar {
+    background-color: black;
+    /* border-radius: 30px; */
+
+}
+
+.navbar ul {
+    overflow: auto;
+}
+
+.navbar li {
+    float: left;
+    list-style: none;
+    margin: 13px 20px;
+
+}
+
+.navbar li a {
+    padding: 3px 3px;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar li a:hover {
+    color: red
+}
+
+.search {
+    float: right;
+    color: white;
+    padding: 12px 75px;
+}
+
+.navbar input {
+    border: 2px solid black;
+    border-radius: 14px;
+    padding: 3px 17px;
+    width: 129px;
+}
+
+@media only screen and (max-width:600px)
+{
+  .container
+  {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.1fr  0.5fr 2fr ;
+      grid-template-areas: "nav"
+      "sidebar"
+       "main"
+    
+      "footer";
+  }
+}
+
+@media only screen and (max width:992px)
+{
+  .container
+  {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 0.4fr 2.2fr 0.4fr;
+      grid-template-areas: "nav sidebar sidebar"
+      "main"
+      "footer";
+      
+  }
+}
