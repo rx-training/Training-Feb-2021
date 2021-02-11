@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <link rel="stylesheet" href="../assets/css/layoutResponsive.css"/>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="header">
+            <img src="../assets/images/logo2.png">
+            <div class="nav">
+                <ul>
+                    <li><a href="responsiveLayout.html">HTML</a></li>
+                    <li><a href="cssTasks.html">Css</a></li>
+                    <li><a>Bootstrap</a></li>
+                    <li><a>Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu">
+            <button type="button" class="collapsible">Day 4</button>
+            <div class="content">
+                <button type="button" class="collapsible">Practice</button>
+                <div class="content">
+                    <ul>
+                        <li><a onclick="setUrlAudioVideo()">Audio and Video</a></li>
+                        <li><a onclick="setUrlBorder()">Pragraph Border</a></li>
+                        <li><a onclick="setUrlCities()">Horizontal List of Cities</a></li>
+                        <li><a onclick="setUrlStudent()">Student Report Card Alignment</a></li>
+                        <li><a onclick="setUrlUniversal()">Universal & Element Selector</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="collapsible">Assignment</button>
+                <div class="content">
+                    <ul>
+                        <li><a onclick="setUrlResume()">Resume - Aniket Shinde</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="collapsible">Video Task</button>
+                <div class="content">
+                    <ul>
+                        <li><a onclick="setUrlVideoTaskDay4()">Task 1</a></li>
+                    </ul>
+                </div>
+            </div>
+            <button type="button" class="collapsible">Day 5</button>
+            <div class="content">
+                <button type="button" class="collapsible">Practice</button>
+                <div class="content">
+                    <ul>
+                        <li><a onclick="setUrlDivs()">Divs with Display, Float, Overflow</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="collapsible">Assignment</button>
+                <div class="content">
+                    <ul>
+                        <li><a onclick="setUrlApp()">Basic App Layout</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="collapsible">Video Task</button>
+                <div class="content">
+                    <ul>
+                        <li><a onclick="setUrlVideoTaskDay5()">Task 1</a></li>
+                    </ul>
+                </div>
+            </div>
+            <button type="button" class="collapsible">Day 6</button>
+            <div class="content">
+                <button type="button" class="collapsible">Practice</button>
+                <div class="content">
+                    <ul>
+                        <li><a onclick="setUrlBoxFlex()">Box And Flex Model</a></li>
+                        <li><a onclick="setUrlGallery()">Image Gallery</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="collapsible">Assignment</button>
+                <div class="content">
+                    <ul>
+                        <li><a onclick="setUrlTutorial()">Tutorial Website</a></li>
+                        <li><a onclick="setUrlMenu()">Responsive Menu</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="main">
+            <iframe id="myFrame" style="border:1px solid black;">
+            </iframe>
+        </div>
+
+        <div class="footer">
+            <h1 class="center">Have Any Question?</h1>
+            <p>We're very approachable and would love to speak to you. 
+            Feel free to call, send us an email, Tweet us or simply complete the enquiry form.</p>
+        
+            <p>Email : adshindeaniket@gmail.com</p>
+            <p>Supported By : Aniket Shinde</p>
+            <p>Contact : +91 8140763107</p>
+        </div>
+    </div>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+
+        function setUrlAudioVideo(){
+            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/CSS/Day4/Aniket%20Shinde/Practice/audioandvideo.html";
+        }
+        function setUrlBorder(){
+            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/CSS/Day4/Aniket%20Shinde/Practice/borderPragraph.html";
+        }
+        function setUrlCities(){
+            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/CSS/Day4/Aniket%20Shinde/Practice/horizontalList.html";
+        }
+        function setUrlStudent(){
+            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/CSS/Day4/Aniket%20Shinde/Practice/StudentReportCardAlignment.html";
+        }
+        function setUrlUniversal(){
+            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/CSS/Day4/Aniket%20Shinde/Practice/UniversalSelectorAndElementSelector.html";
+        }
+        function setUrlResume(){
+            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/CSS/Day4/Aniket%20Shinde/Assignment/aniketShindeResume.html";
+        }
+        function setUrlVideoTaskDay4(){
+            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/CSS/Day4/Aniket%20Shinde/VideoTasks/videoTasks.html";
+        }
+
+
+        function setUrlMenu(){
+            document.getElementById("myFrame").src = "";
+        }
+        function setUrlTutorial(){
+            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/CSS/Day6/Aniket%20Shinde/Assignment/tutorialSite.html";
+        }
+        function setUrlBoxFlex(){
+            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/CSS/Day6/Aniket%20Shinde/Practice/boxAndFlexModels.html";
+        }
+        function setUrlGallery(){
+            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/CSS/Day6/Aniket%20Shinde/Practice/imageGalleryFlex.html";
+        }
+    </script>
+</body>
+</html>
