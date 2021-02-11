@@ -1,0 +1,220 @@
+
+
+<html>
+
+    <head>
+        <style>
+            #header {
+                background-color: black;
+                width: 100%;
+                height: 50px;
+                text-align: center;
+            }
+    
+            #sidebar-left {
+                float: left;
+            
+                background-color: yellow;
+                text-align: center;
+                height: 1093px;
+            }
+    
+            #main {
+                float: left;
+                width: 85%;
+                background-color: rgb(245, 136, 97);
+                text-align: center;
+            }
+    
+    
+            #footer {
+                clear: both;
+                height: 50px;
+                width: 100%;
+                text-align: center;
+                background-color: rgb(255, 112, 191);
+            }
+    
+            #sidebar-left,
+            #main {
+                min-height: 700px;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+              
+            }
+    
+            .navbar {
+                background-color: black;
+                border-radius: 30px;
+    
+            }
+    
+            .navbar ul {
+                overflow: auto;
+            }
+    
+            .navbar li {
+                float: left;
+                list-style: none;
+                margin: 13px 20px;
+    
+            }
+    
+            .navbar li a {
+                padding: 3px 3px;
+                text-decoration: none;
+                color: white;
+            }
+    
+            .navbar li a:hover {
+                color: red
+            }
+    
+            .search {
+                float: right;
+                color: white;
+                padding: 12px 75px;
+            }
+    
+            .navbar input {
+                border: 2px solid black;
+                border-radius: 14px;
+                padding: 3px 17px;
+                width: 129px;
+            }
+            .item1
+            {
+                height: 200px;
+                width: 196px;
+     
+            }
+            #s2
+            {
+                height: 400px;
+                width: 196px;
+            }
+    
+            @media (min-width: 0px) and (max-width: 480px) {
+            #s2 {
+                width: 30%;
+            }
+
+
+            #main {
+                width: 70%;
+            }
+        }
+
+
+        @media (min-width: 481px) and (max-width: 768px){
+            #s2
+            {
+             width: 20%;
+            }
+
+        
+            #main 
+            {
+            width: 80%;
+            }
+        }
+        @media (min-width: 769px) and (max-width: 1024px){
+            #s2 
+            {
+                height: 400px;
+                width: 192px;
+                width: 20%;
+            }
+            #sidebar-left
+            {
+                width: 20%;
+            }
+            #main 
+            {
+            width: 80%;
+            }
+        }
+      
+            
+        @media (min-width: 1025px) and (max-width: 5000px)
+        {
+            #s2
+            {
+                width: 15%;
+            }
+            #main 
+            {
+            width: 85%;
+            }
+           
+           
+        }
+            
+    
+        </style>
+    </head>
+    
+    <body>
+        <div id="header">
+            <nav class="navbar">
+            
+                <ul>
+                    <li><a href="#r1">HOME</a></li>
+                    <li><a href="htmlmenu.html">HTML</a></li>
+                    <li><a href="cssmenu.html">CSS</a></li>
+                    <li><a href="#r4">BOOTSTRAP</a></li>
+                    <div class="search">
+                        <input type="text" name="search" id="search" placeholder="Search this website">
+                    </div>
+                </ul>
+            </nav>
+        </div>
+        <div id="sidebar-left">
+         
+            <div id="s2" class="item1">CSS
+                <h3>Day4</h3>
+                <ul>
+                    <li>Practice Exercise
+                        <ol>
+                            <li><a href="../../Day4/Anuj Pal/Practice Exercise/Practice1.html" target="myframe">Exercise-1</a></li>
+                            <li><a href="../../Day4/Anuj Pal/Practice Exercise/Practice2.html" target="myframe">Exercise-2</a></li>
+                        </ol>
+                    </li>
+    
+                    <li>Assignment
+                        <ol>
+                            <li><a href="../../Day4/Anuj Pal/Assignment/assignment.html" target="myframe">Assignment1</a></li>
+                        </ol>
+                    </li>
+                </ul>
+    
+                <h3>Day5</h3>
+                <ul>
+                    <li>Practice Exercise
+                        <ol>
+                            <li><a href="../../Day5/Anuj Pal/Practice Exercise/practical1.html" target="myframe">Exercise1</a></li>
+                            <li><a href="../../Day5/Anuj Pal/Practice Exercise/practice2.html" target="myframe">Exercise2</a></li>
+                        </ol>
+                    </li>
+    
+                    <li>Assignment
+                        <ol>
+                            <li><a href="../../Day5/Anuj Pal/Assignments/assignment.html" target="myframe">Assignment1</a></li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+         
+            
+    
+        </div>
+        <div id="main">
+            <iframe src="exercice8.html" frameborder="0" name="myframe" height="100%" ></iframe>
+        </div>
+        <div id="footer">Footer</div>
+    </body>
+    
+    </html>
+    
+    
