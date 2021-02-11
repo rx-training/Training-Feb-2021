@@ -1,6 +1,10 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <style>
         #header {
             background-color: black;
@@ -9,7 +13,7 @@
             text-align: center;
         }
 
-        #sidebar-left {
+        /* #sidebar-left {
             float: left;
             width: 15%;
             background-color: yellow;
@@ -23,23 +27,25 @@
             background-color: rgb(245, 136, 97);
             text-align: center;
         }
-
+*/
 
         #footer {
-            clear: both;
+            position:fixed;
+            bottom: 0;
+            left:0;
             height: 50px;
             width: 100%;
             text-align: center;
             background-color: rgb(255, 112, 191);
         }
-
+/*
         #sidebar-left,
         #main {
             min-height: 700px;
             height: 100%;
             display: flex;
             flex-direction: column;
-        }
+        } */
 
         .navbar {
             background-color: black;
@@ -92,7 +98,7 @@
             width: 196px;
         }
 
-        @media (min-width: 0px) and (max-width: 480px) {
+        /* @media (min-width: 0px) and (max-width: 480px) {
             #s2 {
                 width: 30%;
             }
@@ -145,25 +151,22 @@
             }
            
            
-        }
+        } */
+        
             
-            
-        @media (min-width: 1201px) and (max-width: 5000px)
-        {
-            #s2
-            {
-                width: 20%;
-            }
-            #main 
+            /* #main 
             {
             width: 80%;
             }
-           
-           
-        }
+            #sidebar-left
+            {
+                width: 100%;
+            } */
+
             
         
     </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -181,14 +184,21 @@
             </ul>
         </nav>
     </div>
-    <div id="sidebar-left">
 
+    <!--container -->
 
+    <div class="container">
+        <div class="sidebar-left">
 
+            
+
+        </div>
+        <div class="main">
+            <iframe src="assignment2.html" frameborder="0" name="myframe" height="100%" width="100%"></iframe>
+        </div>
     </div>
-    <div id="main">
-        <iframe src="" frameborder="0" name="myframe" height="75%" width="75%"></iframe>
-    </div>
+   
+    <!-- footer -->
     <div id="footer">Footer</div>
 </body>
 
