@@ -1,4 +1,0 @@
-1. clone the repository in visual studio
-2. adding some data to make the commit and push
-3. adding some data onlinef rom
-

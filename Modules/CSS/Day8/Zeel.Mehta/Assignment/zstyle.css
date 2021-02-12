@@ -13,21 +13,13 @@
     }
   .d{
         font-size: 10ch;
-        position:absolute;
+        position:fixed;
         top: 10px;
         left: 130px;
-        background-image: linear-gradient(
-	to right,
-	#8f471d 0,
-       	#cb9b51 22%, 
-	#f6e27a 45%,
-	#f6f2c0 50%,
-	#f6e27a 55%,
-	#cb9b51 78%,
-	#462523 100%	);
-  color:transparent;
-   
-        
+        color: white;    
+        height: 100%;
+        width: 100%;    
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
   li{
         float: left;
@@ -51,16 +43,18 @@
     }
   .sidenav {
         height:100%;
-        width: auto;
-        position: absolute;
-        z-index: 1;
+        width: 100%;
+        position: fixed;
+        
         top: 50;
         left: 15;
         background-color: #111;
         overflow-x: hidden;
         padding-top: 20px;
         color: rgb(126, 69, 23);
-        font-size: 22px;                
+        font-size: 22px;      
+        display: flex;
+    flex-wrap: wrap;          
     }
   .sidenav a {
         padding: 6px 8px 6px 16px;
@@ -73,20 +67,25 @@
         color: #f1f1f1;              
     }
   .a{
-        position: relative;
-        top: 0pc;
-        left: 12pc;
-        width:max-content;
+        position: fixed;
+        top: 180px;
+        left: 150px;
+        
+        height: 100%;
+        right:0;
+    
     }
+    
+  }
+     
   footer {
         text-align: center;
         padding: 3px;
         background-image: linear-gradient(black,rgb(54, 54, 54),black);
         color: white;
         position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-        
+        left: 0;
+        bottom: 0;
+        width: 100%;
     }
-      
+    

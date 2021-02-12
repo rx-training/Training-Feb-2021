@@ -1,2 +1,0 @@
-using cmd commands for github repository
-updating file for pull request

@@ -103,19 +103,7 @@ body{
 
 
 @media (max-width:800px){
-    .navbar .logo{
-        width: 100%;
-        flex-direction: row;
-    }
-    .navbar .navlist{
-        width: 100%;
-    }
-    .navbar .navlist > div{
-        flex:100%;
-    }
-    .menu .sidebar{
-        display: none;
-    }
+    
     .menu .menubar{
         width: 100%;
         height: 100%;
