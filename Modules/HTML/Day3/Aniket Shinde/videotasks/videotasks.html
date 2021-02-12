@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Practice</title>
     <style>
-        input{width: 200px;}
-        input[type="submit"]{ margin-left: auto; margin-right: auto;}
+        input{​​​​​​​width: 200px;}​​​​​​​
+        input[type="submit"]{​​​​​​​ margin-left: auto; margin-right: auto;}​​​​​​​
     </style>
 </head>
 <body>
@@ -15,7 +15,7 @@
         <table>
             <tr>
                 <td><label for="pincode">Pincode :</label></td>   
-                <td><input type="text" name="pincode" pattern="[0-9]{6}" title="Please enter 6 digit code"></td>
+                <td><input type="text" name="pincode" pattern="[0-9]{​​​​​​​6}​​​​​​​" title="Please enter 6 digit code"></td>
             </tr>
             <tr>
                 <td><label for="month">Select Month :</label></td>   
@@ -51,15 +51,17 @@
         
     </form>
 
- 
 
     <script>
         var range = document.getElementById("range");
         var rangeValue = document.getElementById("rangevalue");
         rangeValue.innerHTML = range.value;
-        range.oninput = function() {
+        range.oninput = function() {​​​​​​​
             rangeValue.innerHTML = this.value;
-        }
+        }​​​​​​​
     </script>
 </body>
 </html>
+
+
+
