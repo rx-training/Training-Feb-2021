@@ -11,23 +11,23 @@
     </style>
 </head>
 <body>
-    <form method="get" id="myform">
+    <form method="get">
         <table>
             <tr>
                 <td><label for="pincode">Pincode :</label></td>   
-                <td><input type="text" name="pincode" pattern="[0-9]{6}" title="Please enter 6 digit code" required></td>
+                <td><input type="text" name="pincode" pattern="[0-9]{6}" title="Please enter 6 digit code"></td>
             </tr>
             <tr>
                 <td><label for="month">Select Month :</label></td>   
-                <td><input type="month" name="month" required></td>
+                <td><input type="month" name="month"></td>
             </tr>
             <tr>
                 <td><label for="time">Select Time :</label></td>   
-                <td><input type="time" name="time" required></td>
+                <td><input type="time" name="time"></td>
             </tr>
             <tr>
                 <td><label for="week">Select Week :</label></td>   
-                <td><input type="week" name="week" required></td>
+                <td><input type="week" name="week"></td>
             </tr>
             <tr>
                 <td><label for="range">Select Range :</label></td>   
@@ -50,8 +50,8 @@
         </table>
         
     </form>
-    <label for="other">Out of Form</label>
-    <input type="text" name="other" form="myform" required>
+
+ 
 
     <script>
         var range = document.getElementById("range");
