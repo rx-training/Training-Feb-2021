@@ -37,7 +37,7 @@ clear: both;
 footer
 {
     grid-area: footer;
-    background-color: rgb(16, 63, 7);
+    background-color: transparent;
 }
 .navbar {
     background-color: black;
