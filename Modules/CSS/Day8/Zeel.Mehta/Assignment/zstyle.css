@@ -1,36 +1,32 @@
 
-    .h{
-        background-color:black;
-        border: 5px solid;
-        
-
-        
-        
-    }
-    body{
-      background-color: black;
-      
-    }
-  .d{
-        font-size: 10ch;
-        position:fixed;
-        top: 10px;
-        left: 130px;
-        color: white;    
-        height: 100%;
-        width: 100%;    
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
-  li{
-        float: left;
-    }
-  ul{
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #333;
-    }
+body{
+    background-color: black; 
+}  
+header{
+    background-color:black;
+}
+header .logo{
+    font-size: 10ch;
+    position:fixed;
+    top: 10px;
+    left: 130px;
+    color: white;    
+    width: 100%;    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.nav{
+    background-color: black;
+}
+li{
+    float: left;
+}
+ ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
   li a {
         display: block;
         color: white;
@@ -41,43 +37,35 @@
   li a:hover {
         background-color: #111;
     }
-  .sidenav {
+  .sidebar {
         height:100%;
         width: 100%;
         position: fixed;
-        
-        top: 50;
-        left: 15;
+        top: 150px;
         background-color: #111;
         overflow-x: hidden;
         padding-top: 20px;
-        color: rgb(126, 69, 23);
+        color: rgb(71, 71, 71);
         font-size: 22px;      
         display: flex;
-    flex-wrap: wrap;          
+        z-index: -1;         
     }
-  .sidenav a {
-        padding: 6px 8px 6px 16px;
-        text-decoration: none;
+  .sidebar frame {
         font-size: 22px;
-        color: #818181;
-        display: block;
+        display: flex;
     }
-  .sidenav a:hover {
+  .sidebar frame:hover {
         color: #f1f1f1;              
     }
-  .a{
+  .frame{
         position: fixed;
-        top: 180px;
-        left: 150px;
-        
+        top: 170px;
+        left: 160px;
         height: 100%;
         right:0;
+        background-color: black;
     
-    }
-    
-  }
-     
+    }   
   footer {
         text-align: center;
         padding: 3px;
