@@ -1,3 +1,4 @@
+
 .container
 {
     display: grid;
@@ -37,7 +38,7 @@ clear: both;
 footer
 {
     grid-area: footer;
-    background-color: transparent;
+    background-color: tra;
 }
 .navbar {
     background-color: black;
