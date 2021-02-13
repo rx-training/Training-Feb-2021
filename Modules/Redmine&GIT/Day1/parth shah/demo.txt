@@ -4,4 +4,3 @@ now i am going to learn push function
 dont considered this file this is just a demo 
 i will send assighnment through new file
 ohk now here i m checking from local side that it going to push again or not 
-checking push again and send it to remote area.

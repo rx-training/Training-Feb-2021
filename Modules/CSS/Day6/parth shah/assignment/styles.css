@@ -1,0 +1,111 @@
+*{
+    padding :0;
+    margin: 0;
+}
+#wrapper{
+    border: solid black;
+    padding: 10px;
+}
+#header{
+    height: 110px;
+    background-color: rgb(115, 121, 120);
+  
+    
+}
+#parth{
+    height: 50px;
+    width: 130px;
+    position: absolute;
+    top : 12px;
+}
+#nav{
+    
+    background-color: rgb(156, 73, 80);
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#nav a:hover,a:hover{
+    background-color: white;
+}
+#container{
+    
+    margin-top: 10px;
+}
+#container::after {content:" ";display:block ; clear:both}
+
+#left{
+    width :25%;
+    height: 600px;
+    background-color: rgb(230, 183, 139);
+    float: left;
+
+  
+}
+#right{
+    float: right;
+    width:74%;
+    height: 600px;
+    background-color: rgb(88, 87, 78);
+  
+}
+#footer{
+    height: 60px;
+    background-color: rgb(61, 52, 54);
+    margin-top: 10px;
+    text-align: center;
+    padding-top: 40px;
+}
+h2{
+    font-size: xx-large;
+    text-align: center;
+    
+   
+}
+a{
+    font-size: xx-large;
+    color: rgb(8, 8, 8);
+    
+    padding: 5px;
+}
+.head{
+    font-size: xx-large;
+
+}
+.about{
+    font-size: x-large;
+}
+ul{
+    list-style-type: none;
+    font-size: x-large;
+    color: rgb(8, 8, 8);
+    font-weight: 400;
+    padding: 30px;
+    
+}
+.css{
+    font-size: 150%;   
+
+}
+.html{
+    font-size: 200%;
+}
+.leftdiv{
+    font-size: x-large;
+
+
+}
+@media ( max-width:600px)
+{
+    #left{
+        width: 100%;
+    }
+    #right{
+        width: 100%;
+    }
+    #nav a{
+        width: 100%;
+        padding: 50px;
+        display: block;
+    }
+}
