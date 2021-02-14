@@ -1,0 +1,4 @@
+using visual studio to clone project.
+adding file and pushing on remote
+editing file from github
+pulling to local using visual studio
