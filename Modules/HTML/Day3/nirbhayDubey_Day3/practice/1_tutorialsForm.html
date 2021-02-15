@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: arial;
+            font-size:1.4vw;
+        }
+        body{
+            background-color: #fff;
+        }
+        form{
+            margin:0 auto;
+            width:90vw;
+            border: 2px solid #afa6a6;
+            border-radius:1vw;
+            padding:1vw;
+        }
+        input{
+            margin: 1vw;
+        }
+    </style>
+</head>
+<body>
+    
+    <form id="myForm" method="get" action="#">
+        <label for="date-input">Choose a Date:</label>
+        <input type="date" id="date-input">
+        <label for="month-input">Select a month:</label>
+        <input type="month" name="" id="month-input"><br>
+        <label for="week-input">Select a week:</label>
+        <input type="week" name="" id="week-input">
+        <label for="time-input">Enter a time:</label>
+        <input type="time" name="" id="time-input"><br>
+        <label for="range-input">Range:</label>
+        <input type="range" name="" id="range-input" min="1" max="10" value="0">
+        <label for="search-input">Search:</label>
+        <input type="search" name="" id="search-input"><br>
+        <label for="tel-input">Telephone:</label>
+        <input type="tel" name="utel" id="tel-input" pattern="[0-9]{10}" required>
+        <label for="email-input">Email:</label>
+        <input type="email" name="uemail" id="email-input" required><br>
+        <label for="color-input">Select color:</label>
+        <input type="color" name="" id="color-input" value="#11ffff">
+        <label for="list-input">Data List:</label>
+        <input type="text" name="" id="list-input" list="mydatalist">
+        <datalist id="mydatalist">
+            <option label="Mr." value="Mr."></option>
+            <option label="Mrs." value="Mrs."></option>
+            <option label="Ms." value="Ms."></option>
+        </datalist><br>
+        <label for="progress-input">Progress Bar:</label>
+        <progress id="progress-input" max="10" value="3"></progress>
+        <label for="meter-input">meter:</label>
+        <meter id="meter-input" value="60" low="20" high="70" optimum="50" min="10" max="100"></meter>
+        <br><br>
+        <input type="submit" value="submit">
+    </form>
+
+    <label for="outside-input" style="margin-left:4vw;">Other text:</label>
+    <input type="text" name="uother" id="outside-input" form="myForm">
+
+</body>
+</html>

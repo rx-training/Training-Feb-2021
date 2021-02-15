@@ -1,0 +1,19 @@
+git has installed first in the laptop only then this process is been taken
+
+https://github.com/sharma82shubh/Training-Feb-2021
+click on fork button
+username > traning2020
+code need to copy fron git code to clone 
+copyied the URL
+created the folder in the system to clone the repsotry
+move into that folder
+folder explorer URL write CMD
+writed the command :- git clone (paste the url here)
+move into that folder with cd traning2021
+type code ;- code . to open the folder into vs code
+create new folder in redminegit-->Day1-->DEMO
+selected the source control from the 3rd option into folder
+watched the changes commit remarks with issues in redminegit
+clicked on the commit button to make the changes
+the clone has been created in the following manner
+heool
