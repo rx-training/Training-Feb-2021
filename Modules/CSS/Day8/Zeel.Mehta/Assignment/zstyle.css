@@ -1,21 +1,27 @@
 
 body{
-    background-color: black; 
+    background-color:black;
+    display: grid;
 }  
 header{
     background-color:black;
+    display: grid;
+}
+.grid-container{
+    display: grid;
 }
 header .logo{
     font-size: 10ch;
     position:fixed;
-    top: 10px;
-    left: 130px;
+    top: 15px;
+    left: 120px;
     color: white;    
     width: 100%;    
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .nav{
     background-color: black;
+    border: 1px solid rgb(20, 20, 20);
 }
 li{
     float: left;
@@ -41,10 +47,10 @@ li{
         height:100%;
         width: 100%;
         position: fixed;
-        top: 150px;
+        top: 140px;
         background-color: #111;
         overflow-x: hidden;
-        padding-top: 20px;
+        
         color: rgb(71, 71, 71);
         font-size: 22px;      
         display: flex;
@@ -59,12 +65,12 @@ li{
     }
   .frame{
         position: fixed;
-        top: 170px;
+        top: 160px;
         left: 160px;
         height: 100%;
         right:0;
         background-color: black;
-    
+        
     }   
   footer {
         text-align: center;

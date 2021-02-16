@@ -1,0 +1,14 @@
+.text-danger
+{
+    font-family: 'Princess Sofia',cursive;
+    color: #e5904d!important;
+    text-shadow: 1px 1px black;
+}
+
+#s1_header{background: #1e1109;}
+#s2_trio{background: #fefaf7;}
+#s3_painting_of_the_week{background: #26221f;}
+#s4_about{background: #f0e9d7;}
+#s5_prints{background: #fefaf7;}
+#s6_paintings{background: #101014;}
+#s7_drawing{background: #f0e9d7;}
