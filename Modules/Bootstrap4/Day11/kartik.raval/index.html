@@ -14,7 +14,27 @@
     <title>La Galerie d'art de Rembrandt</title>
 </head>
   <body id="top" class="bg-dark">
-
+    <!--00 Navbar-->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand text-danger" href="#top">La Galeria d'art de Rembrandt</a>
+            <button class="navbar-toggler navbar-toogler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle Navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-items"><a href="#s2_trio" class="nav-link">Works</a></li>
+                    <li class="nav-items"><a href="#s3_painting_of_the_week" class="nav-link">Highlighted Painting</a></li>
+                    <li class="nav-items"><a href="#s4_about" class="nav-link">About</a></li>
+                    <li class="nav-items"><a href="#s5_prints" class="nav-link">Prints</a></li>
+                    <li class="nav-items"><a href="#s6_paintings" class="nav-link">Paintings</a></li>
+                    <li class="nav-items"><a href="#s7_drawings" class="nav-link">Drawings</a></li>
+                    <li class="nav-items"><a href="#s8_contact" class="nav-link">Contact</a></li>
+                    <li class="nav-items"><a href="#s9_footer" class="nav-link">Info</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <!--s1_header-->
     <section id="s1_header">
             <aside class="container">
@@ -58,7 +78,7 @@
     <section class="text-center py-5" id="s3_painting_of_the_week">
         <div class="container p-4">
             <h1 class="text-danger">Highlighted Painting</h1>
-            <img class="img-fluid my-3 border border-light" src="img/s3-painting-of-the-week-Rembrandt_castello_sulla_riva_1640-1650.png" alt="Painting of the week">
+            <img class="img-fluid my-3 border border-light" src="img/s3-painting-of-the-week-Rembrandt_castello_sulla_riva_1640-1650.png" alt="Painting of the week" style="border-width: 3px!important;"> 
             <p class="text-white">Castle Overlooking a River (circa 1645)
             </p>
         </div>
@@ -107,7 +127,7 @@
             <h1 class="text-danger">Paintings</h1>
             <aside>
                 <div class="my-paintings-container my-paintings-area my-cursor">
-                    <div class="painting-1"></div>
+                    <div class="painting-1" data-toggle="modal" data-target="#painting1"></div>
                     <div class="painting-2"></div>
                     <div class="painting-3"></div>
                     <div class="painting-4"></div>
@@ -144,7 +164,7 @@
                 <img class="img-fluid" src="img/drawings-img/drawings-thumbs/the-entombment_1630-thumb.jpg" alt="">
                 <img class="img-fluid" src="img/drawings-img/drawings-thumbs/woman-carrying-a-child-downstairs_circa-1636-thumb.jpg" alt="">
 
-                <img class="img-fluid my-bk-image" src="img/interface-imgs/s7-drawing.png" alt="">
+                <img class="img-fluid my-bk-image drawing-img" src="img/interface-imgs/s7-drawing.png" alt="">
             </div>
         </div>
     </section>
@@ -167,19 +187,23 @@
     </section>
     <!--s9_footer-->
     <section class="text-white" id="s9_footer">
-        <div class="container">
-            <aside>
+        <div class="container s9_footer_grid py-5">
+            <aside class="footer_hours py-5" style="grid-area: footer_hours;">
                 <h1 class="text-danger h3">La Galerie d'art de Rembrandt</h1>
-                <p> Tuesday - Friday: 10:00 am - 5:00 pm
-                    Saturday: 10:00 am - 3:00 pm
-                    Closed Sundays and Mondays
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-linkedin-in"></i>
-                    <i class="fab fa-instagram"></i>
-                </p>
+                <p> Tuesday - Friday: 10:00 am - 5:00 pm <br>
+                    Saturday: 10:00 am - 3:00 pm <br>
+                    Closed Sundays and Mondays </p>
+
+                    <div class="btn-toolbar" role="toolbar" aria-label="Social Media Buttons">
+                        <div class="btn-group m-2 btn-group-sm">
+                            <button type="button" class="btn btn-info"><i class="fab fa-facebook"></i></button>
+                            <button type="button" class="btn btn-info"><i class="fab fa-twitter"></i></button>
+                            <button type="button" class="btn btn-info"><i class="fab fa-linkedin-in"></i></button>
+                            <button type="button" class="btn btn-info"><i class="fab fa-instagram"></i></button>
+                        </div>
+                    </div>
             </aside>
-            <aside>
+            <aside class="footer_menu py-5" style="grid-area: footer_menu;">
                 <h1 class="text-danger h3">Menu</h1>
                 <ul class="list-unstyled">
                     <li>Home</li>
@@ -189,10 +213,10 @@
                     <li>Prints</li>
                     <li>Paintings</li>
                     <li>Drawings</li>
-                    <li>Contacts/li>
+                    <li>Contacts</li>
                 </ul>
             </aside>
-            <aside>
+            <aside class="footer_museum py-5" style="grid-area: footer_museum;">
                 <h1 class="text-danger h3">Some Museums Showing Rembrandts</h1>
                 <ul class="list-unstyled">
                     <li>Hermitage Museum</li>
@@ -207,7 +231,7 @@
                     <li>The Metropolitan Museum of Art</li>
                 </ul>
             </aside>
-            <aside>
+            <aside class="footer_painting_names py-5" style="grid-area: footer_painting_names;">
                 <h1 class="text-danger h3">Painting names</h1>
                 <ul class="list-unstyled">
                     <li>Self Portrait As A Young Man</li>
@@ -222,7 +246,7 @@
                     <li>The Naughty Child</li>
                 </ul>
             </aside>
-            <aside>
+            <aside class="footer_links py-5" style="grid-area: footer_links;">
                 <h1 class="text-danger h3">Other links</h1>
                 <ul class="list-unstyled">
                     <li>Complete Self Portraits</li>
@@ -235,7 +259,7 @@
                     <li>About the Etchings</li>
                 </ul>
             </aside>
-            <aside>
+            <aside class="footer_img py-5" style="grid-area: footer_img;">
                 <img class="img-fluid" src="img/interface-imgs/s9-footer-drawing.jpg" alt="">
             </aside>
         </div>
@@ -254,18 +278,34 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
-    $(document).ready(function(){
-        $('a[href^="#"]').on('click',function(e)
-            {e.preventDefault();
-            var target=this.hash,
-            $target = $(target);
-                $('html,body').stop().animate({
-                    'scrollTop':$target.offset().top
-                }, 900, 'swing', function(){
-                    window.location.hash = target;
+        $(document).ready(function(){
+            $('a[href^="#"]').on('click',function (e) {e.preventDefault();
+    
+                var target = this.hash,
+                $target = $(target);
+    
+                $('html, body').stop().animate({
+                    'scrollTop': $target.offset().top
+                }, 900, 'swing', function () {
+                window.location.hash = target;
                 });
             });
         });
     </script>
+    <!-----------------Painting1---------------------->
+    <div class="modal fade" id="painting1" tabindex="1" role="dialog" aria-labelledby="Rembrandt Painting 1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <div class="modal_header">
+                <button class="close" type="button" data-dismiss="modal" aria-label="close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="img/paintings-img/1920px-P1150002_Cognacq-Jay_Rembrandt_anesse_de_Balaam_rwk.jpg" class="img-fluid" alt="">
+            </div>
+        </div>
+        </div>
+    </div>
   </body>
 </html>

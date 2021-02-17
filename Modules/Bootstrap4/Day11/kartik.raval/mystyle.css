@@ -155,9 +155,24 @@
     outline: none;
 }
 #s6_paintings aside{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+   grid-template-columns: 1fr;
+   grid-template-rows: 1fr;
+   grid-template-areas: 
+   "my-paintings-area"
+   "windmill";
 }
+.my-paintings-area{
+    grid-area: my-paintings-area;
+}
+.windmill{
+    grid-area:windmill
+}
+@media (max-width:576px){
+    .windmill{
+    display: none;
+    }
+}
+
 #s6_paintings .windmill{
     width: 60%;
     justify-self: end;  
@@ -231,6 +246,11 @@
     grid-area: ten;
 }
 /*--s7_drawings--*/
+@media (max-width:576px){
+    .drawing-img{
+        display: none;
+    }
+}
 /*--s8_contact--*/
 .contact-copy{
     grid-area: contact-copy;
@@ -290,4 +310,67 @@
     
 }
 /*--s9_footer--*/
+.s9_footer_grid{
+    font-size: small;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, auto);
+    grid-gap:10px;
+    grid-template-areas: 
+    "footer_hours"
+    "footer_menu"
+    "footer_museum"
+    "footer_painting_names"
+    "footer_links"
+    "footer_img";
+}
+.footer_museum h1{
+    text-align: center;
+}
+
+.footer_museum, .footer_links{
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.footer_img{
+    width:50%;
+    justify-self: flex-end;
+}
+.footer_hours{
+    text-align: left;
+}
+@media (max-width:767px){
+    .footer_menu, .footer_museum, .footer_painting_names, .footer_links{
+        border-top: 1px dashed black;
+        padding-top: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .footer_img{
+        transform: scaleX(-1);
+    }
+    .footer_hours{
+        text-align: center;
+    }
+}
+
+@media (min-width:768px){
+    .s9_footer_grid{
+        font-size: initial;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "footer_hours footer_img"
+        "footer_menu footer_museum"
+        "footer_painting_names footer_links"
+        ;
+    }
+    .footer_museum, .footer_links, .footer_links h1{
+        flex:none;
+        padding-top: 0;
+        text-align: left;
+    }
+}
 /*--s10_copyright--*/
