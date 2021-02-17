@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Collapse</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="display-3 text-center my-4">Basic Typography</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="dropdown">
+                <button class="btn btn-primary btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                    2: Utilities
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="Typography.html">2.2 Basic Typography</a>
+                    <a class="dropdown-item" href="Text_alignment_and_display.html">2.3 Text Alignment & Display</a>
+                    <a class="dropdown-item" href="Floats position.html">2.4 Floats & Position</a>
+                    <a class="dropdown-item" href="Color.html">2.5: Colors & Background</a>
+                    <a class="dropdown-item" href="Spacing.html">2.6 Spacing</a>
+                    <a class="dropdown-item" href="Sizing.html">2.7 Sizing</a>
+                    <a class="dropdown-item" href="break point.html">2.8 Breakpoints</a>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="dropdown">
+                <button class="btn btn-success btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                    3: CSS Components
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="Button.html">3.2 Buttons</a>
+                    <a class="dropdown-item" href="navbar.html">3.3 Navbar</a>
+                    <a class="dropdown-item" href="listgroups_badges.html">3.4 List Groups & Badges</a>
+                    <a class="dropdown-item" href="form.html">3.5 Forms</a>
+                    <a class="dropdown-item" href="input groups.html">3.6 Input Groups</a>
+                    <a class="dropdown-item" href="Alert and Progess Bar.html">3.7 Alerts & Progress</a>
+                    <a class="dropdown-item" href="Table And Pagination.html">3.8 Tables & Pagination</a>
+                    <a class="dropdown-item" href="Card.html">3.9 Cards</a>
+                    <a class="dropdown-item" href="Media Object.html">3.10 Media Objects</a>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="dropdown">
+                <button class="btn btn-warning btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                    4: Grid & Flexbox
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="Grid System.html">4.2 Grid System</a>
+                    <a class="dropdown-item" href="Grid Alignment.html">4.3 Grid Alignment</a>
+                    <a class="dropdown-item" href="Flex Box.html">4.4 Flexbox</a>
+                    <a class="dropdown-item" href="Auto Margin Wrapping Order.html">4.5 Auto Margins & Wrap</a>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="dropdown">
+                <button class="btn btn-danger btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                    5: JavaScript Widgets
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="Carousel.html">5.2 Carousel</a>
+                    <a class="dropdown-item" href="Collapse.html">5.3 Collapse</a>
+                    <a class="dropdown-item" href="Tool tips.html">5.4 Tooltips</a>
+                    <a class="dropdown-item" href="Popovers.html">5.5 Popovers</a>
+                    <a class="dropdown-item" href="Models.html">5.6 Modals</a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </header>
+
+  <div class="container">
+    <button class="btn btn-primary d-block mb-4" data-toggle="collapse" data-target="#collapse-btn-1">Read
+      More</button>
+    <div class="collapse mb-5" id="collapse-btn-1">
+      <div class="card">
+        <div class="card-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis voluptates cum dicta
+          necessitatibus at, nesciunt atque dolor modi libero sapiente doloremque iste voluptatem sunt,
+          blanditiis quis nihil ab tenetur dolores?
+        </div>
+      </div>
+    </div>
+
+    <!-- accordion -->
+    <div id="accordion" role="tablist">
+      <div class="card">
+        <div class="card-header" role="tab" id="heading">
+          <h5 class="mb-0"><a data-toggle="collapse" href="#collapse1">Collapse
+              First</a></h5>
+        </div>
+        <div id="collapse1" class="collapse show" data-parent="#accordion">
+          <div class="card-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente dolor autem ea rerum,
+            accusamus quia expedita earum officiis dolorum excepturi eaque exercitationem porro fuga
+            recusandae qui obcaecati perferendis temporibus. Dolores.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" role="tab" id="heading">
+          <h5 class="mb-0"><a data-toggle="collapse" href="#collapse2">Collapse
+              Two</a></h5>
+        </div>
+        <div id="collapse2" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente dolor autem ea rerum,
+            accusamus quia expedita earum officiis dolorum excepturi eaque exercitationem porro fuga
+            recusandae qui obcaecati perferendis temporibus. Dolores.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" role="tab" id="heading">
+          <h5 class="mb-0"><a data-toggle="collapse" href="#collapse3">Collapse
+              Third</a></h5>
+        </div>
+        <div id="collapse3" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente dolor autem ea rerum,
+            accusamus quia expedita earum officiis dolorum excepturi eaque exercitationem porro fuga
+            recusandae qui obcaecati perferendis temporibus. Dolores.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 500px;"></div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
