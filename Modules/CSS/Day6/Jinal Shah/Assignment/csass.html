@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+
+    <style>
+
+        * {
+                box-sizing: border-box;
+        }
+
+        #header{
+            background-color: black;
+            
+            color: blanchedalmond;
+        }
+
+        #header1{
+            background-color:black;
+            text-align: center;
+            color: blanchedalmond;
+        }
+
+        #sidebar-left{
+            float:left;
+            width:15%;
+            background-color:cadetblue;
+            height: 500px;
+            padding: 20px;
+            font-size: medium;
+            
+        }
+
+        #sidebar-left1{
+            float:left;
+            width:15%;
+            background-color:red;
+            height: 500px;
+            padding: 20px;
+            font-size: larger;
+    
+        }
+        
+        #main{
+            float:left;
+            width:85%;
+            background-color: white;
+            height: 500px;
+            font-size: 15px;
+            color: black;
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+
+        footer{
+            background-color: black;
+            text-align: center;
+            width: 100%;
+            padding: 20px;
+            color: blanchedalmond;
+            font-size: large;
+            padding-top: 20px;  
+            overflow-x: hidden;
+        }
+        footer.abc{
+            height: 20%;
+        }
+        
+        #header ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color:black;
+        }
+
+        #header li {
+            float: left;
+        }
+
+        #header li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 20px;
+                margin-left: 130px;
+                text-decoration: none;
+        }        
+       
+        #sidebar-left1 a{
+            color: cornsilk;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div>
+        <div id="header">
+            
+            <ul>
+                <li><img src="logo.jpg" style="width:50px; height:50px; "></li>
+                <li><a href="day3.html">HTML</a></li>
+                <li><a href="day4.html">CSS</a></li>
+            </ul>
+            
+            
+        </div>
+        <div id="sidebar-left">
+            <h3>Day 4</h3>
+            <h4>Practice</h4>
+              <ul>
+                  <li><a href="cpra1.html">Practice 1</a></li>
+                  <li><a href="cpra2.html">Practice 2</a></li>
+                  <li><a href="cpra3.html">Practice 3</a></li>
+                  <li><a href="cpra4.html">Practice 4</a></li>
+                  <li><a href="cpra5.html">Practice 5</a></li>
+              </ul>
+              <h4><a href="cass.html">Assignment</a></h4>
+              <h3>Day 5</h3>
+            <h4>Practice</h4>
+              <ul>
+                  <li><a href="cspra1.html">Practice 1</a></li>
+                  <li><a href="cspra2.html">Practice 2</a></li>
+                  <li><a href="cspra3.html">Practice 3</a></li>
+                  
+              </ul>
+              <h4><a href="csass.html">Assignment</a></h4>
+        </div>
+        <div id="main">
+            <div id="header1">
+                <img src="apple.jpg" style="width:70px; height:50px; padding-left: 18px;">
+            </div>
+            <div id="sidebar-left1">
+                <a href="https://www.apple.com/in/">Home</a><br/><br/><br/>
+                <a href="https://www.apple.com/in/newsroom/">About Us</a><br/><br/><br/>
+                <a href="https://support.apple.com/en-in/contact">Contact Us</a>    
+            </div>
+            <div id="main">Main</div>
+            <footer><div class="xyz">Footer</div></footer>
+        </div>
+        <footer><div class="abc">Footer</div></footer>
+    </div>
+</body>
+</html>

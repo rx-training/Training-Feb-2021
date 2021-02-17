@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(to bottom right,#350d3f,#2a3a5f,#1e6c83,#0faaae);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        form{
+            border-radius: 5px;
+            box-shadow: 2px 2px 15px;
+            background: transparent;
+            width:40vw;
+            color: white;
+            font-size: 1.3vw;
+            font-family: Arial, Helvetica, sans-serif;
+            margin:7vw auto;
+            padding:3vw;
+        }
+        input{
+            font-size:1vw;
+            border-style: none;
+            outline-style: none;
+            border-bottom: 1px solid white;
+            background: none;
+            color: white;
+            padding:0.5vw;
+            text-align: center;
+        }
+        input[type="submit"]{
+            margin-top: 2vw;
+            font-size:1.3vw;
+            outline-style: none;
+            border:2px solid white;
+            border-radius: 10px;
+            background: transparent;
+            color:white;    
+            width:12vw;
+            padding:0.5vw;
+        }
+        input[type="reset"]{
+            font-size:1.3vw;
+            border:2px solid white;
+            border-radius: 10px;
+            outline-style: none;
+            background: white;
+            color:#2a3a5f;    
+            width:12vw;
+            padding:0.5vw;
+        }
+        ::placeholder{
+            color: rgb(196, 193, 193);
+            text-align: center;
+        }
+        input[type="submit"]:hover{
+            background:white;
+            color:#2a3a5f;
+        }
+        input[type="reset"]:hover{
+            background:rgb(231, 230, 230);
+            color:#2a3a5f;
+        }
+        select{
+            border:1px solid white;
+            border-radius: 10px;
+            outline-style: none;
+            color:#2a3a5f;
+            height:2vw;
+        }
+    </style>
+</head>
+<body>
+        <form action="../practice/3_loginForm.html" method="post">
+            <p style="font-size:2vw;font-weight: 600;">Register Yourself,</p><br>
+            <input type="text" name="uname" placeholder="Enployee name" required/>
+            <input type="email" name="uemail" placeholder="Email-Id" required/><br><br>
+            <b>Gender :</b> Male<input type="radio" name="gender"> Female<input type="radio" name="gender"><br><br>
+            <input type="text" name="udesig" placeholder="Designation" required/>
+            <input type="text" name="usalary" placeholder="Salary" required/><br><br>
+            <b>Age :</b><input type="number" name="uage" style="width:4vw;" required>
+            <br><br>
+            <b >Location :</b>
+            <select name="location"> 
+                <option value="0"> --- </option>
+                <option value="1">Ahmedabad</option>
+                <option value="1">Gandhinagar</option>
+                <option value="1">Baroda</option>
+                <option value="1">Surat</option>
+                <option value="1">Anand</option>
+            </select><br><br>
+            <b>Date of Joining :</b><input type="date" name="udoj" required><br><br>
+            <b>Contact :</b><input type="text" name="ucontact" placeholder="Enter contact number" required>
+            <br><br>
+            <input type="submit" value="Sign In" />
+            <input type="reset" value="Reset"  />
+        </form>
+</body>
+</html>
+
+<!-- change somthing to commit day3 task REFS: #53 and fixes #50 -->

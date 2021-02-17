@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        .Container1{
+            display: flex;
+            border: 20px solid grey;
+            padding: 20px;
+            margin: 30px;
+            color: khaki;
+        }
+        .Container1 div{
+            background-color:blueviolet;
+            color: white;
+            text-align: center;
+            width: 200px;
+            margin: 10px;
+            padding: 40px;
+        }
+        .Container2{
+            display: flex;
+            border: 20px solid rosybrown;
+            padding: 20px;
+            margin: 30px;
+            color:saddlebrown;
+            font-size: x-large;
+            flex-direction: row-reverse;
+        }
+        .Container2 div{
+            background-color:yellowgreen;
+            color: white;
+            text-align: center;
+            width: 200px;
+            margin: 10px;
+            padding: 40px;
+            flex: auto;
+            flex-direction: row-reverse
+        }
+        h3{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h3>Four flex items</h3>
+    <div class="Container1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+    <br><br>
+    <h3>Three flex items from right to left</h3>
+    <div class="Container2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>
