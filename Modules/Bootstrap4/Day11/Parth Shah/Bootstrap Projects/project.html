@@ -17,9 +17,10 @@
    </head>
    <body id="top" class="bg-dark">
       <!---s0_navbar--->
-      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark py-2">
           <div class="container">
-              <a class="navbar-brand text-danger" href="#top">La Galerie d'art de Rembrandt</a>
+              <a class="navbar-brand text-light" href="#top">La Galerie d'art de Rembrandt</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" 
             data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
             aria-expanded="false" aria-label="#ToggleNavigation">
@@ -29,7 +30,9 @@
 
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-items"><a href="#s2_trio" class="nav-link">Works</a></li>
+            <li class="nav-items">
+                <a href="#s2_trio" class="nav-link">Works</a>
+            </li>
             <li class="nav-items"><a href="#s3_painting_of_the_week" class="nav-link">Highlighted Paintings</a></li>
             <li class="nav-items"><a href="#s4_about" class="nav-link"> About</a></li>
             <li class="nav-items"><a href="#s5_prints" class="nav-link">Prints</a></li>
@@ -63,7 +66,7 @@
                 #s1_header aside{
                     text-align: center;
                     grid-column: 2/4;
-                    grid-row: 1/2; 
+                    grid-row: 5/6; 
                     
                 }
                 @media (max-width: 992px){
@@ -190,7 +193,7 @@
                 <h1 class="text-danger">Painting</h1>
                 <aside>
                     <div class="my-paintings-container my-paintings-area my-cursor">
-                <div class="painting-1"></div>
+                <div class="painting-1" data-toggle="modal" data-target="#painting1"></div>
                 <div class="painting-2"></div>
                 <div class="painting-3"></div>
                 <div class="painting-4"></div>
@@ -201,8 +204,9 @@
                 <div class="painting-9"></div>
                 <div class="painting-10"></div>
             </div>
-            </aside>
             <img  class="img-fluid windmill" src="Starter File/img/interface-imgs/s6-painting-200.png" alt="windmill">
+            </aside>
+            
             </div>
             </section>
         
@@ -394,6 +398,25 @@
             });
         });
     </script>
+    <!-----Painting 1-->
+    <div class="modal fade" id="painting1" tabindex="1" role="dialog"
+    aria-labelledby="Rembrandt Painting1" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="model-content">
+        <div class="modal-header">
+            <button class="close" type="button" data-dismiss="modal" aria-label="close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+        </div>
+        <div class="modal-body bg-light">
+            <img src="Starter File/img/paintings-img/1920px-P1150002_Cognacq-Jay_Rembrandt_anesse_de_Balaam_rwk.jpg" alt="" class="img-fluid">
+        </div>
+        
+
+    </div>
+</div>
+</div>
     
    </body>
  </html>
