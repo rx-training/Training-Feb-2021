@@ -1,0 +1,5 @@
+A new branch named development is created 
+new file is created into that new branch
+file is edited
+file is edited from local
+commited and pushed to remote

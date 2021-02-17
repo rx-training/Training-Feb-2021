@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 5px;
+}
+
+.vid, .aud{
+    margin: auto;
+    width: 90%;
+}
+
+video, audio {
+    width: 100%;
+}
+
+h2{
+    background-color: burlywood;
+    text-transform: capitalize;
+    text-align: center;
+    border-radius: 25px;
+}

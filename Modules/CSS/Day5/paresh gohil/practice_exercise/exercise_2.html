@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            position: static;
+            border: 1px solid #000000;
+            background-color: steelblue;
+            width: 200px;
+            height: 200px;
+            top: 100px;
+            left: 250px;
+            text-align: center;
+        }
+        .div1 h2{
+            margin-top: 90px;
+        }
+        .div2{
+            position: relative;
+            border: 1px solid #000000;
+            background-color: tomato;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            top: 0px;
+            left: 250px;
+        }
+        .div2 h2{
+            margin-top: 90px;
+        }
+        .div3{
+            position: fixed;
+            border: 1px solid #000000;
+            background-color: yellowgreen;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            right: 0px;
+            bottom: 0px;
+        }
+        .div3 h2{
+            margin-top: 90px;
+        }
+        .div4{
+            position: relative;
+            border: 1px solid #000000;
+            background-color: white;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            top: 0px;
+            left: 500px;
+        }
+        .div5{
+            position: absolute;
+            border: 1px solid #000000;
+            background-color: violet;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            top: 50px;
+            left: 50px;
+        }
+        .div5 h2{
+            margin-top: 100px;
+        }
+        p{
+            margin-top: 500px;
+        }
+    </style>
+</head>
+<body>
+        <div class="div1"><h2>STATIC</h2></div>
+        <div class="div2"><h2>RELATIVE</h2></div>
+        <div class="div3"><h2>FIXED</h2></div>
+        <div class="div4">
+            <div class="div5">ABSOLUTE</div>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, veniam modi? Illum autem tempore perspiciatis non vero consequuntur recusandae, error odio, ratione expedita voluptate. Molestiae ad laudantium culpa eos iusto?</p>
+</body>
+</html>

@@ -11,6 +11,9 @@
     border-radius: 10px;
 
 }
+body {
+    background-image: url("images/bg4.jpg");
+  }
 
 ul.topnav {
     list-style-type: none;
@@ -33,16 +36,16 @@ ul.topnav {
   
   ul.topnav li a:hover:not(.active) {background-color: #111;}
   
-  ul.topnav li a.active {background-color: #4CAF50;}
+  ul.topnav li a.active {background-color: #4fe24f;}
   
   
   .header{
-      background-color: tomato;
+      background-color: rgb(192, 207, 226);
       height: 120px;
       }
 
   .footer{
-      background-color: green;
+      background-color: rgb(220, 224, 228);
         height: 80px;
         
   }
@@ -88,7 +91,5 @@ ul.topnav {
       .aside {
           flex: 1;
       }
-      div{
-        max-width: 100%;
-      }
+      
   }

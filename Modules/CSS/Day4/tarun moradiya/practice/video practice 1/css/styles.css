@@ -1,0 +1,74 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+p {
+    font-size: medium;
+}
+h1 {
+    color: crimson;
+    font-size: x-large;
+    padding: 15px;
+    border-bottom: 1px solid black;
+}
+h2 {
+    color: darkblue;
+    font-size: larger;
+}
+footer p {
+    font-size: x-small;
+}
+
+.entry-title {
+    background-color: floralwhite;
+}
+
+.entry-meta {
+    font-style: italic;
+}
+
+.auther {
+    font-style: normal;
+}
+
+#post {
+    background-color: ghostwhite;
+}
+
+li a {
+    color: indianred;
+}
+
+ul :nth-child(even) {
+    background-color: lightblue;
+}
+
+ul :nth-child(odd) {
+  background-color: lightyellow;  
+}
+
+ul {
+    border-bottom: 1px solid black;
+    border-top: black 1px solid;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+ul li {
+    padding: 5px;
+    padding-left: 10px;
+}
+
+.aside-body p:nth-last-of-type(even) {
+    background-color: rgb(193, 247, 220);
+}
+
+.aside-body p:nth-of-type(odd) {
+    background-color: rgb(227, 245, 197);
+}
+
+.entry-content :first-child{
+    color:blueviolet
+}

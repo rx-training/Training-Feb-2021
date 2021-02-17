@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.gstatic.com" rel="stylesheet" type="text/css">
+    <title>Css Tutorial</title>
+
+    <style>
+         p
+        {
+            color: #000000;
+            font-size: medium;
+            font-family: 'Jomhuria', cursive;
+        } 
+        #bookList p{
+                color: #ff6a00;
+        }
+        h1
+        {
+            color: brown;
+            font-size: x-large;
+            font-family: 'Times New Roman', Times, serif;
+        }   
+        h2
+        {
+            color: darkblue;
+            font-size: larger;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        footer p{
+            font-size: x-small;
+        }
+        ul li a{
+            color: yellow;
+        }
+        .entry-content  :first-child {color :blue ;} 
+         ul :nth-child(odd) {background-color: yellowgreen;}
+        ul:nth-child(even){background-color: tomato;}
+
+       /*  .aside-body p:nth-of-type(odd) {background-color: yellowgreen;}
+        .aside-body p:nth-of-type(even) {background-color: tomato;}  */
+
+        .wholePage{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            color: #0000ff;
+            width: 750px;
+            margin-top: 20px;
+            margin-left:  auto;
+            margin-right: auto;
+            border: 3px solid rgb(75,75,75);
+            box-shadow: 0 0 15px 5px rgba(40,80,100,.75);
+        }
+    </style>
+
+</head>
+<body class="wholePage">
+    
+    <article id="post-23">
+        <section id="post-34">
+            <h1 class="entry">H1 Tag</h1>
+            <div class="entry-meta">
+                <span class="spa"> Posted on july 14</span>
+                <span class="spa1"> by</span>
+                <span class="spa2"> jessey liberty</span>
+            </div>
+        </section>
+        <section class="entry-content" id="bookList">
+            <p>Very proud to announce my course
+            <a href="https://www.pluralsight.com/courses/html5-from-scratch"  >Html5 from scratch</a>
+            <img src="html5.jpg" style="height: 70px;"></p>
+
+            <p><a href="" >Link</a> This is paragraph after anchor tag</p>
+            <p>List</p>
+            <ul>
+                <li><a href="">Intution pumps</a></li>
+                <li>The road to..</li>
+                <li>Timequake</li>
+                <li>Clash of king</li>
+            </ul>
+
+        </section>
+
+        <aside>
+            <section class="aside-header">
+                <h2>About Html5</h2>
+            </section>
+            <section class="aside-body">
+                <a href="http://jesseliberty.com">Lorem ipsum</a>
+                HTML stands for Hyper Text Markup Language. It is used to design web pages using markup language. HTML is the combination of Hypertext and Markup language. Hypertext defines the link between the web pages. Markup language is used to define the text document within tag which defines the structure of web pages. HTML 5 is the fifth and current version of HTML. It has improved the markup available for documents and has introduced application programming interfaces(API) and Document Object Model(DOM).
+                <p>Markup language is used to define the text document within tag </p>
+                <p>which defines the structure of web pages.</p>
+                <p>HTML 5 is the fifth and current version of HTML. </p>
+            </section>
+        </aside>
+
+    </article>
+
+</body>
+</html>

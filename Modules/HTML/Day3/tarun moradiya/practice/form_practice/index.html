@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Form</title>
+</head>
+<body>
+    <form action="#" id="myform">
+
+        <label for="date-input">Please choose a date:</label>
+        <input type="date" name="date-input" id="date-input">
+        <br>
+        <label for="time-input">Please choose a time:</label>
+        <input type="time" name="time-input" id="time-input">
+        <br>
+        <label for="month-input">Please choose a month:</label>
+        <input type="month" name="month-input" id="month-input">
+        <br>
+        <label for="week-input">Please choose a week:</label>
+        <input type="week" name="week-input" id="week-input">
+        <br>
+        <label for="range-data">Please choose a range:</label>
+        <input type="range" name="range-data" id="range-data" min="1" max="10">
+        <br>
+        <label for="search-input">Search here:</label>
+        <input type="search" name="search-input" id="search-input" placeholder="Search item">
+        <br>
+        <label for="tel-input">Please enter a telephone no:</label>
+        <input type="tel" name="tel-input" id="tel-input" required>
+        <br>
+        <label for="email-input">Email:</label>
+        <input type="email" name="email-input" id="email-input" required multiple>
+        <br>
+        <label for="color-input">Color:</label>
+        <input type="color" name="color-input" id="color-input">
+        <br>
+        <label for="data-list-input">data-list</label>
+        <input type="text" name="data-list-input" id="data-list-input" list="mydatalist">
+        <datalist id="mydatalist">
+            <option label="mr" value="mr"></option>
+            <option label="mrs" value="mrs"></option>
+            <option label="ms" value="ms"></option>
+        </datalist>
+        <br>
+        <label for="progress-input">progress bar:</label>
+        <progress id="progress-input" value="5" max="15"></progress>
+        <br>
+        <label for="meter-input">meter:</label>
+        <meter id="meter" value="50" min="10" max="150" low="20" hight="70" optimum="50"></meter>
+        <br>
+        <input type="submit" value="submit">
+    </form>
+
+    <label for="outside-text-input">Other text:</label>
+    <input type="text" name="outside-text-input" id="outside-text-input" form="myform">
+</body>
+</html>

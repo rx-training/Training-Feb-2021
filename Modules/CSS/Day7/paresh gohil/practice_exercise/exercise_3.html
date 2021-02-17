@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.example {
+  padding: 20px;
+  color: white;
+}
+.example1 {
+  padding: 20px;
+  color: white;
+}
+.example2 {
+  padding: 20px;
+  color: white;
+}
+@media only screen and (max-width: 600px) {
+  .example {background: red;}
+  .example1{display: none;}
+  .example2{display: none;}
+}
+/*
+@media only screen and (min-width: 600px) {
+  .example {background: green;}
+  .example1{background: turquoise;}
+  .example2{display: none;}
+}*/
+
+@media only screen and (min-width: 600px) {
+  .example {background: blue;}
+  .example1{background: green;}
+  .example2{background: violet;}
+} 
+
+</style>
+</head>
+<body>
+
+<h2>Media Query Hide Elements</h2>
+<p class="example">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat adipisci cupiditate facere? Officia at dolor suscipit aliquid ullam, provident inventore ab explicabo nobis blanditiis reiciendis aut, a velit beatae esse.
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, necessitatibus quod possimus fugit sunt molestiae! Quod perspiciatis placeat quam quaerat minima, quisquam necessitatibus est dignissimos, natus aliquid sapiente temporibus optio.
+</p>
+<p class="example1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo ad enim atque, natus, placeat nesciunt aspernatur ex repellendus in beatae voluptatum dignissimos eaque ipsa harum iusto? Quidem, ipsa. Aperiam, dolor?
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum rem similique animi cupiditate tempora, incidunt accusantium obcaecati aliquid sint, eveniet debitis, iure voluptatibus fugiat maiores natus dolore totam deleniti quisquam!
+</p>
+<p class="example2">Lorem ipsum dolor sit amet consectetur adipisicing elit. At quam porro velit iusto tempora consequuntur voluptatibus accusamus. Illum, magnam atque temporibus veritatis voluptates natus totam quia! Excepturi quae velit eius?</p>
+</body>
+</html>
