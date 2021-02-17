@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Detail Form</title>
+    <style>
+        fieldset{
+            width: 50%;
+        }
+        form{
+            display: grid;
+            grid-template-columns: 30% 50%;
+
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Employee Details</legend>
+    
+        <form action="#">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="age" required>
+
+            <label for="gender">Gender</label>
+            <div>
+                <input type="radio" name="gender" id="male" value="male" checked>male
+                <input type="radio" name="gender" id="female" value="female">female
+            </div>
+            
+            <label for="designation">Designation:</label>
+            <input type="text" name="designation" id="designation" required>
+            
+            <label for="salary">Salary:</label>
+            <input type="number" name="salary" id="salary">
+            
+            <label for="location">Location:</label>
+            <select name="location" id="location">
+                <option value="rajkot">Rajkot</option>
+                <option value="ahemdabad">Ahemdabad</option>
+                <option value="surat">Surat</option>
+            </select>
+            
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+            
+            <label for="date">Date of Joining</label>
+            <input type="date" name="date" id="date">
+            
+            <label for="contact">Contact Number:</label>
+            <input type="number" name="contact" id="contact" size="10" minlength="10" maxlength="10" required>
+            
+            <input type="submit" value="submit">
+        </form>
+    </fieldset>
+</body>
+</html>

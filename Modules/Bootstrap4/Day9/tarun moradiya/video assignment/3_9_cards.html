@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header text-center">
+        <h1 class="display-4 m-5">Cards</h1>
+        <nav>
+            <ul class="nav justify-content-center">
+                <li class="nav-item dropdown px-3">
+                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">1: Utilities <i class="caret-down"></i></button>
+                    <div class="dropdown-menu">
+                        <a href="./2_2_basic_typography.html" class="dropdown-item">Basic Typography</a>
+                        <a href="./2_3_text_alignment_and_display.html.html" class="dropdown-item">Text Alignment And Display</a>
+                        <a href="./2_4_floats_position.html" class="dropdown-item">Floats Position</a>
+                        <a href="./2_5_colors_backgroud.html" class="dropdown-item">Colors and background</a>
+                        <a href="./2_6_spacing.html" class="dropdown-item">Spacing</a>
+                        <a href="./2_7_sizing.html" class="dropdown-item">Sizing</a>
+                        <a href="./2_8_breakpoints.html" class="dropdown-item">Breackpoints</a>
+                        <a href="" class="dropdown-item"></a>
+                        <a href="" class="dropdown-item"></a>
+                        <a href="" class="dropdown-item"></a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown px-3">
+                    <button class="btn btn-success dropdown-toggle" data-toggle="dropdown">2: CSS Componants <i class="caret-down"></i></button>
+                    <div class="dropdown-menu">
+                        <a href="./3_2_buttons.html" class="dropdown-item">Buttons</a>
+                        <a href="./3_3_navbars.html" class="dropdown-item">Navbars</a>
+                        <a href="./3_4_list_group_and_badges.html" class="dropdown-item">List Groups and Badges</a>
+                        <a href="./3_5_forms.html" class="dropdown-item">Forms</a>
+                        <a href="./3_6_input_group.html" class="dropdown-item">Input Group</a>
+                        <a href="./3_7_alerts_progress.html" class="dropdown-item">Alerts and Progress</a>
+                        <a href="./3_8_tables_pagination.html" class="dropdown-item">Tables and pagination</a>
+                        <a href="./3_9_cards.html" class="dropdown-item">Cards</a>
+                        <a href="./3_10_media.html" class="dropdown-item">Media</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown px-3">
+                    <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown">3: Grid and Flexbox <i class="caret-down"></i></button>
+                    <div class="dropdown-menu">
+                        <a href="../../../Day10/tarun moradiya/video assignment/4_2_grid_system.html" class="dropdown-item">Grid System</a>
+                        <a href="../../../Day10/tarun moradiya/video assignment/4_3_grid_alignment.html" class="dropdown-item">Grid Slignment</a>
+                        <a href="../../../Day10/tarun moradiya/video assignment/4_4_flexbox.html" class="dropdown-item">flexbox</a>
+                        <a href="../../../Day10/tarun moradiya/video assignment/4_5_auto_margin_wrap_order.html" class="dropdown-item">Flex auto margin, wrap and order</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown px-3">
+                    <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">4: Javascript Widgets <i class="caret-down"></i></button>
+                    <div class="dropdown-menu">
+                        <a href="../../../day10/tarun moradiya/video assignment/5_2_carousel.html" class="dropdown-item">Carousel</a>
+                        <a href="../../../day10/tarun moradiya/video assignment/5_3_collapse.html" class="dropdown-item">Collapse</a>
+                        <a href="../../../day10/tarun moradiya/video assignment/5_4_tooltip.html" class="dropdown-item">Tooltip</a>
+                        <a href="../../../day10/tarun moradiya/video assignment/5_5_popover.html" class="dropdown-item">Popover</a>
+                        <a href="../../../day10/tarun moradiya/video assignment/5_6_modals.html" class="dropdown-item">Modal</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <hr>
+</div>
+    <div class="container">
+
+        <!-- BLOCK  -->
+        <div class="card">
+            <div class="card-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, quaerat corrupti est voluptatibus fuga quibusdam?
+            </div>
+        </div>
+
+        <br><br>
+
+        <!-- SIMPLE CARD  -->
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Card Title</h4>
+                <h6 class="card-subtitle">Card Subtitle</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <button class="btn btn-outline-primary">Read more</button>
+            </div>
+        </div>
+
+        <br><br>
+
+        <!-- CARD WITH IMAGE -->
+        <div class="card" style="width: 300px;">
+            <img src="images/falls2.jpg" alt="image" class="card-img-top">
+            <div class="card-body">
+                <h4 class="card-title">Card Title</h4>
+                <h6 class="card-subtitle">Card Subtitle</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <button class="btn btn-primary btn-block">Read more</button>
+            </div>
+        </div>
+
+        <br><br>
+
+        <!-- CARD WITH HEADER -->
+        <div class="card" style="width: 300px;">
+            <div class="card-header">My Card</div>
+            <div class="card-body">
+                <h4 class="card-title">Card Title</h4>
+                <h6 class="card-subtitle">Card Subtitle</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <button class="btn btn-primary btn-block">Read more</button>
+            </div>
+        </div>
+
+        <br><br>
+
+        <!-- HEADER, FOOTER, CENTERED -->
+        <div class="card text-center" style="width: 300px;">
+            <div class="card-header">My Card</div>
+            <div class="card-body">
+                <h4 class="card-title">Card Title</h4>
+                <h6 class="card-subtitle">Card Subtitle</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <button class="btn btn-danger">Read more</button>
+            </div>
+            <div class="card-footer text-muted">2 Days ago</div>
+        </div>
+
+        <br><br>
+
+        <!-- CARD WITH NAV  -->
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">Card Title</h4>
+                <h6 class="card-subtitle">Card Subtitle</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <button class="btn btn-danger">Read more</button>
+            </div>
+        </div>
+
+        <br><br>
+
+         <!-- IMAGE OVELAYS -->
+         <div class="card bg-dark text-white"">
+            <img src="images/falls2.jpg" alt="image" class="card-img">
+            <div class="card-img-overlay">
+                <h4 class="card-title">Card Title</h4>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <p class="card-text"><small class="text-muted">last updated 3 months ago</small></p>
+            </div>
+        </div>
+
+        <br><br>
+
+        <!-- BACKGROUD COLOR -->
+        <div class="card text-white bg-primary mb-5">
+            <div class="card-header">My Card</div>
+            <div class="card-body">
+                <h4 class="card-title">Card Title</h4>
+                <h6 class="card-subtitle">Card Subtitle</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <button class="btn btn-dark btn-block">Read more</button>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="card text-white bg-secondary mb-5">
+            <div class="card-header">My Card</div>
+            <div class="card-body">
+                <h4 class="card-title">Card Title</h4>
+                <h6 class="card-subtitle">Card Subtitle</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <button class="btn btn-light btn-block">Read more</button>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="card text-white bg-success mb-5">
+            <div class="card-header">My Card</div>
+            <div class="card-body">
+                <h4 class="card-title">Card Title</h4>
+                <h6 class="card-subtitle">Card Subtitle</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <button class="btn btn-dark btn-block">Read more</button>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="card text-white bg-warning mb-5">
+            <div class="card-header">My Card</div>
+            <div class="card-body">
+                <h4 class="card-title">Card Title</h4>
+                <h6 class="card-subtitle">Card Subtitle</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <button class="btn btn-dark btn-block">Read more</button>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="card text-white bg-info mb-5">
+            <div class="card-header">My Card</div>
+            <div class="card-body">
+                <h4 class="card-title">Card Title</h4>
+                <h6 class="card-subtitle">Card Subtitle</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <button class="btn btn-dark btn-block">Read more</button>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="card text-dark bg-light mb-5">
+            <div class="card-header">My Card</div>
+            <div class="card-body">
+                <h4 class="card-title">Card Title</h4>
+                <h6 class="card-subtitle">Card Subtitle</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <button class="btn btn-dark btn-block">Read more</button>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="card text-white bg-danger mb-5">
+            <div class="card-header">My Card</div>
+            <div class="card-body">
+                <h4 class="card-title">Card Title</h4>
+                <h6 class="card-subtitle">Card Subtitle</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <button class="btn btn-dark btn-block">Read more</button>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="card text-white bg-dark mb-5">
+            <div class="card-header">My Card</div>
+            <div class="card-body">
+                <h4 class="card-title">Card Title</h4>
+                <h6 class="card-subtitle">Card Subtitle</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <button class="btn btn-light btn-block">Read more</button>
+            </div>
+        </div>
+
+        <br><br>
+
+        <!-- CARD OUTLINE -->
+        <div class="card border-primary mb-5">
+            <div class="card-header">My Card</div>
+            <div class="card-body">
+                <h4 class="card-title">Card Title</h4>
+                <h6 class="card-subtitle">Card Subtitle</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <button class="btn btn-dark btn-block">Read more</button>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="card border-secondary mb-5">
+            <div class="card-header">My Card</div>
+            <div class="card-body">
+                <h4 class="card-title">Card Title</h4>
+                <h6 class="card-subtitle">Card Subtitle</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <button class="btn btn-light btn-block">Read more</button>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="card border-success mb-5">
+            <div class="card-header">My Card</div>
+            <div class="card-body">
+                <h4 class="card-title">Card Title</h4>
+                <h6 class="card-subtitle">Card Subtitle</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <button class="btn btn-dark btn-block">Read more</button>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="card border-warning mb-5">
+            <div class="card-header">My Card</div>
+            <div class="card-body">
+                <h4 class="card-title">Card Title</h4>
+                <h6 class="card-subtitle">Card Subtitle</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <button class="btn btn-dark btn-block">Read more</button>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="card border-info mb-5">
+            <div class="card-header">My Card</div>
+            <div class="card-body">
+                <h4 class="card-title">Card Title</h4>
+                <h6 class="card-subtitle">Card Subtitle</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <button class="btn btn-dark btn-block">Read more</button>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="card border-light mb-5">
+            <div class="card-header">My Card</div>
+            <div class="card-body">
+                <h4 class="card-title">Card Title</h4>
+                <h6 class="card-subtitle">Card Subtitle</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <button class="btn btn-dark btn-block">Read more</button>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="card border-danger mb-5">
+            <div class="card-header">My Card</div>
+            <div class="card-body">
+                <h4 class="card-title">Card Title</h4>
+                <h6 class="card-subtitle">Card Subtitle</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <button class="btn btn-dark btn-block">Read more</button>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="card border-dark mb-5">
+            <div class="card-header">My Card</div>
+            <div class="card-body">
+                <h4 class="card-title">Card Title</h4>
+                <h6 class="card-subtitle">Card Subtitle</h6>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                <button class="btn btn-light btn-block">Read more</button>
+            </div>
+        </div>
+
+        <br><br>
+
+        <!-- CARD GROUP  -->
+
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Card Title</h4>
+                    <h6 class="card-subtitle">Card Subtitle</h6>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                    <button class="btn btn-outline-primary">Read more</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Card Title</h4>
+                    <h6 class="card-subtitle">Card Subtitle</h6>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                    <button class="btn btn-outline-primary">Read more</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Card Title</h4>
+                    <h6 class="card-subtitle">Card Subtitle</h6>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                    <button class="btn btn-outline-primary">Read more</button>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <!-- CARD DECK  -->
+
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Card Title</h4>
+                    <h6 class="card-subtitle">Card Subtitle</h6>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                    <button class="btn btn-outline-primary">Read more</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Card Title</h4>
+                    <h6 class="card-subtitle">Card Subtitle</h6>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                    <button class="btn btn-outline-primary">Read more</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Card Title</h4>
+                    <h6 class="card-subtitle">Card Subtitle</h6>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                    <button class="btn btn-outline-primary">Read more</button>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <!-- CARD-COLUMNS -->
+
+        <div class="card-columns">
+            <div class="card">
+                <img src="images/falls2.jpg" alt="image" class="card-img-top img-fluid">
+                <div class="card-body">
+                    <h4 class="card-title">Card Title</h4>
+                    <h6 class="card-subtitle">Card Subtitle</h6>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                    <button class="btn btn-primary btn-block">Read more</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Card Title</h4>
+                    <h6 class="card-subtitle">Card Subtitle</h6>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                    <button class="btn btn-outline-primary">Read more</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Card Title</h4>
+                    <h6 class="card-subtitle">Card Subtitle</h6>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                    <button class="btn btn-outline-primary">Read more</button>
+                </div>
+            </div>
+            <div class="card bg-dark text-white"">
+                <img src="images/falls2.jpg" alt="image" class="card-img">
+                <div class="card-img-overlay">
+                    <h4 class="card-title">Card Title</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                    <p class="card-text"><small class="text-muted">last updated 3 months ago</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">Active</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link disabled">Disabled</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Card Title</h4>
+                    <h6 class="card-subtitle">Card Subtitle</h6>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                    <button class="btn btn-danger">Read more</button>
+                </div>
+            </div>
+            <div class="card text-center" style="width: 300px;">
+                <div class="card-header">My Card</div>
+                <div class="card-body">
+                    <h4 class="card-title">Card Title</h4>
+                    <h6 class="card-subtitle">Card Subtitle</h6>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, optio explicabo voluptatem excepturi accusantium ut!</p>
+                    <button class="btn btn-danger">Read more</button>
+                </div>
+                <div class="card-footer text-muted">2 Days ago</div>
+            </div>
+    
+        </div>
+
+        <div style="margin-top: 500px;"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            display: flex;
+            align-items: stretch;
+            background-color: #f1f1f1;
+        }
+        .div1 div{
+            background-color: dodgerblue;
+            color: white;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+        .div2{
+            margin-top: 50px;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: stretch;
+            background-color: black;
+        }
+        .div2 div{
+            background-color: dodgerblue;
+            color: white;
+            margin: 10px;
+            width: 100px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <div style="flex-shrink: 0;">1</div>
+        <div style="flex-basis: 100px;">2</div>
+        <div style="flex: 0 0 200px;">3</div>
+        <div style="flex-grow: 8;">4</div>
+    </div>
+    <div class="div2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>
