@@ -30,3 +30,26 @@ body {
         height: 100%;
     }
 }
+
+.info-header {
+    margin: auto;
+    width: 50%;
+    border-bottom: 1px #ddd solid;
+}
+
+#authers {
+    img {
+        margin-top: -50px;
+    }
+    .fa {
+        font-size: 25px;
+    }
+    .card:hover {
+        background-color: $primary;
+        color: #fff;
+
+        .fa {
+            color: #fff;
+        }
+    }
+}
