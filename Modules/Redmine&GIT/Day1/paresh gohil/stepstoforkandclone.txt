@@ -1,0 +1,6 @@
+Create personal Account
+Create public Repository
+Fork the Repository
+Clone repository on local system
+Create one text from local system, commit that file and push the changes
+Modify file in github and pull changes
