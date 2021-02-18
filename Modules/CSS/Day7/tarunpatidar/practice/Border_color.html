@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media query</title>
+    <style>
+        h1, p {
+            border: 1px solid blue;
+
+            padding: 20px;
+            margin: 5px;
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 500px) {
+            h1, p {
+                border: red 1px solid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Border Color</h1>
+        <p>Resize the browser window to see how the border color of this paragraph changes on different border color.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>grid Height and align_center</title>
+
+<head>
+    <style>
+        .grid-container {
+            display: grid;
+            height: 500px;
+            justify-content: space-between;
+            align-content: center;
+            grid-template-columns: 0.5fr 0.5fr;
+            grid-template-rows:   0.1fr 0.1fr ;
+            border: 2px solid green;
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .grid-container>div {
+            background-color: rgba(163, 126, 126, 0.8);
+            text-align: center;
+            border: 2px solid black;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>The align-content Property</h1>
+    <div class="grid-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+
+</html>

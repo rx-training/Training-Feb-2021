@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<htnl lang="en">
+    <head>
+       
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <title>Bootstrap Sandbox</title>
+
+    </head>
+      
+    <body>
+        <header>
+            <h1 class="display-4 text-center">Modals</h1>
+            <ul class="nav nav-justified flex-column flex-sm-row">
+                <li class="nav-item dropdown m-1">
+                    <a href="#" class="nav-link dropdown-toggle btn btn-primary" data-toggle="dropdown">2: Utilities</a>
+                    <div class="dropdown-menu">
+                        <a href="../../../Day9/tarunpatidar/assignment/2_2_basic_typography.html" class="dropdown-item"> 2.2 Basic Typography </a>
+                        <a href="../../../Day9/tarunpatidar/assignment/2_3_text_alignment_display.html" class="dropdown-item"> 2.3 Text Alignment & Display </a>
+                        <a href="../../../Day9/tarunpatidar/assignment/2_4_floats_position.html" class="dropdown-item"> 2.4 Floats & Position </a>
+                        <a href="../../../Day9/tarunpatidar/assignment/2_5_colors_background.html" class="dropdown-item"> 2.5 Color & Background </a>
+                        <a href="../../../Day9/tarunpatidar/assignment/2_6_spacing.html" class="dropdown-item"> 2.6 Spacing </a>
+                        <a href="../../../Day9/tarunpatidar/assignment/2_7_sizing.html" class="dropdown-item"> 2.7 Sizing </a>
+                        <a href="../../../Day9/tarunpatidar/assignment/2_8_breakpoint.html" class="dropdown-item"> 2.8 Breakpoints </a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown m-1">
+                    <a href="#" class="nav-link dropdown-toggle btn btn-success" data-toggle="dropdown">3: CSS Components</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="../../../Day9/tarunpatidar/assignment/3_2_botton.html">3.2 Button</a>
+                        <a class="dropdown-item" href="../../../Day9/tarunpatidar/assignment/3_3_navbar.html">3.3 Navbar</a>
+                        <a class="dropdown-item" href="../../../Day9/tarunpatidar/assignment/3_4_list_groups_badges.html">3.4 List Groups & Badges</a>
+                        <a class="dropdown-item" href="../../../Day9/tarunpatidar/assignment/3_5_forms.html">3.5 Forms</a>
+                        <a class="dropdown-item" href="../../../Day9/tarunpatidar/assignment/3_6_input_group.html">3.6 Input Group</a>
+                        <a class="dropdown-item" href="../../../Day9/tarunpatidar/assignment/3_7_alerts.html">3.7 Alerts</a>
+                        <a class="dropdown-item" href="../../../Day9/tarunpatidar/assignment/3_8_table_pagination.html">3.8 Table & Pagination</a>
+                        <a class="dropdown-item" href="../../../Day9/tarunpatidar/assignment/3_9_cards.html">3.9 Cards</a>
+                        <a class="dropdown-item" href="../../../Day9/tarunpatidar/assignment/3_10_media.html">3.10 Media </a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown m-1">
+                    <a href="#" class="nav-link dropdown-toggle btn btn-warning" data-toggle="dropdown">4: Grid & Flexbox</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="./4_2_grid_alignment.html">4.2 Grid Alignment</a>
+                        <a class="dropdown-item" href="./4_3_grid_system.html">4.3 Grid System</a>
+                        <a class="dropdown-item" href="./4_4_flexbox.html">4.4 Flexbox</a>
+                        <a class="dropdown-item" href="./4_5_auto_margins_wrapping_order.html">4.5 Auto Margins & Wrap</a>
+
+                    </div>
+                </li>
+                <li class="nav-item dropdown m-1">
+                    <a href="#" class="nav-link dropdown-toggle btn btn-danger" data-toggle="dropdown">5: JavaScript Widgets</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="./5_2_carousel.html">5.2 Carousel</a>
+                        <a class="dropdown-item" href="./5_3_collapse.html">5.3 Collapse</a>
+                        <a class="dropdown-item" href="./5_4_tooltips.html">5.4 Tooltips</a>
+                        <a class="dropdown-item" href="./5_5_popovers.html">5.5 Popovers</a>
+                        <a class="dropdown-item" href="./5_6_modals.html">5.6 Modals</a>
+                    </div>
+                </li>
+            </ul>
+        </header>
+        <div class="container">
+
+            
+        <!-- MODAL TRIGGER  -->
+        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Launch Modal</button>
+
+        <!-- MODAL  -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal Title</h5>
+                        <button class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore necessitatibus beatae placeat recusandae maiores incidunt, animi error? Commodi id vero laudantium architecto totam, itaque mollitia ut assumenda dolorem natus, animi culpa possimus a deserunt impedit magni earum! Consectetur dolores, laboriosam blanditiis rerum quae, qui eligendi alias vero perferendis, modi iste!
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-dismiss="modal">close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <!-- LOGIN MODAL TRIGGER -->
+        <button class="btn btn-info" data-toggle="modal" data-target="#loginModal">Login</button>
+
+        <!-- LOGIN MODAL  -->
+        <div class="modal" id="loginModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Login</h5>
+                        <button class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text"  id="username" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password"  id="password" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-dismiss="modal">close</button>
+                        <button class="btn btn-primary" data-dismiss="modal">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 500px;"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+       

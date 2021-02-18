@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>CSS Grid</title>
+
+<head>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: 300px 100px;
+            grid-gap: 10px;
+            background-color: #abbdcc;
+            border: 3px solid red;
+            padding: 10px;
+        }
+
+        .grid-container>div {
+            background-color: rgba(44, 204, 71, 0.8);
+            border: 3px solid black;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+        h1{
+            text-align: center;
+            color: rgba(12, 3, 145, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>The grid-template-rows Property</h1>
+
+    <div class="grid-container">
+        <div>First</div>
+        <div>second</div>
+        <div>Third</div>
+        <div>Four</div>
+    </div>
+</body>
+
+</html>

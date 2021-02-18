@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>CSS Grid</title>
+
+<head>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 3fr 3fr;
+            grid-gap: 10px;
+
+            padding: 10px;
+            /* justify-content: center; */
+            align-items: center;
+        }
+
+        .grid-container>div {
+            background-color: rgba(64, 28, 160, 0.8);
+            border: 1px solid black;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+
+        .item1 {
+            grid-column: 1 / 4;
+        }
+
+        .item4 {
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #f32133;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Grid Lines</h1>
+
+    <div class="grid-container">
+        <div class="item1">first</div>
+        <div class="item2">second</div>
+        <div class="item3">Third</div>
+        <div class="item4">Four</div>
+    </div>
+</body>
+
+</html>

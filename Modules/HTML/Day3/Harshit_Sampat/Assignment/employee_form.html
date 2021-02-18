@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.formData {
+padding-top: 20px;
+padding-bottom: 20px;
+padding-left: 10px;
+}
+form {
+font-size: 20px;
+}
+form input {
+margin-left: 10px;
+font-size: 15px;
+}
+</style>
+</head>
+<body>
+<div class = "formData" >
+<form action = "#" >
+Name(Capitle): <input type = "text" name = "name" required><br>
+Age:<input type="number" name="Age" required>
+<p>Please select your gender:</p>
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male">Male</label>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label>
+  <input type="radio" id="other" name="gender" value="other">
+  <label for="other">Other</label><br>
+Designation:<input type="text",name="Designation" required><br>
+Salary:<input type="number",name ="Salary",required><br>
+
+Location:<select name="City",required><br>
+    <option value = "Ahmedabad" selected>Ahmedabad</option>
+    <option value = "Surat">Surat</option>
+    <option value = "Vadodara">Vadodara</option>
+ </select><br>
+ Email:<input type="email",name="email",required><br>
+ Joining Date:<input type="date",name="Date",required><br>
+ Contact:<input type="number",name="Contact",required><br>
+<input type = "submit" >
+</form>
+</div>
+</body>
+</html>

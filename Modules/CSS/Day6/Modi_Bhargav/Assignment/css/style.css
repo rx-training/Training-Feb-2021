@@ -1,0 +1,117 @@
+/* fully layout */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.layout {
+    margin: auto;
+    width: 100%;
+    background-color: rgb(176, 176, 185);
+}
+.header{
+    background-color: rgb(156, 79, 124);
+    color: darkblue;
+    padding: 15px;
+}
+.logo {
+    background-color: rgb(0, 139, 120); 
+    color:white;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 20px 40px 10px;
+    font-size: 30px;
+}
+h1 {
+    padding-left: 50px;
+    display: inline;
+    color: turquoise;
+}
+.logos, nav, .navbar , .navbar-list {
+    display: inline-block;
+}
+li {
+    list-style-type: none;
+}
+
+li a {
+    text-decoration: none;
+}
+nav {
+    margin-left: 50px;
+}
+.navbar-list {
+    padding: 20px;
+}
+
+.navbar-list a {
+    font-size: 30px;
+    color: darkblue;
+}
+.navbar-list a:hover {
+    color: black;
+    background-color: blanchedalmond;
+    border-radius: 10px;
+}
+.section {
+    display: flex;
+}
+.leftbar {
+    width: 20%;
+    background-color: rgb(128, 176, 196);
+    padding: 30px;
+}
+.leftbar h2 {
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+.leftbar h3 {
+    padding: 5px;
+}
+.leftbar h4 {
+    padding: 10px;
+    border-top: 1px solid rgb(113, 14, 170);
+    border-bottom: 1px solid rgb(113,14,170);
+    color: darkgreen;
+}
+.dropdown {
+    position: relative;
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.dropdown-list {
+    display: none;
+    position: absolute;
+    background-color: rgb(110, 245, 166);
+    z-index: 1;
+    width: 100%;
+}
+.dropdown-button     {
+    background-color: rgb(166, 71, 255);
+    padding: 5px 10px;
+}
+.dropdown:hover .dropdown-list, .dropdown-button{
+    display: block;
+    cursor: pointer;
+    color: black;
+    background-color: cornsilk;
+    border-radius: 20px;
+}
+.link{
+    padding: 5px;
+}
+.link li {
+    padding: 5px 10px;
+}
+.rightbar {
+    width: 80%;
+}
+.page iframe {
+    height: 83vh;
+    width: 100%;
+}
+.footer{
+    background-color: brown;
+    color: black;
+    text-align: center;
+}

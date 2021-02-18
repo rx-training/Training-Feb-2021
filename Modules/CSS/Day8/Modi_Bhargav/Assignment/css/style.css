@@ -1,0 +1,236 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+.layout{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.6fr 1.5fr 1.5fr 0.4fr;
+    grid-template-areas: 
+    "nav nav nav nav"
+    "section main main main"
+    "section main main main"
+    "footer footer footer footer";
+    grid-gap: 0.1rem;
+}
+nav{
+    background-color: cyan;
+    grid-area: nav;
+}
+.header{
+    color: darkblue;
+    padding: 20px;
+}
+.logo {
+    background-color: rgb(0, 139, 120); 
+    color:white;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 20px 40px;
+    font-size: 20px;
+}
+h1 {
+    padding-left: 50px;
+    display: inline;
+    color: red;
+    font-size: 30px;
+}
+.logos, nav-1, .navbar , .navbar-list {
+    display: inline-block;
+}
+li {
+    list-style-type: none;
+}
+
+li a {
+    text-decoration: none;
+}
+nav-1 {
+    margin-left: 50px;
+}
+.navbar-list {
+    padding: 20px;
+}
+
+.navbar-list a {
+    font-size: 30px;
+    color: darkblue;
+}
+.navbar-list a:hover {
+    color: black;
+    background-color: blanchedalmond;
+    border-radius: 10px;
+}
+section{
+    background-color: rgb(192, 168, 168);
+    grid-area: section;
+    display: flex;
+}
+.leftbar {
+    margin: 20px 40px;
+    padding: 30px;
+}
+h2 {
+    margin-bottom: 20px;
+    margin-top: -30px;
+    margin-left: -30px;
+    font-size: 50px;
+}
+.leftbar h3 {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.leftbar h4 {
+    padding: 10px;
+    /* border: 1px solid rgb(231, 19, 19); */
+    border-bottom: 3px solid rgb(14, 170, 35);
+    color: darkgreen;
+}
+.dropdown {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.dropdown-list {
+    display: none;
+    position: absolute;
+    border: 2px solid black;
+    background-color: rgb(11, 185, 84);
+    z-index: 1;
+}
+.dropdown-button     {
+    padding: 5px 10px;
+}
+.dropdown:hover .dropdown-list, .dropdown-button{
+    display: block;
+    cursor: pointer;
+    color: black;
+    background-color: cornsilk;
+    border-radius: 30px;
+}
+.link{
+    padding: 5px;
+}
+.link li {
+    padding: 5px 10px;
+}
+main{
+    background-color: darkgoldenrod;
+    grid-area: main;
+}
+.rightbar {
+    width: 100%;
+}
+.page iframe {
+    height: 83vh;
+    width: 100%;
+}
+footer{
+    background-color: darkseagreen;
+    grid-area: footer;
+}
+.footer-1{
+    /* background-color: brown; */
+    color: black;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 25px;
+    z-index: 1;
+}
+@media only screen and (max-width:700px){
+    .layout{
+        display: grid;
+        height: 100vh;
+        grid-template-areas: 
+        "nav nav nav nav"
+        "section section section section"
+        "main main main main"
+        "footer footer footer footer";
+        grid-gap: 0.1rem;
+    }
+    .header{
+        display: block;
+        margin-top: 50px;
+        margin-left: 70px;
+    }
+    .logo{
+        margin-left: 170px;
+        margin-top: -150px;
+    }
+    .logos{
+        margin-top: -50px;
+    }
+    h1{    
+        display: block;
+        margin-top: 30px;
+        margin-left: 80px;
+    }
+    li.navbar-list{
+        display: block;
+        margin-top: -10px;
+        margin-left: 100px;
+        padding-bottom: -10px;
+    }
+    nav-1 {
+        margin-bottom: -20px;
+    }
+    .leftbar{
+        margin-bottom: 150px;
+    }
+    h2 {
+        margin-bottom: 20px;
+        margin-top: -30px;
+        margin-left: -50px;
+        font-size: 50px;
+    }
+    .dropdown {
+        position: relative;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    .dropdown-list {
+        display: none;
+        position: absolute;
+        border: 2px solid black;
+        background-color: rgb(11, 185, 84);
+        z-index: 1;
+    }
+    .dropdown-button     {
+        padding: 10px 0px;
+    } 
+}
+@media only screen and (max-width: 500px) {
+    .layout{
+        display: grid;
+        height: 100vh;
+        grid-template-areas: 
+        "nav nav nav nav"
+        "section section section section"
+        "main main main main"
+        "footer footer footer footer";
+        grid-gap: 0.1rem;
+    }
+    .header{
+        display: block;
+        margin-top: 50px;
+        margin-left: 70px;
+    }
+    .logo{
+        margin-left: 100px;
+    }
+    .logos{
+        margin-top: -50px;
+    } 
+    h1{    
+        display: block;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+    li.navbar-list{
+        display: block;
+        margin-top: -10px;
+        margin-left: 40px;
+        padding-bottom: -10px;
+    }
+}

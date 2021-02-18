@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box Images</title>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        body {
+          margin: 0;
+          font-family: Arial;
+        }
+        h1{
+            display: block;
+            border: 2px solid lightblue;
+            background-color: black;
+            color: white;
+            padding: 5px;
+        }
+
+        .row {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0 4px;
+        }
+
+        .column {
+                flex: 25%;
+                max-width: 25%;
+                padding: 0 4px;
+        }
+
+        .column img 
+        {
+            margin-top: 8px;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 800px) {
+            .column {
+                flex: 50%;
+                max-width: 50%;
+            }
+        }
+        @media (max-width: 600px) {
+            .column {
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    
+    <h1><center>Flexbox Image gallery</center></h1>
+    <br/>
+
+    <div class="row"> 
+        <div class="column">
+          <img src="float_prop.png" style="width:100%">
+          <img src="Logo (2).jpg" style="width:100%">
+          <img src="photos1.jpg" style="width:100%">
+          <img src="photos2.jpg" style="width:100%">
+          <img src="photos3.jpg" style="width:100%">
+          <img src="photos4.jpg" style="width:100%">
+          <img src="universal.png" style="width:100%">
+        </div>
+        
+        <div class="column">
+          <img src="universal.png" style="width:100%">
+          <img src="photos4.jpg" style="width:100%">
+          <img src="photos2.jpg" style="width:100%">
+          <img src="photo3.jpg" style="width:100%">
+          <img src="photos1.jpg" style="width:100%">
+          <img src="float_prop.png" style="width:100%">
+        </div> 
+         
+        <div class="column">
+          <img src="fleximage.html" style="width:100%">
+          <img src="universal.png" style="width:100%">
+          <img src="photos2.jpg" style="width:100%">
+          <img src="photo3.jpg" style="width:100%">
+          <img src="photos1.jpg" style="width:100%">
+          <img src="photos4.jpg" style="width:100%">
+          <img src="float_prop.png" style="width:100%">
+        </div>
+        
+        <div class="column">
+          <img src="photos4.jpg" style="width:100%">
+          <img src="photo3.jpg" style="width:100%">
+          <img src="photos1.jpg" style="width:100%">
+          <img src="photos2.jpg" style="width:100%">
+          <img src="universal.png" style="width:100%">
+          <img src="float_prop.png" style="width:100%">
+        </div> 
+      </div>
+
+</body>
+</html>
