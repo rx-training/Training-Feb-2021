@@ -4,6 +4,23 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+.menu{
+float:left;
+}
+.menu li{
+float:left;
+display: block;
+width: 200px;
+height; 50px;
+}
+.menu ul{
+display: none;
+}
+.menu li:hover ul{
+display: block;
+background-color:white;
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -12,7 +29,7 @@ body {
 .topnav {
   overflow: hidden;
   background-color: #333;
-  margin-left: 19%;
+  width:100%;
 }
 
 .topnav a {
@@ -35,14 +52,10 @@ body {
 }
 .sidenav {
   height: 100%;
-  width: 160px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
+  width:15%;
+  float:left;
   background-color: #111;
-  overflow-x: hidden;
-  padding-top: 20px;
+  
 }
 
 .sidenav a {
@@ -56,6 +69,10 @@ body {
 .sidenav a:hover {
   color: #f1f1f1;
 }
+.main {
+width:80%;
+background-color:#cdcdcd;
+float:left;
 }
 
 @media screen and (max-height: 450px) {
@@ -82,31 +99,37 @@ body {
   <a href="#PHP">PHP</a>
 </div>
 
-<div style="padding-left:16px">
-  
-</div>
-<div class="sidenav">
+
+<div class="sidenav" class="menu">
   <a href="#HTML">HTML</a>
         <a>
-            <ul>
-                <li>DAY1
-                    <a href="shubham sharma"></a>
-                </li>
-                <li>DAY2
-                    <a href="index.html"></a>
-                    <a href="learning.html"></a>
-                </li>
+            <li>
+                <ul>DAY1
+                    <a href="shubhamsharma"></a>
                 </ul>
+                <ul>
+                    <a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/Redmine&GIT/Day2/index.html">DAY2</a>
+                    <a href="learning.html"></a>
+                </ul>
+                </li>
         </a>
         
   <a href="#CSS">CSS
     <a>
-        <ul>
-            <li>DAY3</li>
-                <li>DAY4</li>
-                <li>DAY5</li>
-                <li>DAY6</li>
-        </ul>
+        <li>
+            <ul>
+			<a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/HTML/Day3/assingment.html">DAY3</a>
+			</ul>
+            <ul>
+				<a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/CSS/Day4/practice/practice1.html">DAY4</a>
+			</ul>
+            <ul>
+				<a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/CSS/Day5/practice/floatdiv.html">DAY5</a>
+			</ul>
+            <ul>
+				<a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/CSS/Day6/practice/flexbox.html">DAY6</a>
+			</ul>
+        </li>
     </a>
   </a>
 
@@ -117,5 +140,9 @@ body {
     
   </div>
 
+ <div style="width:100%; background-color:#ccc;height:500px;">
+ This is the main 
+ 
+ </div>
 </body>
 </html>
