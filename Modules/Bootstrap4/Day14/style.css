@@ -1,0 +1,83 @@
+
+.menu{
+    float:right;
+    }
+.menu li{
+float:left;
+display: block;
+width: 200px;
+height: 50px;
+}
+.menu ul{
+display: none;
+}
+.menu li:hover ul{
+display: block;
+background-color:white;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    width:100%;
+}
+
+.topnav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+.sidenav {
+    height: 100%;
+    width:18%;
+    float:left;
+    background-color: #111;
+    
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+.main {
+width:80%;
+background-color:#cdcdcd;
+float:left;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.divbackground{
+    width:100%;
+    height:auto;
+    background:url("img/mountains.jpg");
+}
+
