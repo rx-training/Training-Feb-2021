@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+}
+.navbar{
+    width: 100%;
+}
+.navbar{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: burlywood;
+    padding: 15px;
+}
+.nav-items a{
+    color: aliceblue;
+    margin: 20px;
+    text-transform: uppercase;
+}
+a:hover{
+    color: chartreuse;
+}
+.section1{
+    display: flex;
+}
+.section2{
+        display: flex;
+}
+.Sidebar{
+    background-color: rosybrown;
+    width: 15%;
+}
+.Sidebar a{
+    
+    display: grid;
+    margin: 5px;
+    padding: 15px;
+    margin-left: 50px;
+}
+.Mainmenu{
+    width: 85%;
+    overflow: scroll;
+}
+.Menu1{
+    
+    display: flex;
+    padding: 15px;
+    height: 300px;
+}
+.Menu2{
+    display: flex;
+}
+
+.Menu1 div{
+    text-align: center;
+    margin: 2px;
+    border: 5px solid yellow;
+}
+.Menu2 div{
+    text-align: center;
+    margin: 2px;
+    border: 5px solid violet;
+}
+.Container2{
+    display: flex;
+}
+.footer p{
+    background-color: burlywood;
+    padding: 15px;
+    text-align: center;
+}
+.Image4, .Image5{
+    text-align-last: center;
+    width: 50%;
+}
+@media only screen and (max-width: 600px){
+    .nav-items, .side-items{
+        display: grid;
+    }
+    .side-items{
+        display: grid;
+    }
+    .navbar{
+        background-color: burlywood;
+    }
+    .Sidebar{
+        background-color: thistle;
+    }
+    .side-items{
+        margin: 0px;
+     margin-left: -46px;
+    }   
+    .side-items a{
+        padding: 6px;
+    }
+    .nav-items a{
+        color: aliceblue;
+        margin: 5px;
+    }
+    .Menu1 {
+        display: flex;
+        padding: 15px;
+        height: 480px;
+    }
+    
+    .Container2{
+        display: inline;
+    }
+    .Image4, .Image5{
+        width: 100%;
+    }
+}
