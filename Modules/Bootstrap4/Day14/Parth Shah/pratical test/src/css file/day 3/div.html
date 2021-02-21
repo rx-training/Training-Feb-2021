@@ -9,6 +9,47 @@
         <link rel="stylesheet" href="../../css/style.css">
         <link rel="stylesheet" href="../../scss/style.scss">
         <title>Practical test</title>
+        <style>
+          .box{
+    display: inline-block;
+    border: 3px solid black;
+    width : 200px;
+    height : 200px;
+    margin: 2px;
+    background-color: lightgrey;
+
+}
+.fixed{
+    border :1px solid darkblue;
+    width : 100px;
+    height : 150px;
+    padding : 1px;
+    position : fixed;
+    top : 150px;
+    right :0px;
+     background-color: rgb(241, 233, 233);
+
+
+}
+
+#box1{
+    overflow: scroll;
+}
+#box2{
+    overflow: auto;
+}
+#box3{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+@media (max-width:600px) {
+  .container{
+    display: block;
+  }
+  
+}
+
+        </style>
     </head>
 
     <body>
@@ -93,20 +134,17 @@
         <!---body-->
         <section>
             <div class="row no-gutters">
-              <div class="col-md-3 bg-light p-0">
+              <div class="col-md-3 bg-light">
                 <div class="list-group">
                   <a href="#" class="list-group-item list-group-item-action disabled disable" tabindex="-1" aria-disabled="true">
                     Practice
                   </a>
-                  <a href="../../html/day1/news.html" class="list-group-item list-group-item-action">Article news</a>
-                  <a href="../../html/day1/HR.html" class="list-group-item list-group-item-action">HR manager list</a>
-                  <a href="../../html/day1/student.html" class="list-group-item list-group-item-action">Student Report Card</a>
-                  <a href="../../html/day1/login.html" class="list-group-item list-group-item-action" >Login form</a>
-                  <a href="../../html/day1/menu.html" class="list-group-item list-group-item-action" >Menu  tags</a>
+                  <a href="../../css file/day 3/div.html" class="list-group-item list-group-item-action">Div Contains Div</a>
+                  
                   <a href="#" class="list-group-item list-group-item-action disabled disable" tabindex="-1" aria-disabled="true">
                     Assighnment
                   </a>
-                  <a href="../day1/employee.html" class="list-group-item list-group-item-action">Employee</a>
+                  <a href="../../css file/day 2/myresume.html" class="list-group-item list-group-item-action">Basic Layout</a>
 
 
                   
@@ -114,8 +152,43 @@
 
               </div>
               <div class="col-md-9">
-                        
-                <img class="img-fluid pt-5 mx-auto d-block rounded radix pb-5" src="../../images/html.png" alt="" >
+                <h3 class="display-4 text-center text-light"> Div Contains Div</h3>
+                <h3 class="text-warning text-center" style="font-style:italic;  text-shadow: 1px 1px;">CSS Positions, Overflow and floating Example</h3><hr>
+                        <center>
+                <div class="container">
+                  <div class="box" id="box1">Here in this web page it shows you the uses of css floating , overflows and position properies . 
+                      In this box you are able to see overflow properties of scroll. so kindly scroll up and down . And you are very glad that its working . 
+                          In box 2  I have used a Auto property of overflow and in box 3 i have used a overflow x and y.</div>
+                  <div class="box" id="box2">Here in this web page it shows you the uses of css floating , overflows and position properies . 
+                      In this box you are able to see overflow properties of scroll. so kindly scroll up and down. And you are very glad that its working . 
+                      In box 2  I have used a Auto property of overflow and in box 3 i have used a overflow x and y. </div>
+                  <div class="box" id="box3">Here in this web page it shows you the uses of css floating , overflows and position properies . 
+                      In this box you are able to see overflow properties of scroll. so kindly scroll up and down. And you are very glad that its working . 
+                      In box 2  I have used a Auto property of overflow and in box 3 i have used a overflow x and y. </div>
+                  </div>
+                </center>
+                  
+                  <p class="lead p-5 text-white"> 
+                  It is dummy text that shows the fixed box using position fixed.
+                  Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.[2]
+                  
+                  CSS is designed to enable the separation of presentation and content, including layout, colors, and fonts.[3] This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file which reduces complexity and repetition in the structural content as well as enabling the .css file to be cached to improve the page load speed between the pages that share the file and its formatting.
+                  
+                  Separation of formatting and content also makes it feasible to present the same markup page in different styles for different rendering methods, such as on-screen, in print, by voice (via speech-based browser or screen reader), and on Braille-based tactile devices. CSS also has rules for alternate formatting if the content is accessed on a mobile device.[4]
+                  
+                  The name cascading comes from the specified priority scheme to determine which style rule applies if more than one rule matches a particular element. This cascading priority scheme is predictable.
+                  
+                  The CSS specifications are maintained by the World Wide Web Consortium (W3C). Internet media type (MIME type) text/css is registered for use with CSS by RFC 2318 (March 1998). The W3C operates a free CSS validation service for CSS documents.[5]
+                  
+                  In addition to HTML, other markup languages support the use of CSS including XHTML, plain XML, SVG, and XUL.
+                </p>
+                  
+                  <div class="fixed" id="box4">
+                  checking fixed position<hr>
+                  please scroll down
+                  </div>
+                  
+
 
               </div>
             </div>

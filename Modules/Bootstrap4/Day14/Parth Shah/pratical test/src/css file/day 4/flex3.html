@@ -9,6 +9,55 @@
         <link rel="stylesheet" href="../../css/style.css">
         <link rel="stylesheet" href="../../scss/style.scss">
         <title>Practical test</title>
+        <style>
+          .box{
+            color:cornsilk;
+            font-size: larger;
+            height:100%;
+            width : 100%;
+            border : 2px solid black;
+            display:flex;
+            flex-direction:row-reverse;
+        
+            flex-wrap: wrap;
+            justify-content: center;
+          
+           
+            background-color: rgb(184, 16, 30);
+        
+        }
+        
+        .item{
+            width :200px;
+            height :300px;
+            background-color: rgb(104, 102, 93);
+            border: 2px solid rgb(145, 48, 48);
+            margin: 10px;
+            padding : 3px;
+            
+        
+        
+        }
+        #item-1{
+            flex-grow: 2;
+        
+        }
+        #item-2{ flex-grow: 3
+            
+    
+            ;
+        flex-shrink: 3;}
+        #item-3{
+            order:40;
+        }
+        @media(max-width:600px)
+        {
+          .display-4{
+            font-size: x-large;
+
+          }
+        }
+        </style>
     </head>
 
     <body>
@@ -27,7 +76,7 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown active">
-                            <a class="nav-link dropdown-toggle" href="htm.html" id="navbardrop" data-toggle="dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
                               HTML
                             </a>
                             <div class="dropdown-menu">
@@ -35,7 +84,7 @@
                             </div>
                           </li>
                           <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="ccc.html" id="navbardrop" data-toggle="dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
                               CSS
                             </a>
                             <div class="dropdown-menu">
@@ -47,7 +96,7 @@
                           </li>
 
                           <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="day1.html" id="navbardrop" data-toggle="dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
                               Bootstrap
                             </a>
                             <div class="dropdown-menu">
@@ -93,20 +142,19 @@
         <!---body-->
         <section>
             <div class="row no-gutters">
-              <div class="col-md-3 bg-light p-0">
+              <div class="col-md-3 bg-light">
                 <div class="list-group">
                   <a href="#" class="list-group-item list-group-item-action disabled disable" tabindex="-1" aria-disabled="true">
                     Practice
                   </a>
-                  <a href="../../html/day1/news.html" class="list-group-item list-group-item-action">Article news</a>
-                  <a href="../../html/day1/HR.html" class="list-group-item list-group-item-action">HR manager list</a>
-                  <a href="../../html/day1/student.html" class="list-group-item list-group-item-action">Student Report Card</a>
-                  <a href="../../html/day1/login.html" class="list-group-item list-group-item-action" >Login form</a>
-                  <a href="../../html/day1/menu.html" class="list-group-item list-group-item-action" >Menu  tags</a>
+                  <a href="../../css file/day 3/div.html" class="list-group-item list-group-item-action">Four Flex Items</a>
+                  <a href="../../css file/day 3/div.html" class="list-group-item list-group-item-action">Three Flex Items</a>
+                  <a href="../../css file/day 3/div.html" class="list-group-item list-group-item-action">Responsive Image</a>
+                  
                   <a href="#" class="list-group-item list-group-item-action disabled disable" tabindex="-1" aria-disabled="true">
                     Assighnment
                   </a>
-                  <a href="../day1/employee.html" class="list-group-item list-group-item-action">Employee</a>
+                  <a href="../../css file/day 3/basic.html" class="list-group-item list-group-item-action">Menu-list layout</a>
 
 
                   
@@ -115,8 +163,15 @@
               </div>
               <div class="col-md-9">
                         
-                <img class="img-fluid pt-5 mx-auto d-block rounded radix pb-5" src="../../images/html.png" alt="" >
-
+                <h6 class="display-4 text-light text-center">This is a flex box which contains flex items and its arrange in a right to left direction</h1>
+                <div class="container pt-4">
+                  <div class="box">
+                    <div class="item" id="item-1">Box1</div>
+                    <div class="item" id="item-2">Box2</div>
+                    <div class="item" id="item-3">Box3</div>
+                  </div>
+                </div>
+                <p class="lead text-center text-light"> This web page conatins use of all css flex tags and attributes as well as their properties. </p>
               </div>
             </div>
           </section>

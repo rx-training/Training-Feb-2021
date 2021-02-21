@@ -10,37 +10,105 @@
         <link rel="stylesheet" href="../../scss/style.scss">
         <title>Practical test</title>
         <style>
-          thead {color: green;}
-        tbody {color: blue;}
-        tfoot {color: red;}
-        
-        table, th, td {
-          border: 1px solid black;
-          vertical-align: middle;
-          border-collapse: collapse;
-        }
-        th,
-        td {
-            padding: 9px;
-            text-align: center;
-        }
-        table {
-            width: 90%;
-            background-color: #f7f8fc;
-        }
-        table {
-            text-align: center;
-        }
-        h1{
-            font-style: italic;
+          .aa{
+            font-size: x-large;
+            font-weight: bold;
           }
-          tbody, thead, tfoot{
-              font-weight: bold;
-          }
-          table, th, td, tr{
-         border: 2px solid powderblue;
-         margin: 30px;
-          }
+#wrapper{
+    border: solid black;
+    padding: 10px;
+}
+#header{
+    height: 110px;
+    background-color: rgb(115, 121, 120);
+  
+    
+}
+#parth{
+    height: 50px;
+    width: 130px;
+    position: absolute;
+    top : 12px;
+}
+#nav{
+    
+    background-color: rgb(201, 200, 206);
+    margin-top: 10px;
+    padding-right: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#nav a:hover,a:hover{
+    background-color: rgb(3, 3, 3);
+}
+#container{
+    
+    margin-top: 10px;
+}
+#container::after {content:" ";display:block ; clear:both}
+
+#left{
+    width :25%;
+    height: 600px;
+    background-color: rgb(109, 104, 99);
+    float: left;
+
+  
+}
+#right{
+    float: right;
+    width:74%;
+    height: 600px;
+    background-color: rgb(88, 87, 78);
+  
+}
+#footer{
+    height: 60px;
+    background-color: rgb(61, 52, 54);
+    margin-top: 10px;
+}    
+   
+.head{
+    font-size: xx-large;
+
+}
+.about{
+    font-size: x-large;
+}
+.css{
+    font-size: 150%;   
+
+}
+.html{
+    font-size: 200%;
+}
+.leftdiv{
+    font-size: x-large;
+
+
+}
+@media ( max-width:600px)
+{
+    #left{
+        width: 100%;
+    }
+    #right{
+        width: 100%;
+    }
+    #nav a{
+        width: 100%;
+        padding: 5px;
+        display: block;
+    }
+    .html{
+      font-size: large;
+    }
+    .bb{
+      font-size: large;
+    }
+    
+}
+
         </style>
     </head>
 
@@ -60,7 +128,7 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown active">
-                            <a class="nav-link dropdown-toggle" href="htm.html" id="navbardrop" data-toggle="dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
                               HTML
                             </a>
                             <div class="dropdown-menu">
@@ -68,7 +136,7 @@
                             </div>
                           </li>
                           <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="ccc.html" id="navbardrop" data-toggle="dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
                               CSS
                             </a>
                             <div class="dropdown-menu">
@@ -80,7 +148,7 @@
                           </li>
 
                           <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="day1.html" id="navbardrop" data-toggle="dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
                               Bootstrap
                             </a>
                             <div class="dropdown-menu">
@@ -131,15 +199,14 @@
                   <a href="#" class="list-group-item list-group-item-action disabled disable" tabindex="-1" aria-disabled="true">
                     Practice
                   </a>
-                  <a href="../../html/day1/news.html" class="list-group-item list-group-item-action">Article news</a>
-                  <a href="../../html/day1/HR.html" class="list-group-item list-group-item-action">HR manager list</a>
-                  <a href="#" class="list-group-item list-group-item-action">Student Report Card</a>
-                  <a href="#" class="list-group-item list-group-item-action" >Login form</a>
-                  <a href="#" class="list-group-item list-group-item-action" >Menu  tags</a>
+                  <a href="../../css file/day 4/flex4.html" class="list-group-item list-group-item-action">Four Flex Items</a>
+                  <a href="../../css file/day 4/flex3.html" class="list-group-item list-group-item-action">Three Flex Items</a>
+                  <a href="../../css file/day 4/images.html" class="list-group-item list-group-item-action">Responsive Image</a>
+                  
                   <a href="#" class="list-group-item list-group-item-action disabled disable" tabindex="-1" aria-disabled="true">
                     Assighnment
                   </a>
-                  <a href="#" class="list-group-item list-group-item-action">Employee</a>
+                  <a href="../../css file/day 3/basic.html" class="list-group-item list-group-item-action">Menu-list layout</a>
 
 
                   
@@ -147,90 +214,69 @@
 
               </div>
               <div class="col-md-9">
-                
-                <h2 class="display-4 text-light text-center" text-light text-center>Student Report Card</h2>
-                <h2 class="display-4 text-light text-center">C.U.Shah University</h2>
+                        
+                <div id="wrapper">
+                  <div id="header">
+                      <h2 class="text-right bb">My Training Works</h2><br>
+                      <h2 class="text-right bb">Radix Web</h2>
+                     
+                      <div id="parth"><img class="img-fluid" src="../../images/Radix.jpg" style="height: 100px; padding-left: 10px;"></div>
+                  </div>
+                  <div  class="p-1 aa" id="nav">
+                      <a class="nav-link" href="../../html/day1/day1.html" target="_blank">Html</a>
+                      <a class="nav-link" href="../day 2/day2.html" target="_blank">CSS</a>
+                      <a class="nav-link" href="#">Bootstrap</a>
+                  </div>
+                  <div id="container">
+                      <div id="left"> <p class="head">Html Works</p><hr color="black"><br><br>
+          
+                       <div class="border border-dark mr-2 ml-2 bg-light">
+                         <h6 class="text-center">Day 1 </h6>
+                         <ul>
+                           <li>Assighnment
+                             <ul>
+                               <li><a href="../../html/day1/employee.html">Employee</a></li>
+                             </ul>
+                           </li>
+                         </ul>
+                         <ul>
+                           <li>Practices
+                             <ol>
+                               <li><a href="../../html/day1/news.html" target="_blank">article news</a></li>
+                               <li><a href="../../html/day1/menu.html" target="_blank">menu tags</a></li>
+                               <li><a href="../../html/day1/login.html" target="_blank">login form</a></li>
+                               <li><a href="../../html/day1/HR.html" target="_blank">Hr manager list</a></li>
+                               <li><a href="../../html/day1/student.html" target="_blank">Student Report Card</a></li>
 
-
-                <h2 class="text-center text-danger">Deatil Informations</h2>
-    <table class="mx-auto" border="1px">
-        <tr>
-            <th class="bg-warning">Name:</th>
-            <th class="bg-warning">Parth J Shah</th>
-        </tr>
-        <tr>
-            <td>Enrollment no:</td>
-            <td>17TE403004</td>
-        </tr>
-        <tr> 
-            <td>Year of Passing:</td>
-            <td>2020</td>
-        </tr>
-    </table>
-    <h2 class="text-center text-danger">Report Card</h2>
-        <table class="student mx-auto" border="1px">
-            <thead>
-              <tr>
-                <th class="bg-warning">Sr.no</th>
-                <th class="bg-warning">Subject Name</th>
-                <th class="bg-warning">Grades</th>
-              <tr>  
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Computer Graphics</td>
-                    <td>A1</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Fundamentals of Web Designing </td>
-                    <td>A2</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Android Application</td>
-                    <td>B1</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Java</td>
-                    <td>B2</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>service Oriented Architecture</td>
-                    <td>A1</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>Maths 3</td>
-                    <td>A2</td>
-                </tr>
-
-            </tbody>
-        <tfoot>
-          <tr>
-            <td>CGPA: 8.86 </td>
-            <td>SGPA: 9.96 </td>
-            <td>Total No.Of Backlogs:0</td>
-          </tr>
-        
-    </table>  
-    <center> 
-    <table class="mx-auto">
-      <tr>
-        <th class="bg-warning">Signature of Head of department</th>
-        <th class="bg-warning">signature of Exam Head</th>
-      </tr>
-      <tr>
-        <td class="pb-4"></td>
-        <td class="pb-4"></td>
-
-      </tr>
-    </table>
-    </center>
-  </div>
+                             </ol>
+                           </li>
+                         </ul>
+                       </div>
+          
+                      
+                      </div>
+                      <div id="right">
+                      
+                         <h2> What is HTML?</h2><hr>
+                         <ul class="html">
+                             <li>HTML stands for Hyper Text Markup Language</li>
+                          <li>HTML is the standard markup language for creating Web pages</li>
+                              <li> HTML describes the structure of a Web page</li>
+                                  <li>  HTML consists of a series of elements</li>
+                                      <li> HTML consists of a series of elements</li>
+                                          <li> HTML elements tell the browser how to display the content</li>
+                                              <li>HTML elements label pieces of content such as "this is a heading", "this is a paragraph", "this is a link", etc.</li>
+                          
+                      </ul> 
+          
+                      </div>
+                  </div>
+                  <div id="footer">
+                      <p class="lead text-white text-center">Copyright &copy; Radix web</p>
+                  </div>
+              </div>
+          
+              </div>
             </div>
           </section>
            

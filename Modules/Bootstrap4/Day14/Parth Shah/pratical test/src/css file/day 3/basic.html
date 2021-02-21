@@ -9,6 +9,77 @@
         <link rel="stylesheet" href="../../css/style.css">
         <link rel="stylesheet" href="../../scss/style.scss">
         <title>Practical test</title>
+        <style>
+          #right{
+            overflow: auto;
+          }
+          #left{
+            overflow: auto;
+          }
+          .atag{
+            font-size: larger;
+            font-weight: bold;
+            color: rgb(8, 7, 7);
+
+          }
+          #wrapper{
+    border: solid black;
+    padding: 10px;
+}
+#header{
+    height: 110px;
+    background-color: red;
+}
+#logo{
+    height: 50px;
+    width: 90px;
+    position: absolute;
+    top : 12px;
+}
+#nav{
+    height: 50px;
+    background-color: rgb(223, 116, 46);
+    margin-top: 10px;
+}
+#container{
+    
+    margin-top: 10px;
+}
+#container::after {content:" ";display:block ; clear:both}
+#left{
+    width :25%;
+    height: 600px;
+    background-color: rgb(233, 233, 67);
+    float: left;
+}
+#right{
+    float: right;
+    width:74%;
+    height: 600px;
+    background-color: rgb(175, 160, 91);
+}
+#footer{
+    height: 50px;
+    background-color: rgb(180, 89, 102);
+    margin-top: 10px;
+    text-align: center;
+}
+
+.head{
+    font-size: x-large;
+
+}
+.about{
+    font-size:large;
+}
+
+@media(max-width: 600px){
+  .about,.head,#footer,#right,#left,#header,.h3,.trust{
+    font-size: 12px;
+  }
+  
+}
+        </style>
     </head>
 
     <body>
@@ -93,20 +164,17 @@
         <!---body-->
         <section>
             <div class="row no-gutters">
-              <div class="col-md-3 bg-light p-0">
+              <div class="col-md-3 bg-light">
                 <div class="list-group">
                   <a href="#" class="list-group-item list-group-item-action disabled disable" tabindex="-1" aria-disabled="true">
                     Practice
                   </a>
-                  <a href="../../html/day1/news.html" class="list-group-item list-group-item-action">Article news</a>
-                  <a href="../../html/day1/HR.html" class="list-group-item list-group-item-action">HR manager list</a>
-                  <a href="../../html/day1/student.html" class="list-group-item list-group-item-action">Student Report Card</a>
-                  <a href="../../html/day1/login.html" class="list-group-item list-group-item-action" >Login form</a>
-                  <a href="../../html/day1/menu.html" class="list-group-item list-group-item-action" >Menu  tags</a>
+                  <a href="../../css file/day 3/div.html" class="list-group-item list-group-item-action">Div Contains Div</a>
+                  
                   <a href="#" class="list-group-item list-group-item-action disabled disable" tabindex="-1" aria-disabled="true">
                     Assighnment
                   </a>
-                  <a href="../day1/employee.html" class="list-group-item list-group-item-action">Employee</a>
+                  <a href="../../css file/day 2/myresume.html" class="list-group-item list-group-item-action">Basic Layout</a>
 
 
                   
@@ -114,8 +182,44 @@
 
               </div>
               <div class="col-md-9">
-                        
-                <img class="img-fluid pt-5 mx-auto d-block rounded radix pb-5" src="../../images/html.png" alt="" >
+                
+                <div id="wrapper">
+                  <div id="header">
+                      <h2 class="h3 text-right"><u>C.U SHAH UNIVERSITY OF ENGINEERING AND TECHNOLOGY</u></h2>
+                      <h3 class="text-right trust">Run by: Parth Charitable Trust</h3>
+                      <div id="logo"><img src="../../images/logo.png" ></div>
+                  </div>
+                  <div id="nav">
+                      <a class="atag" href="https://www.google.com/" target="_blank">Home</a>
+                      <a class="atag" href="https://www.cushahuniversity.ac.in/" target="_blank">About Us</a>
+                      <a class="atag" href="https://www.cushahuniversity.ac.in/contact_us.php"target="_blank">Contact US</a>
+                  </div>
+                  <div id="container">
+                      <div id="left"> <p class="head">Constituent colleges</p><hr color="black"><br>
+                      <ul>
+                          <li><a href="http://www.ccetvbt.org/"  target="_blank">C.U Shah college of Engineering and technology</a></li><br>
+                          <li><a href="http://www.ccetvbt.org/"  target="_blank">C.U Shah college of MCA</a></li><br>
+                          <li><a href="http://www.ccetvbt.org/"  target="_blank">C.U Shah college of Pharmacy</a></li><br>
+                          <li><a href="http://www.ccetvbt.org/"  target="_blank">C.U Shah college of Nursing</a></li><br>
+                          <li><a href="http://www.ccetvbt.org/"  target="_blank">C.U Shah college of B.ED</a></li><br>
+                          <li><a href="http://www.ccetvbt.org/"  target="_blank">C.U Shah college of Arts</a></li>
+          
+                      </ul>
+                      
+                      
+                      </div>
+                      <div id="right">
+                          <p class="head"> About University</p><hr color="black">
+                         <p class="lead about font-weight-bold"> C. U. Shah University, established on 22nd April, 2013, managed-sponsored by Wardhman Bharti Trust (Established in 1968). This State Private University, wide-spread in across 75 acre land, recognized and approved by all regulatory and statutory bodies such as UGC (UGC Approval) AICTE PCI NCTE BCI MHRD INC and Govt. of Gujarat, runs many courses in various disciplines includes Engineering, Arts & Humanities, Commerce, Science & Life Science, Education, Management, Nursing, Pharmacy, Computer Science, Law and Social Works from diploma-UG-PG-Ph.D.. Many courses and colleges are NAAC accredited.
+          The University aims for a clear understanding of small scale industry to medium scale industry to upper medium and large scale entrepreneurship for growth and development of the students and staff. The service to the society is the prime motive and motto of the University on all grounds of humanity as a whole through imparting quality education, hands on practices and research environment to the stake holders.<br>
+        </p>              
+        </div>
+                  </div>
+                  <div id="footer">
+                      <h4 class="h3">Copyright &copy; C.U.Shah University</h4>
+                  </div>
+              </div>
+          
 
               </div>
             </div>

@@ -9,6 +9,39 @@
         <link rel="stylesheet" href="../../css/style.css">
         <link rel="stylesheet" href="../../scss/style.scss">
         <title>Practical test</title>
+        <style>
+          thead {color: green;}
+        tbody {color: blue;}
+        tfoot {color: red;}
+        
+        table, th, td {
+          border: 1px solid black;
+          vertical-align: middle;
+          border-collapse: collapse;
+        }
+        th,
+        td {
+            padding: 9px;
+            text-align: center;
+        }
+        table {
+            width: 90%;
+            background-color: #f7f8fc;
+        }
+        table {
+            text-align: center;
+        }
+        h1{
+            font-style: italic;
+          }
+          tbody, thead, tfoot{
+              font-weight: bold;
+          }
+          table, th, td, tr{
+         border: 2px solid powderblue;
+         margin: 30px;
+          }
+        </style>
     </head>
 
     <body>
@@ -98,15 +131,15 @@
                   <a href="#" class="list-group-item list-group-item-action disabled disable" tabindex="-1" aria-disabled="true">
                     Practice
                   </a>
-                  <a href="../../html/day1/news.html" class="list-group-item list-group-item-action">Article news</a>
-                  <a href="../../html/day1/HR.html" class="list-group-item list-group-item-action">HR manager list</a>
-                  <a href="../../html/day1/student.html" class="list-group-item list-group-item-action">Student Report Card</a>
-                  <a href="../../html/day1/login.html" class="list-group-item list-group-item-action" >Login form</a>
-                  <a href="../../html/day1/menu.html" class="list-group-item list-group-item-action" >Menu  tags</a>
+                  <a href="../../css file/day 2/city.html " class="list-group-item list-group-item-action">City Lists</a>
+                  <a href="../../css file/day 2/markup.html" class="list-group-item list-group-item-action">Mark Up</a>
+                  <a href="../../html/day1/student.html" class="list-group-item list-group-item-action">Paragraph Border</a>
+                  <a href="../../html/day1/login.html" class="list-group-item list-group-item-action" >Report Card Text Center</a>
+                  <a href="../../html/day1/menu.html" class="list-group-item list-group-item-action" >universal Selector</a>
                   <a href="#" class="list-group-item list-group-item-action disabled disable" tabindex="-1" aria-disabled="true">
                     Assighnment
                   </a>
-                  <a href="../day1/employee.html" class="list-group-item list-group-item-action">Employee</a>
+                  <a href="../../css file/day 2/myresume.html" class="list-group-item list-group-item-action">My Resume</a>
 
 
                   
@@ -114,9 +147,91 @@
 
               </div>
               <div class="col-md-9">
-                        
-                <img class="img-fluid pt-5 mx-auto d-block rounded radix pb-5" src="../../images/html.png" alt="" >
+                <h2 class="display-4 text-light text-center" text-light text-center>Student Report Card</h2>
+                <h2 class="display-4 text-light text-center">C.U.Shah University</h2>
 
+
+                <h2 class="text-center text-danger">Deatil Informations</h2>
+    <table class="mx-auto" border="1px">
+        <tr>
+            <th class="bg-warning">Name:</th>
+            <th class="bg-warning">Parth J Shah</th>
+        </tr>
+        <tr>
+            <td>Enrollment no:</td>
+            <td>17TE403004</td>
+        </tr>
+        <tr> 
+            <td>Year of Passing:</td>
+            <td>2020</td>
+        </tr>
+    </table>
+    <h2 class="text-center text-danger">Report Card</h2>
+        <table class="student mx-auto" border="1px">
+            <thead>
+              <tr>
+                <th class="bg-warning">Sr.no</th>
+                <th class="bg-warning">Subject Name</th>
+                <th class="bg-warning">Grades</th>
+              <tr>  
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Computer Graphics</td>
+                    <td>A1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Fundamentals of Web Designing </td>
+                    <td>A2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Android Application</td>
+                    <td>B1</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Java</td>
+                    <td>B2</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>service Oriented Architecture</td>
+                    <td>A1</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Maths 3</td>
+                    <td>A2</td>
+                </tr>
+
+            </tbody>
+        <tfoot>
+          <tr>
+            <td>CGPA: 8.86 </td>
+            <td>SGPA: 9.96 </td>
+            <td>Total No.Of Backlogs:0</td>
+          </tr>
+        
+    </table>  
+    <center> 
+    <table class="mx-auto">
+      <tr>
+        <th class="bg-warning">Signature of Head of department</th>
+        <th class="bg-warning">signature of Exam Head</th>
+      </tr>
+      <tr>
+        <td class="pb-4"></td>
+        <td class="pb-4"></td>
+
+      </tr>
+    </table>
+    </center>
+                        
+                
+               
               </div>
             </div>
           </section>
