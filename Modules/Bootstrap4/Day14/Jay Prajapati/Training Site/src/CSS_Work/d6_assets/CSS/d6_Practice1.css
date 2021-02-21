@@ -1,0 +1,22 @@
+
+ #practice .row{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5px;
+}
+#practice .column{
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 5px;
+}
+@media screen and (max-width:768px){
+    #practice .column{
+        flex: 100%;
+        max-width: 100%;
+        padding: 0 5px;
+    }
+}
+#practice .column img{
+    margin-top: 10px;
+    vertical-align: middle;
+}
