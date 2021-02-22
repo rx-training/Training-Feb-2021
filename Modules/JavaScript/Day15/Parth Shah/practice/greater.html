@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div class="bg-light text-center text-danger">
+    <h1 id="all" class="display-4"></h1>
+    <h1 id="great"></h1>
+    <h1 id="demo"></h1>
+  </div>
+    
+    <script>
+         
+          var num1 = Number(prompt("Please enter number one"));
+          var num2 = Number(prompt("Please enter number two"));
+          var num3 = Number(prompt("Please enter number three"));
+          document.getElementById("all").innerHTML ="The Three numbers you enter are : "+num1+" , "+num2+" and "+num3;
+
+          if(num1 >= num2 && num1 >= num3)
+          {
+            document.getElementById("great").innerHTML = "The greatest number is :"+num1;
+
+          }
+          else if(num2 >= num1 && num2 >= num3)
+          {
+            document.getElementById("great").innerHTML = "The greatest number is :"+num2;
+
+          }
+          else{
+            document.getElementById("great").innerHTML = "The greatest number is :"+num3;
+          }
+
+
+          var nums=new Array(num1,num2,num3);
+          console.log(nums);
+        sum=0;
+          for(i=0;i<nums.length;i++)
+{
+            if (nums[i]>40)
+            {
+                sum+=nums[i];
+            }
+            
+}          
+console.log(sum);
+document.getElementById("demo").innerHTML ="The sum of that number which are greater than 40 are :"+sum;
+
+
+
+
+
+
+    </script>
+</body>
+</html>
