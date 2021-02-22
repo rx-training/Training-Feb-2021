@@ -1,18 +1,18 @@
 
-body{
+.zbody{
     background-color:black;
-    display: grid;
+    
 }  
-header{
+.zheader{
     background-color:black;
     display: grid;
 }
 .grid-container{
     display: grid;
 }
-header .logo{
+.zheader .logo{
     font-size: 10ch;
-    position:fixed;
+    position:absolute;
     top: 15px;
     left: 120px;
     color: white;    
@@ -23,30 +23,30 @@ header .logo{
     background-color: black;
     border: 1px solid rgb(20, 20, 20);
 }
-li{
+.ullist li{
     float: left;
 }
- ul{
+ .ullist{
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: black;
 }
-  li a {
+  .path{
         display: block;
         color: white;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
     }
-  li a:hover {
+  .path:hover {
         background-color: #111;
     }
   .sidebar {
         height:100%;
         width: 100%;
-        position: fixed;
+        position: absolute;
         top: 140px;
         background-color: #111;
         overflow-x: hidden;
@@ -56,23 +56,23 @@ li{
         display: flex;
         z-index: -1;         
     }
-  .sidebar frame {
+  .sidebar main {
         font-size: 22px;
         display: flex;
     }
-  .sidebar frame:hover {
+  .sidebar main:hover {
         color: #f1f1f1;              
     }
-  .frame{
-        position: fixed;
+  .main{
+        position: absolute;
         top: 160px;
         left: 160px;
         height: 100%;
         right:0;
-        background-color: black;
+        background-color: white;
         
     }   
-  footer {
+  .zfooter {
         text-align: center;
         padding: 3px;
         background-image: linear-gradient(black,rgb(54, 54, 54),black);
