@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>breakpoints</title>
+    <style>
+        h1, .example {
+            padding: 5px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            /*extra small*/
+            .example {
+                background-color: blanchedalmond;
+            }
+        }
+
+        @media only screen and (min-width: 600px) {
+            /*small*/
+            .example {
+                background-color: blue;
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+            /*medium*/
+            .example {
+                background-color: red;
+            }
+        }
+
+        @media only screen and (min-width: 992px) {
+            /*large*/
+            .example {
+                background-color: green;
+            }
+        }
+
+        @media only screen and (min-width: 1200px) {
+            /*extra large*/
+            .example {
+                background-color: peachpuff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Break points</h1>
+        <div class="example">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda non at exercitationem! Expedita officiis odio facilis laboriosam recusandae eos in reprehenderit! Quos blanditiis magni cum, vitae eveniet eius nesciunt porro iste reprehenderit impedit illo ut ducimus cumque maiores neque dolorum commodi incidunt accusantium facere labore earum eum minus! Error, itaque?
+        </div>
+    </div>
+</body>
+</html>

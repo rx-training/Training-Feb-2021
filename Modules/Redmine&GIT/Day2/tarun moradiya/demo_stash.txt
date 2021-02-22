@@ -1,0 +1,2 @@
+this file is created to perform stash
+removed from stash and pushed to remote

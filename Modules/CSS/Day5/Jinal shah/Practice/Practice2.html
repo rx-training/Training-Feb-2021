@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice2</title>
+
+    <style>
+        .static{
+            position: static;
+            display: block;
+            border: 1px solid rgb(243, 18, 18);    
+            background-color: rgb(142, 175, 212);
+        }
+        .relative{
+            position: relative;
+            display: block;
+            border: 1px solid rgb(243, 18, 18);    
+            background-color: rgb(142, 175, 212);
+        }
+        .absolute{
+            position: absolute;
+            display: block;
+            border: 1px solid rgb(243, 18, 18);    
+            background-color: rgb(142, 175, 212);
+            float: right;
+            top:80px;
+        }
+        .fixed{
+            position: fixed;
+            display: block;
+            border: 1px solid rgb(243, 18, 18);    
+            background-color: rgb(142, 175, 212);
+        }
+        .sticky{
+            position: sticky;
+            display: block;
+            border: 1px solid rgb(243, 18, 18);    
+            background-color: rgb(142, 175, 212);
+        }
+        .abc{
+            position: absolute;
+            display: block;
+            border: 1px solid rgb(243, 18, 18);    
+            background-color: rgb(142, 175, 212);
+        }
+    </style>
+
+</head>
+<body>
+    <div class="static">Static</div><br/>
+    <div class="relative">relative
+            <div class="absolute">Inside Relative class</div>
+    </div><br/>
+    <div class="absolute">Absolute</div><br/><br/>
+    <div class="fixed">Fixed<br/><br/><br/><br/><br/><br/><br/>
+        <div class="abc">Inside fixed class</div>
+    </div><br/><br/>
+    <div class="sticky">sticky</div>
+</body>
+</html>

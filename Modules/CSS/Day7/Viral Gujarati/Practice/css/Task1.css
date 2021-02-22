@@ -1,0 +1,8 @@
+body{
+    border: solid blue;
+}
+@media screen and (min-width: 500px){
+body{
+    border: solid red;
+}
+}

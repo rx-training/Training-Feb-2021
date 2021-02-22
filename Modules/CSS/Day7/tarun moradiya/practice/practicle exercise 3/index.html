@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide Element</title>
+    <style>
+        h1, .hide {
+            padding: 10px;
+            background-color: peachpuff;
+            text-align: center;
+
+            width: 60%;
+            margin: 10px auto;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .hide {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hide Element</h1>
+        <div class="hide">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates rerum veritatis, error eius atque quos?
+        </div>
+    </div>
+</body>
+</html>

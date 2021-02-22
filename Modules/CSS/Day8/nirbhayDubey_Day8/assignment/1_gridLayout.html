@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="assets/images/yoga-logo.png" alt="">
+                <p>Yoga Logo</p>
+                <a href="#" onclick="fun()"><i class="fa fa-bars" aria-hidden="true"></i></a>
+            </div>
+            <div class="items" id="navitems">
+                <a href="#">Home</a>
+                <a href="#">Courses</a>
+                <a href="#">Products</a>
+                <a href="#">About Us.</a>
+                <a href="#">Contact Us.</a>
+
+            </div>
+        </div>
+        <div class="carousel">
+            <div>
+                <img src="assets/images/yoga-logo.png" alt="" height="100">
+                <p> Yoga adds years to your Life,<br> and life to your years </p>
+            </div>
+        </div>
+
+        <div class="con1"></div>
+        <div class="con2">
+            <div class="whyyoga">
+                <p>Why Yoga?</p>
+            </div>
+            <div class="icon3">
+                <div>
+                    <ul>
+                        <li><i class="fa fa-balance-scale" aria-hidden="true"></i></li>
+                        <li id="name">Balance</li>
+                        <li id="details">Becoming flexible is not the goal. Standing on your hands is not the goal. The goal is serenity.Balance. Truly finding peace in your own skin. </li>
+                    </ul> 
+                </div>
+                <div>
+                    <ul>
+                        <li><i class="fa fa-leaf" aria-hidden="true"></i></li>
+                        <li id="name">Fitness</li>
+                        <li id="details">Fitness is not about being better than someone else. It’s about being better than you used to be.</li>
+                    </ul> 
+                </div>
+                <div>
+                    <ul>
+                        <li><i class="fa fa-cutlery" aria-hidden="true"></i></li>
+                        <li id="name">Food</li>
+                        <li id="details">Food brings people together on many different levels. It’s nourishment of the soul and body</li>
+                    </ul> 
+                </div>
+            </div>
+        </div>
+        <div class="con3"></div>
+
+        <div class="container">
+            <div>
+                <div>
+                    <p>Sometimes the most important thing in a whole day is the rest we take between two deep breaths.</p>
+                </div>
+            </div>
+        </div>
+            
+        <div class="con4"></div>
+        <div class="con5">
+            <div class="whyus">
+                    <img src="assets/images/whyus-image.jpg" alt="" height="100">
+                    
+                    <p>
+                        <strong>Why Us?</strong><br><br><br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi debitis dolor dolore minus blanditiis suscipit tempore sapiente autem excepturi sint, molestias maxime odio neque similique assumenda, dicta cumque delectus eius!
+                        <br><br><br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti rem labore molestias nihil!
+                   
+                    </p>
+            </div>
+        </div>
+        <div class="con6"></div>
+
+        <div class="con7"></div>
+        <div class="con8">
+            <div class="logo">
+                <img src="assets/images/yogalogo-colored.png" alt="" height="100">
+                <p>Our Programs</p>
+            </div>
+            <div class="cards">
+                <div>
+                    <img src="assets/images/plan1-image.jpg" alt="" width="100%">
+                    <p class="pland">One Month plan</p>
+                    <p class="planrs">Rs.1000</p>
+                    <p class="planab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta cum laboriosam voluptates iste dolorem fuga assumenda suscipit sint labore? Doloribus obcaecati voluptatibus nulla ea culpa? Temporibus molestiae natus eum repellendus?</p>
+                </div>
+                <div>
+                    <img src="assets/images/plan2-image.jpg" alt="" width="100%">
+                    <p class="pland">2 Month plan</p>
+                    <p class="planrs">Rs.2000</p>
+                    <p class="planab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta cum laboriosam voluptates iste dolorem fuga assumenda suscipit sint labore? Doloribus obcaecati voluptatibus nulla ea culpa? Temporibus molestiae natus eum repellendus?</p>
+                </div>
+                <div>
+                    <img src="assets/images/plan3-image.jpg" alt="" width="100%">
+                    <p class="pland">4 Month plan</p>
+                    <p class="planrs">Rs.4000</p>
+                    <p class="planab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta cum laboriosam voluptates iste dolorem fuga assumenda suscipit sint labore? Doloribus obcaecati voluptatibus nulla ea culpa? Temporibus molestiae natus eum repellendus?</p>
+                </div>
+                <div>
+                    <img src="assets/images/plan4-image.jpg" alt="" width="100%">
+                    <p class="pland">Annual plan</p>
+                    <p class="planrs">Rs.10000</p>
+                    <p class="planab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta cum laboriosam voluptates iste dolorem fuga assumenda suscipit sint labore? Doloribus obcaecati voluptatibus nulla ea culpa? Temporibus molestiae natus eum repellendus?</p>
+                </div>  
+            </div>
+        </div>
+        <div class="con9"></div>
+
+
+        <div class="footer">
+            &copy; All Rights Reserved...
+        </div>
+    </div>
+
+
+
+    <script>
+        var clicked=0;
+        function fun(){
+            if(clicked==0){
+                document.getElementById("navitems").style="display:none";
+                clicked=1;
+            }else{
+                document.getElementById("navitems").style="display:flex";
+                clicked=0;
+            }
+        }
+    </script>
+</body>
+</html>

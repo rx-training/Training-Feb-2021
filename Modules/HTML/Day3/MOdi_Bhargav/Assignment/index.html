@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>employee details</title>
+</head>
+
+<body>
+    <h2>This is Employee Details Form</h2>
+    <form action="get" id="forms">
+        <!-- <label for="name"> Name</label> -->
+        <div>
+            Name: <input type="text" name="myName" id="name" placeholder="Enter Your Name">
+        </div>
+        <br>
+        <div>
+            Email: <input type="email" name="myEmail" id="email" placeholder="Enter Your Email">
+        </div>
+        <br>
+        <div>
+            Contact No: <input type="tel" name="mycontact" id="contact" required>
+        </div>
+        <br>
+        <div>
+            joining_Date: <input type="date" name="myDate" required>
+        </div>
+        <br>
+        <div>
+            age: <input type="number" name="myBonus" required>
+        </div>
+        <br>
+        <div>
+            designation: <input type="text" name="myRole">
+        </div>
+        <br>
+        <div>
+            Gender: Male <input type="radio" name="myGender"> Female <input type="radio" name="myGender">
+            Other <input type="radio" name="myGender">
+        </div>
+        <br>
+        <div>
+            Salary: <input type="number" name="mysalry" id="Salary">
+        </div>
+        <br>
+        <div>
+            Are you Ready?: <input type="checkbox" name="myEligibility" checked>
+        </div>
+        <br>
+        <div>
+            Write about yourself: <br><textarea name="myText" cols="40" rows="5"></textarea>
+        </div>
+         <br>
+        <div>
+            <label for="Location">Location</label>
+            <select name="myLocation" id="Location">
+                <option value="ahemdabad" selected>Ahemdabad</option>
+                <option value="Mehsana" >Mehsana</option>
+                <option value="Patan" >Patan</option>
+            </select>
+        </div>
+        <br>
+
+        <div>
+            <input type="submit" value="Submit Now">
+            <input type="reset" value="Reset Now">
+        </div>
+    </form>
+</body>
+
+</html>
