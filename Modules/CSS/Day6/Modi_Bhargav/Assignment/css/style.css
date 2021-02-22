@@ -4,11 +4,11 @@
     margin: 0;
     padding: 0;
 }
-.layout {
+/* .layout {
     margin: auto;
     width: 100%;
     background-color: rgb(176, 176, 185);
-}
+} */
 .header{
     background-color: rgb(156, 79, 124);
     color: darkblue;
