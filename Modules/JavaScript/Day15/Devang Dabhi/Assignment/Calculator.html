@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+<script>
+     function calculator(){
+            var a = document.getElementById("add").checked;
+            var b = document.getElementById("sub").checked;
+            var c = document.getElementById("mul").checked;
+            var d = document.getElementById("div").checked;
+            var y = document.getElementById("yy").value;
+            var z = document.getElementById("zz").value;
+            var num;
+
+            if(a == true){
+                num = parseInt(y) + parseInt(z);
+                document.getElementById("answer").innerHTML = num;
+            }
+            else if(b == true){
+                num = parseInt(y) - parseInt(z);
+                document.getElementById("answer").innerHTML = num;
+            }
+            else if(c == true){
+                num = parseInt(y) * parseInt(z);
+                document.getElementById("answer").innerHTML = num;
+            }
+            else{
+                num = parseInt(y) / parseInt(z);
+                document.getElementById("answer").innerHTML = num;
+            }
+        }</script>
+</head>
+<body>
+    <form>
+        Enter First number
+        <input type="number" id="yy" value=" " required>
+    Enter Second number
+    <input type="number" id="zz" value=" " required><br>
+        <input type="radio" name="colors" id="add">Addition<br>
+        <input type="radio" name="colors" id="sub">Subtraction<br>
+        <input type="radio" name="colors" id="mul">Multiplication<br>
+        <input type="radio" name="colors" id="div">Division<br>
+        <button type="button" onclick="calculator()">Calculate</button>
+        <button type="reset">Reset</button><br>
+        <h3 id="answer"></h3>
+    </form>
+
+
+</body>
+</html>
