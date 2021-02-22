@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Calculator</title>
+    <style>
+        #Math_result{
+            text-align: center;
+            color: darkmagenta
+        }
+        .container{
+            background: darkgray;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container py-5">
+        <div class="col">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="num1">Please enter first number</label>
+                            <input type="number" id="num1" name="num1"> 
+                        </div>
+                        <div class="col-md-6">
+                            <label for="num2">Please enter second number</label>
+                            <input type="number" id="num2" name="num2"><br>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <form>
+                                <input type="radio" id="Addition" name="Calc" value="Addition" onclick="reset_Operators();">
+                                <label for="Addition">Addition</label><br>
+                    
+                                <input type="radio" id="Subtraction" name="Calc" value="Subtraction" onclick="reset_Operators();">
+                                <label for="Subtraction">Subtraction</label><br>
+                    
+                                <input type="radio" id="Multiplication" name="Calc" value="Multiplication" onclick="reset_Operators();">
+                                <label for="Multiplication">Multiplication</label><br>
+                    
+                                <input type="radio" id="Division" name="Calc" value="Division" onclick="reset_Operators();">
+                                <label for="Division">Division</label><br>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <input type="submit" value="calculate" class="bg-success" onclick="return calculate();"/>
+                        <input type="submit" value="clear" class="bg-danger" onclick="return clear();"/>
+                        <p id="results"></p>
+                        <div id = "Math_result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>  
+    
+    <script>
+        function reset_Operators() {
+            document.getElementById("Math_result").innerHTML = '';
+        }
+        function clear()
+        {
+            document.getElementById("Math_result").innerHTML = '';
+            textbox1="";
+            textbox2="";
+        }
+        function calculate() {
+            var textbox1 = document.getElementById("num1").value;
+            var textbox2 = document.getElementById("num2").value;
+            var operators = document.getElementsByName("Calc");
+        
+            if(textbox1 == "") {
+                var Math_result = "<span class='warning'>Enter the first value.</span>";
+                document.getElementById("Math_result").innerHTML = Math_result;
+                return false;
+            }
+            else if(textbox2 == "") {
+                var Math_result = "<span class='warning'>Enter the second value.</span>";
+                document.getElementById("Math_result").innerHTML = Math_result;
+                return false;
+            }
+
+            if(operators[0].checked == true){
+                add=parseInt(textbox1) + parseInt(textbox2);
+                Calc_result = "Addition of "+ textbox1 + " and "+ textbox2 + " is " + add;
+                document.getElementById("Math_result").innerHTML = Calc_result;
+                return false;
+            }
+            else if(operators[1].checked == true){
+                sub=parseInt(textbox1) - parseInt(textbox2);
+                Calc_result = "Subtraction of "+ textbox1 + " and "+ textbox2 + " is " + sub;
+                document.getElementById("Math_result").innerHTML = Calc_result;
+                return false;
+            }
+            else if(operators[2].checked == true){
+                mul=parseInt(textbox1) * parseInt(textbox2);
+                Calc_result = "Multiplication of "+ textbox1 + " and "+ textbox2 + " is " + mul;
+                document.getElementById("Math_result").innerHTML = Calc_result;
+                return false;
+            }
+            else if(operators[3].checked == true){
+                divi=parseInt(textbox1) / parseInt(textbox2);
+                Calc_result = "Division of "+ textbox1 + " and "+ textbox2 + " is " + divi;
+                document.getElementById("Math_result").innerHTML = Calc_result;
+                return false;
+            }
+            else{
+                var result = "<span class='warning'>Select your opertion you want to perform</span>";
+                document.getElementById("Math_result").innerHTML = result;
+                return false;
+            }
+        }
+        
+    </script>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
