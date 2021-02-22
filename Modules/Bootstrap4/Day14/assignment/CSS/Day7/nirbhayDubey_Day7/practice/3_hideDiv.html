@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            background-color: white;
+        }
+        article{
+            padding: 20px;
+        }
+        article > div{
+            background-color: rgb(50, 205, 102);
+            padding: 20px;
+            color: blue;
+            font-weight: bold;
+            display: block;
+        }
+        @media only screen and (max-width:600px){
+            article > div{
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <article>
+        <h1>Hello World</h1>
+        <div> This is a div which is going to hide in small screen size </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, ipsam. Dolore obcaecati sequi quia tempora dicta consectetur cumque, tempore repellendus eaque iusto molestias illo ab incidunt, laboriosam, at asperiores maiores.</p>
+    </article>
+</body>
+</html>

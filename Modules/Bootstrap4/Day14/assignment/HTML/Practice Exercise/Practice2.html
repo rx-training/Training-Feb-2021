@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+ 
+      .mygrid {
+          display: grid;
+          grid-template-columns: repeat(5,1fr);
+          grid-template-rows: 0.5fr  1fr 1fr 1fr ;
+          grid-template-areas: "nav nav nav nav nav"
+                                "item1 item2 item2 item2 item2"
+                                "item1 item2 item2 item2 item2"
+                                "item1 item2 item2 item2 item2";
+
+      }
+      .item1
+      {
+          grid-area:item1 ;
+      }
+
+      .item2
+      {
+          grid-area:item2 ;
+      }
+      nav
+      {
+          grid-area: nav;
+      }
+      @media(max-width: 768px)
+   {
+    .mygrid {
+          display: grid;
+          grid-template-columns: repeat(5,1fr);
+          grid-template-rows: 0.4fr;
+          grid-template-areas: "nav nav nav nav nav"
+                                "item1 item1 item1 item1 item1"
+                                "item2 item2 item2 item2 item2"
+                                "item2 item2 item2 item2 item2";
+                                
+      
+
+   }
+   .item1
+      {
+          grid-area:item1 ;
+      }
+
+      .item2
+      {
+          grid-area:item2 ;
+      }
+      nav
+      {
+          grid-area: nav;
+      }
+}
+      </style>
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/docs.min.js"></script>
+
+      <div class="grid-container mygrid">
+        <nav class="navbar  navbar-expand-md navbar-light bg-light border border-secondary h-85">
+            <div class="container-fluid">
+                <a class="navbar-brand align-middle" href="">
+                    <img src="https://tutorials.rxtrainees.radixweb.net/wp-content/uploads/2020/12/logo_2500X1875-1536x1152.jpg"
+                        alt="" width="100" height="100" class="d-inline-block align-top">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="demohtml.html">HTML</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="css.html">CSS</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="bootstrap.html">BOOTSRAP</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="#">JAVASCRIPT</a>
+                          </li>
+    
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+    
+            </div>
+        </nav>
+        <div style="height: 100vh;" class="item1 bg-secondary">
+            <h2>HTML(DAY-3)</h2>
+            <ul>Practice Exercise
+                <li>
+                   <a href="../Practice Exercise/Practice1.html" target="item2">Practice1</a>
+                </li>
+                <li>
+                   <a href="../Practice Exercise/Practice2.html" target="item2">Practice2</a>
+                </li>
+                
+                <li>
+                   <a href="../Practice Exercise/Practice4.html" target="item2">Practice3</a>
+                </li>
+            </ul>
+            <ul>Assignment
+               <li><a href="../assignments/assignment1.html">Assignment</a></li>
+            </ul>
+        </div>
+        <div class="item2 bg-success" style="height: 100vh;">
+            <ul class="myul">
+                <li span class="span1">Engineers</li>
+                    <ul class="nested">
+                       <li>Associate</li>
+                       <li>Software Engineer</li>
+                       <li>Senior Software Engineer</li>
+                       <li>Team lead</li>
+                       <li>Architect</li>
+                    </ul>
+                <li span class="span1">HR</li>
+                    <ul class="nested">
+                        <li>Associate HR</li>
+                        <li>Executive</li>
+                        <li>Senior Executive</li>
+                        <li>HR manager</li>
+                    </ul>
+                <li span class="span1">Finance</li>
+                <ul class="nested">
+                    <li>Accoutant</li>
+                    <li>Senior Accoutant</li>
+                    <li>Manager</li>
+                    <li>Senior Manager</li>
+                </ul>
+            </ul>
+        </div>
+</body>
+
+</html>

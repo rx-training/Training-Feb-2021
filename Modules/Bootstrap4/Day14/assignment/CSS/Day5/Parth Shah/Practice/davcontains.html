@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positions and Overflow</title>
+    <style>
+        /* CSS Position: Static (default) , relative , absolute , fixed , sticky */
+        body{
+            background-color: rgb(243, 214, 160);
+        }
+.box{
+    display: inline-block;
+    border: 3px solid black;
+    width : 200px;
+    height : 200px;
+    margin: 2px;
+    background-color: lightgrey;
+
+}
+.fixed{
+    border :1px solid darkblue;
+    width : 100px;
+    height : 100px;
+    padding : 1px;
+    position : fixed;
+    top : 150px;
+    right :0px;
+     background-color: rgb(214, 106, 106);
+
+
+}
+.container{
+    border :2px solid red;
+    width : 61%;
+    position :relative;
+    top : 80px;
+    background-color: lightyellow    ;
+}
+#box1{
+    overflow: scroll;
+}
+#box2{
+    overflow: auto;
+}
+#box3{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+header{
+    border :1px dotted gray;
+    background-color: rgb(134, 129, 123);
+}
+footer{
+    border :0px dotted gray;
+    background-color: rgb(134, 129, 123);
+}
+
+    </style>
+</head>
+<body>
+    <center>
+    <header>
+        <h1> CSS Positions, Overflow and floating Example</h1>
+    </header>
+
+    <div class="container">
+<div class="box" id="box1">Here in this web page it shows you the uses of css floating , overflows and position properies . 
+    In this box you are able to see overflow properties of scroll. so kindly scroll up and down . And you are very glad that its working . 
+        In box 2  I have used a Auto property of overflow and in box 3 i have used a overflow x and y.</div>
+<div class="box" id="box2">Here in this web page it shows you the uses of css floating , overflows and position properies . 
+    In this box you are able to see overflow properties of scroll. so kindly scroll up and down. And you are very glad that its working . 
+    In box 2  I have used a Auto property of overflow and in box 3 i have used a overflow x and y. </div>
+<div class="box" id="box3">Here in this web page it shows you the uses of css floating , overflows and position properies . 
+    In this box you are able to see overflow properties of scroll. so kindly scroll up and down. And you are very glad that its working . 
+    In box 2  I have used a Auto property of overflow and in box 3 i have used a overflow x and y. </div>
+</div>
+
+<br> 
+<br> 
+<br>
+<br>
+<br>
+<b>>
+It is dummy text that shows the fixed box using position fixed.
+Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.[2]
+
+CSS is designed to enable the separation of presentation and content, including layout, colors, and fonts.[3] This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file which reduces complexity and repetition in the structural content as well as enabling the .css file to be cached to improve the page load speed between the pages that share the file and its formatting.
+
+Separation of formatting and content also makes it feasible to present the same markup page in different styles for different rendering methods, such as on-screen, in print, by voice (via speech-based browser or screen reader), and on Braille-based tactile devices. CSS also has rules for alternate formatting if the content is accessed on a mobile device.[4]
+
+The name cascading comes from the specified priority scheme to determine which style rule applies if more than one rule matches a particular element. This cascading priority scheme is predictable.
+
+The CSS specifications are maintained by the World Wide Web Consortium (W3C). Internet media type (MIME type) text/css is registered for use with CSS by RFC 2318 (March 1998). The W3C operates a free CSS validation service for CSS documents.[5]
+
+In addition to HTML, other markup languages support the use of CSS including XHTML, plain XML, SVG, and XUL.
+</b>
+
+<div class="fixed" id="box4">
+checking fixed position<hr>
+please scroll down
+</div>
+
+<footer>
+    <h2> Hope you like this </h2>
+</footer>
+</center>
+</body>
+</html> 
