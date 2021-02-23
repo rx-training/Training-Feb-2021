@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3 JavaScriptIntro</title>
+
+    <script>
+
+        function myFunction() {
+          document.getElementById("demo3").innerHTML = "Paragraph changed.";
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <center>
+
+    <p id="demo">JavaScript can change HTML content.</p>
+    <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+    <hr style="border : 2px solid teal; margin-top: 10px; margin-bottom: 10px;">
+
+    <p>JavaScript can change HTML attribute values.</p>
+    <p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+    <button onclick="document.getElementById('myImage').src='../assests/img/pic_bulbon.gif'">Turn on the light</button>
+    <img id="myImage" src="../assests/img/pic_bulboff.gif" style="width:100px">
+    <button onclick="document.getElementById('myImage').src='../assests/img/pic_bulboff.gif'">Turn off the light</button>
+    <hr style="border : 2px solid teal; margin-top: 10px; margin-bottom: 10px;">
+
+    <p id="demo1">JavaScript can change the style of an HTML element.</p>
+    <button type="button" onclick="document.getElementById('demo1').style.fontSize='35px'">Click Me!</button>
+    <hr style="border : 2px solid teal; margin-top: 10px; margin-bottom: 10px;">
+
+    <p id="demo2">JavaScript can hide HTML elements.</p>
+    <button type="button" onclick="document.getElementById('demo2').style.display='none'">Click Me!</button>
+    <hr style="border : 2px solid teal; margin-top: 10px; margin-bottom: 10px;">
+
+    <h2>JavaScript in Head</h2>
+    <p id="demo3">A Paragraph.</p>
+    <button type="button" onclick="myFunction()">Try it</button>
+    <hr style="border : 2px solid teal; margin-top: 10px; margin-bottom: 10px;">
+
+    <h2>JavaScript in Body</h2>
+    <p id="demo4">A Paragraph.</p>
+    <button type="button" onclick="myFunction1()">Try it</button>
+
+    <script>
+    function myFunction1() {
+        document.getElementById("demo4").innerHTML = "Paragraph changed.";
+    }
+    </script>
+    <hr style="border : 2px solid teal; margin-top: 10px; margin-bottom: 10px;">
+
+    <h2>External JavaScript</h2>
+    <p id="demo5">A Paragraph.</p>
+    <button type="button" onclick="myFunction2()">Try it</button>
+    <p>(myFunction is stored in an external file called "myscript.js")</p>
+    <script src="../assests/js/myscript.js"></script>
+    <hr style="border : 2px solid teal; margin-top: 10px; margin-bottom: 10px;">
+
+    <!--------  output -------->
+    <button type="button" onclick="document.write(5 + 6)">Try it</button>
+    <hr style="border : 2px solid teal; margin-top: 10px; margin-bottom: 10px;">
+
+    <h2>The window.print() Method</h2>
+    <p>Click the button to print the current page.</p>
+    <button onclick="window.print()">Print this page</button>
+    <hr style="border : 2px solid teal; margin-top: 10px; margin-bottom: 10px;">
+
+    </center>
+</body>
+</html>

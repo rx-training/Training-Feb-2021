@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 1</title>
+
+    <style>
+        h3{
+            display: block;
+            border: 2px solid rgb(235, 10, 10); 
+            background-color: lightsalmon; 
+            color: black;
+            padding: 5px;
+            width: auto;
+        }
+    </style>
+
+    <script>
+
+        function sum(n1,n2,n3){
+            s = parseInt(n1) + parseInt(n2) + parseInt(n3);
+
+            if(parseInt(n1) > parseInt(n2) && parseInt(n1) > parseInt(n3))
+            {
+                alert("sum is = "+ s + "\n"  + "Greater number is : "+ n1);
+            }
+            if(parseInt(n2) > parseInt(n1) && parseInt(n2) > parseInt(n3))
+            {
+                alert("sum is = "+ s + "\n"  + "Greater number is : "+ n2);
+            }
+            if(parseInt(n3) > parseInt(n2) && parseInt(n3) > parseInt(n1))
+            {
+                alert("sum is = "+ s + "\n"  + "Greater number is : "+ n3);
+            }
+            
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <h3><center>Accept three numbers from the user using prompt <br>
+        find the greater of these the numbers and do the sum of that numbers which are greater than 40.</center></h3>
+
+    <center>
+        <br><br><br><br><br><br>
+    Enter number 1 : <input type="number" id="n1"><br><br>
+    Enter number 2 : <input type="number" id="n2"><br><br>
+    Enter number 3 : <input type="number" id="n3"><br><br>
+    <input type="submit" value="Sum" style="font-size: 20px;" 
+            onclick="sum(n1.value,n2.value,n3.value)">
+    </center>
+</body>
+</html>

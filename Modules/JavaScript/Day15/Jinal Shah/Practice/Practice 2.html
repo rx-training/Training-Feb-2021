@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 2</title>
+
+    <style>
+        h3{
+            display: block;
+            border: 2px solid rgb(235, 10, 10); 
+            background-color: lightsalmon; 
+            color: black;
+            padding: 5px;
+            width: auto;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h3><center>Declare array with 5 city names and iterate these values <br>
+        with the help of loop and display it with alert.</center></h3>
+
+
+    <script>
+        var cities = ["Ahmedabad", "Mumbai", "Chennai", "Pune", "Delhi"];
+        var citylist ="";
+        for(let city of cities){
+            citylist +=  city + " \n "  ;
+        }
+        alert(citylist);
+    </script>
+
+</body>
+</html>
