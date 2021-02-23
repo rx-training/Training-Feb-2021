@@ -1,0 +1,40 @@
+//Get Elements
+let myform = document.getElementById('myform');
+let dateInp = document.getElementById('date-inp');
+let output = document.getElementById('output');
+
+myform.onsubmit = function() {
+    dateVal = dateInp.value;
+    dateArr = dateVal.split('-');
+
+    let mon = Number(dateArr[0]);
+    let dat = Number(dateArr[1]);
+    let year = Number(dateArr[2]);
+
+    if (!Number.isNaN(mon)) {
+        if (mon < 1 || mon > 12) {
+            output.innerHTML += '<br>invalid! month should be between 1 - 12';
+        }
+    } else {
+        output.innerHTML += '<br>invalid! input should be digits only';   
+    }   
+    
+    if (!Number.isNaN(dat)) {
+        if (dat < 0 || dat > 31) {
+            output.innerHTML += '<br>invalid! day should be between 1 - 31';
+        }
+    } else {
+        output.innerHTML += '<br>invalid! input should be digits only';   
+    }
+    
+    if (!Number.isNaN(year)) {
+        if (! /[0-9]{4}/.test(year)) {
+            output.innerHTML += '<br>invalid! year should be four digits';
+        }
+        if (year == 0) {
+            output.innerHTML += '<br>invalid! year should be greater then 0';
+        }
+    } else {
+        output.innerHTML += '<br>invalid! input should be digits only';   
+    }
+}
