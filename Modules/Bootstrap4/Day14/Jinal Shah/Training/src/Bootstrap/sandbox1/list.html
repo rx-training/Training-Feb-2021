@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Sandbox</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+</head>
+<body>
+    <header>
+        <h1 class="display-3 text-center my-4">List Groups and Badges</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="dropdown">
+                        <button class="btn btn-primary btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                            2 : utilities
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="typography.html">2.2 Basic Typography</a>
+                            <a class="dropdown-item" href="textalign.html">2.3 Text Alignment And Display</a>
+                            <a class="dropdown-item" href="float.html">2.4 Floats And Position</a>
+                            <a class="dropdown-item" href="color.html">2.5 Colors and Background</a>
+                            <a class="dropdown-item" href="space.html">2.6 Spacing</a>
+                            <a class="dropdown-item" href="size.html">2.7 Sizing</a>
+                            <a class="dropdown-item" href="break.html">2.8 Breakpoints</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dropdown">
+                        <button class="btn btn-success btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                            3 : CSS components
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="button.html">3.2 Buttons</a>
+                            <a class="dropdown-item" href="nav.html">3.3 Navbar</a>
+                            <a class="dropdown-item" href="list.html">3.4 List Groups and Badges</a>
+                            <a class="dropdown-item" href="form.html">3.5 Forms</a>
+                            <a class="dropdown-item" href="input.html">3.6 Input Groups</a>
+                            <a class="dropdown-item" href="alert.html">3.7 Alerts and Progress</a>
+                            <a class="dropdown-item" href="table.html">3.8 Tables and Pagination </a>
+                            <a class="dropdown-item" href="card.html">3.9 Cards</a>
+                            <a class="dropdown-item" href="object.html">3.10 Media Objects</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </header>
+
+    <div class="container">
+        
+        <ul class="list-group mb-5">
+            <li class="list-group-item">my list item one</li>
+            <li class="list-group-item">my list item two</li>
+            <li class="list-group-item">my list item three</li>
+            <li class="list-group-item">my list item four</li>
+            <li class="list-group-item">my list item five</li>
+        </ul>
+
+        <ul class="list-group mb-5">
+            <a class="list-group-item list-group-item-action" href="">my list item 1</a>
+            <a class="list-group-item list-group-item-action" href="">my list item 2</a>
+            <a class="list-group-item list-group-item-action" href="">my list item 3</a>
+            <a class="list-group-item list-group-item-action" href="">my list item 4</a>
+            <a class="list-group-item list-group-item-action" href="">my list item 5</a>
+        </ul>
+
+        <ul class="list-group mb-5">
+            <li class="list-group-item">regular list item</li>
+            <li class="list-group-item list-group-item-primary">primary list item</li>
+            <li class="list-group-item list-group-item-secondary">secondary list item</li>
+            <li class="list-group-item list-group-item-success">success list item</li>
+            <li class="list-group-item list-group-item-info">info list item</li>
+            <li class="list-group-item list-group-item-warning">warning list item</li>
+            <li class="list-group-item list-group-item-danger">danger list item</li>
+            <li class="list-group-item list-group-item-light">light list item</li>
+            <li class="list-group-item list-group-item-dark">dark list item</li>
+        </ul>
+
+        <div class="row mb-5">
+            <div class="col-4">
+                <div class="list-group mb-5" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" href="#list-home" data-toggle="list">home</a>
+                    <a class="list-group-item list-group-item-action" id="list-home-list" href="#list-about" data-toggle="list">about</a>
+                    <a class="list-group-item list-group-item-action" id="list-home-list" href="#list-services" data-toggle="list">services</a>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="tab-content" id="nav-tabContent"> 
+                    <div class="tab-pane fade show active" id="list-home" role="tabpanel">
+                        home content...
+                    </div>
+                    <div class="tab-pane fade" id="list-about" role="tabpanel">
+                        about content...
+                    </div>
+                    <div class="tab-pane fade" id="list-services" role="tabpanel">
+                        services content...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ul class="list-group mb-5">
+            <li class="list-group-item">my list item one</li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">my list item two <span class="badge badge-primary">30</span></li>
+            <li class="list-group-item">my list item three</li>
+            <li class="list-group-item">my list item four</li>
+            <li class="list-group-item">my list item five</li>
+        </ul>
+
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">home</li>
+        </ol>
+        <ol class="breadcrumb">
+            <li class="breadcrumb"><a href="">Home</a></li>
+            <li class="breadcrumb active">users</li>
+        </ol>
+        <ol class="breadcrumb">
+            <li class="breadcrumb"><a href="">Home</a></li>
+            <li class="breadcrumb"><a href="">users</a></li>
+            <li class="breadcrumb active">brad</li>
+        </ol>
+
+    </div>
+
+    <div style="margin-top:500px;"></div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
