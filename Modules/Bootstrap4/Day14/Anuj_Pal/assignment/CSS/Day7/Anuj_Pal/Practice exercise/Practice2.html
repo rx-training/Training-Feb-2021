@@ -1,0 +1,235 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  background-color: lightgreen;
+}
+
+    @media only screen and(max width:600px)
+    {
+        body
+        {
+            background-color: violet;
+        }
+
+    }
+</style>
+</head>
+<body>
+
+<p>Resize the browser window. When the width of this document is 600 pixels or less, the background-color is "lightblue", otherwise it is "lightgreen".</p>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        .mygrid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 0.4fr 1fr 1fr 1fr;
+            r);
+            grid-template-areas: "nav nav nav nav nav"
+                "item1 item2 item2 item2 item2"
+                "item1 item2 item2 item2 item2"
+                "item1 item2 item2 item2 item2";
+
+
+        }
+
+        .item1 {
+            grid-area: item1;
+        }
+
+        .item2 {
+            grid-area: item2;
+        }
+
+        nav {
+            grid-area: nav;
+        }
+
+        @media(max-width: 768px) {
+            .mygrid {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                grid-template-rows: 0.2fr 1fr 1fr 1fr;
+                grid-template-areas: "nav nav nav nav nav"
+                    "item1 item1 item1 item1 item1"
+                    "item2 item2 item2 item2 item2"
+                    "item2 item2 item2 item2 item2";
+
+
+
+            }
+
+            .item1 {
+                grid-area: item1;
+                overflow: scroll;
+            }
+
+            .item2 {
+                grid-area: item2;
+            }
+
+            nav {
+                grid-area: nav;
+            }
+        }
+
+        body {
+            border: 2px solid blue;
+        }
+
+        @media screen and (max-width: 500px) {
+            body {
+                border: 2px solid red;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/docs.min.js"></script>
+
+    <!-- <div class="row text-center">
+        <img class="img-fluid" src="https://tutorials.rxtrainees.radixweb.net/wp-content/uploads/2020/12/logo_2500X1875-1536x1152.jpg " >
+      </div>   -->
+
+
+
+    <div class="grid-container mygrid">
+        <nav class="navbar  navbar-expand-md navbar-light bg-light border border-secondary h-85">
+            <div class="container-fluid">
+                <a class="navbar-brand align-middle" href="assignment.html">
+                    <img src="https://tutorials.rxtrainees.radixweb.net/wp-content/uploads/2020/12/logo_2500X1875-1536x1152.jpg"
+                        alt="" width="100" height="100" class="d-inline-block align-top">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../../../../demohtml.html">HTML</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="../../../../css.html">CSS</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="../../../../bootstrap.html">BOOTSRAP</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="#">JAVASCRIPT</a>
+                          </li>
+    
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+    
+            </div>
+        </nav>
+      
+         <div class="item1 bg-danger " style="height: 100vh; overflow: scroll;">
+            <ul class="ul1">
+                <center><h3>Day:4(CSS)</h3></center>
+                <li>Practice Exercise
+                    <ol class="ol1">
+                        <li><a href="../../../../../../Day14/assignment/CSS/Day4/Anuj Pal/Practice Exercise/Practice2.html" target="myframe">Exercise-1</a></li>
+                        <li><a href="../../../../../../Day14/assignment/CSS/Day4/Anuj Pal/Practice Exercise/Practice3.html" target="myframe">Exercise-2</a></li>
+                        <li><a href="../../../../../../Day14/assignment/CSS/Day4/Anuj Pal/Practice Exercise/Practice4.html" target="myframe">Exercise-3</a></li>
+                    </ol>
+                </li>
+                <li>
+                    Assignments
+                    <ol>
+                        <li><a href="../../../../../../Day14/assignment/CSS/Day4/Anuj Pal/Assignment/assignment.html" target="myframe">Assignment1</a></li>
+                    </ol>
+                </li>
+            </ul>
+            <hr>
+            <ul class="ul1">
+                <center><h3>Day:5(CSS)</h3></center>
+                <li>Practice Exercise
+                    <ol class="ol1">
+                        <li><a href="../../../../../../Day14/assignment/CSS/Day5/Anuj Pal/Practice Exercise/practical1.html" target="myframe">Exercise-1</a></li>
+                        <li><a href="../../../../../../Day14/assignment/CSS/Day5/Anuj Pal/Practice Exercise/practice2.html" target="myframe">Exercise-2</a></li>
+                        <li><a href="../../../../../../Day14/assignment/CSS/Day5/Anuj Pal/Practice Exercise/practice3.html" target="myframe">Exercise-3</a></li>
+                    </ol>
+                </li>
+                <li>
+                    Assignments
+                    <ol>
+                        <li><a href="../../../../../../Day14/assignment/CSS/Day5/Anuj Pal/Assignments/assignment.html" target="myframe">Assignment1</a></li>
+                    </ol>
+                </li>
+            </ul>
+            <hr>
+            <ul class="ul1">
+                <center><h3>Day:6(CSS)</h3></center>
+                <li>Practice Exercise
+                    <ol class="ol1">
+                        <li><a href="../../../../../../Day14/assignment/CSS/Day6/Anuj Pal/practical exercise/practice1.html" target="myframe">Exercise-1</a></li>
+                        <li><a href="../../../../../../Day14/assignment/CSS/Day6/Anuj Pal/practical exercise/practice3.html" target="myframe">Exercise-2</a></li>
+                        <li><a href="../../../../../../Day14/assignment/CSS/Day6/Anuj Pal/practical exercise/practice4.html" target="myframe">Exercise-3</a></li>
+                    </ol>
+                </li>
+                <li>
+                    Assignments
+                    <ol>
+                        <li><a href="../../../../../../Day14/assignment/CSS/Day6/Anuj Pal/Assignment/assignment.html" target="myframe">Assignment1</a></li>
+                    </ol>
+                </li>
+            </ul>
+            <hr>
+            <ul class="ul1">
+                <center><h3>Day:7(CSS)</h3></center>
+                <li>Practice Exercise
+                    <ol class="ol1">
+                        <li><a href="../../../../../../Day14/assignment/CSS/Day7/Anuj_Pal/Practice exercise/Practice1.html" target="myframe">Exercise-1</a></li>
+                        <li><a href="../../../../../../Day14/assignment/CSS/Day7/Anuj_Pal/Practice exercise/Practice2.html" target="myframe">Exercise-2</a></li>
+                        <li><a href="../../../../../../Day14/assignment/CSS/Day7/Anuj_Pal/Practice exercise/Practice3.html" target="myframe">Exercise-3</a></li>
+                    </ol>
+                </li>
+                <li>
+                    Assignments
+                    <ol>
+                        <li><a href="../../../../../../Day14/assignment/CSS/Day7/Anuj_Pal/assignment/assignment.html" target="myframe">Assignment1</a></li>
+                        <li><a href="../../../../../../Day14/assignment/CSS/Day7/Anuj_Pal/assignment/assignment2.html" target="myframe">Assignment2</a></li>
+                    </ol>
+                </li>
+            </ul>
+         </div>
+        <div class="item2 bg-primary" style="height: 100vh;">
+           
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia vel illo explicabo dolorum et est voluptas. Totam esse beatae molestiae non nemo facere praesentium explicabo ipsum officia, maxime numquam mollitia perferendis nisi minima, vero veritatis! Voluptates unde hic, soluta numquam illo eveniet est ea ratione mollitia vitae dignissimos delectus, libero sed, cumque eius non sunt. Voluptatem.
+              
+        </div>
+
+    </div>
+</body>
+
+</html>
