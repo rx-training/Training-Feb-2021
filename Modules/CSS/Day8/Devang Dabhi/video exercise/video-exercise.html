@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .item1 { grid-area: nav; }
+        .item2 { grid-area: sidebar; }
+        .item3 { grid-area: main; }
+        .item4 { grid-area: container1; }
+        .item5 { grid-area: container2;}
+        .item6 { grid-area: container3;}
+        .item7 { grid-area: footer; }
+
+        .grid-container {
+            display: grid;
+            height: 540px;
+            grid-template-areas:
+            'nav nav nav nav'
+            'sidebar main main main'
+            'sidebar container1 container2 container3'
+            'sidebar footer footer footer';
+            grid-gap: 10px;
+            background-color: black;
+        }
+
+        .grid-container > div {
+            background-color:white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 40px;
+        }
+        @media only screen and (max-width: 600px) {
+            .item1 { grid-area: nav; }
+            .item2 { grid-area: sidebar;  }
+            .item3 { grid-area: main; }
+            .item4 { grid-area: container1; }
+            .item5 { grid-area: container2;}
+            .item6 { grid-area: container3;}
+            .item7 { grid-area: footer; }
+
+            .grid-container {
+                height: 600px;
+                grid-template-areas: 
+                'nav'
+                'sidebar'
+                'main'
+                'container1'
+                'container2'
+                'container3'
+                'footer';
+            }
+                       
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Grid Layout</h1>
+
+    <div class="grid-container">
+        <div class="item1">Navbar</div>
+       <div class="item2">Sidebar</div>
+       <div class="item3">Main</div>  
+       <div class="item4">container1</div>
+       <div class="item5">container2</div>
+       <div class="item6">container3</div>
+       <div class="item7">Footer</div>
+    </div>
+
+</body>
+</html>
