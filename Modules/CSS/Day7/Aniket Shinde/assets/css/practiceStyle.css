@@ -1,0 +1,80 @@
+body{
+    font-family: monospace;
+    font-size: 20px;
+}
+header{
+    font-family: monospace;
+    font-size: 20px;
+    display: flex;
+}
+.div1{
+    border: 15px solid blue;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.content{
+    width: 100%;
+}
+.div2{
+    border: 2px solid crimson;
+    padding: 30px 0px 30px 0px;
+    text-align: center;
+    display: none;
+    width: 100%;
+}
+.div3{
+    border: 2px solid crimson;
+    padding: 30px 0px 30px 0px;
+    text-align: center;
+    display: none;
+    width: 100%;
+}
+.div4{
+    border: 2px solid crimson;
+    padding: 30px 0px 30px 0px;
+    text-align: center;
+    width: 100%;
+}
+.fontdiv1{
+    border: 2px solid crimson;
+    padding: 30px 0px 30px 0px;
+    text-align: center;
+    width: 100%;
+    font-size: 25px;
+}
+
+/* For Tablets */
+@media only screen and (max-width: 800px){
+    .div1{
+        border: 15px solid green;
+    }
+    .div3{
+        display: flex;
+    }
+    .div2 , .div4{
+        display: none;
+    }
+    .fontdiv1{
+        font-size: 20px;
+    }
+}
+
+/* For Mobiles */
+@media only screen and (max-width: 500px){
+    .div1{
+        border: 15px solid red;
+    }
+    .div2{
+        display: flex;
+    }
+    .div3 , .div4{
+        display: none;
+    }
+    .fontdiv1{
+        font-size: 15px;
+    }
+}
+
