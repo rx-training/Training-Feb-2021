@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive layout using grid</title>
+    <link rel="stylesheet" type="text/css" href="../assets/style.css">
+
+<style>
+    .myDiv{
+        border: 20px outset rgb(231, 216, 216);
+        padding: 16px;
+        background-color: rgb(119, 135, 143);    
+        text-align: left;
+        font-weight: bold;
+        width : 95%;
+             }
+             header {
+  background-color: #666;
+  padding: 20px;
+  text-align: center;
+  font-size: 22px;
+  color: rgb(5, 4, 4);
+}
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  align-content: center;
+}
+input{
+    width: 180px;
+    height: 30px;
+}
+select{
+    width: 280px;
+    height: 30px;
+}
+        
+    </style>
+    
+   
+</head>
+<body>
+    <div class="grid-container">
+        <div class="item1"> Radix Web <br> My Training Works </br> -Parth Shah
+        </br></br> 
+        <img id="parth" src="../images/parth.PNG">
+           
+        </div>
+        <div class="item4">
+            <ul class="ulhtml">
+                <li ><a class="active" href="../gridhtml.html">HTML</a></li>
+                <li><a href="#news">CSS</a></li>
+                <li><a href="#contact">BootStrap</a></li>
+                <li><a href="#about">About me</a></li>
+              </ul>
+            
+        </div>
+        
+        <div class="item2"><u>HTML WORKS</u>
+        </br>
+        
+        <h3>Day 1</h3></br>
+        <div>          
+              
+            <ul class="menuli">
+            <li><a class="active" href="#home">Practice</a></li>
+            <li><a href="../day1/student report.html report.html">Student Report Card</a></li>
+            <li><a href="../day1/menu.html">Menu List</a></li>
+            <li><a href="../day1/article.html">Article News</a></li>
+            <li><a href="../day1/HRstaff.html">HR taaf lists</a></li>
+            <li><a href="../day1/login.html">Login Page </a></li>
+          </ul>
+        </div></br>
+<div>
+<ul class="menuli">
+    <li><a class="active" href="#home">Assignmnet</a></li>
+    <li><a href="../day1/Employee.html">Employee Details</a></li>
+    
+  </ul>
+</div>
+          
+    </div>
+
+<div class="item3">
+            <header>
+                <h2>Employee Registration Form</h2>
+            </header>
+            <div class="myDiv" >
+                <br>  
+                <br>  
+                <form>  
+                  
+                <label> Employee Firstname </label>         
+                <input type="text" name="firstname" size="15" required> <br> <br>  
+                <label> EmployeeMiddlename: </label>     
+                <input type="text" name="middlename" size="15" required> <br> <br>  
+                <label> Employee Lastname: </label>         
+                <input type="text" name="lastname" size="15" required> <br> <br> 
+                <label> Employee Age: </label>         
+                <input type="number" name="age" size="2" required> <br> <br> 
+        
+                <label>   
+                    Gender :  
+                    </label><br>  
+                    <input type="radio" name="male" required> Male <br>  
+                    <input type="radio" name="female" required> Female <br>  
+                    <input type="radio" name="other" required> Other  
+                    <br>  
+                    <br> 
+                    <label>Designation </label>         
+                    <input type="text" name="Designation" size="15" required> <br> <br>
+                    <label> Salary </label>         
+                    <input type="text" name="salary" size="15" required> <br> <br> 
+        
+                    <label>   
+                        Location :  
+                        </label>   
+                        <select>  
+                        <option value="Kutch">Kutch</option>  
+                        <option value="Dhrangadhra">Dhrangadhra</option>  
+                        <option value="Ahmedabad">Ahemdabad</option>  
+                        <option value="Gandhinagar">Gandhinagar</option>  
+                        <option value="Surendrangar">Surendranagar</option>  
+                        <option value="Rajkot">Rajkot</option>  
+                        <option value="Other">Other</option>  
+                        </select> 
+                        <label><br><br>  
+                            
+                            Email:  
+                            </label>
+                            <input type="email" id="email" name="email" required> <br>    
+                            <br> <br>   
+                            
+                            <label>
+                                Date of joining: 
+                                </label>
+                                <input type="date" id="date of joining" name="doj" required> <br>    
+                                <br> <br>
+                                Phone :  
+                            </label>  
+                            <input type="text" name="country code"  value="+91" size="2" required>   
+                            <input type="number" name="phone" size="10" required> <br> <br> 
+                            <center>
+                            <label>
+                                <input type="submit" value="Submit">
+                            </center>
+        
+        
+            </div>
+        
+           
+
+        </div>  
+        
+        <div class="item5">Footer</div>
+      </div>
+      
+</body>
+</html>
