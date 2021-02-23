@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Link of site map CSS Starts -->
+    <!-- link bootstrap 4.0.0 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        #mysitenav{
+            width:0;
+            height:100%;
+            position:fixed;
+            left:0;
+            top:0;
+            overflow: auto;
+            transition: 0.5s;
+            z-index: 0;
+            box-shadow:1px 1px 20px #333;
+        }
+    </style>
+    <!-- Link of sitemap CSS Ends-->
+
+    <link rel="stylesheet" href="assets/css/styleGallery.css">
+</head>
+<body>
+
+  <!-- Navbar starts from here includes top navbar and side navbar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light p-lg-0">
+    <div class="container">
+        <a href="#" class="navbar-brand p-0">
+            <img src="../../../assets/images/radix-logo.png" alt="" height="50">
+            <nav class="d-none d-lg-inline-block small">
+                <ol class="breadcrumb bg-light p-0 py-2">
+                    <li class="breadcrumb-item">NirbhyDubey</li>
+                    <li class="breadcrumb-item">CSS</li>
+                    <li class="breadcrumb-item">Day7</li>
+                    <li class="breadcrumb-item">assignment</li>
+                    <li class="breadcrumb-item active">PhotoGalleryResponsive</li>
+                </ol>
+            </nav>
+        </a>
+        <ul class="navbar-nav ml-auto d-none d-lg-flex">
+            <li class="nav-item"><a href="../../../html/Day3/assignment/1_registrationForm.html" class="nav-link">Html</a></li>
+            <li class="nav-item"><a href="../../Day4/assignment/1_resume.html" class="nav-link active">Css</a></li>
+            <li class="nav-item"><a href="../../../../../../Day9/nirbhayDubey_Day9/assignment/utilities/2_2_basicTypography.html" target="_blank" class="nav-link">Bootstrap</a></li>
+            <li class="nav-item"><a href="" class="nav-link">JavaScript</a></li>            
+        </ul>
+        <button class="btn bg-light" onclick="toggleNav()">
+            <span class="navbar-toggler-icon h5 m-0"></span>
+        </button>
+    </div>
+
+    <div class="collapse bg-light d-block" id="mysitenav">
+        <ul class="nav flex-column pl-2 pt-3 pr-2" id="accordian">
+    <!-- HTML Site Map from day3 to day3-->
+            <li class="nav-item">
+                <a href="#collapse1" class="nav-link" data-toggle="collapse">1. HTML</a>
+                <div class="collapse"  id="collapse1" data-parent="#accordian">
+                    <ul class="nav flex-column show" id="accordian1">
+                        <li class="nav-item pl-3">
+                            <a href="#colday3" class="nav-link" data-toggle="collapse">Day3</a>
+                            <div class="collapse" id="colday3" data-parent="#accordian1">
+                                <ul class="nav flex-column pl-3" id="accodian11">
+                                    <li class="nav-item">
+                                        <a href="#cold3p" class="nav-link" data-toggle="collapse">Practice</a>
+                                        <div class="collapse" id="cold3p" data-parent="#accodian11">
+                                            <ul class="list-group pl-3">
+                                                <a href="../../../html/Day3/practice/1_reportCard.html" class="list-group-item py-2">1. Report Card</a>
+                                                <a href="../../../html/Day3/practice/1_tutorialsForm.html" class="list-group-item py-2">2. Tutorial Form</a>
+                                                <a href="../../../html/Day3/practice/2_departmentHierarchy.html" class="list-group-item py-2">3. Department Hierachy</a>
+                                                <a href="../../../html/Day3/practice/3_loginForm.html" class="list-group-item py-2">4. Login Form</a>
+                                                <a href="../../../html/Day3/practice/4_newsArticle.html" class="list-group-item py-2">5. News Article</a>
+                                                <a href="../../../html/Day3/practice/5_navManu.html" class="list-group-item py-2">6. Nav Menu</a>       
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#cold3a" class="nav-link" data-toggle="collapse">Assignment</a>
+                                        <div class="collapse" id="cold3a" data-parent="#accodian11">
+                                            <ul class="list-group pl-3">
+                                                <a href="../../../html/Day3/assignment/1_registrationForm.html" class="list-group-item py-2">1. Registration Form</a>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+    <!-- CSS Site Map from day4 to day8-->
+            <li class="nav-item">
+                <a href="#collapse2" class="nav-link" data-toggle="collapse">2. CSS</a>
+                <div class="collapse show"  id="collapse2" data-parent="#accordian">
+                    <ul class="nav flex-column show" id="accordian2">
+                        <li class="nav-item pl-3">
+                            <a href="#colday4" class="nav-link" data-toggle="collapse">Day4</a>
+                            <div class="collapse" id="colday4" data-parent="#accordian2">
+                                <ul class="nav flex-column pl-3" id="accordian21">
+                                    <li class="nav-item">
+                                        <a href="#cold4p" class="nav-link" data-toggle="collapse">Practice</a>
+                                        <div class="collapse" id="cold4p" data-parent="#accordian21">
+                                            <ul class="list-group pl-3">
+                                                <a href="../../Day4/practice/1_textAlignReport.html" class="list-group-item py-2">1. TextAlign Report</a>
+                                                <a href="../../Day4/practice/2_border.html" class="list-group-item py-2">2. Border</a>
+                                                <a href="../../Day4/practice/3_cityList.html" class="list-group-item py-2">3. City List</a>
+                                                <a href="../../Day4/practice/4_universalSelector.html" class="list-group-item py-2">4. Universal Selector</a>
+                                                <a href="../../Day4/practice/5_headerBlue.html" class="list-group-item py-2">5. Header Blue</a>       
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#cold4a" class="nav-link" data-toggle="collapse">Assignment</a>
+                                        <div class="collapse" id="cold4a" data-parent="#accordian21">
+                                            <ul class="list-group pl-3">
+                                                <a href="../../Day4/assignment/1_resume.html" class="list-group-item py-2">1. Resume</a>  
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item pl-3">
+                            <a href="#colday5" class="nav-link" data-toggle="collapse">Day5</a>
+                            <div class="collapse" id="colday5" data-parent="#accordian2">
+                                <ul class="nav flex-column pl-3" id="accordian22">
+                                    <li class="nav-item">
+                                        <a href="#cold5p" class="nav-link" data-toggle="collapse">Practice</a>
+                                        <div class="collapse" id="cold5p" data-parent="#accordian22">
+                                            <ul class="list-group pl-3">
+                                                <a href="../../Day5/practice/1_floatDiv.html" class="list-group-item py-2">1. Float Div</a>
+                                                <a href="../../Day5/practice/2_positionDiv.html" class="list-group-item py-2">2. Position Div</a>
+                                                <a href="../../Day5/practice/3_overflowDiv.html" class="list-group-item py-2">3. Overflow Div</a>  
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#cold5a" class="nav-link" data-toggle="collapse">Assignment</a>
+                                        <div class="collapse" id="cold5a" data-parent="#accordian22">
+                                            <ul class="list-group pl-3">
+                                                <a href="../../Day5/assignment/1_applicationLayout.html" target="_blank" class="list-group-item py-2">1. Application Layout </a>  
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item pl-3">
+                            <a href="#colday6" class="nav-link" data-toggle="collapse">Day6</a>
+                            <div class="collapse" id="colday6" data-parent="#accordian2">
+                                <ul class="nav flex-column pl-3" id="accordian23">
+                                    <li class="nav-item">
+                                        <a href="#cold6p" class="nav-link" data-toggle="collapse">Practice</a>
+                                        <div class="collapse" id="cold6p" data-parent="#accordian23">
+                                            <ul class="list-group pl-3">
+                                                <a href="../../Day6/practice/1_flexbox.html" class="list-group-item py-2">1. Flexbox</a>
+                                                <a href="../../Day6/practice/2_flexboxR2L.html" class="list-group-item py-2">2. Flexbox R2L</a>
+                                                <a href="../../Day6/practice/3_imageGallery.html" class="list-group-item py-2">3. Image Gallery</a>  
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#cold6a" class="nav-link" data-toggle="collapse">Assignment</a>
+                                        <div class="collapse" id="cold6a" data-parent="#accordian23">
+                                            <ul class="list-group pl-3">
+                                                <a href="../../Day6/assignment/index.html" target="_blank" class="list-group-item py-2">1. Menu List </a>  
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item pl-3">
+                            <a href="#colday7" class="nav-link" data-toggle="collapse">Day7</a>
+                            <div class="collapse show" id="colday7" data-parent="#accordian2">
+                                <ul class="nav flex-column pl-3" id="accordian24">
+                                    <li class="nav-item">
+                                        <a href="#cold7p" class="nav-link" data-toggle="collapse">Practice</a>
+                                        <div class="collapse" id="cold7p" data-parent="#accordian24">
+                                            <ul class="list-group pl-3">
+                                                <a href="../practice/1_h1responsive.html" class="list-group-item py-2">1. H1 Responsive</a>
+                                                <a href="../practice/2_breakpoints.html" class="list-group-item py-2">2. Breakpoints</a>
+                                                <a href="../practice/3_hideDiv.html" class="list-group-item py-2">3. Hide Div </a>
+                                                <a href="#" class="list-group-item py-2">4. Font Responsive </a>  
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#cold7a" class="nav-link" data-toggle="collapse">Assignment</a>
+                                        <div class="collapse show" id="cold7a" data-parent="#accordian24">
+                                            <ul class="list-group pl-3">
+                                                <a href="#" class="list-group-item py-2 active">1. Photo Gallery </a>  
+                                                <a href="../assignment/2_responsiveLayout.html" target="_blank" class="list-group-item py-2">2. Responsive Layout </a>  
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item pl-3">
+                            <a href="#colday8" class="nav-link" data-toggle="collapse">Day8</a>
+                            <div class="collapse" id="colday8" data-parent="#accordian2">
+                                <ul class="nav flex-column pl-3" id="accordian25">
+                                    <li class="nav-item">
+                                        <a href="#cold8a" class="nav-link" data-toggle="collapse">Assignment</a>
+                                        <div class="collapse" id="cold8a" data-parent="#accordian25">
+                                            <ul class="list-group pl-3">
+                                                <a href="../../../css/Day8/assignment/1_gridLayout.html" target="_blank" class="list-group-item py-2">1. Grid Layout </a>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+    <!-- Bootstrap site Map from day9 to day14 -->
+            <li class="nav-item">
+                <a href="#collapse3" class="nav-link" data-toggle="collapse">3. Bootstrap</a>
+                <div class="collapse"  id="collapse3" data-parent="#accordian">
+                    <ul class="nav flex-column show" id="accordian3">
+                        <li class="nav-item pl-3">
+                            <a href="#colday9" class="nav-link" data-toggle="collapse">Day9</a>
+                            <div class="collapse" id="colday9" data-parent="#accordian3">
+                                <ul class="nav flex-column pl-3" id="accordian31">
+                                    <li class="nav-item">
+                                        <a href="#cold9a" class="nav-link" data-toggle="collapse">Assignment</a>
+                                        <div class="collapse" id="cold9a" data-parent="#accordian31">
+                                            <ul class="list-group pl-3">
+                                                <a href="../../../../../../Day9/nirbhayDubey_Day9/assignment/utilities/2_2_basicTypography.html" target="_blank" class="list-group-item py-2">1. Utilities </a>
+                                                <a href="../../../../../../Day9/nirbhayDubey_Day9/assignment/css_components/3_2_buttons.html" target="_blank" class="list-group-item py-2">2. CSS Components </a>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item pl-3">
+                            <a href="#colday10" class="nav-link" data-toggle="collapse">Day10</a>
+                            <div class="collapse" id="colday10" data-parent="#accordian3">
+                                <ul class="nav flex-column pl-3" id="accordian32">
+                                    <li class="nav-item">
+                                        <a href="#cold10a" class="nav-link" data-toggle="collapse">Assignment</a>
+                                        <div class="collapse" id="cold10a" data-parent="#accordian32">
+                                            <ul class="list-group pl-3">
+                                                <a href="../../../../../../Day10/nirbhayDubey_Day10/assignment/grid_flexbox/4_2_gridSystem.html" target="_blank" class="list-group-item py-2">1. Grid Flextbox </a>
+                                                <a href="../../../../../../Day10/nirbhayDubey_Day10/assignment/javascript_widgets/5_2_carousel.html" target="_blank" class="list-group-item py-2">2. JavaScript Widgets </a>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item pl-3">
+                            <a href="#colday11" class="nav-link" data-toggle="collapse">Day11</a>
+                            <div class="collapse" id="colday11" data-parent="#accordian3">
+                                <ul class="nav flex-column pl-3" id="accordian33">
+                                    <li class="nav-item">
+                                        <a href="#cold11a" class="nav-link" data-toggle="collapse">Assignment</a>
+                                        <div class="collapse" id="cold11a" data-parent="#accordian33">
+                                            <ul class="list-group pl-3">
+                                                <a href="../../../bootstrap/Day11/assignment/index.html" target="_blank" class="list-group-item py-2">1. Paintings Project </a>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item pl-3">
+                            <a href="#colday12" class="nav-link" data-toggle="collapse">Day12</a>
+                            <div class="collapse" id="colday12" data-parent="#accordian3">
+                                <ul class="nav flex-column pl-3" id="accordian34">
+                                    <li class="nav-item">
+                                        <a href="#cold12a" class="nav-link" data-toggle="collapse">Assignment</a>
+                                        <div class="collapse" id="cold12a" data-parent="#accordian34">
+                                            <ul class="list-group pl-3">
+                                                <a href="#" class="list-group-item py-2">1.  </a>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item pl-3">
+                            <a href="#colday13" class="nav-link" data-toggle="collapse">Day13</a>
+                            <div class="collapse" id="colday13" data-parent="#accordian3">
+                                <ul class="nav flex-column pl-3" id="accordian35">
+                                    <li class="nav-item">
+                                        <a href="#cold13a" class="nav-link" data-toggle="collapse">Assignment</a>
+                                        <div class="collapse" id="cold13a" data-parent="#accordian35">
+                                            <ul class="list-group pl-3">
+                                                <a href="#" class="list-group-item py-2">1.  </a>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item pl-3">
+                            <a href="#colday14" class="nav-link" data-toggle="collapse">Day14</a>
+                            <div class="collapse" id="colday14" data-parent="#accordian3">
+                                <ul class="nav flex-column pl-3" id="accordian36">
+                                    <li class="nav-item">
+                                        <a href="#cold14a" class="nav-link" data-toggle="collapse">Assignment</a>
+                                        <div class="collapse" id="cold14a" data-parent="#accordian36">
+                                            <ul class="list-group pl-3">
+                                                <a href="#" class="list-group-item py-2">1. Site Map </a>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div style="height:8vh;"></div>
+<!-- Nav Over -->    
+
+    <div class="row1 col-8">
+        <p> Responsive Photo Album Gallery </p>
+    </div>
+    <div class="row col-8">
+        <div class="column col-3">
+            <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="">
+            <img src="https://cdn.pixabay.com/photo/2014/02/27/16/10/tree-276014__340.jpg" alt="">
+        </div>
+        <div class="column col-3">
+            <img src="https://static.toiimg.com/thumb/msid-66476517,imgsize-196276,width-800,height-600,resizemode-75/66476517.jpg" alt="">
+            <img src="http://joombig.com/demo-extensions1/images/gallery_slider/Swan_large.jpg" alt="">
+        </div>
+        <div class="column col-3">
+            <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-christmas-rose-single-white-flower-royalty-free-image-1578194497.jpg" alt="">
+            <img src="https://cdn.pixabay.com/photo/2014/09/14/18/04/dandelion-445228__340.jpg" alt="">
+        </div>
+        <div class="column col-3">
+            <img src="https://d2y1pz2y630308.cloudfront.net/1000/pictures/2017/10/rosary-1566816_1920.jpg" alt="">
+            <img src="https://images.rxlist.com/images/slideshow/sunlight-and-your-health-s1-its-not-all-bad.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- link bootstrap javascript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script>
+    function toggleNav(){
+        var x=window.matchMedia("(max-width:991px)");
+        if(x.matches){
+            if(document.getElementById("mysitenav").offsetWidth==0){
+                document.getElementById("mysitenav").style.width="90%";
+            }
+            else{
+                document.getElementById("mysitenav").style.width="0";
+            }
+        }
+        else{
+            if(document.getElementById("mysitenav").offsetWidth==0){
+                document.getElementById("mysitenav").style.width="24%";
+            }
+            else{
+                document.getElementById("mysitenav").style.width="0";
+            }
+        }
+    }
+    </script>
+</body>
+</html>
