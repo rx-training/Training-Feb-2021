@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container bg-warning mt-sm-5 p-5">
+        <form>
+            <div class="form-group">
+                <label for="first">Please enter first number :</label>
+                <input type="number" name="first" id="first" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="second">Please enter second number :</label>
+                <input type="number" name="second" id="second" class="form-control" required>
+            </div>
+            <fieldset class="form-group">
+                <legend>Please select operation you want to perform :</legend>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" name="choose" value="add" id="add" class="form-check-input" checked>
+                        Addition
+                    </label>
+                    
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" name="choose" value="sub" id="sub" class="form-check-input">
+                        Substraction
+                    </label>
+                    
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" name="choose" value="mul" id="mul" class="form-check-input">
+                        Multiplication
+                    </label>
+                    
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" name="choose" value="div" id="div" class="form-check-input">
+                        Division
+                    </label>
+                </div>
+            </fieldset>
+            <button class="btn btn-primary" id="submit" type="submit">Calculate</button>
+            <button class="btn btn-danger" id="reset" type="reset">Reset</button>
+        </form>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        let ans = 0;
+
+        
+
+        document.querySelector('form').onsubmit = function formAction() {
+            console.log("submited");
+
+            let first = Number(document.getElementById('first').value);
+            let second = Number(document.getElementById('second').value);
+
+            console.log(first , second)
+            
+            let choice = document.getElementsByName('choose');
+            console.log(choice);
+
+            let operation, ans;
+
+            for (let i = 0; i < choice.length; i++) {
+                if (choice[i].checked) {
+                    operation = choice[i].value;
+                }
+            }
+
+            if (operation == 'add') {
+                ans = first + second;
+            } else if (operation == 'sub') {
+                ans = first - second;
+            } else if (operation == 'mul') {
+                ans = first * second;
+            } else {
+                ans = first / second;
+            }
+
+            console.log(ans);
+
+            document.querySelector('form').innerHTML += `<h3 class="ans text-light p-3 mt-3 bg-info">Result is : ${ans}</h3>`;
+
+            
+       }
+
+      
+
+        
+    </script>
+</body>
+</html>
