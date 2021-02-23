@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Arithemetic operations</title>
+        <style text="text/css">
+     #p{
+        font-size: 220px;
+        margin-left: 550px;
+    }
+    </style>
+    <script type="text/javascript">
+    function add()
+    {
+        var a=document.getElementById('txt1').value;
+        var b=document.getElementById('txt2').value;
+        var c= +a + +b;
+        document.getElementById("p").innerHTML=c;
+    }
+    
+    function sub()
+    {
+        var a=document.getElementById('txt1').value;
+        var b=document.getElementById('txt2').value;
+        var=+a - +b;
+        document.getElementById("p").innerHTML=c;
+    }
+    
+    function mul()
+    {
+        var a=document.getElementById('txt1').value;
+        var b=document.getElementById('txt2').value;
+        var=+a  * +b;
+        document.getElementById("p").innerHTML=c;
+    }
+    
+    function div()
+    {
+        var a=document.getElementById('txt1').value;
+        var b=document.getElementById('txt2').value;
+        var=+a / +b;
+        document.getElementById("p").innerHTML=c;
+    }
+
+    </script>
+    </head>
+    <body>
+        <input type="text" placeholder="Enter number" id="txt1" name="">
+        <br>
+        <br>
+        <input type="text" placeholder="Enter number" id="txt2" name="">
+        <br>
+        <br>
+        <input type="button" value="ADD" onclick="add()"name="">
+        <input type="button" value="SUB" onclick="sub()"name="">
+        <input type="button" value="MUL" onclick="mul()"name="">
+        <input type="button" value="DIV" onclick="Div()"name="">
+        <p id="p"></p>
+    </body>
+</html>
