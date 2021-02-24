@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 4</title>
+
+    <style>
+        h3{
+            display: block;
+            border: 2px solid rgb(235, 10, 10); 
+            background-color: lightsalmon; 
+            color: black;
+            padding: 5px;
+            width: auto;
+        }
+    </style>
+
+    <script>
+
+        function cd()
+        {
+             document.getElementById("demo").innerHTML = "Current Date = " + Date();
+        }
+        
+
+    </script>
+
+</head>
+<body>
+
+    <h3><center>Write a JavaScript function to get the current date</center></h3>
+
+    <center>
+        <br><br><br><br><br><br>
+    <input type="submit" value="Current Date" style="font-size: 20px; color: teal;" 
+            onclick="cd()">
+
+            <h1 id="demo" style="color: rgb(143, 26, 137);"> </h1>
+
+    </center>
+
+</body>
+</html>

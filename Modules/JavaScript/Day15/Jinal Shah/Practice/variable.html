@@ -105,6 +105,166 @@
         console.log(producttype.toUpperCase());
 
          /*--------- boolean values ----------*/
+         var isspecial = true;
+         if (isspecial)
+            console.log("its true..");
+
+        console.log(Boolean("Hello"));
+
+        console.log(Boolean(""));
+
+        console.log(Boolean(" "));
+
+        console.log(Boolean("6"));
+
+        console.log(Boolean(0));
+
+        console.log(Boolean(undefined));
+
+        console.log(Boolean(null));
+
+        var value = 99.99;
+        console.log(typeof !!value );
+
+        var value1 = "no value";
+        console.log(!!value1 );
+
+
+        /*--------- undefined and nulls ----------*/
+
+        var productId1;
+        console.log(typeof productId1);
+
+        console.log(typeof productId2);
+
+        var productId3 = null;
+        console.log(typeof productId3);
+
+        console.log(typeof null);
+
+        console.log(undefined == null);
+
+        console.log(undefined === null);
+
+
+        /*--------- global scope ----------*/
+
+        var proid = "PRD-2000";
+        console.log(proid);
+        console.log(window.proid);
+
+        console.log(this === window);
+
+        var description = 'hardware product';
+        function updateProduct(){
+            description = "updated product";
+        }
+        updateProduct();
+        console.log(description);
+
+        function updateProduct1(){
+            description1 = "updated product...";
+        }
+        updateProduct1();
+        console.log(description1);
+
+        /* 'use strict';
+        function updateProduct2(){
+            description2 = "updated product";
+        }
+        updateProduct2();
+        console.log(description2); */
+
+        /*----------------------------- functional scope ----------------------*/
+        var descriptionn = 'original product';
+        function updateProduct5(){
+            var descriptionn = "updated product";
+        }
+        updateProduct5();
+        console.log(descriptionn);
+
+        function updateProduct6(){
+            var descriptionn1 = "updated product...";
+            var updateProductid = function(){
+                console.log(descriptionn1);
+            }
+            updateProductid();
+        }
+        updateProduct6();
+
+        var descriptionn2 = 'original product';
+        function updateProduct7(){
+            var descriptionn2 = "updated product...";
+            var updateProductid1 = function(){
+                console.log(descriptionn2);
+            }
+            updateProductid1();
+        }
+        updateProduct7();
+
+        var descriptionnm = 'original product';
+        function updateProductt(){
+            var updateProductidd = function(){
+                console.log(descriptionnm);
+            }
+            updateProductidd();
+        }
+        updateProductt();
+
+        /* function updateProductt1(){
+            var updateProductidd1 = function(){
+                console.log(descriptionnm1);
+            }
+            updateProductidd1();
+        }
+        updateProductt1(); */
+        
+
+        /*----------------------------- block scope ----------------------*/
+
+        'use strict';
+        try{
+            throw 123;
+        }
+        catch(e){
+            console.log(e);
+        }
+
+        /* 'use strict';
+        console.log(e);
+        try{
+            throw 123;
+        }
+        catch(e){
+        } */
+
+        'use strict';
+        try{
+            console.log('in try: '+ e);
+            throw 123;
+        }
+        catch(e){
+            console.log(e);
+        }   
+        
+        'use strict';
+        console.log(insideCatch);
+        try{
+            throw 123;
+        }
+        catch(e){
+            var insideCatch = 'insideCatch'
+            console.log(e);
+        }
+
+        'use strict';
+        try{
+            throw 'myArtificialBlockLevelVar'
+        }
+        catch (blockLevelVar){
+            //blockLevelVar is in block scope
+        };
+        console.log(blockLevelVar);
 
     </script>
 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 2</title>
+
+    <style>
+        h3{
+            display: block;
+            border: 2px solid rgb(235, 10, 10); 
+            background-color: lightsalmon; 
+            color: black;
+            padding: 5px;
+            width: auto;
+        }
+    </style>
+
+    <script>
+
+        function check(s1)
+        {
+            if( s1.length === 0)
+            {
+                alert("String is empty \nEnter valid input");
+            }
+            else
+            {
+                var s = s1.split(" ");
+                var s2 = s1.trim().split(" ");
+                alert(s);
+                console.log(s);
+                console.log(s2);
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <h3><center>Write a JavaScript function to split a string and convert it into an array of words</center></h3>
+
+    <center>
+        <br><br><br><br><br><br>
+    Enter string : <input type="text" id="s1" ><br><br>
+    <input type="submit" value="Check" style="font-size: 20px;" 
+            onclick="check(s1.value)">
+    </center>
+
+</body>
+</html>

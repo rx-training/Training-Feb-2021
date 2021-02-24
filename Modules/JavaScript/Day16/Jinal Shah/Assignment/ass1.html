@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h3{
+            display: block;
+            border: 2px solid rgb(235, 10, 10); 
+            background-color: lightsalmon; 
+            color: black;
+            padding: 5px;
+            width: auto;
+        }
+    </style>
+
+    <script>
+
+        function check(s1)
+        {
+
+            console.log("User Input = " + parseInt(s1));
+            var str = s1;
+            var mm = str.substr(0, 2);
+            console.log(" Month = " + parseInt(mm));
+            var dd = str.substr(2, 2);
+            console.log(" Date = " + parseInt(dd));
+            var yyyy = str.substr(4, 4);
+            console.log(" Year = " + parseInt(yyyy));
+
+            if( mm == 1 || mm > 2 || mm <= 12)
+            {
+                if( mm % 2 == 0)
+                {
+                    if( mm == 4 || mm == 6)
+                    {
+                        if( dd >=1 && dd <=30 )
+                        {
+                            if(mm == 4){alert("Month : April \nDate : " + dd + "\nYear : " + yyyy);}
+                            if(mm == 6){alert("Month : June \nDate : " + dd + "\nYear : " + yyyy);}
+                        }
+                        else{alert("Invalid date format \nWrong date");}
+                    }
+                    else
+                    {
+                        if( dd >=1 && dd <=31 )
+                        {
+                            if(mm == 8){alert("Month : August \nDate : " + dd + "\nYear : " + yyyy);}
+                            if(mm == 10){alert("Month : October \nDate : " + dd + "\nYear : " + yyyy);}
+                            if(mm == 12){alert("Month : December \nDate : " + dd + "\nYear : " + yyyy);}
+                        }
+                        else{alert("Invalid date format \nWrong date");}
+                    }
+                }
+                else
+                {
+                   if (mm == 1 || mm == 3 || mm == 5 || mm == 7)
+                   {
+                        if( dd >= 1 && dd <= 31)
+                        {
+                            if( mm == 1){alert("Month : January \nDate : " + dd + "\nYear : " + yyyy);}
+                            if( mm == 3){alert("Month : March \nDate : " + dd + "\nYear : " + yyyy);}
+                            if( mm == 5){alert("Month : May \nDate : " + dd + "\nYear : " + yyyy);}
+                            if( mm == 7){alert("Month : July \nDate : " + dd + "\nYear : " + yyyy);}
+                        }
+                        else{alert("Invalid date format \nWrong date");}
+                    } 
+                    if( mm == 9 || mm == 11)
+                    {
+                        if( dd >=1 && dd <=30 )
+                        {
+                            if(mm == 9){alert("Month : September \nDate : " + dd + "\nYear : " + yyyy);}
+                            if(mm == 11){alert("Month : November \nDate : " + dd + "\nYear : " + yyyy);}
+                        }
+                        else{alert("Invalid date format \nWrong date");}
+                    }
+                }
+            }
+            if(mm == 2)
+            {
+                if( yyyy % 4 == 0)
+                {
+                    if( dd >= 1 && dd <= 29)
+                    {
+                        alert("Month : Febuary \nDate : " + dd + "\nYear : " + yyyy + "  This Is Leap Year");
+                    }
+                }
+                else
+                {
+                    if( dd >= 1 && dd <= 28)
+                    {
+                        alert("Month : Febuary \nDate : " + dd + "\nYear : " + yyyy + "  This Is Not Leap Year");
+                    }
+                }
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+    
+    <h3><center>Date entered by the user should be checked for whether it is a Valid Date or not.</center></h3>
+    <center>
+        <br><br>
+    Enter date : <input type="number" id="s1">
+    (MM-DD-YYYY Format only)
+    <br><br>
+    <input type="submit" value="Check" style="font-size: 16px;" 
+            onclick="check(s1.value)">
+    </center>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 3</title>
+
+    <style>
+        h3{
+            display: block;
+            border: 2px solid rgb(235, 10, 10); 
+            background-color: lightsalmon; 
+            color: black;
+            padding: 5px;
+            width: auto;
+        }
+    </style>
+
+    <script>
+
+        function check(s1,n1,n2)
+        {
+            if( s1.length === 0)
+            {
+                alert("String is empty \nEnter valid input");
+            }
+            else
+            {
+                var str = s1;
+                var res = str.substr(n1, n2);
+                document.getElementById("demo").innerHTML = "Substring = " + res;
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <h3><center>Write a JavaScript function to extract a specified number of characters from a string.</center></h3>
+
+    <center>
+        <br><br><br><br>
+    Enter string : <input type="text" id="s1" ><br><br>
+    Enter position no : <input type="number" id="n1" ><br><br>
+    Enter character digit : <input type="number" id="n2" ><br><br>
+    <input type="submit" value="Results" style="font-size: 20px;" 
+            onclick="check(s1.value,n1.value,n2.value)">
+
+    <h1 id="demo" style="color: brown;"> </h1>
+    </center>
+
+</body>
+</html>

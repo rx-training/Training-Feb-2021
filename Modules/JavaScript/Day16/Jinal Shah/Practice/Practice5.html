@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 5</title>
+
+    <style>
+        h2{
+            display: block;
+            border: 2px solid rgb(235, 10, 10); 
+            background-color: lightsalmon; 
+            color: black;
+            padding: 5px;
+            width: auto;
+        }
+    </style>
+
+    <script>
+
+        function cd()
+        {
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo").innerHTML = "Original array = " + fruits.toString();
+        }
+        function pop1()
+        {
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo1").innerHTML = "popped element = " + fruits.pop() + 
+                                                        "<br>" + " array after pop = " + fruits.toString();
+        }
+        function push1()
+        {
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo2").innerHTML = "pushed element = " + fruits.push("Kiwi")  + 
+                                                        "<br>" + " array after pop = " + fruits.toString();
+        }
+        function shi()
+        {
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo3").innerHTML = "shifted element = " + fruits.shift()  + 
+                                                        "<br>" + " array after shift op = " + fruits.toString();
+        }
+        function del()
+        {
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo4").innerHTML = "deleted element = " + delete fruits[0]  + 
+                                                        "<br>" + " array after shift op = " + fruits.toString();
+        }
+        
+
+    </script>
+
+</head>
+<body>
+
+    <h2><center>Try some operation with list like push, pop, shifting, deleting element</center></h2>
+
+    <center>
+        <input type="submit" value="original array" style="font-size: 18px; color: white; background-color: teal;" 
+            onclick="cd()">
+
+            <h3 id="demo" style="color: rgb(143, 26, 137);"> </h3>
+
+        <input type="submit" value="pop operation" style="font-size: 18px; color: white; background-color: teal;" 
+            onclick="pop1()">
+
+            <h3 id="demo1" style="color: rgb(143, 26, 137);"> </h3>
+
+        <input type="submit" value="push operation" style="font-size: 18px; color: white; background-color: teal;" 
+            onclick="push1()">
+
+            <h3 id="demo2" style="color: rgb(143, 26, 137);"> </h3>
+
+        <input type="submit" value="shift operation" style="font-size: 18px; color: white; background-color: teal;" 
+            onclick="shi()">
+
+            <h3 id="demo3" style="color: rgb(143, 26, 137);"> </h3>
+        
+        <input type="submit" value="delete operation" style="font-size: 18px; color: white; background-color: teal;" 
+            onclick="del()">
+
+            <h3 id="demo4" style="color: rgb(143, 26, 137);"> </h3>
+
+    </center>
+
+</body>
+</html>
