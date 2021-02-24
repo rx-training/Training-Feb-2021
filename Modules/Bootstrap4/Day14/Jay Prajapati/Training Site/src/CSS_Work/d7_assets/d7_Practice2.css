@@ -1,0 +1,77 @@
+*{
+    box-sizing:border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+/* For Mobile Device */
+.column-1{
+    width: 100%;
+    border: 1px solid skyblue;
+    background-color: skyblue;
+    padding: 15px;
+}
+.navigation ul{
+    list-style-type: none;
+    padding:0;
+    margin: 0;
+}
+.navigation ul li{
+    text-align: center;
+    padding: 10px;
+    text-transform: capitalize;
+    font-weight: bold;
+
+}
+.navigation ul li:hover{
+    text-align: center;
+    padding: 10px;
+    background-color: snow;
+    text-transform: capitalize;
+}
+.column-2{
+    width: 100%;
+    border: 1px solid rgb(135, 235, 140);
+    background-color: rgb(135, 235, 140);
+    padding: 15px;
+}
+.column-3{
+    width: 100%;
+    border: 1px solid rgb(135, 235, 222);
+    background-color: rgb(135, 235, 222);
+    padding: 15px;
+}
+/* for tablet*/
+@media screen and (min-width: 768px){
+    .myRow{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .column-1{
+        width: 25%;
+    }
+    .column-2{
+        width:75%
+    }
+    .column-3{
+        width: 100%;
+    }
+}
+
+/* for desktop */
+@media screen and (min-width: 1024px){
+    .myRow{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .column-1{
+        width: 20%;
+    }
+    .column-2{
+        width:60%
+    }
+    .column-3{
+        width: 20%;
+    }
+
+}
