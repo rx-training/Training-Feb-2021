@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap4 CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-5 p-3 m-auto border rounded border-info">
+                <h1 class="h2 text-center">Date Validation</h1>
+                <form action="#" class="py-3">
+                    <div class="form-group">
+                        <label for="txt_date">Enter Date (MM-DD-YYYY)</label>
+                        <input type="text" id="txt_date" class="form-control" placeholder="MM-DD-YYYY">
+                    </div>
+                    <button type="submit" class="btn btn-primary" onclick="return validateDate(txt_date);">Validate Date</button>
+                </form>
+                <div class="alert" id="msg"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // – Entered characters should be digits only.
+    // – Month should be within the range 1 to 12.
+    // Days should be within the range 1 to 31.
+    // Check the entered Days and its corresponding Month.
+    function validateDate(dt){
+        var patt=/^((0[1-9])|(1[0-2]))-((0[1-9])|([1-2][0-9])|(3[0-1]))-([1-2][0-9][0-9][0-9])$/;
+        if(patt.test(dt.value)){
+            document.getElementById("msg").className="alert alert-success";
+            document.getElementById("msg").innerHTML=" Congratulations Date is valid &#128077; ";
+        }else{
+            document.getElementById("msg").className="alert alert-danger";
+            document.getElementById("msg").innerHTML=" Oops! Date is invalid &#128078; ";
+        }
+        return false;
+    }
+    </script>
+
+    <!-- Bootstrap4 JS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+</body>
+</html>
