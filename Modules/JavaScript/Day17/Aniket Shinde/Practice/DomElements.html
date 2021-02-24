@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>DOM Elements</title>
+</head>
+<body>
+    <div class="col-md-8 col-lg-6 mt-4 mx-auto">
+        <div class="card border border-info">
+            <div class="card-header bg-info text-center">
+                <h4 class="text-white">Finding HTML Element by Id</h3>
+            </div>
+            <div class="card-body">
+                <p id="paragraph1">My id is paragraph1.</p>
+                <button type="button" class="btn btn-primary" onclick="changeColor()">Change color</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8 col-lg-6 mt-4 mx-auto">
+        <div class="card border border-info">
+            <div class="card-header bg-info text-center">
+                <h4 class="text-white">Finding HTML Element by Tag Name</h3>
+            </div>
+            <div class="card-body">
+                <p id="paragraph2">My id is paragraph2.</p>
+                <p id="paragraph3">All the paragraphs are founded by tag name.</p>
+                <button type="button" class="btn btn-primary" onclick="changeAllColor()">Change color</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8 col-lg-6 mt-4 mx-auto">
+        <div class="card border border-info">
+            <div class="card-header bg-info text-center">
+                <h4 class="text-white">Finding HTML Element by Class Name</h3>
+            </div>
+            <div class="card-body">
+                <p class="dom">This paragraph is found by class name.</p>
+                <p class="dom">All the paragraphs are founded by class name.</p>
+                <button type="button" class="btn btn-primary" onclick="changeAllColor()">Change color</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-8 col-lg-6 mt-4 mx-auto">
+        <div class="card border border-info">
+            <div class="card-header bg-info text-center">
+                <h4 class="text-white">Finding HTML Elements by CSS Selectors</h3>
+            </div>
+            <div class="card-body">
+                <p class="greenpara">This paragraph is found by css selectors.</p>
+                <p class="greenpara">All the paragraphs are founded by css selectors.</p>
+                <button type="button" class="btn btn-primary" onclick="changeColorBySelectors()">Change color</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8 col-lg-6 mt-4 mx-auto">
+        <div class="card border border-info">
+            <div class="card-header bg-info text-center">
+                <h4 class="text-white">Changing CSS using DOM - Hide / Show</h3>
+            </div>
+            <div class="card-body">
+                <p id="showhidepara">This paragraph will be hide / show on click of respective buttons.</p>
+                <div class="d-flex justify-content-between">
+                    <button type="button" class="btn btn-success" onclick="showPara(showhidepara)">Show</button>
+                    <button type="button" class="btn btn-warning" onclick="hidePara(showhidepara)">Hide</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8 col-lg-6 mt-4 mx-auto">
+        <div class="card border border-info">
+            <div class="card-header bg-info text-center">
+                <h4 class="text-white">Changing inner Html and value using DOM</h3>
+            </div>
+            <div class="card-body">
+                <p id="para">Have a good day.</p>
+                <input id="name" type="text" value="Aniket" class="form-control mb-3">
+                <button type="button" class="btn btn-success" onclick="changeValues(par)">Click Me</button>
+                
+            </div>
+        </div>
+    </div>
+   
+    <div class="col-md-8 col-lg-6 mt-4 mx-auto">
+        <div class="card border border-info">
+            <div class="card-header bg-info text-center">
+                <h4 class="text-white">HTML DOM to change the value of the image's src attribute</h3>
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-center">
+                    <img id="img1" src="../assets/img/htmlLogo.png" alt="" class="img-fluid " height="400" width="400">
+                </div>
+                <div class="d-flex justify-content-between my-3">
+                    <button id="html" type="button" class="btn btn-success" onclick="changeImage(html)">Html</button>
+                    <button id="css" type="button" class="btn btn-warning" onclick="changeImage(css)">Css</button>
+                    <button id="bootstrap" type="button" class="btn btn-primary" onclick="changeImage(bootstrap)">Bootstrap</button>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeColor(){
+            var p1 = document.getElementById("paragraph1");
+            p1.style.color = "red";
+        }
+        function changeAllColor(){
+            var allPara = document.getElementsByTagName("p");
+            allPara[1].style.color = "green";
+            allPara[2].style.color = "green";
+
+            //by class name
+            var byclass = document.getElementsByClassName("dom");
+            byclass[0].style.color = "blue";
+            byclass[1].style.color = "blue";
+        }
+        function changeColorBySelectors(){
+            var paras = document.querySelectorAll("p.greenpara");
+            for (var i of paras)
+                i.style.color = "green";
+        }
+        function showPara(para){
+            para.style.display = "block";
+        }
+        function hidePara(para){
+            para.style.display = "none";
+        }
+        function changeValues(para, name){
+            para.innerHTML = "Hello Aniket. What's up...?";
+            document.getElementById("name").value = "Aniket Shinde";
+        }
+        function changeImage(imgbtn){
+            if(imgbtn.innerHTML == "Html"){
+                document.getElementById("img1").src = "../assets/img/htmlLogo.png";
+            }
+            else if(imgbtn.innerHTML == "Css"){
+                document.getElementById("img1").src = "../assets/img/csslogo.png";
+            }
+            else{
+                document.getElementById("img1").src = "../assets/img/bootstrapLogo.png";
+            }
+        }
+        
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
