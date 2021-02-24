@@ -46,13 +46,16 @@
 
         <input type="button" onclick="calculate(n1.value,n2.value,rad.value)" value="Calculate" style="font-size: larger;"> &nbsp; &nbsp; &nbsp;
         <input type="button" onclick="myFunction()" value="Reset" style="font-size: larger;">
-      </form>
-      <h1 id="demo1" style="font-size: larger; color: blue;"></h1>
+      
+        <h1 id="demo1" style="font-size: larger; color: blue;"></h1>
+    </form>
+      
     </div>
       
       <script>
             function myFunction() {
                 document.getElementById("myForm").reset();
+                document.getElementById("demo1").innerHTML = "";
             }
 
             function calculate(n1,n2,rad)
