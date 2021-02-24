@@ -3,7 +3,10 @@ let myform = document.getElementById('myform');
 let dateInp = document.getElementById('date-inp');
 let output = document.getElementById('output');
 
-myform.onsubmit = function() {
+myform.onsubmit = function(event) {
+    event.preventDefault();
+    console.log(event);
+
     dateVal = dateInp.value;
     dateArr = dateVal.split('-');
 
@@ -15,39 +18,39 @@ myform.onsubmit = function() {
 
     if (!Number.isNaN(mon)) {
         if (mon < 1 || mon > 12) {
-            output.innerHTML += '<br>invalid! month should be between 1 - 12';
+            output.innerHTML = '<br>invalid! month should be between 1 - 12';
             valid = false;
         }
     } else {
-        output.innerHTML += '<br>invalid! input should be digits only';   
+        output.innerHTML = '<br>invalid! input should be digits only';   
         valid = false;
     }   
     
     if (!Number.isNaN(dat)) {
         if (dat < 0 || dat > 31) {
-            output.innerHTML += '<br>invalid! day should be between 1 - 31';
+            output.innerHTML = '<br>invalid! day should be between 1 - 31';
             valid = false;
         }
     } else {
-        output.innerHTML += '<br>invalid! input should be digits only';   
+        output.innerHTML = '<br>invalid! input should be digits only';   
         valid = false;
     }
     
     if (!Number.isNaN(year)) {
         if (! /[0-9]{4}/.test(year)) {
-            output.innerHTML += '<br>invalid! year should be four digits';
+            output.innerHTML = '<br>invalid! year should be four digits';
             valid = false;
         } else if (year == 0) {
-            output.innerHTML += '<br>invalid! year should be greater then 0';
+            output.innerHTML = '<br>invalid! year should be greater then 0';
             valid = false;
         } 
     } else {
-        output.innerHTML += '<br>invalid! input should be digits only';   
+        output.innerHTML = '<br>invalid! input should be digits only';   
         valid = false;
     }
 
     if (valid == true) {
-        output.innerHTML += '<br><h1>Date is Valid</h1>';   
+        output.innerHTML = '<br><h1>Date is Valid</h1>';   
         output.classList.add('text-success');
     }
 }

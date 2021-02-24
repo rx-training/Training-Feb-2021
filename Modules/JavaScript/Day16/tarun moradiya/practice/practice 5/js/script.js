@@ -69,13 +69,19 @@ shiftBtn.onclick = function() {
 
 //on form submition
 
-pushForm.onsubmit = function() {
+pushForm.onsubmit = function(event) {
+    event.preventDefault();
+    console.log(event);
+
     let inp1Val = inp1.value;
     arr.push(inp1Val);
     listArray();
 }
 
-unshiftForm.onsubmit = function() {
+unshiftForm.onsubmit = function(event) {
+    event.preventDefault();
+    console.log(event);
+    
     let inp2Val = inp2.value;
     arr.unshift(inp2Val);
     listArray();

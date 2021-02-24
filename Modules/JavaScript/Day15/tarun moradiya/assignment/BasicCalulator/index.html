@@ -64,7 +64,8 @@
         
 
         document.getElementById('myform').onsubmit = function formAction() {
-            console.log("submited");
+            event.preventDefault();
+            console.log(event);
 
             let first = Number(document.getElementById('first').value);
             let second = Number(document.getElementById('second').value);

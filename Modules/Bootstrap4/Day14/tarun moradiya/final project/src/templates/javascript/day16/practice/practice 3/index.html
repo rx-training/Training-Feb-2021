@@ -265,7 +265,9 @@
     
         <script>
             document.getElementById('myform').onsubmit = function() {
-    
+                event.preventDefault();
+                console.log(event);
+                
                 let inp = document.getElementById('inp').value;
                 let start = document.getElementById('start').value;
                 let end = document.getElementById('end').value;

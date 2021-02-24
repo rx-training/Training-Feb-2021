@@ -257,7 +257,8 @@
         <script>
             let output = document.querySelector('.output');
             document.getElementById('myform').onsubmit = function() {
-    
+                event.preventDefault();
+                console.log(event);
     
     
                 let inp = document.getElementById('inp').value;
