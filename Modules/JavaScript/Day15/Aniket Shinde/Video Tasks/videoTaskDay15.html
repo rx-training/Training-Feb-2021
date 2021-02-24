@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        //variables
+        var orderId = 9001;
+        console.log(orderId);
+        var name = "aniket";
+        console.log(name);
+        var isActive  = true;
+        console.log(isActive);
+
+        //Undefined Variable
+        var newOrderId;
+        console.log(newOrderId);
+
+        //types of variables
+        console.log(typeof orderId);
+        console.log(typeof name);
+        console.log(typeof newOrderId);
+        console.log(typeof isActive);
+
+        //Object
+        var order = {
+            orderId : 9002,
+            isActive : false
+        };
+        console.log(order);
+        console.log(typeof order);
+
+        //arrays are objects in javascript
+        var deletedOrders = [9001 , 9002 , 9003];
+        console.log(typeof deletedOrders);
+
+        //Function
+        function deleteOrder(orderId){
+            console.log("order deleted");
+        }
+        console.log(typeof deleteOrder);
+
+        //calling Function Before declaration ( It works )
+        printOrder(9003);
+
+        function printOrder(orderId){
+            console.log("Your order number is : "+orderId);
+        }
+
+        //Multiple Parameters in Function
+        function calculateTotal(quantity , price){
+            console.log("Your total amount of your order is : " +(quantity * price));
+        }
+        calculateTotal(5 , 142.50);
+
+        //Return 
+        function calculateTotal2(quantity , price){
+            return (quantity * price);
+        }
+        var totalPrice = calculateTotal2(5 , 142.50);
+        console.log("Your total amount of your order is : " +totalPrice);
+
+        //Expression function
+        var myOrder = function(){
+            console.log("display my order...");
+        }
+        console.log(typeof myOrder);
+        myOrder();
+
+        //if...else statements 
+        var price = 99.99;
+        if(price > 50){
+            console.log("It is too costly...");
+        }
+        else{
+            console.log("It is in budget...");
+        }
+
+        //Switch...case
+        var orderType = "Bussiness";
+        var shipMethod;
+        switch(orderType){
+            case "Bussiness":
+                shipMethod = "Fedex";
+                break;
+            case "Personal":
+                shipMethod = "Ups Ground";
+                break;
+            case "Bussiness":
+                shipMethod = "USPS";   
+        }
+        console.log(shipMethod);
+
+        //while and do...while loop
+        var itemCount = 3;
+        var currentItem = 0;
+        while( currentItem < itemCount){
+            console.log('item : '+ currentItem++);
+        }
+
+        var currentItem = 0;
+        do{
+            console.log('item : '+ currentItem++);
+        }while( currentItem < itemCount);
+
+        //for loop
+        itemCount = 5;
+        currentItem=0;
+        for(var i=0 ; i<itemCount ; i++){
+            console.log("item : "+i);
+        }
+
+        //break and continue
+        itemCount = 5;
+        currentItem=0;
+        for(var i=0 ; i<itemCount ; i++){
+            console.log("item : "+i);
+            if( i == 3)
+                break;
+        }
+
+        itemCount = 5;
+        currentItem=0;
+        for(var i=0 ; i<itemCount ; i++){
+            if( i == 3)
+                continue;
+            console.log("item : "+i);
+        }
+
+    </script>
+</body>
+</html>
