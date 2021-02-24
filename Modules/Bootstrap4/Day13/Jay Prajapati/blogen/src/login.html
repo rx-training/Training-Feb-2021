@@ -14,28 +14,28 @@
         <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
             <div class="container col-lg-9">
                 <a href="./index.html" class="navbar-brand">Blogen</a>
-                <button class="navbar-toggler" data-toggle="collapse"
+                <button class="navbar-toggler d-none" data-toggle="collapse"
                         data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav">
+                <div class="collapse navbar-collapse d-none" id="navbarCollapse">
+                    <ul class="navbar-nav d-none">
                         <li class="nav-item"><a href="./index.html" class="nav-link">Dashboard</a></li>
                         <li class="nav-item"><a href="./post.html" class="nav-link">Post</a></li>
                         <li class="nav-item"><a href="./category.html" class="nav-link">Categories</a></li>
                         <li class="nav-item"><a href="./user.html" class="nav-link">User</a></li>
                     </ul>
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto d-none">
                         <div class="dropdown">
                             <button class="btn text-secondary dropdown-toggle" type="button" 
                             id="dropdownButton" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><span class="fa fa-user"></span> Wellcome Brand</button>
                             <div class="dropdown-menu" aria-labelledby="dropdownButton">
-                                <a href="#" class="dropdown-item"><span class="fa fa-user-circle"></span> Profile</a>
-                                <a href="./setting.html" class="dropdown-item"><span class="fa fa-gear"></span> Settings</a>
+                                <a href="./profile.html" class="dropdown-item"><span class="fa fa-user-circle"></span> Profile</a>
+                                <a href="" class="dropdown-item"><span class="fa fa-gear"></span> Settings</a>
                             </div>
 
                         </div>
-                        <li class="nav-tiem"><a href="./login.html" class="nav-link"><span class="fa fa-user-times"></span> Logout</a></li>
+                        <li class="nav-tiem"><a href="#" class="nav-link"><span class="fa fa-user-times"></span> Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -44,7 +44,7 @@
         <!-- home-head-section -->
         <section class="pt-5 bg-primary" id="home-head-section">
             <div class="container col-lg-9">
-                <h2 class="text-light py-2 m-0"><span class="fa fa-user"></span> Edit Profile</h2>
+                <h2 class="text-light py-2 m-0"><span class="fa fa-user"></span> Blogen Admin</h2>
                 
             </div>
         </section>
@@ -52,68 +52,26 @@
         <!-- home-post-section -->
         <section class="bg-light py-4">
             <div class="container col-lg-9">
-                <div class="row py-4">
-                    <div class="col-lg-3">
-                        <a href="./index.html">
-                            <button class="btn btn-light"><span class="fa fa-arrowleft"></span> Back To Dashboard</button>
-                        </a>
-                    </div>
-                    <div class="col-lg-3"></div>
-                    <div class="col-lg-3 py-2 py-lg-0">
-                        <button class="btn btn-success btn-block" data-toggle="modal" data-target="#passwordModal">Changes Password</button>
-                    </div>
-                    <div class="col-lg-3">
-                        <button class="btn btn-danger btn-block ">Delete Account</button>
-                    </div>
-                </div>
-                <div class="row align-items-start">
-                    <div class="col-lg-9">
+                <div class="row align-items-end">
+                    <div class="container col-lg-6">
                       <div class="card">
                           <h3 class="card-header">
-                              Edit Profile
+                              Account Login
                           </h3>
                           <div class="card-body">
                             <form action="">
                                 <div class="form-group">
-                                    <label for="" class="form-label">Name</label>
-                                    <input type="text" class="form-control" value="Jay Prajapati">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="" class="form-label">Email</label>
-                                    <input type="email" class="form-control" value="jayprjapati7085@gmail.com">
+                                    <label for="psw" class="form-label">Password</label>
+                                    <input type="password" class="form-control">
                                 </div>
-                                <div class="form-group">
-                                    <label for="" class="form-label">Bio</label>
-                                    <textarea type="text" class="form-control" value="Jay Prajapati"></textarea>
-                                </div>
-    
+                                <button class="btn btn-block btn-primary">Login</button>
                             </form>
                           </div>
                       </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="container">
-                            <h4>Your Avatar</h4>
-                            <div class="card">
-                                <img src="./img/avatar.png" alt="" class="card-img-top mb-2">
-
-                                <button class="btn btn-primary btn-block">
-                                    Edit Image
-                                </button>
-                                <button class="btn btn-danger btn-block">
-                                    Delete Image
-                                </button>
-                                <!-- <div class="card-body">
-                                    <button class="btn btn-primary btn-block">
-                                        Edit Image
-                                    </button>
-                                    <button class="btn btn-danger btn-block">
-                                        Delete Image
-                                    </button>
-                                </div> -->
-                            </div>
-                        </div>
-                        
                     </div>
             </div>
         </section>
