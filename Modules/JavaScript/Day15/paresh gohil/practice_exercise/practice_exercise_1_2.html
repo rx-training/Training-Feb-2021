@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Largest number is:</h2>
+    <h2 id="demo"></h2>
+
+    <script>
+
+        //..........................exercise 1...........................................
+        var a= prompt("Enter the first number:","");
+        var b= prompt("Enter second number:","");
+        var c= prompt("Enter third number:","");
+
+        a = parseInt(a);
+        b = parseInt(b);
+        c = parseInt(c);
+
+        var total= a+b+c;
+        if(total>40){        
+        var d = Math.max(a,b,c);
+        document.getElementById("demo").innerHTML = d;
+        }
+        else document.getElementById("demo").innerHTML = "please enter the larger numbers";
+
+        //........................ exercise 2.....................................
+        var e = ["ahmedabad","baroda","mumbai","surat","rajkot"];
+
+        var jk = ""; 
+        var i;
+        for( i in e){
+            jk = jk + e[i] + " | "; 
+        }
+        f = alert(jk);
+
+
+    </script>
+</body>
+</html>

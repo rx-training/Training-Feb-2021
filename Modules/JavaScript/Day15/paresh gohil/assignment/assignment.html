@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myform">
+        <label for="number1">Please enter first number:</label>
+        <input type="number" id="number1" value=" " required><br><br>
+        <label for="number2">Please enter second number:</label>
+        <input type="number" id="number2" value=" " required><br><br>
+        <label for="operators">Please select operation you want to perform :</label><br>
+        <input type="radio" name="colors" id="add">Addition<br>
+        <input type="radio" name="colors" id="sub">Subtraction<br>
+        <input type="radio" name="colors" id="mul">Multiplication<br>
+        <input type="radio" name="colors" id="div">Division<br>
+        <button type="button" onclick="calc()">Calculate</button>
+        <button type="reset">Reset</button><br>
+        <h3>answer is :</h3>
+        <h3 id="ans"></h3>
+    </form>
+
+
+
+    <script>
+        function calc(){
+            var a = document.getElementById("add").checked;
+            var b = document.getElementById("sub").checked;
+            var c = document.getElementById("mul").checked;
+            var d = document.getElementById("div").checked;
+            var num1 = document.getElementById("number1").value;
+            var num2 = document.getElementById("number2").value;
+            var num3;
+
+            if(a == true){
+                num3 = parseInt(num1) + parseInt(num2);
+                document.getElementById("ans").innerHTML = num3;
+            }
+            else if(b == true){
+                num3 = parseInt(num1) - parseInt(num2);
+                document.getElementById("ans").innerHTML = num3;
+            }
+            else if(c == true){
+                num3 = parseInt(num1) * parseInt(num2);
+                document.getElementById("ans").innerHTML = num3;
+            }
+            else{
+                num3 = parseInt(num1) / parseInt(num2);
+                document.getElementById("ans").innerHTML = num3;
+            }
+        }
+    </script>
+</body>
+</html>
