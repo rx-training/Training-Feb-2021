@@ -43,6 +43,14 @@
               return false;
             }
         
+
+
+            function fun(){  
+            location.reload(true);
+          
+              }   
+        
+
     </script>
   </head>
   <body class="bg-light"> 
@@ -81,11 +89,11 @@
           </div><br>
           <div class="form-group">
           <button type="submit" class="btn btn-primary" onclick="return calc();">Calculate</button>
-        <button type="reset" class="btn btn-danger">Reset</button>
+        <button type="reset" value = "Reset data" class="btn btn-danger" onClick = "fun()">Reset</button>
     </div>
+    <h1 id="resultArea"></h1>
    
     </form>
-    <h1 id="resultArea"></h1>
     
 </div>
 
