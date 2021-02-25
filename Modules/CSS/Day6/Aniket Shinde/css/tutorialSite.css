@@ -8,6 +8,7 @@ header {
     background-color: #07afa4;
     color: white;
     padding: 10px;
+    z-index: 1;
 }
 img{
     display: inline-block;

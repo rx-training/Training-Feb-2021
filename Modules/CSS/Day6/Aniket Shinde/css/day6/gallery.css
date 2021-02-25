@@ -1,0 +1,35 @@
+#ImageGallery  * {
+        box-sizing: border-box;
+    }
+    #ImageGallery  h1 {
+        text-align: center;
+        padding: 10px;
+        color: crimson;
+    }
+    #ImageGallery .row {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 2px 4px;
+    }
+    #ImageGallery img {
+        flex: 25%;
+        max-width: 25%;
+        padding: 2px 4px;
+        height: auto;
+    }
+
+    /* For Tablet */
+    @media (max-width: 800px) {
+        #ImageGallery img {
+        flex: 33.33%;
+        max-width: 33.33%;
+        }
+    }
+    
+    /* For Mobiles */
+    @media (max-width: 600px) {
+        #ImageGallery img {
+        flex: 50%;
+        max-width: 50%;
+        }
+    }

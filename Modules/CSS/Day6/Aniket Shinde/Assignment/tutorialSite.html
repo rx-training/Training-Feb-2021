@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutorial Site</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/tutorialSite.css"/>
+    <title>CSS</title>
 </head>
 <body>
     <header>
@@ -20,35 +21,41 @@
         </div>
     </header>
 
-    <div style="margin-top: 75px; width: 300px; float: left; diaplay:inline">
-        <button type="button" class="collapsible">Day 3</button>
-        <div class="content">
-            <button type="button" class="collapsible">Practice</button>
-            <div class="content">
-                <ul>
-                    <li><a onclick="setUrlArticle()">Article News</a></li>
-                    <li><a onclick="setUrlDepartment()">Departments</a></li>
-                    <li><a onclick="setUrlReport()">Student Report Card</a></li>
-                    <li><a onclick="setUrlLogin()">Login Form</a></li>
-                    <li><a onclick="setUrlMenu()">Horizontal Menu</a></li>
-                </ul>
-            </div>
-            <button type="button" class="collapsible">Assignment</button>
-            <div class="content">
-                <ul>
-                    <li><a onclick="setUrlEmployeeForm()">Employee Details Form</a></li>
-                </ul>
-            </div>
-            <button type="button" class="collapsible">Video Task</button>
-            <div class="content">
-                <ul>
-                    <li><a onclick="setUrlVideoTask()">Task 1</a></li>
-                </ul>
+    <div class="container-fluid">
+        <div class="row" style="margin-top: 90px;">
+            <div class="col-lg-3" style="height: 500px; overflow: auto;">
+                <button type="button" class="collapsible">Day 3</button>
+                <div class="content">
+                    <button type="button" class="collapsible">Practice</button>
+                    <div class="content">
+                        <ul>
+                            <li><a href="HtmlTasks/articlenews.html">Article News</a></li>
+                            <li><a href="HtmlTasks/departments.html">Departments</a></li>
+                            <li><a href="HtmlTasks/studentReportCard.html">Student Report Card</a></li>
+                            <li><a href="HtmlTasks/loginForm.html">Login Form</a></li>
+                            <li><a href="HtmlTasks/horizontalMenu.html">Horizontal Menu</a></li>
+                        </ul>
+                    </div>
+                    <button type="button" class="collapsible">Assignment</button>
+                    <div class="content">
+                        <ul>
+                            <li><a href="HtmlTasks/employeeDetailsForm.html">Employee Details Form</a></li>
+                        </ul>
+                    </div>
+                    <button type="button" class="collapsible">Video Task</button>
+                    <div class="content">
+                        <ul>
+                            <li><a href="HtmlTasks/videotasks.html">Task 1</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>   
+
+            <div class="col-lg-9 ">
+
             </div>
         </div>
-    </div>   
-    <iframe id="myFrame" src="" width="700px" height="700px" style="border:1px solid black;">
-    </iframe>
+    </div>
 
     <div class="footer">
         <h1 class="center">Have Any Question?</h1>
@@ -77,27 +84,9 @@
           });
         }
 
-        function setUrlArticle(){
-            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/HTML/Day3/Aniket%20Shinde/Practice/articlenews.html";
-        }
-        function setUrlDepartment(){
-            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/HTML/Day3/Aniket%20Shinde/Practice/departments.html";
-        }
-        function setUrlReport(){
-            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/HTML/Day3/Aniket%20Shinde/Practice/studentReportCard.html";
-        }
-        function setUrlLogin(){
-            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/HTML/Day3/Aniket%20Shinde/Practice/loginForm.html";
-        }
-        function setUrlMenu(){
-            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/HTML/Day3/Aniket%20Shinde/Practice/horizontalMenu.html";
-        }
-        function setUrlEmployeeForm(){
-            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/HTML/Day3/Aniket%20Shinde/Assignments/employeeDetailsForm.html";
-        }
-        function setUrlVideoTask(){
-            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/HTML/Day3/Aniket%20Shinde/videotasks/videotasks.html";
-        }
         </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

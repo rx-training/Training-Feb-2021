@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/tutorialSite.css"/>
+    <title>CSS</title>
 </head>
 <body>
     <header>
@@ -20,73 +21,76 @@
         </div>
     </header>
 
-    <div style="margin-top: 75px; width: 300px; float: left; diaplay:inline">
-        <button type="button" class="collapsible">Day 4</button>
-        <div class="content">
-            <button type="button" class="collapsible">Practice</button>
+    <div class="row" style="margin-top: 90px;">
+        <div class="col-lg-3" style="height: 500px; overflow: auto;">
+            <button type="button" class="collapsible">Day 4</button>
             <div class="content">
-                <ul>
-                    <li><a onclick="setUrlAudioVideo()">Audio and Video</a></li>
-                    <li><a onclick="setUrlBorder()">Pragraph Border</a></li>
-                    <li><a onclick="setUrlCities()">Horizontal List of Cities</a></li>
-                    <li><a onclick="setUrlStudent()">Student Report Card Alignment</a></li>
-                    <li><a onclick="setUrlUniversal()">Universal & Element Selector</a></li>
-                </ul>
+                <button type="button" class="collapsible">Practice</button>
+                <div class="content">
+                    <ul>
+                        <li><a href="CssTasks/day4/audioandvideo.html">Audio and Video</a></li>
+                        <li><a href="CssTasks/day4/borderPragraph.html">Pragraph Border</a></li>
+                        <li><a href="CssTasks/day4/horizontalList.html">Horizontal List of Cities</a></li>
+                        <li><a href="CssTasks/day4/StudentReportCardAlignment.html">Student Report Card Alignment</a></li>
+                        <li><a href="CssTasks/day4/UniversalSelectorAndElementSelector.html">Universal & Element Selector</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="collapsible">Assignment</button>
+                <div class="content">
+                    <ul>
+                        <li><a href="CssTasks/day4/aniketShindeResume.html">Resume - Aniket Shinde</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="collapsible">Video Task</button>
+                <div class="content">
+                    <ul>
+                        <li><a href="CssTasks/day4/videoTasks.html">Task 1</a></li>
+                    </ul>
+                </div>
             </div>
-            <button type="button" class="collapsible">Assignment</button>
+            <button type="button" class="collapsible">Day 5</button>
             <div class="content">
-                <ul>
-                    <li><a onclick="setUrlResume()">Resume - Aniket Shinde</a></li>
-                </ul>
+                <button type="button" class="collapsible">Practice</button>
+                <div class="content">
+                    <ul>
+                        <li><a href="CssTasks/day5/divsWithPosition.html">Divs with Display, Float, Overflow</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="collapsible">Assignment</button>
+                <div class="content">
+                    <ul>
+                        <li><a href="CssTasks/day5/basicAppLayout.html">Basic App Layout</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="collapsible">Video Task</button>
+                <div class="content">
+                    <ul>
+                        <li><a href="CssTasks/day5/cssVideoTutorials.html">Task 1</a></li>
+                    </ul>
+                </div>
             </div>
-            <button type="button" class="collapsible">Video Task</button>
+            <button type="button" class="collapsible">Day 6</button>
             <div class="content">
-                <ul>
-                    <li><a onclick="setUrlVideoTaskDay4()">Task 1</a></li>
-                </ul>
+                <button type="button" class="collapsible">Practice</button>
+                <div class="content">
+                    <ul>
+                        <li><a href="CssTasks/day6/boxAndFlexModels.html">Box And Flex Model</a></li>
+                        <li><a href="CssTasks/day6/imageGalleryFlex.html">Image Gallery</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="collapsible">Assignment</button>
+                <div class="content">
+                    <ul>
+                        <li><a href="tutorialSite.html" target="_blank">Tutorial Website</a></li>
+                    </ul>
+                </div>
             </div>
+        </div>   
+
+        <div class="col-lg-9 ">
+
         </div>
-        <button type="button" class="collapsible">Day 5</button>
-        <div class="content">
-            <button type="button" class="collapsible">Practice</button>
-            <div class="content">
-                <ul>
-                    <li><a onclick="setUrlDivs()">Divs with Display, Float, Overflow</a></li>
-                </ul>
-            </div>
-            <button type="button" class="collapsible">Assignment</button>
-            <div class="content">
-                <ul>
-                    <li><a onclick="setUrlApp()">Basic App Layout</a></li>
-                </ul>
-            </div>
-            <button type="button" class="collapsible">Video Task</button>
-            <div class="content">
-                <ul>
-                    <li><a onclick="setUrlVideoTaskDay5()">Task 1</a></li>
-                </ul>
-            </div>
-        </div>
-        <button type="button" class="collapsible">Day 6</button>
-        <div class="content">
-            <button type="button" class="collapsible">Practice</button>
-            <div class="content">
-                <ul>
-                    <li><a onclick="setUrlBoxFlex()">Box And Flex Model</a></li>
-                    <li><a onclick="setUrlGallery()">Image Gallery</a></li>
-                </ul>
-            </div>
-            <button type="button" class="collapsible">Assignment</button>
-            <div class="content">
-                <ul>
-                    <li><a onclick="setUrlTutorial()">Tutorial Website</a></li>
-                    <li><a onclick="setUrlMenu()">Responsive Menu</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>   
-    <iframe id="myFrame" src="" width="700px" height="700px" style="border:1px solid black;">
-    </iframe>
+    </div>
 
     <div class="footer">
         <h1 class="center">Have Any Question?</h1>
@@ -115,43 +119,9 @@
           });
         }
 
-        function setUrlAudioVideo(){
-            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/CSS/Day4/Aniket%20Shinde/Practice/audioandvideo.html";
-        }
-        function setUrlBorder(){
-            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/CSS/Day4/Aniket%20Shinde/Practice/borderPragraph.html";
-        }
-        function setUrlCities(){
-            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/CSS/Day4/Aniket%20Shinde/Practice/horizontalList.html";
-        }
-        function setUrlStudent(){
-            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/CSS/Day4/Aniket%20Shinde/Practice/StudentReportCardAlignment.html";
-        }
-        function setUrlUniversal(){
-            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/CSS/Day4/Aniket%20Shinde/Practice/UniversalSelectorAndElementSelector.html";
-        }
-        function setUrlResume(){
-            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/CSS/Day4/Aniket%20Shinde/Assignment/aniketShindeResume.html";
-        }
-        function setUrlVideoTaskDay4(){
-            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/CSS/Day4/Aniket%20Shinde/VideoTasks/videoTasks.html";
-        }
-
-
-        function setUrlMenu(){
-            document.getElementById("myFrame").src = "";
-        }
-        function setUrlTutorial(){
-            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/CSS/Day6/Aniket%20Shinde/Assignment/tutorialSite.html";
-        }
-        function setUrlBoxFlex(){
-            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/CSS/Day6/Aniket%20Shinde/Practice/boxAndFlexModels.html";
-        }
-        function setUrlGallery(){
-            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/CSS/Day6/Aniket%20Shinde/Practice/imageGalleryFlex.html";
-        }
-
-        
         </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
