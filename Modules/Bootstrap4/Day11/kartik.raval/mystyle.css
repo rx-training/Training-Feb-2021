@@ -154,19 +154,26 @@
     border: 2px solid white;
     outline: none;
 }
+.my-cursor{
+    cursor: pointer;
+    outline: none;
+}
 #s6_paintings aside{
-   grid-template-columns: 1fr;
-   grid-template-rows: 1fr;
-   grid-template-areas: 
-   "my-paintings-area"
-   "windmill";
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(40%,1fr));
 }
-.my-paintings-area{
+#s6_paintings .windmill{
+    width: 60%;
+    justify-self: end;
+    align-self: end;
+}
+/* .my-paintings-area{
     grid-area: my-paintings-area;
-}
-.windmill{
+} */
+
+/* .windmill{
     grid-area:windmill
-}
+} */
 @media (max-width:576px){
     .windmill{
     display: none;
@@ -179,10 +186,7 @@
     align-self: end;
 }
 
-.my-cursor{
-    cursor: pointer;
-    outline: none;
-}
+
 
 
 .painting-1{

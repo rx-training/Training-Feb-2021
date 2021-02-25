@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -138,8 +138,8 @@
                     <div class="painting-9"></div>
                     <div class="painting-10"></div>
                 </div>
+                <img class="img-fluid windmill" src="img/interface-imgs/s6-painting-200.png" alt="windmill">
             </aside>
-            <img class="img-fluid windmill" src="img/interface-imgs/s6-painting-200.png" alt="Windmill">
         </div>
     </section>
     <!--s7_drawings-->
@@ -277,18 +277,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <script type="text/javascript">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>  
         $(document).ready(function(){
-            $('a[href^="#"]').on('click',function (e) {e.preventDefault();
-    
-                var target = this.hash,
-                $target = $(target);
-    
-                $('html, body').stop().animate({
-                    'scrollTop': $target.offset().top
-                }, 900, 'swing', function () {
-                window.location.hash = target;
+            $(document).ready(function(){
+            $("a").on('click', function(event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                scrollTop: $(hash).offset().top
+                }, 800, function(){
+                window.location.hash = hash;
                 });
+            } 
+            });
             });
         });
     </script>
@@ -296,15 +299,15 @@
     <div class="modal fade" id="painting1" tabindex="1" role="dialog" aria-labelledby="Rembrandt Painting 1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-            <div class="modal_header">
-                <button class="close" type="button" data-dismiss="modal" aria-label="close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <div class="modal_header">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="img/paintings-img/1920px-P1150002_Cognacq-Jay_Rembrandt_anesse_de_Balaam_rwk.jpg" class="img-fluid" alt="">
+                </div>
             </div>
-            <div class="modal-body">
-                <img src="img/paintings-img/1920px-P1150002_Cognacq-Jay_Rembrandt_anesse_de_Balaam_rwk.jpg" class="img-fluid" alt="">
-            </div>
-        </div>
         </div>
     </div>
   </body>

@@ -1,83 +1,138 @@
 <!doctype html>
-<html>
-<head>
-    <style>
-        table, th, td {
-            border: 1px black solid; 
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 5px;
-            text-align: left;    
-        }
-        h1{
-            text-align: center;
-        }
-        .row{
-           
-            display: inline;
-        }
-        .a{
-            width: 100px;
-        }
-        .b{
-            width: 100px;
-        }
-        .c{
-            width: 100px;
-        }
-    </style>
-</head>
-<body>
-    <h1>Report Card</h1>
-    <table style="width: 50%" align="center">
-        <tr>
-        <th>Name</th>
-        <td colspan="3" text>Raval Kartik Bhalchandra</td>
-        </tr>
-        <tr>
-            <th>Roll No.</th>
-            <td>50</td>
-            <th>Yearing of passing</th>
-            <td>2020</td>
-        </tr>
-        <tr>
-            <th colspan="4" style="text-align: center; font-size: 20px;">Academic Details</th>
-        </tr>
-        <tr>
-            <th>Subject</th>
-            <th>Marks</th>
-            <th colspan="2">Grade</th>
-        </tr>
-        <tr>
-            <td>Maths</td>
-            <td>81</td>
-            <td colspan="2">B+</td>
-        </tr>
-        <tr>
-            <td>Science</td>
-            <td>85</td>
-            <td colspan="2">A+</td>
-        </tr>
-        <tr>
-            <td>English</td>
-            <td>80</td>
-            <td colspan="2">A+</td>
-        </tr>
-        <tr>
-            <th>Result</th>
-            <td colspan="4" style="color:limegreen;">Congratulations! You have pass this exam with distinction</td>
-        </tr>
-    </table>
-    <div class="row">
-        <div class="a">
-            <P>a</P>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../style.css">
+    <title>Radix training site</title>
+  </head>
+  <body>
+    <body id="home"> 
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="container">
+                <img src="../../Img/Radixweblogonew.jpg" width="100px" height="70px" alt="Radix_logo">
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-5">
+                        <li class="nav-item">
+                            <a href="../../Home/Index.html" class="nav-link text-light">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../Redmine/Fork&Clone.html" class="nav-link text-light">Redmine&Git</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../Practice/Login&article.html" class="nav-link text-light">HTML</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../Css/Day4/Practice/BorderToParagraph.html" class="nav-link text-light">CSS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../Bootstrap/Day9/Alert&progress.html" class="nav-link text-light">Bootstrap</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section id="redminegit" class="bg-light text-muted ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 bg-dark py-5" id="sidebar">
+                        <ul>
+                            <li>Day3</li>
+                            <ul>
+                                <li>Assignment</li>
+                                <ul>
+                                    <li><a href="../Assignment/Employeeform.html">Employee form</a></li>
+                                </ul>
+                                <li>Practice</li>
+                                <ul>
+                                    <li><a href="../Practice/Login&article.html">Login form & Article tag</a></li>
+                                    <li><a href="../Practice/Reportcard.html">Report card</a></li>
+                                </ul>
+                            </ul>
+                        </ul>   
+                    </div>
+                    <div class="col-md-8 bg-light py-3" id="main">
+                        <!doctype html>
+                        <html>
+                        <head>
+                            <style>
+                                table, th, td {
+                                    border: 1px black solid; 
+                                    border-collapse: collapse;
+                                }
+                                th, td {
+                                    padding: 5px;
+                                    text-align: left;    
+                                }
+                                h1{
+                                    text-align: center;
+                                }
+                               
+                            </style>
+                        </head>
+                        <body>
+                            <h1>Report Card</h1>
+                            <table style="width: 50%" align="center">
+                                <tr>
+                                <th>Name</th>
+                                <td colspan="3" text>Raval Kartik Bhalchandra</td>
+                                </tr>
+                                <tr>
+                                    <th>Roll No.</th>
+                                    <td>50</td>
+                                    <th>Yearing of passing</th>
+                                    <td>2020</td>
+                                </tr>
+                                <tr>
+                                    <th colspan="4" style="text-align: center; font-size: 20px;">Academic Details</th>
+                                </tr>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Marks</th>
+                                    <th colspan="2">Grade</th>
+                                </tr>
+                                <tr>
+                                    <td>Maths</td>
+                                    <td>81</td>
+                                    <td colspan="2">B+</td>
+                                </tr>
+                                <tr>
+                                    <td>Science</td>
+                                    <td>85</td>
+                                    <td colspan="2">A+</td>
+                                </tr>
+                                <tr>
+                                    <td>English</td>
+                                    <td>80</td>
+                                    <td colspan="2">A+</td>
+                                </tr>
+                                <tr>
+                                    <th>Result</th>
+                                    <td colspan="4" style="color:limegreen;">Congratulations! You have pass this exam with distinction</td>
+                                </tr>
+                            </table>
+                        </body>
+                        </html>
+                        
+                    </div>
+                </div>
         </div>
-        <div class="b">
-            <P>b</P>
-        </div><div class="c">
-            <P>c</P>
-        </div>
-    </div>
-</body>
+        </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
 </html>
+
+

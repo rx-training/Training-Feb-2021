@@ -12,6 +12,7 @@
     <p id="num3"></p>
     <p id="greaterValue"></p>
     <p id="sum"></p>
+    <p id="Error"></p>
     <script>
         var num1 = parseInt(prompt("Enter num1"));
         var num2 = parseInt(prompt("Enter num2"));
@@ -23,8 +24,14 @@
 
         function sum(){
             var result = num1 + num2 + num3;
-            document.getElementById("sum").innerHTML= "Sum : "+num1+" + "+num2+" + "+num3+" = "+result;
+            if(result > 40){
+                document.getElementById("sum").innerHTML= "Sum : "+num1+" + "+num2+" + "+num3+" = "+result;
+            }
+            else {
+                document.getElementById("sum").innerHTML= "Sum is less than 40";
+            }
         }
+     
         if(num1 >= num2 && num1 >= num3) {
             document.getElementById("greaterValue").innerHTML ="Greater value is :"+ num1;
         }
