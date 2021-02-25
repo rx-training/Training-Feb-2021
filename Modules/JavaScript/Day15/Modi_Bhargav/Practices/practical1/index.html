@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Practice</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<head>
+
+    <script type="text/javascript">
+        var no1 = parseInt(prompt("Enter First Number : "));
+        var no2 = parseInt(prompt("Enter Second Number : "));
+        var no3 = parseInt(prompt("Enter Third Number : "));
+        var Sum = 0;
+        function GreaterNum() {
+            if (no1 > 40 && no2 > 40 && no3 > 40) {
+                var Sum = no1 + no2 + no3;
+                document.write("Sum of 40 greater Number:" + Sum);
+            }
+            else if (no1 > 40 && no2 > 40) {
+                var Sum = no1 + no2;
+                document.write("Sum of 40 greater Number:" + Sum);
+            }
+            else if (no2 > 40 && no3 > 40) {
+                var Sum = no2 + no3;
+                document.write("Sum of 40 greater Number:" + Sum);
+            }
+            else if (no1 > 40 && no3 > 40) {
+                var Sum = no1 + no3;
+                document.write("Sum of 40 greater Number:" + Sum);
+            }
+            else {
+                document.write("No Number is Greater than 40");
+            }
+
+            if (no1 > no2 && no1 > no3) {
+                document.write("<br>Number1 is greater");
+            }
+            else if (no2 > no1 && no2 > no3) {
+                document.write("<br>Number2 is greater");
+            }
+            else {
+                document.write("<br>Number3 is greater");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container text-center py-5">
+        <button class="btn btn-success" onclick="GreaterNum()">Result Of Greater Number 40</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
