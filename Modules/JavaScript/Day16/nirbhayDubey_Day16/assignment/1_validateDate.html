@@ -29,9 +29,30 @@
     function validateDate(dt){
         var patt=/^((0[1-9])|(1[0-2]))-((0[1-9])|([1-2][0-9])|(3[0-1]))-([1-2][0-9][0-9][0-9])$/;
         if(patt.test(dt.value)){
+            var dtarr=dt.value.split("-");
+            var month=Number(dtarr[0]);
+            var date=Number(dtarr[1]);
+            var year=Number(dtarr[2]);
+            if(month==2){
+                if((year%4==0 && year%100!=0)||year%400==0){
+                    if(!(date>=1 && date<=29)){
+                        document.getElementById("msg").className="alert alert-danger";
+                        document.getElementById("msg").innerHTML=" Oops! Date is invalid &#128078; ";
+                        return false;
+                    }
+                }
+                else{
+                    if(!(date>=1 && date<=28)){
+                        document.getElementById("msg").className="alert alert-danger";
+                        document.getElementById("msg").innerHTML=" Oops! Date is invalid &#128078; ";
+                        return false;
+                    }
+                }
+            }
             document.getElementById("msg").className="alert alert-success";
             document.getElementById("msg").innerHTML=" Congratulations Date is valid &#128077; ";
-        }else{
+        }
+        else{
             document.getElementById("msg").className="alert alert-danger";
             document.getElementById("msg").innerHTML=" Oops! Date is invalid &#128078; ";
         }
