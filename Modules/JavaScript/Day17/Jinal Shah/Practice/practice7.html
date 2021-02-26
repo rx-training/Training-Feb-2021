@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice 1</title>
+    <title>Practice 7</title>
 
     <style>
         h3{
@@ -20,12 +20,15 @@
 </head>
 <body>
     
-    <h3><center>Use the getElementById method to find the element and change its text to "Hello".</center></h3>
+    <h3><center>Use Window.location object to navigate on another page.</center></h3>
 
-    <p id="demo"></p>
+    <button onclick="myFunction()">Replace document</button>
 
     <script>
-    document.getElementById("demo").innerHTML= "Hello";
+        function myFunction(){
+            window.location.replace("https://radixweb.com/");
+        }
+          
     </script>
 
 </body>

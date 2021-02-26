@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice 1</title>
+    <title>Practice 2</title>
 
     <style>
         h3{
@@ -20,13 +20,25 @@
 </head>
 <body>
     
-    <h3><center>Use the getElementById method to find the element and change its text to "Hello".</center></h3>
+    <h3><center>Change the text of the first element that has the class name "test".</center></h3>
 
-    <p id="demo"></p>
+    <p class="test"></p>
+    <p class="test"></p>
+
+    <!-- <hr style="border: 2px solid teal;">
+    
+    <button onclick="goBack()">Go Back</button> -->
 
     <script>
-    document.getElementById("demo").innerHTML= "Hello";
+    document.getElementsByClassName("test")[0].innerHTML = "Hello";
+    // document.getElementsByClassName("test")[1].innerHTML = "Hellooooooooo";
+
+    /* function goBack() {
+         window.history.back();
+    } */
     </script>
+    
+    
 
 </body>
 </html>
