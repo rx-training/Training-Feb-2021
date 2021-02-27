@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 6</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+
+    <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
+        <div class="card-header bg-dark text-white">
+           <h5>Explain Function closure with practical</h5>
+        </div>	
+        <div class="card-body">
+            <h5 class="text-muted">Closure means that an inner function always has access to the vars and parameters of its outer function, even after the outer function has returned.</h5>
+            <h5 class="text-muted">Outer variables can keep their states between multiple calls.
+                Inner function does not keep the separate copy of outer variables but it reference outer variables<br> that means value of the outer variables will be changed if you change it using inner function.</h5>
+            <br>
+            <button class="btn btn-primary" type="submit" onclick="myFunction()" >Count!</button><br>
+           
+        </div>
+        <h3 id="demo" class=" p-4">0</h3>	
+    </div>	
+
+    <script>
+        function Counter() {
+            var counter = 0;
+
+            function IncreaseCounter() {
+                return counter += 1;
+            };
+
+            return IncreaseCounter;
+        }
+
+        var counter = Counter();
+        
+        function myFunction(){
+          document.getElementById("demo").innerHTML = counter();
+        }
+    </script>
+
+
+	
+</body>
+</html>

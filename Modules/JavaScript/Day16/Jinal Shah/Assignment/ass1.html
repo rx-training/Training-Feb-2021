@@ -19,6 +19,45 @@
 
     <script>
 
+/*         function dateFunction(num)
+                    {
+                        // regular expression to match required date format
+                        re = /^(\d{1,2})\-(\d{1,2})\-(\d{4})$/;
+                
+                        if(num.value != '') 
+                        {
+                            if(regs = num.value.match(re)) 
+                            {                  
+                                // month value between 1 and 12
+                                if(regs[1] < 1 || regs[1] > 12) 
+                                {
+                                    document.getElementById("demo").innerHTML="Invalid Month : " + regs[1];
+                                    return false;    
+                                }
+                                // day value between 1 and 31
+                                if(regs[2] < 1 || regs[2] > 31) 
+                                {
+                                    document.getElementById("demo").innerHTML="Invalid Day : " + regs[2];
+                                    return false;
+                                }
+                                // year value between 1902 and 2021
+                                if(regs[3] < 1900 || regs[3] > (new Date()).getFullYear()) 
+                                {
+                                    document.getElementById("demo").innerHTML="Invalid Year: " + regs[3] + " - must be between 1900 and " + (new Date()).getFullYear();
+                                    return false;
+                                }
+                            } 
+                            else 
+                            {
+                                alert("Invalid date format: " + num.value);
+                                num.focus();
+                                return false;
+                            }
+                        }        
+                        document.getElementById("demo").innerHTML="Date is Valid!";
+                    return true;
+                } */
+
         function check(s1)
         {
 
