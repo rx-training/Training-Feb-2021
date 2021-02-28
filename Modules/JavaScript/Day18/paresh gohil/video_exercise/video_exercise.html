@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        function add(a,b,callback){
+            callback(a+b);
+        }
+
+        function print(c){
+            console.log(c);
+        }
+
+        add(10,12,print);
+
+        function sub(c,d,callback){
+            callback(c-d);
+        }
+        sub(30,20,(d)=>{
+            console.log(d)
+        });
+
+
+        //...........var and let keyword.......................
+        //1
+        var a=10;
+        if(true){
+            var a=78;
+            console.log(a);
+        }
+        console.log(a);
+
+        //2
+        var b=10;
+        if(true){
+            let b= 78;
+            console.log(b);
+        }
+        console.log(b);
+
+        //............promises..................
+
+        function prom(data){
+            return new Promise((resolve,reject)=>{
+                let successMessage={
+                    status: 'success',
+                    message: 'All is well'
+                };
+                let errorMessage={
+                    status: 'error',
+                    message: 'Oops, there was an error!'
+                };
+                if(typeof(data === 'boolean') && data === true){
+                    resolve(successMessage);
+                }
+                else{
+                    reject(errorMessage);
+                }
+            })
+        }
+
+        prom(true).then(
+            (successMessage)=>{
+                document.write(successMessage.status)
+            },
+            (errorMessage)=>{
+                document.write(errorMessage.status)
+            }
+        );
+
+    </script>
+</body>
+</html>

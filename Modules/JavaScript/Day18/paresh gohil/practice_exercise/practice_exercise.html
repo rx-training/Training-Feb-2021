@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Callback Function</h1>
+    <h2 id="demo"></h2>
+    <h2 id="demo1"></h2>
+    <h2 id="demo2"></h2>
+    <h1>if string is given then print reverse otherwise error</h1>
+    <h2 id="demo4"></h2>
+    <script>
+        function sqr(a,callback){
+            callback(a**2);
+        }
+
+        sqr(10,(c)=>{
+            document.getElementById("demo").innerHTML = "10 : " +  c;
+        });
+
+        sqr(78,(d)=>{
+            document.getElementById("demo1").innerHTML = "78 : " +  d;
+        });
+
+        sqr(56,(e)=>{
+            document.getElementById("demo2").innerHTML = "56 : " +  e;
+        });
+
+        //...........var and let keyword.......................
+        //1
+        var a=10;
+        if(true){
+            var a=78;
+            console.log(a);
+        }
+        console.log(a);
+
+        //2
+        var b=10;
+        if(true){
+            let b= 78;
+            console.log(b);
+        }
+        console.log(b);
+console.log(typeof("23"));
+        //.................promises........................
+        function rever(data){
+            return new Promise((res,rej)=>{
+                
+                if(typeof(data) == 'string'){
+                    var a = data.split("").reverse().join("");
+                    setTimeout(() => res(a), 500);
+                }
+                else{
+                    var b = "error"
+                    setTimeout(() => rej(b), 500);
+                }
+            });
+        }
+
+        rever("Hello world!").then(
+            (a)=>{
+                document.getElementById("demo4").innerHTML = a;
+            },
+            (b)=>{
+                document.getElementById("demo4").innerHTML = b;
+            });
+
+    </script>
+</body>
+</html>
