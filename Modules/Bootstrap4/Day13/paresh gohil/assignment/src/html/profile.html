@@ -21,13 +21,13 @@
                             <a href="../index.html" class="nav-link active">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a href="./posts.html" class="nav-link">Posts</a>
+                            <a href="../html/posts.html" class="nav-link">Posts</a>
                         </li>
                         <li class="nav-item">
-                            <a href="./category.html" class="nav-link">Categories</a>
+                            <a href="../html/category.html" class="nav-link">Categories</a>
                         </li>
                         <li class="nav-item">
-                            <a href="./users.html" class="nav-link">Users</a>
+                            <a href="../html/users.html" class="nav-link">Users</a>
                         </li>
                     </ul>
 
@@ -52,8 +52,8 @@
             </div>
             <div class="bg-light py-4" style="padding: 100px;">
                 <button type="button" class="btn mx-2"><a href="../index.html"><i class="fa fa-arrow-left"></i> Back to Dashboard</a></button>
-                <a style="padding-left: 300px;" class="text-white" href="#"><button style="width: 200px;" type="button" class="btn btn-success btn-right mx-2"><i class="fa fa-lock"></i>Change Password</button></a>
-                <a style="padding-left: 0px;" class="text-white" href="#"><button style="width: 230px; padding-top: -10px;" type="button" class="btn btn-danger btn-right mx-1"><i class="fa fa-close"></i>Delete Account</button></a>    
+                <a style="padding-left: 300px;" class="text-white" href="" data-toggle="modal" data-target="#passwordmodal"><button style="width: 200px;" type="button" class="btn btn-success btn-right mx-2"><i class="fa fa-lock"></i> Change Password</button></a>
+                <a style="padding-left: 0px;" class="text-white" href="#"><button style="width: 230px; padding-top: -10px;" type="button" class="btn btn-danger btn-right mx-1"><i class="fa fa-close"></i> Delete Account</button></a>    
             </div>
         </div>
 
@@ -89,6 +89,33 @@
                 <button type="button" class="btn btn-danger" style="width: 230px;">Delete Image</button>
             </div>
         </div>
+        </div>
+
+        <div class="modal fade" id="passwordmodal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-contant bg-light">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title">Change Password</h5>
+                        <button class="close" data-dismiss="modal"><span>&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Password</label>
+                                <input type="password" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Confirm Password</label>
+                                <input type="password" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button class="btn btn-primary text-white" data-dismiss="modal">Update Password</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!----------------- footer ------------------->

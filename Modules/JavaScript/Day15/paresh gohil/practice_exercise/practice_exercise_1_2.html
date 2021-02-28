@@ -9,6 +9,7 @@
 <body>
     <h2>Largest number is:</h2>
     <h2 id="demo"></h2>
+    <h2 id="demo1"></h2>
 
     <script>
 
@@ -21,12 +22,24 @@
         b = parseInt(b);
         c = parseInt(c);
 
-        var total= a+b+c;
-        if(total>40){        
         var d = Math.max(a,b,c);
         document.getElementById("demo").innerHTML = d;
+        
+        if(a>40){        
+            if(b>40){
+                if(c>40){
+                    document.getElementById("demo1").innerHTML = "Total is :"+ (a+b+c);
+                }
+            }
+            else if(c>40){
+                document.getElementById("demo1").innerHTML = "Total is :" + (a+c);
+            }
         }
-        else document.getElementById("demo").innerHTML = "please enter the larger numbers";
+        else if(b>40){
+            if(c>40){
+                document.getElementById("demo1").innerHTML = "Total is :" + (b+c);
+            }
+        }
 
         //........................ exercise 2.....................................
         var e = ["ahmedabad","baroda","mumbai","surat","rajkot"];
