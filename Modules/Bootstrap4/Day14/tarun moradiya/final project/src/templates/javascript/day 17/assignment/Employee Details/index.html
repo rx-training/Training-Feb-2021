@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Document</title>
-</head>
-<body>
-    
-
-</body>
-</html>
-
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -24,6 +9,13 @@
         <link rel="stylesheet" href="../../../../../css/style.css">
         <link rel="stylesheet" href="../../../../../scss/style.scss">
         <title>Bootstrap Final Project</title>
+        <style>
+            @media (max-width: 768px) {
+                .col-md-6 {
+                    border: none !important;
+                }
+            }
+        </style>
     </head>
 
     <body>
@@ -165,7 +157,7 @@
                                                 <div class="collapse" id="day16-assignment" data-parent="#accordion-day16">
                                                     <ul class="list-unstyled">
                                                         <li class="my-1">
-                                                            <a href="../../assignment/Date Validation/index.html" class="btn btn-block btn-outline-dark">
+                                                            <a href="../../../day16/assignment/Date Validation/index.html" class="btn btn-block btn-outline-dark">
                                                                 Date Validation
                                                             </a>
                                                         </li>
@@ -183,27 +175,27 @@
                                                 <div class="collapse" id="day16-practice" data-parent="#accordion-day16">
                                                     <ul class="list-unstyled">
                                                         <li class="my-1">
-                                                            <a href="../../practice/practice 1/index.html" class="btn btn-block btn-outline-dark">
+                                                            <a href="../../../day16/practice/practice 1/index.html" class="btn btn-block btn-outline-dark">
                                                                 Practice 1
                                                             </a>
                                                         </li>
                                                         <li class="my-1">
-                                                            <a href="../../practice/practice 2/index.html" class="btn btn-block btn-outline-dark">
+                                                            <a href="../../../day16/practice/practice 2/index.html" class="btn btn-block btn-outline-dark">
                                                                 Practice 2
                                                             </a>
                                                         </li>
                                                         <li class="my-1">
-                                                            <a href="../../practice/practice 3/index.html" class="btn btn-block btn-outline-dark">
+                                                            <a href="../../../day16/practice/practice 3/index.html" class="btn btn-block btn-outline-dark">
                                                                 Practice 3
                                                             </a>
                                                         </li>
                                                         <li class="my-1">
-                                                            <a href="../../practice/practice 4/index.html" class="btn btn-block btn-outline-dark">
+                                                            <a href="../../../day16/practice/practice 4/index.html" class="btn btn-block btn-outline-dark">
                                                                 Practice 4
                                                             </a>
                                                         </li>
                                                         <li class="my-1">
-                                                            <a href="../../practice/practice 5/index.html" class="btn btn-block btn-outline-dark">
+                                                            <a href="../../../day16/practice/practice 5/index.html" class="btn btn-block btn-outline-dark">
                                                                 Practice 5
                                                             </a>
                                                         </li>
@@ -217,7 +209,6 @@
                             </div>
                         </div>
 
-                        
                         
                         <!-- Day -->
                         <div class="card">
@@ -515,18 +506,73 @@
                 <!-- content  -->
                 <div id="content" class="col-md-9 p-5">
                     <div class="container p-5 bg-warning mt-5">
-                        <h1 class="p-3 mb-2">Check Whether String Is Blank or not</h1>
-                        <form action="#" id="myform">
-                            <div class="form-group">
-                                <label for="inp">Enter The String To Check:</label>
-                                <input type="text" id="inp" class="form-control">
+                        <h1 class="">Employee Details:</h1>
+                        <form action="#" id="emp-form" onsubmit="validate()">
+                            <div class="row">
+                                <div class="col-md-6 border-right">
+                                 <div class="form-group">
+                                     <label for="id">Employee ID</label>
+                                     <input type="text" id="id" class="form-control" placeholder="At Least 5 Character">
+                                 </div>
+                                 <div class="form-group">
+                                     <label for="name">Employee Name</label>
+                                     <input type="text" id="name" class="form-control" placeholder="Enter Your Name">
+                                 </div>
+                                 <div class="form-group">
+                                     <label for="email">Email Id</label>
+                                     <input type="email" id="email" class="form-control" placeholder="example@ex.com">
+                                 </div>
+                                 <div class="form-group">
+                                     <label for="age">Age</label>
+                                     <input type="text" id="age" class="form-control" placeholder="Enter Your Age">
+                                 </div>
+                                 <fieldset class="form-group">
+                                     <legend>Gender</legend>
+                                     <div class="form-check d-inline">
+                                         <label class="form-check-label">Male</label>
+                                         <input type="radio" name="gender" value="male" checked>
+                                     </div>
+                                     <div class="form-check d-inline">
+                                         <label class="form-check-label">Female</label>
+                                         <input type="radio" name="gender" value="female">
+                                     </div>
+                                 </fieldset>
+                                </div>
+                                <div class="col-md-6">
+                                 <div class="form-group">
+                                     <label for="designation">Designation</label>
+                                     <input type="text" id="designation" class="form-control" placeholder="Enter Your Designation">
+                                 </div>
+                                 <div class="form-group">
+                                     <label for="salary">Salary</label>
+                                     <input type="number" id="salary" class="form-control" placeholder="Enter Your Salary">
+                                 </div>
+                                 <div class="form-group">
+                                     <label for="loc">Location</label>
+                                     <select name="loc" id="loc" class="form-control">
+                                         <option value="rajkot">Rajkot</option>
+                                         <option value="ahmedabad">Ahmedabad</option>
+                                         <option value="surat">Surat</option>
+                                         <option value="gandhinagar">Gandhinagar</option>
+                                     </select>
+                                 </div>
+                                 <div class="form-group">
+                                     <label for="date">Date Of Joining</label>
+                                     <input type="date" id="date" class="form-control">
+                                 </div>
+                                 <div class="form-group">
+                                     <label for="contact">Contact</label>
+                                     <input type="number" id="contact" class="form-control" placeholder="Enter Your Contact No.">
+                                 </div>
+                                </div>
+                             <button type="submit" value="submit" class="btn btn-dark mx-5 mt-lg-3 btn-block">Submit</button>
                             </div>
-                            <input type="submit" value="submit" class="btn btn-outline-success">
                         </form>
-                        <div class="output mt-3 text-muted">
-                
+                        <div id="output" class="mt-5">
+                 
                         </div>
-                    </div>
+                     </div>
+                
                 </div>
             </div>
         </div>
@@ -542,25 +588,97 @@
         <script src="../../../../../js/popper.min.js"></script>
         <script src="../../../../../js/bootstrap.min.js"></script>
         
-    
         <script>
-            let output = document.querySelector('.output');
-            document.getElementById('myform').onsubmit = function() {
-                event.preventDefault();
-                console.log(event);
+
+            //get elements 
+            let id = document.getElementById('id');
+            let name = document.getElementById('name');
+            let email = document.getElementById('email');
+            let age = document.getElementById('age');
+            let gender = document.getElementsByName('gender');
+            let designation = document.getElementById('designation');
+            let salary = document.getElementById('salary');
+            let loc = document.getElementById('loc');
+            let date = document.getElementById('date');
+            let contact = document.getElementById('contact');
     
+            let inps = document.querySelectorAll('input');
+            let output = document.getElementById('output');
     
-                let inp = document.getElementById('inp').value;
+           
     
-                if (inp == '') {
-                    output.innerHTML = "String Is Empty"
-                } else {
-                    output.innerHTML = "String Is Not Empty"
+            // input focus out
+            for(inp of inps) {
+                inp.onfocusout = function() {
+                    this.style.border = 'none';
+                    console.log(this)
                 }
             }
     
+            //validate function 
+    
+            function validate() {
+                event.preventDefault()
+                console.log(event);
+    
+                let valid = true;
+    
+                let msg = '';
+    
+                 //invalid msg
+    
+                function invalidMsg(ele, imsg) {
+                    valid = false;
+                    ele.style.border = '1px solid red';
+                    ele.focus();
+                    return (`<p class='bg-danger text-light p-2 rounded'>${imsg}</p> <br>`);
+                }
+                
+                if(id.value == '') {
+                    msg += invalidMsg(id, 'Please Enter Id');
+                } else if (id.value.length < 5) {
+                    msg += invalidMsg(id, 'Id Should be atleat 5 characters');
+                }
+    
+                if(name.value == '') {
+                    msg += invalidMsg(name, 'Please Enter Name');
+                }
+    
+                if(email.value == '') {
+                    msg += invalidMsg(email, 'Please Enter Email');
+                }
+    
+                if(age.value == '') {
+                    msg += invalidMsg(age, 'Please Enter Age');
+                } else if (!/[0-9]+/.test(age.value)) {
+                    msg += invalidMsg(age, 'Age should be a number');
+                }
+    
+                if(designation.value == '') {
+                    msg += invalidMsg(designation, 'Please Enter Designation');
+                }
+                if(salary.value == '') {
+                    msg += invalidMsg(salary, 'Please Enter Salary');
+                }
+                if(loc.value == '') {
+                    msg += invalidMsg(loc, 'Please Enter Location');
+                }
+                if(date.value == '') {
+                    msg += invalidMsg(date, 'Please Enter Date');
+                }
+                if(contact.value == '') {
+                    msg += invalidMsg(contact, 'Please Enter Contact');
+                }
+    
+                if(valid == true) {
+                    msg = `<p class='bg-success text-light p-3 rounded'>Success!!!</p> <br>`;
+                }
+    
+                output.innerHTML = msg;
+            }
         </script>
+    
+        <script src="js/script.js"></script>
 
     </body>
 </html>
-

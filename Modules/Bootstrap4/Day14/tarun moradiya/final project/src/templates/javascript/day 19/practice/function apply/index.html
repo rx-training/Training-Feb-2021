@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Document</title>
-</head>
-<body>
-    
 
-</body>
-</html>
 
 
 <!DOCTYPE html>
@@ -165,7 +152,7 @@
                                                 <div class="collapse" id="day16-assignment" data-parent="#accordion-day16">
                                                     <ul class="list-unstyled">
                                                         <li class="my-1">
-                                                            <a href="../../assignment/Date Validation/index.html" class="btn btn-block btn-outline-dark">
+                                                            <a href="../../../day16/assignment/Date Validation/index.html" class="btn btn-block btn-outline-dark">
                                                                 Date Validation
                                                             </a>
                                                         </li>
@@ -183,27 +170,27 @@
                                                 <div class="collapse" id="day16-practice" data-parent="#accordion-day16">
                                                     <ul class="list-unstyled">
                                                         <li class="my-1">
-                                                            <a href="../../practice/practice 1/index.html" class="btn btn-block btn-outline-dark">
+                                                            <a href="../../../day16/practice/practice 1/index.html" class="btn btn-block btn-outline-dark">
                                                                 Practice 1
                                                             </a>
                                                         </li>
                                                         <li class="my-1">
-                                                            <a href="../../practice/practice 2/index.html" class="btn btn-block btn-outline-dark">
+                                                            <a href="../../../day16/practice/practice 2/index.html" class="btn btn-block btn-outline-dark">
                                                                 Practice 2
                                                             </a>
                                                         </li>
                                                         <li class="my-1">
-                                                            <a href="../../practice/practice 3/index.html" class="btn btn-block btn-outline-dark">
+                                                            <a href="../../../day16/practice/practice 3/index.html" class="btn btn-block btn-outline-dark">
                                                                 Practice 3
                                                             </a>
                                                         </li>
                                                         <li class="my-1">
-                                                            <a href="../../practice/practice 4/index.html" class="btn btn-block btn-outline-dark">
+                                                            <a href="../../../day16/practice/practice 4/index.html" class="btn btn-block btn-outline-dark">
                                                                 Practice 4
                                                             </a>
                                                         </li>
                                                         <li class="my-1">
-                                                            <a href="../../practice/practice 5/index.html" class="btn btn-block btn-outline-dark">
+                                                            <a href="../../../day16/practice/practice 5/index.html" class="btn btn-block btn-outline-dark">
                                                                 Practice 5
                                                             </a>
                                                         </li>
@@ -217,7 +204,6 @@
                             </div>
                         </div>
 
-                        
                         
                         <!-- Day -->
                         <div class="card">
@@ -514,19 +500,28 @@
 
                 <!-- content  -->
                 <div id="content" class="col-md-9 p-5">
-                    <div class="container p-5 bg-warning mt-5">
-                        <h1 class="p-3 mb-2">Check Whether String Is Blank or not</h1>
-                        <form action="#" id="myform">
+                    <div class="container p-5 bg-primary mt-5">
+                        <h1 class="p-3 mb-2">Function call:</h1>
+                        <form name="employee" id="employee">
                             <div class="form-group">
-                                <label for="inp">Enter The String To Check:</label>
-                                <input type="text" id="inp" class="form-control">
+                                <label for="name">Enter Name:</label>
+                                <input type="text" name="name" id="name" class="form-control">
                             </div>
-                            <input type="submit" value="submit" class="btn btn-outline-success">
+                            <div class="form-group">
+                                <label for="addr">Enter The Address:</label>
+                                <input type="text" name="addr" id="addr" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="desig">Enter The Designation:</label>
+                                <input type="text" name="desig" id="desig" class="form-control">
+                            </div>
+                            <button class="btn btn-dark" type="submit">Submit</button>
                         </form>
-                        <div class="output mt-3 text-muted">
-                
-                        </div>
+                        <h3 class="p-3" id="output"></h3>
                     </div>
+                
+                    
+                
                 </div>
             </div>
         </div>
@@ -542,25 +537,36 @@
         <script src="../../../../../js/popper.min.js"></script>
         <script src="../../../../../js/bootstrap.min.js"></script>
         
-    
         <script>
-            let output = document.querySelector('.output');
-            document.getElementById('myform').onsubmit = function() {
-                event.preventDefault();
-                console.log(event);
+            let myform = document.forms.employee;
+            let ename = myform.elements.name;
+            let addr = myform.elements.addr;
+            let desig = myform.elements.desig;
     
-    
-                let inp = document.getElementById('inp').value;
-    
-                if (inp == '') {
-                    output.innerHTML = "String Is Empty"
-                } else {
-                    output.innerHTML = "String Is Not Empty"
+            let person = {
+                info: function () {
+                    return `employee name is: ${this.name} <br>employee address is: ${this.address} <br>employee designation is: ${this.designation}`;
                 }
+            }
+            
+            function employee(n, a, d) {
+                this.name = n;
+                this.address = a;
+                this.designation = d;
+            } 
+    
+            myform.onsubmit = (event) => {
+                event.preventDefault();
+    
+                let employee1 = new employee(ename.value, addr.value, desig.value);
+                console.log(ename, addr, desig, employee1)
+                let p = person.info.apply(employee1);
+    
+                document.getElementById('output').innerHTML = p;
             }
     
         </script>
+        <script src="js/script.js"></script>
 
     </body>
 </html>
-

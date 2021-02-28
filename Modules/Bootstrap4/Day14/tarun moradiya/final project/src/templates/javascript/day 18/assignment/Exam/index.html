@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Document</title>
-</head>
-<body>
-    
 
-</body>
-</html>
 
 
 <!DOCTYPE html>
@@ -165,7 +152,7 @@
                                                 <div class="collapse" id="day16-assignment" data-parent="#accordion-day16">
                                                     <ul class="list-unstyled">
                                                         <li class="my-1">
-                                                            <a href="../../assignment/Date Validation/index.html" class="btn btn-block btn-outline-dark">
+                                                            <a href="../../../day16/assignment/Date Validation/index.html" class="btn btn-block btn-outline-dark">
                                                                 Date Validation
                                                             </a>
                                                         </li>
@@ -183,27 +170,27 @@
                                                 <div class="collapse" id="day16-practice" data-parent="#accordion-day16">
                                                     <ul class="list-unstyled">
                                                         <li class="my-1">
-                                                            <a href="../../practice/practice 1/index.html" class="btn btn-block btn-outline-dark">
+                                                            <a href="../../../day16/practice/practice 1/index.html" class="btn btn-block btn-outline-dark">
                                                                 Practice 1
                                                             </a>
                                                         </li>
                                                         <li class="my-1">
-                                                            <a href="../../practice/practice 2/index.html" class="btn btn-block btn-outline-dark">
+                                                            <a href="../../../day16/practice/practice 2/index.html" class="btn btn-block btn-outline-dark">
                                                                 Practice 2
                                                             </a>
                                                         </li>
                                                         <li class="my-1">
-                                                            <a href="../../practice/practice 3/index.html" class="btn btn-block btn-outline-dark">
+                                                            <a href="../../../day16/practice/practice 3/index.html" class="btn btn-block btn-outline-dark">
                                                                 Practice 3
                                                             </a>
                                                         </li>
                                                         <li class="my-1">
-                                                            <a href="../../practice/practice 4/index.html" class="btn btn-block btn-outline-dark">
+                                                            <a href="../../../day16/practice/practice 4/index.html" class="btn btn-block btn-outline-dark">
                                                                 Practice 4
                                                             </a>
                                                         </li>
                                                         <li class="my-1">
-                                                            <a href="../../practice/practice 5/index.html" class="btn btn-block btn-outline-dark">
+                                                            <a href="../../../day16/practice/practice 5/index.html" class="btn btn-block btn-outline-dark">
                                                                 Practice 5
                                                             </a>
                                                         </li>
@@ -217,7 +204,6 @@
                             </div>
                         </div>
 
-                        
                         
                         <!-- Day -->
                         <div class="card">
@@ -514,19 +500,395 @@
 
                 <!-- content  -->
                 <div id="content" class="col-md-9 p-5">
-                    <div class="container p-5 bg-warning mt-5">
-                        <h1 class="p-3 mb-2">Check Whether String Is Blank or not</h1>
-                        <form action="#" id="myform">
-                            <div class="form-group">
-                                <label for="inp">Enter The String To Check:</label>
-                                <input type="text" id="inp" class="form-control">
+                    <div class="container p-5 bg-dark text-info mt-5">
+                        <h1 class="p-3 mb-2 display-1">Online Exam</h1>
+                        <div id="exam-content">
+                            <div id="exam-header" class="sticky-top bg-dark p-2">
+                                <button class="btn btn-info" id="exam-btn" onclick="startExam(this.id)">Start Exam</button>
+                                <button class="btn btn-info" id="reset-btn" onclick="location.reload()" style="display: none;">Reset Exam</button>
+                                <button class="btn btn-info" id="stop-btn" form="exam" type="submit" value="submit" style="display: none;">Terminate Exam</button>
+                                <div class="float-right" id="demo"></div>
                             </div>
-                            <input type="submit" value="submit" class="btn btn-outline-success">
-                        </form>
-                        <div class="output mt-3 text-muted">
-                
+                            <div id="output">
+                                <form id="exam" name="exam">
+                                    <div class="card mt-5">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Demo Question. Select right answer from bellow options</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            
+                                            <fieldset class="form-group">
+                                                <legend>Ans:</legend>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a1" value="right" id="r1" class="form-check-input">Right Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a1" id="w1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a1" id="r1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a1" id="r1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                            </fieldset>
+                                        
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card mt-5">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Demo Question. Select right answer from bellow options</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            
+                                            <fieldset class="form-group">
+                                                <legend>Ans:</legend>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a2" value="right" id="r1" class="form-check-input">Right Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a2" id="w1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a2" id="r1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a2" id="r1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                            </fieldset>
+                                        
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card mt-5">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Demo Question. Select right answer from bellow options</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            
+                                            <fieldset class="form-group">
+                                                <legend>Ans:</legend>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a3" value="right" id="r1" class="form-check-input">Right Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a3" id="w1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a3" id="r1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a3" id="r1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                            </fieldset>
+                                        
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card mt-5">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Demo Question. Select right answer from bellow options</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            
+                                            <fieldset class="form-group">
+                                                <legend>Ans:</legend>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a4" value="right" id="r1" class="form-check-input">Right Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a4" id="w1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a4" id="r1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a4" id="r1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                            </fieldset>
+                                        
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card mt-5">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Demo Question. Select right answer from bellow options</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            
+                                            <fieldset class="form-group">
+                                                <legend>Ans:</legend>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a5" value="right" id="r1" class="form-check-input">Right Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a5" id="w1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a5" id="r1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a5" id="r1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                            </fieldset>
+                                        
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card mt-5">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Demo Question. Select right answer from bellow options</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            
+                                            <fieldset class="form-group">
+                                                <legend>Ans:</legend>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a6" value="right" id="r1" class="form-check-input">Right Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a6" id="w1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a6" id="r1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a6" id="r1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                            </fieldset>
+                                        
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card mt-5">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Demo Question. Select right answer from bellow options</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            
+                                            <fieldset class="form-group">
+                                                <legend>Ans:</legend>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a7" value="right" id="r1" class="form-check-input">Right Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a7" id="w1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a7" id="r1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a7" id="r1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                            </fieldset>
+                                        
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card mt-5">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Demo Question. Select right answer from bellow options</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            
+                                            <fieldset class="form-group">
+                                                <legend>Ans:</legend>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a8" value="right" id="r1" class="form-check-input">Right Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a8" id="w1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a8" id="r1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a8" id="r1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                            </fieldset>
+                                        
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card mt-5">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Demo Question. Select right answer from bellow options</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            
+                                            <fieldset class="form-group">
+                                                <legend>Ans:</legend>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a9" value="right" id="r1" class="form-check-input">Right Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a9" id="w1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a9" id="r1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a9" id="r1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                            </fieldset>
+                                        
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card mt-5">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Demo Question. Select right answer from bellow options</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            
+                                            <fieldset class="form-group">
+                                                <legend>Ans:</legend>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a10" value="right" id="r1" class="form-check-input">Right Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a10" id="w1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a10" id="r1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="a10" id="r1" value="wrong" class="form-check-input">Wrong Answer
+                                                    </label>
+                                                    
+                                                </div>
+                                            </fieldset>
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="p-5 m-5"></div>
+                                    
+                                </form>
+                            </div>
+                        </div>
                         </div>
                     </div>
+                
+                
                 </div>
             </div>
         </div>
@@ -542,25 +904,8 @@
         <script src="../../../../../js/popper.min.js"></script>
         <script src="../../../../../js/bootstrap.min.js"></script>
         
+        <script src="js/scripts.js"></script>
     
-        <script>
-            let output = document.querySelector('.output');
-            document.getElementById('myform').onsubmit = function() {
-                event.preventDefault();
-                console.log(event);
-    
-    
-                let inp = document.getElementById('inp').value;
-    
-                if (inp == '') {
-                    output.innerHTML = "String Is Empty"
-                } else {
-                    output.innerHTML = "String Is Not Empty"
-                }
-            }
-    
-        </script>
 
     </body>
 </html>
-
