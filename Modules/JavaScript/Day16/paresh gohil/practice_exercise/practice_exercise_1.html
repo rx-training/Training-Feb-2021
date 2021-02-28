@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Empty or not</legend>
+        <h1>whether string is empty or not ?</h1>
+        <h3>"":</h3>&nbsp;
+        <p id="demo1"></p>
+        <h3>"abc": </h3>
+        <p id="demo2"></p>
+    </fieldset>
+    <fieldset>
+        <legend>Split and convert in array</legend>
+        <h1>split str and convert in array</h1>
+        <h3>"Please locate where 'locate' occurs!":</h3>
+        <p id="demo3"></p>
+    </fieldset>
+    <fieldset>
+        <legend>Extract number of char from str</legend>
+        <h1>Extract number of char from str</h1>
+        <h3>"Hello World!":</h3>
+        <p id="demo4"></p>
+    </fieldset>
+    <fieldset>
+        <legend>Current date</legend>
+        <h1>Current Date:</h1>
+        <p id="demo5"></p>
+    </fieldset>
+    <fieldset>
+        <legend>push,pop..</legend>
+        <h1>Str is :</h1>
+        <p id="demo6"></p>
+        <h1>Push : </h1>
+        <p id="demo7"></p>
+        <h1>Pop : </h1>
+        <p id="demo8"></p>
+        <h1>Shift : </h1>
+        <p id="demo9"></p>
+        <h1>Delete : </h1>
+        <p id="demo10"></p>
+
+    </fieldset>
+
+
+    <script>
+        function ischeck(a){
+            if(a.length === 0){
+                return true;
+            }
+            else return false;
+        }
+
+        document.getElementById("demo1").innerHTML =  (ischeck(""));
+        document.getElementById("demo2").innerHTML = (ischeck("abc"));
+
+        function s_array(b){
+            c  = b.trim().split(" ");
+            return c
+        }
+        var a = "Please locate where 'locate' occurs!"
+        document.getElementById("demo3").innerHTML = (+s_array(a));
+
+        function exact(str1, length) {
+  
+        if ((str1.constructor === String) && (length>0)) {
+            return str1.slice(0, length);
+        }
+        }
+        document.getElementById("demo4").innerHTML = exact("Hello World!",5);
+
+        function current(){
+            return new Date();
+        }
+
+        document.getElementById("demo5").innerHTML = current();
+
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+        document.getElementById("demo6").innerHTML = fruits;
+
+        fruits.push("Kiwi");
+        document.getElementById("demo7").innerHTML = fruits;
+
+        fruits.pop();
+        document.getElementById("demo8").innerHTML = fruits;
+
+        fruits.shift();
+        document.getElementById("demo9").innerHTML = fruits;
+
+        delete fruits[1];
+        document.getElementById("demo10").innerHTML =  fruits;
+
+    </script>
+</body>
+</html>
