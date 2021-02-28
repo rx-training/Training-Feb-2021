@@ -32,7 +32,11 @@ function validatedate(inputText)
   return false;
   }
   }
-  if (mm==2)
+  if(yy==0000|| yy==null || yy<=1900 || yy>2100){
+    alert('Enter valid year')
+  }
+  
+  if (mm==2|| mm==02)
   {
   var lyear = false;
   if ( (!(yy % 4) && yy % 100) || !(yy % 400)) 
