@@ -13,17 +13,18 @@
     </head>
     <body style="background: linear-gradient(to bottom, #e39cff, #7300df)">
         <div class="container border border-dark rounded text-center col-lg-4" >
-            <br><h2>Promise function</h2><br>
-            
+            <br><h2>Promise function</h2><br>  
             <h1 id="demo1"></h1>
             <script>
-                var abc=3000;
-                let myPromise = new Promise(function(myResolve, myReject) {
-                setTimeout(function(){ alert("Exam Time Out !!"); }, abc);
-                });
-                myPromise.then(function(value) {
-                document.getElementById("demo1").innerHTML = value;
-                });
+                async function firstAsync() 
+                {
+                    let promise=new Promise((res,rej)=>{
+                        setTimeout(()=>res("Time Out !"),3000)
+                    });
+                    let result=await promise;
+                    alert(result);
+                }
+                firstAsync();
             </script>
             <br>
         </div>  
