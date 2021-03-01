@@ -6,25 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice 3</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
-
-    <style>
-        h3{
-            display: block;
-            border: 2px solid rgb(235, 10, 10); 
-            background-color: lightsalmon; 
-            color: black;
-            padding: 5px;
-            width: auto;
-            font-size: medium;
-            margin: 10px;
-        }
-    </style>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 </head>
 <body>
-    <h3><center>Make a function that takes in a single parameter and returns a new promise. using setTimeout, after 500 milliseconds, the promise will either resolove or reject. if the input is a string, the promise resolves with that reverse string . if the input is anything but a string it rejects with that same input call the function wrong Input </center></h3>
+
+    <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
+        <div class="card-header bg-dark text-white">
+           <h5>Make a function that takes in a single parameter and returns a new promise. using setTimeout, after 500 milliseconds, the promise will either resolove or reject. if the input is a string, the promise resolves with that reverse string . if the input is anything but a string it rejects with that same input call the function wrong Input </h5> 
+        </div>	
+        <div class="card-body text-muted">
+            <p>open console</p>    
+        </div>
+    </div>	
 
     <script>
 
@@ -64,6 +58,20 @@
             })
         } 
 
+        var s1 = 386;
+        
+        check(s1).then((success)=>
+        {
+            console.log(success);
+        },(error)=>{console.log(error);}
+            /* {
+            let promise = new Promise(function(resolve, reject) 
+            {
+             setTimeout(() => reject(console.log(error)), 1500);
+            });
+            } */
+        )
+
         var s = "abcd";
         
         check(s).then((success)=>
@@ -76,19 +84,7 @@
         )
 
 
-        var s1 = 386;
         
-        check(s1).then((success)=>
-        {
-            console.log(success);
-        },(error)=>
-            {
-            let promise = new Promise(function(resolve, reject) 
-            {
-                setTimeout(() => reject(console.log(error)), 1000);
-            });
-            }
-        )
 
         
     </script>

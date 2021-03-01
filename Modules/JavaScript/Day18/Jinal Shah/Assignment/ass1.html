@@ -7,16 +7,20 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
-    <style>
-
-    </style>
 
 </head>
-<body>
+<body onload="startTime()">
+    <div class="col-md-8 mx-auto">
+        <div class="mr-4 text-right" style="font-size: 30px;" id="timer">
+            
+        </div>
+    </div>
     
-    <div class="card col-md-8 border-light p-5 mx-auto mt-5">
+    <div class="card col-md-8 border-light px-5 mx-auto mt-1">
+        
         <div class="card-header bg-dark text-white">
            <h5> Subject code : 2110003 </h5>
+           
         </div>	
         <div class="card-body">
             <h5 class="card-title text-right">1 Mark</h5>
@@ -49,5 +53,55 @@
             <a href="ass1.html" class="btn btn-primary m-3">Next Question</a>
         </div>	
     </div>	
+
+    <script>
+        var sec = 0;
+        var min = 0;
+        var hr = 0;
+        var timer = setInterval(setTimer, 1000);
+
+        function startTime(){
+            new Promise((resolve,reject) => {
+                setTimeout(() =>{resolve("Time's Up. The answers are automatically sumbmited.");}, 60*1000);
+            }).then((message) =>{
+                alert(message);
+                window.location.href = 'ass2.html';
+            },(error) => alert(error));
+        }
+
+        function setTimer(){
+            sec++
+            if(sec == 60){
+                sec=0;
+                min++;
+            }
+            if(min == 60){
+                min=0;
+                hr++;
+            }
+            var second = (sec < 10)? '0' + sec : sec.toString();
+            var minute = (min < 10)? '0' + min : min.toString();
+            var hour = hr;
+            var t = '0' +hour+ ':' +minute+ ':' +second;
+            document.getElementById('timer').innerHTML = t;
+
+            if(hr == 3){
+                clearInterval(timer);
+            }
+        }
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+
 </body>
 </html>
