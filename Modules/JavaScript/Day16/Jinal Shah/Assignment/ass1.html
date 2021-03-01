@@ -17,9 +17,9 @@
         }
     </style>
 
-    <script>
+     <script type="text/javascript">
 
-/*         function dateFunction(num)
+         function dateFunction(num)
                     {
                         // regular expression to match required date format
                         re = /^(\d{1,2})\-(\d{1,2})\-(\d{4})$/;
@@ -56,9 +56,9 @@
                         }        
                         document.getElementById("demo").innerHTML="Date is Valid!";
                     return true;
-                } */
+                } 
 
-        function check(s1)
+        /* function check(s1)
         {
 
             console.log("User Input = " + parseInt(s1));
@@ -135,9 +135,9 @@
                     }
                 }
             }
-        }
+        } */
 
-    </script>
+    </script> 
 
 </head>
 <body>
@@ -145,11 +145,14 @@
     <h3><center>Date entered by the user should be checked for whether it is a Valid Date or not.</center></h3>
     <center>
         <br><br>
-    Enter date : <input type="number" id="s1">
+    Enter date : <input type="text" id="s1">
     (MM-DD-YYYY Format only)
     <br><br>
-    <input type="submit" value="Check" style="font-size: 16px;" 
-            onclick="check(s1.value)">
+    <!-- <input type="submit" value="Check" style="font-size: 16px;" onclick="check(s1.value)"> -->
+    
+    <input type="submit" value="Check" style="font-size: 16px;" onclick="dateFunction(s1)">
+    <p id="demo"></p>
     </center>
+    
 </body>
 </html>

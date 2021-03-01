@@ -7,29 +7,50 @@
     <title>Practice 5</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
-    <style>
-        
-    </style>
+    
 </head>
 <body>
-    <p id="demo"></p>
 
-    <script>
-        var person = {
-          fullName: function(city, country) {
-            return this.firstName + " " + this.lastName + "," + city + "," + country;
-          }
-        }
-        var person1 = {
-          firstName:"John",
-          lastName: "Doe"
-        }
-        var x = person.fullName.apply(person1, ["Oslo", "Norway"]); 
-        document.getElementById("demo").innerHTML = x; 
-        </script>
+    <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
+        <div class="card-header bg-dark text-white">
+           <h5>Using Function Apply pass employee object to a function defined in the function.</h5>
+        </div>	
+        <div class="card-body">
+            <h2>Employees : </h2><hr>
+        <h4 id="demo" class=" p-4"></h4>	
+        <h4 id="demo1" class=" "></h4>	
+           
+        </div>
+        
+    </div>	
 
+    
 
-   <!--  <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
+    <script> 
+        var employee = { 
+            details: function() { 
+                return this.name + " " + this.Surname; 
+            } 
+        } 
+        var emp1 = { 
+            name:"Dinesh", 
+            Surname: "Shah", 
+        }   
+        var emp2 = { 
+            name:"Vaibhav", 
+            Surname: "Patel", 
+        } 
+          
+        var x = employee.details.apply(emp1);  
+        document.getElementById("demo").innerHTML = x;
+        var x = employee.details.apply(emp2);  
+        document.getElementById("demo1").innerHTML = x;  
+    </script> 
+
+</body>
+</html>
+
+   <!-- <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
         <div class="card-header bg-dark text-white">
            <h5>Using Function Apply pass employee object to a function defined in the function.</h5>
         </div>	
@@ -48,7 +69,8 @@
     <script>
         var person = {
             fullName: function() {
-                return this.firstName + " " + this.lastName;
+                console.log(this.firstName);
+                return `$(this.firstName) + " " + $(this.lastName)`;
             }
         }
         var person1 = {
@@ -69,9 +91,7 @@
             console.log(x);
           document.getElementById("demo").innerHTML = person.fullName.apply(person1);
         }
-    </script>
- -->
+    </script> -->
+ 
 
 	
-</body>
-</html>
