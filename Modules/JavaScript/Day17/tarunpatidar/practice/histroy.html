@@ -8,28 +8,23 @@
     <title>Histroy</title>
 </head>
 <body>
-    <script>
-        function Back() {
-            location.assign("./navigate.html")
-        
-        }
-        function Forword() {
-           location.assign("./navigate.html")
-        }
-        </script>
+    <div class="container p-5 bg-dark mt-5">
+   
 
-<div class="container p-5 bg-dark mt-5">
-    <h1 class="pl-3 mb-5 text-white text-center">Use Window.history object to move to previous url in the history list</h1>
-     <div class="pagination">
-         <div class="page-item">
-             <a class="page-link bg-primary text-light" onclick="back()">Back</a>
-         </div>
-         <div class="page-item">
-             <a class="page-link bg-primary text-light" onclick="forward()">Forword</a>
-         </div>
-     </div>
- </div>
-    
+    <h1  class="pl-2 mb-5 text-center text-white">History back and forward Example</h1>
+    <p style="color:rgb(240, 227, 227);"> Go to "navigate.html" click on navigate button to see the history back and forward working </p>
+    <button type="button" id="btnback" class="btn btn-primary"  onclick="back()">Back</button>
+    <button type="button" id="btnforword" class="btn btn-primary" onclick="forward()">Forword</button>
+    </div>
+
+    <script>
+        document.getElementById("btnback").addEventListener("click",function(){
+            history.back();
+        });
+        document.getElementById("btnforword").addEventListener("click",function(){
+            history.forward();
+        });
+    </script>
         
 
     
