@@ -4,26 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice 4</title>
+    <title>Practice 3</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <style>
-        h3{
-            display: block;
-            border: 2px solid rgb(235, 10, 10); 
-            background-color: lightsalmon; 
-            color: black;
-            padding: 5px;
-            width: auto;
-        }
-    </style>
 
 </head>
 <body>
+
+    <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
+        <div class="card-header bg-dark text-white">
+           <h5>Use HTML DOM to change the value of the image's src attribute.</h5>
+        </div>	
+        <div class="card-body">
+            <img id="image" src="../assets/smiley.jpg">
+        </div>
+    </div>	
     
-    <h3><center>Use HTML DOM to change the value of the image's src attribute.</center></h3>
-
-    <img id="image" src="../assets/smiley.jpg">
-
     <script>
     document.getElementById("image").src = "../assets/mountain.jpg";
     </script>

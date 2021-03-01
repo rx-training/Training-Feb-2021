@@ -5,27 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice 9</title>
-
-    <style>
-        h3{
-            display: block;
-            border: 2px solid rgb(235, 10, 10); 
-            background-color: lightsalmon; 
-            color: black;
-            padding: 5px;
-            width: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 </head>
 <body>
-    
-    <h3><center>Try to change windows height and width using Windows object</center></h3>
 
-    <p>Open a new window, and resize the width and height to 500px:</p>
+    <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
+        <div class="card-header bg-dark text-white">
+           <h5>Try to change windows height and width using Windows object</h5> 
+        </div>	
+        <div class="card-body">
 
-    <button onclick="openWin()">Create window</button>
-    <button onclick="resizeWin()">Resize window</button>
+            <p>Open a new window, and resize the width and height to 500px:</p>
+
+            <button class="btn btn-primary" type="submit" onclick="openWin()" >Create window</button><br><br>
+            <button class="btn btn-primary" type="submit" onclick="resizeWin()" >Resize window</button><br>
+                
+        </div>
+    </div>	
 
     <script>
         var myWindow;

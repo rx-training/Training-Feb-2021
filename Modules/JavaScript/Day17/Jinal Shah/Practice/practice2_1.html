@@ -5,37 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice 2</title>
-
-    <style>
-        h3{
-            display: block;
-            border: 2px solid rgb(235, 10, 10); 
-            background-color: lightsalmon; 
-            color: black;
-            padding: 5px;
-            width: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 </head>
 <body>
-    
-    <h3><center>Change the text of the first element that has the class name "test".</center></h3>
 
-    <p class="test"></p>
-    <p class="test"></p>
-
-    <!-- <hr style="border: 2px solid teal;">
-    
-    <button onclick="goBack()">Go Back</button> -->
+    <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
+        <div class="card-header bg-dark text-white">
+           <h5>Change the text of the first element that has the class name "test".</h5>
+        </div>	
+        <div class="card-body">
+            <p class="test"></p>
+            <p class="test"></p>    
+        </div>
+    </div>	
 
     <script>
     document.getElementsByClassName("test")[0].innerHTML = "Hello";
-    // document.getElementsByClassName("test")[1].innerHTML = "Hellooooooooo";
-
-    /* function goBack() {
-         window.history.back();
-    } */
+    
     </script>
     
     

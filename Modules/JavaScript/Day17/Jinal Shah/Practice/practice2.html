@@ -5,24 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice 2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <style>
-        h3{
-            display: block;
-            border: 2px solid rgb(235, 10, 10); 
-            background-color: lightsalmon; 
-            color: black;
-            padding: 5px;
-            width: auto;
-        }
-    </style>
 
 </head>
 <body>
-    
-    <h3><center>Use the getElementsByTagName method to find the first element and change its text to "Hello".</center></h3>
 
-    <p id="demo"></p>
+    <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
+        <div class="card-header bg-dark text-white">
+           <h5>Use the getElementsByTagName method to find the first element and change its text to "Hello".</h5>
+        </div>	
+        <div class="card-body">
+            <p id="demo"></p>
+        </div>
+    </div>	 
 
     <script>
     document.getElementsByTagName("p")[0].innerHTML

@@ -5,13 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice 8_1</title>
-
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 </head>
 <body>
     
-    <button onclick="goBack()">Go Back</button> 
+    <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
+        <div class="card-header bg-dark text-white">
+            <h5>Use Window.history object to move to previous url in the history list</h5>
+        </div>	
+        <div class="card-body">
+            <button class="btn btn-primary" type="submit" onclick="goBack()" >Go Back</button><br>
+                
+        </div>
+    </div>	
 
     <script>
 
@@ -20,7 +27,7 @@
     } 
     </script>
     
-    
+
 
 </body>
 </html>
