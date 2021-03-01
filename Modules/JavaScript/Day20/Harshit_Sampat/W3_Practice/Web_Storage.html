@@ -1,0 +1,68 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage</title>
+</head>
+<body>
+    <p id ="demo1"></p>
+
+    <script>    
+        localStorage.setItem("Name","Paresh Gohil");
+        document.getElementById("demo1").innerHTML= localStorage.getItem("name");
+    </script>
+</body>
+</html-->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+<p id ="demo1"></p>
+<p id ="session"></p>
+<p> Click the button to try your coordinates</p> 
+<button onclick="getlocation()">Know your location</button>
+<p><strong>NOte :</strong>The geolocation property is not supported in the IE8 and erlier versions </p>
+<p id = "location"></p>
+
+<button onclick="Towards_back()"> Click to move Back </button>
+<script>
+    function history(){
+        window.history.back();
+    }
+</script>
+
+
+<script>    
+    localStorage.setItem("Name","Paresh Gohil");
+    document.getElementById("demo1").innerHTML= localStorage.getItem("Name");
+</script>
+
+<script>		
+localStorage.setItem("name","John Doe");
+document.getElementById("demo").innerHTML = localStorage.getItem("name");
+</script>
+<script>
+    sessionStorage.setItem("name","Harshit Sampat");
+    document.getElementById("session").innerHTML = sessionStorage.getItem("name");
+</script>
+
+<script>
+    var x =document.getElementById("location");
+    function getlocation(){
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }else{
+            x.innerHTML = "Geolocation is not supported by this browser"
+        }
+    }
+    function showPosition(position){
+        x.innerHTML = "Latitude:" + position.coords.latitude +"<br>Longitude" + position.coords.longitude;
+    }
+</script>
+
+</body>
+</html>
