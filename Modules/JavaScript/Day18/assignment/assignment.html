@@ -21,95 +21,95 @@
         integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
         crossorigin="anonymous"></script>
     <style>
-        #timer
-        {
-         text-align: center;
-         color: red;
-         font-size:xx-large;
-         margin-bottom: 50px;
+        #timer {
+            text-align: center;
+            color: red;
+            font-size: xx-large;
+            margin-bottom: 50px;
         }
     </style>
 
 
     <script type="text/javascript">
         var count = 10800;
-        var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
+        var counter  = setInterval(timer, 1000); //1000 will  run it every 1 second
 
-        function timer() {
+       async function timer() {
             count = count - 1;
             if (count == -1) {
                 clearInterval(counter);
+                alert("exam is finished");
                 return;
             }
 
-            var seconds = count % 60;
-            var minutes = Math.floor(count / 60);
-            var hours = Math.floor(minutes / 60);
+             var seconds = count % 60;
+             var minutes = Math.floor(count / 60);
+             var hours = Math.floor(minutes / 60);
             minutes %= 60;
             hours %= 60;
 
-            document.getElementById("timer").innerHTML = hours + ":" + minutes + ":" + seconds; // watch for spelling
+             document.getElementById("timer").innerHTML = await hours + ":" + minutes + ":" + seconds; // watch for spelling
         }
 
     </script>
     <div class="container  border border-dark mt-3" style="height: 100vh;">
-       
-            <h1 class=" mb-5 text-center">EXAM PORTAL</h1>
-            <div id="timer"></div>
-            <h3>1) what is the full form of the HTML?</h3>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                  HyperText Transport Protocol
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                 HyperText Markup Language
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                 JavaScript
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                 Css
-                </label>
-              </div>
-              <h3 class="mt-5">2) what is the full form of the HTML?</h3>
 
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                  HyperText Transport Protocol
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                 HyperText Markup Language
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                 JavaScript
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                 Css
-                </label>
-              </div>
-       
-  
-       
+        <h1 class=" mb-5 text-center">EXAM PORTAL</h1>
+        <div id="timer"></div>
+        <h3>1) what is the full form of the HTML?</h3>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+                HyperText Transport Protocol
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+                HyperText Markup Language
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+                JavaScript
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+                Css
+            </label>
+        </div>
+        <h3 class="mt-5">2) what is the full form of the HTML?</h3>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+                HyperText Transport Protocol
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+                HyperText Markup Language
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+                JavaScript
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+                Css
+            </label>
+        </div>
+
+
+
     </div>
 
 
