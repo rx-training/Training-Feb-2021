@@ -4,18 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Date Validation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
-    <style>
-        h3{
-            display: block;
-            border: 2px solid rgb(235, 10, 10); 
-            background-color: lightsalmon; 
-            color: black;
-            padding: 5px;
-            width: auto;
-        }
-    </style>
 
      <script type="text/javascript">
 
@@ -53,7 +44,13 @@
                                 num.focus();
                                 return false;
                             }
-                        }        
+                        }     
+                        if(regs[3] % 4 == 0){
+                            document.getElementById("demo1").innerHTML="This is leap year!!";
+                        } 
+                        else{
+                            document.getElementById("demo1").innerHTML="";
+                        }  
                         document.getElementById("demo").innerHTML="Date is Valid!";
                     return true;
                 } 
@@ -141,18 +138,23 @@
 
 </head>
 <body>
-    
-    <h3><center>Date entered by the user should be checked for whether it is a Valid Date or not.</center></h3>
-    <center>
-        <br><br>
-    Enter date : <input type="text" id="s1">
-    (MM-DD-YYYY Format only)
-    <br><br>
-    <!-- <input type="submit" value="Check" style="font-size: 16px;" onclick="check(s1.value)"> -->
-    
-    <input type="submit" value="Check" style="font-size: 16px;" onclick="dateFunction(s1)">
-    <p id="demo"></p>
-    </center>
-    
+
+    <div class="card text-center col-md-6 border-dark mb-3 mt-5 p-5 mx-auto">
+        <div class="card-header bg-dark text-white">
+           <h5>Date entered by the user should be checked for whether it is a Valid Date or not.</h5>
+        </div>	
+        <div class="card-body">
+         
+                <label for="s1" class="form-label">Enter date :</label><br>
+                (MM-DD-YYYY Format only)<br><br>
+                <input type="text" class="form-control" id="s1"><br>
+            
+                <button class="btn btn-primary" type="submit" onclick="dateFunction(s1)" >Check</button><br>
+                <br>
+                <h1 id="demo" style="color: brown;"> </h1>
+                <h1 id="demo1" style="color: brown;"> </h1>
+        </div>
+    </div>
+
 </body>
 </html>

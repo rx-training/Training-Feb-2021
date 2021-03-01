@@ -5,17 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice 4</title>
-
-    <style>
-        h3{
-            display: block;
-            border: 2px solid rgb(235, 10, 10); 
-            background-color: lightsalmon; 
-            color: black;
-            padding: 5px;
-            width: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
     <script>
 
@@ -30,16 +20,16 @@
 </head>
 <body>
 
-    <h3><center>Write a JavaScript function to get the current date</center></h3>
-
-    <center>
-        <br><br><br><br><br><br>
-    <input type="submit" value="Current Date" style="font-size: 20px; color: teal;" 
-            onclick="cd()">
-
-            <h1 id="demo" style="color: rgb(143, 26, 137);"> </h1>
-
-    </center>
+    <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
+        <div class="card-header bg-dark text-white">
+           <h5>Write a JavaScript function to get the current date.</h5>
+        </div>	
+        <div class="card-body">
+         
+                <button class="btn btn-primary" type="submit" onclick="cd()" >Current Date</button><br><br>
+                <h2 id="demo" style="color: black"> </h2>
+        </div>
+    </div>
 
 </body>
 </html>

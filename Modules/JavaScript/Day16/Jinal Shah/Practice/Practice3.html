@@ -5,17 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice 3</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
-    <style>
-        h3{
-            display: block;
-            border: 2px solid rgb(235, 10, 10); 
-            background-color: lightsalmon; 
-            color: black;
-            padding: 5px;
-            width: auto;
-        }
-    </style>
 
     <script>
 
@@ -38,18 +29,23 @@
 </head>
 <body>
 
-    <h3><center>Write a JavaScript function to extract a specified number of characters from a string.</center></h3>
-
-    <center>
-        <br><br><br><br>
-    Enter string : <input type="text" id="s1" ><br><br>
-    Enter position no : <input type="number" id="n1" ><br><br>
-    Enter character digit : <input type="number" id="n2" ><br><br>
-    <input type="submit" value="Results" style="font-size: 20px;" 
-            onclick="check(s1.value,n1.value,n2.value)">
-
-    <h1 id="demo" style="color: brown;"> </h1>
-    </center>
+    <div class="card text-center col-md-6 border-dark mb-3 p-5 mx-auto">
+        <div class="card-header bg-dark text-white">
+           <h5>Write a JavaScript function to extract a specified number of characters from a string.</h5>
+        </div>	
+        <div class="card-body">
+         
+                <label for="s1" class="form-label">Enter string :</label>
+                <input type="text" class="form-control" id="s1"><br>
+                <label for="n1" class="form-label">Enter position no :</label>
+                <input type="text" class="form-control" id="n1"><br>
+                <label for="n2" class="form-label">Enter character digit :</label>
+                <input type="text" class="form-control" id="n2"><br>
+                <button class="btn btn-primary" type="submit" onclick="check(s1.value,n1.value,n2.value)" >Check</button><br>
+                <br>
+                <h1 id="demo" style="color: brown;"> </h1>
+        </div>
+    </div>
 
 </body>
 </html>

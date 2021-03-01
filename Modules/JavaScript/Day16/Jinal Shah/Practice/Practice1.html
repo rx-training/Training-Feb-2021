@@ -5,17 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice 1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
-    <style>
-        h3{
-            display: block;
-            border: 2px solid rgb(235, 10, 10); 
-            background-color: lightsalmon; 
-            color: black;
-            padding: 5px;
-            width: auto;
-        }
-    </style>
 
     <script>
 
@@ -35,14 +26,18 @@
 </head>
 <body>
 
-    <h3><center>Write a JavaScript function to check whether a string is blank or not</center></h3>
-
-    <center>
-        <br><br><br><br><br><br>
-    Enter string : <input type="text" id="s1"><br><br>
-    <input type="submit" value="Check" style="font-size: 20px;" 
-            onclick="check(s1.value)">
-    </center>
+    <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
+        <div class="card-header bg-dark text-white">
+           <h5>Write a JavaScript function to check whether a string is blank or not.</h5>
+        </div>	
+        <div class="card-body">
+         
+                <label for="s1" class="form-label">Enter string :</label>
+                <input type="text" class="form-control" id="s1" name="n1"><br>
+                <button class="btn btn-primary" type="submit" onclick="check(s1.value)" >Check</button><br>
+            
+        </div>
+    </div>	
     
 </body>
 </html>
