@@ -47,8 +47,8 @@ getProducts('data.json').then(
 
 //check which product to add
 function addToCart(id) {
-    console.log('submited')
-    console.log(id);
+    // console.log('submited')
+    // console.log(id);
 
     let myProducts = localStorage.getItem('myProducts');
 
@@ -67,14 +67,17 @@ function addItem(add_item) {
     console.log(add_item)
     // parse existing storage key or string representation of empty array
     var existingEntries = JSON.parse(localStorage.getItem("cart") || '[]');
-  
+
     // Add item if it's not already in the array, then store array again
-    if (!existingEntries.includes(add_item)) {
+    if ((JSON.stringify(existingEntries)).search(JSON.stringify(add_item)) == -1) {
+        console.log(JSON.stringify(existingEntries))
+        console.log(JSON.stringify(add_item))
       existingEntries.push(add_item);
       localStorage.setItem("cart", JSON.stringify(existingEntries));
     }else{
        // or tell user it's already there
-       console.log(add_item + ' already exists')
+       console.log(add_item + ' already exists');
+       alert(add_item.ProductName + ' already exists');
     }
   }
 
