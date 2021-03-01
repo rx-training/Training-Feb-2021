@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Employee Details</title>
+       <style>
+        .demo{
+            background: black;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            
+            
+        } 
+        .demo1{
+            background: rgba(9, 24, 223, 0.815);
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+    </style>
+</head>
+<body>
+   
+    <div class="container mt-5">
+        
+        
+            <div class="demo1">
+        <h1 class="h2 display-4 text-light text-center">Employee Details</h1></div>
+        <div class="demo">
+        <div class="border p-3">
+            
+            
+            <form>
+               
+                <div class="form-group text-primary">
+                    <label for="eid"><h3>Employee ID</h3></label>
+                    <input type="number" name="" id="eid" class="form-control" placeholder="1234">
+                    
+                </div>
+
+                <div class="form-group text-success">
+                    <label for="ename"><h3>Employee Name</h3></label>
+                    <input type="text" name="" id="ename" class="form-control" placeholder="Enter Name">
+                    
+                </div>
+            
+                
+                <div class="form-group text-primary">
+                    <label for="age"><h3>Age</h3></label>
+                    <input type="number" name="" id="age" class="form-control" placeholder="24">
+                    
+                </div>
+            
+                
+                <div class="form-group text-success">
+                    <label for="gender"><h3>Gender</h3></label><br>
+                        <input type="radio" name="gender" id="male" value="Male">
+                        <label for="male"><h4>Male</h4></label>
+                        <input type="radio" name="gender"  id="female" value="Female">
+                        <label for="female"><h4>Female</h4></label>
+                    
+                </div>
+                <div class="form-group text-primary">
+                    <label for="designation"><h3>Designation</h3></label>
+                    <input type="text" name="" id="designation" class="form-control" placeholder="Software Developer">
+                    
+                </div>
+                <div class="form-group text-success">
+                    <label for="salary"><h3>Salary</h3></label>
+                    <input type="number" name="" id="salary" class="form-control" placeholder="400000">
+                    
+                </div>
+                <div class="form-group text-primary">
+                    <label for="location"><h3>Location</h3></label>
+                    <select name="" id="location" class="custom-select">
+                        <option value=""><h4>Location</h4></option>
+                        <option value="indore">Indore</option>
+                        <option value="ahmedabad">Ahmedabad</option>
+                        <option value="other">Other</option>
+                    </select>
+                    
+                </div>
+                <div class="form-group text-success">
+                    <label for="email"><h3>Email Id</h3></label>
+                    <input type="email" name="" id="email" class="form-control" placeholder="ab@ab.com">
+                    
+                </div>
+                <div class="form-group text-primary">
+                    <label for="dateOfJoining"><h3>Date of Joining</h3></label>
+                    <input type="date" name="" id="dateOfJoining" class="form-control">
+                    
+                </div>
+            
+                <div class="form-group text-success">
+                    <label for="contact"><h3>Contact Number</h3></label>
+                    <input type="number" name="" id="contact" class="form-control" placeholder="9630627424">
+                    
+                </div>
+                <center>
+                
+                <input type="submit" value="          Submit          " class="btn btn-primary font-weight-bold" onclick="return validateForm()">
+                
+                </center>
+            
+            </form>
+            <div id="errid"></div>
+        </div>
+    </div>
+</div>
+    
+    
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="details.js"></script>
+</body>
+</html>
