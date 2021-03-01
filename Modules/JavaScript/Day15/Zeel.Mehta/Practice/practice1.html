@@ -24,34 +24,34 @@
                 var num3 = parseInt(prompt("Enter third number: "));
                 var largest;
 
-// check the condition
-if(num1 >= num2 && num1 >= num3) {
-    largest = num1;
-}
-else if (num2 >= num1 && num2 >= num3) {
-    largest = num2;
-}
-else {
-    largest = num3;
-}
 
-var sum1,sum2,sum3,sum;
-if(num1>40){sum1=num1;}
-else{sum1=0;}
+            if(num1 >= num2 && num1 >= num3) {
+                largest = num1;
+            }
+            else if (num2 >= num1 && num2 >= num3) {
+                largest = num2;
+            }
+            else {
+                largest = num3;
+            }
 
-if(num2>40){sum2=num2;}
-else{sum2=0;}
+            var sum1,sum2,sum3,sum;
+            if(num1>40){sum1=num1;}
+            else{sum1=0;}
 
-if(num3>40){sum3=num3;}
-else{sum3=0;}
+            if(num2>40){sum2=num2;}
+            else{sum2=0;}
 
-sum=sum1+sum2+sum3;
+            if(num3>40){sum3=num3;}
+            else{sum3=0;}
 
-function large(l,s)
-{
-    document.getElementById("l").innerHTML = largest;
-    document.getElementById("s").innerHTML = sum;
-}
+            sum=sum1+sum2+sum3;
+
+            function large(l,s)
+            {
+                document.getElementById("l").innerHTML = largest;
+                document.getElementById("s").innerHTML = sum;
+            }
             </script>
     </head>
 <body>

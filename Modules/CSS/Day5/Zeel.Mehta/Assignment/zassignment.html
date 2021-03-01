@@ -5,24 +5,23 @@
         <meta name="viewport" content="width-device-width,initial-scale-1.0">
         <title>Practice Exercise 1</title>
         <style>
-        
+        * {
+                box-sizing: border-box;
+        }
             .h{
                 background-color:rgb(0, 0, 0);
                 border: 5px solid black;
                 text-align: center;
             }
-            
-            li {
-                float: left;
-                }
-                ul {
+           
+            .hello {
                 list-style-type: none;
                 margin: 0;
                 padding: 0;
                 overflow: hidden;
                 background-color: #333;
                 }
-                li a {
+                .anchor{
                 display: block;
                 color: white;
                 text-align: center;
@@ -30,22 +29,21 @@
                 text-decoration: none;
                 }
 
-                li a:hover {
+                li .anchor:hover {
                 background-color: #111;
                 }
             .sidenav5 {
-                height: 392px;
-                width: 170px;
-                position: fixed;
-                top: 50;
-                background-color: #111;
-                overflow-x: hidden;
-                padding-top: 20px;
+                float:left;
+                width:15%;
+                background-color:black;
+                height: 500px;
+                padding: 20px;
+                font-size: smaller;
             }
             .sidenav5 a {
                 padding: 6px 8px 6px 16px;
                 text-decoration: none;
-                font-size: 25px;
+                font-size: 10px;
                 color: #818181;
                 display: block;
             }
@@ -53,19 +51,27 @@
                 color: #f1f1f1;     
             }
             .article5{
-                position: fixed;
-                top: 150px;
-                text-align: center;
+                float:left;
+                width:85%;
+                height: 50px;     
+                font-size: 20px;
+                color: rgb(0, 0, 0);
+               
             }
-            footer {
-            text-align: center;
-            padding: 3px;
-            background-color: rgb(63, 63, 63);
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            border-top: 3px solid black;
+           
+            
+            .f {
+                background-color: black;
+                text-align: center;
+                height:10%;
+                position: fixed;
+                left: 1;
+                right: 1;
+                bottom: 0;
+                width: 98.9%;
+                color: blanchedalmond;
+                font-size: large;
+                padding-top: 20px;
             
             }
         </style>
@@ -73,10 +79,10 @@
     <body>
         <header class="h">
             <img src="./yin-yang.jpg" height="100" width="100">
-            <ul>
-                <li><a class="active" href="./zassignment.html">Home</a></li>
-                <li><a href="./zcontact.html">ContactUs</a></li>
-                <li><a href="./zabout.html">AboutUs</a></li>
+            <ul class="hello">
+                <li style="float: left;" ><a class="anchor" href="./zassignment.html">Home</a></li>
+                <li style="float: left;" ><a class="anchor" href="./zcontact.html">ContactUs</a></li>
+                <li style="float: left;"><a class="anchor" href="./zabout.html">AboutUs</a></li>
               </ul>
         </header>
         <div class="sidenav5">
@@ -87,27 +93,25 @@
           </div>
           <article class="article5">
             <h2>HEADER TAG</h2>
-            The header element represents a container for introductory content or a set of navigational links.
-            <br/> A header element typically contains:
+            The header element represents a container for introductory content or a set of 
+            navigational links.
+            A header element typically contains:
             <ol>
-                <li>one or more heading elements </li><br/>
-                <li>logo or icon</li><br/>
+                <li>one or more heading elements </li>
+                <li>logo or icon</li>
                 <li>authorship information</li>
             </ol> 
-            <br/>
-            
                 <h2>FOOTER TAG</h2>
                 The footer tag defines a footer for a document or section.
-                <br/>  A footer element typically contains:              
+                 A footer element typically contains:              
                 <ol>
-                <li>authorship information</li><br/>
-                <li>copyright information</li><br/>
+                <li>authorship information</li>
+                <li>copyright information</li>
                 <li>contact information</li>
                 </ol> 
             </article><br/>
-        <footer>
-                <p>Zeel Mehta<br>
-                <a href="mailto:tutorials@example.com">tutorials@example.com</a></p>
+        <footer class="f">
+            &#169; Zeel Mehta
               
         </footer>
     </body>
