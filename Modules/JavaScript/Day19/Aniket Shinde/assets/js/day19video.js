@@ -31,3 +31,32 @@ console.log("Checking the prototypes of multiple objects of same class",emp1.giv
 emp1.giveRaise(50000);
 console.log(emp1.salary);
 console.log(emp2.salary);
+
+//this object
+console.log("\"this\" is window object : ", this === window);
+var name = "Shinde";
+console.log(this.name);
+
+var Address = function(street, city, country){
+    this.street = street;
+    this.city = city;
+    this.country = country;
+};
+Address.prototype.fullAddress = function(){
+    console.log(this);
+};
+var add1 = new Address("sitaram darshan", "Ahmedabad", "India");
+add1.fullAddress();
+
+//closure
+var salaryUpdater = function(salary){
+    var currentSalary = salary;
+    var generator = function(){
+        currentSalary += 10000;
+        return currentSalary;
+    }
+    return generator;
+};
+var update = salaryUpdater(50000);
+update();
+console.log(update());
