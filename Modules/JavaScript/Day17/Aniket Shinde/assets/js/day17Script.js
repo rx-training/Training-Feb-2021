@@ -110,6 +110,7 @@ function checkDetails(){
         if(checkDate(doj) == false){
             document.getElementById("dojerror").innerHTML = "Enter valid date...";
             document.getElementById("dojerror").style.display = "block";
+            doj.style.border = "1px solid red";
         }
         else{
             document.getElementById("dojerror").style.display = "none";
@@ -160,7 +161,7 @@ function checkDate(date){
         maxDate=30;
     }
     else if(m == 2){
-        if(splitedDateArray[2] % 4 == 0){
+        if(splitedDateArray[2] % 4 == 0 && splitedDateArray[2] % 100 != 0 || splitedDateArray[2] % 400 == 0){
             maxDate = 29;
         }
         else{
