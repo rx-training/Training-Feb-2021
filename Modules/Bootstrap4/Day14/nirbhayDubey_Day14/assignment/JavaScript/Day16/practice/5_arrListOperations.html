@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myh3{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <h3 id="myh3"></h3>
+    <script>
+        var arrList=["Mac","Windows","Uniux","Linux","Kali"]
+        // like push, pop, shifting, deleting element
+        var myh3=document.getElementById("myh3");
+        myh3.innerHTML="arrList: ["+arrList+"] <br><br>";
+        myh3.innerHTML+="Push 2 elements (Redhat,Ubuntu) into arrList: <br><br>";
+        arrList.push("Redhat");
+        arrList.push("Ubuntu");
+        myh3.innerHTML+="arrList: ["+arrList+"] <br><br>";
+        myh3.innerHTML+="Pop one time from arrList: <br><br>";
+        arrList.pop();
+        myh3.innerHTML+="arrList: ["+arrList+"] <br><br>";
+        myh3.innerHTML+="Shift one time from arrList: <br><br>";
+        arrList.shift();
+        myh3.innerHTML+="arrList: ["+arrList+"] <br><br>";
+        myh3.innerHTML+="Deleting last two element from arrList: <br><br>";
+        delete arrList[4];
+        delete arrList[3];
+        myh3.innerHTML+="arrList: ["+arrList+"] <br><br>";
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Hoisting Example </h1>
+    <div id="content" > </div>
+    <script>
+        //calling sum function
+        document.getElementById("content").innerHTML="<p style='color:blue;'> Calling ans=sum(5,10) function before defining </p>";
+        var ans=sum(5,10);
+        document.getElementById("content").innerHTML+="<p> ans="+ans+" </p>";
+        //defining sum function
+        document.getElementById("content").innerHTML+="<p style='color:blue;'> Defining sum function </p>"+sum.toString();
+        function sum(p1,p2){
+            return(p1+p2);
+        }
+        document.getElementById("content").innerHTML+="<hr>";
+
+        //defining sub function
+        document.getElementById("content").innerHTML+="<p style='color:blue;'> Defining sub function first </p>"+sub.toString();
+        function sub(p1,p2){
+            return(p1-p2);
+        }
+        //calling sub function
+        document.getElementById("content").innerHTML+="<p style='color:blue;'> Calling ans=sub(15,5) function after defining </p>";
+        ans=sub(15,5);
+        document.getElementById("content").innerHTML+="<p> ans="+ans+" </p>";
+        document.getElementById("content").innerHTML+="<hr>";
+
+        //calling mul function
+        document.getElementById("content").innerHTML+="<p style='color:blue;'> Calling expression function mul(5,6) before defining </p>";
+        try {
+            ans=mul(5,6);
+            document.getElementById("content").innerHTML+="<p> ans="+ans+" </p>";
+        } catch (error) {
+            document.getElementById("content").innerHTML+="<p style='color:red;'> "+error.toString()+" </p>";
+        }
+        //defining mul function
+        var mul=function(p1,p2){ return(p1*p2) };
+        document.getElementById("content").innerHTML+="<p style='color:blue;'> Defining expression function</p> var mul="+mul.toString();
+        document.getElementById("content").innerHTML+="<hr>";
+
+        //defining divide function
+        var divide=function(p1,p2){ return(p1/p2) };
+        document.getElementById("content").innerHTML+="<p style='color:blue;'> Defining expression function first</p> var divide="+mul.toString();
+        //calling mul function
+        document.getElementById("content").innerHTML+="<p style='color:blue;'> Calling expression function divide(15,5) after defining </p>";
+        try {
+            ans=divide(15,5);
+            document.getElementById("content").innerHTML+="<p> ans="+ans+" </p>";
+        } catch (error) {
+            document.getElementById("content").innerHTML+="<p style='color:red;'> "+error.toString()+" </p>";
+        }
+        document.getElementById("content").innerHTML+="<hr><br><br><br>";
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <p id="msg"></p>
+    <script>
+        var sum=0;
+        var tnoarr=prompt("Enter 3 numbers seperated by space").split(" ").splice(0,3);
+        console.log(tnoarr);
+        for(var i=0;i<=2;i++){
+            var no=parseInt(tnoarr[i]);
+            tnoarr[i]=isNaN(no)?0:no;
+            if(no>40) sum+=tnoarr[i];
+        }
+        document.getElementById("msg").innerHTML="Values Entered: <h2>"+tnoarr+"</h2> Max value: <h2>"+Math.max.apply(null,tnoarr)+"</h2> sum of values > 40: <h2>"+sum+"</h2>";
+    </script>
+</body>
+</html>
