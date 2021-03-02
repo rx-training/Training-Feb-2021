@@ -25,7 +25,9 @@
                             
                  </fieldset>
              </form>
-             <div id="output"></div>
+             <div id="output">
+                India, Us, Canada, Brazil, Japan
+             </div>
         </div>
     
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -41,9 +43,9 @@
                     let val = $(this).children('option:selected').val();
 
                     if(val == 'all') {
-                        $('#output').html(`<p class="capitalize">you have selected India, Us, Canada, Brazil, Japan</p>`);
+                        $('#output').html(`India, Us, Canada, Brazil, Japan`);
                     } else {
-                        $('#output').html(`<p class="capitalize">you have selected ${val}</p>`);
+                        $('#output').html(`you have selected ${val}`);
                     }
                 }
             )
