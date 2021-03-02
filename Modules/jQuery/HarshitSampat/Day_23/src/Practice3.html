@@ -38,7 +38,7 @@
             </div>
         </form>
     </div> 
-    <div class="row bg-success border d-none px-4 text-white" id="detail-row">
+    <div class="row border d-none px-4 text-white" id="detail-row">
         <span id="php-details" class="m-3"></span>
         <span id="jsp-details" class="m-3"></span>
         <span id="asp-net-details" class="m-3"></span>
@@ -53,10 +53,19 @@
             $("#lang-options label input").click(function() {
                 $("#detail-row").removeClass('d-none');
                 $('#php-details').addClass('d-none');
+                $('#php-details').addClass('bg-danger');
+                
                 $('#jsp-details').addClass('d-none');
+                $('#jsp-details').addClass('bg-primary');
+               
                 $('#asp-net-details').addClass('d-none');
+                $('#asp-net-details').addClass('bg-success');
+                
                 $('#perl-details').addClass('d-none');
+                $('#perl-details').addClass('bg-warning')
+                
                 $('#other-details').addClass('d-none');
+                $('#other-details').addClass('bg-info');
                 switch (this.value) {
                     case 'php':
                         $('#php-details').html('<ul><h3 id="rt-heading">Related technologies</h3><li>Laravel</li><li>Vue.js</li><li>MySQL</li></ul>');
