@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Bootstrap 4</title>
+        <style>
+            .img-fluid{
+                margin-left: 170px; 
+                padding-top: 120px;
+            }
+            @media (max-width: 768px) { 
+                   .d-block{
+                    width: 90%;
+                    margin-bottom: 1100px;
+                }
+                .container1{
+                    display: block;
+                    width: 90%;
+                    margin-left: 30px;
+                }
+                .img-fluid{
+                    margin-left: 0px;
+                    margin-top: 0px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-0 navbar-dark bg-dark">
+            <div class="container">
+                <a href="#" class="navbar-brand">
+                    <img src="../../../img/pic.PNG" alt="Logo" width="50px" height="50px">
+                </a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <a href="../../../index.html" class="nav-link">Redmine-git</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../html/html.html" class="nav-link">Html</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../css/css.html" class="nav-link">Css</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../bootstrap/bootstrap.html" class="nav-link">Bootstrap</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../js.html" class="nav-link active">Javascript</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../jquery/jquery.html" class="nav-link">Jquery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Sql</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!------------------- sidebar ---------------------->
+
+        <div class="d-block ml-4 text-center text-white bg-dark" style="height: 1050px;">
+            <h4><strong>Javascript</strong></h4>
+            <hr class="bg-white">
+            <h5><b>Day 15</b></h5>
+            <a href="../Day15/assignment.html" class="btn bg-white py-0 my-2">Assignment</a>
+            <a href="../Day15/practice_exercise_1_2.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="../Day15/video_exercise.html" class="btn bg-white py-0">Video Exercise</a>
+
+            <hr class="bg-white mx-5">
+            <h5><b>Day 16</b></h5>
+            <a href="./assignment.html" class="btn bg-white py-0 my-2">Assignment</a>
+            <a href="./practice_exercise_1.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="./video_exercise.html" class="btn bg-white py-0">Video Exercise</a>
+
+            <hr class="bg-white px-2 mx-5">
+            <h5><b>Day 17</b></h5>
+            <a href="../Day17/assignment.html" class="btn bg-white py-0 my-2">Assignment</a>
+            <a href="../Day17/practice_exercise.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="../Day17/practice_exercise_2.html" class="btn bg-white py-0 mb-2">Exercise 2</a>
+            <a href="../Day17/video_exercise.html" class="btn bg-white py-0 mb-2">Video Exercise</a>
+
+            <hr class="bg-white px-2 mx-5">
+            <h5><b>Day 18</b></h5>
+            <a href="../Day18/assignment.html" class="btn bg-white py-0 my-2">Assignment</a>
+            <a href="../Day18/practice_exercise.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="../Day18/video_exercise.html" class="btn bg-white py-0">Video Exercise</a>
+
+            <hr class="bg-white px-2 mx-5">
+            <h5><b>Day 19</b></h5>
+            <a href="../Day19/practice_exercise.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="../Day19/video_exercise.html" class="btn bg-white py-0">Video Exercise</a>
+
+            <hr class="bg-white px-2 mx-5">
+            <h5><b>Day 20</b></h5>
+            <a href="../Day20/assignment.html" class="btn bg-white py-0 mb-2">Assignment</a>
+            <a href="../Day20/practice_exercise.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="../Day20/video_exercise.html" class="btn bg-white py-0">Video Exercise</a>
+
+        </div>
+
+        <!------------------- content ----------------------->
+
+        <div class="container container1 bg-light" style="height: 570px; padding-top: 10px; margin-top: -1050px;">
+            <div class="container bg-dark text-white text-center" style="width: 40%; height: 400px; padding-top: 50px; margin-top: 100px; ">
+                <legend>Date (DD-MM-YYYY)</legend>
+                <label for="date">Enter Date:</label>
+                <input type="text" id="demo1" value=" "><br><br>
+        
+                <button class="btn btn-primary py-0 mb-2" onclick=date()>submit</button>
+            </div>
+        
+            <script>
+                function date(){
+                    var a = document.getElementById("demo1").value;
+                    var b = a.search("-"); 
+                    if (b != -1){
+                        var c = a.trim().split("-");
+                        if ( c[0].length == 2 && c[1].length == 2 && c[2].length == 4){
+                            var d = /[0-2][1-9]|[1-3][0]/g;
+                            var cd = c[0].match(d);
+                            var e = /[0][1-9]|[1][0-2]/g;
+                            var ef = c[1].match(e);
+                            console.log(ef);
+                            var f = /[0-9][0-9][0-9][1-9]|[1-9][0-9][0-9][0-9]/g;
+                            var dc = c[2].match(f);
+                            var g = /[0][2]/g;
+                            var gc = c[1].match(g);
+                            var h = /[0-2][1-9]|[1][0]|[2][0]/g;
+                            var hc = c[0].match(h);
+                            var i = /[0-2][1-8]|[1][0]|[2][0]/g;
+                            var ij = c[0].match(i);
+                            var j = c[2] % 4;
+                            var k = c[2] % 400;
+        
+        
+                            if(cd != null && ef != null && dc != null){
+                                if(j == 0){
+                                    if(gc != null){
+                                        if(hc != null){
+                                            alert("Date is valid");
+                                            console.log(hc);
+                                        }
+                                        else alert("Not valid date for Leap year");
+                                    }
+                                }
+                                else if(k == 0){
+                                    if(gc != null){
+                                        if(hc != null){
+                                            alert("Date is valid");
+                                        }
+                                        else alert("Not valid date for Leap year");
+                                    }
+                                }
+                                else{
+                                    if(gc != null){
+                                        if(ij != null){
+                                            alert("Date is valid");
+                                        }
+                                        else alert("Not valid date");
+                                    }
+                                }
+                            }
+                            else {alert("Date is not valid");}
+                        }
+                        else {alert("Please enter valid date");}
+                    }
+                    else {alert("Please enter in DD-MM-YYYY format");}
+                }
+            </script>
+        </div>
+
+        <script src="../../../js/jquery.min.js"></script>
+        <script src="../../../js/popper.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+    </body>
+</html>
