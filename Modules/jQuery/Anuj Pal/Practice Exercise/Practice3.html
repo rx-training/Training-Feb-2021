@@ -1,67 +1,36 @@
-<!DOCTYPE html>
-<html>
 
+
+
+ <!DOCTYPE html>
+<html lang="en">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
-    <script>
-        $(document).ready(function(){
-            $("input").click(function()
-            {
-                $("pid").html($("input:checked").val());
-            });
+<meta charset="utf-8">
+<title>jQuery Get Selected Radio Button Value</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("input[type='button']").click(function(){
+        	var radioValue = $("input[name='technology']:checked").val();
+            if(radioValue){
+               $("#s1").html("you selected:" +radioValue).css('border', '3px solid green');
+            }
         });
-    </script>
-</head>
-
+    });
+</script>
+</head> 
 <body>
-    <div class="container">
- 
-        <h3>Please select your technology :</h3>
-        <form>
-          <label class="radio-inline m-2 p-2">
-            <input type="radio" name="optradio" id="r1" checked> PHP
-            <span id="s1">
-                
-            </span>
-          </label>
-          <label class="radio-inline m-2 p-2">
-            <input type="radio" name="optradio" id="r2"> ASP.NET
-            <span id="s2"></span>
-          </label>
-          <label class="radio-inline m-2 p-2">
-            <input type="radio" name="optradio" id="r3">ASP
-            <span id="s3"></span>
-          </label>
-          <label class="radio-inline m-2 p-2">
-            <input type="radio" name="optradio" id="r4" checked> JSP
-            <span id="s4"></span>
-          </label>
-          <label class="radio-inline m-2 p-2">
-            <input type="radio" name="optradio" id="r5"> PERL
-            <span id="s5"></span>
-          </label>
-          <label class="radio-inline m-2 p-2">
-            <input type="radio" name="optradio" id="r6"> Cold Fusion
-            <span id="s6">
-
-            </span>
-          </label>
-          <label class="radio-inline m-2 p-2">
-            <input type="radio" name="optradio" id="r7"> Other
-          </label>
-          <label class="radio-inline m-2 p-2">
-          <button class="btn btn-primary">Submit</button>
-          </label>
-        </form>
-      </div>
-
-      <p id="pid"></p>
-      
+    <h4>Please select your technology.</h4>
+    <p> 
+        <label><input type="radio" name="technology" value="PHP">PHP </label> 
+        <label><input type="radio" name="technology" value="ASP.NET">ASP.NET</label>
+        <label><input type="radio" name="technology" value="ASP">ASP </label> 
+        <label><input type="radio" name="technology" value="JSP">JSP</label>
+        <label><input type="radio" name="technology" value="PERL">PERL </label> 
+        <label><input type="radio" name="technology" value="Cold Fusion">COLD FUSION</label>
+        <label><input type="radio" name="technology" value="OTHER">OTHER </label> 
+    </p>
+    <p><input type="button" value="Get Value"></p>
+    <p id="s1"></p>
 </body>
-
 </html>
-
 
