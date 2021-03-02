@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <link rel="stylesheet" href="../assets/css/layoutResponsive.css">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="header">
+            <img src="../assets/images/logo2.png">
+            <div class="nav">
+                <ul>
+                    <li><a href="responsiveLayout.html">HTML</a></li>
+                    <li><a href="cssTasks.html">Css</a></li>
+                    <li><a>Bootstrap</a></li>
+                    <li><a>Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu">
+            <button type="button" class="collapsible">Day 3</button>
+            <div class="content">
+                <button type="button" class="collapsible">Practice</button>
+                <div class="content">
+                    <ul>
+                        <li><a onclick="setUrlArticle()">Article News</a></li>
+                        <li><a onclick="setUrlDepartment()">Departments</a></li>
+                        <li><a onclick="setUrlReport()">Student Report Card</a></li>
+                        <li><a onclick="setUrlLogin()">Login Form</a></li>
+                        <li><a onclick="setUrlMenu()">Horizontal Menu</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="collapsible">Assignment</button>
+                <div class="content">
+                    <ul>
+                        <li><a onclick="setUrlEmployeeForm()">Employee Details Form</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="collapsible">Video Task</button>
+                <div class="content">
+                    <ul>
+                        <li><a onclick="setUrlVideoTask()">Task 1</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="main">
+            <iframe id="myFrame" style="border:1px solid black;">
+            </iframe>
+        </div>
+
+        <div class="footer">
+            <h1 class="center">Have Any Question?</h1>
+            <p>We're very approachable and would love to speak to you. 
+            Feel free to call, send us an email, Tweet us or simply complete the enquiry form.</p>
+        
+            <p>Email : adshindeaniket@gmail.com</p>
+            <p>Supported By : Aniket Shinde</p>
+            <p>Contact : +91 8140763107</p>
+        </div>
+    </div>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+
+        function setUrlArticle(){
+            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/HTML/Day3/Aniket%20Shinde/Practice/articlenews.html";
+        }
+        function setUrlDepartment(){
+            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/HTML/Day3/Aniket%20Shinde/Practice/departments.html";
+        }
+        function setUrlReport(){
+            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/HTML/Day3/Aniket%20Shinde/Practice/studentReportCard.html";
+        }
+        function setUrlLogin(){
+            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/HTML/Day3/Aniket%20Shinde/Practice/loginForm.html";
+        }
+        function setUrlMenu(){
+            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/HTML/Day3/Aniket%20Shinde/Practice/horizontalMenu.html";
+        }
+        function setUrlEmployeeForm(){
+            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/HTML/Day3/Aniket%20Shinde/Assignments/employeeDetailsForm.html";
+        }
+        function setUrlVideoTask(){
+            document.getElementById("myFrame").src = "http://127.0.0.1:5500/Modules/HTML/Day3/Aniket%20Shinde/videotasks/videotasks.html";
+        }
+    </script>
+</body>
+</html>

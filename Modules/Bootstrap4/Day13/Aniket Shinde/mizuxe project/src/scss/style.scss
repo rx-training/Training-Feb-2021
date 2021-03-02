@@ -1,0 +1,72 @@
+// Main Sass File
+$font-size: 18px;
+$primary-overlay: rgba(50,146,166,0.8);
+
+body{
+    
+}
+.nav-item{
+    font-size: $font-size;
+}
+.navbar{
+    background: #fff;
+}
+
+#home-section{
+    background: url('../img/mountains.jpg');
+    min-height: 700px;
+    position: relative;
+    
+
+    .primary-overlay{
+        background: $primary-overlay;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+    }
+    .row{
+        margin-top: 60px;
+    }
+}
+@media (max-width: 578px) {  
+    .display-3{
+        font-size:50px; 
+    }
+    #home-section{
+        min-height: 500px;
+        h1{
+            font-size: 35px;
+        }
+        p{
+            font-size: 18px;
+        }
+    }
+}
+@media (max-width: 768px) {  
+    #header{
+        .container{
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+#about-section{
+    img{
+        margin-top: -60px;
+    }
+    .fa{
+        font-size: 25px;
+        color: #0275d8;
+    }
+    #cards .card:hover{
+        background-color: #5bc0de;
+        color: white;
+        cursor: pointer;
+
+        .fa{
+            color: white;
+        }
+    }
+}
