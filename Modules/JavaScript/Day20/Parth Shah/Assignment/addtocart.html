@@ -10,14 +10,89 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
     <title>Hello, world!</title>
+    <style>
+    h1{
+      background-color: #1c2434;
+  }     
+  body{
+    background-color: #e4ecfc;
+  }
+</style>
     <script>
-        function storeLocalStorage(){
+         async function getProducts(file){
 
-        }
+        let myObject = await fetch(file);
+        console.log(myObject);
+
+        let myProducts = await myObject.json();
+            return myProducts;
+}
+        function addtoCart(id){
+
+            getProducts('../Assignment/cart.json').then(function(Products)
+            {
+
+
+          console.log(id);
+          console.log(Products);  
+        var oldItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+          if (id == 'product1')
+          {
+              
+            oldItems.push(Products[0]);
+            localStorage.setItem("cart",JSON.stringify(oldItems));
+            console.log(localStorage.getItem('cart'));
+
+          }
+          else if (id == 'product2')
+          {
+            oldItems.push(Products[1]);
+            localStorage.setItem("cart",JSON.stringify(oldItems));
+            console.log(localStorage.getItem('cart'));
+
+          }
+          else if (id == 'product3')
+          {
+            oldItems.push(Products[2]);
+            localStorage.setItem("cart",JSON.stringify(oldItems));
+            console.log(localStorage.getItem('cart'));
+
+          }
+          else if (id == 'product4')
+          {
+            oldItems.push(Products[3]);
+            localStorage.setItem("cart",JSON.stringify(oldItems));
+            console.log(localStorage.getItem('cart'));
+
+          }
+
+
+
+            });
+
+
+        //   localStorage.setItem("cart",ProductList);
+     
+           }
+
+           function GetProducts()
+      {
+         var productList = localStorage.getItem("cart");
+        console.log(productList);
+        var PList = JSON.parse(productList);
+        var trow="<tr><th> ProductID </th><th> Product Name </th><th> Product Price </th></tr>";
+        for(var item of PList)
+        {
+            trow+="<tr><td> "+ item.ProductID +"</td><td> "+ item.Name +" </td><td> " + item.Price +"</tr>";
+            console.log(item.ProductID+"  "+item.Name+"  "+item.Price)
+      }
+      document.getElementById("demo").innerHTML = trow;
+    }
     </script>
   </head>
-  <body onload="storeLocalStorage()">
-    <h1 class="text-center">Add to Cart</h1>   
+  <body>
+    <h1 class="text-center text-light display-4 p-4">Add to Cart</h1>   
 
 <section id="posts">
     <div class="container">
@@ -25,7 +100,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header bg-primary">
-                        <h4>Latest Products</h4>
+                        <h4 class="text-light">Latest Products</h4>
                     </div>
                     <table class="table table-stripped" id="Cart">
                         <thead class="thead-inverse">
@@ -42,7 +117,7 @@
                                 <td>Cheese</td>
                                 <td>100</td>
                                 <td>1</td>
-                                <td><a class="btn btn-secondary" onclick="addtoCart()">
+                                <td><a class="btn btn-secondary" id= "product1" onclick="addtoCart(this.id)">
                                     Add to Cart
                                 </a></td>
                             </tr>
@@ -51,7 +126,7 @@
                              <td>Pen</td>
                              <td>150</td>
                              <td>2</td>
-                             <td><a class="btn btn-secondary">
+                             <td><a class="btn btn-secondary" id="product2" onclick="addtoCart(this.id)">
                                  Add to Cart
                              </a></td>
                          </tr>
@@ -60,17 +135,17 @@
                              <td>Butter</td>
                              <td>100</td>
                              <td>1</td>
-                             <td><a class="btn btn-secondary">
+                             <td><a class="btn btn-secondary" id="product3" onclick="addtoCart(this.id)">
                                  Add to Cart
                              </a></td>
                          </tr>
 
                          <tr>
                              <td scope="row">4</td>
-                             <td>Butter</td>
+                             <td>Pencil</td>
                              <td>10</td>
                              <td>1</td>
-                             <td><a class="btn btn-secondary">
+                             <td><a class="btn btn-secondary" id="product4" onclick="addtoCart(this.id)">
                                  Add to Cart
                              </a></td>
                          </tr>
@@ -79,8 +154,11 @@
                     </table>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary btn-lg btn-block mt-5" onclick="GetProducts()" id="GetProducts">Cart Summary</button>
+            <button type="button" class="btn text-light btn-lg btn-block mt-5" style="background-color: #244444;" onclick="GetProducts()" id="GetProducts">Cart Summary</button>
+<table id = 'demo' class="border border-dark m-5 bg-light p-5" style="width: 100%;">
 
+
+</table>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
