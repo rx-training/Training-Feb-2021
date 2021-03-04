@@ -1,0 +1,18 @@
+CREATE TABLE JobHistory
+(
+	JobsID INT NOT NULL CONSTRAINT PKJobsid PRIMARY KEY IDENTITY,
+	JobsDescription VARCHAR(100)
+)
+
+SELECT * from JobHistory
+
+ALTER TABLE JobHistory
+ADD JobID INT CONSTRAINT FKJobid FOREIGN KEY REFERENCES Jobs(JobID)
+
+ALTER TABLE JobHistory
+Drop CONSTRAINT FKJobid
+
+ALTER TABLE JobHistory
+ADD JobLocation varchar(20);
+
+DROP TABLE JobHistory
