@@ -31,8 +31,11 @@ DROP CONSTRAINT Ckdate;
 ALTER TABLE JobHistory
 ADD CONSTRAINT FkjobId FOREIGN KEY(JobId) REFERENCES Jobs(JobId);
 
---ALTER TABLE JobHistory
---DROP FOREIGN KEY FkjobId;
+ALTER TABLE JobHistory
+DROP Constraint FkjobId;
+
+ALTER TABLE JobHistory
+ADD Location NVARCHAR(100);
 
 Select * from Jobs;
 
