@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var string = "abscjidjfhdiydfgdsjfnsk";
+        document.write(string.length);
+        function show() {
+            for (var i = 0; i < string.length; i++) {
+                document.write("Element " + i + " contains: " + string[i] + "<br />");
+            }
+
+        }
+
+
+
+    </script>
+    <br>
+    <script>
+        document.write(string.indexOf("diy"));
+
+    </script>
+    <br>
+    <script>
+          document.write(string.search("diy"));
+
+    </script>
+ <br>
+ <script>
+       document.write(string.slice(7, 13));
+       document.write(string.slice(-12, -6));
+
+ </script>
+ <br>
+ <script>
+
+       document.write(string.replace("fnsk","Anuj"));
+
+ </script>
+  <br>
+  <script>
+ 
+        document.write(string.toUpperCase());
+ 
+  </script>
+  <br>
+  <script>
+ 
+        document.write(string.charAt(12));
+ 
+  </script>
+   <script>
+
+    var x = 9.656;
+
+    var y = x.toFixed(2);
+    document.write(y);
+
+    var z = parseInt("9.556");
+    document.write(z);
+
+</script>
+  
+  
+
+</body>
+
+</html>

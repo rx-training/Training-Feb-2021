@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p>Click the button to return the function that created the RegExp object's prototype.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            var patt = new RegExp("Hello World", "g");
+            var res = patt.constructor;
+            document.getElementById("demo").innerHTML = res;
+        }
+    </script>
+    <br>
+    <script>
+        var str = "Every man in the world! Every woman on earth!";
+        var patt = /man/g;
+        var str2 = str.replace(patt, "person")
+        document.write(str2 + "<br>");
+
+        patt = /(wo)?man/g;
+        patt.compile(patt);
+        str2 = str.replace(patt, "person");
+        document.write(str2);
+
+    </script>
+    <br>
+    <script>
+        var str = "Hello world! hello";
+
+        // look for "Hello"
+        var patt = /Hello/g;
+        var result = patt.exec(str);
+        document.write(result);
+
+        // look for "W3Schools"
+        var patt2 = /W3Schools/g;
+        result2 = patt2.exec(str);
+        document.write(result2);
+    </script>
+    <br>
+    <script>
+        var str = "Is this all there is?";
+        var patt1 = /is/g;
+        var result = str.match(patt1);
+        document.write(result);
+
+    </script>
+    <br>
+    <script>
+        var str = "Is this all there is?";
+        var patt1 = /is/gi;
+        var result = str.match(patt1);
+        document.write(result);
+    </script>
+    <br>
+    <script>
+        var str = "The rain in Spain stays mainly in the plain";
+        var patt1 = /ain/g;
+
+        while (patt1.test(str) == true) {
+            document.write("'ain' found. Index now at: " + patt1.lastIndex);
+            document.write("<br>");
+        }
+    </script
+
+</body>
+
+</html>
