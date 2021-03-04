@@ -3,66 +3,64 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
-        <link rel="stylesheet" href="mystyle.css">
+        
             <link rel="stylesheet"
                 href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
                 integrity="sha-384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
                 crossorigin="anonymous">
-            <link href="http://fonts.googleapis.com/css?family=Princess+Sofia"
-                rel="stylesheet" type="text/css">
-            <link rel="stylesheet"
-                href="https://use.fontawesome.com/release/v5.6.1/css/all.css"
-                integrity="sha384-gfdkjb5BdAXd+lj+gudLWI_BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
-                crossorigin="anonymous">
-            <link rel="stylesheet" href="./mystyle.css">
+            
             <title>
                 document
             </title>
-            <script>
-                var num1 = parseInt(prompt("Enter first number: "));
-                var num2 = parseInt(prompt("Enter second number: "));
-                var num3 = parseInt(prompt("Enter third number: "));
-                var largest;
+            <script type="text/javascript">
+                var num=new Array(3);
+                     num[0] = parseInt(prompt("Enter first number:"));
+                     num[1] = parseInt(prompt("Enter second number:"));
+                     num[2] = parseInt(prompt("Enter third number:"));
+                var sum=0;
+                function largest()
+                {
+                    if(num[0]>num[1] && num[0]>num[2])
+                    {
+                       document.getElementById("large").innerHTML=num[0];
+                        
+                    }
+                    else if(num[1]>num[0] && num[1]>num[2])
+                    {
+                        document.getElementById("large").innerHTML=num[1];
+                    }
+                    else if(num[2]>num[0] && num[2]>num[0])
+                    {
+                        document.getElementById("large").innerHTML=num[2];
+                    }
+                    else{}
 
-
-            if(num1 >= num2 && num1 >= num3) {
-                largest = num1;
-            }
-            else if (num2 >= num1 && num2 >= num3) {
-                largest = num2;
-            }
-            else {
-                largest = num3;
-            }
-
-            var sum1,sum2,sum3,sum;
-            if(num1>40){sum1=num1;}
-            else{sum1=0;}
-
-            if(num2>40){sum2=num2;}
-            else{sum2=0;}
-
-            if(num3>40){sum3=num3;}
-            else{sum3=0;}
-
-            sum=sum1+sum2+sum3;
-
-            function large(l,s)
-            {
-                document.getElementById("l").innerHTML = largest;
-                document.getElementById("s").innerHTML = sum;
-            }
+                    for(i=0; i<3; i++)
+                    {                        
+                        if(num[i] > 40)
+                        {
+                            sum=sum+num[i];  
+                        }                        
+                    }                    
+                   document.getElementById("s").innerHTML=sum;
+                }
+                
             </script>
-    </head>
-<body>
-    <div class="container col-lg-4 ">
-        <button type="button" onclick="large(l,s)"  class="btn btn-outline-primary btn-block">Largest Number</button>
-        <h4><p class="bg-success" id="l"></p></h4>
-        <h4><p class="bg-success" id="s"></p></h4>
+                    </head>
+<body style="background: black">
+    <div class="container col-lg-4 bg-light"> 
+        
+		<br>
+		<button onclick="largest()" class="btn btn-primary btn-block">Largest Number</button>
+        <h3>Greatest Number : <span id="large" class="label label-primary"></span></h3>
+        <h3>Sum : <label id="s" class="text-success"></label></h3>
+        
+        
         
         
         
     </div>   
+    <div style="margin-top: 500px;"></div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

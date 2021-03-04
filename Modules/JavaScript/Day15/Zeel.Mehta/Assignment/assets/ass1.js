@@ -1,35 +1,40 @@
-function cal(num1,num2)
-{
-    var s = document.getElementsByName('sum'); 
-    var op;
-    for(i = 0; i < s.length; i++) { 
-        if(s[i].checked) 
-            op= s[i].value;
+function displayRadioValue(num1,num2) { 
+    var ele = document.getElementsByName('sum'); 
+      var op;
+    for(i = 0; i < ele.length; i++) { 
+        if(ele[i].checked) 
+        {
+            
+                op=ele[i].value;
+        }
     }
-   
+     
+console.log(op);
+    var n1 = parseInt(num1);  
+    var n2 = parseInt(num2);    
     switch(op){
-        case 0:
-            num3=num1+num2;
-            
+        case "add":
+            num3=n1+n2;   
+            document.getElementById("result").value= "Result is : "+num3;
             break;
-        case 1:
-            num3=parseInt(num1)-parseInt(num2);
-            
+        case "sub":
+            num3=n1-n2;   
+            document.getElementById("result").value= "Result is : "+num3;  
             break;
-        case 2:
-            num3=parseInt(num1)*parseInt(num2);
-            
+        case "mul":
+            num3=n1*n2;   
+            document.getElementById("result").value= "Result is : "+num3; 
             break;
-        case 3:
-            num3=parseInt(num1)/parseInt(num2);
-            
+        case "div":
+            num3=n1/n2;
+            document.getElementById("result").value="Result is : "+num3;
             break;
         default:
             num3=0;
-            
+            document.getElementById("result").value= "Result is : "+num3;
             break;
-
     }
-    document.getElementById("result").innerHTML= num3;
+    
     
 }
+

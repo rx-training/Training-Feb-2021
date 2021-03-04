@@ -23,29 +23,31 @@
                 width: 500px;
                 padding: 40px;
                 position: absolute;
-                top: 50%;
+                top: 0;
                 left:65%;
                 background: #191919;
-                
                 transition: 0.25s;
-                margin-top: 100px
+                margin-top: 50px
             }
-            .box input
-            
+            .box label
             {
-                border: 0;
-                background: none;
-                display: inline;
-                margin-top: 0%;
-                text-align: center;
-                border: 2px solid #3498db;
-                padding: 10px 10px;
-                width: 300px;
+                background: none;              
+                padding: 10px 2px;                
                 outline: none;
                 color: white;
                 border-radius: 24px;
-                transition: 0.25s
-                
+                transition: 0.25s;                
+            }
+            .float-right
+            {
+                background: none;              
+                border: 2px solid #3498db;
+                padding: 10px 10px;                
+                outline: none;
+                color: white;
+                border-radius: 24px;
+                transition: 0.25s;   
+                width: 290px;             
             }
             .box p
             {
@@ -58,6 +60,9 @@
                 font-weight: 500
             }
             .box input[type="text"]:focus,
+            .box input[type="date"]:focus,
+            .box input[type="email"]:focus,
+            .box input[type="number"]:focus,
             .box input[type="password"]:focus 
             {
                 width: 300px;
@@ -66,18 +71,17 @@
 
             .box input[type="submit"] 
             {
-                border: 0;
                 background: none;
-                display: block;
-                margin: 20px auto;
+                display: block; 
                 text-align: center;
                 border: 2px solid #2ecc71;
-                padding: 14px 40px;
-                outline: none;
                 color: white;
                 border-radius: 24px;
                 transition: 0.25s;
-                cursor: pointer
+                width: 420px;
+                padding: 10px 5px;
+                outline: none;
+                
             }
 
             .box input[type="submit"]:hover 
@@ -88,7 +92,23 @@
 
 
 </style>
-        <script src=""></script>
+        <script type="text/javascript">
+        function myFunction(num)
+            {
+                re = /^([A-Za-z]\w{5})$/;
+                
+                if(regs = num.value.match(re)) 
+                    { 
+                        return true;
+                    }
+                    else{
+                        
+                    alert("EmployeeID should be at least 5 character long");
+                        
+                    }
+                
+            }
+            </script>
     </head>
     <body>
         <div class="container">
@@ -99,29 +119,57 @@
                             <h1>Employee Details</h1><br>
                             <div>
                                 <label class="text-muted">ID : </label>
-                                <input class="float-right" type="text" name="">
+                                <input class="float-right" id="num" name="num"  type="text" required>
                             </div><br>
-                            <div>
-                                <label class="text-muted align-self-end">Name : </label>
-                                <input class="float-right" type="text" name="">
+                           <div>
+                                <label class="text-muted ">Name : </label>
+                                <input class="float-right" type="text" required>
                             </div><br>
                             <div>
                                 <label class="text-muted">Age : </label>
-                                <input class="float-right" type="text" name="">
-                            </div>
-                            <div><br>
-                                <label class="text-muted">Gender : </label>
-                                <input type="radio" id="add" name="sum" value="addition"  class="form-check-input" required>
-                                <label>Addition</label><br>
-                                <input type="radio" id="sub" name="sum" value="substraction" class="form-check-input">
-                                <label>Substraction</label><br>
-                                <input type="radio" id="mul" name="sum" value="multiplication" class="form-check-input">
-                                <label>Multiplication</label><br>
-                            </div>
+                                <input class="float-right" type="number" required>
+                            </div><br>
+                            <div>
+                                <label class="text-muted">Designation: </label>
+                                <input class="float-right" type="text" required>
+                            </div><br>
+                            <div>
+                                <label class="text-muted">Salary : </label>
+                                <input class="float-right" type="number" required>
+                            </div><br>
+                            <div>
+                                <label class="text-muted">EmailID : </label>
+                                <input class="float-right" type="email" required>
+                            </div><br>
+                            <div>
+                                <label class="text-muted">Date of Joining : </label>
+                                <input class="float-right" type="date" required>
+                            </div><br>
+                            <div>
+                                <label class="text-muted">Contact No. : </label>
+                                <input class="float-right" type="number" required>
+                            </div><br>
+                            <div>
+                                <label class="text-muted">Location : </label>
+                                <select class="float-right">
+                                    <option class="bg-dark">Gandhinagar</option>
+                                    <option class="bg-dark">Ahmedabad</option>
+                                    <option class="bg-dark">Surat</option>
+                                    <option class="bg-dark">Rajkot</option>
+                                    <option class="bg-dark">Jamnagar</option>
+
+                                </select>
+                            </div><br>
                             
-                         
-                            <input type="submit" name="" value="Login" href="#">
-                            
+                            <div >
+                                <label class="text-muted">Gender: </label> &nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input  name="gender" type="radio" value="option1" required>
+                                <label class=" text-muted">Male</label>
+                                <input  name="gender" type="radio"  value="option2">
+                                <label class=" text-muted">Female</label>
+                              </div><br>                                      
+                            <input type="submit"  value="Login" onclick="myFunction(num)">   
                         </form>
                     </div>
                 </div>
