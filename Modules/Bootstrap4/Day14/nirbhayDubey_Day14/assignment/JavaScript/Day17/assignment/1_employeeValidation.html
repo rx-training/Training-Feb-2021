@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap4 CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 m-auto">   
+                <p class="h3 py-3">Employee Details Validation</p>         
+                <form action="#" class="pb-2">
+                    <div class="form-group">
+                        <label for="eid">EmployeeID</label>
+                        <input type="text" id="eid" name="eid" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="ename">Employee name</label>
+                        <input type="text" id="ename" name="ename" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="eage">Age</label>
+                        <input type="text" id="eage" name="eage" class="form-control" maxlength="3">
+                    </div>
+                    <div class="form-group">
+                        <label for="egender">Gender:</label>
+                        <div class="form-check-inline pl-3">
+                            <input type="radio" id="egmale" class="form-check-input" name="egender" value="Male">
+                            <label class="form-check-label" for="egmale">Male</label>
+                        </div>
+                        <div class="form-check-inline pl-1">
+                            <input type="radio" id="egfemale" class="form-check-input" name="egender" value="Female">
+                            <label class="form-check-label" for="egfemale">Female</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edesig">Designation</label>
+                        <input type="text" id="edesig" name="edesig" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="esalary">Salary</label>
+                        <input type="text" id="esalary" name="esalary" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="elocation">Location</label>
+                        <select type="text" id="elocation" name="elocation" class="custom-select">
+                            <option value="novalue">Choose...</option>
+                            <option value="Ahmedabad">Ahmedabad</option>
+                            <option value="Gandhinagar">Gandhinagar</option>
+                            <option value="Vadodara">Vadodara</option>
+                            <option value="Surat">Surat</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="eemail">Email ID</label>
+                        <input type="text" id="eemail" name="eemail" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="edoj">Date of Joining</label>
+                        <input type="date" id="edoj" name="edoj" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="econtact">Contact number</label>
+                        <input type="text" id="econtact" name="econtact" class="form-control">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" onclick="return validate(this.form);">validate</button>
+                    <button type="reset" class="btn btn-secondary" id="btnresetform">Reset</button>
+                </form>
+            </div>
+        </div>
+        <div class="row pt-2">
+            <div class="col-lg-7 m-auto">
+                <div id="eidfb"> </div>
+                <div id="eagefb"> </div>
+                <div id="eemailfb"> </div>
+                <div id="edojfb"> </div>
+                <div id="elocfb"> </div>
+                <div id="eallfb"> </div>
+            </div>
+        </div>  
+    </div>
+
+    <script>
+        function validate(frm){
+            var eid=frm.eid.value;
+            var ename=frm.ename.value;
+            var eage=frm.eage.value;
+            var egender=frm.egender.value;
+            var edesig=frm.edesig.value;
+            var esalary=frm.esalary.value;
+            var eloaction=frm.elocation.value;
+            var eemail=(frm.eemail.value).toLowerCase();
+            var edoj=frm.edoj.value;
+            var econtact=frm.econtact.value;
+
+            document.getElementById("eallfb").className="";
+            document.getElementById("eallfb").innerHTML="";
+            document.getElementById("eidfb").className="";
+            document.getElementById("eidfb").innerHTML="";
+            document.getElementById("eagefb").className="";
+            document.getElementById("eagefb").innerHTML="";
+            document.getElementById("eemailfb").className="";
+            document.getElementById("eemailfb").innerHTML="";
+            document.getElementById("edojfb").className="";
+            document.getElementById("edojfb").innerHTML="";
+            document.getElementById("elocfb").className="";
+            document.getElementById("elocfb").innerHTML="";
+
+            if(eid=="" || ename=="" || eage=="" || egender=="" || edesig=="" || esalary=="" || eloaction=="novalue" || eemail=="" || edoj=="" || econtact==""){
+                document.getElementById("eallfb").className="alert alert-danger";
+                document.getElementById("eallfb").innerHTML="Please fill values in all the fields correctly";
+                return false;
+            }
+            else{
+                var flag=0;
+                var patteid=/^[0-9]{5}$/;
+                var patteage=/^(([1-9]{1})|([0-9]{2}))$/;
+                var patteemail=/^[a-z0-9._]+@[a-z0-9]+.[a-z]{2,3}$/;
+                var pattedoj=/^((0[1-9])|(1[0-2]))-((0[1-9])|([1-2][0-9])|(3[0-1]))-([1-2][0-9][0-9][0-9])$/;
+
+                console.log(edoj);
+                if(!patteid.test(eid)){
+                    document.getElementById("eallfb").className="alert alert-danger";
+                    document.getElementById("eallfb").innerHTML="Employee ID should be of five chracter long";
+                    flag=1;
+                }
+                if(!patteage.test(eage)){
+                    document.getElementById("eagefb").className="alert alert-danger";
+                    document.getElementById("eagefb").innerHTML="Employee age should be between 1-99";
+                    flag=1;
+                }
+                if(!patteemail.test(eemail)){
+                    document.getElementById("eemailfb").className="alert alert-danger";
+                    document.getElementById("eemailfb").innerHTML="Employee email should be in proper format";
+                    flag=1;
+                }
+                if(pattedoj.test(edoj)){
+                    var dtarr=dt.value.split("-");
+                    var date=Number(dtarr[2]);
+                    var month=Number(dtarr[1]);
+                    var year=Number(dtarr[0]);
+                    if(month==2){
+                        if((year%4==0 && year%100!=0)||year%400==0){
+                            if(!(date>=1 && date<=29)){
+                                document.getElementById("edoj").className="alert alert-danger";
+                                document.getElementById("edoj").innerHTML="Employee date-of-joining is invalid";
+                                flag=1;
+                            }
+                        }
+                        if(!(date>=1 && date<=28)){
+                            document.getElementById("edoj").className="alert alert-danger";
+                            document.getElementById("edoj").innerHTML="Employee date-of-joining is invalid";
+                            flag=1;
+                        }
+                    }
+                }
+            }
+            if(flag==1) return false;
+            document.getElementById("eallfb").className="alert alert-success";
+            document.getElementById("eallfb").innerHTML="Form validated successfully...";
+            return false;
+        }
+    </script>
+
+
+  <!-- Bootstrap4 JS CDN -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+</body>
+</html>

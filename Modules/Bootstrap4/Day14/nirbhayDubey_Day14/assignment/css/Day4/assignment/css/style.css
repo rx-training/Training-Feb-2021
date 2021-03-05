@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: #eeeeee;
+}
+#resume{
+    display: flex;
+    height:100vw;
+    margin:5% 20% 5% 20%;
+}
+@media screen and (max-width: 1000px){
+    #resume{
+        margin:5% 10% 5% 10%;
+        height:110vw;
+    }
+}
+
+/* aside Left */
+#aside1{
+    background-color: #333333;
+    width:30%;
+    position: relative;
+}
+#aside1 section *{
+    color:#c1c1c1;
+}
+#aside1 img{
+    height:10vw;
+    width:10vw;
+    border:0.5vw solid #ffffff;
+    border-radius: 50%;
+    margin:10vh 25% 0 25%;
+}
+#aside1 section{
+    width: 70%;
+    margin:3vw auto;
+}
+#aside1 section p{
+    font-size:1.3vw;
+    font-weight:700;
+    width: 70%;
+    color:#f6f6f6;
+    margin-left:2vw;
+    transform: scale(1.2,1.2);
+}
+#aside1 section table{
+    padding-top:1vw;
+    font-size:0.9vw;
+}
+#aside1 section table td{
+    color:#f6f6f6;
+}
+#aside1 section table i{
+    font-size: 2vw;
+    color:#f6f6f6;
+    padding-bottom: 2vw;
+    padding-right:0.2vw;
+}
+#leftfooter{
+    position:absolute;
+    bottom:3vw;
+    padding-left: 3vw;
+}
+#leftfooter ul{
+    list-style: none;
+}
+#leftfooter ul li{
+    font-size: 1vw;
+    color: #f6f6f6;
+}
+
+
+
+
+
+/* aside Right */
+#aside2{
+    background-color: #ffffff;
+    width:70%;
+    padding:2vw;
+}
+#aside2 #name{
+    font-size:3.5vw;
+    font-weight: 900;
+    color:#333333;
+    font-family:"HelveticaNeue-Medium", sans-serif;
+    transform: scale(1,1.2);
+    margin-top:4vh;
+}
+#aside2 #desig{
+    font-size:1.3vw;
+    color: #6b6b6b;
+    margin-top:2vh;
+}
+#aside2 .exp{
+    margin-top: 2vw;
+}
+#aside2 .exp header{
+    background-color: #ebebeb;
+    border-radius:25px 0 0 25px;
+    display: flex;
+    height:3vw;
+}
+#aside2 .exp header i{
+    font-size:1.7vw;
+    padding: 0.5vw;
+    color: #333333;
+    border:0.2vw solid #333333;
+    border-radius: 50%;
+    background:#ffffff;
+}
+#aside2 .exp span{
+    font-size:1.5vw;
+    padding: 0.5vw;
+    color: #333333;
+    font-weight: bold;
+}
+#aside2 .exp table{
+    padding-left:5vw;
+    padding-top:1.2vw;
+    width: 100%;
+}
+#aside2 .exp .td1{
+    font-size: 1.2vw;
+    color: #333333;
+    font-weight: bold;
+    width:10vw;
+    padding-top: 1.5vw;
+}
+#aside2 .exp .td2{
+    font-size: 1.2vw;
+    color: #6b6b6b;
+    font-weight: bold;
+    padding-top: 1.5vw;
+}
+#aside2 .exp .td3{
+    font-size: 1vw;
+    color: #7a7a7a;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 2vw;
+}
+#aside2 .exp .td4{
+    font-size:1vw;
+    color: #6b6b6b;
+    line-height:1.3vw;
+}
+#aside2 .exp .skill1{
+    font-size:1vw;
+    color: #333333;
+    line-height:2vw;
+}
+#aside2 .w3-border{
+    width:7vw;
+    height:1vw;
+}
+#aside2 .w3{
+    background-color: #333333;
+    margin: 0;
+}
