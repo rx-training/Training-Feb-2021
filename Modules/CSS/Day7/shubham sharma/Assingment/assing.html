@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Album Gallery</title>
+        <style text="text/css">
+        *{
+            box-sizing: border-box;
+        }
+
+        .gallery{
+            border: 1px solid #ccc;
+
+        }
+
+        .gallery img{
+            width: 400px;
+			margin:1.6%;
+            height: 400px;
+			float:left;
+        }
+        .des{
+            padding: 15px;
+            text-align: center;
+        }
+
+        
+        @media only screen and (max-width: 700px;){
+           
+			.gallery img{
+            width: 100%;
+            height: auto;
+			float:left;
+		}
+            @media only screen and (max-width: 350px;){
+            
+			.gallery img{
+            width: 100%;
+            height: auto;
+			float:left;
+        }
+        }
+            
+        
+        
+        </style>
+
+    </head>
+    <body+++>
+        <h1>Album Gallery</h1>
+        <div style="width:100%;">
+            <div class="gallery">
+                <a href="img4.jpg" target="_blank"><img src="img4.jpg" ></a>
+
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a href="img2.jpg" target="_blank"><img src="img2.jpg"width="300" height="200"></a>
+
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a href="img3.jpg" target="_blank"><img src="img3.jpg"width="300" height="200"></a>
+
+            </div>
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a href="img4.jpg" target="_blank"><img src="img4.jpg"width="300" height="200"></a>
+
+            </div>
+        </div>
+    </body>
+</html>
