@@ -1,6 +1,6 @@
 USE [SQLDay2]
 
-SELECT * from Employees;
+SELECT * FROM Employees;
 
 /* 1. SQL statement to change the Email column of 
 Employees table with ‘not available’ 
@@ -33,7 +33,7 @@ column of employees table with ‘not available’
 for those employees whose DepartmentID is 80 and gets a 
 commission is less than 20%*/
 
-SElECT * from Employees
+SElECT * FROM Employees
 
 UPDATE Employees
 SET Email='not available'
@@ -72,7 +72,7 @@ SET Salary= CASE DepartmentID
 	ELSE Salary
 	END;
 
-SElECT * from Employees;
+SElECT * FROM Employees;
 
 /* 9. SQL statement to increase the minimum and 
 maximum salary of PU_CLERK by 2000 as well as the 
