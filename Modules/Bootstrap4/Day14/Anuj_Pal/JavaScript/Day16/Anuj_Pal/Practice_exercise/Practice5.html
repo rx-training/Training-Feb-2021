@@ -1,0 +1,58 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="demo">
+        write the array content here
+    </p>
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo").innerHTML = fruits.toString();
+    </script>
+    <script>
+        function show() {
+            for (var i = 0; i < fruits.length; i++) {
+                document.write("Element " + i + " contains: " + fruits[i] + "<br />");
+            }
+
+        }
+
+        
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        var x = fruits.pop();
+        document.write(x);
+
+    </script>
+    <br>
+    <hr>
+    <script>
+        fruits.push("kiwi");
+        show();
+    </script>
+    <br>
+    <hr>
+    <script>
+        fruits.shift();
+        show();
+    </script>
+    <br>
+    <hr>
+    <script>
+        delete fruits[0];
+        show();
+    </script>
+
+
+</body>
+
+</html
