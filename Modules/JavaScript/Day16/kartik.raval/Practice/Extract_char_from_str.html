@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extract character from string</title>
+</head>
+<body>
+    <p>Extract first <strong>8</strong> character from string <strong>Welcome to radixweb</strong></p>
+    <p id = "p1"></p>
+    <input type="button" onclick="extract_char()" value="Extract character here">
+    <script>
+        function extract_char(){
+            var demo = "Welcome to radixweb";
+            var extract_chr = demo.slice(8);
+            document.getElementById("p1").innerHTML = extract_chr;
+        }
+    </script>
+</body>
+</html>

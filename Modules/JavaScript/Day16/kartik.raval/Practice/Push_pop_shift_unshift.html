@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day16</title>
+</head>
+<body>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    <p id="p5"></p>
+    <p id="p6"></p>
+    <p id="p7"></p>
+    <p id="p8"></p>
+    <p id="p9"></p>
+    <p id="p10"></p>
+    <p id="p11"></p>
+    <p id="p12"></p>
+    <p id="p13"></p>
+    <p id="p14">Please visit Microsoft!</p>
+    <button onclick="myFunction()">Try it</button>
+    <script>
+        var fruits = ["Apple", " Banana", " Kiwi", " Pineapple"];
+        document.getElementById("p1").innerHTML = fruits.toString();
+        document.getElementById("p2").innerHTML = fruits.join(" * ");
+        document.getElementById("p3").innerHTML = fruits.pop();
+        document.getElementById("p4").innerHTML = fruits;
+        document.getElementById("p5").innerHTML = fruits.push("Chickoo");
+        document.getElementById("p5").innerHTML = fruits;
+
+        var fruits1 = ["Apple", " Banana", " Kiwi", " Chickoo"];
+        document.getElementById("p6").innerHTML = fruits1.shift();
+        document.getElementById("p7").innerHTML = fruits1;
+        document.getElementById("p8").innerHTML = fruits1.unshift("Lemon");
+        document.getElementById("p9").innerHTML = fruits1;
+        fruits1[1]="Watermelon";
+        document.getElementById("p10").innerHTML = fruits1;
+
+        function myFunction() {
+            fruits2[fruits2.length] = "Kiwi";
+            document.getElementById("p11").innerHTML = fruits2;
+        }
+        var fruits2 = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("p11").innerHTML = fruits2;
+
+        var arr1 = ["ahmedabad", "surat", "vadodara", "mumbai", "pune"];
+        var arr2 = ["jamnagar", "surendranagar", "rajkot", "bhavnagar", "diu"];
+        var arr3 = ["udaipur", "jaipur"]
+        var arr4 = arr1.concat(arr2,arr3);
+        document.getElementById("p12").innerHTML = arr4;
+
+        var str = "Please locate where 'locate' occurs!";
+        var pos = str.indexOf("where");
+        document.getElementById("p13").innerHTML = pos;
+
+        function myFunction() {
+            var str = document.getElementById("p14").innerHTML; 
+            var txt = str.replace("Microsoft","W3Schools");
+            document.getElementById("p14").innerHTML = txt;
+        }
+    </script>
+</body>
+</html>
