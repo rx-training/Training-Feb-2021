@@ -1,3 +1,5 @@
+Select * from sys.tables
+
 USe RadixTraining
 
 CREATE TABLE JobHistorys
