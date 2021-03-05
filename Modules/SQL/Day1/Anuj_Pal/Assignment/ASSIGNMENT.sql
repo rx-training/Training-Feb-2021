@@ -20,7 +20,7 @@ ADD  TotalSales varchar(20);
 
 
 
-
+kh.
 
 CREATE TABLE Sales(
 SalesId varchar(20) PRIMARY KEY,
