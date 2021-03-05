@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/script.js"></script>
+    <script>
+
+        //Fucntions
+        orderId = 5;
+        function printOrder() {
+            console.log("Printin Order:"+orderId);
+        }
+
+        printOrder();
+
+        calcPrice(1, 2);
+
+        function calcPrice(val1, val2) {
+            console.log(`Total Price: ${val1+val2}`);
+        }
+
+
+        var avtivateOrder = function() {
+            console.log("Order Activated");
+        };
+
+        avtivateOrder();
+
+
+        // if else
+
+        let a=1, b=2, c=3;
+
+        if (a > b) {
+            if (a > c) {
+                console.log("a is greater")
+            } else {
+                console.log("c is greater")
+            }
+        } else if(a == b) {
+            if (a == c) {
+                console.log("all are equal");
+            } else if (a < c) {
+                console.log("c is greater")
+            } else {
+                console.log("a and b are equal and greater than c")
+            }
+        } else {
+            if (b > c) {
+                console.log("b is greater")
+            } else {
+                console.log("c is greater")
+            }
+        }
+
+        //switch
+
+        let orderType = 'business';
+        let shipMethod;
+
+        switch (orderType) {
+            case 'business' :
+                shipMethod = 'FedEx';
+                break;
+            case 'personal' :
+                shipMethod = 'UPS Ground';
+                break;
+            default:
+                shipMethod = 'USPS'
+        }
+
+        console.log(shipMethod);
+
+        orderType = 'business';
+        switch (orderType) {
+            case 'business' :
+                
+            case 'personal' :
+                shipMethod = 'UPS Ground';
+                break;
+            default:
+                shipMethod = 'USPS'
+        }
+
+        console.log(shipMethod);
+
+        let val3 = 5, message;
+        switch (true) {
+            case val3 > 0 :
+                message = 'positive';
+                break;
+            case val3 < 0 :
+                message = 'negative';
+                break;
+            default:
+                message = 'zero'
+        }
+
+        console.log(message);
+
+    </script>
+</body>
+</html>
