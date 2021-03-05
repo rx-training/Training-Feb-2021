@@ -6,4 +6,3 @@ CREATE TABLE Countries (
 	CONSTRAINT unIDs UNIQUE(CountryID,RegionID)
 );
 
-insert into Countries 
