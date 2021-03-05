@@ -26,6 +26,12 @@ CREATE TABLE Jobs
 	MaxSalary decimal(7,0) DEFAULT NULL	
 )
 
+CREATE TABLE Departments
+(
+	Department_ID varchar(20) NOT NULL CONSTRAINT PK_DEPARTMENTID PRIMARY KEY,
+	DepartmentName varchar(50)
+)
+
 CREATE TABLE Employees
 (
 	EmployeeID decimal(6,0) NOT NULL PRIMARY KEY,
@@ -38,7 +44,7 @@ CREATE TABLE Employees
 	Salary decimal(8,2) DEFAULT NULL, 
 	Commission decimal(2,2) DEFAULT NULL, 
 	MangerID decimal(6,0) DEFAULT NULL, 
-	DEPARTMENT_ID varchar(20) NOT NULL CONSTRAINT FKDEPARTMENT_ID FOREIGN KEY REFERENCES  Jobhistories(DepartmentID)
+	DEPARTMENT_ID varchar(20) NOT NULL CONSTRAINT FKDEPARTMENT_ID FOREIGN KEY REFERENCES  Departments(Department_ID)
 )
 
 ALTER TABLE Jobhistories ADD CONSTRAINT FK_JOB_ID FOREIGN KEY (JOB_ID) REFERENCES Jobs(JobID);
