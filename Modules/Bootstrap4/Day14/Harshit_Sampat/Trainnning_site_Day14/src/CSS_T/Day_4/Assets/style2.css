@@ -1,0 +1,31 @@
+p{
+    color: rgb(170, 78, 170);
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif
+}
+h1{
+    color:rgba(109, 103, 19, 0.411);
+    font-size: x-large;
+    font-family: fantasy;
+    text-align: center;
+}
+h2{
+    color: rgb(235, 212, 212);
+    font-size: larger;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.entry-title    
+{
+    background-color: black;
+    color: yellowgreen;
+}
+p
+{
+    border: solid;
+    border-color: rgb(27, 23, 8);
+    
+}
+#GS-29
+{
+    background-color: rgba(61, 6, 78, 0.658);
+}

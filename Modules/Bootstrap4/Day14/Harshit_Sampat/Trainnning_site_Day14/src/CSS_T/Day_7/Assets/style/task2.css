@@ -1,0 +1,32 @@
+.body{
+    background-color:rgb(255, 255, 125) ;
+    color   :rgb(14, 104, 177)
+}
+.example {
+background-color: salmon;
+color: rgb(32, 95, 95);
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+.example {background: red;}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+.example {background: rgb(46, 65, 16);}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+.example {background: rgb(29, 68, 28);}
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+.example {background: rgb(0, 255, 42);}
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+.example {background: rgba(158, 24, 47, 0.753);}
+}

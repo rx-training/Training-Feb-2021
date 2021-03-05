@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Asynchronons function</h2>
+
+    <p>Wait till 3000ms for the change</p>
+    <h1 id = "demo"></h1>
+    <p id = "demo1"></p>
+    <h1>Using the set interval display time of every second</h1>
+    <h1 id = "demo3"></h1>
+    <p id="demo4"></p>
+    <p>For Promise to someone</p>
+    <p id="demo5"></p>
+    <h1>Using Promise</h1>
+    <p id ="demo6"></p>
+    <h1>Usig Promise</h1>
+    <p id = "demo7"></p>
+    <script>
+        setTimeout(myFunction, 3000);
+      
+        function myFunction() {
+          document.getElementById("demo").innerHTML = "I love You !!";
+        }
+        </script>
+      <script>
+          setTimeout(function(){myFunction("Love you ");},4000);
+          function myFunction(value){
+            document.getElementById("demo1").innerHTML = value;
+          }
+      </script>
+      <script>
+        setInterval(myFunction,100)
+        function myFunction(){
+          let d = new Date();
+          document.getElementById("demo3").innerHTML=
+          d.getHours() + ":" +
+          d.getMinutes() + ":" +
+          d.getSeconds();
+        } 
+      </script>
+      <script>
+        function myDisplayer(some){
+          document.getElementById("demo4").innerHTML=some
+        }
+        function getFile(myCallback){
+          let req= new XMLHttpRequest();
+          req.open('GET','photo.html');
+          req.onload = function(){
+            if(req.status == 200){
+              myCallback(this.responseText);
+            }else{
+                myCallback("Error:" +req.status);
+            }
+          }
+          req.send();
+        }
+        getFile(myDisplayer)
+      </script>
+      <script>
+          function myDisplayer(some){
+            document.getElementById("demo5").innerHTML = some;
+          }
+          let myPromise = new Promise(function(myResolve, myReject){
+            let x = 0;
+            //some code try to change  x to 5 
+            if(x==0){
+              myResolve("OK");
+            }else{
+              myReject("Error")  
+            }
+          });
+          myPromise.then   (
+           function(value) {myDisplayer(value);},
+           function(error) {myDisplayer(error);}
+          
+           ); 
+        </script>
+        <script>
+        function myDisplayer(some){
+          document.getElementById("demo6").innerHTML = some;
+        }
+        
+        let myPromise = new Promise(function(myResolve, myReject){
+          let req = new XMLHttpRequest();
+          req.open=('GET',"photo.html ");
+          req.onload = function(){
+            if(req.status==200){
+              myResolve(req.response)
+            }else{
+              myReject("File not found");
+            }
+          }
+            req.send();
+        });
+        myPromise.then(
+          function(value) {myDisplayer(value);},
+          function(error) {myDisplayer(error);}
+        );
+        </script>
+
+          
+</body>
+</html>
+<html>

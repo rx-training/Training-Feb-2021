@@ -1,0 +1,33 @@
+<!DOCTYPE HTML> 
+<html> 
+  
+<head> 
+    <title> 
+        City_Name 
+    </title> 
+</head> 
+  
+<body style="text-align:center;" id="body"> 
+    <h1 style="color:green;">  
+            City 
+    </h1> 
+    
+    <p id="City" style="font-size: 15px; font-weight: bold;"> 
+    </p> 
+    
+    <button onclick="City1()"> 
+        Click here 
+    </button> 
+    
+    <script> 
+        var el_up = document.getElementById("City"); 
+        var arr = ["NewYork","Belgrade", "Helsinki", "Mosco","Peris"] 
+        el_up.innerHTML =  
+"Click on the button to see the array structure using Alert()"
+        function City1() { 
+            alert(arr); 
+        } 
+    </script> 
+</body> 
+  
+</html> 
