@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <title>Bootstrap 4</title>
+        <style>
+            .img-fluid{
+                margin-left: 170px; 
+                padding-top: 120px;
+            }
+            @media (max-width: 768px) { 
+                   .d-block{
+                    width: 90%;
+                    margin-bottom: 1100px;
+                }
+                .container1{
+                    display: block;
+                    width: 90%;
+                    margin-left: 30px;
+                }
+                .img-fluid{
+                    margin-left: 0px;
+                    margin-top: 0px;
+                }
+            }
+        </style>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        $("p").css({"background-color":"blue","color":"white","width":"500px"});
+
+        $("#helpText").mouseover(function(){
+            $("#helpText span").text("This is a mouseevent");
+        })
+        .mouseout(function(){
+            $("#helpText span").text("");
+        })
+
+
+
+        $("#1").click(function()
+        {
+            $("#8").text("you have selected : PHP");
+            $("#9").text("PHP is a server scripting language, and a powerful tool for making dynamic and interactive Web pages.");
+        })
+        $("#2").click(function()
+        {
+            $("#8").text("you have selected : ASP.NET");
+            $("#9").text("ASP.NET pages have the extension .aspx and are normally written in C# (C sharp).");
+        })
+        $("#3").click(function()
+        {
+            $("#8").text("you have selected : ASP");
+            $("#9").text("ASP stands for Active Server Pages.ASP is a development framework for building web pages.");
+        })
+        $("#4").click(function()
+        {
+            $("#8").text("you have selected : JSP");
+            $("#9").text("Java Server Pages (JSP) is a server-side programming technology that enables the creation of dynamic, platform-independent method for building Web-based applications.");
+        })
+        $("#5").click(function()
+        {
+            $("#8").text("you have selected : PERL");
+            $("#9").text("Perl is a programming language developed by Larry Wall, especially designed for text processing.");
+        })
+        $("#6").click(function()
+        {
+            $("#8").text("you have selected : Cold Fusion");
+            $("#9").text("ColdFusion is one of the easiest programming environments to use, and enables you to create powerful server-side web applications very quickly, with much less code than other technologies such as ASP, PHP, etc.");
+        })
+        $("#7").click(function()
+        {
+            $("#8").text("you have selected : Other");
+            $("#9").text("Other programming language like python , c , c++");
+        })
+    });
+
+
+</script>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-0 navbar-dark bg-dark">
+            <div class="container">
+                <a href="#" class="navbar-brand">
+                    <img src="../../../img/pic.PNG" alt="Logo" width="50px" height="50px">
+                </a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <a href="../../../index.html" class="nav-link">Redmine-git</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../html/html.html" class="nav-link">Html</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../css/css.html" class="nav-link">Css</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../bootstrap/bootstrap.html" class="nav-link">Bootstrap</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../js/js.html" class="nav-link">Javascript</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../jquery.html" class="nav-link active">Jquery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Sql</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!------------------- sidebar ---------------------->
+
+        <div class="d-block ml-4 text-center text-white bg-dark" style="height: 550px;">
+            <h4><strong>Jquery</strong></h4>
+            <hr class="bg-white">
+            <h5><b>Day 23</b></h5>
+            <a href="../Day23/assignment.html" class="btn bg-white py-0 my-2">Assignment</a>
+            <a href="../Day23/practice_exercise.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="../Day23/video_exercise.html" class="btn bg-white py-0">Video Exercise</a>
+
+            <hr class="bg-white mx-5">
+            <h5><b>Day 24</b></h5>
+            <a href="../Day24/assignment.html" class="btn bg-white py-0 my-2">Assignment</a>
+            <a href="../Day24/practice_exercise.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="../Day24/video_exercise.html" class="btn bg-white py-0">Video Exercise</a>
+
+        </div>
+
+        <!------------------- content ----------------------->
+
+        <div class="container container1 bg-light p-5 " style="margin-top: -550px;">
+        
+    <!----------exercise-1------------>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, nemo sed. Dolore, facilis labore natus accusantium neque delectus corrupti numquam deserunt libero officia pariatur iure est obcaecati eaque cumque suscipit!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, possimus unde rerum ipsam, eaque beatae debitis, voluptatum optio deserunt veritatis laudantium. Optio corrupti sit quibusdam itaque, libero architecto id ex.
+    </p>
+
+    <!---------exercise-2-------------->
+    <h1 id="helpText">
+        mouseevent
+        <span></span>
+    </h1>
+
+    <!----------exercise-3-------------->
+
+    <div>
+        <label><b>Plaese select your technology : </b></label>
+        <label><input type="radio" id="1" name="language" value="php">PHP</label>
+        <label><input type="radio" id="2" name="language" value="asp.NET">ASP.NET</label>
+        <label><input type="radio" id="3" name="language" value="asp">ASP</label>
+        <label><input type="radio" id="4" name="language" value="jsp">JSP</label>
+        <label><input type="radio" id="5" name="language" value="perl">PERL</label>
+        <label><input type="radio" id="6" name="language" value="cold fusion">Cold Fusion</label>
+        <label><input type="radio" id="7" name="language" value="other">Other</label><br><br>
+        <label id="8">you have selected : </label><br><br>
+        <span id="9"></span>
+    </div>
+
+        <script src="../../../js/jquery.min.js"></script>
+        <script src="../../../js/popper.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+    </body>
+</html>

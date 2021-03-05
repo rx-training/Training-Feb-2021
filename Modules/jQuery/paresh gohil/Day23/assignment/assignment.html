@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("select").change(function(){
+                $(this).find("option:selected").each(function(){
+                    var optionValue = $(this).attr("value");
+                    if(optionValue){
+                        $(".country").not("." + optionValue).hide();
+                        $("." + optionValue).show();
+                    } else{
+                        $(".country").hide();
+                    }
+                });
+            }).change();
+        });
+    </script>
+</head>
+<body>
+
+        <label for="country">Please select country : </label>
+        <select name="country" id="country">
+            <option id="1" value="Pleaseselect">Please select</option>
+            <option id="2" value="India">India</option>
+            <option id="3" value="srilanka">Sri Lanka</option>
+            <option id="4" value="southafrica">South Africa</option>
+            <option id="5" value="newzealand">New Zealand</option>
+            <option id="6" value="australia">Australia</option>
+        </select><br><br><br><br><br><br><br>
+
+        <div class="Pleaseselect country">
+            Selected Countries : <strong></strong><br>
+                                <strong>India</strong><br>
+                                <strong>Sri Lanka</strong><br>
+                                <strong>South Africa</strong><br>
+                                <strong>New Zealand</strong><br>
+                                <strong>Australia</strong><br>
+        </div>
+        <div class="India country">You have selected : <strong>India</strong></div>
+        <div class="srilanka country">You have selected : <strong>Sri Lanka</strong></div>
+        <div class="southafrica country">You have selected : <strong>South Africa</strong></div>
+        <div class="newzealand country">You have selected : <strong>New Zealand</strong></div>
+        <div class="australia country">You have selected : <strong>Australia</strong></div>
+    
+</body>
+</html>
