@@ -30,6 +30,7 @@ ItemId INT NOT NULL,
 SalesmanID varchar(10) NOT NULL,
 SalesmanProfit INT NOT NULL,
 DateSold date NOT NULL,
+Comission int,
 CONSTRAINT FKItemId FOREIGN KEY (SalesmanId,ItemId,DateSold) REFERENCES Inventories(SalesmanId,ItemId,DateSold)
 )
 
