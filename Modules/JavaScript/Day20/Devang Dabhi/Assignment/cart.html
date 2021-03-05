@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Cart</title>
+    <style>
+        .grid-container {
+          display: grid;
+          grid-template-columns: auto auto auto auto auto;
+          background-color: black
+          padding: 10px;
+        }
+        .grid-item {
+          background-color: rgba(255, 255, 255, 0.8);
+          border: 1px solid rgba(0, 0, 0, 0.8);
+          padding: 20px;
+          font-size: 30px;
+          text-align: center;
+        }
+        .grid-item1 {
+          background-color: rgba(255, 255, 255, 0.8);
+          border: 1px solid rgba(0, 0, 0, 0.8);
+          padding: 20px;
+          font-size: 30px;
+          text-align: center;
+        }
+        
+        .grid-item1 
+        {
+        grid-column: 1 / span 5;
+        grid-row: 1;
+        }
+
+        </style>
+        
+  </head>
+  <body>
+    <div class="grid-container">
+        <div class="grid-item">ProductID</div>
+        <div class="grid-item">ProductName</div>
+        <div class="grid-item">Price</div>  
+        <div class="grid-item">Quantity</div>
+        <div class="grid-item">Add</div>
+        <div class="grid-item">1</div>  
+        <div class="grid-item">Cheese</div>
+        <div class="grid-item">100</div>
+        <div class="grid-item">1</div>
+        <div class="grid-item"><button type="button" class="btn btn-primary">Add To Cart</button></div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">Pen</div>
+        <div class="grid-item">150</div>  
+        <div class="grid-item">2</div>
+        <div class="grid-item"><button type="button" class="btn btn-primary">Add To Cart</button></div>
+        <div class="grid-item">3</div>  
+        <div class="grid-item">Butter</div>
+        <div class="grid-item">100</div>
+        <div class="grid-item">1</div>
+        <div class="grid-item"><button type="button" class="btn btn-primary">Add To Cart</button></div>  
+        <div class="grid-item">4</div>
+        <div class="grid-item">Pencil</div>
+        <div class="grid-item">10</div>  
+        <div class="grid-item">1</div>
+        <div class="grid-item"><button type="button" class="btn btn-primary">Add To Cart</button></div>
+      </div>
+      <br><br>
+    <div class="grid-container">
+        <div class="grid-item1";><button type="button" class="btn btn-warning">Cart Summary</button></div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

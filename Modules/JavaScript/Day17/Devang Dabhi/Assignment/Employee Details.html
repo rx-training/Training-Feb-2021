@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Employee Details</title>
+    <style>
+      p{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+        <p class="alert alert-primary" id="id1"></p>
+        <p class="alert alert-secondary" id="id2"></p>
+        <p class="alert alert-warning" id="id3"></p>
+        <p class="alert alert-danger" id="id4"></p>
+        <p class="alert alert-primary" id="id5"></p>
+        <p class="alert alert-secondary" id="id6"></p>
+        <p class="alert alert-warning" id="id7"></p>
+        <p class="alert alert-danger" id="id8"></p>
+        <p class="alert alert-primary" id="id9"></p>
+        <p class="alert alert-warning" id="id10"></p>
+   
+    </div>
+    <form>
+
+        <label for="id">Employee Id:</label>
+        <input type="text" id="id" name="id" required><br>
+
+        <label for="Name">First name:</label>
+        <input type="text" id="fname" name="fname" required><br>
+
+        <label for="Age">Age:</label>
+        <input type="text" id="Age" name="Age" required><br>
+
+        <label for="Gender">Gender</label>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Female</label><br>
+
+        <label for="Designation">Designation:</label>
+        <input type="text" id="designation" name="Designation" required><br>
+
+        <label for="Salary">Salary:</label>
+        <input type="number" id="salary" name="Salary" required><br>
+        
+        <label for="Location">Location:</label>
+        <input type="text" id="location" name="Location" required><br>
+
+        <label for="email">email:</label>
+        <input type="email" id="email" pattern=".+@gmail.com" required><br>
+
+        <label for="Date_of_joining">Date_of_joining:</label>
+        <input type="date" id="Date_of_joining" name="Date_of_joining" required><br>
+
+        <label for="teliphone">teliphone:</label>
+        <input type="tel" id="tel" required><br>
+
+        
+        <input type="button" onclick="devang()" class="btn btn-primary" value="Submit">
+       
+        </form>
+
+        <script>
+          function devang()
+          {
+            
+          var a,b,c,d,e,f,g,h,i,j,k;
+          a=document.getElementById("id").value;
+          b=document.getElementById("fname").value;
+          c=document.getElementById("Age").value;
+          d=document.getElementById("male").chacked;
+          e=document.getElementById("female").chacked;
+          f=document.getElementById("designation").value;
+          g=document.getElementById("salary").value;
+          h=document.getElementById("location").value;
+          i=document.getElementById("email").value;
+          j=document.getElementById("Date_of_joining").value;
+          k=document.getElementById("tel").value;
+
+
+          if(a==="")
+          {
+            document.getElementById("id1").innerHTML="Enter ID";
+            document.getElementById("id1").style.display="block"
+
+          }
+          else (a)
+          if(b==="")
+          {
+            document.getElementById("id2").innerHTML="Enter Name";
+            document.getElementById("id2").style.display="block"
+
+          }
+          if(c==="")
+          {
+            document.getElementById("id3").innerHTML="Enter Age";
+            document.getElementById("id3").style.display="block"
+          }
+          else if(isNaN(c))
+          {
+            document.getElementById("id3").innerHTML="Age should br a number";
+            document.getElementById("id3").style.display="block"  
+          }
+          if(d==="true" || e==="false")
+          {
+
+          }
+          else
+          {
+            document.getElementById("id4").innerHTML="Enter Gender";
+            document.getElementById("id4").style.display="block"
+
+          }
+          if(f==="")
+          {
+            document.getElementById("id5").innerHTML="Enter Designation";
+            document.getElementById("id5").style.display="block"
+
+          }
+          if(g==="")
+          {
+            document.getElementById("id6").innerHTML=" Enter Salary";
+            document.getElementById("id6").style.display="block"
+
+          }
+          if(h==="")
+          {
+            document.getElementById("id7").innerHTML="Enter Location";
+            document.getElementById("id7").style.display="block"
+
+          }
+          if(i==="")
+          {
+            document.getElementById("id8").innerHTML="Enter Email";
+            document.getElementById("id8").style.display="block"
+
+          }
+          if(j==="")
+          {
+            document.getElementById("id9").innerHTML="Enter date of joining";
+            document.getElementById("id9").style.display="block"
+          }
+          if(k==="")
+          {
+            document.getElementById("id10").innerHTML="Enter telephone";
+            document.getElementById("id10").style.display="block"
+
+          }
+          
+        }
+        </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
