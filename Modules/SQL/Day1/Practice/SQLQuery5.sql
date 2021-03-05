@@ -59,8 +59,9 @@ REFERENCES Jobs(JobId)
 
 ALTER TABLE JobHistories
 DROP CONSTRAINT FKJob_Id
-DROP FOREIGN KEY FKJob_ID;
+
 
 ALTER TABLE JobHistories
 ADD locationNew  varchar(20);
 
+SELECT * FROM JobHistories
