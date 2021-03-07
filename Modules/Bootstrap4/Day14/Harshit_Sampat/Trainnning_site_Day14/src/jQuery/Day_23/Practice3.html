@@ -1,17 +1,155 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html>
 
 <head>
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <title>JQuery</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Trainning Work</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="/Training-Feb-2021/Modules/Bootstrap4/Day14/Harshit_Sampat/Trainnning_site_Day14/src/Javascript/Assets/style.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="container m-5">
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Day-Wise Task</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Day-23</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="../Day_23/practice1.html">Task-1(practice1)</a>
+                        </li>
+                        <li>
+                            <a href="../Day_23/practice2.html">Task-2(practice2)</a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Day_23/Practice3.html">Task-3(Practice 3)</a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Day_23/Assignment.html">Task-4(Assignment-Task)</a>
+                        </li>
+                        
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Day-24</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="../Day_24/w3_1_pracice1.html">Task-1</a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Day_24/w3_2_practice.html">Task-2</a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Day_24/w3_4_practice.html">Task-3</a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Day_24/w3_5_practice.html">Task-4</a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Day_24/w3_6_practice.html">Task-5</a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Day_24/w3_7_practice.html">Task-6</a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Day_24/w3_8_practice8.html">Task-7</a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Day_24/w3_practice_3.html">Task-8(Practice-Task)</a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Day_24/Assignment.html">Task-8(Assignment-Task)</a>
+                        </li>
+                    </ul>
+                </li>
+                        
+
+
+                    </ul>
+                </li>
+                
+        </nav>    
+        
+        <div>
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fas fa-align-left"></i>
+            </button>
+        </div> 
+        <div>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-align-justify"></i>
+            </button>
+        </div>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light text-white">
+                <div class="container-fluid">
+                    <div class="nabvar-brand" >
+                       <a href ="../index.html"> <img src="../assets/Rlogo.jpg" alt="" class="img-fluid ml-5"></a>
+                    </div>
+                    <!--<button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>-->
+                    
+                    <div class="collapse navbar-collapse ml-" id="navbarSupportedContent" >
+                        <ul class="nav navbar-nav ml-5">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Training-Feb-2021/Modules/Bootstrap4/Day14/Harshit_Sampat/Trainnning_site_Day14/src/HTML/index.html">HTML</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Training-Feb-2021/Modules/Bootstrap4/Day14/Harshit_Sampat/Trainnning_site_Day14/src/CSS_T/index.html">CSS</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Training-Feb-2021/Modules/Bootstrap4/Day14/Harshit_Sampat/Trainnning_site_Day14/src/Boot_strap/index.html">BootStrap</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Training-Feb-2021/Modules/Bootstrap4/Day14/Harshit_Sampat/Trainnning_site_Day14/src/Javascript/index.html">javascript</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/Training-Feb-2021/Modules/Bootstrap4/Day14/Harshit_Sampat/Trainnning_site_Day14/src/jQuery/index.html">jQuery</a>
+                            </li>
+                            <!--li class="nav-item ">
+                                <a class="nav-link" href="/Training-Feb-2021/Modules/Bootstrap4/Day14/Harshit_Sampat/Trainnning_site_Day14/src/Javascript/index.html">SQl</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/Training-Feb-2021/Modules/Bootstrap4/Day14/Harshit_Sampat/Trainnning_site_Day14/src/Javascript/index.html">Node js</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/Training-Feb-2021/Modules/Bootstrap4/Day14/Harshit_Sampat/Trainnning_site_Day14/src/Javascript/index.html">React js</a>
+                            </li-->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        <div class="container m-5">
         <form action="" class="form">
             <div class="form-group row">
                 <label for="lang" class="col-12">Please select your technology:</label>
