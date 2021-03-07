@@ -10,7 +10,8 @@ CREATE TABLE Employees (
 	Salary varchar(50) NOT NULL,
 	ManagerID int NOT NULL,
 	DepartmentID int NOT NULL
-	
+	CONSTRAINT fkDepartmentID FOREIGN KEY (DepartmentID) REFERENCES Departments (DepartmentID),
+	CONSTRAINT fkJobID FOREIGN KEY (JobID) REFERENCES Jobs (JobID)
 	
 );
 
