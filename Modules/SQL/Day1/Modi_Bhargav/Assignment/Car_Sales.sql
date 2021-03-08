@@ -7,7 +7,6 @@
    database, and how would you link the tables?
 */
 
-
 CREATE TABLE CompanyEmployes (
  EmpId int NOT NULL PRIMARY KEY,
  EmpName varchar(30) NOT NULL,
