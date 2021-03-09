@@ -1,4 +1,4 @@
-USE demo1;
+VARCHARUSE demo1;
 
 
 
@@ -6,13 +6,13 @@ USE demo1;
 CREATE TABLE Employees (
 
 	EmployeeID int PRIMARY KEY IDENTITY,
-	FirstName varchar(50) NOT NULL,
-	LastName varchar(50) NOT NULL,
-	Email varchar(50) NOT NULL,
-	PhoneNumber varchar(10) NOT NULL,
+	FirstName VARCHAR(50) NOT NULL,
+	LastName VARCHAR(50) NOT NULL,
+	Email VARCHAR(50) NOT NULL,
+	PhoneNumber VARCHAR(10) NOT NULL,
 	HireDate date NOT NULL,
 	JobID int NOT NULL,
-	Salary varchar(50) NOT NULL,
+	Salary VARCHAR(50) NOT NULL,
 	Commission int NOT NULL,
 	ManagerID int NOT NULL,
 	DepartmentID int NOT NULL

@@ -1,33 +1,33 @@
-Use Employees;
+USE Employees;
 
 --first
-Update Employees set Email= 'Not available', CommissionPct=0.10;
+UPDATE Employees SET Email= 'Not available', CommissionPct=0.10;
 
 --Second
-Update Employees set Email= 'Navailable', CommissionPct=0.50 where DepartmentID=110;
+UPDATE Employees SET Email= 'Navailable', CommissionPct=0.50 WHERE DepartmentID=110;
 
 --Third
-Update Employees set Email= 'available' where DepartmentID=80 AND CommissionPct<0.20;
+UPDATE Employees SET Email= 'available' WHERE DepartmentID=80 AND CommissionPct<0.20;
 
 --Forth
 
-Update Employees set Email= 'available for email' where DepartName=Accounting;\
+UPDATE Employees SET Email= 'available for email' WHERE DepartName=Accounting;
 
 --Fifth
-Update Employees set Salary= 8000 where EmployeeID=105 And Salary<5000;
+UPDATE Employees SET Salary= 8000 WHERE EmployeeID=105 AND Salary<5000;
 
 --Sixth
-Update Employees set JobId= 'SH_CLERk' where EmployeeID=118 And DepartmentID=30 And Not JobId Like 'SH%' ;
+UPDATE Employees SET JobId= 'SH_CLERk' WHERE EmployeeID=118 AND DepartmentID=30 AND NOT JobId LIKE 'SH%' ;
 
 
 --Seaven
-Update Employees set Salary =Case DepartmentID
-										when 40 then Salary+(Salary*.25)
-										when 90 then Salary+(Salary*.15)
-										When 110 then Salary+(Salary*.10)
-										Else Salary
-										End
-										Where DepartmentID In(40,50,60,70,80,90,110)
+UPDATE Employees SET Salary =CASE DepartmentID
+										WHEN 40 THEN Salary+(Salary*.25)
+										WHEN 90 THEN Salary+(Salary*.15)
+										WHEN 110 THEN Salary+(Salary*.10)
+										ElSE Salary
+										END
+										WHERE DepartmentID IN(40,50,60,70,80,90,110)
 
 
 

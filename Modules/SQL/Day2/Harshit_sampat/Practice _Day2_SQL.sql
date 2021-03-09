@@ -1,39 +1,39 @@
 --Practice1
-Select * from Employees
+Select * FROM Employees
 
 --Practice2
-Select FirstName,lastName from Employees 
+SELECT FirstName,lastName FROM Employees 
 
 --Practice3
-Select FirstName as "Employee Name" from Employees
+ SELECT FirstName AS "Employee Name" FROM Employees
 
 --Practice4
-select * from Employees where FirstName = 'Steven'
+ SELECT * FROM Employees WHERE FirstName = 'Steven'
 
 --Practice5	
-Select * from Employees where FirstName='Lex' or FirstName='Neena';	
+ SELECT * FROM Employees WHERE FirstName='Lex' OR FirstName='Neena';	
 
 --Practice 6
-Select * from Employees where  Not FirstName='Lex' or FirstName='Neena';	
+SELECT  * FROM Employees WHERE  NOT FirstName='Lex' OR FirstName='Neena';	
 
 --Practice 7
-Select * from Employees where Salary>5000 And Salary<8000 
+SELECT  * FROM Employees WHERE Salary>5000 AND Salary<8000 
 
 --Practice 8
-Select FirstName,LastName ,Salary ,PF=Salary*0.12 from Employees
+SELECT  FirstName,LastName ,Salary ,PF=Salary*0.12 FROM Employees
 
 --Practice 9
-Select FirstName from Employees where FirstName like 'N%'
+SELECT  FirstName FROM Employees WHERE FirstName lIKE 'N%'
 
 --Practice 10
-Select Distinct(DepartmentID) from Employees
+ SELECT Distinct(DepartmentID) FROM Employees
 
 --Practice 11
-Select * from Employees Order By FirstName desc;
+ SELECT * FROM Employees ORDER BY FirstName desc;
 
 
-Select FirstName,LastName,Salary from Employees Order By Salary ;
+SELECT  FirstName,LastName,Salary FROM Employees ORDER BY Salary ;
 
-Select TOP 2 Salary from Employees
+SELECT  TOP 2 Salary FROM Employees
 
-SELECT  * from String_Split('Lorem ipsum dolor sit amet.', ' ');
+SELECT  * FROM String_Split('Lorem ipsum dolor sit amet.', ' ');
