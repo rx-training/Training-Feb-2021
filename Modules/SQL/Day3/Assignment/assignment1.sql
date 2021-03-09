@@ -134,3 +134,33 @@ SELECT FirstName,LEN(FirstName) Length_FName FROM Employees
 	ORDER BY FirstName
 GO
 
+SELECT FirstName,LastName,HireDate FROM Employees 
+	WHERE MONTH(HireDate)=7 OR DAY(HireDate)=7;
+
+
+SELECT LEN(FirstName)LENGTH_FNAME FROM Employees WHERE LastName LIKE '_C%'
+GO 
+
+SELECT RIGHT(PhoneNumber, 4) FROM Employees
+GO
+
+UPDATE Employees SET PhoneNumber='999' WHERE PhoneNumber LIKE '%123%'
+GO
+
+SELECT FirstName, HireDate FROM Employees WHERE HireDate BETWEEN '1987-06-01' AND '1987-07-30'
+GO
+
+SELECT CONVERT(varchar, GETDATE(),113) FROM Employees
+GO
+
+SELECT FORMAT(GETDATE(),'hh:mm tt MMM dd,yy') FROM Employees
+GO
+
+SELECT FirstName, LastName FROM Employees WHERE MONTH(HireDate)=6
+GO
+
+SELECT FirstName,HireDate,DATEDIFF(year, HireDate, GETDATE()) FROM Employees;
+GO
+
+SELECT FirstName,HireDate FROM Employees WHERE YEAR(HireDate)=1987
+GO
