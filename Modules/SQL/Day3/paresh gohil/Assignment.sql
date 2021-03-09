@@ -12,7 +12,7 @@ Give each column an appropriate label. Sort the results by the employees’ FirstN
 /*Write a query to display the FirstName and Salary for all employees. Format the salary to be 10 characters long,
 left-padded with the $ symbol. Label the column SALARY.*/
 
-	SELECT FirstName,LPAD(Salary, 10, '$') AS SALARY FROM employees;
+	SELECT FirstName,LEFT(CONCAT('$',Salary),10) AS SALARY FROM employees;
 
 /*Write a query to display the employees with their code, first name,
 last name and hire date who hired either on seventh day of any month or seventh month in any year.*/
