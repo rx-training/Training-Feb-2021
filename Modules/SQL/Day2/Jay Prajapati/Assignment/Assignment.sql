@@ -43,6 +43,14 @@ WHERE DepartmentID = 80 and (CommissionPct*100 < 20);
 of employees table with ‘not available’ for 
 those employees who belongs to the ‘Accouning’ department.*/
 
+UPDATE Employees
+SET Email = 'not available'
+WHERE (SELECT * FROM Department
+		WHERE DepartmentName = 'Accounting');  
+
+		-- Here There is no such table Which name is Department
+
+
 /* 6. SQL statement to change salary of employee to 8000 
 whose ID is 105, if the existing salary is less than 5000.*/
 SElECT * from Employees
@@ -55,6 +63,10 @@ WHERE (SELECT Salary FROM Employees WHERE EmployeeID=104)<5000;
 which ID is 118, to SH_CLERK if the employee belongs to department, 
 which ID is 30 and the existing job ID does not start with SH.*/
 
+USE SQLDay2;
+UPDATE dbo.Employees
+SET JobId = 'SH_CLERK'
+WHERE DepartmentID = 30 AND JobId NOT LIKE 'SH%';
 
 /* 8. SQL statement to increase the salary of employees 
 under the department 40, 90 and 110 according to the
