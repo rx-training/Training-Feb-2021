@@ -164,7 +164,7 @@ WHEN 90 THEN Salary + (Salary * 0.15)
 WHEN 110 THEN Salary + (Salary * 0.10)
 ELSE Salary
 END
-select * from Employees
+SELECT * FROM Employees
 
 /* Write a SQL statement to increase the minimum and maximum salary of PU_CLERK by 2000 as well as the salary for those employees by 20% and commission by 10% . */
 UPDATE Employees SET Salary = Salary + (Salary * 0.20), CommissionPct = CommissionPct + (CommissionPct * 0.10) WHERE JobId = 'PU_CLERK'
