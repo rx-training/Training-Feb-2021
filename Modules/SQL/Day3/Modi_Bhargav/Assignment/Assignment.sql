@@ -18,7 +18,7 @@ SELECT  FirstName, LastName, HireDate FROM Employees WHERE DATEPART(DAY,HireDate
 
 /***** 4. Write a query to display the length of first name for employees where last name contains character �c� after 2nd position.*****/
 
-SELECT FirstName, LEN(FirstName) AS 'FirstName Length', LastName FROM Employees WHERE LastName LIKE ('__c%')
+SELECT FirstName, LEN(FirstName) AS 'FirstName Length', LastName FROM Employees WHERE CHARINDEX('c',LastName) > 2;
 
 /***** 5. Write a query to extract the last 4 character of PhoneNumber.*****/
 

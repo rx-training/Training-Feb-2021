@@ -2,9 +2,6 @@
 SELECT * FROM Person.Address
 UPDATE Person.Address SET ModifiedDate = GETDATE();
 
-SELECT * FROM Sales.SalesPerson
-UPDATE Sales.SalesPerson SET Bonus = 6000, CommissionPct = .10 ,SalesQuota = NULL
-
 SELECT * FROM Production.Product
 UPDATE Production.Product SET Color = N'Metalic Red' WHERE Name LIKE N'Road-250%' AND Color LIKE N'Blue';
 
@@ -66,3 +63,4 @@ SELECT * FROM HumanResources.EmployeeDepartmentHistory WHERE EndDate IS  NULL
 SELECT * FROM HumanResources.EmployeeDepartmentHistory WHERE EndDate IS NOT NULL
 
 SELECT * FROM Sales.SalesPerson
+UPDATE Sales.SalesPerson SET Bonus = 6000, CommissionPct = .10 ,SalesQuota = NULL
