@@ -74,26 +74,48 @@
 
 /* 13. Write a query to display the employee ID, first name, last names, and department names of all employees. */
 
-		SELECT EmployeeID, FirstName, LastName, (SELECT DepartmentName FROM Departments d
-			 WHERE e.DepartmentID = d.DepartmentID) Departments 
-			 FROM Employees e ORDER BY Departments;
+		SELECT EmployeeID, FirstName, LastName, 
+		(SELECT DepartmentName FROM Departments d WHERE e.DepartmentID = d.DepartmentID) Departments 
+	    FROM Employees e ORDER BY Departments;
 
 /* 14. Write a query to display the employee ID, first name, last names, salary of all employees whose salary is 
        above average for their departments. */
 
+	   SELECT DepartmentID,EmployeeID, FirstName, LastName, Salary FROM employees AS emp
+	   WHERE Salary > (SELECT AVG(Salary) FROM Employees WHERE DepartmentID = emp.DepartmentID);
+
 /* 15. Write a query to fetch even numbered records from employees table.  */
+		
+
 
 /* 16. Write a query to find the 5th maximum salary in the employees table.  */
+		SELECT * FROM (SELECT DENSE_RANK() OVER (ORDER BY Salary DESC) 'Max',* FROM Employees) 
+		AS e WHERE [Max] = 5;
 
 /* 17. Write a query to find the 4th minimum salary in the employees table.  */
 
+		SELECT * FROM (SELECT DENSE_RANK() OVER (ORDER BY Salary DESC) 'Min',* FROM Employees) 
+		AS e WHERE [Min] = 4;
+
 /* 18. Write a query to select last 10 records from a table. */
+
+		SELECT TOP 10 * FROM (SELECT ROW_NUMBER()  OVER(ORDER BY EmployeeID) AS Rank,* FROM Employees)
+		AS e ORDER BY Rank DESC;
 
 /* 19. Write a query to list department number, name for all the departments in which there are no employees in the 
        department.  */
 
+	   SELECT DepartmentID, DepartmentName FROM Departments WHERE DepartmentID NOT IN (SELECT DepartmentID FROM Employees);
+
 /* 20. Write a query to get 3 maximum salaries.  */
+
+	   SELECT TOP 3  EmployeeID,FirstName,Salary FROM Employees ORDER BY Salary DESC;
 
 /* 21. Write a query to get 3 minimum salaries.  */
 
+	   SELECT TOP 3  EmployeeID,FirstName,Salary FROM Employees ORDER BY Salary;
+
 /* 22. Write a query to get nth max salaries of employees.  */
+
+	   SELECT * FROM Employees e WHERE (1) = (SELECT COUNT(DISTINCT(e1.Salary)) FROM Employees e1
+	   WHERE e1.Salary > e.Salary);
