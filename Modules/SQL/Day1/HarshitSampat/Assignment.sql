@@ -52,4 +52,3 @@ CREATE TABLE Sales (
 	CONSTRAINT fkCarID FOREIGN KEY (CarID) REFERENCES Inventories (CarID),
 	CONSTRAINT fkSalesmanID FOREIGN KEY (SalesmanID) REFERENCES Employees (EmployeeID)
 );
-
