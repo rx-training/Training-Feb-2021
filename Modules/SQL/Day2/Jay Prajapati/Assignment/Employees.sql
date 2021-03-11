@@ -132,5 +132,3 @@ INSERT INTO Employees (EmployeeID,FirstName,LastName , Email, PhoneNumber, HireD
 ('205', 'Shelley', 'Higgins', 'SHIGGINS', '515.123.8080', '1987-09-30', 'AC_MGR', '12000.00', '0.00', '101', '110'),
 ('206', 'William', 'Gietz', 'WGIETZ', '515.123.8181', '1987-10-01', 'AC_ACCOUNT', '8300.00', '0.00', '205', '110');
 
-use [SQLDay2]
-select * from Employees;
