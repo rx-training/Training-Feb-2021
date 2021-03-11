@@ -115,6 +115,7 @@ GO
 
 --15. Find the name and salesperson ID of the salesperson who sold the most cars for the company at dealerships located in Gujarat between March 1, 2010 and March 31, 2010.
 
+
 /*16. Calculate the payroll for the month of March 2010.
 	* The payroll consists of the name, salesperson ID, and gross pay for each salesperson who worked that month.
         * The gross pay is calculated as the base salary at each dealership employing the salesperson that month, along with the total commission for the salesperson that month.
