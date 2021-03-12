@@ -45,7 +45,7 @@ USE Employees
 
 	SELECT * FROM JobHistory
 
-	SELECT EmployeeID,JobID,DATEDIFF(DAY,StartDate,EndDate) AS 'Days' FROM JobHistory WHERE DepartmentID = 90
+	CREATE VIEW Deptmen AS SELECT EmployeeID,JobID,DATEDIFF(DAY,StartDate,EndDate) AS 'Days' FROM JobHistory WHERE DepartmentID = 90
 
 /*Write a View to display the department name, manager name, and city.*/
 
