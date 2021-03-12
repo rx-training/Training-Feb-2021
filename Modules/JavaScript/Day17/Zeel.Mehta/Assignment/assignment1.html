@@ -93,20 +93,9 @@
 
 </style>
         <script type="text/javascript">
-        function myFunction(num)
+        function myFunction()
             {
-                re = /^([A-Za-z]\w{5})$/;
-                
-                if(regs = num.value.match(re)) 
-                    { 
-                        return true;
-                    }
-                    else{
-                        
-                    alert("EmployeeID should be at least 5 character long");
-                        
-                    }
-                
+                var eid=document.getElementById()                
             }
             </script>
     </head>
@@ -119,7 +108,7 @@
                             <h1>Employee Details</h1><br>
                             <div>
                                 <label class="text-muted">ID : </label>
-                                <input class="float-right" id="num" name="num"  type="text" required>
+                                <input class="float-right" id="eid" name="num"  type="text" required>
                             </div><br>
                            <div>
                                 <label class="text-muted ">Name : </label>
@@ -169,7 +158,7 @@
                                 <input  name="gender" type="radio"  value="option2">
                                 <label class=" text-muted">Female</label>
                               </div><br>                                      
-                            <input type="submit"  value="Login" onclick="myFunction(num)">   
+                            <input type="submit"  value="Login" onclick="myFunction()">   
                         </form>
                     </div>
                 </div>

@@ -20,23 +20,44 @@
                 if(num.value != '') 
                 {
                     if(regs = num.value.match(re)) 
-                    {                  
+                    {            
+                        m=regs[1];
+                        d=regs[2];
+                        y=regs[3];
+                        console.log(m);     
+                        console.log(d);
+                        console.log(y);
                         // month value between 1 and 12
-                        if(regs[1] < 1 || regs[1] > 12) 
+                        if(m<1||m>12) 
                         {
-                            document.getElementById("demo").innerHTML="Invalid Month : " + regs[1];
+                            document.getElementById("demo").innerHTML="Invalid Month : " + m;
                             return false;    
                         }
                         // day value between 1 and 31
-                        if(regs[2] < 1 || regs[2] > 31) 
+                        if((d<1 || d>31) || ((m==4 || m==6 || m==9 || m==11) && d==31) || (m==2 && d>29)) 
                         {
-                            document.getElementById("demo").innerHTML="Invalid Day : " + regs[2];
-                            return false;
+                            document.getElementById("demo").innerHTML="Invalid Day : " + d;
+                            return false;      
                         }
-                        // year value between 1902 and 2021
-                        if(regs[3] < 1900 || regs[3] > (new Date()).getFullYear()) 
+
+                        var lyear=false;
+                        if(y%4==0)
                         {
-                            document.getElementById("demo").innerHTML="Invalid Year: " + regs[3] + " - must be between 1900 and " + (new Date()).getFullYear();
+                            if(y%100==0)
+                            {
+                                if(y%400==0)
+                                {
+                                    lyear=true;
+                                }
+                            }
+                            else
+                            {
+                                lyear=true;
+                            }
+                        }
+                        if(!lyear && d>28 && m==2)
+                        {
+                            document.getElementById("demo").innerHTML="Invalid Day For Year "+y+" : " + d;
                             return false;
                         }
                     } 
@@ -54,16 +75,17 @@
     </head>
     <body class="bg-secondary">
         <div class="container col-lg-4 ">
-            <h1>Calculator</h1>
-            <form class="bg-light">
+            <h1>CHECK DATE</h1>
+            <form class="bg-light border border-bg-dark p-3 m-3">
                 <div class="form-group">
                     <label  class="form-control-label">Enter Date  : </label>
                     <input type="text" id="num" name="num"  class="form-control" placeholder="MM-DD-YYYY" ><br>  
                     <label>Select operation you want to perform : </label><br>
-                    <button type="button" onclick="dateFunction(num)"  class="btn btn-outline-dark btn-block">Calculate</button>          
+                    <button type="button" onclick="dateFunction(num)"  class="btn btn-outline-dark btn-block">Check Date</button>          
                 </div>
+                <h4>Result : <p id="demo" class="text-success"></p></h4>
             </form>
-            <h4>Result : <p id="demo" class="text-light"></p></h4>
+            
         </div>  
 
 
