@@ -16,7 +16,7 @@ GO
 SELECT DepartmentID,MAX(Salary) AS 'Max Salary' FROM Employees GROUP BY DepartmentID ORDER BY MAX(Salary)
 GO
 
-SELECT DepartmentID,MIN(Salary) AS 'Max Salary' FROM Employees GROUP BY DepartmentID ORDER BY MIN(Salary)
+SELECT DepartmentID,MIN(Salary) AS 'Min Salary' FROM Employees GROUP BY DepartmentID ORDER BY MIN(Salary)
 GO
 
 SELECT DepartmentID,SUM(Salary) AS 'TotalSalary' FROM Employees GROUP BY DepartmentID HAVING SUM(Salary)>50000 ORDER BY SUM(Salary) DESC

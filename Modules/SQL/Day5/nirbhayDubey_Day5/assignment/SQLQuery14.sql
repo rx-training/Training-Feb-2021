@@ -13,15 +13,15 @@ FROM Dealer.Customers c
 WHERE City='Ahmedabad';
 GO
 
---3. List the VIN, make, model, year, and mileage of all cars in the inventory of the dealership named "Hero Honda Car World".
+--3. List the VIN, make, model, year, and mileage of all cars in the inventory of the dealership named "Chirag Moters".
 SELECT 
 	c.Vin,
 	c.Make,
 	c.Model,
 	c.Year,
 	c.Mileage
-FROM Dealer.Cars c JOIN Dealer.Inventory i ON c.Vin=i.Vin; 
-GO
+FROM Dealer.Cars c,Dealer.Inventory i,Dealer.Dealerships d
+WHERE c.Vin=i.Vin AND i.DealerShipId=d.DealerShipId AND d.Name='Chirag Moters';
 
 --4. List names of all customers who have ever bought cars from the dealership named "Concept Hyundai".
 SELECT c.Name
@@ -95,14 +95,21 @@ ORDER BY w.BaseSalaryForMonth DESC;
 GO
 
 --12. List the name, street address, city, and state of any customer who has bought more than two cars from all dealerships combined since January 1, 2010.
-SELECT 
-	c.Name,
-	c.Address,
-	c.City,
-	c.State
-FROM Dealer.Customers c,Dealer.Sales s
-WHERE c.CustomerId=s.CustomerId;
+WITH CustSaleDealer(Cid,Did) AS
+(
+	SELECT 
+		c.CustomerId,
+		d.DealerShipId
+	FROM Dealer.Customers c,Dealer.Sales s,Dealer.Dealerships d
+	WHERE c.CustomerId=s.CustomerId AND s.DealerShipId=d.DealerShipId
+)
+SELECT *
+FROM Dealer.Customers c
+WHERE (SELECT COUNT(Cid) FROM CustSaleDealer WHERE Cid=c.CustomerId)>=(SELECT COUNT(DealerShipId) FROM Dealer.Dealerships)*2
+AND (SELECT COUNT(DISTINCT Did) FROM CustSaleDealer WHERE Cid=c.CustomerId)>=(SELECT COUNT(DealerShipId) FROM Dealer.Dealerships)
+AND (SELECT MIN(Sdate) FROM CustSaleDealer WHERE Cid=c.CustomerId)>'2010-01-01';
 GO
+
 
 --13. List the name, salesperson ID, and total sales amount for each salesperson who has ever sold at least one car. The total sales amount for a salesperson is the sum of the sale prices of all cars ever sold by that salesperson.
 SELECT sp.Name,sp.SalesPersonId,SUM(sl.SalePrice) AS 'Total Sales Amount'
