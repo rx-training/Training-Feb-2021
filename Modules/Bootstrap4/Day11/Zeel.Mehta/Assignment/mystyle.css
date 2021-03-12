@@ -157,31 +157,31 @@
     grid-area: one;
 }
 .painting-2{
-    background: url("paintings-img/1920px-Rembrandt_-_Rembrandt_and_Saskia_in_the_Scene_of_the_Prodigal_Son_-_Google_Art_Project.jpg"); 
+    background: url("paintings-img/Rembrandt_-_Portrait_of_a_Woman_with_Gloves_-_NGI.808.jpg"); 
     background-position: center; 
     background-size: cover;
     grid-area: two;
 }
 .painting-3{
-    background: url("paintings-img/1920px-Rembrandt_van_Rijn_-_Portrait_of_Willem_Burchgraeff_-_O_854_-_Slovak_National_Gallery.jpg"); 
+    background: url("paintings-img/1920px-Rembrandt_van_Rijn_198.jpg"); 
     background-position: center; 
     background-size: cover;
     grid-area: three;
 }
 .painting-4{
-    background: url("paintings-img/1920px-Rembrandt_van_Rijn_198.jpg"); 
+    background: url("paintings-img/1920px-Rembrandt_van_Rijn_-_Portrait_of_Willem_Burchgraeff_-_O_854_-_Slovak_National_Gallery.jpg"); 
     background-position: center; 
     background-size: cover;
     grid-area: four;
 }
 .painting-5{
-    background: url("paintings-img/2560px-Rembrandt_Harmensz._van_Rijn_-_Old_Man_with_a_Gold_Chain_-_Google_Art_Project.jpg"); 
+    background: url("paintings-img/Rembrandt-SMELL.jpg"); 
     background-position: center; 
     background-size: cover;
     grid-area: five;
 }
 .painting-6{
-    background: url("paintings-img/2560px-Rembrandt_Harmensz._van_Rijn_-_Zelfportret_op_jeugdige_leeftijd_-_Google_Art_Project.jpg"); 
+    background: url("paintings-img/2560px-Rembrandt_Harmensz._van_Rijn_-_Old_Man_with_a_Gold_Chain_-_Google_Art_Project.jpg"); 
     background-position: center; 
     background-size: cover;
     grid-area: six;
@@ -193,19 +193,19 @@
     grid-area: seven;
 }
 .painting-8{
-    background: url("paintings-img/Rembrandt_-_Portrait_of_a_Woman_with_Gloves_-_NGI.808.jpg"); 
+    background: url("paintings-img/Rembrandt_van_Rijn_197.jpg"); 
     background-position: center; 
     background-size: cover;
     grid-area: eight;
 }
 .painting-9{
-    background: url("paintings-img/Rembrandt_van_Rijn_197.jpg"); 
+    background: url("paintings-img/1920px-Rembrandt_-_Rembrandt_and_Saskia_in_the_Scene_of_the_Prodigal_Son_-_Google_Art_Project.jpg"); 
     background-position: center; 
     background-size: cover;
     grid-area: nine;
 }
 .painting-10{
-    background: url("paintings-img/Rembrandt-SMELL.jpg"); 
+    background: url("paintings-img/2560px-Rembrandt_Harmensz._van_Rijn_-_Zelfportret_op_jeugdige_leeftijd_-_Google_Art_Project.jpg"); 
     background-position: center; 
     background-size: cover;
     grid-area: ten;
@@ -316,4 +316,3 @@
           text-align: left;
       } 
   }
-
