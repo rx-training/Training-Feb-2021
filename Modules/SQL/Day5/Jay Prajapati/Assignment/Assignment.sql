@@ -9,7 +9,7 @@ Department NVARCHAR(20),
 ManagerID INT);
 
 INSERT INTO EmployeesDetail
-VALUES(1,'John', 'Abraham',1000000, '01-01-2013' , 'Banking', NULL)
+VALUES(1,'John', 'Abraham',1000000, '01-01-2013' , 'Banking', NULL),
 (2,'Michael', 'Clarke',80000, '01-01-2013' , 'Insurance', 1),
 (3,'Roy', 'Thomas',70000, '01-02-2013' , 'Banking', 1),
 (4,'Tom', 'Jose',60000, '01-02-2013' , 'Insurance', 2),
