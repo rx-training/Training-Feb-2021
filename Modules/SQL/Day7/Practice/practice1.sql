@@ -127,184 +127,19 @@ INSERT INTO Employees (EmployeeID,FirstName,LastName , Email, PhoneNumber, HireD
 ('205', 'Shelley', 'Higgins', 'SHIGGINS', '515.123.8080', '1987-09-30', 'AC_MGR', '12000.00', '0.00', '101', '110'),
 ('206', 'William', 'Gietz', 'WGIETZ', '515.123.8181', '1987-10-01', 'AC_ACCOUNT', '8300.00', '0.00', '205', '110');
 
-CREATE TABLE Departments (
-   DepartmentID decimal(4,0) NOT NULL DEFAULT '0',
-   DepartmentName varchar(30) NOT NULL,
-   ManagerID decimal(6,0) DEFAULT NULL,
-   LocationID decimal(4,0) DEFAULT NULL,
-	PRIMARY KEY (DepartmentID),
- )
-
- INSERT INTO Departments  VALUES
-('10', 'Administration', '200', '1700'),
-('20', 'Marketing', '201', '1800'),
-('30', 'Purchasing', '114', '1700'),
-('40', 'Human Resources', '203', '2400'),
-('50', 'Shipping', '121', '1500'),
-('60', 'IT', '103', '1400'),
-('70', 'Public Relations', '204', '2700'),
-('80', 'Sales', '145', '2500'),
-('90', 'Executive', '100', '1700'),
-('100', 'Finance', '108', '1700'),
-('110', 'Accounting', '205', '1700'),
-('120', 'Treasury', '0', '1700'),
-('130', 'Corporate Tax', '0', '1700'),
-('140', 'Control And Credit', '0', '1700'),
-('150', 'Shareholder Services', '0', '1700'),
-('160', 'Benefits', '0', '1700'),
-('170', 'Manufacturing', '0', '1700'),
-('180', 'Construction', '0', '1700'),
-('190', 'Contracting', '0', '1700'),
-('200', 'Operations', '0', '1700'),
-('210', 'IT Support', '0', '1700'),
-('220', 'NOC', '0', '1700'),
-('230', 'IT Helpdesk', '0', '1700'),
-('240', 'Government Sales', '0', '1700'),
-('250', 'Retail Sales', '0', '1700'),
-('260', 'Recruiting', '0', '1700'),
-('270', 'Payroll', '0', '1700');
+SELECT * FROM Employees
 
 
-CREATE TABLE Locations
+WITH EMP_CTE (EmployeeID,DepartmentID,HireDate)
+AS
 (
-   LocationID decimal(4,0) NOT NULL DEFAULT '0',
-   StreetAddress varchar(40) DEFAULT NULL,
-   PostalCode varchar(12) DEFAULT NULL,
-   City varchar(30) NOT NULL,
-   StateProvince varchar(25) DEFAULT NULL,
-   CountryID varchar(2) DEFAULT NULL,
-  PRIMARY KEY (LocationID),
- 
+SELECT EmployeeID,DepartmentID,HireDate 
+FROM Employees
+
 )
 
-INSERT INTO Locations  VALUES
-('1000', '1297 Via Cola di Rie', '989', 'Roma', '', 'IT'),
-('1100', '93091 Calle della Testa', '10934', 'Venice', '', 'IT'),
-('1200', '2017 Shinjuku-ku', '1689', 'Tokyo', 'Tokyo Prefecture', 'JP'),
-('1300', '9450 Kamiya-cho', '6823', 'Hiroshima', '', 'JP'),
-('1400', '2014 Jabberwocky Rd', '26192', 'Southlake', 'Texas', 'US'),
-('1500', '2011 Interiors Blvd', '99236', 'South San Francisco', 'California', 'US'),
-('1600', '2007 Zagora St', '50090', 'South Brunswick', 'New Jersey', 'US'),
-('1700', '2004 Charade Rd', '98199', 'Seattle', 'Washington', 'US'),
-('1800', '147 Spadina Ave', 'M5V 2L7', 'Toronto', 'Ontario', 'CA'),
-('1900', '6092 Boxwood St', 'YSW 9T2', 'Whitehorse', 'Yukon', 'CA'),
-('2000', '40-5-12 Laogianggen', '190518', 'Beijing', '', 'CN'),
-('2100', '1298 Vileparle (E)', '490231', 'Bombay', 'Maharashtra', 'IN'),
-('2200', '12-98 Victoria Street', '2901', 'Sydney', 'New South Wales', 'AU'),
-('2300', '198 Clementi North', '540198', 'Singapore', '', 'SG'),
-('2400', '8204 Arthur St', '', 'London', '', 'UK'),
-('2500', '"Magdalen Centre', ' The Oxford ', 'OX9 9ZB', 'Oxford', 'Ox'),
-('2600', '9702 Chester Road', '9629850293', 'Stretford', 'Manchester', 'UK'),
-('2700', 'Schwanthalerstr. 7031', '80925', 'Munich', 'Bavaria', 'DE'),
-('2800', 'Rua Frei Caneca 1360', '01307-002', 'Sao Paulo', 'Sao Paulo', 'BR'),
-('2900', '20 Rue des Corps-Saints', '1730', 'Geneva', 'Geneve', 'CH'),
-('3000', 'Murtenstrasse 921', '3095', 'Bern', 'BE', 'CH'),
-('3100', 'Pieter Breughelstraat 837', '3029SK', 'Utrecht', 'Utrecht', 'NL'),
-('3200', 'Mariano Escobedo 9991', '11932', 'Mexico City', '"Distrito Federal', '"');
+SELECT EmployeeID,DepartmentID,HireDate
+FROM EMP_CTE
 
-
-
-CREATE TABLE Countries (
-  CountryID varchar(2) NOT NULL,
-  CountryName varchar(40) DEFAULT NULL,
-  RegionID decimal(10,0) DEFAULT NULL,
-  PRIMARY KEY (CountryID),
-
-) 
-
---
--- Dumping data for table `countries`
---
-
-INSERT INTO countries  VALUES
-('AR', 'Argentina', '2'),
-('AU', 'Australia', '3'),
-('BE', 'Belgium', '1'),
-('BR', 'Brazil', '2'),
-('CA', 'Canada', '2'),
-('CH', 'Switzerland', '1'),
-('CN', 'China', '3'),
-('DE', 'Germany', '1'),
-('DK', 'Denmark', '1'),
-('EG', 'Egypt', '4'),
-('FR', 'France', '1'),
-('HK', 'HongKong', '3'),
-('IL', 'Israel', '4'),
-('IN', 'India', '3'),
-('IT', 'Italy', '1'),
-('JP', 'Japan', '3'),
-('KW', 'Kuwait', '4'),
-('MX', 'Mexico', '2'),
-('NG', 'Nigeria', '4'),
-('NL', 'Netherlands', '1'),
-('SG', 'Singapore', '3'),
-('UK', 'United Kingdom', '1'),
-('US', 'United States of America', '2'),
-('ZM', 'Zambia', '4'),
-('ZW', 'Zimbabwe', '4');
-
-
-
-CREATE TABLE  JobHistory (
-   EmployeeID decimal(6,0) NOT NULL,
-   StartDate date NOT NULL,
-   EndDate date NOT NULL,
-   JobID varchar(10) NOT NULL,
-   DepartmentID decimal(4,0) DEFAULT NULL,
-   PRIMARY KEY (EmployeeID,StartDate),
-
-) 
-select * from JobHistory
-
-INSERT INTO  JobHistory VALUES
-('102', '1993-01-13', '1998-07-24', 'IT_PROG', '60'),
-('101', '1989-09-21', '1993-10-27', 'AC_ACCOUNT', '110'),
-('101', '1993-10-28', '1997-03-15', 'AC_MGR', '110'),
-('201', '1996-02-17', '1999-12-19', 'MK_REP', '20'),
-('114', '1998-03-24', '1999-12-31', 'ST_CLERK', '50'),
-('122', '1999-01-01', '1999-12-31', 'ST_CLERK', '50'),
-('200', '1987-09-17', '1993-06-17', 'AD_ASST', '90'),
-('176', '1998-03-24', '1998-12-31', 'SA_REP', '80'),
-('176', '1999-01-01', '1999-12-31', 'SA_MAN', '80')
-
-
-
-CREATE VIEW NEW_VIEW 
-AS
-SELECT E.FirstName, E.LastName,E.SALARY,E.JobId,D.DepartmentID,D.DepartmentName 
-FROM EMPLOYEES E JOIN Departments D ON E.DepartmentID=D.DepartmentID
-WHERE D.DepartmentID = 
-(SELECT D.DepartmentID FROM Locations L JOIN Departments D
-ON L.LocationID=D.LocationID WHERE City LIKE 'LONDON')
-GO
-
-SELECT * FROM NEW_VIEW
-
-CREATE VIEW NEW_VIEW1
-AS
-SELECT COUNT(E.EmployeeID) AS COUNT_EMPLOYEES,D.DepartmentName FROM Employees E JOIN Departments D
-ON E.DepartmentID=D.DepartmentID GROUP BY D.DepartmentName
-GO
-
-SELECT * FROM NEW_VIEW1
-
-SELECT EmployeeID,JobID,DATEDIFF(day, StartDate,EndDate) AS 'Duration' FROM JobHistory WHERE DepartmentID=90
-GO
-
-CREATE VIEW NEW_VIEW3
-AS
-SELECT D.DepartmentName,D.ManagerID,L.City
-FROM Departments D JOIN Locations L 
-ON D.LocationID=L.LocationID
-GO
-
-SELECT * FROM NEW_VIEW3
-
-SELECT E.FirstName,E.LastName,E.HireDate,DATEDIFF(YEAR, HireDate, GETDATE()),E.Salary,D.DepartmentName 
-FROM Employees E JOIN Departments D
-ON E.DepartmentID=D.DepartmentID
-GO
-
-
-
-
+SELECT EmployeeID,DepartmentID,HireDate 
+FROM Employees
