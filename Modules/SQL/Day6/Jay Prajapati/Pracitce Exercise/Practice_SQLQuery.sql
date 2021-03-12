@@ -137,8 +137,10 @@ average for their departments. */
 SELECT EmployeeID,FirstName,LastName,Salary
 FROM Employees AS E
 INNER JOIN Departments AS D
+ON E.DepartmentID = D.DepartmentID
 WHERE E.Salary > ALL(SELECT AVG(Salary)
 FROM Employees 
+WHERE DepartmentID = D.DepartmentID
 GROUP BY DepartmentID)
 
 /*15. Write a query to fetch even numbered records from 
@@ -167,8 +169,12 @@ WHERE SalRank = 4;
 
 /*18. Write a query to select last 10 records from a table. */
 
-SELECT *
-FROM (SELECT )
+
+SELECT Salary AS Last10Record
+FROM (SELECT ROW_NUMBER() OVER (ORDER BY Salary) AS SalRank,*
+FROM Employees) AS SalaryRank
+WHERE SalRank > (SELECT Count(*)
+FROM Employees)-10;
 
 /*19. Write a query to list department number, name for all the 
 departments in which there are no employees in the department.*/ 
