@@ -8,9 +8,19 @@
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../scss/style.scss">
         <title>Training Content Site</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         <style>
+            th{
+                text-align: center;
+            }
+            table{
+                margin-left: 100px ;
+            }
             @media screen and (max-width: 700px) {
+            table{
+                margin-left: 0px ;
+            }
             .sidebar-container {
                 width: 100%;
                 height: auto;
@@ -71,152 +81,90 @@
         <div class="sidebar-container col-md-3">
 
             <div class=" sidebar-logo">
-              Day 15
+              Day 22_23
             </div>
             <ul class="sidebar-navigation">
               <li class="header">Practice</li>
               <li>
-                <a href="js151.html">Practice 1</a>
+                <a href="jq1.html">Practice 1</a>
               </li>
               <li>
-                <a href="js152.html">Practice 2</a>
+                <a href="jq2.html">Practice 2</a>
+              </li>
+              <li>
+                <a href="jq3.html">Practice 3</a>
               </li>
               <li class="header">Assignment</li>
               <li>
-                <a href="js153.html">Assignment 1</a>
+                <a href="jq4.html">Assignment 1</a>
               </li>
             </ul><br>
 
             <div class=" sidebar-logo">
-                Day 16
+                Day 24
             </div>
             <ul class="sidebar-navigation">
                 <li class="header">Practice</li>
                 <li>
-                  <a href="js161.html">Practice 1</a>
+                  <a href="jqq1.html" target="_blank">Practice 1</a>
                 </li>
                 <li>
-                  <a href="js162.html">Practice 2</a>
+                  <a href="jqq2.html" target="_blank">Practice 2</a>
                 </li>
                 <li>
-                    <a href="js163.html">Practice 3</a>
-                </li>
-                <li>
-                    <a href="js164.html">Practice 4</a>
-                </li>
-                <li>
-                    <a href="js165.html">Practice 5</a>
+                    <a href="jqq3.html" target="_blank">Practice 3</a>
                 </li>
                 <li class="header">Assignment</li>
                 <li>
-                  <a href="js166.html">Assignment 1</a>
+                  <a href="jqq4.html">Assignment 1</a>
                 </li>
-            </ul><br>
-
-            <div class=" sidebar-logo">
-              Day 17
-            </div>
-            <ul class="sidebar-navigation">
-                <li class="header">Practice</li>
-                <li>
-                  <a href="js171.html">Practice 1</a>
-                </li>
-                <li>
-                  <a href="js172.html">Practice 2</a>
-                </li>
-                <li>
-                    <a href="js173.html">Practice 3</a>
-                </li>
-                <li>
-                    <a href="js174.html">Practice 4</a>
-                </li>
-                <li>
-                    <a href="js175.html">Practice 5</a>
-                </li>
-                <li>
-                  <a href="js176.html">Practice 6</a>
-                </li>
-                <li>
-                  <a href="js177.html">Practice 7</a>
-                </li>
-                <li>
-                  <a href="js178.html">Practice 8</a>
-                </li>
-                <li>
-                  <a href="js179.html">Practice 9</a>
-                </li>
-                <li class="header">Assignment</li>
-                <li>
-                  <a href="js1710.html">Assignment 1</a>
-                </li>
-            </ul><br>
-
-            <div class=" sidebar-logo">
-              Day 18
-            </div>
-            <ul class="sidebar-navigation">
-              <li class="header">Practice</li>
-              <li>
-                <a href="js181.html">Practice 1</a>
-              </li>
-              <li>
-                <a href="js182.html">Practice 2</a>
-              </li>
-              <li>
-                <a href="js183.html">Practice 3</a>
-              </li>
-              <li class="header">Assignment</li>
-              <li>
-                <a href="js184.html">Assignment 1</a>
-              </li>
-            </ul><br>
-
-            <div class=" sidebar-logo">
-              Day 19
-            </div>
-            <ul class="sidebar-navigation">
-                <li class="header">Practice</li>
-                <li>
-                  <a href="js191.html">Practice 1</a>
-                </li>
-                <li>
-                  <a href="js192.html">Practice 2</a>
-                </li>
-                <li>
-                    <a href="js193.html">Practice 3</a>
-                </li>
-                <li>
-                    <a href="js194.html">Practice 4</a>
-                </li>
-                <li>
-                    <a href="js195.html">Practice 5</a>
-                </li>
-                <li>
-                  <a href="js196.html">Practice 6</a>
-                </li>
-            </ul><br>
-
-            <div class=" sidebar-logo">
-              Day 20
-            </div>
-            <ul class="sidebar-navigation">
-              <li class="header">Practice</li>
-              <li>
-                <a href="js201.html">Practice 1</a>
-              </li>
-              <li class="header">Assignment</li>
-              <li>
-                <a href="js202.html">Assignment 1</a>
-              </li>
             </ul><br>
 
           </div>
 
+       
+          <center><input type="button" class="btn btn-light mt-3" id="Show" value="Show Data"> </center>
           <div class="container">
-            <div class="row">
-              <img src="../img/jsmain.png" style="width: 50%; height: 300px; margin-left: 35%; margin-top: 8%;">
-            </div>
-          </div>
+              <div class="px-5 pt-3">
+                  <table class="table table-striped table-bordered table-light" id="datatab">
+                      
+                      <tr>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>Email</th>
+                          <th>Gender</th>
+                          <th>Status</th>
+                          <th>Created_at</th>
+                          <th>Updated_at</th>
+                      </tr>
+                      
+                  </table>
+              </div>
+          </div>	
+            
+                <script>  
+                    var alldata =''; 
+                        $(document).ready(function () {   
+                             $("#Show").click(function () {  
+                                $.getJSON('https://gorest.co.in/public-api/users', function (data,status) {  
+                                    console.log(data);  
+                                    
+                                    $.each(data.data,function(key,value){
+                                        alldata += '<tr>';
+                                        alldata += '<td>'+ value.id +'</td>';
+                                        alldata += '<td>'+ value.name +'</td>';
+                                        alldata += '<td>'+ value.email +'</td>';
+                                        alldata += '<td>'+ value.gender +'</td>';
+                                        alldata += '<td>'+ value.status +'</td>';
+                                        alldata += '<td>'+ value.created_at +'</td>';
+                                        alldata += '<td>'+ value.updated_at +'</td>';
+                                        alldata += '</tr>';
+                                    });
+                                    $('#datatab').append(alldata);
+                                });   
+                            });  
+                        });  
+                   </script>  
          
 
 

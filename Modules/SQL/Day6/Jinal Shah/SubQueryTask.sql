@@ -3,7 +3,7 @@
 	   than the employee whose last_name='Bull'. */
 
 	   SELECT (FirstName + ' ' + LastName) AS Name, Salary FROM Employees
-	   WHERE Salary > (SELECT * FROM Employees WHERE LastName = 'Bull')
+	   WHERE Salary > (SELECT Salary FROM Employees WHERE LastName = 'Bull')
 
 
 /* 2. Find the names (first_name, last_name) of all employees who works in the IT department. */
