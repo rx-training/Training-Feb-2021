@@ -1,5 +1,9 @@
+
+		 -------------sqldb2----------------
+
+
 /* Write a query that displays the FirstName and the length of the FirstName for all employees whose name starts with the 
-letters ‘A’, ‘J’ or ‘M’. Give each column an appropriate label. Sort the results by the employees’ FirstName */
+letters ï¿½Aï¿½, ï¿½Jï¿½ or ï¿½Mï¿½. Give each column an appropriate label. Sort the results by the employeesï¿½ FirstName */
 
 	SELECT FirstName "Name",
 	LEN(FirstName) "Length" FROM Employees WHERE FirstName LIKE 'J%' OR FirstName LIKE 'M%'
@@ -20,7 +24,7 @@ seventh day of any month or seventh month in any year. */
 	SELECT EmployeeID, FirstName, LastName, HireDate FROM Employees WHERE 
 	CHARINDEX("07" IN FORMAT(HireDate, 'dd-MM-yy'))
 
-/* Write a query to display the length of first name for employees where last name contains character ‘c’ 
+/* Write a query to display the length of first name for employees where last name contains character ï¿½cï¿½ 
 after 2nd position. */
 
 	SELECT FirstName, LastName FROM Employees WHERE LastName LIKE '__c%' or LastName LIKE '__C%' 
@@ -32,7 +36,7 @@ after 2nd position. */
 	Select * FROM Employees;
 
 /* Write a query to update the portion of the PhoneNumber in the employees table, within the phone number 
-the substring ‘124’ will be replaced by ‘999’. */
+the substring ï¿½124ï¿½ will be replaced by ï¿½999ï¿½. */
 
 	UPDATE Employees SET PhoneNumber = REPLACE(PhoneNumber, '124', '999') WHERE PhoneNumber LIKE '%124%';
 
@@ -48,7 +52,7 @@ the substring ‘124’ will be replaced by ‘999’. */
 
 	SELECT distinct HireDate from Employees WHERE DATENAME(WEEKDAY, HireDate) = 'monday';
 
-/* Write a query to get the FirstName and HireDate from Employees table where HireDate between ‘1987-06-01’ and ‘1987-07-30’ */
+/* Write a query to get the FirstName and HireDate from Employees table where HireDate between ï¿½1987-06-01ï¿½ and ï¿½1987-07-30ï¿½ */
 	
 	SELECT FirstName, HireDate FROM Employees WHERE HireDate BETWEEN '1987-06-01' AND '1987-07-30';
 

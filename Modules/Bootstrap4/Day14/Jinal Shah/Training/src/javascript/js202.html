@@ -10,8 +10,42 @@
         <title>Training Content Site</title>
 
         <style>
-         
+            .r1{
+                height: 100px;
+                text-align: center;
+            }
+            .r2{
+                height:55px;
+                text-align: center;
+            }
+            .hd1, .hd2, .hd3, .hd4, .hd5{
+                padding-top: 10px;
+            }
+            .i1, .i2, .i3, .i4 {
+                padding-top: 10px;
+            }
+            .b1, .b2, .b3, .b4{
+                padding-top: 6px;
+            }
+        </style>
+
+        <style>
+            .c1{
+                margin-left: 300px;
+                width: 900px;
+            }
             @media screen and (max-width: 700px) {
+
+            .c1{
+                margin-left: 0px;
+                width: 100%;
+            }
+            .r1{
+                height: 100px;
+            }
+            .r2{
+                height: 85px;
+            }
             .sidebar-container {
                 width: 100%;
                 height: auto;
@@ -213,46 +247,93 @@
 
           </div>
 
-        <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
-            <div class="card-header bg-dark text-white">
-               <h5>Accept three numbers from the user using prompt <br>
-                find the greater of these the numbers and do the sum of that numbers which are greater than 40.</h5>
-            </div>	
-            <div class="card-body">
+          <div class="c1 container text-center text-white">
+            <div class="r1 row pt-5 ">
+                <div class="hd1 col bg-dark text-light" style="border: 1px solid #333"><strong> Product ID</strong></div>
+                <div class="hd2 col bg-dark text-light" style="border: 1px solid #333"><strong>Product Name</strong></div>
+                <div class="hd3 col bg-dark text-light" style="border: 1px solid #333"><strong>Price</strong></div>
+                <div class="hd4 col bg-dark text-light" style="border: 1px solid #333"><strong>Quantity</strong></div>
+                <div class="hd5 col-3 bg-dark text-light" style="border: 1px solid #333"><strong>Cart</strong></div>
+            </div>
     
-                <h4 class="text-muted">click on below button</h4><br>
-             
-                <button class="btn btn-primary" type="submit" onclick="sum()" >Result</button><br>
-                
-            </div>	
-        </div>	
-
-          <script>
-
-            function sum(n1,n2,n3){
-                var n1 = prompt("Enter number 1 ");
-                var n2 = prompt("Enter number 2 ");
-                var n3 = prompt("Enter number 3 ");
-                s = parseInt(n1) + parseInt(n2) + parseInt(n3);
+            <div class="r2 row">
+                <div class="i1 col" id="i11" style="border: 1px solid #333"> 1</div>
+                <div class="i1 col" id="i12" style="border: 1px solid #333">Cheese </div>
+                <div class="i1 col" id="i13" style="border: 1px solid #333">100</div>
+                <div class="i1 col" id="i14" style="border: 1px solid #333">1</div>
+                <div class="b1 col-3" style="border: 1px solid #333">
+                    <button class="btn btn-primary" type="submit" onclick="addi1()" >Add to cart</button>
+                </div>
+            </div>
     
-                if(parseInt(n1) > parseInt(n2) && parseInt(n1) > parseInt(n3))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n1);
-                }
-                if(parseInt(n2) > parseInt(n1) && parseInt(n2) > parseInt(n3))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n2);
-                }
-                if(parseInt(n3) > parseInt(n2) && parseInt(n3) > parseInt(n1))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n3);
-                }
-                
+            <div class="r2 row">
+                <div class="i2 col" style="border: 1px solid #333"> 2</div>
+                <div class="i2 col" style="border: 1px solid #333">Pen</div>
+                <div class="i2 col" style="border: 1px solid #333">150</div>
+                <div class="i2 col" style="border: 1px solid #333">2</div>
+                <div class="b2 col-3" style="border: 1px solid #333">
+                    <button class="btn btn-primary" type="submit" onclick="addi2()" >Add to cart</button>
+                </div>
+            </div>
+    
+            <div class="r2 row">
+                <div class="i3 col" style="border: 1px solid #333"> 3</div>
+                <div class="i3 col" style="border: 1px solid #333">Butter</div>
+                <div class="i3 col" style="border: 1px solid #333">100</div>
+                <div class="i3 col" style="border: 1px solid #333">1</div>
+                <div class="b3 col-3" style="border: 1px solid #333">
+                    <button class="btn btn-primary" type="submit" onclick="addi3()" >Add to cart</button>
+                </div>
+            </div>
+    
+            <div class="r2 row">
+                <div class="i4 col" style="border: 1px solid #333"> 4</div>
+                <div class="i4 col" style="border: 1px solid #333">Pencil</div>
+                <div class="i4 col" style="border: 1px solid #333">10</div>
+                <div class="i4 col" style="border: 1px solid #333">1</div>
+                <div class="b4 col-3" style="border: 1px solid #333">
+                    <button class="btn btn-primary" type="submit" onclick="addi4()" >Add to cart</button>
+                </div>
+            </div>
+    
+    
+            <div class="row m-5">
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit" onclick="Summary()" >Cart Summary</button>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            var addObject = "";
+            function addi1()
+            {
+                var addObject = { 'id': 1, 'name': 'cheese', 'price': 100, 'quantity':1 };
+                localStorage.setItem('addObject', JSON.stringify(addObject));
             }
+            function addi2()
+            {
+                var addObject = { 'id': 2, 'name': 'pen', 'price': 150, 'quantity':2 };
+                localStorage.setItem('addObject', JSON.stringify(addObject));
+            }
+            function addi3()
+            {
+                var addObject = { 'id': 3, 'name': 'butter', 'price': 100, 'quantity':1 };
+                localStorage.setItem('addObject', JSON.stringify(addObject));
+            }
+            function addi4()
+            {
+                var addObject = { 'id': 4, 'name': 'pencil', 'price': 10, 'quantity':1 };
+                localStorage.setItem('addObject', JSON.stringify(addObject));
+            }
+            
+            function Summary()
+            {
+                var retrievedObject = localStorage.getItem('addObject');
     
+            console.log('retrievedObject: ', JSON.parse(retrievedObject));
+            }
         </script>
-         
-
 
         <script src="../js/jquery.min.js"></script>
         <script src="../js/popper.min.js"></script>

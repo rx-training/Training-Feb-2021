@@ -1,3 +1,7 @@
+
+      -------------sqldb2----------------
+
+
 /* Write a query to rank employees based on their salary for a month */
 	SELECT RANK() OVER	(ORDER BY salary) [rank], * from Employees
 

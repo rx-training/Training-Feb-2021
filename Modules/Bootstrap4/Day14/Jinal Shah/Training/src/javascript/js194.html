@@ -10,7 +10,6 @@
         <title>Training Content Site</title>
 
         <style>
-         
             @media screen and (max-width: 700px) {
             .sidebar-container {
                 width: 100%;
@@ -212,47 +211,40 @@
             </ul><br>
 
           </div>
-
-        <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
+          <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
             <div class="card-header bg-dark text-white">
-               <h5>Accept three numbers from the user using prompt <br>
-                find the greater of these the numbers and do the sum of that numbers which are greater than 40.</h5>
+               <h5>Using Function call create employee object with field Name, Address and Designation and pass it to function. </h5>
             </div>	
             <div class="card-body">
-    
-                <h4 class="text-muted">click on below button</h4><br>
              
-                <button class="btn btn-primary" type="submit" onclick="sum()" >Result</button><br>
+                <h2>Employee Details: </h2><hr>
+            <h4 id="demo" class=" p-4"></h4>	
+            <h4 id="demo1" class=" "></h4>	
                 
-            </div>	
+            </div>
+               
         </div>	
-
-          <script>
-
-            function sum(n1,n2,n3){
-                var n1 = prompt("Enter number 1 ");
-                var n2 = prompt("Enter number 2 ");
-                var n3 = prompt("Enter number 3 ");
-                s = parseInt(n1) + parseInt(n2) + parseInt(n3);
     
-                if(parseInt(n1) > parseInt(n2) && parseInt(n1) > parseInt(n3))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n1);
-                }
-                if(parseInt(n2) > parseInt(n1) && parseInt(n2) > parseInt(n3))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n2);
-                }
-                if(parseInt(n3) > parseInt(n2) && parseInt(n3) > parseInt(n1))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n3);
-                }
-                
-            }
-    
-        </script>
-         
-
+        <script> 
+            var employee = { 
+                details: function(add,des) { 
+                    return this.name + " " + this.Surname + ", " + add + ", " + des; 
+                } 
+            } 
+            var emp1 = { 
+                name:"Dinesh", 
+                Surname: "Shah", 
+            }   
+            var emp2 = { 
+                name:"Vaibhav", 
+                Surname: "Patel", 
+            } 
+              
+            var x = employee.details.call(emp1,"Ahmedabad","Analyst");  
+            document.getElementById("demo").innerHTML = x;
+            var x = employee.details.call(emp2, "Gandhinagar", "Developer");  
+            document.getElementById("demo1").innerHTML = x;  
+        </script> 
 
         <script src="../js/jquery.min.js"></script>
         <script src="../js/popper.min.js"></script>

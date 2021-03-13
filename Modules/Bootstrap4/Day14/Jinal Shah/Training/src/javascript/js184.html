@@ -10,8 +10,13 @@
         <title>Training Content Site</title>
 
         <style>
-         
+            #c1{
+                margin-left: 400px;
+            }
+
             @media screen and (max-width: 700px) {
+
+                
             .sidebar-container {
                 width: 100%;
                 height: auto;
@@ -213,45 +218,33 @@
 
           </div>
 
-        <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
-            <div class="card-header bg-dark text-white">
-               <h5>Accept three numbers from the user using prompt <br>
-                find the greater of these the numbers and do the sum of that numbers which are greater than 40.</h5>
-            </div>	
-            <div class="card-body">
-    
-                <h4 class="text-muted">click on below button</h4><br>
-             
-                <button class="btn btn-primary" type="submit" onclick="sum()" >Result</button><br>
-                
-            </div>	
-        </div>	
-
-          <script>
-
-            function sum(n1,n2,n3){
-                var n1 = prompt("Enter number 1 ");
-                var n2 = prompt("Enter number 2 ");
-                var n3 = prompt("Enter number 3 ");
-                s = parseInt(n1) + parseInt(n2) + parseInt(n3);
-    
-                if(parseInt(n1) > parseInt(n2) && parseInt(n1) > parseInt(n3))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n1);
-                }
-                if(parseInt(n2) > parseInt(n1) && parseInt(n2) > parseInt(n3))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n2);
-                }
-                if(parseInt(n3) > parseInt(n2) && parseInt(n3) > parseInt(n1))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n3);
-                }
-                
-            }
-    
-        </script>
-         
+          <h2 class="h1-display text-center text-white p-3 m-3 pb-3">University Of Mumbai</h2>
+          <div id="c1" class="card col-md-6 text-center border-light mb-3 p-5 mx-auto">
+              <div class="card-header bg-dark text-white">
+                 <h5> Subject code : 2110003 </h5>
+              </div>	
+              <div class="card-body">
+                  <h5 class="card-title text-right">Duration : 3 Hours</h5>
+                  <h5 class="card-title text-left">Instructions : </h5>
+                  <ul class="text-left">
+                      <li>The examination will comprise of Objective type Multiple Choice Questions (MCQs).</li>
+                      <li>All questions are compulsory and each carries One mark. </li>
+                      <li>The Subjects or topics covered in the exam will be as per the Syllabus.</li>
+                      <li>exam window will shut down automatically after 3 hours.</li>
+                  </ul>
+                  <a href="ass1.html" class="btn btn-primary m-3">Start Exam</a>
+              </div>	
+          </div>	
+      
+          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+              integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+          </script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+              integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+          </script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+              integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+          </script>
 
 
         <script src="../js/jquery.min.js"></script>

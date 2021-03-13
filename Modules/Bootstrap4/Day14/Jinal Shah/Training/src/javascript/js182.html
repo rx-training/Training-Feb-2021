@@ -10,7 +10,6 @@
         <title>Training Content Site</title>
 
         <style>
-         
             @media screen and (max-width: 700px) {
             .sidebar-container {
                 width: 100%;
@@ -213,44 +212,49 @@
 
           </div>
 
-        <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
-            <div class="card-header bg-dark text-white">
-               <h5>Accept three numbers from the user using prompt <br>
-                find the greater of these the numbers and do the sum of that numbers which are greater than 40.</h5>
+          <div class="card  col-md-7 border-light mb-3 p-5 mx-auto">
+            <div class="card-header text-center bg-dark text-white">
+               <h5>Explain difference between var and let keyword using example.</h5> 
             </div>	
             <div class="card-body">
     
-                <h4 class="text-muted">click on below button</h4><br>
-             
-                <button class="btn btn-primary" type="submit" onclick="sum()" >Result</button><br>
-                
-            </div>	
+                <h2 class="px-3" style="color: blue;">Var Keyword :</h2>
+                <h4 class="px-5 pt-3" id="demo"></h4>
+                <h4 class="px-5 mx-5" id="demo1"></h4>
+                <h4 class="px-5 pb-5 " id="demo3"></h4>
+    
+                <h2 class="px-3" style="color: blue;">Let Keyword :</h2>
+                <h4 class="px-5 pt-4" id="demo4"></h4>
+                <h4 class="px-5 mx-5" id="demo5"></h4>
+                <h4 class="px-5 " id="demo6"></h4>
+    
+                    
+            </div>
         </div>	
-
-          <script>
-
-            function sum(n1,n2,n3){
-                var n1 = prompt("Enter number 1 ");
-                var n2 = prompt("Enter number 2 ");
-                var n3 = prompt("Enter number 3 ");
-                s = parseInt(n1) + parseInt(n2) + parseInt(n3);
+       
+        
     
-                if(parseInt(n1) > parseInt(n2) && parseInt(n1) > parseInt(n3))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n1);
-                }
-                if(parseInt(n2) > parseInt(n1) && parseInt(n2) > parseInt(n3))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n2);
-                }
-                if(parseInt(n3) > parseInt(n2) && parseInt(n3) > parseInt(n1))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n3);
-                }
-                
+        <script>
+    
+            var a = 10;
+            document.getElementById('demo').innerHTML= "initial value of a is = " + a;
+            if(true)
+            {
+                var a = 20;
+                document.getElementById('demo1').innerHTML= "value of a inside if block = " + a;
             }
+            document.getElementById('demo3').innerHTML= "value of a outside if block = " + a;
     
+            var b = 10;
+            document.getElementById('demo4').innerHTML= "initial value of b is = " + b;
+            if(true)
+            {
+                let b = 20;
+                document.getElementById('demo5').innerHTML= "value of b inside if block = " + b;
+            }
+            document.getElementById('demo6').innerHTML= "value of b outside if block = " + b;
         </script>
+    
          
 
 

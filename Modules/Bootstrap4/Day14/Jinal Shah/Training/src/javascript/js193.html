@@ -10,7 +10,6 @@
         <title>Training Content Site</title>
 
         <style>
-         
             @media screen and (max-width: 700px) {
             .sidebar-container {
                 width: 100%;
@@ -213,43 +212,42 @@
 
           </div>
 
-        <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
+          <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
             <div class="card-header bg-dark text-white">
-               <h5>Accept three numbers from the user using prompt <br>
-                find the greater of these the numbers and do the sum of that numbers which are greater than 40.</h5>
+               <h5>Explain usage of Function Hosing using example. </h5>
             </div>	
             <div class="card-body">
-    
-                <h4 class="text-muted">click on below button</h4><br>
              
-                <button class="btn btn-primary" type="submit" onclick="sum()" >Result</button><br>
+                    <p>In JavaScript, Hoisting is the default behavior of moving all the declarations at the top of the scope before code execution. Basically, it gives us an advantage that no matter where functions and variables are declared, they are moved to the top of their scope regardless of whether their scope is global or local.
+                        It allows us to call functions before even writing them in our code.</p>
+                    <h3>JavaScript only hoists declarations, not the initialisations.</h3>
                 
-            </div>	
+            </div>
+            <h3 id="demo" class=" p-4"></h3>	
         </div>	
-
-          <script>
-
-            function sum(n1,n2,n3){
-                var n1 = prompt("Enter number 1 ");
-                var n2 = prompt("Enter number 2 ");
-                var n3 = prompt("Enter number 3 ");
-                s = parseInt(n1) + parseInt(n2) + parseInt(n3);
+            
     
-                if(parseInt(n1) > parseInt(n2) && parseInt(n1) > parseInt(n3))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n1);
-                }
-                if(parseInt(n2) > parseInt(n1) && parseInt(n2) > parseInt(n3))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n2);
-                }
-                if(parseInt(n3) > parseInt(n2) && parseInt(n3) > parseInt(n1))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n3);
-                }
-                
+    
+        <script>
+            /* function codeHoist(){ 
+                a = 10; 
+                let b = 50; 
+            } 
+            codeHoist(); 
+    
+            console.log(a); 
+            console.log(b);  */
+    
+            function add(x, y){
+                return x + y;
             }
     
+            let p = 20,
+                q = 10;
+    
+            let result = add(p,q);
+            console.log(result);
+        
         </script>
          
 

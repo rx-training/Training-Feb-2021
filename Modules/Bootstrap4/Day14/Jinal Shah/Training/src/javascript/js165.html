@@ -10,7 +10,6 @@
         <title>Training Content Site</title>
 
         <style>
-         
             @media screen and (max-width: 700px) {
             .sidebar-container {
                 width: 100%;
@@ -213,42 +212,63 @@
 
           </div>
 
-        <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
+
+        <div class="card text-center col-md-6 border-dark mb-3 p-5 mx-auto mt-5">
             <div class="card-header bg-dark text-white">
-               <h5>Accept three numbers from the user using prompt <br>
-                find the greater of these the numbers and do the sum of that numbers which are greater than 40.</h5>
+               <h5>Try some operation with list like push, pop, shifting, deleting element</h5>
             </div>	
             <div class="card-body">
-    
-                <h4 class="text-muted">click on below button</h4><br>
              
-                <button class="btn btn-primary" type="submit" onclick="sum()" >Result</button><br>
-                
-            </div>	
-        </div>	
-
-          <script>
-
-            function sum(n1,n2,n3){
-                var n1 = prompt("Enter number 1 ");
-                var n2 = prompt("Enter number 2 ");
-                var n3 = prompt("Enter number 3 ");
-                s = parseInt(n1) + parseInt(n2) + parseInt(n3);
+                    <button class="btn btn-primary" type="submit" onclick="cd()" >original array </button><br><br>
+                    <h4 id="demo" style="color: black"> </h4><br>
     
-                if(parseInt(n1) > parseInt(n2) && parseInt(n1) > parseInt(n3))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n1);
-                }
-                if(parseInt(n2) > parseInt(n1) && parseInt(n2) > parseInt(n3))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n2);
-                }
-                if(parseInt(n3) > parseInt(n2) && parseInt(n3) > parseInt(n1))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n3);
-                }
-                
+                    <button class="btn btn-primary" type="submit" onclick="pop1()" >pop operation </button><br><br>
+                    <h4 id="demo1" style="color: black"> </h4><br>  
+    
+                    <button class="btn btn-primary" type="submit" onclick="push1()" >push operation </button><br><br>
+                    <h4 id="demo2" style="color: black"> </h4><br>
+    
+                    <button class="btn btn-primary" type="submit" onclick="shi()" >shift operation </button><br><br>
+                    <h4 id="demo3" style="color: black"> </h4><br>
+    
+                    <button class="btn btn-primary" type="submit" onclick="del()" >delete operation </button><br><br>
+                    <h4 id="demo4" style="color: black"> </h4>
+            </div>
+        </div>
+
+          
+        <script>
+
+            function cd()
+            {
+                var fruits = ["Banana", "Orange", "Apple", "Mango"];
+                document.getElementById("demo").innerHTML = "Original array = " + fruits.toString();
             }
+            function pop1()
+            {
+                var fruits = ["Banana", "Orange", "Apple", "Mango"];
+                document.getElementById("demo1").innerHTML = "popped element = " + fruits.pop() + 
+                                                            "<br>" + " array after pop = " + fruits.toString();
+            }
+            function push1()
+            {
+                var fruits = ["Banana", "Orange", "Apple", "Mango"];
+                document.getElementById("demo2").innerHTML = "pushed element = " + fruits.push("Kiwi")  + 
+                                                            "<br>" + " array after pop = " + fruits.toString();
+            }
+            function shi()
+            {
+                var fruits = ["Banana", "Orange", "Apple", "Mango"];
+                document.getElementById("demo3").innerHTML = "shifted element = " + fruits.shift()  + 
+                                                            "<br>" + " array after shift op = " + fruits.toString();
+            }
+            function del()
+            {
+                var fruits = ["Banana", "Orange", "Apple", "Mango"];
+                document.getElementById("demo4").innerHTML = "deleted element = " + delete fruits[0]  + 
+                                                            "<br>" + " array after shift op = " + fruits.toString();
+            }
+            
     
         </script>
          

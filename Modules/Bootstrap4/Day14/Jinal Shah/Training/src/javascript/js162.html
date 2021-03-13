@@ -10,7 +10,6 @@
         <title>Training Content Site</title>
 
         <style>
-         
             @media screen and (max-width: 700px) {
             .sidebar-container {
                 width: 100%;
@@ -215,39 +214,33 @@
 
         <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
             <div class="card-header bg-dark text-white">
-               <h5>Accept three numbers from the user using prompt <br>
-                find the greater of these the numbers and do the sum of that numbers which are greater than 40.</h5>
+               <h5>Write a JavaScript function to split a string and convert it into an array of words.</h5>
             </div>	
             <div class="card-body">
-    
-                <h4 class="text-muted">click on below button</h4><br>
              
-                <button class="btn btn-primary" type="submit" onclick="sum()" >Result</button><br>
+                    <label for="s1" class="form-label">Enter string :</label>
+                    <input type="text" class="form-control" id="s1" name="n1"><br>
+                    <button class="btn btn-primary" type="submit" onclick="check(s1.value)" >Check</button><br>
                 
-            </div>	
-        </div>	
+            </div>
+        </div>
 
-          <script>
+        <script>
 
-            function sum(n1,n2,n3){
-                var n1 = prompt("Enter number 1 ");
-                var n2 = prompt("Enter number 2 ");
-                var n3 = prompt("Enter number 3 ");
-                s = parseInt(n1) + parseInt(n2) + parseInt(n3);
-    
-                if(parseInt(n1) > parseInt(n2) && parseInt(n1) > parseInt(n3))
+            function check(s1)
+            {
+                if( s1.length === 0)
                 {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n1);
+                    alert("String is empty \nEnter valid input");
                 }
-                if(parseInt(n2) > parseInt(n1) && parseInt(n2) > parseInt(n3))
+                else
                 {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n2);
+                    var s = s1.split(" ");
+                    var s2 = s1.trim().split(" ");
+                    alert(s);
+                    console.log(s);
+                    console.log(s2);
                 }
-                if(parseInt(n3) > parseInt(n2) && parseInt(n3) > parseInt(n1))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n3);
-                }
-                
             }
     
         </script>

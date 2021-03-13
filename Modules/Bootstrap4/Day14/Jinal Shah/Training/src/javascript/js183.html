@@ -10,7 +10,6 @@
         <title>Training Content Site</title>
 
         <style>
-         
             @media screen and (max-width: 700px) {
             .sidebar-container {
                 width: 100%;
@@ -213,45 +212,83 @@
 
           </div>
 
-        <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
+          <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
             <div class="card-header bg-dark text-white">
-               <h5>Accept three numbers from the user using prompt <br>
-                find the greater of these the numbers and do the sum of that numbers which are greater than 40.</h5>
+               <h5>Make a function that takes in a single parameter and returns a new promise. using setTimeout, after 500 milliseconds, the promise will either resolove or reject. if the input is a string, the promise resolves with that reverse string . if the input is anything but a string it rejects with that same input call the function wrong Input </h5> 
             </div>	
-            <div class="card-body">
-    
-                <h4 class="text-muted">click on below button</h4><br>
-             
-                <button class="btn btn-primary" type="submit" onclick="sum()" >Result</button><br>
-                
-            </div>	
+            <div class="card-body text-muted">
+                <p>open console</p>    
+            </div>
         </div>	
-
-          <script>
-
-            function sum(n1,n2,n3){
-                var n1 = prompt("Enter number 1 ");
-                var n2 = prompt("Enter number 2 ");
-                var n3 = prompt("Enter number 3 ");
-                s = parseInt(n1) + parseInt(n2) + parseInt(n3);
     
-                if(parseInt(n1) > parseInt(n2) && parseInt(n1) > parseInt(n3))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n1);
-                }
-                if(parseInt(n2) > parseInt(n1) && parseInt(n2) > parseInt(n3))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n2);
-                }
-                if(parseInt(n3) > parseInt(n2) && parseInt(n3) > parseInt(n1))
-                {
-                    alert("sum is = "+ s + "\n"  + "Greater number is : "+ n3);
-                }
+        <script>
+    
+            function reverseString(str) {
+                var splitString = str.split(""); 
+            
+                var reverseArray = splitString.reverse(); 
                 
+                var joinArray = reverseArray.join(""); 
+                
+                return joinArray; 
             }
     
+            function check(s1)
+            {
+               // console.log(s1);
+              //  console.log(typeof s1 === 'string');
+                return new Promise((resolve,reject)=>{
+                
+                    if(typeof s1 === 'string')
+                    {
+                        rev = reverseString(s1);
+                        let successMessage = {
+                            status : 'success',
+                            message : rev
+                        };
+                        resolve(successMessage);
+                    }
+                    else
+                    {
+                        let errorMessage = {
+                            status : 'error',
+                            message : 'there was an error!'
+                        };
+                        reject(errorMessage);
+                    }
+                })
+            } 
+    
+            var s1 = 386;
+            
+            check(s1).then((success)=>
+            {
+                console.log(success);
+            },(error)=>{console.log(error);}
+                /* {
+                let promise = new Promise(function(resolve, reject) 
+                {
+                 setTimeout(() => reject(console.log(error)), 1500);
+                });
+                } */
+            )
+    
+            var s = "abcd";
+            
+            check(s).then((success)=>
+            {
+                let promise = new Promise(function(resolve, reject) 
+                {
+                    setTimeout(() => resolve(console.log(success)), 500);
+                });
+            },(error)=>{console.log(error);}
+            )
+    
+    
+            
+    
+            
         </script>
-         
 
 
         <script src="../js/jquery.min.js"></script>

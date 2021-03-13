@@ -1,4 +1,7 @@
 
+	---------------------sqldb3_day5----------------
+
+
 /* (1) Get difference between JOINING_DATE and INCENTIVE_DATE from employee and incentives table. */
 
 	SELECT DATEDIFF(DAY,JoiningDate,IncentiveDate) AS Diff FROM EmployeeDetails AS emp
