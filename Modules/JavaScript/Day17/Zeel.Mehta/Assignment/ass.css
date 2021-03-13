@@ -1,0 +1,76 @@
+body 
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(to right, #b92b27, #1565c0)
+}
+.box 
+{
+    
+    padding: 40px;
+    
+   
+    background: #191919;
+    transition: 0.25s;
+    
+}
+.box label
+{
+    background: none;              
+    padding: 10px 2px;                
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;                
+}
+.float-right
+{
+    background: none;              
+    border: 2px solid #3498db;
+    padding: 10px 10px;                
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;   
+    width: 290px;             
+}
+.box p
+{
+    text-align: left;
+}
+.box h1 
+{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500
+}
+.box input[type="text"]:focus,
+.box input[type="date"]:focus,
+.box input[type="email"]:focus,
+.box input[type="number"]:focus,
+.box input[type="password"]:focus 
+{
+    width: 300px;
+    border-color: #f58bb3
+}
+
+.box input[type="button"] 
+{
+    background: none;
+    display: block; 
+    text-align: center;
+    border: 2px solid #2ecc71;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    width: 420px;
+    padding: 10px 5px;
+    outline: none;
+    
+}
+
+.box input[type="button"]:hover 
+{
+    background: #2ecc71
+}
