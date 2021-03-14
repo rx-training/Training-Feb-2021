@@ -1,17 +1,9 @@
 ------------------ 1--------------------
-SELECT 
-	firstname, 
-	lastname, 
-	DepartmentID,
-	salary, 
-	DENSE_RANK() OVER (
-		PARTITION BY Salary
-		ORDER BY salary DESC) salary_rank
-FROM 
-	employees e
+
+	SELECT Salary,HireDate, RANK() OVER (PARTITION BY DATEPART(MM,HireDate) ORDER BY Salary) as 'Rank' FROM Employees
 
 -------------------2-----------------------------
-
+SELECT * FROM (SELECT Salary, DENSE_RANK() OVER (ORDER BY Salary DESC) as 'Rank4' FROM Employees) Rank4 WHERE  Rank4 = 4
 
 ------------------------3---------------------------
 SELECT departmentid, SUM(salary) As DepartentWiseSalary
@@ -34,8 +26,7 @@ FROM Employees
 GROUP BY DepartmentID Order by minimumSalary_In_DepartMent
 
 -------------------------------7----------------------------------
+SELECT * FROM (SELECT DepartmentID,SUM(Salary) as 'Total' FROM Employees GROUP BY DepartmentID) Total 
+WHERE Total > 50000 ORDER BY Total DESC
 
-SELECT departmentid, SUM(salary) As DepartentWiseSalary
-FROM employees where Departmntid > 80000 
-GROUP BY DepartmentID order by DepartentWiseSalary desc
 
