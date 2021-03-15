@@ -21,12 +21,23 @@
             <a href="update.html">
                 <button class="btn btn-primary" type="submit">Update Record</button>
             </a>
-            <a href="retrieve.html">
-                <button class="btn btn-primary" type="submit">Retrieve Data</button>
-            </a>
+           
+                <button class="btn btn-primary" type="submit" onclick="Retrieve()">Retrieve Data</button>
+        
            
         </div>
     </div>	
+
+    <script>
+
+        function Retrieve()
+        {
+            var retrievedObject = localStorage.getItem('data');
+
+        console.log('retrievedObject: ', JSON.parse(retrievedObject));
+        }
+
+    </script>
 
 </body>
 </html>

@@ -10,8 +10,10 @@
 
 </head>
 <body>
+    <h2><a href="home.html"> Home Page</a></h2>
 
     <div class="container mt-5 col-md-6">
+        
         <h1 class="h3">Enter Employee Details</h1>
         <div class="border p-3" style="background-color: lightgray;">
             
@@ -68,6 +70,19 @@
             var err = new Array(2);
             var i=0;
 
+            function store(){
+                let data = {
+                    NAME : document.getElementById("ename").value,
+                    NUMBER : document.getElementById("contact").value,
+                    COUNTRY : document.getElementById("firstList").value,
+                    STATE : document.getElementById("secondList").value
+                }
+                console.log(data);
+                localStorage.setItem('data',JSON.stringify(data));
+                console.log(localStorage.getItem('data'));
+               
+            }
+
 
             var n = /^[A-Za-z]+$/;
             if(name == "") {
@@ -101,20 +116,18 @@
                 err[2] ="";
             } 
                     
-            var count;
+        
             for(i; i<err.length; i++) {
                 if(err[i] == "") {
-                    count = count +1;
-                    if(count == 3)
-                    {
-                        alert('done')
-                    }
+                   continue;
                 }
                 else{
                     document.getElementById("errid").innerHTML += '<div class="alert alert-danger">' + err[i] + '</div>';
                 }
             }    
-            return false;
+            window.location.href = "home.html"
+            return store();
+            
         }
 
 
@@ -174,19 +187,6 @@
             list2.options[5] = new Option('ontario', 'ontario');
             
         }
-    }
-
-    /* -------------- */
-    const add = e =>{
-        let data = {
-            NAME : document.getElementById("ename").value,
-            NUMBER : document.getElementById("contact").value,
-            COUNTRY : document.getElementById("firstList").value,
-            STATE : document.getElementById("secondList").value
-        }
-        localStorage.setItem('data',JSON.stringify(data));
-        console.log(localStorage.getItem('data'));
-        e.preventDefault()
     }
 
     </script>
