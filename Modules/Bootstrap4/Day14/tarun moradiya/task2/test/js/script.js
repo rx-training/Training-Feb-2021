@@ -27,12 +27,19 @@ function login(){
     let upassword = document.getElementById('password').value
 
     if(hrObj.username == uname && hrObj.password == upassword) {
-        window.location.replace('index.html')
+        window.location.replace('index.html');
+        sessionStorage.setItem('logged', 'true')
     } else {
         alert("Invalid username or password \n***try username: tarun password: 123")
     }
 
 
+}
+
+//logout
+function logout() {
+    sessionStorage.setItem('logged', 'false');
+    location.replace('login.html')
 }
 
 
@@ -42,6 +49,10 @@ let empTable = document.getElementById('emp-table');
 
 // Show Employee Data
 function showData() {
+
+    if(sessionStorage.getItem('logged') != 'true') {
+        window.location.replace('login.html');
+    }
 
     emp = localStorage.getItem('employee');
     empObj = JSON.parse(emp)
@@ -55,7 +66,7 @@ function showData() {
             <td><input type="text" id="${i}-name" class="form-control bg-dark text-info" value="${empObj[i].name}"></td>
             <td><input type="number" id="${i}-salary" class="form-control bg-dark text-info" value="${empObj[i].salary}"></td>
             <td><input type="number" id="${i}-contact" class="form-control bg-dark text-info" value="${empObj[i].contact}"></td>
-            <td><select name="country" class="form-control bg-dark text-info" id="${i}-country">
+            <td><select onchange="selectChange(this.id)" name="country" class="form-control bg-dark text-info" id="${i}-country">
                               <option value="${empObj[i].country}">${empObj[i].country}</option>
                               <option value="India">India</option>
                               <option value="US">US</option>
@@ -74,6 +85,39 @@ function showData() {
     
 
     empTable.innerHTML += output;
+}
+
+
+function selectChange(id){
+    console.log('changed')
+
+        var selectedCountry = $(`#${id}`).children("option:selected").val();
+        
+        if(selectedCountry == 'India') {
+            $(`#${id}`).parent().next().children().empty().append(`<option value="Gujrat">Gujrat</option>
+                <option value="MP">MP</option>
+                <option value="UP">UP</option>
+                <option value="Rajastan">Rajastan</option>
+                `)
+        } else if(selectedCountry == 'US') {
+            $(`#${id}`).parent().next().children().empty().append(`<option value="California">California</option>
+                <option value="Texas">Texas</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Florida">Florida</option>
+                `)
+        } else if(selectedCountry == 'Canada') {
+            $(`#${id}`).parent().next().children().empty().append(`<option value="Alberta">Alberta</option>
+                <option value="Manitoba">Manitoba</option>
+                <option value="New Brunswick">New Brunswick</option>
+                <option value="Nunavut">Nunavut</option>
+                `)
+        } else if(selectedCountry == 'Japan') {
+            $(`#${id}`).parent().next().children().empty().append(`<option value="Hokkaidu">Hokkaidu</option>
+                <option value="Tohoku">Tohoku</option>
+                <option value="Kanto">Kanto</option>
+                <option value="Chubu">Chubu</option>
+                `)
+        } 
 }
 
 function changeData(id){

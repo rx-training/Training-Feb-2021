@@ -12,10 +12,24 @@
     overflow: auto;
 }
 
+    
+#emp-form select {
+    display: inline-block;
+    width: 120%;
+    font-size: smaller;
+    overflow: auto;
+}
+
+
 @media (max-width: 992px) {
     #emp-table tr, #emp-table td{
         padding: 7px;
     } 
+
+    #emp-form select {
+        width: 100%;
+        height: 15px;
+    }
 
    *{
        font-size: 0.5em;
