@@ -18,7 +18,7 @@
             <h4>Dropdown List</h4>
             <select id="countries">
                 <option value="0" selected>Please select... </option>
-                <option value="1" id="oi">India             </option>
+                <option value="1" id="oi" value="India">India             </option>
                 <option value="2" id="ouk">United Kingdom   </option>
                 <option value="3" id="ors">Russia           </option>
                 <option value="4" id="ous">United States    </option>
@@ -26,20 +26,23 @@
             </select>
             <br><br>
             <label>Country you selected :                   </label><br>
-            <label for="India"  id="in">--> India           </label>
-            <label for="UK"     id="uk">--> United Kingdom  </label>
-            <label for="Russia" id="rs">--> Russia          </label>
-            <label for="US"     id="us">--> United States   </label>
-            <label for="Japan"  id="jp">--> Japan           </label>
+            <label for="India"  id="in">-- India           </label>
+            <label for="UK"     id="uk">-- United Kingdom  </label>
+            <label for="Russia" id="rs">-- Russia          </label>
+            <label for="US"     id="us">-- United States   </label>
+            <label for="Japan"  id="jp">-- Japan           </label>
+
+            <label id="result"></label>
         </div>
 
             <script type="text/javascript">
                 $(document).ready(function(){
                     $("#countries").change(function(){
                         var c = $("#countries").find("option:selected").text();
-                        
+                        $("#result").text("sjdk" +c);
                         if(c=="India")
                         {
+                            console.log("absbsb");
                             $("#in").show();
                             $("#uk").hide();
                             $("#rs").hide();
