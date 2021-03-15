@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device=width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" 
+        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+        <title>
+            Assignment
+        </title>
+        <style>
+            body 
+            {
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+                background: linear-gradient(to right, #b92b27, #1565c0)
+            }
+            .box 
+            {
+                width: 500px;
+                padding: 40px;
+                position: absolute;
+                top: 0;
+                left:65%;
+                background: #191919;
+                transition: 0.25s;
+                margin-top: 50px
+            }
+            .box label
+            {
+                background: none;              
+                padding: 10px 2px;                
+                outline: none;
+                color: white;
+                border-radius: 24px;
+                transition: 0.25s;                
+            }
+            .float-right
+            {
+                background: none;              
+                border: 2px solid #3498db;
+                padding: 10px 10px;                
+                outline: none;
+                color: white;
+                border-radius: 24px;
+                transition: 0.25s;   
+                width: 290px;             
+            }
+            .box p
+            {
+                text-align: left;
+            }
+            .box h1 
+            {
+                color: white;
+                text-transform: uppercase;
+                font-weight: 500
+            }
+            .box input[type="text"]:focus,
+            .box input[type="date"]:focus,
+            .box input[type="email"]:focus,
+            .box input[type="number"]:focus,
+            .box input[type="password"]:focus 
+            {
+                width: 300px;
+                border-color: #f58bb3
+            }
+
+            .box input[type="submit"] 
+            {
+                background: none;
+                display: block; 
+                text-align: center;
+                border: 2px solid #2ecc71;
+                color: white;
+                border-radius: 24px;
+                transition: 0.25s;
+                width: 420px;
+                padding: 10px 5px;
+                outline: none;
+                
+            }
+
+            .box input[type="submit"]:hover 
+            {
+                background: #2ecc71
+            }
+        
+
+
+</style>
+        <script type="text/javascript">
+        function myFunction()
+            {
+                var eid=document.getElementById()                
+            }
+            </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <form class="box">
+                            <h1>Employee Details</h1><br>
+                            <div>
+                                <label class="text-muted">ID : </label>
+                                <input class="float-right" id="eid" name="num"  type="text" required>
+                            </div><br>
+                           <div>
+                                <label class="text-muted ">Name : </label>
+                                <input class="float-right" type="text" required>
+                            </div><br>
+                            <div>
+                                <label class="text-muted">Age : </label>
+                                <input class="float-right" type="number" required>
+                            </div><br>
+                            <div>
+                                <label class="text-muted">Designation: </label>
+                                <input class="float-right" type="text" required>
+                            </div><br>
+                            <div>
+                                <label class="text-muted">Salary : </label>
+                                <input class="float-right" type="number" required>
+                            </div><br>
+                            <div>
+                                <label class="text-muted">EmailID : </label>
+                                <input class="float-right" type="email" required>
+                            </div><br>
+                            <div>
+                                <label class="text-muted">Date of Joining : </label>
+                                <input class="float-right" type="date" required>
+                            </div><br>
+                            <div>
+                                <label class="text-muted">Contact No. : </label>
+                                <input class="float-right" type="number" required>
+                            </div><br>
+                            <div>
+                                <label class="text-muted">Location : </label>
+                                <select class="float-right">
+                                    <option class="bg-dark">Gandhinagar</option>
+                                    <option class="bg-dark">Ahmedabad</option>
+                                    <option class="bg-dark">Surat</option>
+                                    <option class="bg-dark">Rajkot</option>
+                                    <option class="bg-dark">Jamnagar</option>
+
+                                </select>
+                            </div><br>
+                            
+                            <div >
+                                <label class="text-muted">Gender: </label> &nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input  name="gender" type="radio" value="option1" required>
+                                <label class=" text-muted">Male</label>
+                                <input  name="gender" type="radio"  value="option2">
+                                <label class=" text-muted">Female</label>
+                              </div><br>                                      
+                            <input type="submit"  value="Login" onclick="myFunction()">   
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+
+<div style="margin-top: 500px;"></div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+crossorigin="anonymous"></script>
+</body>
+</html>
