@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+       async function getProduct(file)
+       {
+           let myObj=await fetch(file);
+           console.log(myObj);
+
+           let myproduct=await myObj.json();
+           console.log(myproduct);
+           product=JSON.stringify(myproducts);
+           localStorage.setItem("product",product);
+       }
+       
+        function product()
+        {
+            getProduct("products.json");  
+        }
+        
+        // var d=JSON.parse(product);
+        // for(var item of d)
+        // {
+        //     console.log(item.Name+""+item.Price+""+item.Location);
+        // } 
+        function web()
+        {
+            var item=localStorage.getItem("product");
+            console.log(item);   
+        }
+        
+    </script>
+</head>
+<body onload="product()">
+    <button type="button" btn btn-danger" onclick="web()" value="web">See In Conslole</button>
+</body>
+</html>

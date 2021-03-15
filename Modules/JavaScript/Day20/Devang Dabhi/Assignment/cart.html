@@ -38,6 +38,39 @@
         }
 
         </style>
+        <script>
+          function a1()
+          {
+            products= [{"ProductID":"1","ProductName":"Cheese","Price":"100","Qauntity":"1"}]
+            product=JSON.stringify(products);
+            localStorage.setItem("product1 ",product);
+          }
+          function a2()
+          {
+            products= [{"ProductID":"2","ProductName":"Pen","Price":"150","Qauntity":"2"}]
+            product=JSON.stringify(products);
+            localStorage.setItem("product2 ",product);
+          }
+          function a3()
+          {
+            products= [{"ProductID":"3","ProductName":"Butter","Price":"100","Qauntity":"1"}]
+            product=JSON.stringify(products);
+            localStorage.setItem("product3 ",product);
+          }
+          function a4()
+          {
+            products= [{"ProductID":"4","ProductName":"Pencil","Price":"10","Qauntity":"1"}]
+            product=JSON.stringify(products);
+            localStorage.setItem("product4 ",product);
+          }
+          function cart()
+          {
+            var product=localStorage.getItem(product);
+            console.log(product);
+            
+          }
+
+        </script>
         
   </head>
   <body>
@@ -51,26 +84,26 @@
         <div class="grid-item">Cheese</div>
         <div class="grid-item">100</div>
         <div class="grid-item">1</div>
-        <div class="grid-item"><button type="button" class="btn btn-primary">Add To Cart</button></div>
+        <div class="grid-item"><button type="button" class="btn btn-primary" name="1" onclick="a1()">Add To Cart</button></div>
         <div class="grid-item">2</div>
         <div class="grid-item">Pen</div>
         <div class="grid-item">150</div>  
         <div class="grid-item">2</div>
-        <div class="grid-item"><button type="button" class="btn btn-primary">Add To Cart</button></div>
+        <div class="grid-item"><button type="button" class="btn btn-primary" name="2" onclick="a2()">Add To Cart</button></div>
         <div class="grid-item">3</div>  
         <div class="grid-item">Butter</div>
         <div class="grid-item">100</div>
         <div class="grid-item">1</div>
-        <div class="grid-item"><button type="button" class="btn btn-primary">Add To Cart</button></div>  
+        <div class="grid-item"><button type="button" class="btn btn-primary" name="3" onclick="a3()">Add To Cart</button></div>  
         <div class="grid-item">4</div>
         <div class="grid-item">Pencil</div>
         <div class="grid-item">10</div>  
         <div class="grid-item">1</div>
-        <div class="grid-item"><button type="button" class="btn btn-primary">Add To Cart</button></div>
+        <div class="grid-item"><button type="button" class="btn btn-primary" name="4" onclick="a4()">Add To Cart</button></div>
       </div>
       <br><br>
     <div class="grid-container">
-        <div class="grid-item1";><button type="button" class="btn btn-warning">Cart Summary</button></div>
+        <div class="grid-item1";><button type="button" class="btn btn-warning"  onclick="cart()">Cart Summary</button></div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
