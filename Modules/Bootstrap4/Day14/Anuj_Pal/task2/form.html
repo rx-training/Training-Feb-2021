@@ -30,13 +30,11 @@
             padding: 15px 10px;
         }
 
-        select
-        {
+        select {
             border: solid 1px #eee;
         }
 
-        option
-        {
+        option {
             border: solid 1px #eee;
         }
 
@@ -48,9 +46,9 @@
             background: #fff;
             color: dodgerblue;
             border: solid 1px dodgerblue;
-        
-         
-        
+
+
+
         }
 
         button:hover {
@@ -68,10 +66,13 @@
 <body>
 
     <div class="container">
-        <center><h2>SIGNUP FORM</h2></center>
-        <form role="form" onsubmit="signUp(event);">
+        <center>
+            <h2>SIGNUP FORM</h2>
+        </center>
+        <form role="form" >
             <div class="form-group">
-                <input type="text" name="fname" id="fname" placeholder="First Name" required>
+                <input type="text" name="fname" id="fname" placeholder="First Name">
+                <span id="message1"> </span> <br><br>
             </div>
             <div class="form-group">
                 <input type="text" name="lname" id="lname" placeholder="Last Name" required>
@@ -84,19 +85,23 @@
             </div>
 
             <div class="form-group">
-                <input type="text" name="contacyNumber" id="contacyNumber" placeholder="Phone Number" required>
+                <input type="text" name="contactNumber" id="contactNumber" placeholder="Phone Number">
+                <span id="message" style="border: 1px solid red;"> </span> <br><br>
             </div>
 
             <div class="form-group">
-                Select Country: <select name="state" id="countySel" class="form-group" size="1">
-                    <option value="" class="form-group" selected="selected">Select Country</option>
+                Select Country:
+                <select name="state" id="countySel" class="form-group" size="1" onchange="countryChange()">
+                    <option value="Select" class="form-group" selected="selected">Select Country</option>
+                    <option value="India">India</option>
+                    <option value="Other">Other</option>
                 </select>
             </div>
             <br>
             <br>
             <div class="form-group">
-                Select State: <select name="countrya" id="stateSel" size="1">
-                    <option value="" selected="selected">Please select Country first</option>
+                Select State: <select name="countrya" id="stateSel" size="1" onchange="stateChange()">
+                    <option value="Select" selected="selected">Please select State</option>
                 </select>
             </div>
             <br>
@@ -108,7 +113,7 @@
                 </select><br>
             </div>
             <div class="form-group">
-                <button type="submit">Sign Up</button>
+                <button type="submit" onclick="return myFun()">Sign Up</button>
             </div>
 
         </form>
@@ -162,45 +167,51 @@
         }
         dispData();
 
-        var stateObject = {
-            "India": {
-                "Delhi": ["new Delhi", "North Delhi","old delhi"],
-                "Gujarat": ["Surat", "Bhavnagar","Ahmedabad","Bhuj","Bharuch","Div"],
-                "Goa": ["North Goa", "South Goa"],
-            },
-            "Australia": {
-                "South Australia": ["Dunstan", "Mitchell"],
-                "Victoria": ["Altona", "Euroa"]
-            }, "Canada": {
-                "Alberta": ["Acadia", "Bighorn"],
-                "Columbia": ["Washington", ""]
-            },
-        }
-        window.onload = function () {
-            var countySel = document.getElementById("countySel"),
-                stateSel = document.getElementById("stateSel"),
-                districtSel = document.getElementById("districtSel");
-            for (var country in stateObject) {
-                countySel.options[countySel.options.length] = new Option(country, country);
-            }
-            countySel.onchange = function () {
-                stateSel.length = 1; // remove all options bar first
-                districtSel.length = 1; // remove all options bar first
-                if (this.selectedIndex < 1) return; // done 
-                for (var state in stateObject[this.value]) {
-                    stateSel.options[stateSel.options.length] = new Option(state, state);
+
+
+        function countryChange() {
+            var country = document.getElementById("countySel");
+            var state = document.getElementById("stateSel");
+            var sarr = ["Delhi", "Gujarat", "Goa"];
+
+            if (country.value == "India") {
+
+                for (const iterator of sarr) {
+                    state.innerHTML += " <option value=''>" + iterator + "  </option>";
                 }
             }
-            countySel.onchange(); // reset in case page is reloaded
-            stateSel.onchange = function () {
-                districtSel.length = 1; // remove all options bar first
-                if (this.selectedIndex < 1) return; // done 
-                var district = stateObject[countySel.value][this.value];
-                for (var i = 0; i < district.length; i++) {
-                    districtSel.options[districtSel.options.length] = new Option(district[i], district[i]);
-                }
-            }
+
         }
+
+
+        function myFun() {
+            var a = document.getElementById("contactNumber").value;
+            var correctWay= /^[A-Za-z_ ]{2,30}$/;
+             var b= document.getElementById("fname").value
+            if (a == "" || b=="" ) {
+                document.getElementById("message").innerHTML = "Mobile Number or Name should not Be Empty";
+                return false;
+            }
+            if(!correctWay.test(b))
+             {
+                document.getElementById("message1").innerHTML="Name should be alphabetically only";
+                 return false;
+             }
+             if (isNaN(a)) {
+                document.getElementById("message").innerHTML = "only numbers are allowed";
+                return false;
+
+            }
+            
+             else
+             {
+                 alert("All information are in format");
+                return false;
+
+             
+             }
+        }
+
     </script>
 </body>
 
