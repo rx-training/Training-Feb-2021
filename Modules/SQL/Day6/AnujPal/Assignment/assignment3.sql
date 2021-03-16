@@ -17,10 +17,6 @@
 /*   3) Find the names (first_name, last_name), job, department number, and department name of the employees who work in London. */
 
 
-select * from Employees WHERE LastName = 'John' OR FirstName ='John'
-select * from Departments
-select * from JobHistory
-select * from Locations
 
 	CREATE VIEW Assignment9 AS
 	SELECT dbo.Employees.FirstName, dbo.Employees.LastName, dbo.JobHistory.JobID, dbo.Departments.DepartmentID, dbo.Departments.DepartmentName
