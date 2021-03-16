@@ -15,6 +15,7 @@
                     <h4 class="text-center text-white">Employee Details</h4>
                 </div>
                 <div class="card-body">
+                    <p class="alert alert-danger" id="errmsg" style="display: none;"></p>
                     <div class="form-group">
                         <label for="firstname">First Name</label>
                         <input type="text" class="form-control" id="firstname" placeholder="Enter Firstname" required>
@@ -32,6 +33,10 @@
                         <input type="password" class="form-control" id="password" placeholder="Enter password" required>
                     </div>
                     <div class="form-group">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="text" class="form-control" id="mobile" placeholder="Enter Mobile Number" required>
+                    </div>
+                    <div class="form-group">
                         <select id="states" onchange="setCities(this.value)" class="form-control">
                             <option value="" selected>Choose State</option>
                             <option value="Gujarat">Gujarat</option>
@@ -45,6 +50,7 @@
                             <option value="" selected>Choose City</option>
                         </select>
                     </div>
+                    <p class="alert alert-danger" id="errmsg" style="display: none;"></p>
                     <button class="form-control btn btn-info" name="submit" onclick="insertData()">Insert Data</button>
                     <button class="form-control btn btn-success my-2" onclick="showEmployees()">Show All Employees</button>
                 </div>
@@ -83,26 +89,36 @@
             var lastname = document.getElementById('lastname').value;
             var email = document.getElementById('email').value;
             var password = document.getElementById('password').value;
+            var mobile = document.getElementById('mobile').value;
             var state = document.getElementById('states').value;
             var city = document.getElementById('citySelect').value;
 
-            emp = {"firstname":firstname, "lastname":lastname, "email":email, "password":password ,"city":city};
-            all_employees.push(emp);
-            emps = JSON.stringify(all_employees);
-            localStorage.setItem("all_employees", emps);
-            document.getElementById('firstname').value = "";
-            document.getElementById('lastname').value = "";
-            document.getElementById('email').value = "";
-            document.getElementById('password').value = "";
-            document.getElementById('states').value = "";
-            document.getElementById('citySelect').value = "";
+            if( mobile.match(/^\d{10}/)) {
+                document.getElementById("errmsg").innerHTML = "Enter valid mobile number..."
+                document.getElementById("errmsg").style.display = "block";
+            }
+            else if( firstname === "" || lastname === "" || email === "" || password === "") {
+                document.getElementById("errmsg").innerHTML = "All fields are required..."
+                document.getElementById("errmsg").style.display = "block";
+            } else {
+                emp = {"firstname":firstname, "lastname":lastname, "email":email, "password":password ,"state":state,"city":city, "mobile":mobile};
+                all_employees.push(emp);
+                emps = JSON.stringify(all_employees);
+                localStorage.setItem("all_employees", emps);
+                document.getElementById('firstname').value = "";
+                document.getElementById('lastname').value = "";
+                document.getElementById('email').value = "";
+                document.getElementById('password').value = "";
+                document.getElementById('states').value = "";
+                document.getElementById('citySelect').value = "";
+            }
         }
         function showEmployees(){
             var all_emps = JSON.parse(localStorage.getItem("all_employees"));
             //Set data into table
             document.getElementById("myTableEmp").innerHTML = "<tr><th> First Name </th><th> Last Name </th><th> Email </th><th> Password </th><th> State </th><th> City </th></tr>";
             for(var e of all_emps){
-                document.getElementById("myTableEmp").innerHTML += "<tr><td>"+e.firstname+"</td><td>"+e.lastname+"</td><td>"+e.email+"</td><td>"+e.password+"</td><td>"+e.state+"</td><td>"+e.city+"</td></tr>";
+                document.getElementById("myTableEmp").innerHTML += "<tr><td>"+e.firstname+"</td><td>"+e.lastname+"</td><td>"+e.email+"</td><td>"+e.mobile+"</td><td>"+e.password+"</td><td>"+e.state+"</td><td>"+e.city+"</td></tr>";
             }
         }
 
