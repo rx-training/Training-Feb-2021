@@ -52,6 +52,8 @@ function showData() {
 
     if(sessionStorage.getItem('logged') != 'true') {
         window.location.replace('login.html');
+        alert('You are not logged in')
+        return false;
     }
 
     emp = localStorage.getItem('employee');
