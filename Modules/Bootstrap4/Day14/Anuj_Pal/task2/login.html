@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,132 +9,45 @@
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <title>Document</title>
     <style>
-   
+
     </style>
 </head>
 
 <body>
     <script>
-        function validateform() {
-            var name = document.getElementById("#exampleInputUserName").value;
-            var password = document.getElementById("#exampleInputPassword1").value;
+        var user = document.getElementById("exampleInputUserName")
+        var pass = document.getElementById("password1")
 
-            if (name == 'admin') && (password =='admin') {
-                alert("Access Granted");
-           
-            } 
-            else   {
-                alert("Access Not Granted.");
-           
+        function validateform() {
+            if (user == "admin" && pass == "admin") {
+                window.open("https://www.w3schools.com");
+                alert('correct username')
+            } else {
+                alert('incorrect username or password')
             }
         }
 
 
-
-
     </script>
 
-    <div class="container border-primary" >
-        <center><h3 class="mt-3">Login</h3></center>
-    <form name="myform" action="form.html">
-        <div class="m-auto mt-5 mr-5">
-            <label for="exampleInputEmail1" class="form-label  " id="Username1">username</label>
-            <input type="text" class="form-control  " id="exampleInputUserName" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text"></div>
-        </div>
-        <div class="mb-3 ml-5 p-0">
-            <label for="exampleInputPassword1" class="form-label l1">Password</label>
-            <input type="password" class="form-control " id="exampleInputPassword1">
-        </div>
+    <div class="container border-primary">
+        <center>
+            <h3 class="mt-3">Login</h3>
+        </center>
+        <form name="myform" action="form.html">
+            <div class="m-auto mt-5 mr-5">
+                <label for="exampleInputEmail1" class="form-label  " id="Username1">username</label>
+                <input type="text" class="form-control  " id="exampleInputUserName" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text"></div>
+            </div>
+            <div class="mb-3 ml-5 p-0">
+                <label for="exampleInputPassword1" class="form-label l1">Password</label>
+                <input type="password" class="form-control " id="Password1">
+            </div>
 
-        <button type="submit" class="btn btn-primary " onsubmit="validateform()">Submit</button>
-    </form>
-</div>
-</body>
-
-</html>  
-
-<!-- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <style>
-        #text1
-        {
-            margin: 12px;
-            padding: 6px;
-        }
-
-        .container
-        {
-            margin: auto;
-            width:29%;
-            padding: 10px;
-            border : 3px solid #181918;
-            background-color:#f1d2d2;
-            height: 30%;
-        }
-
-        #pass1
-        {
-            margin: 12px; 
-            padding: 6px; 
-        }
-
-        #btn1
-        {
-            margin: 12px; 
-        }
-
-
-    </style>
-
-  
-</head>
-<body>
-    <div class="container">
-    <form action="form.html" id="myform">
-        <label for="">Enter the username: </label>
-        <input type="text" id="text1" placeholder=>
-        <br>
-        <label for="">Enter the password: </label>
-        <input type="password" id=pass1 >
-        <br>
-        <input type="button" value="Submit" id="btn1">
-    </form>
+            <button type="submit" class="btn btn-primary " onsubmit="validateform()">Submit</button>
+        </form>
     </div>
 </body>
+
 </html>
-
-
-
-
-<html>
-<body>
-<script>  
-function validateform(){  
-var name=document.myform.name.value;  
-var password=document.myform.password.value;  
-  
-if (name==null || name==""){  
-  alert("Name can't be blank");  
-  return false;  
-}else if(password.length<6){  
-  alert("Password must be at least 6 characters long.");  
-  return false;  
-  }  
-}  
-</script>  
-<body>  
-<form name="myform" method="post" action="http://www.javatpoint.com/javascriptpages/valid.jsp" onsubmit="return validateform()" >  
-Name: <input type="text" name="name"><br/>  
-Password: <input type="password" name="password"><br/>  
-<input type="submit" value="register">  
-</form>  
-</body>
-</html> 
- -->
