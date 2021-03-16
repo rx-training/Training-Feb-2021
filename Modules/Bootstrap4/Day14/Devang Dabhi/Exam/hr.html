@@ -15,63 +15,10 @@
             padding-left:80px;
         }
     </style>
-    <script>
-        // functionhr2()
-        // {
-        //     var hr2;
-        //     employee=JSON.stringify(employees);
-        //     localStorage.setItem("employee",employee);
-        //     var item=localStorage.getItem("employee");
-        //     hr2.push(employees)
-        //     employee=JSON.stringify(employees);
-        //     localStorage.setItem("employee",employee);
-        // }
 
-        function hr()
-        {
-        var name=document.getElementById("name").value;
-        var id=document.getElementById("id").value;
-        var mo=document.getElementById("mo").value;
-        var email=document.getElementById("email").value;
-        var add=document.getElementById("add").value;
-        var city=document.getElementById("city").value;
-        if(isNaN(name))
-        {
-                        
-        }
-        else{
-            document.getElementById("ans").innerHTML="Invalid Name";exit;
-        }
-        if(isNaN(mo))
-        {
-            document.getElementById("mobile").innerHTML="Invalid Mobile";exit;             
-        }
-
-        // employees = [{"Name":name,"id":id,"mobile":mo,"email":email,"add":add,"city":city}]
-        // employee=JSON.stringify(employees);
-        // var employee2;
-        // employee2.pushValues(employee);
-        // console.log(employee1);
-        // employee1=JSON.stringify(employee2);
-        // localStorage.setItem("employee1",employee1);
-
-        employees = [{"Name":name,"id":id,"mobile":mo,"email":email,"add":add,"city":city}]
-        employee=JSON.stringify(employees);
-        localStorage.setItem("employee",employee);
-        var item=localStorage.getItem("employee");
-        // var employee2;
-        // employee2.push(employee);
-        // employee1=JSON.stringify(employee2);
-        // localStorage.setItem("employee1",employee1);
-
-        document.getElementById("output").innerHTML= "Name="+ name+" ID="+id+" Mobile="+mo+" Email="+email+" Address="+add+" City="+city;
-
-        
-    }
-    </script>
-  </head>
+    </head>
   <body>
-    <form >
+    <form>
         <div class="form-group">
         <div class="col-sm-10">
                 <label for="Name">Name</label>
@@ -85,17 +32,16 @@
 
                 <label for="Email">Email</label>
                 <input type="email" id="email" class="form-control"><br>
-            
-                <select name="add" id="add">
-                    <option value="india">India</option>
-                    <option value="usa">USA</option>
-                </select>
 
-                <select name="city" id="city">
-                    <option value="ahm">Ahemdabad</option>
-                    <option value="bvn">Bhavnagar</option>
-                    <option value="rajkot">Rajkot</option>
+                <select name="add" id="add" onchange="make(value)">
+                    <option value="" disabled selected>Choose Country</option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
                 </select>
+                <select id="city">
+                    <option value="" disabled selected>Choose City</option>
+                    <option></option>
+                    </select>
 
                 <p id="ans"></p>
                 <p id="mobile"></p>
@@ -105,6 +51,70 @@
         </div>
 
     </form>
+
+    
+<script type="text/javascript">
+
+    var countryToState = 
+    {
+        India: ["Gujarat","Maharashtra","Delhi"],
+        USA: ["Texas","Newyork","california"]
+    };
+    function make(value)
+    {
+        if(value.length==0) 
+            document.getElementById("city").innerHTML = "<option></option>";
+        else 
+        {
+            var options = "";
+            for(city in countryToState[value]) 
+            {
+            options+="<option value="+countryToState[value][city]+">"+countryToState[value][city]+"</option>";
+            }
+            document.getElementById("city").innerHTML = options;
+        }
+    }
+
+    var employee2=[];
+
+    function hr()
+    {
+        var name=document.getElementById("name").value;
+        var id=document.getElementById("id").value;
+        var mo=document.getElementById("mo").value;
+        var email=document.getElementById("email").value;
+        var add=document.getElementById("add").value;
+        var city=document.getElementById("city").value;
+        
+        if(isNaN(name))
+        {
+                        
+        }
+        else{
+            document.getElementById("ans").innerHTML="Invalid Name";exit;
+        }
+        if(isNaN(mo))
+        {
+            document.getElementById("mobile").innerHTML="Invalid Mobile";exit;             
+        }
+
+        employees = {"Name":name,"id":id,"mobile":mo,"email":email,"add":add,"city":city};
+        employee2.push(employees);
+        employee1=JSON.stringify(employee2);
+        localStorage.setItem("employee1",employee1);
+        var employee11 = JSON.parse(localStorage.getItem("employee1"));
+        console.log(employee11);
+        var emp_items="";
+        for(var emp of employee11 )
+        {
+        emp_items+= "Name="+ emp.Name+" ID="+emp.id+" Mobile="+emp.mobile+" Email="+emp.email+" Address="+emp.add+" City="+emp.city+"<br>";
+        }
+        document.getElementById("output").innerHTML=emp_items;
+    }
+</script>
+
+
+    
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
