@@ -63,13 +63,6 @@
 
     <script>
 
-        function validateForm() {
-            var name = document.getElementById("ename").value;
-            var contact = document.getElementById("contact").value;
-           /*  var location = document.getElementById("location").value; */
-            var err = new Array(2);
-            var i=0;
-
             function store(){
                 let data = {
                     NAME : document.getElementById("ename").value,
@@ -83,6 +76,12 @@
                
             }
 
+        function validateForm() {
+            var name = document.getElementById("ename").value;
+            var contact = document.getElementById("contact").value;
+           /*  var location = document.getElementById("location").value; */
+            var err = new Array(2);
+            var i=0;
 
             var n = /^[A-Za-z]+$/;
             if(name == "") {
@@ -125,7 +124,6 @@
                     document.getElementById("errid").innerHTML += '<div class="alert alert-danger">' + err[i] + '</div>';
                 }
             }    
-            window.location.href = "home.html"
             return store();
             
         }
