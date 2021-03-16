@@ -7,8 +7,6 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="add.js"></script>
 
     <title>Demo!</title>
   </head>
@@ -55,7 +53,7 @@
         </ul>
       </div>
       <div class="card-body">
-        <h5 class="card-title h3 text-primary">Add Employee</h5>
+        <h5 class="card-title h3 text-primary text-center">Add Employee</h5>
         <form >
             <h1 id="demo"></h1>
             <div class="form-row">
@@ -79,27 +77,30 @@
         
             <div class="form-group ">
                 <label for="inputState">State</label>
-                <select id="state" value="get" class="form-control">
-                  <option selected>Choose...</option>
-                  <option>Gujarat</option>
-                  <option>Rajasthan</option>
-                  <option>Kolkata</option>
-                  <option>Chennai</option>
+                <select id="state" name="state" value="get" class="form-control" onchange="populate(this.id,'city')">
+                  <option value="">Please choose state</option>
+                  <option value="india">India</option>
+                  <option value="america">America</option> 
+                  <option value="africa">Africa</option>
+                  <option value="others">Others</option> 
+
+
+                           
 
                 </select>
               </div>
               <div class="form-group">
                 <label for="inputcity">City</label>
-                <select id="city" class="form-control">
-                  <option selected>Choose...</option>
-                 
-
+                <select id="city" name="city" class="form-control">
+                  <option value=""></option>
                 </select>
               </div>
+              
+            </div>
             
               
-           
-            <button type="submit" class="btn btn-primary" onclick="return add();" >Add Employee</button>
+           <div>
+            <button type="submit" class="btn btn-primary float-right" onclick="return add();" >Add Employee</button>
           </form>
       </div>
     </div>
@@ -108,14 +109,61 @@
 
     <div style="margin-top: 200px;">  </div> 
     <script>
+            
+            function populate(s1,s2)
+            {
+              var s1 = document.getElementById(s1);
+              var s2 = document.getElementById(s2);
+
+              s2.innerHTML = "";
+              
+              if(s1.value == "india")
+              {
+                var optionArray = ['delhi|Delhi','mumbai|Mumbai','gujrat|Gujarat','kolkata|Kolkata','other|others'];
+              }
+              else if(s1.value == 'america')
+              {
+                var optionArray = ['new york|New York','chicago|Chicago','los anegels|Los Angles','boston|Boston','other|Others'];
+              }
+
+              else if(s1.value == 'africa')
+              {
+                var optionArray = ['congo|Congo','benin|Benin','coroswa|coroswa','other|Others'];
+              }
+              else if(s1.value == 'others')
+              {
+                var optionArray = ['other|Others'];
+              }
+
+              for(var option in optionArray)
+              {
+                var pair = optionArray[option].split("|");
+                var newoption = document.createElement("option");
+
+                newoption.value = pair[0];
+                newoption.innerHTML = pair[1]
+                s2.options.add(newoption);
+              }
+
+            }
+     
+
+            ///store in local 
           localStorage.setItem("EmployeeName","[]");
         function add()
-        {
+      {
+      
+
             var letters = /^[A-Za-z]+$/.test(document.getElementById("first").value);
             var isValid = letters;
             if (!isValid)
             {
             document.getElementById("demo").innerHTML +='<h4 class="ans text-light p-3 mt-3 bg-info"> Please enter only character in first name</h4>';
+            cityFlag=false;
+            }
+            else{
+              document.getElementById("demo").innerHTML = "";
+              cityFlag=true;
             }
            
             var letter = /^[A-Za-z]+$/.test(document.getElementById("last").value);
@@ -123,6 +171,11 @@
             if (!isValid)
             {
             document.getElementById("demo").innerHTML +='<h4 class="ans text-light p-3 mt-3 bg-info"> Please enter only character in last name</h4>';
+            cityFlag = false;
+            }
+            else{
+              document.getElementById("demo").innerHTML = "";
+              cityFlag= true;
             }
 
 
