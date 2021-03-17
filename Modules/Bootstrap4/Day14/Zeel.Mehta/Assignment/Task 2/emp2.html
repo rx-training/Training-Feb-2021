@@ -11,92 +11,57 @@
     </head>
     <link rel="stylesheet" href="task.css">
 <body>
-    <div class="container py-5 col-lg-5">
-        <form class="eform">
-            <h1 class="text-light">Employee Data</h1><br>
-            <div class="form-group">
-                <label class="text-muted">Name : </label>
-                <input class="float-right" id="ename" name="name" class="form-control"  type="text" >
-            </div>
-            <div class="form-group">
-                <label class="text-muted">Contact No : </label>
-                <input class="float-right" id="ecno" name="cno" class="form-control"  type="text" >
-            </div>
-            <div class="form-group">
-                <label class="text-muted">Location : </label>
-                <select id="countries" class="float-right text-dark">
-                    <option value="0" selected>Please select... </option>
-                    <option value="1" id="oi">India             </option>
-                    <option value="2" id="ouk">United Kingdom   </option>
-                    <option value="3" id="ors">Russia           </option>
-                    <option value="4" id="ous">United States    </option>
-                    <option value="5" id="ojp">Japan            </option>
-                </select>
-             </div>
-             <div class="form-group">
+    <div class="container py-5 col-lg-9">
+        <div >
+            <input type="button" value="Insert Data" class="btn btn-dark btn-block" onclick="window.location.href = 'emp1.html'">
+        </div>
+   
+
+        <button class="btn btn-danger" onclick="productList(table1)">...Click...</button>
+            <table class="table table-border" id="table1"> 
                 
-                <select id="istate" class="float-right text-dark">
-                    <option  selected>Please select... </option>
-                    <option  id="gj">Gujarat            </option>
-                    <option  id="mh">Maharastra      </option>
-                    
-                </select>
-             </div>
-              <br><br>
-            <input type="button" value="Edit" class="btn" onclick="validateForm()">     
-            <label id="abc"></label>             
-        </form>
-        
+            </table>
+
     </div>
-    
-    
-    <script type="text/javascript">
-        function validateForm() {
-            var ename= document.getElementById("ename").value;
-            var ecno = document.getElementById("ecno").value;
+    <script>
+        myObj;
+        var product_list=JSON.stringify(myObj);     
+        localStorage.setItem("productList",product_list);
 
-            var err = new Array(1);
-                var i=0;
-            if(ename == "") {
-                    err[0] = "Employee Name is required.";  
-                }
-            else{
-                    err[0] = "";    
-                }
-            if(ecno == "") {
-                    err[1] = "Contact No. is required.";  
-                }
-            else{
-                    err[1] = "";    
-                }
-
-                document.getElementById("abc").innerHTML = "";
-            for(i; i<err.length; i++) {
-                if(err[i] == "") {
-                    continue;
-                }
-                document.getElementById("abc").innerHTML += '<div class="alert alert-info">' + err[i] + '</div>';
+        function productList(table1){
+            var product_list=localStorage.getItem("productList");
+            var plist=JSON.parse(product_list);
+            console.log(plist);
+            var counter=0;
+            var trtd="<tr> "+
+                      "<th>No</th>"+
+                      "<th>Name</th>"+
+                      "<th>Price</th>"+
+                      "<th>Location</th>"+
+                      "<th></th>"+
+                      "</tr>";
+            for (const item of plist) {
+                trtd+="<tr>"+
+                  
+                      "<td><input id='eno' name='no' class='form-control'  type='text' value="+(++counter)+"></td>"+
+                      "<td><input id='ename' name='no' class='form-control'  type='text' value="+item.Name+"></td>"+
+                      "<td><input id='eprice' name='no' class='form-control'  type='text' value="+item.Price+"></td>"+
+                      "<td><input id='eloc' name='no' class='form-control'  type='text' value="+item.Location+"></td>"+
+                      "<td><button class='btn btn-danger' onclick='getUpdate(eno,ename,eprice,eloc)'>Update</button></td>"+
+                      "</tr>";
             }
-            return false;
+            table1.innerHTML=trtd;
         }
-        
-                $(document).ready(function(){
-                    $("#countries").change(function(){
-                        var c = $("#countries").find("option:selected").text();
-                        
-                        if(c=="India")
-                        {
-                           
-                           $('#istate').show();
-
-                        }
-                        else
-                        {
-                            $('#istate').hide();
-                        }
-                    })
-                });
-               
+        function getUpdate(eno,ename,eprice,eloc)
+        {
+            var myObj = JSON.parse(plist);
+                
+            var product_list=JSON.stringify(myObj);
+            
+            
+        }
     </script>
+    
+    
 </body>
 </html>

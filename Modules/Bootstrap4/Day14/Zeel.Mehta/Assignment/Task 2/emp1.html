@@ -15,25 +15,25 @@
    
 <body>
     <div class="container py-5 col-lg-5">
-        <div class="">
-            <input type="button" value="Insert" class="btn btn-primary" onclick="window.location.href = 'emp1.html'">
-            <input type="button" value="Update" class="btn btn-primary" onclick="window.location.href = 'emp2.html'">
+        <div >
+            <input type="button" value="Update Data" class="btn btn-dark btn-block" onclick="window.location.href = 'emp2.html'">
         </div>
 
-        <form class="eform">
-            <h1 class="text-light">Employee Data</h1><br>
+        <form class="eform" >
+            
+            <h1 class="text-light">Insert Employee Data</h1><br>
             <div class="form-group">
                 <label class="text-muted">Name : </label>
-                <input class="float-right" id="ename" name="name" class="form-control"  type="text" >
+                <input class="float-right" id="ename" name="name" class="form-control"  type="text" required>
             </div>
             <div class="form-group">
                 <label class="text-muted">Contact No : </label>
-                <input class="float-right" id="ecno" name="cno" class="form-control"  type="text" >
+                <input class="float-right" id="ecno" name="cno" class="form-control"  type="text" required>
             </div>
             <div class="form-group">
                 <label class="text-muted">Location : </label>
                 <select id="countries" class="float-right text-dark">
-                    <option value="0" selected>Please select... </option>
+                    <option value="0" id="ps" selected>Please select... </option>
                     <option value="1" id="oi">India             </option>
                     <option value="2" id="ouk">United Kingdom   </option>
                     <option value="3" id="ors">Russia           </option>
@@ -42,45 +42,141 @@
                 </select>
              </div>
              <div class="form-group">
-                
                 <select id="istate" class="float-right text-dark">
                     <option  selected>Please select...  </option>
-                    <option  id="gj">Gujarat            </option>
-                    <option  id="mh">Maharastra         </option>
-                    
+                    <option>Gujarat            </option>
+                    <option>Maharastra         </option>
+                    <option>Rajsthan        </option>
+                    <option>Karnataka        </option>
+                    <option>Tamilnadu        </option>
+                </select>
+             </div>
+             <div class="form-group">
+                <select id="ukstate" class="float-right text-dark">
+                    <option  selected>Please select...  </option>
+                    <option>Scotland             </option>
+                    <option>Northern Ireland             </option>
+                    <option>Wales             </option>
+                    <option>Midlands             </option>
                 </select>
              </div>
              <div class="form-group">
                 
-                <select id="ukstate" class="float-right text-dark">
+                <select id="rstate" class="float-right text-dark">
                     <option  selected>Please select...  </option>
-                    <option  id="ln">London             </option>
-                    <option  id="ld">London             </option>
-                    
+                    <option>Bashkortostan            </option>
+                    <option>Dagestan         </option>
+                    <option>Ingushetia       </option>
+                    <option>Tuva       </option>
+                    <option>Adygey       </option>
                 </select>
              </div>
+             <div class="form-group">
+                
+                <select id="usstate" class="float-right text-dark">
+                    <option  selected>Please select...  </option>
+                    <option>California            </option>
+                    <option>Texas         </option>
+                    <option>Georgia        </option>
+                    <option>Florida        </option>
+                    <option>Washington        </option>
+                </select>
+             </div>
+             <div class="form-group">
+                
+                <select id="jstate" class="float-right text-dark">
+                    <option  selected>Please select...  </option>
+                    <option>Hokkaido            </option>
+                    <option>Tohoku      </option>
+                    <option>Kanto        </option>
+                    <option>Chubu        </option>
+                    <option>Shikoku        </option>
+                </select>
+             </div>
+            
               <br><br>
             <input type="button" value="Edit" class="btn" onclick="validateForm()">     
-            <label id="abc">adjjasjdhjhs</label>             
+            <label id="abc"></label>      
         </form>
-        <label>Country you selected :                   </label><br>
-            <label for="India"  id="in">--> India           </label>
-            <label for="UK"     id="uk">--> United Kingdom  </label>
-            <label for="Russia" id="rs">--> Russia          </label>
-            <label for="US"     id="us">--> United States   </label>
-            <label for="Japan"  id="jp">--> Japan           </label>
+        
         
     </div>
-    <script>
+
+
+    <script type="text/javascript">
+
+
+
+
+    
+    $(document).ready(function() {
+        $("#ukstate").hide();
+                            $("#rstate").hide();
+                            $("#usstate").hide();
+                            $("#istate").hide();
+                            $("#jstate").hide();
+});
+
         $(document).ready(function(){
-               $("input[type='radio']").click(function(){
-                   var c = $("#countries").find("option:selected").text();
-                   if(radioValue){
-                       document.getElementById("abc").innerHTML="YOU HAVE SELECTED : " +radioValue;
-                   }
-               });
-           });
+            $("#countries").change(function(){
+                var c = $("#countries").find("option:selected").text();
+                $("#result").text("" +c);
+                
+                if(c.match("India"))
+                {
+                    $("#istate").show();
+                    $("#ukstate").hide();
+                    $("#rstate").hide();
+                    $("#usstate").hide();
+                    $("#jstate").hide();
+                    
+                }
+               else if(c.match("United Kingdom"))
+                {
+                    $("#ukstate").show();
+                    $("#rstate").hide();
+                    $("#usstate").hide();
+                    $("#istate").hide();
+                    $("#jstate").hide();
+                }
+                else if(c.match("Russia"))
+                {
+                    $("#ukstate").hide();
+                    $("#rstate").show();
+                    $("#usstate").hide();
+                    $("#istate").hide();
+                    $("#jstate").hide();        
+                }
+                else if(c.match("United States"))
+                {
+                    $("#ukstate").hide();
+                    $("#rstate").hide();
+                    $("#usstate").show();
+                    $("#istate").hide();
+                    $("#jstate").hide();        
+                }
+                else if(c.match("Japan"))
+                {
+                    $("#ukstate").hide();
+                    $("#rstate").hide();
+                    $("#usstate").hide();
+                    $("#istate").hide();
+                    $("#jstate").show();        
+                }
+                
+
+                else 
+                        {
+                            $("#ukstate").hide();
+                            $("#rstate").hide();
+                            $("#usstate").hide();
+                            $("#istate").hide();
+                            $("#jstate").hide();
+                        }
+            });
+        });
    </script>
+   
     
 
     

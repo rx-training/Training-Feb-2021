@@ -43,6 +43,11 @@ function validateForm() {
         }
         document.getElementById("abc").innerHTML += '<div class="alert alert-info">' + err[i] + '</div>';
     }
+
+
+    var myObj = {name: ename, no: ecno};
+var myJSON = JSON.stringify(myObj);
+window.location = "emp2.html" + myJSON;
     return false;
 }
 

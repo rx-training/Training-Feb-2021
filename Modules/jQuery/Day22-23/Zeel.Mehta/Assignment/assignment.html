@@ -19,19 +19,19 @@
             <select id="countries">
                 <option value="0" selected>Please select... </option>
                 <option value="1" id="oi" value="India">India             </option>
-                <option value="2" id="ouk">United Kingdom   </option>
+                <option value="2" id="ouk" value="United Kingdom">United Kingdom   </option>
                 <option value="3" id="ors">Russia           </option>
                 <option value="4" id="ous">United States    </option>
                 <option value="5" id="ojp">Japan            </option>
             </select>
             <br><br>
             <label>Country you selected :                   </label><br>
-            <label for="India"  id="in">-- India           </label>
-            <label for="UK"     id="uk">-- United Kingdom  </label>
-            <label for="Russia" id="rs">-- Russia          </label>
-            <label for="US"     id="us">-- United States   </label>
-            <label for="Japan"  id="jp">-- Japan           </label>
-
+            <label for="India"  id="in"> India           </label>
+            <label for="UK"     id="uk"> United Kingdom  </label>
+            <label for="Russia" id="rs"> Russia          </label>
+            <label for="US"     id="us"> United States   </label>
+            <label for="Japan"  id="jp"> Japan           </label>
+<br><br>
             <label id="result"></label>
         </div>
 
@@ -39,25 +39,26 @@
                 $(document).ready(function(){
                     $("#countries").change(function(){
                         var c = $("#countries").find("option:selected").text();
-                        $("#result").text("sjdk" +c);
-                        if(c=="India")
+                       
+                        if(c.match("India"))
                         {
-                            console.log("absbsb");
+                            console.log("aaaaaa");
                             $("#in").show();
                             $("#uk").hide();
                             $("#rs").hide();
                             $("#us").hide();
                             $("#jp").hide();
                         }
-                       else if(c=="United Kingdom")
+                       else if(c.match("United Kingdom"))
                         {
+                            console.log("bbbbbb");
                             $("#uk").show();
                             $("#rs").hide();
                             $("#us").hide();
                             $("#jp").hide();
                             $("#in").hide();
                         }
-                        else if(c=="Russia")
+                        else if(c.match("Russia"))
                         {
                             $("#rs").show();
                             $("#jp").hide();
@@ -65,7 +66,7 @@
                             $("#uk").hide();
                             $("#us").hide();
                         }
-                        else if(c=="United States")
+                        else if(c.match("United States"))
                         {
                             $("#us").show();
                             $("#jp").hide();
@@ -73,7 +74,7 @@
                             $("#uk").hide();
                             $("#rs").hide();
                         }
-                        else if(c=="Japan")
+                        else if(c.match("Japan"))
                         {
                             $("#jp").show();
                             $("#in").hide();
@@ -83,11 +84,11 @@
                         }
                         else 
                         {
-                            $("#in").show();
-                            $("#uk").show();
-                            $("#rs").show();
-                            $("#us").show();
-                            $("#jp").show();
+                        //    $("#in").show();
+                        //    $("#uk").show();
+                         //   $("#rs").show();
+                         //   $("#us").show();
+                         //   $("#jp").show();
                         }
                     })
                 });
