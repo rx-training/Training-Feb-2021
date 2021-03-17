@@ -127,19 +127,28 @@ INSERT INTO Employees (EmployeeID,FirstName,LastName , Email, PhoneNumber, HireD
 ('205', 'Shelley', 'Higgins', 'SHIGGINS', '515.123.8080', '1987-09-30', 'AC_MGR', '12000.00', '0.00', '101', '110'),
 ('206', 'William', 'Gietz', 'WGIETZ', '515.123.8181', '1987-10-01', 'AC_ACCOUNT', '8300.00', '0.00', '205', '110');
 
-SELECT * FROM EMPLOYEES 
+select * from Employees
+go
+
+CREATE VIEW emp_view AS SELECT EmployeeID,FirstName,Salary FROM Employees 
+GO
+SELECT * FROM emp_view
 GO
 
 SET NOCOUNT ON
 DECLARE @ID INT, @NAME VARCHAR(25),@SALARY DECIMAL(10,0)
 DECLARE CUR_EMP CURSOR
 STATIC FOR
-
-SELECT EmployeeID,FirstName,Salary FROM Employees 
+SELECT EmployeeID,FirstName,Salary FROM emp_view where Salary between 3000 and 6500
 OPEN CUR_EMP
-
 IF @@CURSOR_ROWS>0
 BEGIN
+UPDATE emp_view SET salary = CASE 
+WHEN salary BETWEEN 3000 AND 4000 THEN salary + 5000 
+WHEN salary BETWEEN 4000 AND 5500 THEN salary + 7000 
+WHEN salary BETWEEN 5500 AND 6500 THEN salary + 10000 
+ END
+
 
 FETCH NEXT FROM CUR_EMP INTO @ID,@NAME,@SALARY
 WHILE @@FETCH_STATUS=0
@@ -154,5 +163,6 @@ DEALLOCATE CUR_EMP
 SET NOCOUNT OFF
 GO
 
+DROP VIEW emp_view
+DROP TABLE Employees
 
-drop table Employees
