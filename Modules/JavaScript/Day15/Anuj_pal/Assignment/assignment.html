@@ -1,85 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <title>Document</title>
 </head>
+
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-  
-    <script language="javascript" type="text/javascript">
-        function addition(){
-        a=Number(document.my_cal.first.value);
-        b=Number(document.my_cal.second.value);
-        c=a+b;
-        document.my_cal.total.value=c;
-        }
-        </script>
+    <script>
+        function Calculation() {
+            var a = document.getElementById("input1").value;
+            var b = document.getElementById("input2").value;
+            var a1 = document.getElementById("RadioDefault1");
+            var a2 = document.getElementById("RadioDefault2");
+            var a3 = document.getElementById("RadioDefault3");
+            var a4 = document.getElementById("RadioDefault4");
+            if(a1.checked == true)
+            {
+              var c;
+                c=parseInt(a)+parseInt(b);
+                document.getElementById("demo").innerHTML="The Addition Of Two number is :" +c;
+            }
+            if(a2.checked == true)
+            {
+              var c;
+                c=parseInt(a)-parseInt(b);
+                document.getElementById("demo").innerHTML="The Substraction Of Two number is :" +c;
+            }
+            if(a3.checked == true)
+            {
+              var c;
+                c=parseInt(a)*parseInt(b);
+                document.getElementById("demo").innerHTML="The Multiplication Of Two number is :" +c;
+            }
 
-    <script language="javascript" type="text/javascript">
-         function subtraction(){
-         a=Number(document.my_cal.first.value);
-         b=Number(document.my_cal.second.value);
-         c=a-b;
-         document.my_cal.total.value=c;
-        }
-    </script>
+            if(a4.checked == true)
+            {
+              var c;
+                c=parseInt(a)/parseInt(b);
+                document.getElementById("demo").innerHTML="The Devision Of Two number is :" +c;
+            }
 
-    <!-- <script language="javascript" type="text/javascript">
-        function multiply()
-        {
-            a=Number(document.my_cal.first.value);
-            b=Number(document.my_cal.second.value);
-            c=a*b;
-            document.my_cal.total.val=c;
-        }
-    
-    </script> -->
 
-    <script language="javascript" type="text/javascript">
-        function multiply(){
-        a=Number(document.my_cal.first.value);
-        b=Number(document.my_cal.second.value);
-        c=a*b;
-        document.my_cal.total.value=c;
-        }
-        </script>
 
-    <script language="javascript" type="text/javascript">
-     function division(){
-        a=Number(document.my_cal.first.value);
-        b=Number(document.my_cal.second.value);
-        c=a/b;
-        document.my_cal.total.value=c;
         }
     </script>
+    <form action="">
+        <div class="container mb-3 w-50 h-50 border primary mt-5" >
+            <center>
+                <h3 class="mt-2">CALCULATOR</h3>
+            </center>
+            <div class="mt-5 " >
+                <Label class="form-label">Enter the first number</Label>
+                <input type="text" class="form-control border top" id="input1">
+            </div>
+            <div>
+                <Label class="form-label">Enter the Second number</Label>
+                <input class="form-control" type="text" id="input2">
+            </div>
 
-
-        <form action="" name="my_cal">
-        <div class="form-group">
-            <label for="num1">Enter the first number</label>
-            <input class="form-control" name="first" type="number">
+            <div class="form-check mt-4" id="rates">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="RadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Addition
+                </label>
+            </div>
+            <div class="form-check ">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="RadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Substraction
+                </label>
+            </div>
+            <div class="form-check ">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="RadioDefault3" >
+                <label class="form-check-label" for="flexRadioDefault2">
+                   Multiplication
+                </label>
+            </div>
+            <div class="form-check ">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="RadioDefault4" >
+                <label class="form-check-label" for="flexRadioDefault2">
+                   Devide
+                </label>
+            </div>
+            <div class="mt-3">
+                <input type="button" value="Submit" onclick="return Calculation()">
+                <input type="reset" value="Reset">
+            </div>
+            
+            <div class="mt-3">
+                <p class="text-danger" id="demo"></p>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="num2">Enter the second number</label>
-            <input class="form-control" name="second" type="number">
-        </div>
 
-        <input class="btn btn-secondary" type="button" value="ADD" onclick="javascript:addition();">
-        <input class="btn btn-danger type="button" value="SUB" onclick="javascript:subtraction();">
-        <input class="btn btn-warning type="button" value="MUL" onclick="javascript:multiply();">
-        <input class="btn btn-info type="button" value="DIV" onclick="javascript:division();">
-       
-          
-            <button onclick="myFunction()" type="submit" class="btn btn-primary">Submit</button>
-            <button  type="reset" class="btn btn-primary">RESET</button>
-
-            Get Result: <input type="text" name="total">
-        </form>
+    </form>
 </body>
+
 </html>
