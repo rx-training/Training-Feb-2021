@@ -15,6 +15,12 @@
         #result{
             display: none;
         }
+        table, th, td {
+            border: 1px solid black;
+        }
+        td{
+            width: 150px;
+        }
         
     </style>
 
@@ -40,7 +46,8 @@
           <div class="card1 text-center col-md-8 border-dark m-5">
             <div class="card-body">
 
-                <div id="result" class="pt-5"></div>
+               
+                <table id="result" style="border: 2px solid black; text-align: center;"></table>
 
                 <form id="f1" style="padding: 20px; border: 2px solid black;">
 
@@ -89,20 +96,46 @@
 
         });
 
+        let AllData = [];
+        function store(){
+            var n = document.getElementById("ename").value;
+            var no = document.getElementById("contact").value;
+            var c =document.getElementById("firstList").value;
+            var st = document.getElementById("secondList").value
+            var data = {
+                NAME : n ,
+                NUMBER :no,
+                COUNTRY :c ,
+                STATE : st
+            };
+            AllData.push(data);
+            localStorage.setItem('Data',JSON.stringify(AllData));
+            console.log(localStorage.getItem('Data'));
+               
+        }
+
         function Retrieve()
         {
-            var retrievedObject = localStorage.getItem('data');
-
+            var retrievedObject = localStorage.getItem('Data');
             console.log('retrievedObject: ', JSON.parse(retrievedObject));
-        
-            var item = JSON.parse(retrievedObject);
+            var List = JSON.parse(retrievedObject);
 
-            display = "<h3>Name = " + item.NAME + "<br>Number = "+ item.NUMBER + "<br>Country = "+item.COUNTRY+
+           // trow = "";
+             var trow="<tr><th>Name</th><th>Number</th><th>Country</th><th>State</th>";
+                for(var item of List)
+                {
+                    trow += "<tr><td>"+item.NAME +"</td><td>" +item.NUMBER+"</td><td>" + item.COUNTRY+"</td><td>"+item.STATE +"</td></tr>"
+                    console.log(item.NAME + " " + item.NUMBER + " " + item.COUNTRY+ " "+ item.STATE);
+                }
+                document.getElementById("result").innerHTML=trow;
+        
+
+           /*  display = "<h3>Name = " + item.NAME + "<br>Number = "+ item.NUMBER + "<br>Country = "+item.COUNTRY+
                         "<br>State = "+item.STATE +"</h3>"
 
             console.log(item.NAME + " " + item.NUMBER + " " + item.COUNTRY+ " " + item.STATE);
                 
-            document.getElementById("result").innerHTML=display;
+            document.getElementById("result").innerHTML=display; */
         }
         
 
@@ -144,18 +177,7 @@
 
             } 
 
-            function store(){
-                let data = {
-                    NAME : document.getElementById("ename").value,
-                    NUMBER : document.getElementById("contact").value,
-                    COUNTRY : document.getElementById("firstList").value,
-                    STATE : document.getElementById("secondList").value
-                }
-                console.log(data);
-                localStorage.setItem('data',JSON.stringify(data));
-                console.log(localStorage.getItem('data'));
-               
-            }
+           
             
             $(document).ready(function () {
 		
