@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+
+
+
+</head>
+<body style="font-size: larger;">
+
+    <div class="card col-md-6 border-light mb-3 p-5 mx-auto">
+        <div class="card-header bg-dark text-white text-center">
+           <h5>Calculator</h5>
+        </div>	
+        <div class="card-body" style="background-color: lightgreen">
+            <form id="myForm">
+                Please enter first number : <input type="number"  id="n1" name="n1"><br><br>
+                Please enter second number : <input type="nymber" id="n2" name="n2"><br><br>
+        
+                Please select operation you want to perform : <br><br>
+                <pre>
+                <input type="radio" id="add" name="rad" value="add"><label for="add" style="font-size: larger;">Addition</label> 
+                
+                <input type="radio" id="sub" name="rad" value="sub"><label for="sub" style="font-size: larger;">Subtraction</label>
+                
+                <input type="radio" id="multi" name="rad" value="multi"><label for="multi" style="font-size: larger;">Multiplication</label>
+                
+                <input type="radio" id="div" name="rad" value="div"><label for="div" style="font-size: larger;">Division</label><br>
+                </pre>
+                <center>
+                <input type="button" onclick="calculate(n1.value,n2.value,rad.value)" value="Calculate" style="font-size: larger;"> &nbsp; &nbsp; &nbsp;
+                <input type="button" onclick="myFunction()" value="Reset" style="font-size: larger;">
+                </center><br>
+                <center><h1 id="demo1" style="font-size: larger; color: blue;"></h1></center>
+            </form>
+        </div>	
+    </div>	
+    
+   
+        <div class="container">
+    
+      
+    </div>
+      
+      <script>
+            function myFunction() {
+                document.getElementById("myForm").reset();
+                document.getElementById("demo1").innerHTML = "";
+            }
+
+
+            function calculate(n1,n2,rad)
+            {
+                if(rad == "add")
+                {
+                    s = parseInt(n1) + parseInt(n2);
+                    document.getElementById("demo1").innerHTML = "Addition is = " + s;
+                }
+                if(rad == "sub")
+                {
+                    s = parseInt(n1) - parseInt(n2);
+                    document.getElementById("demo1").innerHTML = "Substraction is = " + s;
+                }
+                if(rad == "multi")
+                {
+                    s = parseInt(n1) * parseInt(n2);
+                    document.getElementById("demo1").innerHTML = "Multiplication is = " + s;
+                }
+                if(rad == "div")
+                {
+                    s = parseInt(n1) / parseInt(n2);
+                    document.getElementById("demo1").innerHTML = "Division is = " + s;
+                }
+            }
+      </script>
+    </center>
+
+</body>
+</html>

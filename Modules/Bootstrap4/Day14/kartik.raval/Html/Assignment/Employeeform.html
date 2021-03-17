@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../style.css">
+    <title>Radix training site</title>
+  </head>
+  <body>
+    <body id="home"> 
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="container">
+                <img src="../../Img/Radixweblogonew.jpg" width="100px" height="70px" alt="Radix_logo">
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-5">
+                        <li class="nav-item">
+                            <a href="../../Home/Index.html" class="nav-link text-light">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../Redmine/Fork&Clone.html" class="nav-link text-light">Redmine&Git</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../Practice/Login&article.html" class="nav-link text-light">HTML</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../Css/Day4/Practice/BorderToParagraph.html" class="nav-link text-light">CSS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../Bootstrap/Day9/Alert&progress.html" class="nav-link text-light">Bootstrap</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section id="redminegit" class="bg-light text-muted ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 bg-dark py-5" id="sidebar">
+                        <ul>
+                            <li>Day3</li>
+                            <ul>
+                                <li>Assignment</li>
+                                <ul>
+                                    <li><a href="../Assignment/Employeeform.html">Employee form</a></li>
+                                </ul>
+                                <li>Practice</li>
+                                <ul>
+                                    <li><a href="../Practice/Login&article.html">Login form & Article tag</a></li>
+                                    <li><a href="../Practice/Reportcard.html">Report card</a></li>
+                                </ul>
+                            </ul>
+                        </ul>   
+                    </div>
+                    <div class="col-md-8 bg-light py-3" id="main">
+                        <!doctype html>
+                        <html>
+                            <head>
+                                <meta name="viewport" content="width=device-width, initial-scale=1">
+                                <h1>Employee details form</h1>
+                                <style>
+                                    h1{
+                                        text-align: center;
+                                        color: darkcyan;
+                                    }
+                                   
+                                    input[type=text], input[type=password], input[type=number], input[type=date]{
+                                        width: 50%;
+                                        padding: 10px;
+                                        margin: 5px 0 22px 0;
+                                        display: inline-block;
+                                        border: inset;
+                                        border-block-color: blue;
+                                        background: #f1f1f1;
+                                    }
+                                    label{
+                                        font-weight: bold;
+                                    }
+                                    .registerbtn{
+                                        margin-left: 350px;
+                                        width: 95px;
+                                        height: 30px;
+                                        font-weight: bold;
+                                        color: green;
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <form style="padding-left: 100px;">
+                                        <label for="Name">Name</label>
+                                        <input type="text" name="name" id="name" style="margin-left: 88px;" required><br>  
+                        
+                                        <label for="">Age</label>
+                                        <input type="number" name="age" id="age" style="margin-left: 101px;" min="18" max="65"required ><br>
+                        
+                                        <label for="Gender">Gender</label><input type="radio" id="male" name="gender" value="male" style="margin-left: 85px;" required><label for="male">Male</label><input type="radio" id="female" name="gender" value="female" style="margin-left: 50px;"> <label for="female">Female</label> <input type="radio" id="other" name="gender" value="other" style="margin-left: 50px;"><label for="other" >Other</label><br>
+                                        <br>
+                                        <label for="Designation">Designation</label>
+                                        <input type="text" name="designation" id="designation" style="margin-left: 47px;" required><br>
+                        
+                                        <label for="Salary">Salary</label>
+                                        <input type="number" name="salary" id="salary" style="margin-left: 84px;" required><br>
+                        
+                                        <label for="Location">Location</label>
+                                        <input type="text" name="location" id="location" style="margin-left: 67px;"><br>
+                        
+                                        <label for="Email">Email</label>
+                                        <input type="text" name="email" id="email" style="margin-left: 87px;"><br>
+                        
+                                        <label for="Dateofjoining">Date of Joining</label>
+                                        <input type="date" name="date" id="date" min="2021-02-02" style="margin-left: 24px;"> <br>
+                        
+                                        <label for="Contact">Contact number</label>
+                                        <input type="number" name="contact" id="contact" size="10" style="margin-left: 15px;" required><br>
+                        
+                                        <a href="Welcome.html"><button type="submit" class="registerbtn" style="margin-left: 350px;">Submit</button></a> 
+                                </form>
+                            </body>
+                        </html>
+                        
+                    </div>
+                </div>
+        </div>
+        </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+

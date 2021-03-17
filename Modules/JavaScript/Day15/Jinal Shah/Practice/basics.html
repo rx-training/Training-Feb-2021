@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        var orderId;
+        console.log(orderId);
+ 
+        var orderId = 9001;
+        console.log(orderId);
+
+        var orderId = "ORD-9001";
+        console.log(orderId);
+
+        var orderId = "ORD-9001";
+        orderId = 3956;
+        console.log(orderId); 
+
+       /*  'use strict';
+        orderId = 9001;
+        console.log(orderId); */
+
+        var orderId = 9001;
+        console.log(typeof orderId);
+
+        var orderId = 9001.01;
+        console.log(typeof orderId);
+
+        var orderId = "ORD-9001";
+        console.log(typeof orderId);
+
+        var isActive;
+        console.log(typeof isActive);
+
+        var isActive = true;
+        console.log(typeof isActive);
+
+        var order = {
+            orderId1 :9375,
+            isActive1 : true
+        }
+        console.log(typeof order);
+
+        var cancelledorders = [3479, 3783, 2457];
+        console.log(typeof cancelledorders);
+
+        var order1 =null;
+        console.log(typeof order1);
+
+        function cancelorder(orderid2){};
+        console.log(typeof cancelorder);
+
+        /* --------------------------------Function fundamentals----------------------------- */
+
+        function printOreder() {
+            console.log('printing order...');
+        }
+        printOreder();
+
+        function printOrder(orderID) {
+            console.log('printing order : ' + orderID);
+        }
+        printOrder('3986');
+
+        function calcTotalPrice(quantity,price) {
+            console.log('Total price : '+ (quantity * price));
+        }
+        calcTotalPrice(2,4.00);
+
+        function calcTotalprice(quantity,price,currency) {
+            console.log(currency);
+        }
+        calcTotalprice(2,4.00);
+
+        function calctotalPrice(quantity,price) {
+            return quantity * price;
+        }
+        var totalPrice = calctotalPrice(2,4.00);
+        console.log(totalPrice);
+
+        totalPrice = calctotalPrice(3,3.00);
+        console.log(totalPrice);
+
+        function getorder() {
+        };
+        var order = getorder();
+        console.log(order);
+
+        var activateOrder = function() {
+            console.log('order activated...');
+        };
+        console.log(typeof activateOrder);
+
+        var activateOrder = function() {
+            console.log('order activated...');
+        };
+        activateOrder();
+
+        var activateOrder = function() {
+            console.log('order activated...');
+        };
+        activateOrder;
+
+        /* --------------------------------If & Switch----------------------------- */
+
+        var total=99.99;
+        var freeShipping = false;
+        if(total >=50.00)
+            freeShipping = true;
+        console.log(freeShipping);
+
+        var total=99.99;
+        var freeShipping = false;
+        if(total >=100.00)
+            freeShipping = true;
+        console.log(freeShipping);
+
+        var total=99.99;
+        var freeShipping = false;
+        if(total >=100.00)
+            freeShipping = true;
+        else
+            freeShipping = false;
+        console.log(freeShipping);
+
+        var total1 = 99.99;
+        var freeshipping;
+        var savings;
+        if(total>= 100.00){
+            freeshipping = true;
+            savings = 29.99;
+        }
+        else{
+            freeshipping = false;
+            savings= 0;
+        }
+        console.log(savings);
+
+        var orderType = 'business';
+        var shipMethod;
+        if(orderType == 'business')
+            shipMethod = 'fedEx';
+        else if (orderType == 'personal')
+            shipMethod = 'UPS Ground';
+        else
+            shipMethod = 'USPS';
+        console.log(shipMethod);
+
+        var ordertype = 'business';
+        var shipmethod;
+        switch(ordertype){
+            case 'business':
+                shipmethod = 'Fedex';
+                break;
+            case 'personal':
+                shipmethod = 'UPS Ground';
+                break;
+            default:
+                shipmethod = 'USPS';
+        }
+        console.log(shipmethod);
+
+        var ordertype = 'business';
+        var shipmethod;
+        switch(ordertype){
+            case 'business':
+                shipmethod = 'Fedex';
+                //break;
+            case 'personal':
+                shipmethod = 'UPS Ground';
+                break;
+            default:
+                shipmethod = 'USPS';
+        }
+        console.log(shipmethod);
+
+        var ordertype = 'unknown';
+        var shipmethod;
+        switch(ordertype){
+            case 'business':
+               
+            case 'personal':
+                shipmethod = 'UPS Ground';
+                break;
+            default:
+                shipmethod = 'USPS';
+        }
+        console.log(shipmethod);
+
+        var ordertype1 = 'unknown';
+        var shipmethod1;
+        switch(ordertype1){
+            case 'business':
+               
+            case 'personal':
+                shipmethod1 = 'UPS Ground';
+                break;
+        }
+        console.log(shipmethod1);
+
+        var orderTotal = 99.99;
+        var discount;
+        switch(true){
+            case orderTotal >= 50 && orderTotal < 75:
+                discount = 10;
+                break;
+            case orderTotal >= 75 && orderTotal < 100:
+                discount = 20;
+                break;
+            case orderTotal >= 100:
+                discount = 30;
+                break;
+            default:
+                discount = 0;
+        }
+        console.log(discount);
+
+        /* -------------------------------While and do while----------------------------- */
+
+        var lineitemcount = 3;
+        var currentitem = 0;
+        while(currentitem < lineitemcount){
+            console.log("item: "+ currentitem);
+            currentitem++;
+        }
+
+        var lineitemcount = 3;
+        var currentitem = 0;
+        while(currentitem < lineitemcount)
+            console.log("item: "+ currentitem++);
+
+        var lineitemcount = 3;
+        var currentitem = 0;
+        do{
+            console.log("item: "+ currentitem);
+            currentitem++;
+        }while(currentitem < lineitemcount);
+
+        var lineitemcount = 3;
+        var currentitem = undefined;
+        do{
+            console.log("item: "+ currentitem);
+            currentitem++;
+        }while(currentitem < lineitemcount);
+
+         /* -------------------------------for and for..in----------------------------- */
+
+        var Lineitemcount = 3;
+        for(var i=0; i<Lineitemcount; i++)
+            console.log(i);
+
+        var Lineitemcount = 3;
+        var i=0;
+        for(; i<Lineitemcount; )
+            console.log(i++);
+
+        var Lineitemcount = 5;
+        for(var i=0; i< Lineitemcount; i++){
+            console.log(i);
+            if(i==1)
+                break;
+        }
+
+        var Lineitemcount = 5;
+        for(var i=0; i< Lineitemcount; i++){
+            if(i==1)
+                continue;
+            console.log(i);
+        }
+
+        var lineItemCount = 5;
+        outerLoop:
+        for(var i=0; i< lineItemCount; i++){
+            for(var j=0; j<3; j++){
+                if(j==1)
+                    continue outerLoop;
+            }
+            console.log(i);
+        }
+
+        var lineItem = {
+            product : 'widget 1',
+            quantity : 4,
+            price : 9.50
+        };
+        for(var field in lineItem)
+            console.log(field);
+
+        var lineItem = {
+            product : 'widget 1',
+            quantity : 4,
+            price : 9.50
+        };
+        for(var field in lineItem)
+            console.log(field + " : " + lineItem[field]);
+
+        /* -------------------------------javascript usage feature----------------------------- */
+        function submitorder() {
+            console.log('submitting order...')
+        }
+        submitorder();
+
+        
+    </script>
+
+</body>
+</html>

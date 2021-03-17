@@ -1,0 +1,43 @@
+
+#post-5946 p{
+    color:#000000;
+    font-family: 'Segoe UI';
+    font-size: medium;
+}
+#post-5946 h1{
+    color: #ff0000;
+    font-size: x-large;
+    /* font-size: medium; */
+}
+#post-5946 h2{
+    color: #0000ff;
+    font-size: larger;
+    /* font-size: medium; */
+}
+footer p{
+    font-size: x-small;
+}
+.entry-title{
+    background-color: cornflowerblue;
+}
+.entry-meta{
+    font-style: italic;
+}
+.author{
+    font-style: normal;
+}
+#post-5946{
+    background-color: #bbbbbb;
+}
+#post-5946 ul :nth-child(odd){
+    background-color: cornflowerblue;
+}
+#post-5946 ul :nth-child(even){
+    background-color: cornsilk !important;
+}
+.aside-body p:nth-of-type(odd){
+    background-color: cyan;
+}
+.aside-body p:nth-of-type(even){
+    background-color: floralwhite;
+}

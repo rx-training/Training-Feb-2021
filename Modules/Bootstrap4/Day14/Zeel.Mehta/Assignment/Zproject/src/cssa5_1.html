@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+            * {
+                    box-sizing: border-box;
+            }
+                .h{
+                    background-color:rgb(0, 0, 0);
+                    border: 5px solid black;
+                    text-align: center;
+                }
+               
+                .hello {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    background-color: #333;
+                    }
+                    .anchor{
+                    display: block;
+                    color: white;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                    }
+    
+                    li .anchor:hover {
+                    background-color: #111;
+                    }
+                .sidenav5 {
+                    float:left;
+                    width:25%;
+                    background-color:black;
+                    height: 500px;
+                    padding: 20px;
+                    font-size: smaller;
+                }
+                .sidenav5 a {
+                   
+                    text-decoration: none;
+                    color: #818181;
+                    display: block;
+                }
+                .sidenav5 a:hover {
+                    color: #f1f1f1;     
+                }
+                .article5{
+                    float:left;
+                    width:75%;
+                    height: 50px;     
+                    font-size: 20px;
+                    color: rgb(0, 0, 0);
+                }
+                .f {
+                    position: fixed;
+                    bottom: 0;
+                    color: wheat;
+                    background-color:rgb(0, 0, 0);
+                    border: 5px solid black;
+                    text-align: center;
+                    width: 60%;
+                }
+            </style>
+        <title>Day 14</title>
+    </head>
+
+     <body id="home">
+        <nav class="navbar navbar-expand-sm bg-dark  navbar-dark fixed-top">
+            <div class="container">
+                <a href="index.html" class="navbar-brand">RADIX</a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="html.html" class="nav-link">HTML</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="css.html" class="nav-link">CSS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="bs.html" class="nav-link">BOOTSTRAP</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javas.html" class="nav-link">JAVASCRIPT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+           
+        <section id="authors" class="my-5 text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="info-header mb-5"><br>
+                            <nav class="navbar navbar-expand">
+                                <a href="cssd4.html" class="nav-link">Day 4</a>
+                                <a href="cssd5.html" class="nav-link">Day 5</a>
+                                <a href="cssd6.html" class="nav-link">Day 6</a>
+                                <a href="cssd7.html" class="nav-link">Day 7</a>
+                                <a href="cssd8.html" class="nav-link">Day 8</a>
+                            </nav>
+                            <h1 class="text-primary pb-3">BASIC LAYOUT OF THE APPLICATION</h1>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-12">
+                        <div class="sidenav ">
+                            <h3 class="text-dark">Day5</h3>
+                            <h5 class="text-dark">Assignments</h5>                                
+                                <a class="active" href="cssa5_1.html">Assignment 1</a>
+                            <h5 class="text-dark">Practice</h5>                                
+                                <a  href="cssp5_1.html">Practice 1</a><br>
+                                <a  href="cssp5_2.html">Practice 2</a><br>
+                                <a  href="cssp5_3.html">Practice 3</a><br>
+                        </div>  
+                    </div>
+                    <div class="col-lg-9 col-md-12 text-left"><div class="card">
+                        <div class="card-body w-100 h-100">
+                            <header class="h">
+                                <img src="img/yin-yang.jpg" height="100" width="100">
+                                <ul class="hello">
+                                    <li style="float: left;" ><a class="anchor" href="cssa5_1.html">Home</a></li>
+                                    <li style="float: left;" ><a class="anchor" href="redirectcss.html">ContactUs</a></li>
+                                    <li style="float: left;"><a class="anchor" href="redirectcss.html">AboutUs</a></li>
+                                  </ul>
+                            </header>
+                            <div class="sidenav5">
+                                <a href="https://www.w3schools.com/html/default.asp">HTML</a>
+                                <a href="https://www.w3schools.com/css/default.asp">CSS</a>
+                                <a href="https://www.w3schools.com/bootstrap/bootstrap_ver.asp">BOOTSTRAP</a>
+                                <a href="https://www.w3schools.com/js/default.asp">JAVASCRIPT</a>
+                              </div>
+                              <article class="article5">
+                                <h2>HEADER TAG</h2>
+                                The header element represents a container for introductory content or a set of 
+                                navigational links.
+                                A header element typically contains:
+                                <ol>
+                                    <li>one or more heading elements </li>
+                                    <li>logo or icon</li>
+                                    <li>authorship information</li>
+                                </ol> 
+                                    <h2>FOOTER TAG</h2>
+                                    The footer tag defines a footer for a document or section.
+                                     A footer element typically contains:              
+                                    <ol>
+                                    <li>authorship information</li>
+                                    <li>copyright information</li>
+                                    <li>contact information</li>
+                                    </ol> 
+                                </article><br/>
+                            <footer class="f">
+                                &#169; Zeel Mehta
+                                  
+                            </footer>   
+                        </div>
+                    </div></div>
+                    
+            </div>
+        </section>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+        <script id="__bs_script__">//<![CDATA[
+            document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.14'><\/script>".replace("HOST", location.hostname));
+        //]]></script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+header {
+    text-align: center;
+    padding: 25px;
+    color: crimson;
+}
+
+* {
+    box-sizing: border-box;
+}
+  
+body {
+    margin: 0;
+    font-family: monospace;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2px 4px;
+}
+img {
+    flex: 25%;
+    max-width: 25%;
+    padding: 2px 4px;
+}
+
+/* For Tablet */
+@media (max-width: 800px) {
+    img {
+      flex: 33.33%;
+      max-width: 33.33%;
+    }
+}
+  
+/* For Mobiles */
+@media (max-width: 600px) {
+    img {
+      flex: 50%;
+      max-width: 50%;
+    }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #btnclick{
+            color:#ffffff;
+            background-color:royalblue;
+            padding:20px;
+            border-radius:10px;
+            border:none;
+            outline-style: none;
+        }
+        #btnclick:hover{
+            background-color: rgb(59, 95, 201);
+            box-shadow: 0.1px 0.1px 3px royalblue;
+        }
+        #btnprev {
+            color:#ffffff;
+            width:50px;
+            background-color:rgb(10, 137, 168);
+            padding:10px;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            border:none;
+            outline-style: none;
+            font-size: 20px;
+        }
+        #btnnext{
+            color:#ffffff;
+            width:50px;
+            background-color:rgb(10, 137, 168);
+            padding:10px;
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+            border:none;
+            outline-style: none;
+            font-size: 20px;
+        }
+        #btnnext:hover,#btnprev:hover{
+            background-color:rgb(8, 99, 122);
+        }
+    </style>
+</head>
+<body>
+    <button type="button" id="btnprev"> &#8249; </button>
+    <button type="button" id="btnnext"> &#8250; </button>
+
+    <h1>Using window object to Navigate</h1>
+    <button id="btnclick">
+        Navigate to Apple
+    </button>
+
+    <script>
+        document.getElementById("btnclick").addEventListener("click",function(){
+            window.location="2_historyPrev.html";
+        });
+        document.getElementById("btnprev").addEventListener("click",function(){
+            history.back();
+        });
+        document.getElementById("btnnext").addEventListener("click",function(){
+            history.forward();
+        });
+    </script>
+</body>
+</html>

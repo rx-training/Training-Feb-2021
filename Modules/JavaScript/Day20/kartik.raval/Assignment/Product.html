@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            .grid-container {
+              display: grid;
+              grid-template-columns: 100px 120px 100px 100px 200px;
+              padding : 1px;
+            }
+            #grid1 {
+              display: grid;
+              grid-template-columns: 100px 120px 100px 100px 200px;
+                
+            }
+            .grid-item {
+              border: 1px solid rgba(0, 0, 0, 0.8);
+              text-align: center;
+              padding: 1px;
+            }
+            </style>
+    </head>
+    
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <script type="text/javascript"> 
+        
+        async function getProduct(file){
+            let myObject = await fetch(file);
+            console.log(myObject);
+
+            let myProducts = await myObject.json();
+            console.log(myProducts);
+        } 
+        
+        function storeLocalStorage1(){
+            Products1 = [{"ProductID":"1","ProductName":"Cheese","Price":100,"Quantity":1}];
+            ProductList1 = JSON.stringify(Products1);
+            console.log("Products : " + ProductList1);
+            localStorage.setItem("ProductList :",ProductList1);
+        } 
+        function storeLocalStorage2(){
+            Products2 = [{"ProductID":"2","ProductName":"Pen","Price":150,"Quantity":2}];
+            ProductList2 = JSON.stringify(Products2);
+            console.log("Products : " + ProductList2);
+            localStorage.setItem("ProductList :",ProductList2);
+        } 
+        function storeLocalStorage3(){
+            Products3 = [{"ProductID":"3","ProductName":"Butter","Price":100,"Quantity":1}];
+            ProductList3 = JSON.stringify(Products3);
+            console.log("Products : " + ProductList3);
+            localStorage.setItem("ProductList :",ProductList3);
+        } 
+        function storeLocalStorage4(){
+            Products4 = [{"ProductID":"4","ProductName":"Pencil","Price":10,"Quantity":1}];
+            ProductList4 = JSON.stringify(Products4);
+            console.log("Products : " + ProductList4);
+            localStorage.setItem("ProductList :",ProductList4);
+        } 
+        </script>
+    <body>
+        <div class="container py-5">
+            <div class="grid-container" id="grid1">
+                <div class="grid-item" id="gt1">ProductID</div>
+                <div class="grid-item" id="gt1">ProductName</div>
+                <div class="grid-item" id="gt1">Price</div>  
+                <div class="grid-item" id="gt1">Quantity</div>
+                <div class="grid-item" id="gt1">Action</div>
+            </div>
+            <div class="grid-container">
+                <div class="grid-item">1</div>
+                <div class="grid-item">Cheese</div>
+                <div class="grid-item">100</div>  
+                <div class="grid-item">1</div>
+                <div class="grid-item"><input type="button" onclick="storeLocalStorage1()" value="Add to Cart" id="ATC_1"></div>
+            </div>
+            <div class="grid-container">
+                <div class="grid-item">2</div>
+                <div class="grid-item">Pen</div>
+                <div class="grid-item">150</div>  
+                <div class="grid-item">2</div>
+                <div class="grid-item"><input type="button" onclick="storeLocalStorage2()" value="Add to Cart" id="ATC_2"></div>
+            </div>
+            <div class="grid-container">
+                <div class="grid-item">3</div>
+                <div class="grid-item">Butter</div>
+                <div class="grid-item">100</div>  
+                <div class="grid-item">1</div>
+                <div class="grid-item"><input type="button" onclick="storeLocalStorage3()" value="Add to Cart" id="ATC_3"></div>
+            </div>
+            <div class="grid-container">
+                <div class="grid-item">4</div>
+                <div class="grid-item">Pencil</div>
+                <div class="grid-item">10</div>  
+                <div class="grid-item">1</div>
+                <div class="grid-item"><input type="button" onclick="storeLocalStorage4()" value="Add to Cart" id="ATC_4"></div>
+            </div>
+        </div>
+        <div id="result1"></div>
+    </body>
+</html>

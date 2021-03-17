@@ -1,0 +1,124 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    color: honeydew;
+    /* background-color: rgb(219, 239, 255); */
+}
+body{
+    /* background-color: rgb(163, 179, 196); */
+}
+.resume{
+    /* background-color: #a1d1ba; */
+    background-image: url("../img/back.jpg");
+    background-repeat: repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    margin:auto;
+    width: 95%;
+    border: 1px solid rgba(99, 99, 99, 0.637);
+    border-radius: 10px;
+    /* box-shadow: 5px 5px 5px  #e7e7e7; */
+    padding: 0 50px 0 50px;
+}
+@media screen and (max-width:768px){
+    .resume{
+        width: 100%;
+    }
+    .resume h1{
+        text-align: center;
+        font-size: 35px;
+        padding-top: 10px;
+        padding-bottom: 0;
+        margin: 5px;
+        color: rgb(255, 255, 255);
+    }
+    p{
+        font-size: 15px;
+    }
+
+    .block:hover{
+        padding: 10px !important;
+        box-shadow: 10px 10px 5px #777777;
+    }
+
+    .block{
+        margin: 10px !important;
+        padding: 10px !important;
+    }
+    #skill ul li{
+        display: block;
+        padding-bottom: 5px !important;
+        padding-left: 2px !important;
+        margin-left: 0px !important;
+    }
+    
+}
+.resume h1{
+    text-align: center;
+    font-size: 60px;
+    padding-top: 15px;
+    padding-bottom: 0;
+    margin: 5px;
+    color: rgb(255, 255, 255);
+}
+.resume h1,h2{
+    text-transform: uppercase;
+}
+#objective{
+    text-align: center;
+    margin-bottom: 50px;
+    color: green;
+}
+#objective h2{
+    font-weight: bold;
+    text-decoration: underline;
+}
+#myVideo{
+    border: 1px solid rgba(184, 184, 184, 0.582);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+.block{
+    background-image: url("../img/istockphoto-1138395421-612x612.jpg");
+    background-attachment: fixed;
+    /* border: 1px solid rgba(63, 61, 61, 0.521); */
+    margin: 20px;
+    padding: 15px;
+    /* background-color: rgb(208, 220, 231); */
+    /* border-radius: 0px 10px 0px 10px; */
+    box-shadow: 10px 10px 5px #666666;
+}
+.block:hover{
+    padding: 20px;
+    box-shadow: 10px 10px 5px #777777;
+}
+.block strong{
+    color: rgb(77, 204, 77);
+}
+.block h2{
+    color: rgb(115, 211, 115);
+}
+header address{
+    text-align: center;
+    color: rgb(226, 226, 226);
+}
+#Experience{
+
+
+}
+#Project{
+
+}
+#Education {
+
+}
+#skill ul li{
+    padding-bottom: 5px;
+    padding-left: 10px;
+    margin-left: 20px;
+}
+#skill table{
+    width: 100%;
+
+}

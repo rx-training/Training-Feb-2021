@@ -1,0 +1,14 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.column{
+    border: 1px solid blue;
+    padding: 20px;
+}
+@media screen and (max-width: 500px){
+    .column{
+        border: 1px solid red;
+        padding: 40px;
+    }
+}

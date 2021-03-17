@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Bootstrap 4</title>
+        <style>
+            ol ol{
+                list-style-type: upper-alpha;
+            }
+            .container1{
+                padding-top: 50px;
+            }
+
+            .img-fluid{
+                margin-left: 170px; 
+                padding-top: 120px;
+            }
+            @media (max-width: 768px) { 
+                   .d-block{
+                    width: 90%;
+                    margin-bottom: 1100px;
+                }
+                .container1{
+                    display: block;
+                    width: 90%;
+                    margin-left: 30px;
+                }
+                .img-fluid{
+                    margin-left: 0px;
+                    margin-top: 0px;
+                }
+                .bg-dark1{
+                    margin-left: 400px;
+                    margin-top: 150px;
+                    width: 40%;
+                    padding-top: 20px;
+                }
+
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-0 navbar-dark bg-dark">
+            <div class="container">
+                <a href="#" class="navbar-brand">
+                    <img src="../../../img/pic.PNG" alt="Logo" width="50px" height="50px">
+                </a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <a href="../../../index.html" class="nav-link">Redmine-git</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../html/html.html" class="nav-link">Html</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../css/css.html" class="nav-link">Css</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../bootstrap/bootstrap.html" class="nav-link">Bootstrap</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../js.html" class="nav-link active">Javascript</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../jquery/jquery.html" class="nav-link">Jquery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Sql</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!------------------- sidebar ---------------------->
+
+        <div class="d-block ml-4 text-center text-white bg-dark" style="height: 1050px;">
+            <h4><strong>Javascript</strong></h4>
+            <hr class="bg-white">
+            <h5><b>Day 15</b></h5>
+            <a href="../Day15/assignment.html" class="btn bg-white py-0 my-2">Assignment</a>
+            <a href="../Day15/practice_exercise_1_2.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="../Day15/video_exercise.html" class="btn bg-white py-0">Video Exercise</a>
+
+            <hr class="bg-white mx-5">
+            <h5><b>Day 16</b></h5>
+            <a href="../Day16/assignment.html" class="btn bg-white py-0 my-2">Assignment</a>
+            <a href="../Day16/practice_exercise_1.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="../Day16/video_exercise.html" class="btn bg-white py-0">Video Exercise</a>
+
+            <hr class="bg-white px-2 mx-5">
+            <h5><b>Day 17</b></h5>
+            <a href="../Day17/assignment.html" class="btn bg-white py-0 my-2">Assignment</a>
+            <a href="../Day17/practice_exercise.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="../Day17/practice_exercise_2.html" class="btn bg-white py-0 mb-2">Exercise 2</a>
+            <a href="../Day17/video_exercise.html" class="btn bg-white py-0 mb-2">Video Exercise</a>
+
+            <hr class="bg-white px-2 mx-5">
+            <h5><b>Day 18</b></h5>
+            <a href="./assignment.html" class="btn bg-white py-0 my-2">Assignment</a>
+            <a href="./practice_exercise.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="./video_exercise.html" class="btn bg-white py-0">Video Exercise</a>
+
+            <hr class="bg-white px-2 mx-5">
+            <h5><b>Day 19</b></h5>
+            <a href="../Day19/practice_exercise.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="../Day19/video_exercise.html" class="btn bg-white py-0">Video Exercise</a>
+
+            <hr class="bg-white px-2 mx-5">
+            <h5><b>Day 20</b></h5>
+            <a href="../Day20/assignment.html" class="btn bg-white py-0 mb-2">Assignment</a>
+            <a href="../Day20/practice_exercise.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="../Day20/video_exercise.html" class="btn bg-white py-0">Video Exercise</a>
+
+        </div>
+
+        <!------------------- content ----------------------->
+
+        <div class="container container1 bg-light" style="height: 1570px; padding-top: 10px; margin-top: -1050px;">
+            <div class="container bg-light my-3">
+                <div id="div_timer"></div>
+                <div class="container2">
+                    <ol list-style-type="1">
+                        <li>In which decade was the American Institute of Electrical Engineers (AIEE) foounded ?</li>
+                        <ol>
+                            <li>
+                                <input type="radio">
+                                <label>1850s</label>
+                            </li>
+                            <li>
+                                <input type="radio" checked>
+                                <label>1880s</label>
+                            </li>
+                            <li>
+                                <input type="radio">
+                                <label>1930s</label>
+                            </li>
+                            <li>
+                                <input type="radio">
+                                <label>1950s</label>
+                            </li>
+                        </ol>
+                        <button class="btn btn-primary py-0">Save</button>
+                        <button class="btn btn-primary py-0">Next</button>
+                        <hr style="border: 1px solid black; margin-left: -30px;"> 
+                        <li>What is part of database that holds only one type of information ?</li>
+                        <ol>
+                            <li>
+                                <input type="radio">
+                                <label>Report</label>
+                            </li>
+                            <li>
+                                <input type="radio" checked>
+                                <label>Field</label>
+                            </li>
+                            <li>
+                                <input type="radio">
+                                <label>Record</label>
+                            </li>
+                            <li>
+                                <input type="radio">
+                                <label>File</label>
+                            </li>
+                        </ol>
+                        <button class="btn btn-primary py-0">Save</button>
+                        <button class="btn btn-primary py-0">Next</button>
+                        <hr style="border: 1px solid black; margin-left: -30px;"> 
+                        <li>Who developed Yahoo ?</li>
+                        <ol>
+                            <li>
+                                <input type="radio">
+                                <label>Dennis Ritchie & Ken Thompson</label>
+                            </li>
+                            <li>
+                                <input type="radio" checked>
+                                <label>David Filo &jerry Yang</label>
+                            </li>
+                            <li>
+                                <input type="radio">
+                                <label>Vint Cerf & Robert Kahn</label>
+                            </li>
+                            <li>
+                                <input type="radio">
+                                <label>Steve Case & Jeff Bezos</label>
+                            </li>
+                        </ol>              
+                        <button class="btn btn-primary py-0 mb-3">Save</button>
+                        <button class="btn btn-primary py-0 mb-3">Next</button>
+                    </ol>
+                </div>
+        
+            </div>
+            <script>
+                    var timer = setInterval("mytimer()",1000);
+                    seconds = 30000;
+                    minutes = parseInt(seconds/1000);
+                    function mytimer()
+                    {
+                    document.getElementById("div_timer").innerHTML = "Time : 00 : " + minutes; // this is the same as $("div_timer").html(timer) in       jquery.
+                    if(minutes == 0){
+                            stop(seconds);
+                            stop(minutes);
+                            clearInterval(timer);
+                            alert("exam is over");
+                            window.location.href = "./assignment.html";
+                    }else{
+                        seconds--;
+                        minutes--;
+                    }
+                    }
+                    
+                
+        
+            </script>
+        </div>
+
+        <script src="../../../js/jquery.min.js"></script>
+        <script src="../../../js/popper.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+    </body>
+</html>

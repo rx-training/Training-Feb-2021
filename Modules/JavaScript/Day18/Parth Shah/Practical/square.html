@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>Square of number using call back</title>
+    <style>
+      body{
+        background-color: #542c2c;
+      }
+    </style>
+    
+  </head>
+  <body>
+    <h1 class="display-4 text-center text-light pb-5">Finding square of number using callback function </h1>
+  <form class="bg-warning m-5 p-5">
+    
+      <label><h3 class="font-italic">Enter a Number</h3></label>
+      <input type="number" name="number" id="num1"></br>
+      <h3 id='demo'></h3>
+      <button class="btn btn-primary" type="submit" name="submit" value="submit" onclick="return square();">Submit</button>
+      <button class="btn btn-danger" type="reset" name="reset" value="reset" onclick="return refreshPage()">Reset</button>
+
+  </form>
+  <div class="container">
+    <div>
+      <p class="lead text-center text-light">"I will call back later!"
+
+        A callback is a function passed as an argument to another function
+        
+        This technique allows a function to call another function
+        
+        A callback function can run after another function has finished.</p>
+    </div>
+  </div>
+  <script>
+    function square()
+    {
+     var num = Number(document.getElementById('num1').value);
+
+  calculator(num,display)
+    return false;
+}
+ 
+function calculator(x,callback){
+
+  root = x * x;
+  callback(root);
+
+}
+function display(showData)
+{
+  document.getElementById('demo').innerHTML= '<h1 class="ans text-light p-3 mt-3 bg-danger">The Square of the number is: '+showData;
+    
+   
+}
+function refreshPage(){
+  location.reload();
+    document.getElementById('demo').innerHTML= '';
+  return false;
+}
+
+</script>
+   
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,187 @@
+<html>
+<head>
+    <style>
+        ul 
+        {
+          list-style-type: none;
+          margin:0;
+          display: inline;
+          padding: 0;
+        }
+        li 
+        {
+          display: inline;
+          border: 1px solid black;
+          font-size: large;
+          text-align: center;
+        }
+
+        p    
+        {
+          display: inline;
+        }
+
+        header{
+  background-color: skyblue;
+}
+
+	div   
+        {
+          display: inline-block;
+          float: left;
+        }
+
+                </style>
+    </head>
+<body>
+
+<header>
+<p><img src="ssec.jpg" alt="SSEC-logo"  height= 150; width=150></p>   
+    <p><ul>
+            <li ><a href="website.html">HTML</a></li>
+            <li ><a href="css.html">CSS</a></li>
+            <li ><a href="bootstrap.html">BOOTSTRAP</a></li>
+          </ul> 
+        </p> 
+</header>
+<hr>
+
+<div class="a1" style="border:1px solid blue; height: 700 ;width: 250;background-color: yellow;">
+
+    <button type="button" class="collapsible">Day 4</button>
+    <div class="content">
+        <button type="button" class="collapsible">Practice</button>
+        <div class="content">
+            <ul>
+                <li><a onclick="setUrlDisplayproperties()">Display properties</a></li>
+                <li><a onclick="setUrlh1h3()">H1 and H3 tag</a></li>
+                <li><a onclick="setUrlparagraphborder()">Paragraph Border</a></li>
+                <li><a onclick="setUrlstudent()">Student</a></li>
+                <li><a onclick="setUrluniversalselector()">Universal Selector</a></li>
+            </ul>
+        </div>
+        <button type="button" class="collapsible">Assignment</button>
+        <div class="content">
+            <ul>
+                <li><a onclick="setUrlproject()">Project</a></li>
+            </ul>
+        </div>
+        <button type="button" class="collapsible">Video Task</button>
+        <div class="content">
+            <ul>
+                <li><a onclick="setUrlVideoTask11()">Task 1</a></li>  
+            </ul>
+        </div>
+    </div>
+  
+
+
+  <button type="button" class="collapsible">Day 5</button>
+  <div class="content">
+      <button type="button" class="collapsible">Practice</button>
+      <div class="content">
+          <ul>
+            <li><a onclick="setUrlAbsulate()">Absulate</a></li>
+              <li><a onclick="setUrlfixed()">fixed</a></li>
+              <li><a onclick="setUrlstatic()">static</a></li>
+              <li><a onclick="setUrlrelative()">relative</a></li>
+              <li><a onclick="setUrloverflowproperty()">overflow-property</a></li>
+              <li><a onclick="setUrlineblock()">inline-block</a></li>
+            </ul>
+      </div>
+      <button type="button" class="collapsible">Assignment</button>
+      <div class="content">
+          <ul>
+              <li><a onclick="setUrlApplication()">Application</a></li>
+          </ul>
+      </div>
+      <button type="button" class="collapsible">Video Task</button>
+      <div class="content">
+          <ul>
+              <li><a onclick="setUrlVideoTask1()">Task 1</a></li>
+              <li><a onclick="setUrlVideoTask2()">Task 2</a></li>
+
+          </ul>
+      </div>
+  </div>
+
+  
+</div>   
+
+<iframe id="myFrame" src="" width="1050px" height="700px" style="border:1px solid black;">
+</iframe>
+<hr>
+
+<footer style="border:1px solid blue; height: 100 ;background-color: rgb(70, 66, 73);">
+    <h1>Devang Dabhi</h1>
+
+</footer>
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+
+  function setUrlDisplayproperties(){
+      document.getElementById("myFrame").src = "./day 4/displayproperties.html";
+  }
+  function setUrlh1h3(){
+      document.getElementById("myFrame").src = "./day 4/H1 And H3 tag.html";
+  }
+  function setUrlparagraphborder(){
+      document.getElementById("myFrame").src = "./day 4/Paragraph.border.html";
+  }
+  function setUrlstudent(){
+      document.getElementById("myFrame").src = "./day 4/Student.html";
+  }
+  function setUrluniversalselector(){
+      document.getElementById("myFrame").src = "./day 4/Universal_selector.html";
+  }
+  function setUrlproject(){
+      document.getElementById("myFrame").src = "./day 4/Resume.html";
+  }
+  function setUrlVideoTask11(){
+      document.getElementById("myFrame").src = "./day 4/Video_Exercise.html";
+  }
+  
+
+  function setUrlAbsulate(){
+      document.getElementById("myFrame").src = "./day 5/absolute.html";
+  }
+  function setUrlfixed(){
+      document.getElementById("myFrame").src = "./day 5/fixed.html";
+  }
+  function setUrlstatic(){
+      document.getElementById("myFrame").src = "./day 5/static.html";
+  }
+  function setUrlrelative(){
+      document.getElementById("myFrame").src = "./day 5/relative.html";
+  }
+  function setUrloverflowproperty(){
+      document.getElementById("myFrame").src = "./day 5/overflow-property.html";
+  }
+  function setUrlineblock(){
+      document.getElementById("myFrame").src = "./day 5/inline-block.html";
+  }
+  function setUrlApplication(){
+      document.getElementById("myFrame").src = "./day 5/application.html";
+  }
+  function setUrlVideoTask1(){
+      document.getElementById("myFrame").src = "./day 5/video-exercise.html";
+  }
+  function setUrlVideoTask2(){
+      document.getElementById("myFrame").src = "./day 5/marjin-padding-border.html";
+  }
+  </script>
+</body>
+</html>

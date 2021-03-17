@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(
+            function()
+            {
+                $("h1").css({"border":"1px solid black"});
+                $("h1").click(function()
+                {
+                    $("h1").css({"background-color":"yellow"});
+                })  
+                $("p").click(function(){
+                    alert($(this).text());       
+                })
+                $("h2").click(function(){
+                    alert($(this).html());       
+                })
+                $("#learning").text("ID, Class selectors"); 
+                
+                $(".green").css({"background-color":"Red","color":"yellow"});
+
+                $("[type='button']").click(function(){
+                    $("green").addClass("blue");
+                })
+                $("a").attr("href","http://www.google.com");
+
+
+                $("#btnAdd").click(function(){
+                    var num1 = $("#txtnum1").val();
+                    var num2 = $("#txtnum2").val();
+                    var num3 = parseInt(num1) + parseInt(num2);
+                    $("#txtresult").val("Addition is "+num3);
+                    $("#result").toggle();
+                });
+                cities = "";
+                $("#btnDisplay").click(function(){
+                    $("ul li").each(
+                        function(index,element)
+                        {
+                            cities+=$(element).val()+",";
+                        }
+                    );
+                    $("#dispCity").html(cities);
+                });
+                
+                var fruits = ["Banana", "Apple", "Cherry"];
+                var fList = "";
+                $.each(fruits, function(index,value)
+                {
+                    fList+= "<li value='"+index+"'>" + fruits[index]+"</li>";
+                })
+                $("#fruitList").html(fList);
+            }
+        );
+    </script>
+</head>
+<body>
+    <h1>Learning JQuery</h1>
+    <p><b> Learning Selectors</b></p>
+
+    <p><b>Element Selector, Id Selector and Class Selector</b></p>
+
+    <h2 class="green"><b> Learning Selectors</b></h2>
+    <h2><b>Element Selector, Id Selector and Class Selector</b></h2>
+    <p id="learning">
+        <b>Element Selector, Id Selector and Class Selector</b>
+    </p>
+    <input type="button" value="changeCSS"><br><br>
+    <a>google.com</a><br><br>
+
+
+    <form>
+        Enter First Number <input type = "text" id="txtnum1"><br>
+        Enter Second Number <input type = "text" id="txtnum2"><br>
+        <input type="button" id="btnAdd" value="Add"><br>
+        <p id="result"></p>
+        <input type="text" id="txtresult" disabled>
+
+       
+    </form>
+    <input type="button" id="btnDisplay" value="Display city">
+        <ul id="city">
+            <li>Mumbai</li>
+            <li>Calcutta</li>
+            <li>Delhi</li>
+        </ul>
+        <p id="dispCity">
+
+        </p>
+        <ul id="fruitList">
+
+        </ul>
+    
+</body>
+</html>

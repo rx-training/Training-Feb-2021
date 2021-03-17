@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <title>Bootstrap 4</title>
+        <style>
+            .img-fluid{
+                margin-left: 170px; 
+                padding-top: 120px;
+            }
+            @media (max-width: 768px) { 
+                   .d-block{
+                    width: 90%;
+                    margin-bottom: 1100px;
+                }
+                .container1{
+                    display: block;
+                    width: 90%;
+                    margin-left: 30px;
+                }
+                .img-fluid{
+                    margin-left: 0px;
+                    margin-top: 0px;
+                }
+            }
+            .blue{
+            background-color: blue;
+            color: white;
+        }
+
+        </style>
+
+<script type="text/javascript">
+    $(document).ready(
+        function(){
+            $("h1").css({"border":"1px solid black"});
+            $("h1").click(function()
+            {
+                $("h1").css({"background-color":"yellow"});
+            });
+            $("p").click(function()
+            {
+                // alert($("p").text());
+                //alert($(this).text());
+                alert($(this).html());
+            })
+            $("#learning").text("Learning Id,class and element selectors")
+
+            $(".green").css({"background":"green","color":"white"});
+
+            $("[type = 'button']").click(function()
+            {
+                $("#learning").attr("class","blue");
+            })
+            $("#btnAdd").click(function()
+            {
+                var a =  $("#num1").val();
+                var b = $("#num2").val();
+                var c = parseInt(a) + parseInt(b);
+                $("#result").val("Addition is :" + c);
+                $("#result1").html("<font color='green'> Addition is :" + c + "</font>");
+                $("#result1").toggle();
+            })
+            city1 = "";
+            $("#Display").click(function()
+            {
+                $("#city li").each(
+                    function(index,element)
+                    {
+                        //alert($(element).text());
+                        city1 += $(element).text()+ ',';
+                    }
+                )
+                var city3 = city1.slice(0,25);
+                $("#city2").html(city3).css({"color":"green"}); 
+            })
+
+        }
+    );
+</script>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-0 navbar-dark bg-dark">
+            <div class="container">
+                <a href="#" class="navbar-brand">
+                    <img src="../../../img/pic.PNG" alt="Logo" width="50px" height="50px">
+                </a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <a href="../../../index.html" class="nav-link">Redmine-git</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../html/html.html" class="nav-link">Html</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../css/css.html" class="nav-link">Css</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../bootstrap/bootstrap.html" class="nav-link">Bootstrap</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../js/js.html" class="nav-link">Javascript</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../jquery.html" class="nav-link active">Jquery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Sql</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!------------------- sidebar ---------------------->
+
+        <div class="d-block ml-4 text-center text-white bg-dark" style="height: 550px;">
+            <h4><strong>Jquery</strong></h4>
+            <hr class="bg-white">
+            <h5><b>Day 23</b></h5>
+            <a href="../Day23/assignment.html" class="btn bg-white py-0 my-2">Assignment</a>
+            <a href="../Day23/practice_exercise.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="../Day23/video_exercise.html" class="btn bg-white py-0">Video Exercise</a>
+
+            <hr class="bg-white mx-5">
+            <h5><b>Day 24</b></h5>
+            <a href="../Day24/assignment.html" class="btn bg-white py-0 my-2">Assignment</a>
+            <a href="../Day24/practice_exercise.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="../Day24/video_exercise.html" class="btn bg-white py-0">Video Exercise</a>
+
+        </div>
+
+        <!------------------- content ----------------------->
+
+        <div class="container container1 bg-light p-5 " style="margin-top: -550px; height: 700px;">
+            <h1 class="green">Learning JQuery</h1>
+
+            <p class="green">
+                <b>Learning selectors</b>
+            </p>
+            <p id="learning">
+                <b>Element Selector,Id selector and class selector</b>
+            </p>
+        
+            <h2 class="green">Learning SQL</h2>
+        
+            <input type="button" value="click me">
+        
+            <form>
+                Enetr first number <input type="text" id="num1"><br><br>
+                Enetr second number <input type="text" id="num2"><br><br>
+                <input type="text" id="result" disabled>
+                <p id="result1"></p>
+        
+                <input type="button" id="btnAdd" value="Add"><br><br>
+            </form>
+        
+            <input type="button" id="Display" value="Display">
+            <ul id="city">
+                <li>Mumbai</li>
+                <li>Ahmedabad</li>
+                <li>Vadodara</li>
+            </ul>
+        
+            <p id="city2"></p>
+
+        <script src="../../../js/jquery.min.js"></script>
+        <script src="../../../js/popper.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+    </body>
+</html>

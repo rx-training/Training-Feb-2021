@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container p-5 bg-light mt-5">
+        <p id="showNum" class="lead">Numbers Given: </p>
+        <h3 id="showGreater" class="text-primary">
+            Ther Greatest Number is:
+        </h3>
+        <h3 id="showSum" class="text-primary">
+            Sum for Numers Greater Then 40:
+        </h3>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        let nums = new Array();
+        let sum = 0;
+
+        for (let i = 0; i <3; i++) {
+            nums[i] = Number(prompt(`Enter The Number ${i+1}:`));
+
+            if (nums[i] > 40) {
+                sum += nums[i];
+            }
+        }
+
+        console.log(nums);
+
+        document.getElementById('showNum').innerHTML += nums;
+        document.getElementById('showSum').innerHTML += sum;
+
+        let max;
+
+        if (nums[0] > nums [1] && nums [0] > nums[2]) {
+            max = 0;
+        } else if (nums[1] > nums [0] && nums [1] > nums[2]) {
+            max = 1;
+        } else {
+            max =2
+        }
+        document.getElementById('showGreater').innerHTML += nums[max];
+
+
+        
+        console.log(nums[max]);
+    </script>
+
+</body>
+</html>

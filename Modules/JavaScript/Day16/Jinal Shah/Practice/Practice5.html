@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 5</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <script>
+
+        function cd()
+        {
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo").innerHTML = "Original array = " + fruits.toString();
+        }
+        function pop1()
+        {
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo1").innerHTML = "popped element = " + fruits.pop() + 
+                                                        "<br>" + " array after pop = " + fruits.toString();
+        }
+        function push1()
+        {
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo2").innerHTML = "pushed element = " + fruits.push("Kiwi")  + 
+                                                        "<br>" + " array after pop = " + fruits.toString();
+        }
+        function shi()
+        {
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo3").innerHTML = "shifted element = " + fruits.shift()  + 
+                                                        "<br>" + " array after shift op = " + fruits.toString();
+        }
+        function del()
+        {
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo4").innerHTML = "deleted element = " + delete fruits[0]  + 
+                                                        "<br>" + " array after shift op = " + fruits.toString();
+        }
+        
+
+    </script>
+
+</head>
+<body>
+
+    <div class="card text-center col-md-6 border-dark mb-3 p-5 mx-auto mt-5">
+        <div class="card-header bg-dark text-white">
+           <h5>Try some operation with list like push, pop, shifting, deleting element</h5>
+        </div>	
+        <div class="card-body">
+         
+                <button class="btn btn-primary" type="submit" onclick="cd()" >original array </button><br><br>
+                <h4 id="demo" style="color: black"> </h4><br>
+
+                <button class="btn btn-primary" type="submit" onclick="pop1()" >pop operation </button><br><br>
+                <h4 id="demo1" style="color: black"> </h4><br>  
+
+                <button class="btn btn-primary" type="submit" onclick="push1()" >push operation </button><br><br>
+                <h4 id="demo2" style="color: black"> </h4><br>
+
+                <button class="btn btn-primary" type="submit" onclick="shi()" >shift operation </button><br><br>
+                <h4 id="demo3" style="color: black"> </h4><br>
+
+                <button class="btn btn-primary" type="submit" onclick="del()" >delete operation </button><br><br>
+                <h4 id="demo4" style="color: black"> </h4>
+        </div>
+    </div>
+
+</body>
+</html>

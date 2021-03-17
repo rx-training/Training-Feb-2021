@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        li{
+            color: floralwhite;
+            font-size: xx-large;
+        }
+    </style>
+  </head>
+  <body class="bg-secondary">
+      <div class="container">
+         
+    <h2 class="display-4 text-center"> Open a new window, and resize the width and height of the new window as per your wish.</p>
+        <center>
+    <button class="btn btn-primary" onclick="openWin()">Create window</button>
+    <button class="btn btn-warning" onclick="resizeWinTo()">Resize the Window to 500 * 500 pixels</button>
+    <button class="btn btn-danger" onclick="resizeWinBy()">Make the new window smaller</button>
+    </center>
+
+
+    <h2 class="text-center">This example shows example of uses of following function </h2>
+    <ol>
+        <li>window.open</li>
+        <li>resizeto()</li>
+        <li>resizeby()</li>
+    </ol>
+
+    </div>
+
+
+    <script>
+    var myWindow;
+    function openWin() {
+      myWindow = window.open("../images/demo.png", "Window Title", "width=300, height=250");
+    }
+    
+    function resizeWinTo() {
+      myWindow.resizeTo(500, 500);
+      myWindow.focus();
+    }
+    
+    function resizeWinBy() {
+      myWindow.resizeBy(50, 50);
+      myWindow.focus();
+    }
+    </script>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+   
+  </body>
+</html>

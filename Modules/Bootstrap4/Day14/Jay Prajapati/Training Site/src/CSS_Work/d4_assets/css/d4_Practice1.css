@@ -1,0 +1,13 @@
+.practice{
+    background-color: cyan;
+}
+.practice li{
+    display:inline-block;
+    padding: 10px;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+}
+.practice li:hover{
+    background-color: darkseagreen;
+}
