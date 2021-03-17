@@ -2,28 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <title>Employee Details</title>
     <script type="text/javascript">
-         $(document).ready(function () {
-                $("#elocation").click(function () {
-                    var name = $("#elocation option:selected").val();
-                    if (name == "India") {
-                         var myCitys = {
-                             val1 : 'Gujarat',
-                             val2 : 'Mumbai'
-                         };
-                         var mySelect = $('#ecity');
-                         $.each(myCitys,function(val,text){
-                            mySelect.append($('<option></option>').val(val).html(text));
-                         }) ;
-                        
-                    };
-                });
-            });
         function empname() {
             document.getElementById("emname").innerHTML = "";
             document.getElementById("emname2").innerHTML = "";
@@ -31,15 +17,17 @@
             var name1 = document.getElementById("sname").value;
             var regname = /^[a-zA-Z]+$/;
             if (!regname.test(name)) {
-                document.getElementById("emname").innerHTML = '<div class="text-danger" id="emname">*Your Name Is Wrong</div>';
+                document.getElementById("emname").innerHTML =
+                    '<div class="text-danger" id="emname">*Your Name Is Wrong</div>';
                 return false;
             }
             if (!regname.test(name1)) {
-                document.getElementById("emname2").innerHTML = '<div class="text-danger" id="emname2">*Your Name Is Wrong</div>';
+                document.getElementById("emname2").innerHTML =
+                    '<div class="text-danger" id="emname2">*Your Name Is Wrong</div>';
                 return false;
-            }
-            else {
-                document.getElementById("emname").innerHTML = '<div class="text-white" id="emname">*Your Name Is Right</div>';
+            } else {
+                document.getElementById("emname").innerHTML =
+                    '<div class="text-white" id="emname">*Your Name Is Right</div>';
                 return true;
             }
         }
@@ -48,32 +36,68 @@
             var num = document.getElementById("enum").value;
             var regnum = /[0-9]{10,}$/;
             if (!regnum.test(num)) {
-                document.getElementById("emnum").innerHTML = '<div class="text-danger" id="emnum">*Your Phone Is Not Valid</div>';
+                document.getElementById("emnum").innerHTML =
+                    '<div class="text-danger" id="emnum">*Your Phone Is Not Valid</div>';
                 return false;
-            }
-            else {
-                document.getElementById("emnum").innerHTML = '<div class="text-white" id="emnum">*Your Number Is Right</div>';
+            } else {
+                document.getElementById("emnum").innerHTML =
+                    '<div class="text-white" id="emnum">*Your Number Is Right</div>';
                 return true;
             }
         }
-        // function SelectData() {
-           
-        // };
+        $(document).ready(function () {
+            $("#elocation").click(function () {
+                var name = $("#elocation option:selected").val();
+                if (name == "India") {
+                    $("#ecity").html(
+                        "<option value=''>Select City</option><option value='Gujarat'>Gujarat</option><option value='Mumbai'>Mumbai</option>"
+                    );
+                } else if (name == "USA") {
+                    $("#ecity").html(
+                        "<option value=''>Select City</option><option value='California'>California</option><option value='Texas'>Texas</option>"
+                    );
+                }
+            });
+        });
+        let EmployeeData = [];
         function FatchData() {
-            EmpData = {
-                "FirstName": document.getElementById("ename").value,
-                "LastName": document.getElementById("sname").value,
-                "Number": document.getElementById("enum").value,
-                "Location": document.getElementById("elocation").value
-            }
-            localStorage.setItem('EmpList', JSON.stringify(EmpData));
-            var Data = localStorage.getItem('EmpList');
-            console.log(Data);
-            var trow = "<tr><thead><th>FirstName</th><th>LastName</th><th>Phone Number</th><th>Address</th></thead><tr>" +
-                "<tr><td>" + EmpData.FirstName + "</td><td>" + EmpData.LastName + "</td><td>" + EmpData.Number + "</td><td>" + EmpData.Location + "</td></tr>";
-            document.getElementById("Result").innerHTML = trow;
-        };
 
+            var name1 = document.querySelector("#ename").value;
+            var name2 = document.getElementById("sname").value;
+            var num = document.getElementById("enum").value;
+            var address = document.getElementById("elocation").value;
+            var citys = document.getElementById("ecity").value;
+            var EmpData = {
+                FirstName: name1,
+                LastName: name2,
+                Number: num,
+                Location: address,
+                city: citys
+            };
+
+            EmployeeData.push(EmpData);
+            localStorage.setItem("EmpList", JSON.stringify(EmployeeData));
+            var Data = JSON.parse(localStorage.getItem("EmpList"));
+            console.log(Data);
+
+            // Data.push()
+            var trow = "";
+            for (var Item of Data) {
+                trow += "<tr><td>" +
+                    Item.FirstName +
+                    "</td><td>" +
+                    Item.LastName +
+                    "</td><td>" +
+                    Item.Number +
+                    "</td><td>" +
+                    Item.city +
+                    "</td><td>" +
+                    Item.Location +
+                    "</td></tr>";
+
+            }
+            document.getElementById("Result").innerHTML = trow;
+        }
     </script>
 </head>
 
@@ -87,7 +111,7 @@
                 </div>
                 <div class="col-md-6">
                     <input type="text" name="ename" id="ename" class="form-control"
-                        placeholder="Enter Employee FirstName" onkeyup="empname()">
+                        placeholder="Enter Employee FirstName" onkeyup="empname()" />
                     <small id="emname"></small>
                 </div>
             </div>
@@ -97,7 +121,7 @@
                 </div>
                 <div class="col-md-6">
                     <input type="text" name="sname" id="sname" class="form-control"
-                        placeholder="Enter Employee LastName" onkeyup="empname()">
+                        placeholder="Enter Employee LastName" onkeyup="empname()" />
                     <small id="emname2"></small>
                 </div>
             </div>
@@ -107,7 +131,7 @@
                 </div>
                 <div class="col-md-6 mt-3">
                     <input type="text" name="enum" id="enum" class="form-control" placeholder="Ex. 5896426745"
-                        onkeyup="empnumber()">
+                        onkeyup="empnumber()" />
                     <small id="emnum"></small>
                 </div>
             </div>
@@ -130,14 +154,12 @@
                 <div class="col-md-6">
                     <select name="ecity" id="ecity" class="form-control">
                         <option value=" ">Select City</option>
-                        <!-- <option value="India">India</option>
-                        <option value="USA">USA</option> -->
                     </select>
                 </div>
             </div>
             <div class="form-group row h5 mt-4">
                 <div class="col-md-12 mb-4 text-center">
-                    <input type="button" class="btn btn-success" value="Submit" onclick="FatchData()">
+                    <input type="button" class="btn btn-success" value="Submit" onclick="FatchData()" />
                 </div>
             </div>
         </form>
@@ -145,13 +167,23 @@
     <div class="container w-50 mt-5">
         <div class="row">
             <div class="col-sm-6">
-                <table class="table table-stripped " id="Result">
+                <table class="table table-stripped table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>FirstName</th>
+                            <th>LastName</th>
+                            <th>Phone Number</th>
+                            <th>City</th>
+                            <th>Location</th>
+                        <tr>
+                    </thead>
+                    <tbody id="Result">
 
+                    </tbody>
                 </table>
             </div>
         </div>
     </div>
-
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
