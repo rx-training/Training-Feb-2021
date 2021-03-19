@@ -41,6 +41,25 @@ GO
 
 /*Q3: Create a Store Procedure that will accept city name and returns the number of customers in that city.*/
 
+CREATE PROCEDURE uspNumberOfCustomers  
+    @inpCity nvarchar(50) 
+AS   
+	DECLARE @customers int
+
+    SET NOCOUNT ON;  
+    SELECT @customers = COUNT(cName) 
+    FROM Customers
+    WHERE city = @inpCity
+	RETURN @customers
+GO
+
+DECLARE @customers int
+EXEC @customers = uspNumberOfCustomers 'MUMBAI'
+PRINT(@customers)
+GO
+
+-----
+
 CREATE PROCEDURE uspNumberCustomers  
     @inpCity nvarchar(50) 
 AS   
@@ -74,6 +93,25 @@ EXEC uspCustomersJson 'MUMBAI'
 GO
 
 /*Q5: Count the Number of Customers Living in the City where Branch is Located*/
+
+CREATE PROCEDURE uspNumberOfCities 
+    @inpBranch nvarchar(50), 
+	@outCities int OUTPUT
+AS   
+    SET NOCOUNT ON;  
+    SELECT @outCities = count(C.cName)
+	FROM Deposits D JOIN Customers C
+	ON D.cName = C.cName
+	WHERE C.city IN(SELECT city FROM Branches WHERE bName = @inpBranch)
+GO
+
+DECLARE @cities int
+
+EXEC uspNumberOfCities 'ANDHERI', @cities OUTPUT 
+PRINT('Number Of Customers : ' + CAST(@cities AS varchar(20)))
+GO
+
+----
 
 CREATE PROCEDURE uspNumberCity 
     @inpBranch nvarchar(50) 

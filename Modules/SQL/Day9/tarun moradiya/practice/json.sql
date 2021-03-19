@@ -219,3 +219,44 @@ SELECT FirstName, LastName
 FROM Employees  
 FOR JSON AUTO, WITHOUT_ARRAY_WRAPPER
 GO
+
+--using var in json
+
+DECLARE @myVar nvarchar(20)
+ set @myVar = GETDATE()
+
+
+DECLARE @json NVARCHAR(MAX) = N'[  
+  {  
+    "Order": {  
+      "Number":"'+ @myVar +'",  
+      "Date":"2011-05-31T00:00:00"  
+    },  
+    "AccountNumber":"AW29825",  
+    "Item": {  
+      "Price":2024.9940,  
+      "Quantity":1  
+    }  
+  },  
+  {  
+    "Order": {  
+      "Number":"SO43661",  
+      "Date":"2011-06-01T00:00:00"  
+    },  
+    "AccountNumber":"AW73565",  
+    "Item": {  
+      "Price":2024.9940,  
+      "Quantity":3  
+    }  
+  }
+]'  
+
+SELECT * FROM OPENJSON(@json)
+
+ DECLARE @var varchar(18)
+        SET @var = 'INDIA'
+        DECLARE @json NVARCHAR(MAX);
+        SET @json = '{"info": {"address": [{"town": "Belgrade"}, {"town": "Paris"}, {"town":"Madrid"}]}}';
+        SET @json = JSON_MODIFY(@json, '$.info.address[0].town',@var );
+        SELECT modifiedJson = @json;
+       
