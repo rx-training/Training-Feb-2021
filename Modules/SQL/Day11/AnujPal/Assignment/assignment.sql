@@ -16,6 +16,9 @@ List Names of Customers who are Depositors and have Same Branch City as that of 
 
 
 		SELECT * FROM DepositTable
+		select * FROM BorrowTable
+			select * FROM BranchTable
+			SELECT * FROM CustomerTable
 
 /*  3)  Create a Store Procedure that will accept city name and returns the number of customers in that city.*/
 
@@ -54,10 +57,15 @@ List Names of Customers who are Depositors and have Same Branch City as that of 
 		And insert these record in the Deposit table. Before inserting some validation should be done like 
 		amount should be greater than 10Rs. and date should always be current date.*/
 
-	ALTER PROCEDURE p6  @json NVARCHAR(MAX)
+		ALTER PROCEDURE p6  @json NVARCHAR(MAX)
 		AS
 		BEGIN
 		DECLARE @ACTNO INT,@CustomerName VARCHAR(40),@BranchaName VARCHAR(60),@Amount INT,@Adate DATE;
+
+			IF(@Amount>10)
+		BEGIN
+
+		
 		SELECT * FROM OPENJSON(@JSON)
 		WITH(ACTNO INT '$.ACTNO',
 		CustomerName VARCHAR(40)  '$.CustomerName',
@@ -65,18 +73,33 @@ List Names of Customers who are Depositors and have Same Branch City as that of 
 		Amount INT  '$.Amount',
 		Adate DATE  '$.Adate')
 
+	
+	
 		INSERT INTO Deposit1 VALUES(@ACTNO,@CustomerName,@BranchaName,@Amount,@Adate)
+		PRINT 'SUCCESS'
+		END
+
+		ELSE IF(@Amount<10)
+		BEGIN
+		PRINT 'INVALID'
+		END
+		
+	
 		END
 
 		DECLARE @json NVARCHAR(MAX)
 		SET @json = '[{"ACTNO" : "101",
 					  "CustomerName": "ANUJ",
 					  "BranchName" : " VATVA I.E.",
-					  "Amount" : "5000",
+					  "Amount" : 500,
 						"Adate"	: "06-03-1998"}]'
 		EXEC p6 @json
 
 
+		SELECT CONVERT(date, getdate())
 
 
 
+
+
+		SELECT SELECT CONVERT(date, getdate())
