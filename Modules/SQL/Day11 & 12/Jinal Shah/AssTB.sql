@@ -1,0 +1,31 @@
+CREATE TABLE Branch 
+(
+	Bname varchar(18) PRIMARY KEY,
+	City varchar(18)
+)
+
+CREATE TABLE Customer
+(
+	Cname varchar(18) PRIMARY KEY,
+	City varchar(18)
+)
+
+DROP TABLE Customer
+
+CREATE TABLE Deposit
+(
+	ActNo VARCHAR(5) PRIMARY KEY,
+	Cname VARCHAR(18) CONSTRAINT FKC FOREIGN KEY REFERENCES Customer(Cname),
+	Bname VARCHAR(18) CONSTRAINT FKB FOREIGN KEY REFERENCES Branch(bname),
+	Amount int,
+	Adate DATE
+)
+
+CREATE TABLE Borrow
+(
+	LoanNO VARCHAR(5) PRIMARY KEY,
+	Cname VARCHAR(18) CONSTRAINT FKCB FOREIGN KEY REFERENCES Customer(Cname),
+	Bname VARCHAR(18) CONSTRAINT FKBB FOREIGN KEY REFERENCES Branch(bname),
+	Amount int
+)
+
