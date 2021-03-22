@@ -4,8 +4,8 @@ GO
 CREATE TABLE Day14.Students(
 StudentID int CONSTRAINT Students_StudentID_PK PRIMARY KEY,
 StudentName varchar(50),
-TotalFees money,
-RemainingAmt money
+TotalFees money CONSTRAINT Students_TotalFees_DEF DEFAULT 0,
+RemainingAmt money CONSTRAINT Students_RemainingAmt_DEF DEFAULT 0
 )
 
 CREATE TABLE Day14.Courses (
@@ -24,5 +24,4 @@ StudentID int CONSTRAINT FeePayment_StudentID_FK FOREIGN KEY REFERENCES Day14.St
 AmountPaid money,
 DateofPayment date
 )
-
 
