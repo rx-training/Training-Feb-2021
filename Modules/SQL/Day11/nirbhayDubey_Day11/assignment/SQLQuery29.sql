@@ -1,5 +1,5 @@
 --Q1: Create a Store Procedure which will accept name of the customer as input parameter and product the following output, 
---List Names of Customers who are Depositors and have Same Branch City as that of input parameter customer’s Name.
+--List Names of Customers who are Depositors and have Same Branch City as that of input parameter customerï¿½s Name.
 
 CREATE PROC spCustomersWhoAreDepositors
 @Cname varchar(19)
@@ -120,6 +120,7 @@ END
 
 EXEC spInsertJsonDeposit @Jdata=N'{"Actno":"110","Cname":"ANIL","Bname":"AJNI","Amount":500,"Adate":"2021-03-20"}';
 GO
+
 
 
 
