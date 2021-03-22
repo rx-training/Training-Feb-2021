@@ -1,4 +1,4 @@
-
+		---------------AdventureWorks2012---------------
 
 /* Create a scaler Function to compute PF which will accept parameter basicsalary and compute PF. 
    PF is 12% of the basic salary. */
@@ -51,10 +51,10 @@
 	HumanResources.countpt (5500)
 	PRINT @earning
 
-	DECLARE @earning int 
-	SET @earning = 
+	DECLARE @earning1 int 
+	SET @earning1 = 
 	HumanResources.countpt (7000)
-	PRINT @earning
+	PRINT @earning1
 
 	DECLARE @earning int 
 	SET @earning = 

@@ -67,4 +67,27 @@
 	PRINT 'You must disable trigger "safety" to drop or alter tables!'
 	ROLLBACK
 
-	DROP TRIGGER safety
+	--DROP TRIGGER safety ON ALL SERVER;
+
+	--DISABLE TRIGGER safety ON DATABASE;  
+	--GO
+
+	DISABLE Trigger ALL ON ALL SERVER;  
+	GO
+
+
+
+	--------------ALTER TRIGGER------------
+
+	ALTER TRIGGER HumanResources.trgInsertShift
+	ON HumanResources.Shift
+	FOR INSERT
+	AS
+	DECLARE @ModifiedDate datetime
+	SELECT @ModifiedDate = ModifiedDate FROM Inserted
+		IF (@ModifiedDate != GETDATE())
+		BEGIN
+			RAISERROR ('The modified date is not the current date. The transaction can not be processed.',10,1)
+			ROLLBACK TRANSACTION
+		END
+	RETURN
