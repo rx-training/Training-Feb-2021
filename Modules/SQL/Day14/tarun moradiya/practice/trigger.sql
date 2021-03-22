@@ -22,7 +22,7 @@ ON  HumanResources.Shift
 FOR INSERT
 AS
 	DECLARE @ModifiedDate datetime
-	SELECT @ModifiedDate = ModifiedDate FROM inserted
+	SELECT @ModifiedDate = ModifiedDate FROM inserted  --use deleted for deleted data
 	IF ( @ModifiedDate != GETDATE() )
 	BEGIN
 		PRINT 'The Modified Date Should Be Current Date. Hence, Can Not Insert'
@@ -121,3 +121,10 @@ GO
 DROP TRIGGER HumanResources.trgInsertShift
 
 
+---ENABLE AND DISSABLE TRIGGER
+
+DISABLE TRIGGER safety ON DATABASE;  
+GO  
+
+ENABLE Trigger safety ON DATABASE;  
+GO

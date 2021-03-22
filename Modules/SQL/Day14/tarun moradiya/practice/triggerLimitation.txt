@@ -1,0 +1,40 @@
+CREATE TRIGGER must be the first statement in the batch and can apply to only one table.
+
+A trigger is created only in the current database; however, a trigger can reference objects outside the current database.
+
+If the trigger schema name is specified to qualify the trigger, qualify the table name in the same way.
+
+The same trigger action can be defined for more than one user action (for example, INSERT and UPDATE) in the same CREATE TRIGGER statement.
+
+INSTEAD OF DELETE/UPDATE triggers can't be defined on a table that has a foreign key with a cascade on DELETE/UPDATE action defined.
+
+Any SET statement can be specified inside a trigger. The SET option selected remains in effect during the execution of the trigger and then reverts to its former setting.
+
+If variable assignment must occur in a trigger, use a SET NOCOUNT statement at the start of the trigger to prevent the return of any result sets.
+
+Although a TRUNCATE TABLE statement is in effect a DELETE statement, it doesn't activate a trigger because the operation doesn't log individual row deletions. 
+
+The WRITETEXT statement, whether logged or unlogged, doesn't activate a trigger
+
+The following Transact-SQL statements aren't allowed in a DML trigger:
+
+    ALTER DATABASE
+    CREATE DATABASE
+    DROP DATABASE
+    RESTORE DATABASE
+    RESTORE LOG
+    RECONFIGURE
+
+following Transact-SQL statements aren't allowed inside the body of a DML trigger when it's used against the table or view that's the target of the triggering action.
+
+    CREATE INDEX (including CREATE SPATIAL INDEX and CREATE XML INDEX)
+    ALTER INDEX
+    DROP INDEX
+    DROP TABLE
+    DBCC DBREINDEX
+    ALTER PARTITION FUNCTION
+    ALTER TABLE when used to do the following:
+        Add, modify, or drop columns.
+        Switch partitions.
+        Add or drop PRIMARY KEY or UNIQUE constraints.
+
