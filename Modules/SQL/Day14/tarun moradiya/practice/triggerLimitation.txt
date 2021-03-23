@@ -38,3 +38,6 @@ following Transact-SQL statements aren't allowed inside the body of a DML trigge
         Switch partitions.
         Add or drop PRIMARY KEY or UNIQUE constraints.
 
+You can't define AFTER triggers on views.
+
+You can't specify INSTEAD OF for DDL or logon triggers. 
