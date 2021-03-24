@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Greater Number</title>
+</head>
+<body>
+        <div class="container-fluid">
+            <div class="col-md-8 com-lg-6 mx-auto my-5 bg-light p-5">
+                <form>
+                    <div class="form-group">
+                        <label for="num1">Number 1</label>
+                        <input type="number" class="form-control" id="num1" placeholder="Enter Number 1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="num1">Number 2</label>
+                        <input type="number" class="form-control" id="num2" placeholder="Enter Number 2" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="num1">Number 3</label>
+                        <input type="number" class="form-control" id="num3" placeholder="Enter Number 3" required>
+                    </div>
+                    <button type="button" class="btn btn-success" onclick="greaterNumber(num1, num2, num3)">Find Greater Number</button>
+                    <button type="button" class="btn btn-primary" onclick="additionGreater40(num1, num2, num3)">Addition</button>
+                </form>
+                <p class="lead">Greater nnumber from three Numbers is : <span id="greaterNumber" class="text-danger"></span></p>
+                <p class="lead">Additon of that numbers which are greater than 40 is : <span id="additionNumber" class="text-danger"></span></p>
+            </div>
+        </div>
+    
+    <script src="../assets/js/practiceDay15.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

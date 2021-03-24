@@ -1,0 +1,60 @@
+body{
+    background-color: paleturquoise;
+    font-family: "Courier";
+    font-size: 18px;
+}
+.div{
+    height: 300px;
+    width: 433px;
+    border: 2px solid crimson;
+    display: inline-block;
+}
+.row{
+    width: 100%;
+    margin: auto;
+}
+h2{
+    color: crimson;
+    text-align: center;
+    margin: auto;
+}
+p{
+    padding: 10px;
+}
+.staticdiv{
+    position: static;
+    height: 100px;
+    width: 200px;
+    border: 2px solid crimson;
+}
+div.relative{
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border: 2px solid crimson;
+    left: 100px;
+    
+}
+div.absolute{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border: 2px solid crimson;
+    top: 100px;
+    left: 50px;  
+}
+.fixeddiv{
+    position: fixed;
+    height: 100px;
+    width: 300px;
+    border: 2px solid crimson; 
+    bottom: 0;
+    right: 0;
+}
+.stickydiv {
+    position: sticky;
+    top: 0;
+    background-color: lightpink;
+    border: 2px solid crimson;
+    padding: 10px;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container p-5 bg-info mt-5">
+        <h1 class="p-3 mb-2">Function call:</h1>
+        <form name="employee" id="employee">
+            <div class="form-group">
+                <label for="name">Enter Name:</label>
+                <input type="text" name="name" id="name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="addr">Enter The Address:</label>
+                <input type="text" name="addr" id="addr" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="desig">Enter The Designation:</label>
+                <input type="text" name="desig" id="desig" class="form-control">
+            </div>
+            <button class="btn btn-dark" type="submit">Submit</button>
+        </form>
+        <h3 class="p-3" id="output"></h3>
+    </div>
+
+    <script>
+        let myform = document.forms.employee;
+        let ename = myform.elements.name;
+        let addr = myform.elements.addr;
+        let desig = myform.elements.desig;
+
+        let person = {
+            info: function () {
+                return `employee name is: ${this.name} <br>employee address is: ${this.address} <br>employee designation is: ${this.designation}`;
+            }
+        }
+        
+        function employee(n, a, d) {
+            this.name = n;
+            this.address = a;
+            this.designation = d;
+        } 
+
+        myform.onsubmit = (event) => {
+            event.preventDefault();
+
+            let employee1 = new employee(ename.value, addr.value, desig.value);
+            console.log(ename, addr, desig, employee1)
+            let p = person.info.call(employee1);
+
+            document.getElementById('output').innerHTML = p;
+        }
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

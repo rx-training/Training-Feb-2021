@@ -5,72 +5,73 @@
         <meta name="viewport" content="width-device-width,initial-scale-1.0">
         <title>Practice Exercise 1</title>
         <style>
+        * {
+                box-sizing: border-box;
+        }
             .h{
-                background-color:white;
+                background-color:rgb(0, 0, 0);
                 border: 5px solid black;
+                text-align: center;
             }
-            .d{
-                font-size: 10ch;
-                position: fixed;
-                top: 10px;
-                left: 130px;
+           
+            .hello {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+                }
+                .anchor{
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                }
 
-            }
-            li {
-  float: left;
-}
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: #111;
-}
-            .sidenav {
-                height: 100%;
-                width: 160px;
-                position: fixed;
-                z-index: 1;
-                top: 50;
-                left: 15;
+                li .anchor:hover {
                 background-color: #111;
-                overflow-x: hidden;
-                padding-top: 20px;
+                }
+            .sidenav5 {
+                float:left;
+                width:15%;
+                background-color:black;
+                height: 500px;
+                padding: 20px;
+                font-size: smaller;
             }
-            .sidenav a {
+            .sidenav5 a {
                 padding: 6px 8px 6px 16px;
                 text-decoration: none;
-                font-size: 25px;
+                font-size: 20px;
                 color: #818181;
                 display: block;
             }
-            .sidenav a:hover {
-                color: #f1f1f1;
-                
+            .sidenav5 a:hover {
+                color: #f1f1f1;     
             }
-            .a{
-                position: relative;
-                top: 0pc;
-                left: 12pc;
+            .article5{
+                float:left;
+                width:85%;
+                height: 50px;     
+                font-size: 20px;
+                color: rgb(0, 0, 0);
+               
             }
-            footer {
-            text-align: center;
-            padding: 3px;
-            background-color: darkgray;
-            color: white;
-            position: relative;
+           
             
+            .f {
+                background-color: black;
+                text-align: center;
+                height:10%;
+                position: fixed;
+                left: 1;
+                right: 1;
+                bottom: 0;
+                width: 98.9%;
+                color: blanchedalmond;
+                font-size: large;
+                padding-top: 20px;
             
             }
         </style>
@@ -78,43 +79,39 @@ li a:hover {
     <body>
         <header class="h">
             <img src="./yin-yang.jpg" height="100" width="100">
-            <div class="d">Tutorials</div>
-            <ul>
-                <li><a class="active" href="./zassignment.html">Home</a></li>
-                <li><a href="./zcontact.html">ContactUs</a></li>
-                <li><a href="./zabout.html">AboutUs</a></li>
+            <ul class="hello">
+                <li style="float: left;" ><a class="anchor" href="./zassignment.html">Home</a></li>
+                <li style="float: left;" ><a class="anchor" href="./zcontact.html">ContactUs</a></li>
+                <li style="float: left;"><a class="anchor" href="./zabout.html">AboutUs</a></li>
               </ul>
         </header>
-        <div class="sidenav">
-            <a href="#Day1">Day 1</a>
-            <a href="#Day2">Day 2</a>
-            <a href="#Day3">Day 3</a>
-            <a href="#Day4">Day 4</a>
+        <div class="sidenav5">
+            <a href="https://www.w3schools.com/html/default.asp">HTML</a>
+            <a href="https://www.w3schools.com/css/default.asp">CSS</a>
+            <a href="https://www.w3schools.com/bootstrap/bootstrap_ver.asp">BOOTSTRAP</a>
+            <a href="https://www.w3schools.com/js/default.asp">JAVASCRIPT</a>
           </div>
-          <article class="a">
-          <h2>HEADER TAG</h2>
-          The header element represents a container for introductory content or a set of navigational links.
-           <br/> A header element typically contains:
-           <ol>
-            <li>one or more heading elements </li><br/>
-            <li>logo or icon</li><br/>
-            <li>authorship information</li>
-           </ol> 
-          </article><br/>
-          <article class="a">
-            <h2>FOOTER TAG</h2>
-            The footer tag defines a footer for a document or section.
-              <br/>  A footer element typically contains:              
-             <ol>
-              <li>authorship information</li><br/>
-              <li>copyright information</li><br/>
-              <li>contact information</li>
-             </ol> 
+          <article class="article5">
+            <h2>HEADER TAG</h2>
+            The header element represents a container for introductory content or a set of 
+            navigational links.
+            A header element typically contains:
+            <ol>
+                <li>one or more heading elements </li>
+                <li>logo or icon</li>
+                <li>authorship information</li>
+            </ol> 
+                <h2>FOOTER TAG</h2>
+                The footer tag defines a footer for a document or section.
+                 A footer element typically contains:              
+                <ol>
+                <li>authorship information</li>
+                <li>copyright information</li>
+                <li>contact information</li>
+                </ol> 
             </article><br/>
-        <footer>
-            
-                <p>Zeel Mehta<br>
-                <a href="mailto:tutorials@example.com">tutorials@example.com</a></p>
+        <footer class="f">
+            &#169; Zeel Mehta
               
         </footer>
     </body>

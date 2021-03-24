@@ -1,0 +1,29 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.outer{
+    width: 700px;
+    height: 800px;
+    margin: 0px auto;
+}
+.outer h1{
+    text-align: center;
+}
+P{
+    font-size: 15px;
+}
+.border{
+    width: 100%;
+    padding: 5px;
+    background-color: rgb(224, 231, 231);
+    border: 1px solid burlywood;
+    font-weight: bold;
+}
+ul{
+    font-size: 15px;
+    margin-left: 50px;
+}
+h2{
+    float: right;
+}

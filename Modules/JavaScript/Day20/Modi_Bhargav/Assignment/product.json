@@ -1,0 +1,28 @@
+[
+    {
+        "ProductID":1,
+        "ProductName" : "Cheese",
+        "Price": 100,
+        "Quantity":1
+    },
+    {
+        "ProductID":2,
+        "ProductName" : "Crisps",
+        "Price": 150,
+        "Quantity":2
+    },
+    {
+        "ProductID":3,
+        "ProductName" : "Pizza",
+        "Price": 100,
+        "Quantity":1
+    },
+    {
+        
+        "ProductID":4,
+        "ProductName" : "Chocolate",
+        "Price": 100,
+        "Quantity":1
+        
+    }
+]

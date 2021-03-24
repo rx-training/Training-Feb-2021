@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 1</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        .ancestors * { 
+          display: block;
+          border: 2px solid lightgrey;
+          color: lightgrey;
+          padding: 5px;
+          margin: 15px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("span").parent().css({"color": "red", "border": "2px solid red"});
+            $(".s1").parents().css({"color": "red", "border": "2px solid blue"});
+            $(".s2").parents("ul").css({"color": "red", "border": "2px solid green"});
+            $(".s3").parentsUntil(".div1").css({"color": "red", "border": "2px solid yellow"});
+        });
+    </script>
+
+</head>
+<body class="p-5">
+    <h2 class="pl-5">jQuery Traversing - Ancestors</h2>
+    
+    <div class="ancestors">  
+        <div style="width:500px;">div (great-grandparent)
+          <ul>ul (grandparent)  
+            <li>li (direct parent)
+              <span>span</span>
+            </li>
+          </ul>   
+        </div>
+      
+        <div style="width:500px;">div (grandparent)   
+          <p>p (direct parent)
+            <span>span</span>
+          </p> 
+        </div>
+    </div>
+
+    <div class="ancestors">div (great-great-grandparent)
+        <div style="width:500px;">div (great-grandparent)
+          <ul>ul (grandparent)  
+            <li>li (direct parent)
+              <span class="s1">span</span>
+            </li>
+          </ul>   
+        </div>
+    </div>
+    
+    <div class="ancestors">div (great-great-grandparent)
+    <div style="width:500px;">div (great-grandparent)
+        <ul>ul (grandparent)  
+          <li>li (direct parent)
+            <span class="s2">span</span>
+          </li>
+        </ul>   
+    </div>
+    </div>
+
+    <div class="ancestors"> body (great-great-grandparent)
+        <div class="div1" style="width:500px;">div (great-grandparent)
+          <ul>ul (grandparent)  
+            <li>li (direct parent)
+              <span class="s3">span</span>
+            </li>
+          </ul>   
+        </div>
+    </div>
+
+</body>
+</html>

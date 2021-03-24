@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Validation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+
+     <script type="text/javascript">
+
+         function dateFunction(num)
+                    {
+                        // regular expression to match required date format
+                        re = /^(\d{1,2})\-(\d{1,2})\-(\d{4})$/;
+                
+                        if(num.value != '') 
+                        {
+                            if(regs = num.value.match(re)) 
+                            {                  
+                                // month value between 1 and 12
+                                if(regs[1] < 1 || regs[1] > 12) 
+                                {
+                                    document.getElementById("demo").innerHTML="Invalid Month : " + regs[1];
+                                    return false;    
+                                }
+                                // day value between 1 and 31
+                                if(regs[2] < 1 || regs[2] > 31) 
+                                {
+                                    document.getElementById("demo").innerHTML="Invalid Day : " + regs[2];
+                                    return false;
+                                }
+                                // year value between 1902 and 2021
+                                if(regs[3] < 1900 || regs[3] > (new Date()).getFullYear()) 
+                                {
+                                    document.getElementById("demo").innerHTML="Invalid Year: " + regs[3] + " - must be between 1900 and " + (new Date()).getFullYear();
+                                    return false;
+                                }
+                            } 
+                            else 
+                            {
+                                alert("Invalid date format: " + num.value);
+                                num.focus();
+                                return false;
+                            }
+                        }     
+                        if(regs[3] % 4 == 0){
+                            document.getElementById("demo1").innerHTML="This is leap year!!";
+                        } 
+                        else{
+                            document.getElementById("demo1").innerHTML="";
+                        }  
+                        document.getElementById("demo").innerHTML="Date is Valid!";
+                    return true;
+                } 
+
+        /* function check(s1)
+        {
+
+            console.log("User Input = " + parseInt(s1));
+            var str = s1;
+            var mm = str.substr(0, 2);
+            console.log(" Month = " + parseInt(mm));
+            var dd = str.substr(2, 2);
+            console.log(" Date = " + parseInt(dd));
+            var yyyy = str.substr(4, 4);
+            console.log(" Year = " + parseInt(yyyy));
+
+            if( mm == 1 || mm > 2 || mm <= 12)
+            {
+                if( mm % 2 == 0)
+                {
+                    if( mm == 4 || mm == 6)
+                    {
+                        if( dd >=1 && dd <=30 )
+                        {
+                            if(mm == 4){alert("Month : April \nDate : " + dd + "\nYear : " + yyyy);}
+                            if(mm == 6){alert("Month : June \nDate : " + dd + "\nYear : " + yyyy);}
+                        }
+                        else{alert("Invalid date format \nWrong date");}
+                    }
+                    else
+                    {
+                        if( dd >=1 && dd <=31 )
+                        {
+                            if(mm == 8){alert("Month : August \nDate : " + dd + "\nYear : " + yyyy);}
+                            if(mm == 10){alert("Month : October \nDate : " + dd + "\nYear : " + yyyy);}
+                            if(mm == 12){alert("Month : December \nDate : " + dd + "\nYear : " + yyyy);}
+                        }
+                        else{alert("Invalid date format \nWrong date");}
+                    }
+                }
+                else
+                {
+                   if (mm == 1 || mm == 3 || mm == 5 || mm == 7)
+                   {
+                        if( dd >= 1 && dd <= 31)
+                        {
+                            if( mm == 1){alert("Month : January \nDate : " + dd + "\nYear : " + yyyy);}
+                            if( mm == 3){alert("Month : March \nDate : " + dd + "\nYear : " + yyyy);}
+                            if( mm == 5){alert("Month : May \nDate : " + dd + "\nYear : " + yyyy);}
+                            if( mm == 7){alert("Month : July \nDate : " + dd + "\nYear : " + yyyy);}
+                        }
+                        else{alert("Invalid date format \nWrong date");}
+                    } 
+                    if( mm == 9 || mm == 11)
+                    {
+                        if( dd >=1 && dd <=30 )
+                        {
+                            if(mm == 9){alert("Month : September \nDate : " + dd + "\nYear : " + yyyy);}
+                            if(mm == 11){alert("Month : November \nDate : " + dd + "\nYear : " + yyyy);}
+                        }
+                        else{alert("Invalid date format \nWrong date");}
+                    }
+                }
+            }
+            if(mm == 2)
+            {
+                if( yyyy % 4 == 0)
+                {
+                    if( dd >= 1 && dd <= 29)
+                    {
+                        alert("Month : Febuary \nDate : " + dd + "\nYear : " + yyyy + "  This Is Leap Year");
+                    }
+                }
+                else
+                {
+                    if( dd >= 1 && dd <= 28)
+                    {
+                        alert("Month : Febuary \nDate : " + dd + "\nYear : " + yyyy + "  This Is Not Leap Year");
+                    }
+                }
+            }
+        } */
+
+    </script> 
+
+</head>
+<body>
+
+    <div class="card text-center col-md-6 border-dark mb-3 mt-5 p-5 mx-auto">
+        <div class="card-header bg-dark text-white">
+           <h5>Date entered by the user should be checked for whether it is a Valid Date or not.</h5>
+        </div>	
+        <div class="card-body">
+         
+                <label for="s1" class="form-label">Enter date :</label><br>
+                (MM-DD-YYYY Format only)<br><br>
+                <input type="text" class="form-control" id="s1"><br>
+            
+                <button class="btn btn-primary" type="submit" onclick="dateFunction(s1)" >Check</button><br>
+                <br>
+                <h1 id="demo" style="color: brown;"> </h1>
+                <h1 id="demo1" style="color: brown;"> </h1>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 4</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+
+    <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
+        <div class="card-header bg-dark text-white">
+           <h5>Using Function call create employee object with field Name, Address and Designation and pass it to function. </h5>
+        </div>	
+        <div class="card-body">
+         
+            <h2>Employee Details: </h2><hr>
+        <h4 id="demo" class=" p-4"></h4>	
+        <h4 id="demo1" class=" "></h4>	
+            
+        </div>
+       	
+    </div>	
+
+    <script> 
+        var employee = { 
+            details: function(add,des) { 
+                return this.name + " " + this.Surname + ", " + add + ", " + des; 
+            } 
+        } 
+        var emp1 = { 
+            name:"Dinesh", 
+            Surname: "Shah", 
+        }   
+        var emp2 = { 
+            name:"Vaibhav", 
+            Surname: "Patel", 
+        } 
+          
+        var x = employee.details.call(emp1,"Ahmedabad","Analyst");  
+        document.getElementById("demo").innerHTML = x;
+        var x = employee.details.call(emp2, "Gandhinagar", "Developer");  
+        document.getElementById("demo1").innerHTML = x;  
+    </script> 
+
+
+	
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Function call</title>
+    <style>
+        #main{
+            border: dotted;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8" id="main">
+                <h2 class="text-center text-primary">Function Closure</h2>
+                <div class="text-center">
+                    <p>A function can access variables defined inside the function:</p>
+                    <button type="button" onclick="myFunction()">Click Me!</button>
+                    <p id="p1"></p>
+                    <p>------------------------------------------------------------------------------------------</p>
+                    <p>A function can access variables defined outside the function:</p>
+                    <button type="button" onclick="myFunction1()">Click Me!</button>
+                    <p id="p2"></p>
+                    <p>------------------------------------------------------------------------------------------</p>
+                    <h2>JavaScript Function Closures</h2>
+                    <p>Counting with a global variable.</p>
+                    <p id="p3"></p>
+                    <p>------------------------------------------------------------------------------------------</p>
+                    <h2>JavaScript Closures</h2>
+                    <p>Counting with a local variable.</p>
+                    <button type="button" onclick="myFunction2()">Count!</button>
+                    <p id="p4">0</p>
+                </div>
+            </div>
+        </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+            var a = 10;
+            document.getElementById("p1").innerHTML = a * a;
+        } 
+        var b = 4;
+        function myFunction1() {
+            document.getElementById("p2").innerHTML = b * b;
+        } 
+
+        var counter = 0;
+        function add() {
+            counter += 1;
+        }
+        add();
+        add();
+        add();
+        document.getElementById("p3").innerHTML = "The counter is: " + counter;
+
+        var add = (function () {
+            var counter = 0;
+            return function () {counter += 1; return counter;}
+        })();
+
+        function myFunction2(){
+            document.getElementById("p4").innerHTML = add();
+        }
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

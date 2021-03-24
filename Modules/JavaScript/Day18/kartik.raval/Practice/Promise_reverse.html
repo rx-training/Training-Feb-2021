@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse string using promise</title>
+</head>
+<body>
+    <p>Reverse of <strong>Hello</strong> is <Strong>olleH</Strong></p>
+    <h3>Please check the output in console</h3>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <script>
+        function rev_String(str1){
+            return new Promise((resolve,reject)=>{
+                if(str1 != isNaN){
+                    let reversed = "";
+                    var i;    
+                    for (i = str1.length - 1; i >= 0; i--){        
+                        reversed += str1[i];
+                    }    
+                    let successMessage = {status : "success", message: "Reverse of Hello is => " + reversed};
+                    resolve(successMessage);
+                }
+                else{
+                    let errorMessage = {status : "error", message : "Please enter string"};
+                    reject(errorMessage);
+                }
+            })
+        }
+        rev_String("Hello").then((success)=>{
+        //document.getElementById("p1").innerHTML = success;
+            console.log(success);
+        },
+        (error)=>{
+            //document.getElementById("p1").innerHTML = error;
+            console.log(error);
+        });
+    </script>
+    
+</body>
+</html>

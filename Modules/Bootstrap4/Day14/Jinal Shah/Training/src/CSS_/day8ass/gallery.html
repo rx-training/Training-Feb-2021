@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid layout</title>
+    <link rel="stylesheet" href="grid.css">
+</head>
+<style>
+    
+    .item1 ul {
+        list-style-type: none;
+        margin: 10px;
+        padding: 0;
+        width: 150px;
+        background-color:black;
+        text-align: center;
+    }
+
+    .item1 li a {
+        display: block;
+        color: #f2f2f2;
+        padding: 8px 10px;
+        text-decoration: none;
+        margin-right: 0;
+        float: center;
+    }
+
+    /* .item2 li a:hover {
+        background-color: #ddd;
+        color: black;
+    } */
+    .item2{
+        overflow-y: scroll;
+    }
+    .item3 h1{
+        text-align: center;
+        font-size: 100px;
+        padding-top: 50px;
+    }
+    .item3{
+        overflow-y: scroll;
+    }
+
+    .row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+    </style>
+<body>
+    <div class="grid-container">
+        <div class="item1">
+            
+            <img src="img/log1.jpg" style="height: 35px; width: 50px; position: fixed;">
+            <a href="#" class="active">Home</a>
+            <a href="red.html">Redmine & git</a>
+            <a href="html.html">HTML</a>
+            <a href="css.html">CSS</a>
+            <a href="#">JAVASCRIPT</a>
+             
+        </div>
+        <div class="item2">
+            <h2>Day 4</h2>
+            <h3>Practice</h3> 
+            <ul>
+                <li><a href="c41.html">Practice1</a></li><br/>
+                <li><a href="c42.html">Practice2</a></li><br/>
+                <li><a href="c43.html">Practice3</a></li><br/>
+                <li><a href="c44.html">Practice4</a></li><br/>
+                <li><a href="c45.html">Practice5</a></li>
+            </ul>
+           <h3>Assignment</h3> 
+            <ul>
+                <li><a href="c4ass.html">Assignment</a></li>
+            </ul>
+            <h2>Day 5</h2>
+            <h3>Practice</h3> 
+            <ul>
+                <li><a href="c51.html">Practice1</a></li><br/>
+                <li><a href="c52.html">Practice2</a></li><br/>
+                <li><a href="c53.html">Practice3</a></li><br/>
+            </ul>
+             <h3>Assignment</h3>
+             <ul>
+                <li><a href="c5ass.html">Assignment</a></li>
+            </ul>
+            <h2>Day 6</h2>
+            <h3>Practice</h3> 
+            <ul>
+                <li><a href="gallery.html">image gallery</a></li><br/>
+            </ul>
+        </div>
+        <div class="item3">
+            <div class="row"> 
+                <div class="column">
+                  <img src="img/1.jpg" style="width:100%">
+                  <img src="img/5.jpg" style="width:100%">
+                  <img src="img/3.jpg" style="width:100%">
+                  <img src="img/31.jpg" style="width:100%">
+                </div>
+                
+                <div class="column">
+                  <img src="img/2.jpg" style="width:100%">
+                  <img src="img/23.jpg" style="width:100%">
+                  <img src="img/15.jpg" style="width:100%">
+                  <img src="img/18.jpg" style="width:100%">
+                  
+                </div> 
+                 
+                <div class="column">
+                  <img src="img/28.jpg" style="width:100%">
+                  <img src="img/13.jpg" style="width:100%">
+                  <img src="img/17.jpg" style="width:100%">
+                  <img src="img/21.jpg" style="width:100%">
+                  
+                </div>
+                
+                <div class="column">
+                  <img src="img/9.jpg" style="width:100%">
+                  <img src="img/12.jpg" style="width:100%">
+                  <img src="img/25.jpg" style="width:100%">
+                  <img src="img/4.jpg" style="width:100%">
+               </div>
+              </div>
+        </div>  
+        <div class="item4">Privacy   |   Sitemap |   Terms & Condition</div>
+      </div>
+
+      
+</body>
+</html>

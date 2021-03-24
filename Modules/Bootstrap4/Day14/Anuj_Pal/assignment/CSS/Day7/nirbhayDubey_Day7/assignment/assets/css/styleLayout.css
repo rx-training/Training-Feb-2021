@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navigation-bar CSS */
+.navbar{
+    background-image: linear-gradient(to right,#5791f5,#c4dffd);
+}
+.navbar .navleft, .navright{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex: 100%;
+}
+.navbar .navleft p{
+    font-size: 20px;
+    font-weight: bold;
+    color:#feffff;
+    margin-left:10px;
+}
+.navbar .navleft img{
+    height:60px;
+}
+.navbar .navright{
+    justify-content: flex-end;
+    align-items: center;
+}
+.navbar .navright a{
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color:#ffffff;
+    font-size:15px;
+    font-weight: bold;
+}
+.navbar .navright a:hover{
+    background-color:#5791f5;
+}
+
+/* Container CSS */
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.container .leftbar, .rightbar{
+    flex:100%;
+}
+.container .leftbar > p, .container .rightbar > p{
+    margin-top: 20px;
+    font-size: 26px;
+    text-align: center;
+}
+
+[class*="sqgr"]{
+    color:#ffffff;
+    text-align: center;
+    padding: 24px;
+    margin:50px;
+    border-radius: 3px;
+    box-shadow:4px 4px 5px #bababa;
+}
+.leftbar .sqgr1{ background-image: linear-gradient(to right, #e770ce,#8872ee); }
+.leftbar .sqgr2{ background-image: linear-gradient(to right, #1da7f2,#08f6ab); }
+.leftbar .sqgr3{ background-image: linear-gradient(to right, #ffc96f,#fd7164); }
+.leftbar .sqgr4{ background-image: linear-gradient(to right, #41b8f0,#3249a7); }
+
+.rightbar .row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.rightbar .row .column{ 
+    flex:50%;
+    box-sizing: border-box;
+    padding:25px 25px 0 25px;
+}
+.rightbar .row .column p{
+    text-align: center;
+    color:#8c8887;
+    font-size: 13px;
+    padding-bottom: 10px;
+}
+[class*="cirgr"]{
+    height: 115px;
+    border-radius: 50%;
+    margin:0 10px 0 10px;
+    box-shadow:1px 5px 15px #bababa;
+}
+.rightbar .cirgr1{ background-image: linear-gradient(to right, #ffa6a8,#fbc4bd); }
+.rightbar .cirgr2{ background-image: linear-gradient(#f6beeb,#a990d4); }
+.rightbar .cirgr3{ background-image: linear-gradient(#ffd1f8,#fcd0cd); }
+.rightbar .cirgr4{ background-image: linear-gradient(to bottom right,#f088e1,#f4638a); }
+.rightbar .cirgr5{ background-image: linear-gradient(to bottom right,#ffd277,#f7a887); }
+.rightbar .cirgr6{ background-image: linear-gradient(#aa99cd,#65e1df); }
+.rightbar .cirgr7{ background-image: linear-gradient(#e9dbea,#fdccec); }
+.rightbar .cirgr8{ background-image: linear-gradient(to bottom right,#cfc2f8,#a0c5fc); }
+.rightbar .cirgr9{ background-image: linear-gradient( #a8ccfe,#bde0fc); }
+.rightbar .cirgr10{ background-image: linear-gradient(to bottom right,#c7f980,#a3ea9e); }
+.rightbar .cirgr11{ background-image: linear-gradient(to bottom right,#85f1bd,#8ddde8); }
+.rightbar .cirgr12{ background-image: linear-gradient(#30166d,#2fbec6); }
+
+/* footer CSS */
+footer{
+    /* background-color: #b5d7fc; */
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    padding:15px;
+    margin-top: 100px;
+    background-image: linear-gradient(to right,#b5d7fc,#4e8df6);
+}
+
+/* Media Query */
+@media only screen and (min-width:768px){
+    .navbar { display: flex; }
+    .navbar .navleft{ flex: 20%; }
+    .navbar .navright{ flex: 80%; }
+    .navbar .navright a{ width: 10%; }
+    .container .leftbar { flex: 30%; }
+    .container .rightbar{ flex: 70%; }
+    .container .rightbar .row{ padding:0; }
+    .rightbar .row .column{ flex:50%; }
+}
+@media only screen and (min-width:992px){
+    .navbar { display: flex; }
+    .navbar .navleft{ flex: 20%; }
+    .navbar .navright{ flex: 80%; }
+    .navbar .navright a{ width: 10%; }
+    .container .leftbar { flex: 30%; }
+    .container .rightbar{ flex: 70%; }
+    .container .rightbar .row{ padding:0; }
+    .rightbar .row .column{ flex:25%; }
+}
+@media only screen and (min-width:1200px){
+    .navbar { display: flex; }
+    .navbar .navleft{ flex: 20%; }
+    .navbar .navright{ flex: 80%; }
+    .navbar .navright a{ width: 10%; }
+    .container .leftbar { flex: 30%; }
+    .container .rightbar{ flex: 70%; }
+    .container .rightbar .row{ padding:0 120px 0 80px; }
+    .rightbar .row .column{ flex:25%; }
+}

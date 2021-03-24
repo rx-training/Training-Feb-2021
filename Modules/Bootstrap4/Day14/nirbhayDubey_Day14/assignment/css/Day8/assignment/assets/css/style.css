@@ -1,0 +1,313 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-areas:
+        "nav"
+        "carousel"
+        "con2"
+        "cont"
+        "con5"
+        "con8"
+        "footer";
+}
+
+/* Navigation-bar CSS */
+.grid-container .navbar{
+    background-color:#2a4462;
+    grid-area: nav;
+    box-shadow:1px 10px 20px #2a4462;
+    z-index: 1;
+}
+.navbar .logo, .items{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.navbar .logo img{
+    height: 60px;
+}
+.navbar .logo p{
+    font-size: 20px;
+    font-family:monospace;
+    color:#ffffff;
+    padding-left: 10px;
+}
+.navbar .logo a{
+    font-size:17px;
+    color:#ffffff;
+    border: 1px solid #ffffff;
+    border-radius:5px;
+    padding:8px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+.navbar .items a{
+    font-size: 16px;
+    font-family:monospace;
+    color:#ffffff;
+    width: 100%;
+    text-align: center;
+    padding:10px;
+    text-decoration: none;
+}
+.navbar .items a:hover{
+    font-weight: 900;
+    font-size: 17px;
+}
+
+/* Carousel CSS */
+.carousel{
+    background-image: url("../images/carousel.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-area: carousel;
+    height: 90vh;
+}
+.carousel div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    background:linear-gradient(rgba(15,48,87,0.9),rgba(0,136,145,0));
+}
+.carousel div p{
+    font-size:20px;
+    font-family: monospace;
+    font-weight: bold;
+    line-height: 30px;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+/* container 2 CSS covers 3 icons */
+.con2{
+    grid-area: con2;
+}
+.con2 .whyyoga p{
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    font-family: monospace;
+    font-weight: bold;
+    color: #333333;
+    padding:30px;
+}
+.con2 .icon3{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+.con2 .icon3 div{
+    flex:100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.con2 .icon3 div li{
+    list-style-type:none;
+    text-align: center;
+
+}
+.con2 .icon3 div #name{
+    font-size: 30px;
+    font-weight: bold;
+    color:#008891;
+    font-family: monospace;
+    margin-top: 30px;
+}
+.con2 .icon3 div #details{
+    font-size: 13px;
+    font-weight: 900;
+    line-height:15px;
+    font-family: monospace;
+    color:#999999;
+    margin-top: 25px;
+    padding:10px;
+}
+.con2 .icon3 div i{
+    font-size: 60px;
+    color: #008891;
+}
+
+
+/* Container CSS which covers 1-image after 3 icons */
+.container{
+    margin-top: 40px;
+    background-image: url("../images/container-image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    grid-area: cont;   
+    height: 60vh;
+}
+.container div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    background:linear-gradient(rgba(15,48,87,0.6),rgba(0,136,145,0.3));
+}
+.container div p{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-family: monospace;
+    color:#ffffff;
+    font-weight: bold;
+    line-height: 20px;
+    padding:10vh;
+}
+
+/* Container 5 covers img and why us? */
+.con5{
+    grid-area: con5;
+}
+.con5 .whyus{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    margin-top: 40px;
+}
+.con5 .whyus img{
+    height:200px;
+    margin-top: 20px;
+    box-shadow:1px 1px 20px #008891;
+}
+.con5 .whyus p strong{
+    font-size: 50px;
+    font-family: monospace;
+    font-weight: bold;
+    color: #333333;
+    padding:15px;
+}
+.con5 .whyus p{
+    font-size: 13px;
+    font-weight: 900;
+    line-height:15px;
+    font-family: monospace;
+    color:#999999;
+    padding:20px;
+    margin-top: 20px;
+}
+
+/* Container 8 covers 4 sections of our programs */
+.con8{
+    grid-area: con8;
+    margin-top: 40px;
+}
+.con8 .logo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+.con8 .logo p{
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    font-family: monospace;
+    font-weight: bold;
+    color: #333333;
+    padding:10px;
+}
+.con8 .cards{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top:20px;
+}
+.con8 .cards div{
+    flex:100%;
+    /* border:1px solid red; */
+    padding: 10px;
+}
+.con8 .cards div img{
+    box-shadow:1px 1px 20px #008891;
+}
+.con8 .cards div .pland{
+    padding: 10px 10px 5px 0;
+    font-size: 21px;
+    font-family: monospace;
+    font-weight:bolder;
+    color: #0f3057;
+}
+.con8 .cards div .planrs{
+    padding: 5px 10px 5px 0;
+    font-size: 22px;
+    font-family: monospace;
+    font-weight:bolder;
+    color: #0f3057;
+}
+.con8 .cards div .planab{
+    padding: 5px 10px 10px 0;
+    font-size: 12px;
+    font-family: monospace;
+    font-weight:bold;
+    color: #999999;
+}
+
+.footer{
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    padding: 40px;
+    font-family: monospace;
+    background-image:linear-gradient(#0f3057,#00587a,#008891);
+    margin-top: 100px;
+}
+
+
+/* For Spacing purpose only */
+.con1{ grid-area: con1; }
+.con3{ grid-area: con3; }
+.con4{ grid-area: con4; }
+.con6{ grid-area: con6; }
+.con7{ grid-area: con7; }
+.con9{ grid-area: con9; }
+
+
+@media only screen and (min-width:768px){
+    .grid-container{
+        grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        /* grid-template-rows:1fr 1fr 2fr 1fr 1fr 1fr 1fr; */
+        grid-template-areas:
+            "nav nav nav nav nav nav nav"
+            "carousel carousel carousel carousel carousel carousel carousel"
+            "con1 con2 con2 con2 con2 con2 con3"
+            "cont cont cont cont cont cont cont"
+            "con4 con5 con5 con5 con5 con5 con6"
+            "con7 con8 con8 con8 con8 con8 con9"
+            "footer footer footer footer footer footer footer";
+
+    }
+    .navbar{ display: flex; }
+    .navbar .logo{ flex: 20%; }
+    .navbar .logo a{ display: none; }
+    .navbar .items{ flex: 80%; }
+    .navbar .items a{ width: 15%; }
+
+    /* .con2 .icon3 { display: flex;flex-wrap: wrap; } */
+    .con2 .icon3 div{ flex: 33%; }
+    
+    .con5 .whyus{ flex-wrap: nowrap; }
+
+    .con8 .cards div{ flex:25%; }
+}

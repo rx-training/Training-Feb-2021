@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Practice 3</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+        <style>
+        
+            .box{
+                color: #fff;
+                padding: 20px;
+                display: none;
+                margin-top: 20px;
+                margin-left: 20%;
+                text-align: center;
+            }
+            .PHP{ background: #ff0000; }
+            .ASPNET{ background: #228B22; }
+            .ASP{ background: #0000ff; }
+            .JSP{ background: #ff0000; }
+            .PERL{ background: #228B22; }
+            .Cold{ background: #0000ff; }
+            .other{ background: #ff0000; }
+            label{ margin-right: 15px; }
+        </style>
+
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('input[type="radio"]').click(function(){
+                    var inputValue = $(this).attr("value");
+                    var targetBox = $("." + inputValue);
+                    $(".box").not(targetBox).hide();
+                    $(targetBox).show();
+                });
+            });
+        </script>
+    </head>
+    <body class="p-5 m-5">
+        <div>   Select any technology :
+            <label><input type="radio" name="Radio" value="PHP"> PHP</label>
+            <label><input type="radio" name="Radio" value="ASPNET"> ASPNET</label>
+            <label><input type="radio" name="Radio" value="ASP"> ASP</label>
+            <label><input type="radio" name="Radio" value="JSP"> JSP</label>
+            <label><input type="radio" name="Radio" value="PERL"> PERL</label>
+            <label><input type="radio" name="Radio" value="Cold"> Cold Fusion</label>
+            <label><input type="radio" name="Radio" value="other"> Other</label>
+        </div><br><br>
+
+        <span class="PHP box">You have selected <strong>PHP</strong> technology</span>
+        <span class="ASPNET box">You have selected <strong>ASP.NET</strong> technology </span>
+        <span class="ASP box">You have selected <strong>ASP</strong> technology </span>
+        <span class="JSP box">You have selected <strong>JSP</strong> technology </span>
+        <span class="PERL box">You have selected <strong>PERL</strong> technology </span>
+        <span class="Cold box">You have selected <strong>Cold Fusion</strong> technology </span>
+        <span class="other box">You have selected <strong>Other</strong> technology </span>
+    </body>
+</html>

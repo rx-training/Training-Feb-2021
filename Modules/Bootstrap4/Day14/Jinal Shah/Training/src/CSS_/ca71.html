@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment1</title>
+
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        body {
+          margin: 0;
+          font-family: Arial;
+        }
+        h3{
+            display: block;
+            border: 2px solid rgb(235, 10, 10);
+            background-color: lightsalmon;
+            color: black;
+            padding: 5px;
+        }
+
+        .row {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0 4px;
+        }
+
+        .column {
+                flex: 25%;
+                max-width: 25%;
+                padding: 0 4px;
+        }
+
+        .column img 
+        {
+            margin-top: 8px;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 800px) {
+            .column {
+                flex: 50%;
+                max-width: 50%;
+            }
+        }
+        @media (max-width: 600px) {
+            .column {
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    
+    <h3><center>Create Photo Album Gallery, which must be responsive. Using Media Queries Implement this task.</center></h3>
+    <br/>
+
+    <div class="row"> 
+        <div class="column">
+          <img src="../img/html.png" style="width:100%">
+          <img src="../img/css.jpg" style="width:100%">
+          <img src="../img/angular.png" style="width:100%">
+          <img src="../img/flutter.png" style="width:100%">
+          <img src="../img/aspnet.png" style="width:100%">
+          <img src="../img/php.png" style="width:100%">
+          <img src="../img/net.jpg" style="width:100%">
+        </div>
+        
+        <div class="column">
+          <img src="../img/python.jpg" style="width:100%">
+          <img src="../img/react.png" style="width:100%">
+          <img src="../img/ruby.png" style="width:100%">
+          <img src="../img/vue.png" style="width:100%">
+          <img src="../img/flutter.png" style="width:100%">
+          <img src="../img/css.jpg" style="width:100%">
+        </div> 
+         
+        <div class="column">
+          <img src="../img/angular.png" style="width:100%">
+          <img src="../img/net.jpg" style="width:100%">
+          <img src="../img/ruby.png" style="width:100%">
+          <img src="../img/vue.png" style="width:100%">
+          <img src="../img/angular.png" style="width:100%">
+          <img src="../img/php.png" style="width:100%">
+          <img src="../img/aspnet.png" style="width:100%">
+        </div>
+        
+        <div class="column">
+          <img src="../img/php.png" style="width:100%">
+          <img src="../img/vue.jpg" style="width:100%">
+          <img src="../img/aspnet.png" style="width:100%">
+          <img src="../img/css.jpg" style="width:100%">
+          <img src="../img/angular.png" style="width:100%">
+          <img src="../img/react.png" style="width:100%">
+        </div> 
+      </div>
+
+</body>
+</html>

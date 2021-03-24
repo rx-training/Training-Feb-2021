@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .container{
+            margin-left: 350px;
+            width: 50%;
+        }
+        .container1{
+            padding-top: 50px;
+        }
+        ol ol{
+            list-style-type: upper-alpha;
+        }
+    </style>
+</head>
+<body>
+    <div class="container bg-light my-3">
+        <div id="div_timer"></div>
+        <div class="container1">
+            <ol list-style-type="1">
+                <li>In which decade was the American Institute of Electrical Engineers (AIEE) foounded ?</li>
+                <ol>
+                    <li>
+                        <input type="radio">
+                        <label>1850s</label>
+                    </li>
+                    <li>
+                        <input type="radio" checked>
+                        <label>1880s</label>
+                    </li>
+                    <li>
+                        <input type="radio">
+                        <label>1930s</label>
+                    </li>
+                    <li>
+                        <input type="radio">
+                        <label>1950s</label>
+                    </li>
+                </ol>
+                <button class="btn btn-primary py-0">Save</button>
+                <button class="btn btn-primary py-0">Next</button>
+                <hr style="border: 1px solid black; margin-left: -30px;"> 
+                <li>What is part of database that holds only one type of information ?</li>
+                <ol>
+                    <li>
+                        <input type="radio">
+                        <label>Report</label>
+                    </li>
+                    <li>
+                        <input type="radio" checked>
+                        <label>Field</label>
+                    </li>
+                    <li>
+                        <input type="radio">
+                        <label>Record</label>
+                    </li>
+                    <li>
+                        <input type="radio">
+                        <label>File</label>
+                    </li>
+                </ol>
+                <button class="btn btn-primary py-0">Save</button>
+                <button class="btn btn-primary py-0">Next</button>
+                <hr style="border: 1px solid black; margin-left: -30px;"> 
+                <li>Who developed Yahoo ?</li>
+                <ol>
+                    <li>
+                        <input type="radio">
+                        <label>Dennis Ritchie & Ken Thompson</label>
+                    </li>
+                    <li>
+                        <input type="radio" checked>
+                        <label>David Filo &jerry Yang</label>
+                    </li>
+                    <li>
+                        <input type="radio">
+                        <label>Vint Cerf & Robert Kahn</label>
+                    </li>
+                    <li>
+                        <input type="radio">
+                        <label>Steve Case & Jeff Bezos</label>
+                    </li>
+                </ol>              
+                <button class="btn btn-primary py-0 mb-3">Save</button>
+                <button class="btn btn-primary py-0 mb-3">Next</button>
+            </ol>
+        </div>
+
+    </div>
+    <script>
+            var timer = setInterval("mytimer()",1000);
+            seconds = 30000;
+            minutes = parseInt(seconds/1000);
+            function mytimer()
+            {
+            document.getElementById("div_timer").innerHTML = "Time : 00 : " + minutes; // this is the same as $("div_timer").html(timer) in       jquery.
+            if(minutes == 0){
+                    stop(seconds);
+                    stop(minutes);
+                    clearInterval(timer);
+                    alert("exam is over");
+                    window.location.href = "./assignment.html";
+            }else{
+                seconds--;
+                minutes--;
+            }
+            }
+            
+        
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+</body>
+</html>

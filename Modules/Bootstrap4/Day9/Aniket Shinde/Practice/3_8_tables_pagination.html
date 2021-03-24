@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Css components</title>
+  </head>
+  <body>
+    <div class="container">
+
+        <div class="container mt-3">
+            <ul class="nav justify-content-between">
+              <li class="col-md-3 nav-item dropdown">
+                <a href="#" class="btn btn-primary nav-link dropdown-toggle" data-toggle="dropdown">2: Utilities</a>
+                <div class="dropdown-menu">
+                    <a href="../Practice/2_2_basic_typography.html" class="dropdown-item">2.2 Basic Typography</a>
+                    <a href="../Practice/2_3_text_alignment_and_display.html" class="dropdown-item">2.3 Text Alignment & Display</a>
+                    <a href="../Practice/2_4_Floats _and_fixed-positions.html" class="dropdown-item">2.4 Floats & Positions</a>
+                    <a href="../Practice/2_5_colors_backgrounds.html" class="dropdown-item">2.5 Colors & Background</a>
+                    <a href="../Practice/2_6_spacing.html" class="dropdown-item">2.6 Spacing</a>
+                    <a href="../Practice/2_7_sizing.html" class="dropdown-item">2.7 Sizing</a>
+                    <a href="../Practice/2_8_media_breakpoints.html" class="dropdown-item">2.8 Breakpoints</a>
+                </div>
+              </li>
+              <li class="col-md-3 nav-item dropdown">
+                <a href="#" class="btn btn-success nav-link dropdown-toggle" data-toggle="dropdown">3: CSS Components</a>
+                <div class="dropdown-menu">
+                  <a href="../Practice/3_2_buttons.html" class="dropdown-item">Buttons</a>
+                  <a href="../Practice/3_3_navbar.html" class="dropdown-item">Navbar</a>
+                  <a href="../Practice/3_4_listgroups_badges.html" class="dropdown-item">Listgroup & Badges</a>
+                  <a href="../Practice/3_5_forms.html" class="dropdown-item">Forms</a>
+                  <a href="../Practice/3_6_input_groups.html" class="dropdown-item">InputsGroups</a>
+                  <a href="../Practice/3_7_alerts_progressbar.html" class="dropdown-item">Alert & Progressbar</a>
+                  <a href="../Practice/3_8_tables_pagination.html" class="dropdown-item">Tables & Pagination</a>
+                  <a href="../Practice/3_9_cards.html" class="dropdown-item">Cards</a>
+                </div>
+              </li>
+              <li class="col-md-3 nav-item dropdown">
+                <a href="#" class="btn btn-warning nav-link dropdown-toggle" data-toggle="dropdown">4: Grid & Flexbox</a>
+                <div class="dropdown-menu">
+                  <a href="#" class="dropdown-item">Link 1</a>
+                  <a href="#" class="dropdown-item">Link 2</a>
+                  <a href="#" class="dropdown-item">Link 3</a>
+                </div>
+              </li>
+              <li class="col-md-3 nav-item dropdown">
+                <a href="#" class="btn btn-danger nav-link dropdown-toggle" data-toggle="dropdown">5: Javascript Widgets</a>
+                <div class="dropdown-menu">
+                  <a href="#" class="dropdown-item">Link 1</a>
+                  <a href="#" class="dropdown-item">Link 2</a>
+                  <a href="#" class="dropdown-item">Link 3</a>
+                </div>
+              </li>
+            </ul>
+        </div>
+
+        <h1 class="text-center my-2">Tables & Pagination</h1>
+        
+        <!-- Table -->
+        <table class="table my-3">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Aniket</td>
+                    <td>Shinde</td>
+                    <td>adshinde20ani12@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Hiren</td>
+                    <td>Trivedi</td>
+                    <td>trivedi.hiren@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Sandeep</td>
+                    <td>Rathod</td>
+                    <td>sandy.rathod@gmail.com</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Dark Table -->
+        <table class="table table-dark my-3">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Aniket</td>
+                    <td>Shinde</td>
+                    <td>adshinde20ani12@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Hiren</td>
+                    <td>Trivedi</td>
+                    <td>trivedi.hiren@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Sandeep</td>
+                    <td>Rathod</td>
+                    <td>sandy.rathod@gmail.com</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Dark Table Header -->
+        <table class="table my-3">
+            <thead class="thead-dark">
+                <tr>
+                    <th>#</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Aniket</td>
+                    <td>Shinde</td>
+                    <td>adshinde20ani12@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Hiren</td>
+                    <td>Trivedi</td>
+                    <td>trivedi.hiren@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Sandeep</td>
+                    <td>Rathod</td>
+                    <td>sandy.rathod@gmail.com</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Light Table Header -->
+        <table class="table my-3">
+            <thead class="thead-light">
+                <tr>
+                    <th>#</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Aniket</td>
+                    <td>Shinde</td>
+                    <td>adshinde20ani12@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Hiren</td>
+                    <td>Trivedi</td>
+                    <td>trivedi.hiren@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Sandeep</td>
+                    <td>Rathod</td>
+                    <td>sandy.rathod@gmail.com</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Striped Table -->
+        <table class="table table-striped my-3">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Aniket</td>
+                    <td>Shinde</td>
+                    <td>adshinde20ani12@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Hiren</td>
+                    <td>Trivedi</td>
+                    <td>trivedi.hiren@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Sandeep</td>
+                    <td>Rathod</td>
+                    <td>sandy.rathod@gmail.com</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Bordered Table -->
+        <table class="table table-bordered my-3">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Aniket</td>
+                    <td>Shinde</td>
+                    <td>adshinde20ani12@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Hiren</td>
+                    <td>Trivedi</td>
+                    <td>trivedi.hiren@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Sandeep</td>
+                    <td>Rathod</td>
+                    <td>sandy.rathod@gmail.com</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Hoverable Table -->
+        <table class="table table-hover my-3">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Aniket</td>
+                    <td>Shinde</td>
+                    <td>adshinde20ani12@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Hiren</td>
+                    <td>Trivedi</td>
+                    <td>trivedi.hiren@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Sandeep</td>
+                    <td>Rathod</td>
+                    <td>sandy.rathod@gmail.com</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Small Table -->
+        <table class="table table-sm table-striped table-bordered my-3">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Aniket</td>
+                    <td>Shinde</td>
+                    <td>adshinde20ani12@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Hiren</td>
+                    <td>Trivedi</td>
+                    <td>trivedi.hiren@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Sandeep</td>
+                    <td>Rathod</td>
+                    <td>sandy.rathod@gmail.com</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+          
+        <!-- Pagination -->
+        <nav>
+            <ul class="pagination">
+              <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+
+        <!-- Center aligned Pagination -->
+        <nav>
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+
+        <!-- Right aligned Pagination -->
+        <nav>
+            <ul class="pagination justify-content-end">
+              <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+
+        <!-- Large Pagination -->
+        <nav>
+            <ul class="pagination pagination-lg">
+              <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+
+        <!-- Small Pagination -->
+        <nav>
+            <ul class="pagination pagination-sm">
+              <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+        
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

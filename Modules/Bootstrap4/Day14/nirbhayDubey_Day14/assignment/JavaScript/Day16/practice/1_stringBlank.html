@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3 id="myh31"></h3>
+    <h3 id="myh32"></h3>
+    <script>
+
+        function isStrBlank(str){
+            if(str=="")
+                return true;
+            else
+                return false;
+        }
+
+        var str1="";
+        var str2="Hello World";
+
+        if(isStrBlank(str1))
+            document.getElementById("myh31").innerHTML="<br><br> var str1='' <br><br>"+"String str1 is blank";
+        else
+            document.getElementById("myh31").innerHTML="<br><br> var str1='"+str1+"' <br><br>"+"String str1 is not blank";   
+
+        if(isStrBlank(str2))
+            document.getElementById("myh32").innerHTML="<br><br> var str2='' <br><br>"+"String str2 is blank";
+        else
+            document.getElementById("myh32").innerHTML="<br><br> var str2='"+str2+"' <br><br>"+"String str2 is not blank";   
+    </script>
+</body>
+</html>

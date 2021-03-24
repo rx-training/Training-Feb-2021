@@ -1,0 +1,7 @@
+{
+    "data" : [
+        {
+            "id":1,"name":"Gurdev Dwivedi","email":"dwivedi_gurdev@oconnell.co","gender":"Female","status":"Active","created_at":"2021-03-02T03:50:03.638+05:30","updated_at":"2021-03-02T03:50:03.638+05:30"
+        }
+    ]
+}

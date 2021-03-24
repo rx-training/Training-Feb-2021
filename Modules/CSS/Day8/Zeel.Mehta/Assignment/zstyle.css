@@ -1,0 +1,80 @@
+
+.zbody{
+    background-color:black;
+    
+}  
+.zheader{
+    background-color:black;
+    display: grid;
+}
+.grid-container{
+    display: grid;
+}
+.zheader .logo{
+    font-size: 10ch;
+    position:absolute;
+    top: 15px;
+    left: 120px;
+    color: white;    
+    width: 100%;    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.nav{
+    background-color: black;
+    border: 1px solid rgb(20, 20, 20);
+}
+.ullist li{
+    float: left;
+}
+ .ullist{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+    height: auto;
+}
+  .path{
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+  .path:hover {
+        background-color: #111;
+    }
+  .sidebar {
+        height:2000px;
+        width: 100%;
+        position: absolute;
+        top: 140px;
+        background-color: #111;
+        overflow-x: hidden;
+        
+        color: rgb(71, 71, 71);
+        font-size: 22px;      
+        display: flex;
+        z-index: -1;         
+    }
+  
+  .main{
+        position: absolute;
+        top: 160px;
+        left: 170px;
+        height:1500px;
+        right:0;
+        background-color: white;
+        
+    }   
+  .zfooter {
+        text-align: center;
+        padding: 3px;
+        background-image: linear-gradient(black,rgb(54, 54, 54),black);
+        color: white;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    

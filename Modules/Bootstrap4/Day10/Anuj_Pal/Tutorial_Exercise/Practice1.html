@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm" style="border: 1px solid grey;">
+                One of three columns
+            </div>
+            <div class="col-sm" style="border: 1px solid grey;">
+                One of three columns
+            </div>
+            <div class="col-sm" style="border: 1px solid grey;">
+                One of three columns
+            </div>
+        </div>
+    </div>
+    <br>
+    <center>
+        <h3>Setting one column width</h3>
+    </center>
+    <div class="container">
+        <div class="row">
+            <div class="col" style="border: 1px solid grey;">
+                1 of 3
+            </div>
+            <div class="col-6" style="border: 1px solid grey;">
+                2 of 3 (wider)
+            </div>
+            <div class="col" style="border: 1px solid grey;">
+                3 of 3
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" style="border: 1px solid grey;">
+                1 of 3
+            </div>
+            <div class="col-5" style="border: 1px solid grey;">
+                2 of 3 (wider)
+            </div>
+            <div class="col" style="border: 1px solid grey;">
+                3 of 3
+            </div>
+        </div>
+    </div>
+    <center>
+        <h3>Equal width</h3>
+    </center>
+    <div class="container">
+        <div class="row">
+            <div class="col" style="border: 1px solid grey;">
+                1 of 2
+            </div>
+            <div class="col" style="border: 1px solid grey;">
+                2 of 2
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" style="border: 1px solid grey;">
+                1 of 3
+            </div>
+            <div class="col" style="border: 1px solid grey;">
+                2 of 3
+            </div>
+            <div class="col" style="border: 1px solid grey;">
+                3 of 3
+            </div>
+        </div>
+    </div>
+    <br>
+    <center>
+        <h3>variable width content</h3>
+    </center>
+    <div class="container">
+        <div class="row justify-content-md-center ">
+            <div class="col col-lg-2 border border-primary">
+                1 of 3
+            </div>
+            <div class="col-md-auto border border-primary">
+                Variable width content
+            </div>
+            <div class="col col-lg-2 border border-primary">
+                3 of 3
+            </div>
+            <div class="row">
+                <div class="col border border-primary">
+                    1 of 3
+                </div>
+                <div class="col-md-auto border border-primary">
+                    Variable width content
+                </div>
+                <div class="col col-lg-2 border border-primary">
+                    3 of 3
+                </div>
+            </div>
+        </div>
+        <center>
+            <h3>stacked to horizontal</h3>
+        </center>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 border border-primary">col-sm-8</div>
+                <div class="col-sm-4 border border-primary">col-sm-4</div>
+            </div>
+            <!-- <div class="row">
+                <div class="col-sm">col-sm</div>
+                <div class="col-sm">col-sm</div>
+                <div class="col-sm">col-sm</div>
+            </div> -->
+        </div>
+        <center>
+            <h3>Mix and match</h3>
+        </center>
+        <div class="container">
+            <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+            <div class="row">
+              <div class="col-md-8 border border-primary">.col-md-8</div>
+              <div class="col-6 col-md-4 border border-primary">.col-6 .col-md-4</div>
+            </div>
+            <br>
+            <div class="container">
+                <div class="row row-cols-2">
+                  <div class="col border border-primary">Column</div>
+                  <div class="col border border-primary">Column</div>
+                  <div class="col border border-primary">Column</div>
+                  <div class="col border border-primary">Column</div>
+                </div>
+              </div>
+              <br>
+              <div class="container">
+                <div class="row row-cols-auto">
+                  <div class="col border border-primary">Column</div>
+                  <div class="col  border border-primary">Column</div>
+                  <div class="col border border-primary">Column</div>
+                  <div class="col border border-primary">Column</div>
+                </div>
+              </div>
+              <br>
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-3 border border-danger">
+                    Level 1: .col-sm-3
+                  </div>
+                  <div class="col-sm-9border border-danger">
+                    <div class="row">
+                      <div class="col-8 col-sm-6 border border-primary">
+                        Level 2: .col-8 .col-sm-6
+                      </div>
+                      <div class="col-4 col-sm-6 border border-primary">
+                        Level 2: .col-4 .col-sm-6
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+</body>
+
+</html>

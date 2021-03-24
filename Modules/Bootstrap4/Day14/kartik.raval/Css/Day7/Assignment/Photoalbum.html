@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Album</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .navbar{
+            width: 100%;
+        }
+        .navbar{
+            display: flex;
+            flex-direction: row-reverse;
+            background-color: burlywood;
+            padding: 15px;
+        }
+        .nav-items a{
+            margin: 20px;
+        }
+        a:hover{
+            color: chartreuse;
+        }
+        .Container1{
+            display: flex;
+        }
+        .Container2{
+            display: flex;
+        }
+        .footer p{
+            background-color: burlywood;
+            padding: 15px;
+            text-align: center;
+        }
+        Image3 img{
+            height: 333px;
+            width: 327px;
+        }
+        .Image1, .Image2, .Image3{
+            width: 33.3%;
+            text-align-last: center;
+        }
+        .Image4, .Image5{
+            text-align-last: center;
+            width: 50%;
+        }
+        @media only screen and (max-width: 600px){
+            .nav-items{
+                display: grid;
+            }
+            .navbar{
+                background-color: burlywood;
+            }
+                .nav-items a{
+                margin: 5px;
+            }
+            .Container1{
+                display: inline-block;
+            }
+            .Container2{
+                display: inline;
+            }
+            .Image1, .Image2, .Image3{
+                width: 100%;
+            }
+            .Image4, .Image5{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-items">
+                <a href="#">Home</a>
+                <a href="#">Galary</a>
+                <a href="#">About us</a>
+                <a href="#">Contact us</a>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div class="Container1">
+            <div class="Image1">
+                <img src="Image/Download1.jpg" style="width: 100%;">
+            </div>
+            <div class="Image2">
+                <img src="Image/Download4.jpg" style="width: 100%;">
+            </div>
+            <div class="Image3">
+                <img src="Image/Download3.jpg" style="width: 100%;">
+            </div>
+        </div>
+        <br>
+        <div class="Container2">
+            <div class="Image4">
+                <img src="Image/Download2.jpg" style="width: 100%;">
+              </div>
+              <div class="Image5">
+                <img src="Image/Download5.jpg" style="width: 100%;">
+              </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer">
+            <p>www.radixweb.com</p>
+        </div>
+    </footer>
+</body>
+</html>
