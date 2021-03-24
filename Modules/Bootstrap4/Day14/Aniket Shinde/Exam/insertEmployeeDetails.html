@@ -15,7 +15,6 @@
                     <h4 class="text-center text-white">Employee Details</h4>
                 </div>
                 <div class="card-body">
-                    <p class="alert alert-danger" id="errmsg" style="display: none;"></p>
                     <div class="form-group">
                         <label for="firstname">First Name</label>
                         <input type="text" class="form-control" id="firstname" placeholder="Enter Firstname" required>
@@ -93,14 +92,24 @@
             var state = document.getElementById('states').value;
             var city = document.getElementById('citySelect').value;
 
-            if( mobile.match(/^\d{10}/)) {
+            if(/\d{10}/.test(mobile) === false) {
                 document.getElementById("errmsg").innerHTML = "Enter valid mobile number..."
                 document.getElementById("errmsg").style.display = "block";
-            }
+            } 
             else if( firstname === "" || lastname === "" || email === "" || password === "") {
                 document.getElementById("errmsg").innerHTML = "All fields are required..."
                 document.getElementById("errmsg").style.display = "block";
-            } else {
+            } 
+            else if(/^[A-Za-z]+$/.test(firstname) === false) {
+                document.getElementById("errmsg").innerHTML = "Enter valid firstname..."
+                document.getElementById("errmsg").style.display = "block";
+            } 
+             else if(/^[A-Za-z]+$/.test(lastname) === false) {
+                document.getElementById("errmsg").innerHTML = "Enter valid lastname..."
+                document.getElementById("errmsg").style.display = "block";
+            } 
+            else {
+                document.getElementById("errmsg").style.display = "none";
                 emp = {"firstname":firstname, "lastname":lastname, "email":email, "password":password ,"state":state,"city":city, "mobile":mobile};
                 all_employees.push(emp);
                 emps = JSON.stringify(all_employees);
@@ -109,6 +118,7 @@
                 document.getElementById('lastname').value = "";
                 document.getElementById('email').value = "";
                 document.getElementById('password').value = "";
+                document.getElementById('mobile').value = "";
                 document.getElementById('states').value = "";
                 document.getElementById('citySelect').value = "";
             }
@@ -116,9 +126,9 @@
         function showEmployees(){
             var all_emps = JSON.parse(localStorage.getItem("all_employees"));
             //Set data into table
-            document.getElementById("myTableEmp").innerHTML = "<tr><th> First Name </th><th> Last Name </th><th> Email </th><th> Password </th><th> State </th><th> City </th></tr>";
+            document.getElementById("myTableEmp").innerHTML = "<tr><th> First Name </th><th> Last Name </th><th> Email </th><th> Password </th><th> Mobile </th><th> State </th><th> City </th></tr>";
             for(var e of all_emps){
-                document.getElementById("myTableEmp").innerHTML += "<tr><td>"+e.firstname+"</td><td>"+e.lastname+"</td><td>"+e.email+"</td><td>"+e.mobile+"</td><td>"+e.password+"</td><td>"+e.state+"</td><td>"+e.city+"</td></tr>";
+                document.getElementById("myTableEmp").innerHTML += "<tr><td>"+e.firstname+"</td><td>"+e.lastname+"</td><td>"+e.email+"</td><td>"+e.password+"</td><td>"+e.mobile+"</td><td>"+e.state+"</td><td>"+e.city+"</td></tr>";
             }
         }
 
