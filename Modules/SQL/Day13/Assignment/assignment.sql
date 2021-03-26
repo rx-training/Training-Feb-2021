@@ -1,4 +1,5 @@
 SELECT * FROM Employees
+USE SQLDay6
 /*  1)  Create a scaler Function to compute PF which will accept parameter basicsalary and compute PF. PF is 12% of the basic salary.*/
 
 ALTER FUNCTION CalculatePF(@BasicSalary FLOAT)
