@@ -1,3 +1,6 @@
+USE AssignmentDay29;
+GO
+
 --1. Find the names of all salespeople who have ever worked for the company at any dealership.
 SELECT sp.Name
 FROM Dealer.SalesPersons sp
@@ -120,8 +123,29 @@ GO
 --14. Find the names of all customers who bought cars during 2010 who were also salespeople during 2010. For the purpose of this query, assume that no two people have the same name.
 
 
---15. Find the name and salesperson ID of the salesperson who sold the most cars for the company at dealerships located in Gujarat between March 1, 2010 and March 31, 2010.
+--15. Find the name and salesperson ID of the salesperson who sold the most cars for the company at dealerships located in Gujarat between March 1, 2020 and March 31, 2020.
+SELECT 
+	sp.Name,
+	sp.SalesPersonId
+FROM 
+	Dealer.SalesPersons sp
+WHERE 
+	sp.SalesPersonId = (SELECT SalesPersonId FROM
+						(
+							SELECT DENSE_RANK() OVER(ORDER BY COUNT(SalesPersonId) DESC) AS 'TopSale',SalesPersonId
+							FROM Dealer.Sales 
+							WHERE 
+								DealerShipId IN (SELECT DealerShipId FROM Dealer.Dealerships WHERE State='Gujarat') 
+								AND SaleDate BETWEEN '2020-03-01' AND '2020-03-31'
+								GROUP BY SalesPersonId
+						 ) AS Tab1 WHERE Tab1.TopSale=1
+						);
+GO
 
+--SELECT * FROM Dealer.Sales WHERE SaleDate BETWEEN '2020-03-01' AND '2020-03-31';
+SELECT * 
+FROM Dealer.Sales 
+WHERE SaleDate BETWEEN '2020-03-01' AND '2020-03-31';
 
 /*16. Calculate the payroll for the month of March 2010.
 	* The payroll consists of the name, salesperson ID, and gross pay for each salesperson who worked that month.
@@ -129,3 +153,30 @@ GO
         * The total commission for a salesperson in a month is calculated as 5% of the profit made on all cars sold by the salesperson that month.
         * The profit made on a car is the difference between the sale price and the invoice price of the car. (Assume, that cars are never sold for less than the invoice price.) */
 
+WITH SalesProfit(SalesPersonId,SalesPersonProfit) AS
+(
+	SELECT
+		Tab1.SalesPersonId,
+		SUM((Tab1.SalePrice-car.InvoicePrice)*0.05) AS 'SalesPersonProfit'
+	FROM 
+		Dealer.Cars car,
+		(SELECT * FROM Dealer.Sales WHERE DATEPART(MM,SaleDate)=3 AND DATEPART(YY,SaleDate)=2020) AS Tab1
+	WHERE car.Vin=Tab1.Vin GROUP BY Tab1.SalesPersonId
+)
+SELECT 
+	sp.Name,
+	sp.SalesPersonId,
+	wa.BaseSalaryForMonth,
+	CASE 
+		WHEN spr.SalesPersonProfit IS NULL THEN 0
+		ELSE Spr.SalesPersonProfit
+	END AS 'SaleProfit',
+	CASE 
+		WHEN spr.SalesPersonProfit IS NULL THEN wa.BaseSalaryForMonth
+		ELSE (wa.BaseSalaryForMonth+SalesPersonProfit) 
+	END AS 'GrossPay'
+FROM Dealer.SalesPersons sp,Dealer.WorksAt wa LEFT OUTER JOIN SalesProfit spr ON wa.SalesPersonId=spr.SalesPersonId
+WHERE 
+	wa.MonthWorked='March' AND
+	sp.SalesPersonId=wa.SalesPersonId;
+GO
