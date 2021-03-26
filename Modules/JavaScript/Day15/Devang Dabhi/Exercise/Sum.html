@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function devang(a,b,c)
+        {
+            a=parseInt(a);
+            b=parseInt(b);
+            c=parseInt(c);
+
+            var x=0;
+            if(a>b && a>c)
+            {
+            x=a;
+            }
+            else if(b>a && b>c)
+            {
+            x=b;
+            }
+            else
+            {
+            x=c;
+            }
+            document.getElementById("x").innerHTML = x;
+            var p=0;
+            var q=0;
+            var r=0;
+            var sum=0;
+        if(a>40)
+        p=a;
+        if(b>40)
+        q=b;
+        if(c>40)
+        r=c;
+        sum=p+q+r;
+        document.getElementById("sum").innerHTML = sum;
+        }
+    </script>
+</head>
+<body>
+    <form>
+    <input type="text" id="a" name="a">
+    <input type="text" id="b" name="b">
+    <input type="text" id="c" name="c">
+    <button type="button" onclick="devang(a.value,b.value,c.value)">Submit</button>
+</form>
+<p id="x"></p></body>
+<p id="sum"></p></body>
+</html>

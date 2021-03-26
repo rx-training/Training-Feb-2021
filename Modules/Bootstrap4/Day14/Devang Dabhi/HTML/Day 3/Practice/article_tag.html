@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main main main'
+    'footer footer footer footer footer footer';
+  grid-gap: 3px;
+  background-color: black;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+/* for tablets */
+@media only screen and (max-width: 700px) {
+    .grid-container{
+<div class="item3">
+grid-template-columns:1fr;
+        grid-template-areas: 'header header header header '
+	'header header header header '
+        'menu menu menu menu '
+        'main main main main '
+        'footer footer footer footer';
+    }
+} 
+
+  /* for mobiles */
+@media only screen and (max-width: 400px) {
+    .grid-container{
+grid-template-columns:1fr;
+<div class="item3">	
+        grid-template-areas: 'header header header'
+	'header header header'
+        'menu menu menu'
+        'main main main'
+        'main main main'
+        'footer footer footer;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+  <div class="item1">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+    <div class="container">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse"  >
+            <span class="navbar-toggler-icon">
+            </span>
+        </button>
+        <p><img src="devanglogo.jpg" alt="DEVANG-LOGO"  height= 100; width=100></p>  
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="../../../HTML/website.html" class="nav-link">HTML</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../../../CSS/css starting.html" class="nav-link">CSS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../../../Bootstrap/Starting.html" class="nav-link">Bootstrap</a>
+                </li>
+            </ul>
+        </div>        
+    </div>
+</nav>
+
+</div>
+
+    <div class="item2">
+    <div class="container text-end">
+    <div>
+    <h5><button type="button" class="collapsible">Day 3</button></h5>
+    <hr>
+    <h5><button type="button" class="collapsible">Practice</button></h5>
+
+    <ul>
+            <h5><li><a href="../Practice/article_tag.html">Article tag</a></li></h5>
+            <h5><li><a href="../Practice/HR.html">HR</a></li></h5>
+            <h5><li><a href="../Practice/Student.html">Student Report Card</a></li></h5>
+            <h5><li><a href="../Practice/Form.html">Login Form</a></li></h5>
+            <h5><li><a href="../Practice/Horizontal_Manu.html">Horizontal Menu</a></li></h5>
+    </ul>
+    </div>
+    <div class="text-center">
+     <h5> <button type="button" class="collapsible">Assignment</button></h5>
+      <ul>
+      <h5><li><a href="../Assignment/Employee_Details.html">Employee Details Form</a></li></h5>
+      </ul>
+    </div>
+    <div>
+      <h5><button type="button" class="collapsible">Day Video Exercise</button></h5>
+      <ul>
+      <h5><li><a href="../Practice/practice.html.html">Task 1</a></li></h5>
+      <h5><li><a href="../Practice/Form.practice.html">Task 2</a></li></h5>
+      </ul>
+    </div>
+    </div>
+    </div>
+  <div class="item3">
+  <h1><h1>The Article Element</h1>
+        <article>
+            <h2>Amazon</h2>
+    Jeff Bezos is resigning as the CEO of Amazon.
+</article>
+</h1>
+  </div>  
+  <div class="item4">
+    <footer class="main-footer py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row text-center">
+        <div class="col-md-6 ml-auto">
+            <p class="lead">Copyright &Copy;2017</p>
+        </div>
+        </div>
+    </div>
+</footer>
+  </div>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>

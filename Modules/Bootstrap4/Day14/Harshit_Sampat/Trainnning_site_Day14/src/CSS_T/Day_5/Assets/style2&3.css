@@ -1,0 +1,40 @@
+div.static {
+    position: static;
+    border: 3px solid #73AD21;
+  }
+  div.relative {
+    position: relative;
+    left: 20px;
+    border: 1px solid #2191ad;
+  }
+  div.fixed {
+    position: fixed;
+    bottom: 5px;
+    right: 15px       ;
+    width: 300px;
+    border: 3px solid #196905;
+  }
+  div.absolute {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 200px;
+    height: 100px;
+    border: 3px solid #73AD21;
+    overflow-y: scroll;
+  }
+  div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 5px;
+    background-color: #cae8ca;
+    border: 2px solid #4CAF50;
+  }
+  div.oveflow{
+  border: solid #000;
+  height: 100px;
+  overflow-y:scroll;
+  width: 200px;
+  }
+  

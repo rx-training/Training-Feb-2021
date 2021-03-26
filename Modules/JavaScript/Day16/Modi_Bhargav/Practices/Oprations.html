@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+    <script type="text/javascript">
+        var city = ["Patan", "Mehsana", "Surat", "Baroda"];
+        document.getElementById("Result").innerHTML = city;
+        
+        function Push() {
+            var push1 = document.getElementById("citys").value;
+            city.push(push1);
+            document.getElementById("Result").innerHTML = city;
+        }
+        function Pop() {
+            var pop2 = document.getElementById("citys").value;
+            city.pop();
+            document.getElementById("Result").innerHTML = city;
+        }
+        function Shift() {
+            var shift3 = document.getElementById("citys").value;
+            city.shift();
+            document.getElementById("Result").innerHTML = city;
+        }
+        function Delete() {
+            var del4 = document.getElementById("citys").value;
+            delete city[del4];
+            document.getElementById("Result").innerHTML = city;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container bg-dark my-5">
+        <h2 class="text-center text-white"> Enter The Some operations</h2>
+        <div class="row">
+            <form class="col-md-9">
+                <div class="form-group text-white col-md-6 ml-4">
+                    <label for="citys">Enter The String</label>
+                    <input type="text" class="form-control" placeholder="Enter The String Value" id="citys">
+                </div>
+                <div class="form-group">
+                    <input type="button" class="btn btn-primary ml-5" onclick="Push()" value="Push">
+                </div>
+                <div class="form-group">
+                    <input type="button" class="btn btn-primary ml-5" onclick="Pop()" value="Pop">
+                </div>
+                <div class="form-group">
+                    <input type="button" class="btn btn-primary ml-5" onclick="Shift()" value="Shift">
+                </div>
+                <div class="form-group">
+                    <input type="button" class="btn btn-primary ml-5" onclick="Delete()" value="Delete">
+                </div>
+                <h2 class="text-center text-white ml-5" id="Result"></h2>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

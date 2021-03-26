@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-lg-12">
+                <table class="table table-sm table-bordered table-striped" id="tab1">
+                </table>
+
+                <button class="btn btn-info" id="btnshowcart">Show Cart Products</button>
+                <table class="table table-sm table-dark table-bordered table-striped mt-2" id="tab2">
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fetching data from product.json and showng onto table 1
+        async function fetchData(file){
+            let plist=await fetch(file);
+            let products=await plist.json();
+            return products;
+        }
+        fetchData("../practice/products.json").then((plist)=>{
+            var counter=0;
+                    var trtd="<thead><tr>"+
+                      "<th>ProductID</th>"+
+                      "<th>ProductName</th>"+
+                      "<th>Price</th>"+
+                      "<th>Quantity</th>"+
+                      "<th>Add</th>"+
+                      "</tr></thead>";
+                    for (const item of plist) {
+                        trtd+="<tr id='trow"+counter+"'>"+
+                            "<td>"+(++counter)+"</td>"+
+                            "<td>"+item.Name+"</td>"+
+                            "<td>"+item.Price+"</td>"+
+                            "<td> <select id='select"+counter+"' class='custom-select'>"+
+                                    "<option value='1'>1</option>"+
+                                    "<option value='2'>2</option>"+
+                                    "<option value='3'>3</option>"+
+                                    "<option value='4'>4</option>"+
+                                "</select> </td>"+
+                            "<td> <button class='btn btn-primary' id='btn"+counter+"' onclick='addtocart(this);' value='"+counter+"'>Add to Cart</button> </td>"+
+                        "</tr>";
+                    }
+                    document.getElementById("tab1").innerHTML=trtd;
+                    localStorage.clear();
+        });
+
+        // storing data to LocalStorage when click on addtocart button
+        function addtocart(btnatc){
+            var index=Number(btnatc.value)-1;
+            var citem=document.getElementById("trow"+index);
+
+            var pid=citem.children[0].innerHTML;
+            var pname=citem.children[1].innerHTML;
+            var pprice=Number(citem.children[2].innerHTML);
+            var pquantity=Number(citem.children[3].children[0].value);
+            var product1={ProductID:pid,
+                        ProductName:pname,
+                        Price:pprice,
+                        Quantity:pquantity};
+            var pr=JSON.stringify(product1);
+            localStorage.setItem("Product"+(index+1),pr);
+            citem.style.display="none";
+        }
+
+        //getting data from LocalStorage
+        async function getCartProducts() {
+            var length=localStorage.length;
+            var plist={};
+            for (let i = 0; i < length; i++) {              
+                plist[i]=JSON.parse(localStorage.getItem(localStorage.key(i)));
+            }
+            return plist;
+        }
+
+        //getting data from LocalStorage when click on Show Cart Products
+        document.getElementById("btnshowcart").addEventListener("click",function () { 
+            getCartProducts().then((plist)=>{
+                var tab2=document.getElementById("tab2");
+                var listlen=Object.keys(plist).length;
+                var counter=0;
+                    var trtd="<thead><tr>"+
+                      "<th>#</th>"+
+                      "<th>ProductID</th>"+
+                      "<th>ProductName</th>"+
+                      "<th>Price</th>"+
+                      "<th>Quantity</th>"+
+                      "</tr></thead>";
+                    for(let i=0;i<listlen;i++) {
+                        trtd+="<tr>"+
+                            "<td>"+(++counter)+"</td>"+
+                            "<td>"+plist[i].ProductID+"</td>"+
+                            "<td>"+plist[i].ProductName+"</td>"+
+                            "<td>"+plist[i].Price+"</td>"+
+                            "<td>"+plist[i].Quantity+"</td>"+
+                        "</tr>";
+                    }
+                    tab2.innerHTML=trtd;
+            });
+        });
+
+    </script>
+ <!-- Bootstrap JS CDN -->
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+</body>
+</html>

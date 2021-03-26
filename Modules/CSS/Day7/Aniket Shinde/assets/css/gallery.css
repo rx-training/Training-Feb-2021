@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+h2{
+    text-align: center;
+    padding: 20px;
+    color: crimson;
+}
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+}
+.gallery img{
+    flex: 100%;
+    max-width: 100%;
+    padding: 5px;
+    max-height: 260px;
+}
+
+/* For Tablets */
+@media only screen and (min-width: 600px){   
+    .gallery img{
+        flex: 50%;
+        max-width: 50%;
+        max-height: 270px;
+    }
+}
+
+/* For Desktop/Leptops */
+@media only screen and (min-width: 850px){
+    .gallery img{
+        flex: 25%;
+        max-width: 25%;
+        max-height: 280px;
+    }
+}

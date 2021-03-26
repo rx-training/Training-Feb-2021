@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Windows objects</title>
+</head>
+<body>
+    <div class="col-md-8 col-lg-6 mt-4 mx-auto">
+        <div class="card border border-info">
+            <div class="card-header bg-info text-center">
+                <h4 class="text-white">Location Object Methods</h3>
+            </div>
+            <div class="card-body">
+                <p id="paragraph1">assign() method loads a new document.</p>
+                <button type="button" class="btn btn-primary mb-3" onclick="assignCall()">assign()</button>
+                
+                <p id="paragraph1">reload() method reloads a current document.</p>
+                <button type="button" class="btn btn-primary mb-3" onclick="reloadCall()">reload()</button>
+
+                <p id="paragraph1">replace() method replace a current document with new document.</p>
+                <button type="button" class="btn btn-primary mb-3" onclick="replaceCall()">replace()</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8 col-lg-6 mt-4 mx-auto">
+        <div class="card border border-info">
+            <div class="card-header bg-info text-center">
+                <h4 class="text-white">History Object</h3>
+            </div>
+            <div class="card-body">
+                <p id="paragraph1">length property returns the number of URLs in the history list.</p>
+                <button type="button" class="btn btn-primary mb-3" onclick="lengthCall()">Get Length</button>
+                <p id="length" class="alert alert-success">length of history : </p>
+
+                <p id="paragraph1">back() method loads the previous URL in the history list.</p>
+                <button type="button" class="btn btn-primary mb-3" onclick="backCall()">Back</button>
+                
+                <p id="paragraph1">forward() method loads the next URL in the history list.</p>
+                <button type="button" class="btn btn-primary mb-3" onclick="forwardCall()">Forward</button>
+
+                <p id="paragraph1">go() method loads a specific URL from the history list.</p>
+                <button type="button" class="btn btn-primary mb-3" onclick="goCall()">Go</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8 col-lg-6 mt-4 mx-auto">
+        <div class="card border border-info">
+            <div class="card-header bg-info text-center">
+                <h4 class="text-white">Windows height and width</h3>
+            </div>
+            <div class="card-body">
+                <button type="button" class="btn btn-success mb-3" onclick="openWin()">Open Window</button>
+
+                <button type="button" class="btn btn-warning mb-3" onclick="resizeWin()">Resize Window</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function assignCall(){
+            location.assign("DomElements.html");
+        }
+        function reloadCall(){
+            location.reload();
+        }
+        function replaceCall(){
+            location.replace("DomElements.html");
+        }
+        function lengthCall(){
+            var len = history.length;
+            document.getElementById("length").innerHTML += len;
+        }
+        function backCall(){
+            history.back();
+        }
+        function forwardCall(){
+            history.forward();
+        }
+        function goCall(){
+            history.go(1);
+        }
+
+        var win;
+        function openWin() {
+            win = window.open("DomElements.html", "", "width=100, height=100");
+        }
+
+        function resizeWin() {
+            win.resizeTo(500, 500);
+            win.focus();
+        }
+        
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

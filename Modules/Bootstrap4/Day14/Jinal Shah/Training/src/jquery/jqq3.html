@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 3</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        *{
+          padding: 10px;
+        }
+    </style>
+    
+    <script>
+        $(document).ready(function(){
+          $("div").first().css("background-color", "yellow");
+          $(".div1").last().css("background-color", "skyblue");
+
+          $(".para").eq(1).css("background-color", "lightgreen");
+          $("span").filter(".intro").css({"color": "white", "background-color": "red"});
+          $("span").not(".intro").css("background-color", "yellow");
+        });
+    </script>
+
+</head>
+<body>
+    <h2 class="pl-5">jQuery Traversing - Filtering first() Method</h2>
+    
+    <div style="border: 1px solid black;">
+      <p>A paragraph in a div.</p>
+      <p>Another paragraph in a div.</p>
+    </div>
+    <br>
+    
+    <div style="border: 1px solid black;">
+      <p>A paragraph in another div.</p>
+      <p>Another paragraph in another div.</p>
+    </div>
+    <br>
+    
+    <div style="border: 1px solid black;">
+      <p>A paragraph in another div.</p>
+      <p>Another paragraph in another div.</p>
+    </div>
+    
+    <h2 class="pl-5">jQuery Traversing - Filtering last() Method</h2>
+
+    <div class="div1" style="border: 1px solid black;">
+      <p>A paragraph in a div.</p>
+      <p>Another paragraph in a div.</p>
+    </div>
+    <br>
+
+    <div class="div1" style="border: 1px solid black;">
+      <p>A paragraph in another div.</p>
+      <p>Another paragraph in another div.</p>
+    </div>
+    <br>
+
+    <div class="div1" style="border: 1px solid black;">
+      <p>A paragraph in another div.</p>
+      <p>Another paragraph in another div.</p>
+    </div>
+
+    <h2 class="pl-5">jQuery Traversing - Filtering eq() Method</h2>
+
+    <p class="para">My name is Donald (index 0).</p>
+    <p class="para">Donald Duck (index 1).</p>
+    <p class="para">I live in Duckburg (index 2).</p>
+    <p class="para">My best friend is Mickey (index 3).</p>
+
+    <h2 class="pl-5">jQuery Traversing - Filtering filter() Method</h2>
+
+    <span >My name is Donald.</span>
+    <span class="intro">I live in Duckburg.</span>
+    <span class="intro">I love Duckburg.</span>
+    <span>My best friend is Mickey.</span>
+
+    <h2 class="pl-5">jQuery Traversing - Filtering not() Method</h2>
+
+    <span>My name is Donald.</span>
+    <span class="intro1">I live in Duckburg.</span>
+    <span class="intro">I love Duckburg.</span>
+    <span>My best friend is Mickey.</span>
+   
+</body>
+</html>

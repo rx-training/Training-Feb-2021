@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Employee form</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+        #dropdownMenuButton{
+            width:185px;
+        }
+        input{
+          width: inherit;
+        }
+        .radio{
+          width: initial;
+        }
+        
+        p{
+          text-align: center;
+        }
+        #container{
+          background-color: antiquewhite;
+        }
+        h2{
+          font-style: oblique;
+          font-family: cursive;
+          background-color: lavenderblush;
+        }
+    </style>
+  </head>
+  <body id="main" class="py-3">
+    <h2>Employee form</h2>
+    <section id="form">
+        <div class="container-fluid py-3 align-center" id="container">
+            <div class="row">
+                    <div class="col-md-2"></div> 
+                    <div class="col-md-2 py-3" id="label">
+                            <label for="id">Id :</label><br><br>
+                            <label for="name">Name :</label><br><br>
+                            <label for="age">Age :</label><br><br>
+                            <label for="gender">Gender :</label><br><br>
+                            <label for="designation">Designation :</label><br><br>
+                            <label for="salary">Salary</label><br><br>
+                            <label for="location">Location</label><br><br>
+                            <label for="email">Email Id</label><br><br>
+                            <label for="doj">Date Of Joining</label><br><br>
+                            <label for="contact">Contact No.</label><br><br>
+                    </div>
+                    <div class="col-md-4 py-3" id="input">
+                        <input type="text" id="id" placeholder="Id"><br><br>
+                        <input type="text" id="name" placeholder="Name" ><br><br>
+                        <input type="number" id="age" placeholder="Age"><br><br>
+                        <input class="radio" type="radio" id="male" name="gender">
+                        <label for="male">Male</label>
+                        <input class="radio" type="radio" id="female" name="gender">
+                        <label for="female">Female</label><br><br>
+                        <input type="text" id="designation" placeholder="Designation"><br><br>
+                        <input type="number" id="salary" placeholder="Salary"><br><br>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle bg-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">select location</button><br><br>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#">Ahmedabad</a>
+                              <a class="dropdown-item" href="#">Surat</a>
+                              <a class="dropdown-item" href="#">Baroda</a>
+                            </div>
+                        </div>
+                        <input type="email" id="email" placeholder="Email"><br><br>
+                        <input type="date" id="date" placeholder="Date Of Joining" required><br><br>
+                        <input type="number" id="contact" placeholder="Contact No."><br><br>
+                       <button class="submit bg-primary align-middle" onclick="check_validation()">Submit</button>
+                    </div>
+                    <div class="col-md-4 py-3" id="summary">
+                        <p id="p1" class="bg-danger"></p>
+                        <p id="p2" class="bg-danger"></p>
+                        <p id="p3" class="bg-danger"></p>
+                        <p id="p4" class="bg-danger"></p>
+                        <p id="p5" class="bg-danger"></p>
+                        <p id="p6" class="bg-danger"></p>
+                        <p id="p7" class="bg-danger"></p>
+                        <p id="p8" class="bg-danger"></p>
+                    </div>
+            </div>
+        </div>
+    </section>
+    <script>
+    function check_validation(){
+      var e_id = document.getElementById("id").value;
+      var e_name = document.getElementById("name").value;
+      var e_age = document.getElementById("age").value;
+      var e_gender = document.getElementsByName("gender");
+      var e_designation = document.getElementById("designation").value;
+      var e_salary = document.getElementById("salary").value;
+       //var e_location = document.getElementById("location").value;
+      var e_email = document.getElementById("email").value;
+       //var e_doj = document.getElementById("doj").value;
+      var e_contact = document.getElementById("contact").value;
+      if(e_id == "" || e_id == null){
+        document.getElementById("p1").style.visibility = "visible";
+        document.getElementById("p1").innerHTML = "Please enter ID";
+      }
+      else{
+        document.getElementById("p1").style.visibility = "hidden";
+      }
+      if(e_name.length() >= 5 || e_name == null){
+        document.getElementById("p2").style.visibility = "visible";
+        document.getElementById("p2").innerHTML = "Please enter Name";
+      }
+      else{
+        document.getElementById("p2").style.visibility = "hidden";
+      }
+      if(e_age == "" || e_age == null){
+        document.getElementById("p3").style.visibility = "visible";
+        document.getElementById("p3").innerHTML = "Please enter Age";
+      }
+      else{
+        document.getElementById("p3").style.visibility = "hidden";
+      }
+      if (!(e_gender[0].checked || e_gender[1].checked)) {
+        document.getElementById("p4").style.visibility = "visible";
+        document.getElementById("p4").innerHTML = "Please select gender";
+      }
+      else{
+        document.getElementById("p4").style.visibility = "hidden";
+      }
+      if(e_designation == "" || e_designation == null){
+        document.getElementById("p5").style.visibility = "visible";
+        document.getElementById("p5").innerHTML = "Please enter designation"; 
+      }
+      else{
+        document.getElementById("p5").style.visibility = "hidden";
+      }
+      if(e_salary == "" || e_salary == null){
+        document.getElementById("p6").style.visibility = "visible";
+        document.getElementById("p6").innerHTML = "Please enter salary"; 
+      }
+      else{
+        document.getElementById("p6").style.visibility = "hidden";
+      }
+      if(e_email == "" || e_email == null){
+        document.getElementById("p7").style.visibility = "visible";
+        document.getElementById("p7").innerHTML = "Please enter email"; 
+      }
+      else{
+        document.getElementById("p7").style.visibility = "hidden";
+      }
+      if(e_contact == "" || e_contact == null){
+        document.getElementById("p8").style.visibility = "visible";
+        document.getElementById("p8").innerHTML = "Please enter contact"; 
+      }
+      else{
+        document.getElementById("p8").style.visibility = "hidden";
+      }
+    }
+    </script>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

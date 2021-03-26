@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radixweb layout</title>
+    <style>
+        .header{
+            background-color: red;
+            height: 80px;
+        }
+        .header h2{
+            text-align: center;
+        }
+        .header img{
+            height: -webkit-fill-available;
+            margin-left: 0px;
+            width: 296px;
+        }
+        .footer{
+            position: relative;
+            top: -20px;
+            background: palevioletred;
+            height: 80px;
+        }
+        .footer h2{
+            text-align: center;
+        }
+        .column {
+            float: left;
+            padding: 17px;
+        }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .navbar{
+            background: yellow;
+            float: left;
+            width: 20%;
+            padding: 13px;
+            height: 230px;
+        }
+        .content{
+            width: 77%;
+            background: rgba(216, 108, 20, 0.562);
+            padding: 7px;
+            height: 242px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        ul{
+            list-style: none;
+        }
+        li a:hover {
+            background-color: rgb(211, 202, 202);
+        }
+        h1{
+            text-align: center;
+        }
+        .footer p{
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="Radixweblogo.jpg" alt="Radixweb">
+    </div>
+    <div class="clearfix">
+        <div class="column navbar">
+            <ul>
+                <li><a href="Home.html">Home</a></li><br>
+                <li><a href="Contactus.html">Contact us</a></li><br>
+                <li><a href="About us.html">About us</a></li>
+            </ul>
+        </div>
+        <div class="column content">
+            <h1>Welcome to Radixweb</h1>
+        </div>
+    </div>
+    <div class="footer">
+        <p>www.radixweb.com</p>
+    </div>
+</body>
+</html>

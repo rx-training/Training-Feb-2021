@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btncount" style="color:white;background-color:rgb(73, 73, 165);padding: 5px;margin:20px 0 0 20px;">
+        Count function call
+    </button>
+    <h2 id="myh2" style="margin-left: 20px;">0</h2>
+
+    <script>
+        var counter= (function(){
+            var count=0;
+            return function(){
+                return ++count;
+            }
+        })();
+
+        document.getElementById("btncount").addEventListener("click",function(){
+            document.getElementById("myh2").innerHTML=counter();
+        });
+    </script>
+</body>
+</html>

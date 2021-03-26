@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>third jquery project</title>
+    <script>
+    $(document).ready(function() {  
+         $(":radio").click(function() {  
+             var x = $("input[value = 'PHP']:checked");  
+             if(x.length>0)  
+             {
+                document.getElementById('result').innerHTML= '<h3>Your Selected Course is:<span class="text-primary"> PHP</span></h3>';
+                document.getElementById('demo').innerHTML="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, repellendus.";
+                 return true; 
+                 
+            }
+
+            var x = $("input[value = 'ASP.NET']:checked");  
+             if(x.length>0)  
+             {
+                document.getElementById('result').innerHTML= '<h3>Your Selected Course is:<span class="text-primary"> ASP.NET <span></h3>';
+                document.getElementById('demo').innerHTML="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, repellendus.";
+                 return true; 
+                 
+            }
+            var x = $("input[value = 'ASP']:checked");  
+             if(x.length>0)  
+             {
+                document.getElementById('result').innerHTML= '<h3>Your Selected Course is:  <span class="text-primary">ASP </span></h3>';
+                document.getElementById('demo').innerHTML="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, repellendus.";
+                 return true; 
+                 
+            }
+            var x = $("input[value = 'JSP']:checked");  
+             if(x.length>0)  
+             {
+                document.getElementById('result').innerHTML= '<h3>Your Selected Course is: <span class="text-primary">JSP </span></h3>';
+                document.getElementById('demo').innerHTML="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, repellendus.";
+                 return true; 
+                 
+            }
+            var x = $("input[value = 'Perl']:checked");  
+             if(x.length>0)  
+             {
+                document.getElementById('result').innerHTML= '<h3>Your Selected Course is: <span class="text-primary">Perl </span></h3>';
+                document.getElementById('demo').innerHTML="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, repellendus.";
+                 return true; 
+                 
+            }
+            var x = $("input[value = 'Cold Fusion']:checked");  
+             if(x.length>0)  
+             {
+                document.getElementById('result').innerHTML= '<h3>Your Selected Course is:<span class="text-primary"> Cold Fusion </sapn></h3>';
+                document.getElementById('demo').innerHTML="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, repellendus.";
+                 return true; 
+                 
+            }
+
+            var x = $("input[value = 'Other']:checked");  
+             if(x.length>0)  
+             {
+                document.getElementById('result').innerHTML= '<h3>Your Selected Course is: <span class="text-primary"> Other </span></h3>';
+                document.getElementById('demo').innerHTML="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, repellendus.";
+                 return true; 
+                 
+            }
+                
+         });  
+       });   
+    </script>
+        <style>
+            h1{
+                background-color: #1c2434;
+            }     
+            .card{
+                width:700px;
+            }
+                      
+        </style>
+  </head>
+  <body class="bg-light">
+    <h1 class="text-center text-white p-5">Radio Button Example</h1>
+
+
+    <form name = "jd" action="">  
+        <div class = "wrapper">  
+            <div class = "row">  
+                <div class = "col-md-3 offset-3">  
+                    <div class = "card mt-5">  
+                        <div class = "form-group text-center bg-light">  
+  
+                            <div class = "card-header bg-secondary">  
+                                <h2 class = "form-group-heading text-center"> Please Select a Course </h2>  
+                            </div>  
+                            <form action = "/action_page.php">  
+                                <label>  
+                                   
+                                    <input type = "radio" name = "course"  
+                                        value = "PHP">PHP  
+                                </label>  
+                                <label>  
+                                    <input type = "radio" name = "course"  
+                                        value = "ASP.NET">ASP.NET  
+                                </label>  
+                                <label>  
+                                <input type = "radio" name = "course"  
+                                    value = "ASP">ASP
+                                    </label>  
+                                    <label>  
+                                <input type = "radio" name = "course"  
+                                    value = "JSP">JSP 
+                                    </label>  
+                                    <label>  
+                                        <input type = "radio" name = "course"  
+                                            value = "Perl">Perl
+                                            </label>  
+                                            <label>  
+                                            <input type = "radio" name = "course"  
+                                            value = "Cold Fusion">Cold Fusion 
+                                            </label>  
+                                            <label>  
+                                             <input type = "radio" name = "course"  
+                                             value = "Other">Other
+                                            </label>  
+                                <br><br>  
+                           
+                                 <h5 id="demo"></h5>
+                                <h3 id="result"></h3> 
+                                <input class="btn btn-secondary" type = "submit" value = "Submit" id = "mysbutton">  
+                            </form>  
+                        </div>  
+                    </div>  
+                </div>  
+            </div>  
+        </div>  
+    </form>  
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>String Value</title>
+    <script type="text/javascript">
+        function CheckDate() {
+            var date1 = document.getElementById("dates").value;
+            if (date1 == "") {
+                alert("Please Enter a Date");
+                return false;
+            }
+            var date2 = /\d{2}-\d{2}-\d{4}$/;
+            if(!date1.match(date2))
+            {
+                alert("Please Your Date In Proper Formate")
+                return false;
+            }
+            var date3 = date1.split("-");
+            var month = date3[0];
+            var date  = date3[1];
+            var year  = date3[2];
+            if (month <= 0 || month > 12)
+            {
+                 alert("Enter a Month In 1 To 12");
+                 return false;
+            }
+            else if ((date <= 0 || date > 31) || ((month == 4 || month == 6 || month == 9 || month == 11) && date == 31))
+            {
+                alert("Enter a please Valid Date 1 To 31");
+                return false;
+            }
+            else if (year <= 0){
+                alert("Please Enter A Valid Year");
+                return false;
+            } 
+            alert("Valid Date");
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container mt-5 bg-warning">
+        <h1 class="display1 text-center text-white">Enter valid Date Format</h1>
+        <form class="myForm row">
+            <div class="form-group ml-4 mt-2">
+                <label for="dates" class="text-white">Enter The Date: </label>
+                <input type="text" id="dates" class="form-control" placeholder="MM-DD-YYYY" required>
+            </div>
+            <div class="text-center form-group col-3 mt-5">
+                <input type="button" value="Submit" class="btn btn-primary" onclick="CheckDate()">
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

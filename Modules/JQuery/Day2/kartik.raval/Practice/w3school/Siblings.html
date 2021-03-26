@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+    .siblings * { 
+        display: block;
+        border: 2px solid lightgrey;
+        color: lightgrey;
+        padding: 5px;
+        margin: 15px;
+    }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(document).ready(function(){
+                //$("h2").siblings().css({"color": "red", "border": "2px solid red"});
+                //$("h2").siblings("p").css({"color": "red", "border": "2px solid red"});
+                //$("h2").next().css({"color": "red", "border": "2px solid red"});
+                //$("h2").nextAll().css({"color": "red", "border": "2px solid red"});
+                //$("h2").nextUntil("h6").css({"color": "red", "border": "2px solid red"});
+                //$("h2").prev().css({"color": "red", "border": "2px solid red"});
+                //$("h2").prevAll().css({"color": "red", "border": "2px solid red"});
+                $("h2").prevUntil("div").css({"color": "red", "border": "2px solid red"});
+            });
+        });
+    </script>
+</head>
+    <body class="siblings">
+        <div>div (parent)
+            <p>p</p>
+            <span>span</span>
+            <h2>h2</h2>
+            <h3>h3</h3>
+            <h4>h4</h4>
+            <h5>h5</h5>
+            <h6>h6</h6>
+            <p>p</p>
+          </div>
+  </body>
+</html>

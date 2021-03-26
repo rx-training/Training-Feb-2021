@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        console.log(productId);
+
+        var productId = '90000';
+
+        var total = price * quantity;
+        var price = 3.00 ;
+        var quantity = 5;
+        console.log(total);
+
+        showProduct();
+        function showProduct() {
+            console.log('showing a product');
+        }
+
+        /* showProduct1();
+        var showProduct1 = function() {
+            console.log('showing a product');
+        } */
+
+        var showProduct2 = function() {
+            console.log('showing a product');
+        }
+        showProduct2();
+
+        /*--------- numbers ----------*/
+        var quantity1 = 2;
+        var price1 =0.99;
+        console.log(quantity1 * price1);
+
+        var price1 = "0.99";
+        console.log(typeof price1);
+
+        var oct = 070;
+        console.log(oct);
+
+        var oct = 088;
+        console.log(oct);
+
+        'use strict';
+        var oct = 088;
+        console.log(oct);
+
+        var hex = 0x10;
+        console.log(hex);
+
+        var value = 3.2e4;
+        console.log(value);
+
+        var value = 3.2e-4;
+        console.log(value);
+
+        console.log(Number.MAX_VALUE);
+        console.log(Number.MIN_VALUE);
+
+        var n = Number.MAX_VALUE * 2;
+        console.log(n);
+
+        var n = Infinity;
+        console.log(typeof n);
+
+        var n = -Infinity;
+        console.log(n);
+
+        console.log(Number.POSITIVE_INFINITY + '' + Number.NEGATIVE_INFINITY);
+
+        var count;
+        var price = 5.00;
+        console.log(price/ count); 
+
+        console.log(typeof NaN);
+
+        var n = NaN;
+        if (isNaN(n))
+            console.log('NaN');
+
+     /*--------- string ----------*/
+        console.log("Hello " + 'world!');
+
+        var producttype = 'Hardware';
+        console.log(producttype.length);
+
+        var producttype = '    Hardware    ';
+        console.log('[' + producttype.trim() + ']');
+
+        var producttype = '    Hardware    ';
+        producttype.trim()
+        console.log('[' + producttype + ']');
+
+        var producttype = 'Hardware';
+        console.log(producttype.toLowerCase());
+
+        var producttype = 'Hardware';
+        console.log(producttype.toUpperCase());
+
+         /*--------- boolean values ----------*/
+         var isspecial = true;
+         if (isspecial)
+            console.log("its true..");
+
+        console.log(Boolean("Hello"));
+
+        console.log(Boolean(""));
+
+        console.log(Boolean(" "));
+
+        console.log(Boolean("6"));
+
+        console.log(Boolean(0));
+
+        console.log(Boolean(undefined));
+
+        console.log(Boolean(null));
+
+        var value = 99.99;
+        console.log(typeof !!value );
+
+        var value1 = "no value";
+        console.log(!!value1 );
+
+
+        /*--------- undefined and nulls ----------*/
+
+        var productId1;
+        console.log(typeof productId1);
+
+        console.log(typeof productId2);
+
+        var productId3 = null;
+        console.log(typeof productId3);
+
+        console.log(typeof null);
+
+        console.log(undefined == null);
+
+        console.log(undefined === null);
+
+
+        /*--------- global scope ----------*/
+
+        var proid = "PRD-2000";
+        console.log(proid);
+        console.log(window.proid);
+
+        console.log(this === window);
+
+        var description = 'hardware product';
+        function updateProduct(){
+            description = "updated product";
+        }
+        updateProduct();
+        console.log(description);
+
+        function updateProduct1(){
+            description1 = "updated product...";
+        }
+        updateProduct1();
+        console.log(description1);
+
+        /* 'use strict';
+        function updateProduct2(){
+            description2 = "updated product";
+        }
+        updateProduct2();
+        console.log(description2); */
+
+        /*----------------------------- functional scope ----------------------*/
+        var descriptionn = 'original product';
+        function updateProduct5(){
+            var descriptionn = "updated product";
+        }
+        updateProduct5();
+        console.log(descriptionn);
+
+        function updateProduct6(){
+            var descriptionn1 = "updated product...";
+            var updateProductid = function(){
+                console.log(descriptionn1);
+            }
+            updateProductid();
+        }
+        updateProduct6();
+
+        var descriptionn2 = 'original product';
+        function updateProduct7(){
+            var descriptionn2 = "updated product...";
+            var updateProductid1 = function(){
+                console.log(descriptionn2);
+            }
+            updateProductid1();
+        }
+        updateProduct7();
+
+        var descriptionnm = 'original product';
+        function updateProductt(){
+            var updateProductidd = function(){
+                console.log(descriptionnm);
+            }
+            updateProductidd();
+        }
+        updateProductt();
+
+        /* function updateProductt1(){
+            var updateProductidd1 = function(){
+                console.log(descriptionnm1);
+            }
+            updateProductidd1();
+        }
+        updateProductt1(); */
+        
+
+        /*----------------------------- block scope ----------------------*/
+
+        'use strict';
+        try{
+            throw 123;
+        }
+        catch(e){
+            console.log(e);
+        }
+
+        /* 'use strict';
+        console.log(e);
+        try{
+            throw 123;
+        }
+        catch(e){
+        } */
+
+        'use strict';
+        try{
+            console.log('in try: '+ e);
+            throw 123;
+        }
+        catch(e){
+            console.log(e);
+        }   
+        
+        'use strict';
+        console.log(insideCatch);
+        try{
+            throw 123;
+        }
+        catch(e){
+            var insideCatch = 'insideCatch'
+            console.log(e);
+        }
+
+        'use strict';
+        try{
+            throw 'myArtificialBlockLevelVar'
+        }
+        catch (blockLevelVar){
+            //blockLevelVar is in block scope
+        };
+        console.log(blockLevelVar);
+
+    </script>
+
+
+</body>
+</html>

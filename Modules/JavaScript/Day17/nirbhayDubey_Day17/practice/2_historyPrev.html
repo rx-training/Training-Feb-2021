@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btnprev {
+            color:#ffffff;
+            width:50px;
+            background-color:rgb(10, 137, 168);
+            padding:10px;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            border:none;
+            outline-style: none;
+            font-size: 20px;
+        }
+        #btnnext{
+            color:#ffffff;
+            width:50px;
+            background-color:rgb(10, 137, 168);;
+            padding:10px;
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+            border:none;
+            outline-style: none;
+            font-size: 20px;
+        }
+        #btnprev:hover,#btnnext:hover{
+            background-color:rgb(8, 99, 122);
+        }
+    </style>
+</style>
+</head>
+<body>
+
+    <button type="button" id="btnprev"> &#8249; </button>
+    <button type="button" id="btnnext"> &#8250; </button>
+
+    <h1>History back(<) and forward(>) example </h1>
+    <p style="color:red;"> Go to "1_windowLocation.html" click on navigate button to see the history back and forward working </p>
+
+
+    <script>
+        document.getElementById("btnprev").addEventListener("click",function(){
+            history.back();
+        });
+        document.getElementById("btnnext").addEventListener("click",function(){
+            history.forward();
+        });
+    </script>
+</body>
+</html>

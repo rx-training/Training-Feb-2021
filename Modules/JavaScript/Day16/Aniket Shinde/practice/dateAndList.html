@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="col-md-8 col-lg-6 my-5 mx-auto">
+        <div class="card border border-info">
+            <div class="card-header bg-info text-center">
+                <h4 class="text-white">Get the current date</h3>
+            </div>
+            <div class="card-body">
+                <button type="button" class="btn btn-primary" onclick="getCurrentDate()">Get Current Date</button>
+            </div>
+            <p class="alert alert-success mt-2 py-2 mx-2" id="dateAnswer" style="display: none;"></p>
+        </div>
+    </div>
+    
+    
+    <div class="col-md-8 col-lg-6 my-5 mx-auto">
+        <div class="card border border-info">
+            <div class="card-header bg-info text-center">
+                <h4 class="text-white">List Operations - push and pop</h4>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="listitem1">Enter item you want to push</label>
+                    <input type="text" class="form-control" id="listitem1" name="listitem1">
+                    <p id="errormsg6" class="alert alert-danger my-2" style="display: none;">Field should not be empty...</p>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="pushItem(listitem1)">Push Item</button>
+                <button type="button" class="btn btn-warning" onclick="removeItem()">Remove Item</button>
+            </div>
+            <p class="alert alert-success mt-2 py-2 mx-2" id="newList"></p>
+        </div>
+    </div>
+
+    <div class="col-md-8 col-lg-6 my-5 mx-auto">
+        <div class="card border border-info">
+            <div class="card-header bg-info text-center">
+                <h4 class="text-white">List Operations - shift and unshift</h4>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="listitem2">Enter item you want to unshift</label>
+                    <input type="text" class="form-control" id="listitem2" name="listitem2">
+                    <p id="errormsg7" class="alert alert-danger my-2" style="display: none;">Field should not be empty...</p>
+                </div>
+                <p class="text-info" ><b>unshift() method adds a new element to an array (at the beginning), So enter item in above textbox for unshift.</b></p>
+                <button type="button" class="btn btn-primary mb-3" onclick="unshiftItem(listitem2)">Unshift</button> 
+
+                <p class="text-info py-2"><b>The shift() method removes the first array element and "shifts" all other elements to a lower index.</b></p>
+                <button type="button" class="btn btn-warning" onclick="shiftItem()">Shift Item</button>
+            </div>
+            <p class="alert alert-success mt-2 py-2 mx-2" id="shiftList"></p>
+        </div>
+    </div>
+
+    <div class="col-md-8 col-lg-6 my-5 mx-auto">
+        <div class="card border border-info">
+            <div class="card-header bg-info text-center">
+                <h4 class="text-white">Deleting and Slicing Array elements</h4>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <p class="text-info" ><b>Elements can be deleted by using the JavaScript operator delete, So enter index in below textbox for delete item.</b></p>
+                    <label for="listindex1">Enter index number of element you want to delete</label>
+                    <input type="number" class="form-control" id="listindex1" name="listindex1">
+                    <p id="errormsg8" class="alert alert-danger my-2" style="display: none;">Field should not be empty...</p>
+                </div>
+                <button type="button" class="btn btn-primary mb-2" onclick="deleteItem(listindex1)">Delete</button> 
+                <p class="alert alert-success  py-2" id="deletedList"></p>
+                <hr class="bg-info">
+
+                <p class="text-info py-2"><b>The slice() method slices out a piece of an array into a new array.</b></p>
+                <div class="form-group">
+                    <label for="listindex2">Enter index number of element from where you want to slice</label>
+                    <input type="number" class="form-control" id="listindex2" name="listindex2">
+                    <p id="errormsg9" class="alert alert-danger my-2" style="display: none;">Field should not be empty...</p>
+                </div>
+                <button type="button" class="btn btn-warning" onclick="sliceList(listindex2)">Slice List</button>
+                <p class="alert alert-success mt-2 py-2" id="baseList"></p>
+                <p class="alert alert-success mt-2 py-2" id="slicedList"></p>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="../assets/js/day16Script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

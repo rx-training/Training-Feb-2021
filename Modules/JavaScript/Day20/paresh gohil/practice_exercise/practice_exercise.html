@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        async function product(file){
+            let myObject = await fetch(file);
+            let myProducts = await myObject.json();
+            return myProducts;
+        }
+        function storelocaldata(){
+          //  var products = [  { "Name": "Cheese", "Price" : 2.50, "Location": "Refrigerated foods"},   { "Name": "Crisps", "Price" : 3, "Location": "the Snack isle"},   { "Name": "Pizza", "Price" : 4, "Location": "Refrigerated foods"},   { "Name": "Chocolate", "Price" : 1.50, "Location": "the Snack isle"},   { "Name": "Self-raising flour", "Price" : 1.50, "Location": "Home baking"},   { "Name": "Ground almonds", "Price" : 3, "Location": "Home baking"} ];
+            
+          product("./products1.json").then(function(products){
+            var ProductList = JSON.stringify(products);
+            console.log(ProductList);
+            var Products = localStorage.setItem("ProductList",ProductList);
+       
+          });
+
+        }
+        function getproducts(){
+            var Product = localStorage.getItem("ProductList");
+            console.log(Product);
+            var Product1 = JSON.parse(Product);
+            console.log(Product1);
+        }
+    </script>
+</head>
+<body onload="storelocaldata()">
+    <input type="button" onclick="getproducts()" value="Get Product">
+</body>
+</html>

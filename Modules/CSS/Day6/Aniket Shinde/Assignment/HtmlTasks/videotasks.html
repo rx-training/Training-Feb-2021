@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/tutorialSite.css "/>
+    <link rel="stylesheet" href="../../css/day3/formstyle.css"/>
+    <title>Audio and Video</title>
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <img src="../../images/logo.jpg" style="display: inline;">
+            <ul>
+                <li><a href="../tutorialSite.html">HTML</a></li>
+                <li><a href="../tutorialCss.html">CSS</a></li>
+                <li><a href="#">Bootstrap</a></li>
+                <li><a href="#">Javascript</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row" style="margin-top: 90px;">
+            <div class="col-lg-3" style="max-height: 500px; overflow: auto;">
+                <button type="button" class="collapsible">Day 3</button>
+                <div class="content">
+                    <button type="button" class="collapsible">Practice</button>
+                    <div class="content">
+                        <ul>
+                            <li><a href="articlenews.html">Article News</a></li>
+                            <li><a href="departments.html">Departments</a></li>
+                            <li><a href="studentReportCard.html">Student Report Card</a></li>
+                            <li><a href="loginForm.html">Login Form</a></li>
+                            <li><a href="horizontalMenu.html">Horizontal Menu</a></li>
+                        </ul>
+                    </div>
+                    <button type="button" class="collapsible">Assignment</button>
+                    <div class="content">
+                        <ul>
+                            <li><a href="employeeDetailsForm.html">Employee Details Form</a></li>
+                        </ul>
+                    </div>
+                    <button type="button" class="collapsible">Video Task</button>
+                    <div class="content">
+                        <ul>
+                            <li><a href="videotasks.html">Task 1</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>   
+
+            <div class="col-lg-9 py-3">
+                
+                <form method="get">
+                    <table>
+                        <tr>
+                            <td><label for="pincode">Pincode :</label></td>   
+                            <td><input type="text" name="pincode" pattern="[0-9]{​​​​​​​6}​​​​​​​" title="Please enter 6 digit code"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="month">Select Month :</label></td>   
+                            <td><input type="month" name="month"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="time">Select Time :</label></td>   
+                            <td><input type="time" name="time"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="week">Select Week :</label></td>   
+                            <td><input type="week" name="week"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="range">Select Range :</label></td>   
+                            <td><input type="range" id="range" name="range" min="1" max="20"> <label id="rangevalue"></label></td>
+                        </tr>
+                        <tr>
+                            <td><label for="datalist">DataList :</label></td>   
+                            <td><input type="text" name="datalist" list="myDatalist">
+                                <datalist id="myDatalist">
+                                    <option label="Mr." value="Mr."></option>
+                                    <option label="Mrs." value="Mrs."></option>
+                                    <option label="Ms." value="Ms."></option>
+                                </datalist>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="submit" name="Submit"></td>
+                        </tr>
+                        
+                    </table>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h1 class="center">Have Any Question?</h1>
+        <p>We're very approachable and would love to speak to you. 
+            Feel free to call, send us an email, Tweet us or simply complete the enquiry form.</p>
+        
+            <p>Email : adshindeaniket@gmail.com</p>
+            <p>Supported By : Aniket Shinde</p>
+            <p>Contact : +91 8140763107</p>
+        
+      </div>
+
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            
+            for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                content.style.display = "none";
+                } else {
+                content.style.display = "block";
+                }
+            });
+            }
+
+            var range = document.getElementById("range");
+            var rangeValue = document.getElementById("rangevalue");
+            rangeValue.innerHTML = range.value;
+            range.oninput = function() {​​​​​​​
+                rangeValue.innerHTML = this.value;
+            }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+

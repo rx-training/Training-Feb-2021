@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Var & Let difference</title>
+</head>
+<body>
+    <p>In var keyword, it gives the same value in local as well as gobal where using let it will give the local value although it is overwrite</p>
+    <p id="p1"></p>
+    <script>
+        var var_value = 25;
+        if(true)
+        {
+            var var_value = 35;
+            console.log("Var value in local" + var_value);
+        }
+        console.log("Var value outside global"+ var_value);
+
+        var let_value = 50;
+        if(true)
+        {
+            let let_value = 35;
+            console.log("Let value in local"+ let_value);
+        }
+        console.log("var value outside global"+ let_value);
+    </script>
+    
+</body>
+</html>

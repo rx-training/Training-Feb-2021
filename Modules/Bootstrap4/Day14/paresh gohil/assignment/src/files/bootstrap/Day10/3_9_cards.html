@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Bootstrap 4</title>
+
+        <style>
+            .item1 { grid-area: header; }
+            .item2 { grid-area: menu; }
+            .item3 { grid-area: main; }
+            .item4 { grid-area: right; }
+            .item5 { grid-area: footer; }
+
+            .grid-container {
+              display: grid;
+              grid-template-areas:
+                'header header header header header header'
+                'menu main main main right right'
+                'menu footer footer footer footer footer';
+              grid-gap: 10px;
+              background-color: #2196F3;
+              padding: 10px;
+            }
+
+            .grid-container > div {
+              background-color: rgba(255, 255, 255, 0.8);
+              text-align: center;
+              padding: 20px 0;
+              font-size: 30px;
+            }
+            @media (max-width: 768px){
+                .btn1{
+                    display: block;
+                }
+            }
+            @media (max-width: 768px) { 
+                   .d-block{
+                    width: 90%;
+                    margin-bottom: 750px;
+                }
+                .container1{
+                    width: 100%;
+                    margin-left: 30px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-0 navbar-dark bg-dark">
+            <div class="container">
+                <a href="#" class="navbar-brand">
+                    <img src="../../../img/pic.PNG" alt="Logo" width="50px" height="50px">
+                </a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <a href="../../../index.html" class="nav-link">Redmine-git</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../html/html.html" class="nav-link">Html</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../css/css.html" class="nav-link">Css</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../bootstrap/bootstrap.html" class="nav-link active">Bootstrap</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Javascript</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Jquery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Sql</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!------------------- sidebar ---------------------->
+
+        <div class="d-block ml-4 text-center text-white bg-dark" style="height: 700px;">
+            <h4><strong>Bootstrap</strong></h4>
+            <hr class="bg-white">
+            <h5><b>Day 9</b></h5>
+            <a href="./2_2_basic_typography.html" class="btn bg-white py-0 my-2">Assignment</a>
+
+            <hr class="bg-white mx-5">
+            <h5><b>Day 10</b></h5>
+            <a href="../Day10/2_2_basic_typography.html" class="btn bg-white py-0 my-2">Assignment</a>
+
+            <hr class="bg-white px-2 mx-5">
+            <h5><b>Day 11</b></h5>
+            <a href="../Day11/assignment/assignment.html" class="btn bg-white py-0 my-2">Assignment</a>
+
+            <hr class="bg-white px-2 mx-5">
+            <h5><b>Day 12</b></h5>
+            <a href="../Day12/assignment/src/index.html" class="btn bg-white py-0 my-2">Assignment</a>
+
+            <hr class="bg-white px-2 mx-5">
+            <h5><b>Day 13</b></h5>
+            <a href="../Day13/assignment/src/index.html" class="btn bg-white py-0 my-2">Assignment</a>
+
+            <hr class="bg-white px-2 mx-5">
+            <h5><b>Day 14</b></h5>
+            <a href="../../../index.html" class="btn bg-white py-0 my-2">Assignment</a>
+        </div>
+
+        <!------------------- content ----------------------->
+
+        <div class="container container1 bg-light" style="height: 6600px; margin-top: -725px;">
+          <header>
+            <h1 class="display-3 text-center my-4">Basic Typography</h1>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="dropdown">
+                      <button class="btn btn-primary btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                          2: Utilities
+                      </button>
+                      <div class="dropdown-menu">
+                          <a class="dropdown-item" href="2_2_basic_typography.html">2.2 Basic Typography</a>
+                          <a class="dropdown-item" href="2_3_text_alignment_display.html">2.3 Text Alignment & Display</a>
+                          <a class="dropdown-item" href="2_4_floats_position.html">2.4 Floats & Position</a>
+                          <a class="dropdown-item" href="2_5_colors_background.html">2.5: Colors & Background</a>
+                          <a class="dropdown-item" href="2_6_spacing.html">2.6 Spacing</a>
+                          <a class="dropdown-item" href="2_7_sizing.html">2.7 Sizing</a>
+                          <a class="dropdown-item" href="2_8_breakpoints.html">2.8 Breakpoints</a>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="dropdown">
+                      <button class="btn btn-success btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                          3: CSS Components
+                      </button>
+                      <div class="dropdown-menu">
+                          <a class="dropdown-item" href="3_2_buttons.html">3.2 Buttons</a>
+                          <a class="dropdown-item" href="3_3_navbar.html">3.3 Navbar</a>
+                          <a class="dropdown-item" href="3_4_list_groups_badges.html">3.4 List Groups & Badges</a>
+                          <a class="dropdown-item" href="3_5_forms.html">3.5 Forms</a>
+                          <a class="dropdown-item" href="3_6_input_groups.html">3.6 Input Groups</a>
+                          <a class="dropdown-item" href="3_7_alerts_progress.html">3.7 Alerts & Progress</a>
+                          <a class="dropdown-item" href="3_8_tables_pagination.html">3.8 Tables & Pagination</a>
+                          <a class="dropdown-item" href="3_9_cards.html">3.9 Cards</a>
+                          <a class="dropdown-item" href="3_10_media_object.html">3.10 Media Objects</a>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="dropdown">
+                      <button class="btn btn-warning btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                          4: Grid & Flexbox
+                      </button>
+                      <div class="dropdown-menu">
+                          <a class="dropdown-item" href="4_2_grid_system.html">4.2 Grid System</a>
+                          <a class="dropdown-item" href="4_3_grid_alignment.html">4.3 Grid Alignment</a>
+                          <a class="dropdown-item" href="4_4_flexbox.html">4.4 Flexbox</a>
+                          <a class="dropdown-item" href="4_5_auto_margins_wrapping_order.html">4.5 Auto Margins & Wrap</a>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="dropdown">
+                      <button class="btn btn-danger btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                          5: JavaScript Widgets
+                      </button>
+                      <div class="dropdown-menu">
+                          <a class="dropdown-item" href="5_2_carousel.html">5.2 Carousel</a>
+                          <a class="dropdown-item" href="5_3_collapse.html">5.3 Collapse</a>
+                          <a class="dropdown-item" href="5_4_tooltips.html">5.4 Tooltips</a>
+                          <a class="dropdown-item" href="5_5_popovers.html">5.5 Popovers</a>
+                          <a class="dropdown-item" href="5_6_modals.html">5.6 Modals</a>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+          </header>
+        
+          <div class="container">
+            <!--########################START HERE#########################-->
+    
+            <!-- BLOCK -->
+            <div class="card">
+                <div class="card-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, voluptate.
+                </div>
+            </div>
+    
+            <br><br>
+    
+            <!-- SIMPLE CARD -->
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Card Title</h4>
+                    <h6 class="card-subtitle">Card subtitle</h6>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, quas.</p>
+                     <a href="#" class="btn btn-outline-primary">Read More</a>
+                </div>
+            </div>
+    
+            <br><br>
+    
+            <!-- CARD WITH IMAGE -->
+            <div style="width:20rem" class="card">
+                <img src="img/card-1.jpg" alt="Card image cap" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="card-title">Card Title</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, quas.</p>
+                     <a href="#" class="btn btn-success btn-block">Read More</a>
+                </div>
+            </div>
+    
+            <br><br>
+    
+            <!-- CARD WITH HEADER -->
+            <div class="card">
+                <div class="card-header">
+                    My Card
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Card Title</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+    
+            <br><br>
+    
+            <!-- HEADER, FOOTER, CENTERED -->
+            <div class="card">
+                <div class="card-header">
+                    <h4>My Card</h4>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Card Title</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                    <a href="#" class="btn btn-outline-danger">Read More</a>
+                </div>
+                <div class="card-footer">
+                  2 Days Ago
+                </div>
+            </div>
+    
+            <br><br>
+    
+            <!-- CARD WITH NAV -->
+            <div class="card">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">Active</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Disabled</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Card Title</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                    <a href="#" class="btn btn-warning">Read More</a>
+                </div>
+            </div>
+    
+            <br><br>
+    
+            <!-- IMAGE OVERLAYS -->
+            <div class="card bg-dark text-white">
+                <img src="img/card-2.jpg" class="card-img">
+                <div class="card-img-overlay">
+                    <h4 class="card-title">Card title</h4>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+    
+            <br><br>
+    
+            <!-- BACKGROUND COLOR -->
+            <div class="card bg-primary text-white my-5">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Primary card title</h4>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+              </div>
+            </div>
+    
+            <div class="card bg-secondary text-white my-5">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Secondary card title</h4>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+              </div>
+            </div>
+    
+            <div class="card bg-success text-white my-5">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Success card title</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+    
+            <div class="card bg-danger text-white my-5">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Danger card title</h4>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+              </div>
+            </div>
+    
+            <div class="card bg-warning text-white my-5">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Warning card title</h4>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+              </div>
+            </div>
+    
+            <div class="card bg-info text-white my-5">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Info card title</h4>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+              </div>
+            </div>
+    
+            <div class="card bg-light text-black my-5">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Light card title</h4>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+              </div>
+            </div>
+    
+            <div class="card bg-dark text-white my-5">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h4 class="card-title">Dark card title</h4>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+              </div>
+            </div>
+    
+            <br><br>
+    
+            <!-- CARD OUTLINE -->
+            <div class="card border-primary my-5">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h4 class="card-title">Primary card title</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                </div>
+            </div>
+            
+            <div class="card border-secondary my-5">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h4 class="card-title">Secondary card title</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                </div>
+            </div>
+            
+            <div class="card border-success my-5">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h4 class="card-title">Success card title</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+            
+            <div class="card border-danger my-5">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h4 class="card-title">Danger card title</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                </div>
+            </div>
+            
+            <div class="card border-warning my-5">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h4 class="card-title">Warning card title</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                </div>
+            </div>
+            
+            <div class="card border-info my-5">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h4 class="card-title">Info card title</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                </div>
+            </div>
+            
+            <div class="card border-light my-5">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h4 class="card-title">Light card title</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                </div>
+            </div>
+            
+            <div class="card border-dark my-5">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h4 class="card-title">Dark card title</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                </div>
+            </div>
+    
+            <br><br>
+    
+            <!-- CARD GROUP -->
+            <div class="card-group">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Card Title</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, quas.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Card Title</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, quas.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Card Title</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, quas.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <br><br>
+    
+             <!-- CARD DECK -->
+            <div class="card-deck">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Card Title</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, quas.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Card Title</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, quas.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Card Title</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, quas.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <br><br>
+    
+            <!-- CARD COLUMNS -->
+            <div class="card-columns">
+                <div class="card">
+                    <img src="img/card-4.jpg" alt="Card image cap" class="card-img-top img-fluid">
+                    <div class="card-body">
+                        <h4 class="card-title">Card title that wraps to a new line</h4>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <blockquote class="card-bodyquote">
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        <footer>
+                            <small class="text-muted">
+                                Someone famous in
+                                <cite title="Source Title">Source Title</cite>
+                            </small>
+                        </footer>
+                    </blockquote>
+                </div>
+    
+                <div class="card">
+                    <img src="img/card-3.jpg" alt="Card image cap" class="card-img-top img-fluid">
+                    <div class="card-body">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="card card-inverse">
+                    <blockquote>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+                        <footer>
+                            <small>
+                                Someone famous in
+                                <cite title="Source Title">Source Title</cite>
+                            </small>
+                        </footer>
+                    </blockquote>
+                </div>
+    
+                <div class="card">
+                    <div>
+                        <h4>Card title</h4>
+                        <p>This card has supporting text below as a natural lead-in to additional content.</p>
+                        <p>
+                            <small>Last updated 3 mins ago</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/card-4.jpg" alt="Card image">
+                </div>
+                <div class="card" <blockquote>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer>
+                        <small class="text-muted">
+                            Someone famous in
+                            <cite title="Source Title">Source Title</cite>
+                        </small>
+                    </footer>
+                    </blockquote>
+                </div>
+                <div class="card">
+                    <div>
+                        <h4>Card title</h4>
+                        <p>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even
+                            longer content than the first to show that equal height action.</p>
+                        <p>
+                            <small>Last updated 3 mins ago</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+        </div><!-- ./container -->
+        <div style="margin-top:500px;"></div>
+        <script src="../../../js/jquery.min.js"></script>
+        <script src="../../../js/popper.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+    </body>
+</html>

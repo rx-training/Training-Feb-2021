@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Menu</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        header {
+            top: 0;
+            width: 100%;
+            background-color: #07afa4;
+            color: white;
+            padding: 10px;
+        }
+        ul{
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+        }
+        ul li{
+            width: auto;
+            padding: 8px 25px 0px 10px;
+        }
+        ul li a{
+            color: white;
+            font-size: 20px;
+        }
+        
+
+
+        /* For Mobile and Tablets */
+        @media (max-width: 800px) {
+            ul {
+                flex-direction: column;
+            }
+            ul li{
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+            <ul>
+                <li><a href="tutorialSite.html">HTML</a></li>
+                <li><a href="tutorialCss.html">CSS</a></li>
+                <li><a href="#">Bootstrap</a></li>
+                <li><a href="#">Javascript</a></li>
+            </ul>
+    </header>
+</body>
+</html>

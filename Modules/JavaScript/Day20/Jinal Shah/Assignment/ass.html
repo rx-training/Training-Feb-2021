@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <style>
+        .r1{
+            height: 100px;
+            text-align: center;
+        }
+        .r2{
+            height:55px;
+            text-align: center;
+        }
+        .hd1, .hd2, .hd3, .hd4, .hd5{
+            padding-top: 10px;
+        }
+        .i1, .i2, .i3, .i4 {
+            padding-top: 10px;
+        }
+        .b1, .b2, .b3, .b4{
+            padding-top: 6px;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="container text-center">
+        <div class="r1 row pt-5 ">
+            <div class="hd1 col bg-dark text-light" style="border: 1px solid #333"><strong> Product ID</strong></div>
+            <div class="hd2 col bg-dark text-light" style="border: 1px solid #333"><strong>Product Name</strong></div>
+            <div class="hd3 col bg-dark text-light" style="border: 1px solid #333"><strong>Price</strong></div>
+            <div class="hd4 col bg-dark text-light" style="border: 1px solid #333"><strong>Quantity</strong></div>
+            <div class="hd5 col-3 bg-dark text-light" style="border: 1px solid #333"><strong>Cart</strong></div>
+        </div>
+
+        <div class="r2 row">
+            <div class="i1 col" id="i11" style="border: 1px solid #333"> 1</div>
+            <div class="i1 col" id="i12" style="border: 1px solid #333">Cheese </div>
+            <div class="i1 col" id="i13" style="border: 1px solid #333">100</div>
+            <div class="i1 col" id="i14" style="border: 1px solid #333">1</div>
+            <div class="b1 col-3" style="border: 1px solid #333">
+                <button class="btn btn-primary" type="submit" onclick="addi1()" >Add to cart</button>
+            </div>
+        </div>
+
+        <div class="r2 row">
+            <div class="i2 col" style="border: 1px solid #333"> 2</div>
+            <div class="i2 col" style="border: 1px solid #333">Pen</div>
+            <div class="i2 col" style="border: 1px solid #333">150</div>
+            <div class="i2 col" style="border: 1px solid #333">2</div>
+            <div class="b2 col-3" style="border: 1px solid #333">
+                <button class="btn btn-primary" type="submit" onclick="addi2()" >Add to cart</button>
+            </div>
+        </div>
+
+        <div class="r2 row">
+            <div class="i3 col" style="border: 1px solid #333"> 3</div>
+            <div class="i3 col" style="border: 1px solid #333">Butter</div>
+            <div class="i3 col" style="border: 1px solid #333">100</div>
+            <div class="i3 col" style="border: 1px solid #333">1</div>
+            <div class="b3 col-3" style="border: 1px solid #333">
+                <button class="btn btn-primary" type="submit" onclick="addi3()" >Add to cart</button>
+            </div>
+        </div>
+
+        <div class="r2 row">
+            <div class="i4 col" style="border: 1px solid #333"> 4</div>
+            <div class="i4 col" style="border: 1px solid #333">Pencil</div>
+            <div class="i4 col" style="border: 1px solid #333">10</div>
+            <div class="i4 col" style="border: 1px solid #333">1</div>
+            <div class="b4 col-3" style="border: 1px solid #333">
+                <button class="btn btn-primary" type="submit" onclick="addi4()" >Add to cart</button>
+            </div>
+        </div>
+
+
+        <div class="row m-5">
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit" onclick="Summary()" >Cart Summary</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var addObject = "";
+        function addi1()
+        {
+            var addObject = { 'id': 1, 'name': 'cheese', 'price': 100, 'quantity':1 };
+            localStorage.setItem('addObject', JSON.stringify(addObject));
+        }
+        function addi2()
+        {
+            var addObject = { 'id': 2, 'name': 'pen', 'price': 150, 'quantity':2 };
+            localStorage.setItem('addObject', JSON.stringify(addObject));
+        }
+        function addi3()
+        {
+            var addObject = { 'id': 3, 'name': 'butter', 'price': 100, 'quantity':1 };
+            localStorage.setItem('addObject', JSON.stringify(addObject));
+        }
+        function addi4()
+        {
+            var addObject = { 'id': 4, 'name': 'pencil', 'price': 10, 'quantity':1 };
+            localStorage.setItem('addObject', JSON.stringify(addObject));
+        }
+        
+        function Summary()
+        {
+            var retrievedObject = localStorage.getItem('addObject');
+
+        console.log('retrievedObject: ', JSON.parse(retrievedObject));
+        }
+    </script>
+
+</body>
+</html>

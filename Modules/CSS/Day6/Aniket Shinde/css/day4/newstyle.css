@@ -1,0 +1,31 @@
+
+#day4practice  h1 {
+    color: crimson;
+    text-align: center;
+  }
+  
+  #day4practice  p {
+    font-family: verdana;
+    font-size: 20px;
+    padding: 20px 20px 15px;
+  }
+  /* id selector */
+  #day4practice  #ul1{
+      text-decoration: cyan;
+  }
+
+  /* class selector */
+  #day4practice .licircle{
+        list-style-type: circle;
+  }
+  #day4practice .lisquare{
+    list-style-type: square;
+}
+
+/* pseudo classes
+first-child class */
+#day4practice .lisquare :first-child { color: darkcyan;  padding: 5px 5px 5px;}
+
+/*nth child class */
+#day4practice ul :nth-child(odd){ background-color : #d5c1ff}
+#day4practice ul :nth-child(even){ background-color : #ffffff}

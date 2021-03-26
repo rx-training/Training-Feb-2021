@@ -1,0 +1,6 @@
+Car sales business
+
+Tables
+MasterTable => ID, EID, SID, Description
+Employee => EID,Name, Contact, Email, Salary, Joining_Date 
+Sales => SID, EID, CarName, CarSalesAmount, Percentage, DeliveryDate

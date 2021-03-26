@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <title>EMPLOYEE REGESTRATION FORM</title>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style></style>
+</style>
+<script type="text/javascript">
+
+function validate()
+            {
+                flag=0;
+                errorMessage="";
+                var list=[];
+                    if(txtName.value=="")
+                    {
+                        flag=1;
+                        list.push("Name can not be blank");
+                    }
+                    if(txtAddress.value=="")
+                    {
+                        flag=1;
+                        list.push("Address can not be blank");
+                    }
+                    if(flag==1)
+                    {
+                        for(i=0;i<list.length;i++)
+                        {
+                            errorMessage+=list[i]+"</br>";
+                        }
+                        error.innerHTML=errorMessage;
+                    }
+            }
+</script>
+</head>
+<body>
+
+ <div style="width:100%; background-color:#ccc;height:500px;">
+<div  aling="center" class="regform"><h1> Employee Regestration form</h1></div>
+    <div class="mane">
+    <form>
+        <table>
+            <tr>
+                <td>
+                    Name:
+                </td>
+                <td>
+                <input onclick="validate(txtName,txtAddress,error)" type="text" list="mydatalist">
+                    <datalist id="mydatalist">
+                        <option label="Mr." value="Mr."></option>
+                        <option label="Mrs." value="Mrs."></option>
+                        <option label="Miss." value="Miss."></option>
+                    </datalist>
+                </td>
+                
+            </tr>
+            <tr>
+                <td>
+                    age:
+                </td>
+                <td>
+                    <input type="number" placeholder="Number" name="" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Gender:
+                </td>
+                <td>
+                    <input type="radio" name="Gender">Male
+                    <input type="radio" name="Gender">FeMale
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Desigination:
+                </td>
+                <td>
+                    <input type="text" placeholder="Desigination" name="" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Salary:
+                </td>
+                <td>
+                    <input type="number" placeholder="Salary" name="" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Location:
+                </td>
+                
+                <td>
+                    
+                    <select>
+                        <option></option>
+                        <option>DELHI</option>
+                        <option>HYDRABAD</option>
+                        <option>BANGLORE</option>
+                        <option>AHMEDABAD</option>
+                        <option>ORRISA</option>
+                        <option>CHANDIGARH</option>
+                        <option>GOA</option>
+                        <option>PUNE</option>
+                        <option>DELHI</option>
+                    </select>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email id:
+                </td>
+                <td>
+                    <input type="email" placeholder="example(abc.ek@yms.com)" name="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Date of joining:
+                </td>
+                <td>
+                    
+                    <input type="date" placeholder="dd/mm/yy">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Department:
+                </td>
+                <td>
+                    <input type="text" placeholder="Department" name="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Contact Number:
+                </td>
+                <td>
+                    <select>
+                        <option>+91</option>
+                        <option>+36</option>
+                        <option>+22</option>
+                        <option>+22</option>
+                        <option>+55</option>
+                        <option>+22</option>
+                        <option>+89</option>
+                        <option>+63</option>
+                    </select>
+                    <input type="number" placeholder="98568****" name="" required>
+                    <tr>
+                        <td>
+                            <input type="Submit" value="Submit" name="">
+                            <input type="Reset" value="Reset" name="">
+                        </td>
+                    </tr>
+                </td>
+            </tr>
+        </table>
+    </form>
+ 
+ </div>
+</body>
+</html>
+    

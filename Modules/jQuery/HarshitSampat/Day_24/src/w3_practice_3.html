@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .ancestors *{
+            display: block;
+            border: 2 px solid lightblue;
+            color: lightcyan;
+            padding: 5 px;
+            margin: 15px;
+
+        }
+    </style>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script >
+        $(document).ready(function(){
+
+            $("span").parentsUntil().css({"color": "green","border":"2px solid yellow"});
+        });
+    </script>
+    <title>w3-Practce-3</title>
+</head>
+<body class="ancestors">body(great-grand parent)
+    <div style="width:500px;">div (grat-graand parent)
+        <ul>ul(grand parent) 
+            <li>li(direct parent) 
+                <span></span>
+           </li>
+         </ul>
+                  
+</body>
+</html>

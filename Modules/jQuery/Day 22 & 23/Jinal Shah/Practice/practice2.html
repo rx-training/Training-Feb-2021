@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice 2</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+        div .a1 :hover{
+            color: red;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("div").hover(function(){
+                $("#helptxt").toggle();
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+    
+
+    <div class="card text-center col-md-6 border-light mb-3 p-5 mx-auto">
+        <div class="card-header bg-dark text-white">
+           <h5>There is one Hide/show the text inside the #helpText span element when the user’s mouse passes over the text “</h5>
+        </div>	
+        <div class="card-body">
+            <p class="text-muted">hover on below title</p>
+            <div class="a1" style="font-size: 30px;"> jQuery intro :</div><br>
+            <span id="helptxt">
+                jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.
+            </span>
+        </div>
+        
+    </div>	 
+
+</body>
+</html>

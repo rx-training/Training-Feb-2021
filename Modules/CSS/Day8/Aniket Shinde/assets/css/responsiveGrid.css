@@ -1,0 +1,98 @@
+.header{ 
+    grid-area: header;
+    padding: 5px;
+    height: 70px;
+    background-color: #840D59;
+    color: white;
+    font-size: 20px;
+}
+.menu{ 
+    grid-area: menu;
+    height: 300px;
+    background-color: violet;
+}
+.main{ 
+    grid-area: main;
+    height: 300px;
+    background-color: violet;
+}
+.side{ 
+    grid-area: side ;
+    height: 300px;
+    background-color: violet;
+}
+.footer{ 
+    grid-area: footer ;
+    background-color: #4F3C48;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 15px;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-areas: 'header header header header header header header'
+    'menu menu main main main side side'
+    'footer footer footer footer footer footer footer';
+    grid-gap: 10px;
+    padding: 10px;
+}
+.grid-container div{
+    font-size: 20px;
+}
+img{
+    height: 60px;
+    width: 60px;
+    float: left;
+    padding: 5px 5px 5px 10px;
+}
+.nav{
+    top: 0;
+}
+.nav ul li{
+    display: inline-block;
+    padding: 5px 25px 5px 25px;
+}
+.footer p{
+    text-align: center;
+    font-size: 15px;
+    width:100%;
+}
+.center{
+    text-align: center;
+}
+
+/* for tablets */
+@media only screen and (max-width: 1050px) {
+    .grid-container{
+        grid-template-areas: 'header header header header header header header'
+        'menu menu menu main main main main'
+        'side side side side side side side'
+        'footer footer footer footer footer footer footer';
+    }
+} 
+
+  /* for mobiles */
+@media only screen and (max-width: 694px) {
+    .grid-container{
+        grid-template-areas: 'header header header header header header header'
+        'menu menu menu menu menu menu menu'
+        'main main main main main main main'
+        'side side side side side side side'
+        'footer footer footer footer footer footer footer';
+    }
+    .nav ul{
+        display: flex;
+        width: 100%;
+        float: right;
+        flex-direction: column;
+    }
+    .nav ul li{
+        flex: 100%;
+        display: block;
+        padding: 5px 25px 5px 25px;
+    }
+    .header{
+        height: auto;
+    }
+}

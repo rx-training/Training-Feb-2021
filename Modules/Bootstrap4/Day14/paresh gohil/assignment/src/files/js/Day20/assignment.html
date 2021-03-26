@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../../css/style.css">
+        <title>Bootstrap 4</title>
+        <style>
+            .img-fluid{
+                margin-left: 170px; 
+                padding-top: 120px;
+            }
+            @media (max-width: 768px) { 
+                   .d-block{
+                    width: 90%;
+                    margin-bottom: 1100px;
+                }
+                .container1{
+                    display: block;
+                    width: 90%;
+                    margin-left: 30px;
+                }
+                .img-fluid{
+                    margin-left: 0px;
+                    margin-top: 0px;
+                }
+                .bg-dark1{
+                    margin-left: 400px;
+                    margin-top: 150px;
+                    width: 40%;
+                    padding-top: 20px;
+                }
+
+            }
+            
+        </style>
+
+<script type="text/javascript">
+    var count = 0;
+    var count1 = 0;
+    var count2 = 0;
+    var count3 = 0;
+    function getproduct(add){
+        
+        if(add == click1){
+        var a = document.getElementById("1").textContent;
+        var b = document.getElementById("2").textContent;
+        var c = document.getElementById("3").textContent;
+        var d = document.getElementById("4").textContent;
+        
+            if(count == 0){
+            
+            var product = [{ProductID : a,
+                            ProductName: b,
+                            Price: c,
+                            Quantity: d},];
+            var product1 = JSON.stringify(product);
+            localStorage.setItem("product1",product1);
+            count += 1;
+           }
+            else{
+                    count += 1;
+                    var h = parseInt(c)*count;
+                    var j = parseInt(d)*count;
+                    var product1 = [{ProductID: a, ProductName: b, Price: h, Quantity: j}];
+                    var product = JSON.stringify(product1);
+                    localStorage.setItem("product1",product);
+                             
+            }
+
+        }
+        else if(add == click2){
+        var a = document.getElementById("5").textContent;
+        var b = document.getElementById("6").textContent;
+        var c = document.getElementById("7").textContent;
+        var d = document.getElementById("8").textContent;
+        
+            if(count1 == 0){
+            
+            var product = [{ProductID : a,
+                            ProductName: b,
+                            Price: c,
+                            Quantity: d},];
+            var product2 = JSON.stringify(product);
+            localStorage.setItem("product2",product2);
+            count1 += 1;
+           }
+            else{
+                    count1 += 1;
+                    var h = parseInt(c)*count1;
+                    var j = parseInt(d)*count1;
+                    var product1 = [{ProductID: a, ProductName: b, Price: h, Quantity: j}];
+                    var product = JSON.stringify(product1);
+                    localStorage.setItem("product2",product);         
+            }
+
+        }
+        else if(add == click3){
+        var a = document.getElementById("9").textContent;
+        var b = document.getElementById("10").textContent;
+        var c = document.getElementById("11").textContent;
+        var d = document.getElementById("12").textContent;
+        
+            if(count2 == 0){
+            
+            var product = [{ProductID : a,
+                            ProductName: b,
+                            Price: c,
+                            Quantity: d},];
+            var product3 = JSON.stringify(product);
+            localStorage.setItem("product3",product3);
+            count2 += 1;
+           }
+            else{
+                    count2 += 1;
+                    var h = parseInt(c)*count2;
+                    var j = parseInt(d)*count2;
+                    var product1 = [{ProductID: a, ProductName: b, Price: h, Quantity: j}];
+                    var product = JSON.stringify(product1);
+                    localStorage.setItem("product3",product);         
+            }
+
+        }
+        else if(add == click4){
+        var a = document.getElementById("13").textContent;
+        var b = document.getElementById("14").textContent;
+        var c = document.getElementById("15").textContent;
+        var d = document.getElementById("16").textContent;
+        
+            if(count3 == 0){
+            
+            var product = [{ProductID : a,
+                            ProductName: b,
+                            Price: c,
+                            Quantity: d},];
+            var product4 = JSON.stringify(product);
+            localStorage.setItem("product4",product4);
+            count3 += 1;
+           }
+            else{
+                    count3 += 1;
+                    var h = parseInt(c)*count3;
+                    var j = parseInt(d)*count3;
+                    var product1 = [{ProductID: a, ProductName: b, Price: h, Quantity: j}];
+                    var product = JSON.stringify(product1);
+                    localStorage.setItem("product4",product);         
+            }
+        }
+        else{
+            console.log(localStorage.getItem("product1"));
+            console.log(localStorage.getItem("product2"));
+            console.log(localStorage.getItem("product3"));
+            console.log(localStorage.getItem("product4"));
+        }
+    }
+</script>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-0 navbar-dark bg-dark">
+            <div class="container">
+                <a href="#" class="navbar-brand">
+                    <img src="../../../img/pic.PNG" alt="Logo" width="50px" height="50px">
+                </a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <a href="../../../index.html" class="nav-link">Redmine-git</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../html/html.html" class="nav-link">Html</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../css/css.html" class="nav-link">Css</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../bootstrap/bootstrap.html" class="nav-link">Bootstrap</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../js.html" class="nav-link active">Javascript</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../jquery/jquery.html" class="nav-link">Jquery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Sql</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!------------------- sidebar ---------------------->
+
+        <div class="d-block ml-4 text-center text-white bg-dark" style="height: 1050px;">
+            <h4><strong>Javascript</strong></h4>
+            <hr class="bg-white">
+            <h5><b>Day 15</b></h5>
+            <a href="../Day15/assignment.html" class="btn bg-white py-0 my-2">Assignment</a>
+            <a href="../Day15/practice_exercise_1_2.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="../Day15/video_exercise.html" class="btn bg-white py-0">Video Exercise</a>
+
+            <hr class="bg-white mx-5">
+            <h5><b>Day 16</b></h5>
+            <a href="../Day16/assignment.html" class="btn bg-white py-0 my-2">Assignment</a>
+            <a href="../Day16/practice_exercise_1.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="../Day16/video_exercise.html" class="btn bg-white py-0">Video Exercise</a>
+
+            <hr class="bg-white px-2 mx-5">
+            <h5><b>Day 17</b></h5>
+            <a href="../Day17/assignment.html" class="btn bg-white py-0 my-2">Assignment</a>
+            <a href="../Day17/practice_exercise.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="../Day17/practice_exercise_2.html" class="btn bg-white py-0 mb-2">Exercise 2</a>
+            <a href="../Day17/video_exercise.html" class="btn bg-white py-0 mb-2">Video Exercise</a>
+
+            <hr class="bg-white px-2 mx-5">
+            <h5><b>Day 18</b></h5>
+            <a href="../Day18/assignment.html" class="btn bg-white py-0 my-2">Assignment</a>
+            <a href="../Day18/practice_exercise.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="../Day18/video_exercise.html" class="btn bg-white py-0">Video Exercise</a>
+
+            <hr class="bg-white px-2 mx-5">
+            <h5><b>Day 19</b></h5>
+            <a href="../Day19/practice_exercise.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="../Day19/video_exercise.html" class="btn bg-white py-0">Video Exercise</a>
+
+            <hr class="bg-white px-2 mx-5">
+            <h5><b>Day 20</b></h5>
+            <a href="./assignment.html" class="btn bg-white py-0 mb-2">Assignment</a>
+            <a href="./practice_exercise.html" class="btn bg-white py-0 mb-2">Exercise 1</a>
+            <a href="./video_exercise.html" class="btn bg-white py-0">Video Exercise</a>
+
+        </div>
+
+        <!------------------- content ----------------------->
+
+        <div class="container container1 bg-light" style="height: 400px; padding-top: 10px; margin-top: -1050px;">
+            <div class="container bg-light my-5">
+                <div class="row">
+                    <div class="col-2 border border-dark">ProductID</div>
+                    <div class="col-3 border border-dark">ProductName</div>
+                    <div class="col-2 border border-dark">Price</div>
+                    <div class="col-1 border border-dark">Quantity</div>
+                    <div class="col-3 border border-dark"></div>
+                    <div class="col-1 border border-dark"></div>
+                </div>
+                <div class="row" id="click1">
+                    <div class="col-2 border border-dark" id="1">1</div>
+                    <div class="col-3 border border-dark" id="2">Cheese</div>
+                    <div class="col-2 border border-dark" id="3">100</div>
+                    <div class="col-1 border border-dark" id="4">1</div>
+                    <div class="col-3 border border-dark"><input class="my-2 py-0" onclick="getproduct(click1)" type="button" value="Add to Cart"></div>
+                    <div class="col-1 border border-dark"></div>
+                </div>
+                <div class="row" id="click2">
+                    <div class="col-2 border border-dark" id="5">2</div>
+                    <div class="col-3 border border-dark" id="6">Pen</div>
+                    <div class="col-2 border border-dark" id="7">150</div>
+                    <div class="col-1 border border-dark" id="8">2</div>
+                    <div class="col-3 border border-dark"><input class="my-2 py-0" onclick="getproduct(click2)" type="button" value="Add to Cart"></div>
+                    <div class="col-1 border border-dark"></div>
+                </div>
+                <div class="row" id="click3">
+                    <div class="col-2 border border-dark" id="9">3</div>
+                    <div class="col-3 border border-dark" id="10">Butter</div>
+                    <div class="col-2 border border-dark" id="11">100</div>
+                    <div class="col-1 border border-dark" id="12">1</div>
+                    <div class="col-3 border border-dark"><input class="my-2 py-0" onclick="getproduct(click3)" type="button" value="Add to Cart"></div>
+                    <div class="col-1 border border-dark"></div>
+                </div>
+                <div class="row" id="click4">
+                    <div class="col-2 border border-dark" id="13">4</div>
+                    <div class="col-3 border border-dark" id="14">Pencil</div>
+                    <div class="col-2 border border-dark" id="15">10</div>
+                    <div class="col-1 border border-dark" id="16">1</div>
+                    <div class="col-3 border border-dark"><input class="my-2 py-0" onclick="getproduct(click4)" type="button" value="Add to Cart"></div>
+                    <div class="col-1 border border-dark"></div>
+                </div>
+            </div>
+        
+            <div class="container bg-dark text-center" id="click5">
+                <input type="button" class="my-3 py-2" onclick="getproduct(click5)" value="Summary">
+            </div>
+        </div>
+
+        <script src="../../../js/jquery.min.js"></script>
+        <script src="../../../js/popper.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+    </body>
+</html>

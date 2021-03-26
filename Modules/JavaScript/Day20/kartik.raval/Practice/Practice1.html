@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <script type="text/javascript"> 
+        
+        async function getProduct(file){
+            let myObject = await fetch(file);
+            console.log(myObject);
+
+            let myProducts = await myObject.json();
+            console.log(myProducts);
+        } 
+        
+        function storeLocalStorage(){
+            Products = [{"Name":"Cheese","Price":2.50,"Location":"Refrigerated foods"},
+                        {"Name":"Crisps","Price":3,"Location":"The Snack isle"},
+                        {"Name":"Pizza","Price":1.50,"Location":"Home Baking"},
+                        {"Name":"Chocolate","Price":1.50,"Location":"The Snack isle"},
+                        {"Name":"Self raising flour","Price":1.50,"Location":"Home Baking"},
+                        {"Name":"Ground almonds","Price":3,"Location":"Home Baking"}];
+            ProductList = JSON.stringify(Products);
+            console.log("Products : " + ProductList);
+            localStorage.setItem("ProductList",ProductList);
+            //getProduct("Product.json");
+        } 
+        function GetProducts(){
+            var ProductList = localStorage.getItem("ProductList");
+            console.log("ProductList");
+            var PList = JSON.parse(ProductList);
+            var trow = "<tr><th>ProductName</th><th>Price</th></tr>";
+            for(var item of PList){
+                trow += "<tr><td>" + item.Name + "</td><td>" + item.Price + "</td></tr>";
+                console.log(item.Name + " " + item.Price);
+            }
+            document.getElementById("result").innerHTML = trow;
+        }
+        </script>
+    <body onload="storeLocalStorage()">
+        <input type="button" onclick="GetProducts()" value="Get Product">
+        <table id="result"> 
+
+        </table>
+    </body>
+</html>
