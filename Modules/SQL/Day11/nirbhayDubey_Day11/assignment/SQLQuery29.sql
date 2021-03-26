@@ -22,22 +22,29 @@ GO
 --Q2: Create a Store Procedure which will accept name of the customer as input parameter and produce the following output 
 --List in JSON format, All the Depositors Having Deposit in All the Branches where input parameter customer is Having an Account
 
-
-	SELECT * FROM Deposit d1
+CREATE OR ALTER PROC spDepositorsHavingDepositInAllBranch
+@Cname varchar(19)
+AS
+BEGIN
+	WITH CustomersBranch(Bname) AS
+	(
+		SELECT d5.Bname FROM Deposit d5 WHERE d5.Cname=@Cname
+		UNION 
+		SELECT b4.Bname FROM Borrow b4 WHERE b4.Cname=@Cname
+	)
+	SELECT DISTINCT(Cname) FROM Deposit d1
 	WHERE 'YES'= (SELECT
 						CASE
-							WHEN COUNT(Tab1.Bname)=(SELECT COUNT(DISTINCT d2.Bname) FROM Deposit d2 WHERE d2.Cname=d1.Cname) AND
-								 COUNT(Tab1.Bname)=(SELECT COUNT(DISTINCT Tb1.Bname) FROM (SELECT d3.Bname FROM Deposit d3 WHERE d3.Cname='MEHUL' UNION 
-														  SELECT b3.Bname FROM Borrow b3 WHERE b3.Cname='MEHUL') AS Tb1)
-							THEN 'YES'
+							WHEN COUNT(Tab1.Bname)=(SELECT COUNT(DISTINCT Bname) FROM CustomersBranch) THEN 'YES'
 							ELSE 'NO'
 						END
-				FROM
-					((SELECT d4.Bname FROM Deposit d4 WHERE d4.Cname=d1.Cname)
-						INTERSECT
-					 (SELECT d5.Bname FROM Deposit d5 WHERE d5.Cname='MEHUL'
-						UNION 
-					  SELECT b4.Bname FROM Borrow b4 WHERE b4.Cname='MEHUL')) AS Tab1);
+					FROM (SELECT d4.Bname FROM Deposit d4 WHERE d4.Cname=d1.Cname
+							INTERSECT
+						  SELECT Bname FROM CustomersBranch) AS Tab1);
+END
+
+EXEC spDepositorsHavingDepositInAllBranch @Cname='MEHUL';
+GO
 
 --Q3: Create a Store Procedure that will accept city name and returns the number of customers in that city.
 
