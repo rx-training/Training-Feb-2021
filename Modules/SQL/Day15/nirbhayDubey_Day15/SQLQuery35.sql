@@ -1,3 +1,6 @@
+USE AssignmentDay38;
+GO
+
 --DIRTY READ POBLEM IN PROCEDURE 'spCheckBalance' OF 'SQLQuery36.sql' FILE
 
 CREATE OR ALTER PROC spMoneyTransfer

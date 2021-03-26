@@ -142,11 +142,6 @@ WHERE
 						);
 GO
 
---SELECT * FROM Dealer.Sales WHERE SaleDate BETWEEN '2020-03-01' AND '2020-03-31';
-SELECT * 
-FROM Dealer.Sales 
-WHERE SaleDate BETWEEN '2020-03-01' AND '2020-03-31';
-
 /*16. Calculate the payroll for the month of March 2010.
 	* The payroll consists of the name, salesperson ID, and gross pay for each salesperson who worked that month.
         * The gross pay is calculated as the base salary at each dealership employing the salesperson that month, along with the total commission for the salesperson that month.

@@ -14,6 +14,8 @@ CREATE TABLE Students(
 );
 GO
 
+----5 Students Name, Address, City, DOB, Standard need to be inserted in the student table, need to fetch these result from json variable. 
+--and select output in the json format
 DECLARE @Stu NVARCHAR(MAX);
 SET @Stu = N'[
 	{"Name":"Nirbhay Dubey", "Address":"ABC DEF", "City":"Ahmedabad", "DOB":"1999-04-04", "Standard":12},
@@ -36,6 +38,11 @@ GO
 SELECT * FROM Students FOR JSON AUTO;
 GO
 
+
+
+
+
+
 --METHOD 2
 DROP TABLE Students;
 GO
@@ -46,6 +53,8 @@ CREATE TABLE Students(
 );
 GO
 
+--5 Students Name, Address, City, DOB, Standard need to be inserted in the student table, need to fetch these result from json variable. 
+--and select output in the json format
 INSERT INTO Students(StudentDetails)
 VALUES('{"Name":"Nirbhay Dubey", "Address":"ABC DEF", "City":"Ahmedabad", "DOB":"1999-04-04", "Standard":12}'),
 	  ('{"Name":"Rahul Suthar", "Address":"GHI JLK", "City":"Ahmedabad", "DOB":"1998-09-13", "Standard":12}'),

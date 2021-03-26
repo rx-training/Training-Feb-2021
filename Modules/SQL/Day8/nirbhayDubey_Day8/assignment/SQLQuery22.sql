@@ -1,6 +1,9 @@
 CREATE DATABASE AssignmentDay32;
 GO
 
+USE AssignmentDay32;
+GO
+
 --EXAMPLE 1
 CREATE TABLE PlanetsID(
 	ID int NOT NULL,

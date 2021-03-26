@@ -1,3 +1,6 @@
+USE AssignmentDay35;
+GO
+
 --Q1: Create a Store Procedure which will accept name of the customer as input parameter and product the following output, 
 --List Names of Customers who are Depositors and have Same Branch City as that of input parameter customer�s Name.
 
