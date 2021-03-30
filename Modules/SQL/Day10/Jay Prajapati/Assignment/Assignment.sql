@@ -17,13 +17,13 @@ DECLARE UpdateSalary CURSOR FOR
 SELECT EmployeeID,FirstName,Salary FROM Employees
 
 OPEN UpdateSalary
-	
+	FETCH NEXT FROM UpdateSalary INTO @EmpID,@Name,@Salary
 WHILE (@@FETCH_STATUS = 0)
 BEGIN 
 	FETCH NEXT FROM UpdateSalary INTO @EmpID,@Name,@Salary
 	IF(@Salary BETWEEN 30000 AND 40000)
 		UPDATE Employees
-		SET Salary = 50000
+		SET Salary = 5000
 		WHERE EmployeeID = @EmpID
 	IF(@Salary BETWEEN 40000 AND 55000)
 	UPDATE Employees
