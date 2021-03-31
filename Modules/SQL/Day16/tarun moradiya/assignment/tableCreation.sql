@@ -1,4 +1,10 @@
----------------------------Database Table Creation--------------------------------
+---------------------------Database Creation--------------------------------
+
+CREATE DATABASE RxTraining
+GO
+
+USE RxTraining
+GO
 
 --------------------------SCHECMAS---------------------------------
 CREATE SCHEMA Departments
@@ -23,7 +29,7 @@ GO
 
 CREATE TABLE Employees.Positions (
 	PositionID int CONSTRAINT PK_Positions_PositionID PRIMARY KEY IDENTITY(1, 1),
-	PositionName nvarchar(40) NOT NULL CONSTRAINT CHK_Employees_Position CHECK( PositionName IN ('Trainee', 'Trainer', 'admin'))
+	PositionName nvarchar(40) NOT NULL 
 )
 GO
 
@@ -73,7 +79,7 @@ CREATE TABLE Contents.ContentTypes (
 GO
 
 CREATE TABLE Contents.Topics (
-	TopicID int NOT NULL CONSTRAINT PK_Topics_TopicID PRIMARY KEY,
+	TopicID int NOT NULL CONSTRAINT PK_Topics_TopicID PRIMARY KEY IDENTITY(1, 1),
 	TopicName nvarchar(40),
 	ContentTypeID int NOT NULL CONSTRAINT FK_Topics_ContentTypeID FOREIGN KEY REFERENCES Contents.ContentTypes(ContentTypeID),
 	TechnologyID int NOT NULL CONSTRAINT FK_Topics_TechnologyID FOREIGN KEY REFERENCES Technologies.Technologies(TechnologyID), 
