@@ -60,6 +60,7 @@ EXECUTE Sales.uspGetEmployeeSalesYTD
 -- Display the value returned by the procedure.  
 PRINT 'Year-to-date sales for this employee is ' +   
     convert(varchar(10),@SalesYTDBySalesPerson);  
-GO
+
+Go
 
 -------------------------------------------------------------------------------------------------------------------------------
