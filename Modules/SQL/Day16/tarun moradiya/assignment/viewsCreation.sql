@@ -42,7 +42,7 @@ CREATE VIEW Contents.vContents
 AS
 	SELECT T.TopicID 
 		, T.TopicName
-		, CT.ContentTypeID
+		, CT.ContentType
 		, C.ContentName
 		, C.ContentUrl
 		, TC.TechnologyName
@@ -54,4 +54,32 @@ AS
 	ON TC.TechnologyID = T.TechnologyID
 GO
 
+CREATE VIEW Departments.vDepartmentContents
+AS
+	SELECT T.TechnologyID
+		, T.TechnologyName
+		, TP.TechnologyType
+		, D.DepartmentName
+		, CT.TopicName
+		, C.ContentName
+		, C.ContentUrl
+		, CP.ContentType
+	FROM Technologies.Technologies T JOIN Technologies.TechnologyTypes TP
+	ON T.TechnologyTypeID = TP.TechnologyTypeID
+	JOIN Departments.DepartmentTechnologies DT
+	ON DT.TechnologyID = T.TechnologyID
+	JOIN Departments.Departments D
+	ON DT.DepartmentID = D.DepartmentID
+	JOIN Contents.Topics CT
+	ON CT.TechnologyID = T.TechnologyID
+	JOIN Contents.Contents C
+	ON C.TopicID = CT.TopicID
+	JOIN Contents.ContentTypes CP
+	ON CP.ContentTypeID = CT.ContentTypeID
+
+GO
  
+ SELECT * FROM Employees.vEmployees
+ SELECT * FROM Technologies.vTechnologies
+ SELECT * FROM Contents.vContents
+ SELECT * FROM Departments.vDepartmentContents

@@ -282,22 +282,22 @@ EXEC Departments.uspAddContents
 PRINT @out
 GO
 
-select * from Contents.Contents
+SELECT * FROM Contents.Contents
 
-select * from Contents.ContentTypes
+SELECT * FROM Contents.ContentTypes
 
-select * from Contents.Topics
+SELECT * FROM Contents.Topics
 
-select * from Departments.Departments
+SELECT * FROM Departments.Departments
 
-select * from Departments.DepartmentTechnologies
+SELECT * FROM Departments.DepartmentTechnologies
 
-select * from Employees.Employees
+SELECT * FROM Employees.Employees
 
-select * from Employees.Positions
+SELECT * FROM Employees.Positions
 
-select * from Employees.Users
+SELECT * FROM Employees.Users
 
-select * from Technologies.Technologies
+SELECT * FROM Technologies.Technologies
 
-select * from Technologies.TechnologyTypes
+SELECT * FROM Technologies.TechnologyTypes
