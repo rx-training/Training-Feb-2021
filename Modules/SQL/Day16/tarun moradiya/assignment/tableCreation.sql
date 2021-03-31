@@ -76,7 +76,7 @@ CREATE TABLE Contents.Topics (
 	TopicID int NOT NULL CONSTRAINT PK_Topics_TopicID PRIMARY KEY,
 	TopicName nvarchar(40),
 	ContentTypeID int NOT NULL CONSTRAINT FK_Topics_ContentTypeID FOREIGN KEY REFERENCES Contents.ContentTypes(ContentTypeID),
-	DepartmentID int NOT NULL CONSTRAINT FK_Topics_DepartmentID FOREIGN KEY REFERENCES Departments.Departments(DepartmentID) 
+	TechnologyID int NOT NULL CONSTRAINT FK_Topics_TechnologyID FOREIGN KEY REFERENCES Technologies.Technologies(TechnologyID), 
 )
 GO
 
