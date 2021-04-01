@@ -165,3 +165,35 @@ BEGIN
     END CATCH
 END
 GO
+
+CREATE PROCEDURE Employees.udpCheckPassword
+	@pUserName NVARCHAR(50),
+	@pPassword NVARCHAR(50),
+	@pOut NVARCHAR(10) OUTPUT,
+	@responseMessage NVARCHAR(50) OUTPUT	
+AS
+BEGIN
+	BEGIN TRY
+		DECLARE @Password binary(64)
+			, @salt nvarchar(36)
+			, @CheckPass binary(64)
+
+		SELECT @Password = PasswordHash, @salt = Salt FROM Employees.Users WHERE UserName = @pUserName
+
+		SET @CheckPass = HASHBYTES('SHA2_512', @pPassword+@salt)
+
+		IF @CheckPass = @Password
+			SET @pOut = 'Valid'
+		ELSE
+			SET @pOut = 'Invalid'
+			
+
+		SET @responseMessage = 'Success'
+	END TRY
+
+	BEGIN CATCH
+		SET @responseMessage = ERROR_MESSAGE()
+	END CATCH
+END
+GO
+
