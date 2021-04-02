@@ -249,6 +249,19 @@ EXEC Departments.uspAddContents
 	@pTopic = 'Introduction',
 	@pContentType = 'Video',
 	@pContentName = 'intro',
+	@pContentUrl = 'https://tutorials.rxtrainees.radixweb.net/wp-content/uploads/2021/01/01_01-Introduction.mp4',
+	@pTechnologyName = 'HTML',
+	@responseMessage = @out  OUTPUT
+
+PRINT @out
+GO
+
+DECLARE @out nvarchar(50)
+
+EXEC Departments.uspAddContents
+	@pTopic = 'Introduction',
+	@pContentType = 'Video',
+	@pContentName = 'intro',
 	@pContentUrl = 'https://tutorials.rxtrainees.radixweb.net/wp-content/uploads/2021/01/01_01-Introduction-2.mp4',
 	@pTechnologyName = 'CSS',
 	@responseMessage = @out  OUTPUT
@@ -294,50 +307,6 @@ EXEC Departments.uspAddContents
 
 PRINT @out
 GO
-
----------------------------CHECK FOR VALID USER DATA
-
-DECLARE @out nvarchar(50)
-	, @response nvarchar(50)
-
-EXEC Employees.udpCheckPassword
-	@pUserName = 'TarunMoradiya',
-	@pPassword = 'tarun123',
-	@pOut = @out OUTPUT,
-	@responseMessage = @response OUTPUT
-
-PRINT 'Username or Password is ' + @out
-PRINT 'ResponseMessage: ' + @response
-GO
-
------------------------------CHECK FOR INVALID USER DATA
-
-DECLARE @out nvarchar(50)
-	, @response nvarchar(50)
-
-EXEC Employees.udpCheckPassword
-	@pUserName = 'TarunMoradiya1',
-	@pPassword = 'tarun123',
-	@pOut = @out OUTPUT,
-	@responseMessage = @response OUTPUT
-
-PRINT 'Username or Password is ' + @out
-PRINT 'ResponseMessage: ' + @response
-GO
-
-DECLARE @out nvarchar(50)
-	, @response nvarchar(50)
-
-EXEC Employees.udpCheckPassword
-	@pUserName = 'TarunMoradiya',
-	@pPassword = 'tarun124',
-	@pOut = @out OUTPUT,
-	@responseMessage = @response OUTPUT
-
-PRINT 'Username or Password is ' + @out
-PRINT 'ResponseMessage: ' + @response
-GO
-
 
 
 ------------------------SHOW TABLES

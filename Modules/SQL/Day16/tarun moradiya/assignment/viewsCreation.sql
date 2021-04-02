@@ -83,3 +83,8 @@ GO
  SELECT * FROM Technologies.vTechnologies
  SELECT * FROM Contents.vContents
  SELECT * FROM Departments.vDepartmentContents
+ 
+ SELECT * FROM Departments.vDepartmentContents 
+ WHERE ContentType = 'Video' 
+ AND TechnologyName = 'HTML' 
+ AND DepartmentName = 'NodeJS'
