@@ -61,7 +61,7 @@ GO
 CREATE TABLE Technologies.Technologies (
 	TechnologyID int NOT NULL CONSTRAINT PK_Technologies_TechnologyID PRIMARY KEY IDENTITY(1, 1),
 	TechnologyTypeID int NOT NULL CONSTRAINT FK_Technologies_TechnologyTypeID FOREIGN KEY REFERENCES Technologies.TechnologyTypes(TechnologyTypeID),
-	TechnologyName nvarchar(40) 
+	TechnologyName nvarchar(40) CONSTRAINT UK_Technologies_TechnologyName UNIQUE
 )
 GO
 

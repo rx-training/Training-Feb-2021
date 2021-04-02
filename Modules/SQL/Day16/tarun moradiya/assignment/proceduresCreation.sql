@@ -139,7 +139,12 @@ BEGIN
 		FROM Contents.ContentTypes
 		WHERE ContentType = @pContentType
 
-		IF NOT EXISTS (SELECT TopicName FROM Contents.Topics WHERE TopicName = @pTopic)
+		IF NOT EXISTS (SELECT TopicName 
+			FROM Contents.Topics 
+			WHERE TopicName = @pTopic
+			AND ContentTypeID = @ContentTypeID
+			AND TechnologyID = @TechnologyID
+			)
 		BEGIN
 			INSERT INTO Contents.Topics (TopicName, ContentTypeID, TechnologyID)
 			VALUES (@pTopic, @ContentTypeID, @TechnologyID)

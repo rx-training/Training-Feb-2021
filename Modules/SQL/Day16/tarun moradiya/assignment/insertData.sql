@@ -249,8 +249,21 @@ EXEC Departments.uspAddContents
 	@pTopic = 'Introduction',
 	@pContentType = 'Video',
 	@pContentName = 'intro',
-	@pContentUrl = 'https://tutorials.rxtrainees.radixweb.net/wp-content/uploads/2021/01/01_01-Introduction.mp4',
-	@pTechnologyName = 'HTML',
+	@pContentUrl = 'https://tutorials.rxtrainees.radixweb.net/wp-content/uploads/2021/01/01_01-Introduction-2.mp4',
+	@pTechnologyName = 'CSS',
+	@responseMessage = @out  OUTPUT
+
+PRINT @out
+GO
+
+DECLARE @out nvarchar(50)
+
+EXEC Departments.uspAddContents
+	@pTopic = 'Introduction',
+	@pContentType = 'PPT',
+	@pContentName = 'intro',
+	@pContentUrl = 'https://docs.google.com/presentation/d/e/2PACX-1vS0BoEFyO-YqaanAHXwFYtUxtm94SMi8TV9Tg_dLs3J7lA-90EEVzzjX3N2apc2yA/embed?start=false&loop=false&delayms=3000&slide=id.p2',
+	@pTechnologyName = 'CSS',
 	@responseMessage = @out  OUTPUT
 
 PRINT @out
