@@ -41,10 +41,26 @@ END
 ------------------------PRINT------------------------
 
 DECLARE @EARNING INT
-DECLARE @MSG VARCHAR(10) = 'MonthlyEarning'
+DECLARE @MSG VARCHAR(20) = 'MonthlyEarning : '
 SET @EARNING = HumanResources.pf1(7000)
 PRINT @MSG
 PRINT @EARNING
+
+
+--------------------------SELF STUDY--------------------------
+
+CREATE FUNCTION HumanResources.FULLNAME1(@FNAME VARCHAR(10),@SNAME VARCHAR(10))
+RETURNS VARCHAR(10)
+AS
+BEGIN 
+	DECLARE @CC VARCHAR(20)
+	SET @CC=@FNAME+' '+@SNAME
+	RETURN(@CC)
+END
+
+DECLARE @NAME VARCHAR(10)
+SET @NAME = HumanResources.FULLNAME1('ZEEL','MEHTA')
+PRINT @NAME
 
 
 

@@ -1,8 +1,8 @@
 // Main Sass File
-$bg-color:rgb(0, 0, 0);
+$bg-color:#f6f5f5;
 $font-color:black;
-$primary-color: rgb(0, 58, 204);
-$dark-overlay:rgba(0,0,0,0.7);
+$primary-color: #ee6f57;
+
 $icon-size:30px;
 
 body
@@ -12,30 +12,29 @@ body
 }
 .navbar
 {
-    border-bottom:$primary-color 3px solid;
-    opacity: 0.8;
+    border-bottom:#161d6f 3px solid;
+    background-color:#161d6f;
     
-    .nav-item
+    .nav-item .nav-link 
     {
         font-size: 1.4rem;
         padding-right: 20px;
+        color:black;
     }
+    .navbar:hover .nav-item:hover .nav-link:hover{
+        font-size: 1.4rem;
+        padding-right: 20px;
+        color:white;
+        
+      }
 }
 #home-section
 {
     background:url('../img/radix.jpg') no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    min-height: 700px;
-    .dark-overlay
-    {
-        background-color: $dark-overlay;
-        position:absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        min-height: 700px;
-    }
+    
+    
     .home-inner
     {
         padding-top: 80px;
@@ -51,7 +50,7 @@ body
     }
     .sidenav .a:hover
     {
-        background: $primary-color;
+        background-color: #fcbf1e;
         color: #fff; 
     }
 } 

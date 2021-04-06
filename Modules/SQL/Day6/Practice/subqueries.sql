@@ -81,12 +81,12 @@ GO
 --12. Write a query to find the names (first_name, last_name) of the employees who are not supervisors.
 SELECT CONCAT(FirstName,' ',LastName) AS NAMES , Salary,JobId
 FROM Employees
-WHERE Salary > (SELECT * FROM Employees WHERE JobId='Supervisors')
+WHERE JobId != 'IT_PROG'
 GO
 
 --13. Write a query to display the employee ID, first name, last names, and department names of all employees. 
 SELECT EmployeeID, FirstName, LastName, (SELECT DepartmentName FROM Departments D
-WHERE E.DepartmentID = D.DepartmentID) FROM Employees E;
+WHERE E.DepartmentID = D.DepartmentID) AS DepartmentName FROM Employees E;
 GO
 
 --14. Write a query to display the employee ID, first name, last names, salary of all employees whose salary is above average 
@@ -113,19 +113,32 @@ Employees WHERE RANK=4
 GO
 
 --18. Write a query to select last 10 records from a table. 
+SELECT * FROM (
+SELECT TOP(10) * FROM Employees ORDER BY EmployeeID DESC)v1 
+ORDER BY EmployeeID ASC
+GO
 
---19. Write a query to list department number, name for all the departments in which there are no employees in the department. 
+--19. Write a query to list department number, name for all the departments in which there are no employees 
+--in the department. 
+SELECT DepartmentID,DepartmentName FROM Departments
 
---20. Write a query to get 3 maximum salaries. 
+--20. Writea query to get 3 maximum salaries. 
 SELECT * FROM
 (SELECT  EmployeeID, FirstName,LastName, Salary, ROW_NUMBER() OVER (ORDER BY SALARY DESC)RANK FROM Employees) 
-Employees
+Employees WHERE RANK<=3
 GO
 
 --21. Write a query to get 3 minimum salaries. 
+SELECT * FROM
+(SELECT  EmployeeID, FirstName,LastName, Salary, ROW_NUMBER() OVER (ORDER BY SALARY ASC)RANK FROM Employees) 
+Employees WHERE RANK<=3
+GO
 
 --22. Write a query to get nth max salaries of employees. 
-
+SELECT * FROM
+(SELECT TOP(10)  EmployeeID, FirstName,LastName, Salary, ROW_NUMBER() OVER (ORDER BY SALARY DESC)RANK FROM Employees) 
+Employees
+GO
 
 
 

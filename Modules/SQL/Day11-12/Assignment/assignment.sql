@@ -101,28 +101,67 @@ GO
 SELECT * FROM BORROW
 GO
 
-
-CREATE PROCEDURE PROCUSTOMER1 @CNAME VARCHAR(19) = 'NAREN'
+/*Q1: Create a Store Procedure which will accept name of the customer as input parameter and product the following output, List Names of 
+Customers who are Depositors and have Same Branch City as that of input parameter customer’s Name.*/
+CREATE OR ALTER PROCEDURE PROCUSTOMER1 @CNAME VARCHAR(19) 
 AS
 SELECT D.CNAME,C.CITY FROM DEPOSIT D JOIN CUSTOMER C ON D.CNAME=C.CNAME
 WHERE C.CITY =
 (SELECT CITY FROM CUSTOMER WHERE CNAME=@CNAME)
 GO
 
-EXEC PROCUSTOMER1
+EXEC PROCUSTOMER1 @CNAME ='NAREN'
 GO
 
-CREATE PROCEDURE PROCUSTOMER3 @CITY VARCHAR(19) = 'MUMBAI'
+
+/*Q2: Create a Store Procedure which will accept name of the customer as input parameter and produce the following output List in JSON 
+format, All the Depositors Having Depositors Having Deposit in All the Branches where input parameter customer is Having an Account*/
+CREATE OR ALTER PROCEDURE PROCUSTOMER2 @CNAME VARCHAR(19), @DATA NVARCHAR(MAX) OUTPUT
+AS
+SET @DATA = (SELECT CNAME FROM DEPOSIT WHERE BNAME IN 
+			(SELECT DISTINCT BNAME FROM DEPOSIT WHERE CNAME=@CNAME)
+			GROUP BY CNAME HAVING COUNT(*) = 
+			(SELECT COUNT(BNAME) FROM DEPOSIT WHERE  CNAME=@CNAME)
+			FOR JSON PATH, ROOT('DEPOSITS'))
+			SELECT @DATA
+GO
+
+EXEC PROCUSTOMER2 @CNAME= 'SHIVANI' ,@DATA=OUTPUT
+GO
+
+
+/*Q3: Create a Store Procedure that will accept city name and returns the number of customers in that city.*/
+CREATE OR ALTER PROCEDURE PROCUSTOMER3 @CITY VARCHAR(19)
 AS
 SELECT COUNT(CITY) FROM CUSTOMER WHERE CITY=@CITY
 GO
 
-EXEC PROCUSTOMER3
+EXEC PROCUSTOMER3 @CITY=  'MUMBAI'
 GO
 
 
-SELECT COUNT(C.CITY) FROM BRANCH B JOIN CUSTOMER C ON B.CITY=C.CITY
-GROUP BY B.CITY HAVING 
+/*Q4: Create a Store Procedure which will accept city of the customer as input parameter and product the following output List in JSON 
+format List All the Customers Living in city provided in input parameter and Having the Branch City as MUMBAI or DELHI*/
+CREATE OR ALTER PROCEDURE PROCUSTOMER4 @CITY VARCHAR(18), @OUTPUT NVARCHAR(MAX) OUTPUT
+AS
+SET @OUTPUT=(SELECT * FROM (SELECT C.* FROM CUSTOMER C JOIN DEPOSIT D ON C.CNAME=D.CNAME WHERE CITY=@CITY AND D.BNAME IN
+			(SELECT BNAME FROM BRANCH WHERE CITY IN ('MUMBAI','DELHI'))) AS X
+			FOR JSON PATH)
+			SELECT @OUTPUT AS 'OUTPUT'
+GO
+EXEC PROCUSTOMER4 @CITY='MUMBAI', @OUTPUT=OUTPUT
+GO
+
+/*Q5: Count the Number of Customers Living in the City where Branch is Located*/
+CREATE PROCEDURE PROCUSTOMER5 @CITY VARCHAR(19) = 'MUMBAI'
+AS
+SELECT COUNT(C.CITY) FROM CUSTOMER C JOIN BRANCH B ON C.CITY=B.CITY 
+GROUP BY C.CITY HAVING C.CITY=B.BNAME
+GO
+
+SELECT COUNT(C.CITY) FROM BRANCH B  RIGHT JOIN CUSTOMER C ON B.CITY=C.CITY
+WHERE B.BNAME IN ( SELECT BNAME FROM BRANCH GROUP BY BNAME)
+GROUP BY C.CITY
 GO
 
 --EXEC PROCUSTOMER5
@@ -130,4 +169,46 @@ GO
 
 DROP PROCEDURE PROCUSTOMER5
 GO
+/*Q6: Create a Procedure which will accept input in JSON parameter CustomerName,City, ACTNO,Branch,amount  
+And insert these record in the Deposit table. Before inserting some validation should be done like amount should be greater than 10Rs. 
+and date should always be current date.*/
 
+CREATE OR ALTER PROCEDURE ex6
+	@json nvarchar(MAX)
+AS
+	SET NOCOUNT ON
+
+	IF (SELECT AMOUNT FROM OPENJSON(@json) WITH (AMOUNT int '$.AMOUNT')) <= 10
+	BEGIN
+		SELECT 'INVALID AMOUNT' AS Error
+		RETURN
+	END
+
+	INSERT INTO CUSTOMER(CNAME, CITY)  
+		(SELECT CNAME, CITY FROM 
+			OPENJSON(@json) WITH (
+			CNAME varchar(19) '$.CNAME',
+			CITY varchar(18) '$.CITY'))
+
+	INSERT INTO DEPOSIT(ACTNO, CNAME, BNAME, AMOUNT, ADATE)  
+		(SELECT ACTNO, CNAME, BNAME, AMOUNT, GETDATE() AS ADATE FROM 
+			OPENJSON(@json) WITH (
+			AMOUNT int '$.AMOUNT',
+			ACTNO varchar(5) '$.ACTNO',
+			CNAME varchar(19) '$.CNAME',
+			BNAME varchar(18) '$.BNAME'))
+
+	SET NOCOUNT OFF
+GO
+
+EXEC ex6 @json = N'{
+	"ACTNO":"110",
+	"CNAME":"ZEEL",
+	"BNAME":"AJNI",
+	"CITY":"MUMBAI",
+	"AMOUNT":500
+	}'
+GO
+
+SELECT * FROM Deposit WHERE BNAME IN (SELECT BNAME FROM Branch WHERE CITY IN 
+(SELECT B.CITY FROM Deposit D JOIN Branch B ON B.BNAME = D.BNAME WHERE D.CNAME = 'SUNIL'))
