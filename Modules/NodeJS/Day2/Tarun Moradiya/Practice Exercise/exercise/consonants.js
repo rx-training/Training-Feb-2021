@@ -14,9 +14,7 @@ fs.readFile(path.join(__dirname, 'address.txt'), 'utf8', (err, data) => {
         console.error(err)
         return
     } else {
-        let count = 0
-
-        count = data.match(/[b-df-hj-np-tv-z]/gi).length
+        let count = data.match(/[b-df-hj-np-tv-z]/gi).length
         console.log(`The number of Consonants in the file is: ${count}`)
     }
 })
