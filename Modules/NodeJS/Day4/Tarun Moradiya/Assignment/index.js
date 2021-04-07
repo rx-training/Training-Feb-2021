@@ -54,8 +54,15 @@ const server = http.createServer((req, res) => {
     else if(myUrl.pathname == '/upload') {
         fs.readFile('files/index.html', 'utf8', (err, data) => {
             if(err) {
-                console.log('Error', err)
+                console.error('Error', err)
+                res.end('Error: ', err)
             } else {
+                fs.writeFile('upload/myFile.html', data, (err) => {
+                    if (err) {
+                        console.error('Error', err)
+                        res.end('Error: ', err)
+                    }
+                })
                 res.writeHead(200, 'text/html')
                 res.end(data)
             }
