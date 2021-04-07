@@ -5,16 +5,17 @@ class mobike
     }
     compute(){
         var charge = 0;
+        var ch1 = 500,ch2 = 400,ch3 = 200;
         var i;
         for(i=1 ; i<= this.Days ;i++){
             if(i<6) {
-                charge =  i * 500;
+                charge =  i * ch1;
             }
             if (i>5 & i<11) {
-                charge = charge + (i -(i - 1))* 400
+                charge = charge + (i -(i - 1))* ch2
             }
             if (i>10) {
-                charge = charge + (i -(i - 1))* 200
+                charge = charge + (i -(i - 1))* ch3
             }
         }
         return charge;
