@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="demo1"></h2>
+    <h2 id="demo2"></h2>
+
+    <script>
+
+        // A callback is a function passed as an argument to another function
+        
+        // Example.1
+        function display(param) { 
+            document.writeln("Answer is ="+param);
+        }
+        
+        function mySum(x,y,myCallback){
+            var z=x+y;
+            myCallback(z)
+        }
+        
+        mySum(25365,2136,display);
+        
+        // Example.2
+        myFun=()=>{ document.getElementById("demo1").innerHTML+="Hello World"; }
+        
+        setTimeout(myFun,3000)
+        
+        // Example.3
+        myTimerFun=()=>{
+            var dt=new Date();
+            var txt=dt.getHours()+":"+dt.getMinutes()+":"+dt.getSeconds();
+            document.getElementById("demo2").innerHTML=txt;
+        }
+        
+        setInterval(myTimerFun,1000);
+        
+    </script>
+</body>
+</html>

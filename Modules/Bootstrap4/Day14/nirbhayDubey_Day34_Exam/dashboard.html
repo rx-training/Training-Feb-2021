@@ -296,6 +296,9 @@
                     elist[elist.length]=newData;
                     localStorage.setItem("Employees",JSON.stringify(elist));
                     alert("Employee Data Inserted Successfully");
+                    errmsg.style.display="none";
+                    errname.style.display="none";
+                    errcon.style.display="none";
                     return false;
                 }
             }
