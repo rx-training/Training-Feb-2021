@@ -4,15 +4,18 @@ class mobike
         this.Days = Days
     }
     compute(){
-        var charge
-        if(this.Days<6) {
-            charge = this.Days * 500;
-        }
-        else if (this.Days>5 & this.Days<11) {
-            charge = this.Days * 400
-        }
-        else if (this.Days>10) {
-            charge = this.Days * 200
+        var charge = 0;
+        var i;
+        for(i=1 ; i<= this.Days ;i++){
+            if(i<6) {
+                charge =  i * 500;
+            }
+            if (i>5 & i<11) {
+                charge = charge + (i -(i - 1))* 400
+            }
+            if (i>10) {
+                charge = charge + (i -(i - 1))* 200
+            }
         }
         return charge;
     }
@@ -33,4 +36,5 @@ var arg  = process.argv.forEach((val, index) => {
 
 var charges  = new mobike(Days);
 var charges1 = charges.compute()
+console.log(charges1)
 module.exports = {Bikeno,Phoneno,Days,charges1}
