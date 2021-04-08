@@ -34,4 +34,8 @@
 
 //to see exact version of a package goto node_module > package > package.json
 //npm list -> to see dependancies and their dependancies
-//npm list --depth=0 -> to see our dependancies only
+//npm list --depth=0 -> to see our dependencies only
+
+//npm view packageName - ex -> npm view mongoose
+//npm view mongoose dependancies
+//npm view mongoose versions
