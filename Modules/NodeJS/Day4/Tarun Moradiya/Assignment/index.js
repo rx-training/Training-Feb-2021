@@ -44,9 +44,10 @@ const server = http.createServer((req, res) => {
     //http://localhost:3001/vowefind?input=rita
     else if(myUrl.pathname == '/vowefind') {
         let inp = myUrl.searchParams.get('input')
+        let vowelIndex = inp.search(/[a|e|i|o|u]/gi)
 
-        res.end(`<h1 style="color: #333; font-size:5em; margin-left: 20px">Name: ${inp}</h1>`)
-        
+        res.write(`<h1 style="color: #333; font-size:5em; margin-left: 20px">Name: ${inp}</h1>`)
+        res.end(`<h1 style="color: #333; font-size:5em; margin-left: 20px">First Vowel Is: ${inp[vowelIndex]}</h1>`)
     }
 
     // 4. Write a Nodejs server that serve as a RESTFUL API that accepts a file content and writes them to the disk.
