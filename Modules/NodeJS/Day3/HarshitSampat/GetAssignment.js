@@ -1,0 +1,5 @@
+const data =require('./Assignment.js')
+console.log(data.Bike_no)
+console.log(data.Phone_no)
+console.log(data.Days)
+console.log(data.computecharge)

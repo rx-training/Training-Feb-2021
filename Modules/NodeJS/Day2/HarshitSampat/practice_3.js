@@ -13,3 +13,5 @@ fs.appendFile('person.txt',contenttoadd,err =>{
         return
     }
 })
+console.log("learning Nodes")
+console.log("Hello harshit is trying to check nodemon")
