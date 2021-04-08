@@ -12,7 +12,7 @@ var readline = require('readline').createInterface({
 })
 
 /*--------choose option---------*/
-readline.question(`What's your answer?`, (s) => {
+readline.question(`What's your answer?(s) `, (s) => {
     if (s) {
         eventEmitter.on("start",load)
         eventEmitter.emit("start")
@@ -39,7 +39,7 @@ function load() {
             })
             
             /*-------------ask to end the paper---------------*/
-            readline.question('what\'s your answer?', (e) => {
+            readline.question('what\'s your answer?(e) ', (e) => {
                 if (e) { 
                     eventEmitter.off("start",load)
                     clearTimeout(start)
