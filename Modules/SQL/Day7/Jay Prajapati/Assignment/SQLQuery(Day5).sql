@@ -1,4 +1,101 @@
-/*=========================================================================================
+------   Day 5 Assignment  -------
+
+USE SQLDay2;
+
+/* 1. Get difference between JOINING_DATE and INCENTIVE_DATE
+from employee and incentives table*/
+
+WITH EMP (DateDifference)
+AS
+(
+SELECT DATEDIFF(DAY,JoiningDate,IncentiveDate)
+FROM EmployeesDetail AS EMP
+ INNER JOIN Incentive AS INC
+ ON EMP.EmployeeID = INC.EmployeeRefId
+ )
+ SELECT *
+ FROM EMP
+
+
+/* 2. Select first_name, incentive amount from employee and
+incentives table for those employees who have incentives
+and incentive amount greater than 3000*/
+USE SQLDay2;
+
+WITH EMP (Name,IncentiveAmt)
+AS
+(
+ 
+SELECT EMP.FirstName,INC.IncentiveAmount
+FROM EmployeesDetail AS EMP
+ INNER JOIN Incentive AS INC
+ ON EMP.EmployeeID = INC.EmployeeRefId
+ WHERE INC.IncentiveAmount > 3000
+ )
+ SELECT * FROM EMP;
+
+
+/* 3. Select first_name, incentive amount from employee 
+and incentives table for all employees even if they 
+didn’t get incentives.*/
+
+WITH EMP (Name,IncentiveAmt)
+AS
+(
+SELECT EMP.FirstName,
+	INC.IncentiveAmount
+FROM EmployeesDetail AS EMP
+ LEFT OUTER JOIN Incentive AS INC
+ ON EMP.EmployeeID = INC.EmployeeRefId
+ )
+ SELECT * FROM EMP
+
+
+
+/* 4. Select EmployeeName, ManagerName from the employee table.*/
+USE SQLDay2;
+
+WITH EMP (EmployeeName, ManagerName)
+AS
+(
+SELECT (EMP.FirstName + ' ' + EMP.LastName),
+		(MNG.FirstName + ' ' + MNG.LastName) 
+FROM Employees AS EMP
+     JOIN Employees As MNG 
+	 ON EMP.ManagerID = MNG.EmployeeID
+)
+SELECT * FROM EMP;
+
+
+
+ /*Select first_name, incentive amount from employee
+ and incentives table for all employees even if they 
+ didn’t get incentives and set incentive amount 
+ as 0 for those employees who didn’t get incentives.*/
+
+ 
+WITH EMP (Name,IncentiveAmt)
+AS
+(
+ SELECT EMP.FirstName,
+		INC.IncentiveAmount
+ FROM EmployeesDetail AS EMP
+ LEFT OUTER JOIN Incentive AS INC
+ ON EMP.EmployeeID = INC.EmployeeRefId
+ )
+ SELECT Name,
+		ISNULL(IncentiveAmt,0)
+	FROM EMP;
+
+ 
+
+
+
+
+ ------------ Day 5 CarCompany Database Queries -------
+
+
+ /*=========================================================================================
 DATABASE :
 =========================================================================================
 
@@ -155,7 +252,7 @@ SELECT * FROM WorkSat;
 
 INSERT INTO WorkSat
 VALUES(101,1,3,10,200000),
-	(105,2,2,12,150000)
+	(105,2,2,12,150000);
 /*vii. inventory (inventoryid, vin, dealershipid)*/
 
 CREATE TABLE Inventory
@@ -167,8 +264,8 @@ SELECT * FROM Inventory;
 
 INSERT INTO Inventory
 VALUES (11010,1001,5),
-(11007,1001,1)
-,(11001,1001,3),
+(11007,1001,1),
+(11001,1001,3),
 (11005,3001,2)
 
 
@@ -192,7 +289,7 @@ VALUES (50022,3001,102,1,3,3500000,'1-1-2010'),
 (50010,3001,102,2,3,300000,'1-1-2010'),
 (50002,3001,102,2,3,250000,'1-2-2010'),
 (50005,3001,102,2,3,200000,'1-2-2012'),
-(50001,1001,101,1,2,2500000,'1-1-2010')
+(50001,1001,101,1,2,2500000,'1-1-2010');
 
 /*
 =========================================================================================
@@ -202,81 +299,135 @@ QUERIES :
 1. Find the names of all salespeople who have ever worked for 
 the company at any dealership.*/
 
+
+USE AutomobileCompany;
+
+
+WITH SPData (Name)
+AS (
 SELECT SP.Name
-FROM Salesperson AS SP
+FROM SalesPerson AS SP
 INNER JOIN WorkSat AS WS
 ON SP.SalesPersonID = WS.SalesPersonID
-WHERE WS.dealershipID IS NOT NULL;
+WHERE WS.dealershipID IS NOT NULL
+)
+SELECT * FROM SPData
 
 /* 2. List the Name, Street Address, and City of each 
 customer who lives in Ahmedabad.*/
 
+WITH CUST (Name,Address,City)
+AS (
 SELECT Name,Address,City
 FROM Customers 
-WHERE City = 'Ahmedabad';
+WHERE City = 'Ahmedabad'
+)
+SELECT * FROM CUST;
 
 /* 3. List the VIN, make, model, year, and mileage of 
 all cars in the inventory of the dealership named 
 "Hero Honda Car World".*/
 
- SELECT C.VIN,
-	   C.Make,
-	   C.Modal,
-	   C.Year,
-	   C.Mileage
- FROM Cars As c
-  INNER JOIN Inventory As i
-  ON c.VIN = i.VIN
-  WHERE i.DealerShipID = (SELECT DealerShipID
-							FROM DealerShip
-							WHERE Name = 'Hero Honda Car World');
+WITH InvDeal (VIN, DealershipName)
+AS(
+	SELECT I.VIN, D.Name
+	FROM Inventory AS I
+	INNER JOIN DealerShip AS D
+	ON I.DealerShipID = D.DealerShipID
+),
+   TCars(VIN,Make,Modal,Year,Mileage)
+AS (
+	SELECT VIN,
+	  Make,
+	  Modal,
+	  Year,
+	  Mileage
+	FROM Cars
+)
+SELECT I.VIN, T.Make, T.Modal, T.Year, T.Mileage
+FROM InvDeal AS I
+INNER JOIN TCars AS T
+ON I.VIN = T.VIN
+WHERE I.DealershipName = 'Hero Honda Car World'
+
 
 
 /* 4. List names of all customers who have ever bought 
 cars from the dealership named "Concept Hyundai".*/
 
+WITH SC(CustomerID, DealerShipID, DealerShipName)
+AS (
+	SELECT S.CustomerID,
+			D.DealerShipID,
+			D.Name
+	FROM Sales AS S
+	INNER JOIN DealerShip AS D
+	ON S.DealerShipID = D.DealerShipID
+)
 SELECT C.Name
 FROM Customers AS C
- INNER JOIN Sales AS S
- ON C.CustomerID = S.CustomerID
- WHERE S.DealerShipID = (SELECT DealerShipID
-							FROM DealerShip
-							WHERE Name = 'Concept Hyundai');
+INNER JOIN SC
+ON C.CustomerID = SC.CustomerID
+WHERE SC.DealerShipName = 'Concept Hyundai'
+
 
 /* 5. For each car in the inventory of any dealership, 
 list the VIN, make, model, and year of the car, along 
 with the name, city, and state of the dealership whose
 inventory contains the car.*/
 
-SELECT C.VIN,C.Make,C.Modal,C.Year,D.Name,D.City,D.State
+WITH InvDeal(VIN,DealerShipName,City,State)
+AS(
+	SELECT I.VIN,
+			D.Name,
+			D.City,
+			D.State
+		FROM Inventory AS I
+		INNER JOIN DealerShip AS D
+		ON I.DealerShipID = D.DealerShipID
+)
+SELECT C.VIN,C.Make,C.Year,I.*
 FROM Cars AS C
-INNER JOIN Inventory AS I
-ON C.VIN = I.VIN
-INNER JOIN DealerShip AS D
-ON I.DealerShipID = D.DealerShipID
+INNER JOIN InvDeal AS I
+ON C.VIN = I.VIN;
+
+
 
 
 
 /* 6. Find the names of all salespeople who are managed 
 by a salesperson named "Adam Smith".*/
 
+WITH SMan (SalesPersonID)
+AS (
+	SELECT SalesPersonID
+	FROM ReportSto
+	WHERE ManagingSalesPersonID = (SELECT SalesPersonID
+									FROM SalesPerson AS SP
+									WHERE SP.Name = 'Adam Smith')
+)
 SELECT SP.Name
 FROM SalesPerson AS SP
-INNER JOIN Reportsto AS RS
-ON SP.SalesPersonID = RS.SalesPersonID 
-WHERE RS.ManagingSalesPersonID = (SELECT SalesPersonID
-									FROM SalesPerson AS SP
-									WHERE SP.Name = 'Adam Smith');
+INNER JOIN SMan AS S
+ON SP.SalesPersonID = S.SalesPersonID
+
+
 
 
 /* 7. Find the names of all salespeople who do not have 
 a manager. */
 
-SELECT SP.Name
+WITH SALP (Name, ID)
+AS (
+SELECT SP.Name,RS.ManagingSalesPersonID
 FROM SalesPerson AS SP
 LEFT OUTER JOIN Reportsto AS RS
-ON SP.SalesPersonID = RS.SalesPersonID 
-WHERE RS.ManagingSalesPersonID = NULL;
+ON SP.SalesPersonID = RS.SalesPersonID
+)
+SELECT Name
+FROM SALP
+WHERE ID = NULL
+
 
 /* 8. Find the total number of dealerships. */
 
@@ -288,27 +439,31 @@ in the inventory of the dealership named "Toyota Performance".
 (Note that a "Toyota Camry" is indicated by the make 
 being "Toyota" and the model being "Camry".)*/
 
-SELECT C.VIN,
-	   C.Year,
-	   C.Mileage
+SELECT C.VIN,C.Year,C.Mileage
 FROM Cars AS C
 INNER JOIN Inventory AS I
 ON C.VIN = I.VIN
-WHERE I.DealerShipID =(SELECT DealerShipID
-FROM DealerShip
-WHERE Name = 'Toyota Performance') 
-AND C.Make = 'Toyota' 
-AND C.Modal = 'Camry';
+INNER JOIN (SELECT DealerShipID,Name FROM DealerShip 
+WHERE Name = 'Toyota Performance') AS TP
+ON I.DealerShipID = TP.DealerShipID
+WHERE C.Make = 'Toyota' AND C.Modal = 'Camry'
+
+
 
 /* 10. Find the name of all customers who bought a car at 
 a dealership located in a state other than the state in 
 which they live.*/
 
-SELECT C.Name
+WITH CS (Name,State)
+AS (
+SELECT C.Name,C.State
 FROM Customers As C
 INNER JOIN Sales AS S
 ON C.CustomerID = S.CustomerID
-WHERE C.State NOT IN (SELECT DS.State
+)
+SELECT CS.Name 
+FROM CS
+WHERE CS.State NOT IN (SELECT DS.State
 		FROM DealerShip AS DS
 		INNER JOIN Sales AS SS
 		ON DS.DealerShipID = SS.DealerShipID)  ;
@@ -327,36 +482,26 @@ WHERE S.DealerShipID =(SELECT DealerShipID
 FROM DealerShip
 WHERE Name = 'Ferrari Sales')
 AND MONTH(S.SaleDate) = 1
+AND Year(S.SaleDate) = 2010
 AND W.BaseSalaryForMonth = (SELECT MAX(BaseSalaryForMonth)
 FROM WorkSat));
 
-
-/*
-	SELECT SP.
-	FROM SalesPerson AS SP
-	INNER JOIN WorkSat AS WS
-	ON SP.SalesPersonID = WS.SalesPersonID
-	WHERE WS.DealerShipID =(SELECT DealerShipID
-	FROM Dealership 
-	WHERE Name = 'Ferrari Sales') 
-	AND WS.BaseSalaryForMonth = MAX(WS.BaseSalaryForMonth);
-*/
 
 /*12. List the name, street address, city, and state of 
 any customer who has bought more than two cars from all 
 dealerships combined since January 1, 2010.*/
 
-SELECT C.Name,
-	   C.Address,
-	   C.City,
-	   C.State
+
+SELECT  C.Name AS Name,
+		C.Address,
+		C.City,
+		C.State
 FROM Customers AS C
-WHERE CustomerID IN (SELECT CustomerID
-				FROM Sales
-				GROUP BY CustomerID,SaleDate
-				HAVING COUNT(CustomerID)>2 
-				AND MONTH(SaleDate) = 1
-				AND YEAR(SaleDate) = 2010);
+INNER JOIN (SELECT S.CustomerID AS cus , Count(*) AS c
+FROM Sales AS S
+GROUP BY CustomerID) AS CT
+ON C.CustomerID = CT.cus
+WHERE CT.c > 2
 
 
 /*13. List the name, salesperson ID, and total sales amount 
@@ -364,39 +509,50 @@ for each salesperson who has ever sold at least one car.
 The total sales amount for a salesperson is the sum of the
 sale prices of all cars ever sold by that salesperson.*/
 
-SELECT SP.Name,SP.SalesPersonID,SUM(SalePrice) AS SalesAmount
+SELECT SP.Name,SP.SalesPersonID,Salling.TotalAmt
 FROM SalesPerson AS SP
-INNER JOIN Sales AS S
-ON SP.SalesPersonID = S.SalesPersonID
-GROUP BY SP.SalesPersonID,SP.Name;
+INNER JOIN (SELECT SalesPersonID AS 'SID',
+		SUM(SalePrice) AS 'TotalAmt'
+		FROM Sales
+		GROUP BY SalesPersonID) AS Salling
+ON SP.SalesPersonID = Salling.SID;
 
 
 /*14. Find the names of all customers who bought cars during
 2010 who were also salespeople during 2010. For the purpose
 of this query, assume that no two people have the same name.*/
-
-SELECT C.Name
-FROM Customers AS C
-WHERE C.CustomerID IN (SELECT CustomerID
-FROM Sales
-WHERE YEAR(SaleDate) = 2010
-AND CustomerID IN (SELECT C.CustomerID
+WITH CS (CID)
+AS (
+	SELECT C.CustomerID
 			FROM Customers AS C
 			INNER JOIN SalesPerson AS SP
-			ON C.Name = SP.Name));
+			ON C.Name = SP.Name
+)
+SELECT C.Name
+FROM Customers AS C
+INNER JOIN CS 
+ON C.CustomerID = CS.CID
+
+
 
 /*15. Find the name and salesperson ID of the salesperson who
 sold the most cars for the company at dealerships located in
 Gujarat between March 1, 2010 and March 31, 2010.*/
 
-SELECT TOP(1) S.SalesPersonId, SP.Name
+WITH SPerson (SPID,Name,State,SaleDate)
+AS (
+SELECT  S.SalesPersonId, SP.Name,D.State,S.SaleDate
 FROM SalesPerson AS SP JOIN Sales AS S
-ON SP.SalesPersonId = S.SalesPersonId JOIN DealerShip as D
+ON SP.SalesPersonId = S.SalesPersonId 
+INNER JOIN DealerShip as D
 ON D.DealerShipID = S.DealerShipID
-WHERE D.State = 'Gujarat' 
-AND S.SaleDate BETWEEN '2010-03-01' AND '2010-03-31'
-GROUP BY S.SalesPersonId, SP.Name
-ORDER BY COUNT(s.SalesPersonId) DESC
+)
+SELECT Name,SPID
+FROM SPerson
+WHERE State = 'Gujarat' 
+AND SaleDate BETWEEN '2010-03-01' AND '2010-03-31'
+GROUP BY SPID, Name
+ORDER BY COUNT(SPID) DESC
 
 /*16. Calculate the payroll for the month of March 2010.
 	* The payroll consists of the name, salesperson ID,
