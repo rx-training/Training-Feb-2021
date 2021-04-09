@@ -1,0 +1,31 @@
+.li {list-style-type: none;
+    font-size: 16pt;
+    }
+    .demo {
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 450px;
+    background : 
+    #3f28be98;
+    border: 1px soild 
+    rgba(204, 137, 137, 0.774);
+    }
+    .mail h2 {
+    margin-left: 30px;
+    }
+    input {
+    font-size: 20pt;
+    }
+    input:focus, textarea:focus{
+    background-color: 
+    rgba(219, 92, 151, 0.767);
+    }
+    input submit {
+    font-size:x-large;
+    }
+    .rq {
+    color: 
+    #00c3ffb6;
+    font-size: 10pt;
+    }
