@@ -39,3 +39,34 @@
 //npm view packageName - ex -> npm view mongoose
 //npm view mongoose dependancies
 //npm view mongoose versions
+
+//installing specific version
+npm i mongoose@2.4.2
+
+//updating local package
+npm outdated
+npm update
+
+npm i -g npm-check-updates
+ncu -u
+npm i 
+
+//dev dependancies
+npm i jshint --save-dev
+
+//un install
+npm uninstall mongoose
+npm un mongoose
+
+//global package
+npm i -g npm //use to update npm 
+npm -g outdated
+
+//publishing module to npm
+npm adduser
+npm login
+npm publish 
+
+//update published module to npm 
+npm version major/minor/patch // or manualy update version in package.json
+npm publish

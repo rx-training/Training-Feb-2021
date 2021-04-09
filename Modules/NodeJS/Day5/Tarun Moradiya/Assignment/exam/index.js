@@ -142,13 +142,14 @@ function load() {
 
 async function startExam() {
 
-    let minute = 30
+    // let minute = 60
+    let hours = 3
 
-    console.log(`You have ${minute} minutes to comlpete exam.`)
+    console.log(`You have ${hours} hours to comlpete exam.`)
 
     let timer = setTimeout(() => {
         emitter.emit('timesUp')
-    }, 1000 * 60 * minute)
+    }, 1000 * 60 * 60 * hours)
 
     // myQeustions.forEach(async (element, index, arr) => {
     //     let ans = await ask(element)
