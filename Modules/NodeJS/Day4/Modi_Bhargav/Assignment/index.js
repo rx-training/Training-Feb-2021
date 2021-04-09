@@ -31,12 +31,12 @@ const server = http.createServer((req, res) => {
 
   /*3. Write a Nodejs server that serves as a RESTFUL API that accepts a string as an input name and returns the first vowel character from the string.
   http://localhost:3001/vowefind?input=rita*/
-  else if (Mypath.pathname == '/vowefind') {
+  else if (Mypath.pathname === '/vowefind') {
     const str = Mypath.searchParams.get('input');
     const lowstr = str.toLowerCase();
-    for (i = 0; i <= str.length; i++) {
-      if (str[i] == "a" || str[i] == "e" || str[i] == "i" || str[i] == "o" || str[i] == "u") {
-        res.write(`First Vowel Character Is:${str[i]}`)
+    for (i = 0; i <= lowstr.length; i++) {
+      if (lowstr[i] == "a" || lowstr[i] == "e" || lowstr[i] == "i" || lowstr[i] == "o" || lowstr[i] == "u") {
+        res.write(`First Vowel Character Is:${lowstr[i]}`)
         res.end();
         break;
       }
