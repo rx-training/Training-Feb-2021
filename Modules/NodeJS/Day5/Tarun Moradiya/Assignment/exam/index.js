@@ -144,7 +144,7 @@ async function startExam() {
 
     let minute = 30
 
-    console.log(`You have ${minute} minutes to comlpete exam.\n`)
+    console.log(`You have ${minute} minutes to comlpete exam.`)
 
     let timer = setTimeout(() => {
         emitter.emit('timesUp')
