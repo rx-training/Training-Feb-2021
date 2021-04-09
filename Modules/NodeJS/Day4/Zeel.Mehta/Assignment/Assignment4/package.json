@@ -1,0 +1,14 @@
+{
+  "name": "assignment4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "assignment4.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "nodemon --inspect assignment4.js",
+    "serve": "nodemon assignment4.js",
+    "start": "node serve"
+  },
+  "author": "",
+  "license": "ISC"
+}
