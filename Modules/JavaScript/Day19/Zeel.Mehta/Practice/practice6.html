@@ -11,34 +11,26 @@
             Practice
         </title>
     </head>
-    <body style="background: linear-gradient(to bottom, #e39cff, #7300df)">
+    <body style="background: linear-gradient(to bottom, #ffffff, #ff4665)">
         <div class="container border border-dark rounded text-center col-lg-4" >
-            <h2>Callback</h2>
-            <p>Receives an argument and prints the square of that number</p>
-            <form>
-                <input type="text" id="num1" >
-                <input type="button" value="submit" onclick="square(num1, myFunction);" class="btn  btn-primary">
-            </form>
-            
-            <p id="demo"></p>
-            <script>   
-                function myFunction(n) 
+            <h1>JavaScript Closures</h1>
+            <p>Counting with a local variable.</p>
+            <button type="button" onclick="myFunction()" class="btn btn-danger">Count!</button>
+            <br><br><p id="demo" class="bg-light text-danger">0</p>
+            <script>
+                var add = (function ()
                 {
-                    document.getElementById("demo").innerHTML = n;
-                }
-                function square(num, callback) 
+                  var counter = 0;
+                  return function () {counter += 1; return counter;}
+                })();
+                function myFunction()
                 {
-                    var num2=parseInt(num.value);
-                    let sum = num2*num2;
-                    callback(sum);
+                  document.getElementById("demo").innerHTML = add();
                 }
-                
-                
-             
             </script>
         </div>
+        
 <div style="margin-top: 500px;"></div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 crossorigin="anonymous"></script>
