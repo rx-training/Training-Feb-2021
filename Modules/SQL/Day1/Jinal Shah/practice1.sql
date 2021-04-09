@@ -1,3 +1,6 @@
+
+-----------sqldb1-----------
+
 CREATE TABLE Countries ( 
 COUNTRY_ID varchar(2),
 COUNTRY_NAME varchar(40)

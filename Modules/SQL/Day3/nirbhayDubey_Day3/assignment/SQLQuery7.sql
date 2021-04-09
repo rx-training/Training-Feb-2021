@@ -1,6 +1,9 @@
 CREATE DATABASE AssignmentDay27
 GO
 
+USE AssignmentDay27;
+GO
+
 CREATE TABLE  Employees (
     EmployeeID decimal(6,0) NOT NULL DEFAULT '0',
 	FirstName varchar(20) DEFAULT NULL,

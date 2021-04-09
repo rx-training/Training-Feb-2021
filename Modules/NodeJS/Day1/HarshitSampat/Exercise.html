@@ -1,0 +1,291 @@
+<html>
+<head>
+    <title>Practice Javascript</title>
+    </head>
+
+<!-- It is For Laxical structure -->
+<body>
+    <script>
+            //These are comments
+            /*
+            It is for Multiple Line Comments in javascript 
+            This whole code going to  be in the comment section of the javascript
+            */
+           function add(x,y)
+           {
+               return x+y;
+            }
+            add(3,4);
+    </Script>
+
+
+
+<!--  This is Practice for javascript  Expression  -->
+
+<h2>Javascript Method </h2>
+<p>Search a string of "harshit" and display the positionn of the match:</p>
+<p id ="Expression_example">
+<p id ="error">
+    <script>
+        var str ="This is harshit"
+        var n  = str.search("harshit")
+        if(n==-1){
+            document.getElementById("error").innerHTML="String Not Found"
+        }
+        else{
+        document.getElementById("Expression_example").innerHTML=n;
+        }
+    </script>
+<p id ="error1">
+<p id ="Expression_example1">
+    <script>
+        var str ="This is for harshit"
+        var n  = str.search(/HaRshit/i)
+        if(n==-1){
+            document.getElementById("error1").innerHTML="String Not Found"
+        }
+        else{
+        document.getElementById("Expression_example1").innerHTML=n;
+        }
+    </script>
+
+<p id ="error2"></p>
+<p id ="Expression_example2">This is for harshit</p>
+<button onclick ="myFunction()">Click it to change text </button>
+        <script>
+            function myFunction(){
+                var str = document.getElementById("Expression_example2").innerHTML;
+                var n  = str.replace("harshit","Sampat");
+                if(n==-1){
+                    document.getElementById("error2").innerHTML="String Not Found"
+                }
+                else{
+                document.getElementById("Expression_example2").innerHTML=n;
+                }
+            }
+        </script>
+<!--Modifiers can be used to perform case-insensitive more global searches:-->
+    <p>Click the button to do a case-insensitive search for "harshit" in a string</p>
+    <button onclick="myFunction1()">Click me to see text</button>
+    <p id ="ex1"></p>
+        <script>
+            function myFunction1(){
+                var str = "This is for Harshit";
+                var patt1 =/harshit/i;
+                var result = str.match(patt1);
+                if (result==null)
+                {
+                    document.getElementById("ex1").innerHTML="No match!!"
+                } 
+                else {
+                    document.getElementById("ex1").innerHTML=result;
+                }
+            }
+        </script>
+
+        <!--Perform a global match (find all matches rather than stopping after the first match)-->
+        <p>Click the button to do a global search for "Harshit" in a string.</p>
+    <button onclick="myFunction2()">Click me to see text</button>
+    
+        <script>
+            function myFunction2(){
+                var str = "This is for harshit,harshit will always love to read,harshit always try too donew things";
+                var patt2 =/harshit/g;
+                var result = str.match(patt2);
+                if (result==null)
+                {
+                    document.getElementById("ex1").innerHTML="No match!!"
+                } 
+                else {
+                    document.getElementById("ex1").innerHTML=result;
+                }
+            }
+        </script>
+<!--
+<p>Click the button to do a global search for any of the specified alternatives (red|green).</p>-->
+<p> <p>Click the button to do a global search for "Harshit" in a string.</p>
+<button onclick="myFunction3()">Click me to see text</button>
+
+    <script>
+        function myFunction3(){
+            var str = "re,red,red,green,re,red,green"
+            var patt3 =/(red|re)/g;
+            var result = str.match(patt3);
+            if (result==null)
+            {
+                document.getElementById("ex1").innerHTML="No match!!"
+            } 
+            else {
+                document.getElementById("ex1").innerHTML=result;
+            }
+        }
+    </script>
+<button onclick="myFunction2()">Click me to see text</button>
+
+    <script>
+        function myFunction2(){
+            var str = "This is for harshit,harshit will always love to read,harshit always try too donew things";
+            var patt2 =/harshit/g;
+            var result = str.match(patt2);
+            if (result==null)
+            {
+                document.getElementById("ex1").innerHTML="No match!!"
+            } 
+            else {
+                document.getElementById("ex1").innerHTML=result;
+            }
+        }
+    </script>
+
+    <!-- This Keyword in javascript-->
+<p>In this example, <b>this</b> represent a person object because the <b>person</b> object</p> 
+<p>Because the person object "Owns" the full name method </p>
+<h1><p id ="saturdayex1"></h1>
+    <script>
+        var person ={
+            firstName : "John",
+            lastName : "Doe",
+            id :5566,
+            fullName : function(){
+                return this.firstName+" "+this.lastName;
+            }
+
+        }
+        document.getElementById("saturdayex1").innerHTML = person.fullName();
+    </script>
+
+
+        <h2>The javascript <i>this </i>Keyword</h2>
+        <button onclick="this.style.display='none'">Click to remove Me!</button>
+
+        <!--  Explicit Function binding-->
+        <p id="saturdayex2"></p>
+        <script>
+            var person1={
+                fullName : function (){
+                    return this.firstName+" "+this.lastName;
+                }
+            }
+            var person2={
+                firstName :"john",
+                lastName :"Doe",
+                }
+
+            var x = person1.fullName.call(person2);
+            document.getElementById("saturdayex2").innerHTML = x;
+        </script>
+    <!-- Javascript Arrow Function  -->
+        <p>This example shows the syntax of a function ,without the use  of arrow function syntax</p>
+        <p id ="saturdayex3"></p>
+        <script>
+            var hello;
+            hello = () =>{
+                return "hello World!";
+            }
+            document.getElementById("saturdayex3").innerHTML = hello();
+            </script>
+        <p id ="saturdayex4">
+        <script>
+            var hello;
+            hello = (val) =>"Hello"+val;
+            document.getElementById("saturdayex4").innerHTML = hello(" Harshit this is your Program!")
+        </script>
+        
+        <!--  Loops in javascript -->
+        <p>Click the button to loop the prperties of the object</p>
+        <button onclick="myFunction4()">Try it</button>
+        <p id = "Saturdayex5"></p>
+        <script>
+            function myFunction4(){
+                var person ={fName:"John",lName:"Doe",Age:"25"};
+
+                var text ="";
+                var x;
+                for (x in person){
+                    text += person[x]+" ";
+
+                } 
+                document.getElementById("Saturdayex5").innerHTML=text;
+            }
+        </script>
+        <p>Click the button to loop through the indices of an array in asending order</p>
+        <button onclick="myFunction5()">Click Me To loop through array</button>
+        <p id = "Saturdayex6">
+            <script>
+                function myFunction5(){
+                    var cars = ["BMW","Volvo","Saab","Ford"];
+                    var text = "";
+                    var i;
+                    for(i= 0;i<cars.length;i++){
+                        text += cars[i]+"<br>"
+                    }
+                    document.getElementById("Saturdayex6").innerHTML =text
+                }
+            </script>
+
+    <!--Javascript Callback-->
+    <h2>Java cript Callback</h2>
+    <p>Wait 5 seconds (5000 milliseconds ) for this  page to change</p> 
+    <h1 id ="saturdayex7"></h1> 
+    <script>
+        setTimeout(myFunction6,5000);
+    
+    function myFunction6(){
+        document.getElementById("saturdayex7").innerHTML = "Love to read books !!";
+    }
+    </script>     
+    <h2>Java script Set intrval</h2>
+    <p>Using setinterval() to display the time for every seconds(1000 mili seconds)</p>
+    <h1 id ="saturdayex8"></h1>
+    <script>
+        setInterval(myFunction,3000);
+        function myFunction(){
+            let d =new Date();
+            document.getElementById("saturdayex8").innerHTML=
+            d.getHours()+":"+
+            d.getMinutes()+":"+
+            d.getSeconds();  
+        }
+    </script> 
+
+    <!---------------Promise---------------------------->
+    
+    <h2>javascript Promise</h2>
+    <p id = "suex1"></p>
+    <script>
+    function myDisplayer(some){
+        document.getElementById("suex1").innerHTML =some;
+    }
+    let myPromise = new Promise(function(myResolve,myReject){
+        let x = 3;
+        if (x==0){
+          myResolve("ok");
+        }else {
+            myReject("Error");
+        }
+    }); 
+    myPromise.then(
+        function(value) {myDisplayer(value);},
+        function(error) {myDisplayer(error);}
+    );
+    </script>
+    <p>Wait 4000 Seconds to change this page </p> 
+    <p id  ="suex2"></p>
+    <script>
+        setTimeout(function(){myFunction8("Love to read books");}, 4000);
+        function myFunction8(value){
+            document.getElementById("suex2").innerHTML =value;
+            }
+        </script>
+    <p id = "suex3"></p>
+    <script>
+        let myPromise1 =new Promise(function(myResolve,myReject){
+            setTimeout(function() {myResolve("Love to read");},3000);
+        });
+         
+        myPromise1.then(function(value){
+            document.getElementById("suex3").innerHTML = value;
+        });
+        </script>
+</body>
+</html>

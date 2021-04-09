@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Employee Details</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="col-md-8 my-5 mx-auto">
+            <div class="bg-success">
+                <div class="card-header bg-info">
+                    <h4 class="text-center text-white">Employee Details</h4>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="employeeid">EmployeeID</label>
+                        <input type="number" class="form-control" id="eid" placeholder="1234">
+                    </div>
+                    <div class="form-group">
+                        <label for="employeename">EmployeeName</label>
+                        <input type="text" class="form-control" id="ename" placeholder="Enter name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender"><h3>Gender</h3></label><br>
+                            <input type="radio" name="gender" id="male" value="Male">
+                            <label for="male"><h4>Male</h4></label>
+                            <input type="radio" name="gender"  id="female" value="Female">
+                            <label for="female"><h4>Female</h4></label>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="state"><h3>State</h3></label><br>
+                        <select id="state" onchange="setCities(this.value)" class="form-control">
+                            <option value="" selected>Choose State</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="city"><h3>City</h3></label><br>
+                        <select id="citySelect" class="form-control">
+                            <option value="" selected>Choose City</option>
+                        </select>
+                    </div>
+                    <button class="form-control btn btn-info" name="submit" onclick="insertData()">Submit</button>
+                   
+
+                </div>
+            </div>
+        </div>
+        <div class="card mt-4 col-md-9 mx-auto">
+            <div class="card-header bg-success text-white text-center">Employees</div>
+            <div class="card-body">
+                <table class="table" id="myTableEmp">
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        var stateCityObject = {
+            "Gujarat": ["Ahmedabad","Surat","Vadodara"],
+            "Madhya Pradesh": ["Bhopal","Gwalior","Indore"]
+        }
+        function setCities(value) {
+            if(value.length==0) {
+                document.getElementById("citySelect").innerHTML = "<option></option>";
+            } else {
+            var cities = "";
+            for( city in stateCityObject[value]) {
+                cities += "<option value="+ stateCityObject[value][city] +">"+ stateCityObject[value][city] +"</option>";
+            }
+            document.getElementById("citySelect").innerHTML = cities;
+            }
+        }
+        var all_employees = [];
+        function insertData(){
+            var employeeid = document.getElementById('employeeid').value;
+            var employeename = document.getElementById('employeename').value;
+            var email = document.getElementById('email').value;
+            var gender = document.getElementById('gender').value;
+            var state = document.getElementById('state').value;
+            var city = document.getElementById('citySelect').value;
+
+            emp = {"employeeid":employeeid, "employeename":empolyeename, "email":email, "gender":gender, "state":state, "city":city};
+            all_employees.push(emp);
+            emps = JSON.stringify(all_employees);
+            localStorage.setItem("all_employees", emps);
+            document.getElementById('employeeid').value = "";
+            document.getElementById('employeename').value = "";
+            document.getElementById('email').value = "";
+            document.getElementById('gender').value = "";
+            document.getElementById('state').value = "";
+            document.getElementById('citySelect').value = "";
+        }
+        function insertData(){
+            var all_emps = JSON.parse(localStorage.getItem("all_employees"));
+            //Set data into table
+            document.getElementById("myTableEmp").innerHTML = "<tr><th> Employee ID </th><th> Employee Name </th><th> Email </th><th> Gender </th><th> State </th><th> City </th></tr>";
+            for(var e of all_emps){
+                document.getElementById("myTableEmp").innerHTML += "<tr><td>"+e.employeeid+"</td><td>"+e.employeename+"</td><td>"+e.email+"</td><td>"+e.gender+"</td><td>"+e.state+"</td><td>"+e.city+"</td></tr>";
+            }
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

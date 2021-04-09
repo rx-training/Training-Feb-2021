@@ -1,0 +1,262 @@
+<!--Need to develop an application for HR department to manage employee details. 
+Description of the task
+The HR should be allowed to login into the system.The Ability to capture and modify employee data Create the Array and relevant forms for inserting and updating data into the system.Login should get validated and necessary message should be displayed.Proper validations should be done for employee data which is being captured. Following validation should be done:
+Name Should not be containing any digitContact Number should be number.
+The address of the employee should be captured through dynamic lists. For example, if the Country is selected adjacent states should be loaded.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Employee Detail form</title>
+</head>
+<body >
+    <div class="container my-3">
+        <div class="card bg-success text-white"  >
+            <div class="card-header bg-white text-dark text-md-center" ><h3>Employee Details</h3></div>
+            <div class="card-body">
+                <div id="error-div" class="m-3">
+
+                </div>
+                <form action="" method="">
+                <div class="row"> 
+                    <div class="col-4">   
+                        <div class="form-group"> 
+                            <label for="employee_id">Employee ID:</label> 
+                            <input type="text" class="form-control form-field" id="employee_id" name="employee_id" placeholder="e.g. 201601166"  onkeyup="checkEmployeeId()">
+                        </div>
+                    </div>
+                    <div class="col-5">
+                    <div class="form-group"> 
+                        <label for="employee_name">Employee Name:</label> 
+                        <input type="text" class="form-control form-field" id="employee_name" name="employee_name" placeholder="Enter Name">
+                    </div>
+                    </div>
+                </div>   
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="form-group"> 
+                                <label for="employee_email">Employee Email:</label> 
+                                <input type="email" class="form-control form-field" id="employee_email" name="employee_email" placeholder="Enter Email" onchange="checkEmail()">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group"> 
+                                <label for="employee_contact">Contact number</label> 
+                                <input type="text" class="form-control form-field" id="employee_contact" name="employee_contact" pattern="[1-9]{1}[0-9]{9}" placeholder="Enter mobile number">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group"> 
+                                <label for="birthdate">Date of Joining</label> 
+                                <input type="date" class="form-control form-field" id="joining-date" name="joining-date">
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="form-group"> 
+                                <label for="age">Age</label> 
+                                <input type="text" class="form-control form-field" id="age" name="age" placeholder="e.g. 25" onkeyup="return checkAge()">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group"> 
+                                <label for="designation">Designation</label><br>
+                                <select class="form-control form-field " id="designation" name="designation">
+                                    <option value="">Designation</option>
+                                    <option value="developer">Software Engineer</option>
+                                    <option value="developer">Content Writer</option>
+                                    <option value="designer">Designer</option>
+                                    <option value="hr_manager">HR Manager</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group"> 
+                                <label for="salary">Salary (CTC in Rs.):</label> 
+                                <input type="number" class="form-control form-field" id="salary" name="salary" min="0" placeholder="Enter Salary">
+                            </div>
+                        </div>
+                    
+                        
+                    </div>
+                    <div class="row">
+                       <div class="col-6"> 
+                            <div class="form-group">
+                                <label for="gender">Gender</label><br>
+                                <input type="radio" class="" name="gender" id="male" value="male">
+                                <label for="male">Male</label>
+                                <input type="radio" class="" name="gender"  id="female" value="female">
+                                <label for="circle">Female</label>
+                            </div>
+                        </div>
+                       <div class="col-3">
+                            <div class="form-group"> 
+                                <label for="location">Location:</label><br>
+                                    <select class="form-control form-field" id="countrySelect"  name="location">
+                                        <option value="">Country</option>
+                                        <option value="rajkot">US</option>
+                                        <option value="ahmedabad">India</option>
+                                    </select>
+                            </div>
+                        </div>    
+                        
+                       <div class="col-3">
+                        <div class="form-group"> 
+                            <label for="location">Location:</label><br>
+                                <select class="form-control form-field" id="citySelect" onclick="displaySelected()" name="location">
+                                    <option value="">City</option>
+                                    <option value="rajkot">Ahmedabad</option>
+                                    <option value="ahmedabad">Surat</option>
+                                    <option value="baroda">Newyork</option>
+                                    <option value="baroda">Newjoursey</option>
+                                </select>
+                        </div>
+                    </div>   
+                        
+                    <div>   
+                     <button type="submit" class="btn btn-dark" onclick="return validateForm()">Add Employee</button>
+                     
+                    </div><br>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+   
+    <script>
+        function checkEmployeeId(){
+            var id = document.getElementById("employee_id").value;
+            if(!id.match(/[0-9]{5}/g)) {
+                document.getElementById("employee_id").style.color = 'red';
+                return false;
+            }
+            else {
+                document.getElementById("employee_id").style.color = 'green';
+                return true;
+            }
+        }
+
+        function checkAge() {
+            var age = document.getElementById("age").value;
+            age = parseInt(age);
+
+            if(isNaN(age) || age < 18 ||  age > 80)
+            {
+                document.getElementById("age").style.color = 'red';
+                return false;
+            }
+            else {
+                document.getElementById("age").style.color = 'green';
+                return true;
+            }
+        }
+
+        function checkEmail() {
+            var email = document.getElementById("employee_email").value;
+            // console.log(email.match());
+            if(!email.match(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9-]+[.][a-zA-Z0-9-]+$/g) || email.match(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9-]+[.][a-zA-Z0-9-]+$/g) != email) {
+                document.getElementById("employee_email").style.color = 'red';
+                return false;
+            }
+            else {
+                document.getElementById("employee_email").style.color = 'green';
+                return true;
+            }
+        }
+
+        function validateForm() {
+            var isValid = true;
+            document.getElementById("error-div").innerHTML = "";
+            if(document.getElementById("employee_id").value == "") {
+                document.getElementById("error-div").innerHTML += '<div class="alert alert-danger" id="error-div">Employee ID is required.</div>';
+                isValid = false;
+            }
+
+            if(document.getElementById("employee_name").value == "") {
+                document.getElementById("error-div").innerHTML += '<div class="alert alert-danger" id="error-div">Employee Name is required.</div>';
+                isValid = false;
+            }
+
+            if(document.getElementById("employee_email").value == "") {
+                document.getElementById("error-div").innerHTML += '<div class="alert alert-danger" id="error-div">Employee email is required.</div>';
+                isValid = false;
+            }
+            else{
+                if(!checkEmail()){
+                    document.getElementById("error-div").innerHTML += '<div class="alert alert-danger" id="error-div">Employee email is in invalid format.</div>';
+                    isValid = false;
+                }
+            }
+
+            if(document.getElementById("employee_contact").value == "") {
+                document.getElementById("error-div").innerHTML += '<div class="alert alert-danger" id="error-div">Emplpoyee Contact is required.</div>';
+                isValid = false;
+            }
+
+            if(document.getElementById("joining-date").value == "") {
+                document.getElementById("error-div").innerHTML += '<div class="alert alert-danger" id="error-div">Joining Date is required.</div>';
+                isValid = false;
+            }
+
+            if(document.getElementById("age").value == "") {
+                document.getElementById("error-div").innerHTML += '<div class="alert alert-danger" id="error-div">Age is required.</div>';
+                isValid = false;
+            }
+            else{
+                if(!checkAge()){
+                    document.getElementById("error-div").innerHTML += '<div class="alert alert-danger" id="error-div">Inserted age is not valid (should be between 18 to 80).</div>';
+                    isValid = false;
+                }
+            }
+
+            if(document.getElementById("designation").value == "") {
+                document.getElementById("error-div").innerHTML += '<div class="alert alert-danger" id="error-div">Designation is required.</div>';
+                isValid = false;
+            }
+
+            if(document.getElementsByName("gender").value == "") {
+                document.getElementById("error-div").innerHTML += '<div class="alert alert-danger" id="error-div">Gender is required.</div>';
+                isValid = false;
+            }
+
+            if(document.getElementById("salary").value == "") {
+                document.getElementById("error-div").innerHTML += '<div class="alert alert-danger" id="error-div">Salary is required.</div>';
+                isValid = false;
+            }
+
+            if(document.getElementById("location").value == "") {
+                document.getElementById("error-div").innerHTML += '<div class="alert alert-danger" id="error-div">Location is required.</div>';
+                isValid = false;
+            }
+            window.scrollTo(0,0);
+            return isValid;
+        }
+    </script>
+
+<script type="text/javascript">
+    var citiesCountry = {
+    US: ["Newyork","Newjoursey"],
+    India: ["Ahmedabad","Surat"]
+    
+    }
+    function makeSubmenu(value) {
+    if(value.length==0) document.getElementById("SelectCity").innerHTML = "<option></option>";
+    else {
+    var citiesOptions = "";
+    for(cityId in citiesCountry[value]) {
+    citiesOptions+="<option>"+citiesCountry[value][cityId]+"</option>";
+    }
+    document.getElementById("citySelect").innerHTML = citiesOptions;
+    }
+    }
+    function displaySelected() { var country = document.getElementById("countrySelect").value;
+    var city = document.getElementById("citySelect").innerHTML="<option>""</Option>";
+    }
+    </script>
+</body>
+</html>

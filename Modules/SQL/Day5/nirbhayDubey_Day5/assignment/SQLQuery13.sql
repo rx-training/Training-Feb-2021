@@ -1,3 +1,6 @@
+USE AssignmentDay29;
+GO
+
 CREATE SCHEMA Dealer;
 GO
 

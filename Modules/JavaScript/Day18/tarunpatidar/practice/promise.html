@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Promises</title>
+    <style>
+        .container{
+            height:300px;
+            width: 400px;
+            border : 1px solid;
+            
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container bg-secondary">
+        <form class="mt-5"  name="form1" id="form1" onsubmit="return normal()">
+            <div class="form-group">
+              <label for="string" class="text-dark p-2 h4 bg-info">Input a string</label>
+              <input type="text" class="form-control" id="rev" name="rev" placeholder="Please Enter a String">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" value="submit" id="submit" name="submit" type="submit">Reverse</button>
+            </div>
+            <h2 class="demo" id="demo"></h2>
+          </form>
+    </div>
+
+<script>
+function change(blank){
+    return new Promise((resolve,reject)=>{
+      
+        if (blank == "")
+        {
+            let errorMessage={status:"error",message:'<h2 class="text-center text-light">Please enter a string</h2>'};
+            reject(errorMessage);
+        }
+
+else{
+
+    newStr = blank
+    .split('')
+    .reverse()
+    .join('')
+    let successMessage={status:"success",message:'<h2 class="text-center text-light">Your reverse string is :  '+ newStr +'</h2>'};
+    resolve(successMessage);
+}  
+    })
+}
+function normal(){
+      let blank = document.getElementById('rev').value;         
+         console.log(blank);
+         
+
+         
+change(blank).then((success)=>{
+document.getElementById('demo').innerHTML = success.message;
+console.log(success);
+},(error)=>{
+document.getElementById('demo').innerHTML = error.message;
+console.log(error);
+
+})
+return false;
+       } 
+      
+
+</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+   
+  </body>
+</html>

@@ -1,0 +1,28 @@
+.col-md-4, .col-md-8{
+    height: 450px;
+   
+}
+.col-md-8 img{
+    margin: 100px 160px;
+}
+
+
+#sidebar{
+    border: 1px solid rgb(66, 186, 216);
+    overflow: overlay;
+}
+#sidebar ul{
+    color: rgb(232, 234, 238);
+    list-style: none;
+}
+#sidebar a:hover{
+    background:rgb(187, 225, 248);
+}
+
+
+@media only screen and (max-width: 576px)
+{
+    #sidebar{
+        height: 220px;
+    }
+}

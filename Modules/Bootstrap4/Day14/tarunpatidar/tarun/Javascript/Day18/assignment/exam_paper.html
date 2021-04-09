@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container p-5 bg-dark text-info mt-5">
+        <div id="exam-content">
+            <div id="exam-header" class="sticky-top bg-dark p-2">
+                <h4 class="text-white">Click the Start Exam Button and will Exam is Starting</h4>
+                <button class="btn btn-info" id="exam-btn" onclick="startExam(this.id)">Start Exam</button>
+                <button class="btn btn-info" id="reset-btn" onclick="location.reload()" style="display: none;">Reset Exam</button>
+                
+                <div class="float-right" id="demo"></div>
+            </div>
+            <div id="output">
+                <form id="exam" name="exam">
+                    <div class="card mt-5">
+                        <div class="card-header">
+                            <h4 class="card-title text-dark">Question 1<br><br>
+                                	
+                              HTML is what type of language ?</h4>
+                        </div>
+                        <div class="card-body">
+                            
+                            <fieldset class="form-group">
+                                <legend>Ans:</legend>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" name="a1" value="right" id="r1" class="form-check-input">Scripting Language
+                                    </label>
+                                    
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" name="a1" id="w1" value="wrong" class="form-check-input">Markup Language
+                                    </label>
+                                    
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" name="a1" id="r1" value="wrong" class="form-check-input">Programming Language
+                                    </label>
+                                    
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" name="a1" id="r1" value="wrong" class="form-check-input">Network Protocol
+                                    </label>
+                                    
+                                </div>
+                            </fieldset>
+                        
+                        </div>
+                    </div>
+    
+                    <div class="card mt-5">
+                        <div class="card-header">
+                            <h4 class="card-title text-dark"> Question 2 <br><br>
+                                	
+                                      HTML uses</h4>
+                        </div>
+                        <div class="card-body">
+                            
+                            <fieldset class="form-group">
+                                <legend>Ans:</legend>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" name="a2" value="right" id="r1" class="form-check-input">User defined tags
+                                    </label>
+                                    
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" name="a2" id="w1" value="wrong" class="form-check-input">Pre-specified tags
+                                    </label>
+                                    
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" name="a2" id="r1" value="wrong" class="form-check-input">Fixed tags defined by the language
+                                    </label>
+                                    
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" name="a2" id="r1" value="wrong" class="form-check-input">Tags only for linking
+                                    </label>
+                                    
+                                </div>
+                            </fieldset>
+                        
+                        </div>
+                    </div>
+                    <button class="btn btn-dark"><a href="./exam.html" id="stop-btn" form="exam" type="submit" value="submit" style="display: none;">Submit Exam</a></button>
+                    <div class="p-5 m-5">
+                       
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        //get elements
+let exam = document.forms.exam;
+
+//start Exam Timer
+function startExam(id) {
+
+    //remove button
+    document.getElementById(id).style.display = 'none';
+    document.getElementById('stop-btn').style.display = 'inline-block';
+
+    // Find the distance between now and the count down date
+    var countdown = 1000 * 60 * 60 * 3;
+
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    //ending date and time
+    var end = now + countdown;
+
+    console.log(end);
+        
+    // Update the count down every 1 second
+    var timer = setInterval(function() {
+        
+        var distance = end - new Date().getTime();
+        
+        // Time calculations for days, hours, minutes and seconds
+        var hours = Math.floor((distance) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        // Output the result in an element with id="demo"
+        document.getElementById("demo").innerHTML = 'Time Left: ' + hours + "h "
+        + minutes + "m " + seconds + "s ";
+        
+        // If the count down is over, write some text 
+        if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("demo").innerHTML = "Times Up";
+        }
+    }, 1000);
+}
+
+
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

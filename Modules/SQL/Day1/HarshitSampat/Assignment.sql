@@ -4,11 +4,13 @@ USE CarCompany;
 CREATE TABLE Jobs (
 	JobID int PRIMARY KEY NOT NULL,
 	JobTitle varchar(50) DEFAULT '',
+
 	MinSalary int NOT NULL DEFAULT 8000,
 	MaxSalary int DEFAULT NULL
 );
 CREATE TABLE Employees (
 	EmployeeID int PRIMARY KEY IDENTITY,
+
 	FirstName varchar(50) NOT NULL,
 	LastName varchar(50) NOT NULL,
 	Email varchar(50) NOT NULL,
@@ -25,9 +27,10 @@ CREATE TABLE Employees (
 -- CarModels table has all data of car models that company provides
 CREATE TABLE CarModels (
 	ModelID int PRIMARY KEY IDENTITY,
-	ModelName varchar(50) NOT NULL,
+
+	ModelName VARCHAR(50) NOT NULL,
 	Price int NOT NULL,
-	CarType varchar(50) NOT NULL,
+	CarType VARCHAR(50) NOT NUL
 	AvailableStock int NOT NULL,
 	Sold int NOT NULL,
 	Booked int NOT NULL,
@@ -52,4 +55,5 @@ CREATE TABLE Sales (
 	CONSTRAINT fkCarID FOREIGN KEY (CarID) REFERENCES Inventories (CarID),
 	CONSTRAINT fkSalesmanID FOREIGN KEY (SalesmanID) REFERENCES Employees (EmployeeID)
 );
+
 

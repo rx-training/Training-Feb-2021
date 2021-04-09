@@ -1,3 +1,6 @@
+USE AssignmentDay30;
+GO
+
 --1. Select employee details from employee table if data exists in incentive table ?
 SELECT 
 	EMPLOYEE_ID,
