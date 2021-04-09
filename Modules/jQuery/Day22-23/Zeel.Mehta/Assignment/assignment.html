@@ -10,34 +10,94 @@
         <title>
             Practice
         </title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-        </script>
-        <script>
-            $(document).ready(function(){
-              $("o").each(function(){
-                $("#pa").text();
-              });
-            });
-            </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
     </head>
     <body style="background: linear-gradient(to bottom, #ffffff, #00d9ff)">
-        <div class="container">
+        <div class="container py-5">
             <h3>jQuery</h3>
             <h4>Dropdown List</h4>
-            <select>
-                <option selected>Please select...</option>
-                <option id=".o">India</option>
-                <option id=".o">United Kingdom</option>
-                <option id=".o">Russia</option>
-                <option id=".o">United States</option>
-                <option id=".o">Japan</option>
+            <select id="countries">
+                <option value="0" selected>Please select... </option>
+                <option value="1" id="oi" value="India">India             </option>
+                <option value="2" id="ouk" value="United Kingdom">United Kingdom   </option>
+                <option value="3" id="ors">Russia           </option>
+                <option value="4" id="ous">United States    </option>
+                <option value="5" id="ojp">Japan            </option>
             </select>
-            <p id="pa"></p>
+            <br><br>
+            <label>Country you selected :                   </label><br>
+            <label for="India"  id="in"> India           </label>
+            <label for="UK"     id="uk"> United Kingdom  </label>
+            <label for="Russia" id="rs"> Russia          </label>
+            <label for="US"     id="us"> United States   </label>
+            <label for="Japan"  id="jp"> Japan           </label>
+<br><br>
+            <label id="result"></label>
         </div>
 
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $("#countries").change(function(){
+                        var c = $("#countries").find("option:selected").text();
+                       
+                        if(c.match("India"))
+                        {
+                            console.log("aaaaaa");
+                            $("#in").show();
+                            $("#uk").hide();
+                            $("#rs").hide();
+                            $("#us").hide();
+                            $("#jp").hide();
+                        }
+                       else if(c.match("United Kingdom"))
+                        {
+                            console.log("bbbbbb");
+                            $("#uk").show();
+                            $("#rs").hide();
+                            $("#us").hide();
+                            $("#jp").hide();
+                            $("#in").hide();
+                        }
+                        else if(c.match("Russia"))
+                        {
+                            $("#rs").show();
+                            $("#jp").hide();
+                            $("#in").hide();
+                            $("#uk").hide();
+                            $("#us").hide();
+                        }
+                        else if(c.match("United States"))
+                        {
+                            $("#us").show();
+                            $("#jp").hide();
+                            $("#in").hide();
+                            $("#uk").hide();
+                            $("#rs").hide();
+                        }
+                        else if(c.match("Japan"))
+                        {
+                            $("#jp").show();
+                            $("#in").hide();
+                            $("#uk").hide();
+                            $("#rs").hide();
+                            $("#us").hide();
+                        }
+                        else 
+                        {
+                        //    $("#in").show();
+                        //    $("#uk").show();
+                         //   $("#rs").show();
+                         //   $("#us").show();
+                         //   $("#jp").show();
+                        }
+                    })
+                });
+                </script>
+        
 
 
-<div style="margin-top: 460px;"></div>
+
+<div style="margin-top: 500px;"></div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 crossorigin="anonymous"></script>

@@ -1,0 +1,11 @@
+USE TutorialDB;
+
+BEGIN TRANSACTION;
+
+UPDATE Emp
+SET Name = 'Honny'
+Where Job = 'Sales';
+
+COMMIT TRANSACTION
+
+SELECT * FROM Emp

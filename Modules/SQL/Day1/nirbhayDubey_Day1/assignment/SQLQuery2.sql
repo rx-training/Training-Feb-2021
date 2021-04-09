@@ -1,6 +1,18 @@
 CREATE DATABASE AssignmentDay25
 GO
 
+USE AssignmentDay25;
+GO
+
+--You have been hired to create a relational database to support a car sales business. 
+--You need to store information on the business’s 
+--employees, 
+--inventory,
+--completed sales. 
+--You also need to account for the fact that each salesperson receives a different percentage of their sales in commission. 
+--What tables and columns would you create in your relational database, and how would you link the tables?
+
+
 CREATE TABLE Employees(
 	EmpId INT CONSTRAINT PKEmpId PRIMARY KEY IDENTITY,
 	EmpName VARCHAR(50) NOT NULL,

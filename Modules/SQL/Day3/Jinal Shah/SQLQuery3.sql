@@ -1,4 +1,6 @@
 
+		-----------adventureworks2012-----------					
+							
 							/* String function */
 SELECT Name = Title + ' ' +left(FirstName,1) + '.' + LastName, EmailAddress from Person.CountryRegion
 

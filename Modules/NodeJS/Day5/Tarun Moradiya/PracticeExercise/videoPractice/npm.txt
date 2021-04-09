@@ -1,0 +1,41 @@
+//npm -v
+//npm i -g npm@5.5.1
+
+//npm init
+//npm init --yes
+
+//npm i underscore
+
+//don't need --save in new version of npm
+
+//in previous version of node_modules when module is installed all the packages that it is dependant on were inside that module's folder
+//in new version all other module packages are outside it 
+//here when two version collapse other version is installed inside that modules folder 
+
+//npm i
+//to download all dependencies from package.json
+
+//exclude node_modules folder from git using .gitignore > nodemodule/
+
+//semantic versioning / semVer
+//"mongoose": ""mongoose": "^5.12.3"," -> Major.Minor.Patch
+
+//Patch -> bug fixers -> 5.12.4
+//Minor -> adding features that don't break existing api -> 5.13.0
+//Major -> if add feature that potencialy breaks existing api -> 6.0.0
+
+//^ -> shows that we are interested in any version as long as major version is same
+//^5.12.3 == 5.x
+
+//~ -> shows that we are interested in any version as long as major and minor version is same
+//~5.12.3 == 5.12.x
+
+//5.12.3 -> exact same version
+
+//to see exact version of a package goto node_module > package > package.json
+//npm list -> to see dependancies and their dependancies
+//npm list --depth=0 -> to see our dependencies only
+
+//npm view packageName - ex -> npm view mongoose
+//npm view mongoose dependancies
+//npm view mongoose versions

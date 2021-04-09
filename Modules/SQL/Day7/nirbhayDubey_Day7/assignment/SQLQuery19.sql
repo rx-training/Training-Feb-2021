@@ -1,6 +1,9 @@
 CREATE DATABASE AssignmentDay31;
 GO
 
+USE AssignmentDay31;
+GO
+
 CREATE SCHEMA Day4;
 GO
 

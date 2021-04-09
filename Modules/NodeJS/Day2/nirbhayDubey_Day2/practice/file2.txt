@@ -1,0 +1,1 @@
+Create second txt files, write some dummy text. Read second file content and print it in the console. use async and await.

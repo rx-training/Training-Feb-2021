@@ -1,3 +1,7 @@
+/* Write a SQL statement to create a table named JobHistory including columns EmployeeId, StartDate, End_Eate, Job_Id and 
+Department_Id and make sure that the value against column EndDate will be entered at the time of insertion to the format 
+like ‘–/–/—-‘. */
+
 CREATE TABLE JobHistories
 	(EmployeeID decimal(5,0) NOT NULL,
 	StartDate date NOT NULL,
