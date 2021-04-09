@@ -69,13 +69,14 @@
         <center>
             <h2>SIGNUP FORM</h2>
         </center>
-        <form role="form" >
+        <form role="form">
             <div class="form-group">
                 <input type="text" name="fname" id="fname" placeholder="First Name">
-                <span id="message1"> </span> <br><br>
+                <span id="message1" style="border: 1px solid red;"> </span> <br><br>
+                <span id="message2" style="border: 1px solid red; > </span> <br><br>
             </div>
-            <div class="form-group">
-                <input type="text" name="lname" id="lname" placeholder="Last Name" required>
+            <div class=" form-group">
+                    <input type="text" name="lname" id="lname" placeholder="Last Name" required>
             </div>
             <div class="form-group">
                 <input type="email" name="email" id="email" placeholder="Email Address" required>
@@ -123,9 +124,11 @@
         <div id="output">
             <!-- DISPLAY USERS DATA -->
         </div>
+        <div id="result" style="border: 1px solid red;"></div>
     </div>
 
     <script type="text/javascript">
+         var result="";
         const signUp = e => {
             let formData = {
                 fname: document.getElementById('fname').value,
@@ -136,7 +139,7 @@
             localStorage.setItem('formData', JSON.stringify(formData));
             // console.log(localStorage.getItem('formData'));
             dispData();
-            e.preventDefault();
+
         }
 
         function dispData() {
@@ -185,31 +188,52 @@
 
 
         function myFun() {
+            var result="";
             var a = document.getElementById("contactNumber").value;
-            var correctWay= /^[A-Za-z_ ]{2,30}$/;
-             var b= document.getElementById("fname").value
-            if (a == "" || b=="" ) {
-                document.getElementById("message").innerHTML = "Mobile Number or Name should not Be Empty";
-                return false;
-            }
-            if(!correctWay.test(b))
-             {
-                document.getElementById("message1").innerHTML="Name should be alphabetically only";
-                 return false;
-             }
-             if (isNaN(a)) {
-                document.getElementById("message").innerHTML = "only numbers are allowed";
-                return false;
+            var correctWay = /^[A-Za-z_ ]{2,30}$/;
+            var b = document.getElementById("fname").value
+        
+            var flag = 1;
+            if (a == "") {
+           
+             result+="Mobile Number should not Be Empty.";
+                flag = 0;
+         
 
             }
+            if (b == "") {
+
+             result += "Name should not Be Empty";
+                flag = 0;
+            }
+            if (!correctWay.test(b)) {
+
+                 result+="Name should be alphabetically only";
+                flag = 0;
+
+            }
+            if (isNaN(a)) {
+   
+                flag = 0;
+                 result+="only numbers are allowed in mobile";
+
+
+            }
+       
+
             
-             else
-             {
-                 alert("All information are in format");
-                return false;
+                if (flag == 0) {
+                    document.getElementById("result").innerHTML=result;
+                    return false;
+                }
+                else {
+                    alert("All information are in format");
+           
+                    document.getElementById("result").innerHTML=result;
 
-             
-             }
+                }
+
+            
         }
 
     </script>
