@@ -1,19 +1,22 @@
 CREATE DATABASE AssignmentDay29
 GO
 
+USE AssignmentDay29;
+GO
+
 CREATE SCHEMA Practice;
 CREATE SCHEMA Assignment;
 
 CREATE TABLE Employees(
-Id int CONSTRAINT PkEid PRIMARY KEY IDENTITY,
-Name varchar(30) NOT NULL,
-Address varchar(40) NOT NULL
+    Id int CONSTRAINT PkEid PRIMARY KEY IDENTITY,
+    Name varchar(30) NOT NULL,
+    Address varchar(40) NOT NULL
 )
 
 CREATE TABLE Salary(
-Id int CONSTRAINT FkSid FOREIGN KEY REFERENCES Employees(Id),
-Month varchar(30) NOT NULL,
-Salary int NOT NULL
+    Id int CONSTRAINT FkSid FOREIGN KEY REFERENCES Employees(Id),
+    Month varchar(30) NOT NULL,
+    Salary int NOT NULL
 )
 
 ALTER SCHEMA Practice TRANSFER dbo.Employees;
