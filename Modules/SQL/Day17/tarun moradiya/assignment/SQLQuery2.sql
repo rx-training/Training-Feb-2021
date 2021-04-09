@@ -1,0 +1,1 @@
+SELECT * FROM sys.fn_builtin_permissions('DESKTOP-MH7P3U6\SQLEXPRESS01') ORDER BY permission_name;
