@@ -9,7 +9,22 @@
         <title>Bootstrap 4 Starter Pack</title>
     </head>
 
-    <body id=home>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('a[href^="#"]').on('click',function (e) {e.preventDefault();
+                var target = this.hash,
+                $target = $(target);
+                
+                $('html, body').stop().animate({
+                    'scrollTop': $target.offset().top
+                   }, 900, 'swing', function () {
+                window.location.hash = target;
+                });
+            });
+        });
+    </script>
+
+    <body id =home >
         <nav class="navbar navbar-expand-md navbar-light fixed-top py-4">
             <div class="container">
                 <a href="index.html" class="navbar-brand">
@@ -107,68 +122,96 @@
        </section>
 
        <!-- About  Why section-->
-       <section id="about" class=" py-5 text-center bg-light">
-           <div class="container">
-               <div class="row">
-                   <div class="col">
-                       <div class="info-header mb-5">
-                           <h1 class="text-primary pb-3">
-                               Why this Book?
-                           </h1>
-                           <p class="lead pb-3">
-                               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi id omnis quia laborum? Corrupti sunt neque aperiam tempore ab deserunt quas optio, quo at esse. Necessitatibus iure suscipit sapiente maxime.
-                           </p>
-                       </div>
+      
+       <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card text-center border-primary">
+                        <div class="card-body">
+                            <h3 class="text-primary">Be Better</h3>
+                            <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, nulla!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center bg-primary text-white">
+                        <div class="card-body">
+                            <h3>Be Better</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, nulla!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center border-primary">
+                        <div class="card-body">
+                            <h3 class="text-primary">Be Better</h3>
+                            <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, nulla!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card text-center bg-primary text-white">
+                        <div class="card-body">
+                            <h3>Be Better</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, nulla!</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+    </section>
 
-                       <!-- Accordian -->
-                       <div id="accordion" role="tablist">
-                           <div class="card">
-                                <div class="card-header" id="heading1">
-                                    <h5 class="mb-0">
-                                        <div href="#collapse1" data-toggle="collapse" data-parent="#accordion">
-                                            <i class="fa fa-arrow-circle-down">Get Inspired</i>
-                                        </div>
-                                    </h5>
-                                </div>
-                                <div id="collapse1" class="collapse ">
-                                    <div class="card-body">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia consequatur illo veniam, sunt corporis architecto repellat et. Omnis, veritatis nulla! Odio sint, adipisci doloremque ab id recusandae beatae illum placeat nisi ipsam! Quae dolorum a, accusantium ullam sit eaque quos Lorem, ipsum.
-                                    </div>
-                                </div>
-                           </div>
-                           <div class="card">
-                                <div class="card-header" id="heading2">
-                                    <h5 class="mb-0">
-                                        <div href="#collapse2" data-toggle="collapse" data-parent="#accordion">
-                                            <i class="fa fa-arrow-circle-down">Open your Mind</i>
-                                        </div>
-                                    </h5>
-                                </div>
-                                <div id="collapse2" class="collapse ">
-                                    <div class="card-body">
-                                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia consequatur illo veniam, sunt corporis architecto repellat et. Omnis, veritatis nulla! Odio sint, adipisci doloremque ab id recusandae beatae illum placeat nisi ipsam! Quae dolorum a, accusantium ullam sit eaque quos Lorem, ipsum.
-                                    </div>
-                                </div>
-                             </div>
-                            <div class="card">
-                                <div class="card-header" id="heading3">
-                                    <h5 class="mb-0">
-                                        <div href="#collapse3" data-toggle="collapse" data-parent="#accordion">
-                                           <i class="fa fa-arrow-circle-down">Gain the knowledge</i>
-                                       </div>
-                                   </h5>
-                               </div>
-                                <div id="collapse3" class="collapse ">
-                                    <div class="card-body">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia consequatur illo veniam, sunt corporis architecto repellat et. Omnis, veritatis nulla! Odio sint, adipisci doloremque ab id recusandae beatae illum placeat nisi ipsam! Quae dolorum a, accusantium ullam sit eaque quos Lorem, ipsum.
-                                    </div>
-                                </div>
-                           </div>
-                           
-                   </div>
-               </div>
-           </div>
-       </section>
+    <!-- ABOUT -->
+    <div id=about class="py-5 bg-light text-center">
+        <div class="container">
+            <h2 class="display-5 text-primary">Why This Book?</h2>
+            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet beatae impedit perspiciatis!</p>
+            <hr class="mx-5 px-5">
+            <div id="accordion" role="tablist" class="mx-5 px-5">
+                <div class="card">
+                    <div class="card-header" role="tab" id="heading1">
+                        <h5 class="mb-0">
+                            <a href="#inspired" class="text-dark" data-parent="#accordion" data-toggle="collapse" aria-expanded="false">Get Inspired</a>
+                        </h5>
+                    </div>
+                    <div id="inspired" class="collapse show" aria-labelledby="heading1" data-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae maxime, veritatis culpa cumque qui, vitae, modi magni quidem delectus quam aperiam incidunt optio ut sit alias nulla esse provident labore?
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" role="tab" id="heading2">
+                        <h5 class="mb-0">
+                            <a href="#collapse2" class="text-dark" data-parent="#accordion" data-toggle="collapse" aria-expanded="false">Gain the Knowledge</a>
+                        </h5>
+                    </div>
+                    <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae maxime, veritatis culpa cumque qui, vitae, modi magni quidem delectus quam aperiam incidunt optio ut sit alias nulla esse provident labore?
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" role="tab" id="heading3">
+                        <h5 class="mb-0">
+                            <a href="#collapse3" class="text-dark" data-parent="#accordion" data-toggle="collapse" aria-expanded="false">Open Your Mind</a>
+                        </h5>
+                    </div>
+                    <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae maxime, veritatis culpa cumque qui, vitae, modi magni quidem delectus quam aperiam incidunt optio ut sit alias nulla esse provident labore?
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
        <!-- Authors -->
        <section id="authors" class="my-5 text-center">
            <div class="container">

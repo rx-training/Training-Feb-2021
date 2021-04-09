@@ -1,0 +1,56 @@
+Cluster index is a type of index which sorts the data rows in the table on their key values.
+ In the Database, there is only one clustered index per table
+
+
+A clustered index defines the order in which data is stored in the table which can be sorted in only one 
+way. So, there can be an only a single clustered index for every table. In an RDBMS, usually, the primary key
+allows you to create a clustered index based on that specific column.
+
+What is Non-clustered index?
+
+    A Non-clustered index stores the data at one location and indices at another location. The index 
+    contains pointers to the location of that data. A single table can have many non-clustered indexes as an 
+    index in the non-clustered index is stored in different places.
+
+    For example, a book can have more than one index, one at the beginning which displays the contents of 
+    a book unit wise while the second index shows the index of terms in alphabetical order.
+
+    A non-clustering index is defined in the non-ordering field of the table. This type of indexing method 
+    helps you to improve the performance of queries that use keys which are not assigned as a primary key. 
+    A non-clustered index allows you to add a unique key for a table.
+
+KEY DIFFERENCE
+    Cluster index is a type of index that sorts the data rows in the table on their key values whereas the 
+    Non-clustered index stores the data at one location and indices at another location.
+
+    Clustered index stores data pages in the leaf nodes of the index while Non-clustered index method never 
+    stores data pages in the leaf nodes of the index.
+
+    Cluster index doesn’t require additional disk space whereas the Non-clustered index requires additional disk 
+    space.
+
+    Cluster index offers faster data accessing, on the other hand, Non-clustered index is slower.
+
+
+
+
+
+---------------------------------------------2-------------------------------------------------
+You are a database administrator for the AdventureWorks Corporation. You recently created 
+some databases, and you’ve just realized how large the databases will become in the future. 
+Therefore, you need to create a new clustered index to help with overall performance.
+Using the SSMS interface, what steps would you use to create a new clustered index on the 
+name column for the AdventureWorks database?
+
+Ans:
+    For making new cluster changes  I use smms services and right click on the particluar table to make new 
+     Cluster indexes and then select thoes columns which are uniques and can be easily find out data through which
+     column then select  those cloumn and Make one cluster index so now we sql find data from the index if it is
+     already there then it wil directly give data from  the  indexes
+
+
+
+
+-----------------------------------------------3---------------------------------------------
+
+Third is in the sql file.
