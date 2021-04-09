@@ -1,0 +1,32 @@
+.col-md-4, .col-md-8{
+    height: 530px;
+}
+.col-md-8 img{
+    margin: 100px 160px;
+}
+
+#main{
+    overflow: overlay;
+    border: 2px solid rgb(202, 224, 101);
+}
+#sidebar{
+    border: 1px solid rgb(127, 195, 212);
+    overflow: overlay;
+}
+#sidebar ul{
+    color: azure;
+    list-style: none;
+}
+#sidebar a:hover{
+    background:lavenderblush;
+}
+#sidebar a{
+
+}
+
+@media only screen and (max-width: 576px)
+{
+    #sidebar{
+        height: 220px;
+    }
+}

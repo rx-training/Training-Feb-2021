@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>Call and apply function </title>
+    <style>
+      body{
+        background-color: #74747c;
+
+      }
+      .container{
+        background-color: #04043c;
+      }
+      label{
+        color: yellow;
+        font-size: medium;
+      }
+     
+    </style>
+  </head>
+  <body>
+
+    <h1 class="text-center pb-5">Call Function</h1>
+
+<div class="container p-5">
+    <form onsubmit="return emp()">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="desig">Designation</label>
+            <input type="text" class="form-control" id="desig" name="desig" placeholder="Enter your designation">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" class="form-control" id="address" placeholder="Enter your address" name="address">
+        </div>
+        
+        <button type="submit" class="btn btn-primary pb-2" id="submit" name="submit">Submit</button>
+    <h2 id="demo" class="text-center text-light"></h2>
+
+      </form>
+    </div>
+
+
+    <script>
+      
+      var details = {
+    employee: function() {
+      return this.name1 + "</br>" + this.name2 + "</br>" + this.address + " </br> "+ "Welcome to RadixWeb!!!!!";
+
+  }
+}
+ function emp(){ 
+  var names1 = document.getElementById('name').value;
+  var names2 = document.getElementById('desig').value;
+  var eaddress = document.getElementById('address').value;
+
+  
+  var employee1 = {
+    name1: names1,
+    name2: names2,
+    address: eaddress
+  }
+  var check = details.employee.call(employee1);  
+document.getElementById('demo').innerHTML = check;
+return false;
+  
+ }
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+   
+  </body>
+</html>

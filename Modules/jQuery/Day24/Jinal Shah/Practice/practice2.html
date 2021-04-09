@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 2</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        .descendants, .descendants1, .descendants2 * { 
+          display: block;
+          border: 2px solid lightgrey;
+          color: lightgrey;
+          padding: 5px;
+          margin: 15px;
+        }
+        .div1 * { 
+          display: block;
+          border: 2px solid lightgrey;
+          color: lightgrey;
+          padding: 5px;
+          margin: 15px;
+        }
+    </style>
+    
+    <script>
+        $(document).ready(function(){
+          $(".descendants").children().css({"color": "red", "border": "2px solid red"});
+          $(".div1").children("p.first").css({"color": "red", "border": "2px solid green"});
+          $(".descendants1").find("span").css({"color": "red", "border": "2px solid blue"});
+          $(".descendants2").find("*").css({"color": "red", "border": "2px solid yellow"});
+        });
+    </script>
+
+</head>
+<body>
+    <h2 class="pl-5">jQuery Traversing - Descendants</h2>
+    
+    <div class="descendants p-5" style="width:500px;">div (current element) 
+        <p>p (child)
+          <span>span (grandchild)</span>   
+        </p>
+        <p>p (child)
+          <span>span (grandchild)</span>
+        </p> 
+    </div>
+    
+
+    <div class="div1 p-5" style="width:500px;">div (current element) 
+        <p class="first">p (child)
+          <span>span (grandchild)</span>   
+        </p>
+        <p class="second">p (child)
+          <span>span (grandchild)</span>
+        </p> 
+    </div>
+
+    <div class="descendants1 p-5" style="width:500px;">div (current element) 
+        <p>p (child)
+          <span>span (grandchild)</span>   
+        </p>
+        <p>p (child)
+          <span>span (grandchild)</span>
+        </p> 
+    </div>
+
+    <div class="descendants2 p-5" style="width:500px;">div (current element) 
+        <p>p (child)
+          <span>span (grandchild)</span>   
+        </p>
+        <p>p (child)
+          <span>span (grandchild)</span>
+        </p> 
+    </div>
+
+</body>
+</html>

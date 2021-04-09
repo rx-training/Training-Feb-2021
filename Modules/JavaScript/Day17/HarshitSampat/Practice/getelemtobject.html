@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+<body>
+    <h2>Finding html element using document.forms</h2>
+    <form id="frm1" action="../Assignment/assignment.html">
+        FirstName:<input type="text" name="fname" value="Harshit"><br>
+        LastName:<input type="text" name="lname" value="Sampat"><br>
+       
+    </form>
+    <input type="submit" value="Submit">
+<p>Click "try it" to display the elemts in the form </p>
+<button onclick="myFunction()">Try it</button>
+
+<p id ="demo"></p>
+<script>
+    function myFunction(){
+        var x = document.forms["frm1"];
+        var text="";
+        var i;
+        for(i=0;i<x.length;i++){
+            text +=x.elements[i].value+"<br>"
+        }
+        document.getElementById("demo").innerHTML=text
+    }
+</script>
+</body>
+</html>

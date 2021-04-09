@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 3</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+
+    <script>
+
+        function check(s1,n1,n2)
+        {
+            if( s1.length === 0)
+            {
+                alert("String is empty \nEnter valid input");
+            }
+            else
+            {
+                var str = s1;
+                var res = str.substr(n1, n2);
+                document.getElementById("demo").innerHTML = "Substring = " + res;
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <div class="card text-center col-md-6 border-dark mb-3 p-5 mx-auto">
+        <div class="card-header bg-dark text-white">
+           <h5>Write a JavaScript function to extract a specified number of characters from a string.</h5>
+        </div>	
+        <div class="card-body">
+         
+                <label for="s1" class="form-label">Enter string :</label>
+                <input type="text" class="form-control" id="s1"><br>
+                <label for="n1" class="form-label">Enter position no :</label>
+                <input type="text" class="form-control" id="n1"><br>
+                <label for="n2" class="form-label">Enter character digit :</label>
+                <input type="text" class="form-control" id="n2"><br>
+                <button class="btn btn-primary" type="submit" onclick="check(s1.value,n1.value,n2.value)" >Check</button><br>
+                <br>
+                <h1 id="demo" style="color: brown;"> </h1>
+        </div>
+    </div>
+
+</body>
+</html>

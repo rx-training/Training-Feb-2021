@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .container{
+            margin-left: 300px;
+            margin-top: 10px;
+            text-align: center;
+            width: 50%;
+        }
+        .alert{
+            padding: 20px;
+            width: 50%;
+            margin-left: 300px;
+            margin-top: 10px;
+            color: white;
+        }
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+          
+        .closebtn:hover {
+            color: black;
+        }
+        @media(max-width: 768px){
+            .container{
+                margin-left: auto;
+                width: 100%;
+            }
+            .alert{
+                margin-left: auto;
+                width: 100%;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container bg-warning">
+        <legend>Enter Employee Details</legend>
+        <label><b>Name</b></label>
+        <input id="demo1" type="text" name="fname" value="" required><br><br>
+        <label><b>Employee Id</b></label>
+        <input id="demo2" type="text" name="employeeid" value="" required><br><br>
+        <label><b>Age</b></label>
+        <input id="demo3" type="number" name="Age" value=""><br><br>
+        <label><b>Gender :</b></label><br>
+        <input id="demo4" type="radio" name="gender" value="male">
+        <label>Male</label><br>
+        <input id="demo5" type="radio" name="gender" value="female">
+        <label>Female</label><br><br>
+        <label><b>Designation</b></label>
+        <input id="demo6" type="text" name="designation" value=""><br><br>
+        <label><b>Salary</b></label>
+        <input id="demo7" type="number" name="salary" value=""><br><br>
+        <label><b>Location:</b></label>
+        <select name="Ahemadabad">
+            <option value="Ahemadabad">Ahemadabad</option>
+            <option value="Surat">Surat</option>
+            <option value="Vadodara">Vadodara</option>
+            <option value="Mumbai">Mumbai</option>
+        </select><br><br>
+        <label><b>Date of Joining:</b></label>
+        <input id="demo8" type="date" name="dateofjoining" value=""><br><br>
+        <label><b>Email Id :</b></label>
+        <input id="demo9" type="email" name="email" value=""><br><br>
+        <label><b>Contact No. :</b></label>
+        <input id="demo10" type="number" name="contactno" value=""><br><br><br>
+        <input type="button" name="button"  onclick ="validation()" value="Submit">
+    </div>
+    <div class="alert demo11">done
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
+    <div class="alert demo12">done
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
+    <div class="alert demo13">done
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
+    <div class="alert demo14">done
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
+    <div class="alert demo15">done
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
+    <div class="alert demo16">done
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
+    <div class="alert demo17">done
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
+    <div class="alert demo18">done
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
+    <div class="alert demo19">done
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    <script>
+            function validation(){
+            var a = document.getElementById("demo1").value;
+            var b = document.getElementById("demo2").value;
+            var c = document.getElementById("demo3").value;
+            var d = document.getElementById("demo4").checked;
+            var e = document.getElementById("demo5").checked;
+            var f = document.getElementById("demo6").value;
+            var g = document.getElementById("demo7").value;
+            var h = document.getElementById("demo8").value;
+            var i = document.getElementById("demo9").value;
+            var j = document.getElementById("demo10").value;
+            if(a.length == 0){
+                document.getElementsByClassName("demo11")[0].style.backgroundColor = "red";
+                document.getElementsByClassName("demo11")[0].innerHTML = "Please enter your name";
+            }
+            else document.getElementsByClassName("demo11")[0].style.display = "none";
+
+            var k = /[0-9A-Za-z]{6}/;
+            if(b.length != 0){
+                var l = b.match(k);
+                if(l != -1){
+                    document.getElementsByClassName("demo12")[0].style.display = "none";
+                }
+                else{
+                    document.getElementsByClassName("demo12")[0].style.backgroundColor = "red";
+                    document.getElementsByClassName("demo12")[0].innerHTML = "Please enter atleast 6 charcter";
+                }
+            }
+            else {
+                document.getElementsByClassName("demo12")[0].style.backgroundColor = "red";
+                document.getElementsByClassName("demo12")[0].innerHTML = "Please fill the employee id";
+            } 
+
+            var m = /[0-9]/;
+            var n = c.match(m);
+            if(n != null){
+                document.getElementsByClassName("demo13")[0].style.display = "none";
+            }
+            else{
+                document.getElementsByClassName("demo13")[0].style.backgroundColor = "red";
+                document.getElementsByClassName("demo13")[0].innerHTML = "Please enter age";
+            }
+            if(d == true || e == true){
+                document.getElementsByClassName("demo14")[0].style.display = "none";
+            }
+            else{
+                document.getElementsByClassName("demo14")[0].style.backgroundColor = "red";
+                document.getElementsByClassName("demo14")[0].innerHTML = "please select Gender ";
+            }
+
+            if(f.length == 0){
+                document.getElementsByClassName("demo15")[0].style.backgroundColor = "red";
+                document.getElementsByClassName("demo15")[0].innerHTML = "Please enter Designation";
+            }
+            else{ document.getElementsByClassName("demo15")[0].style.display = "none";}
+
+            var z = g.match(m);
+            if(z != null){
+                document.getElementsByClassName("demo16")[0].style.display = "none";
+            }
+            else{
+                document.getElementsByClassName("demo16")[0].style.backgroundColor = "red";
+                document.getElementsByClassName("demo16")[0].innerHTML = "Please enter Salary";
+            }
+
+            if(h.length == 10){
+                document.getElementsByClassName("demo17")[0].style.display = "none";
+            }
+            else{
+                document.getElementsByClassName("demo17")[0].style.backgroundColor = "red";
+                document.getElementsByClassName("demo17")[0].innerHTML = "Please enter Date of joining";
+            }
+            var y = /[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+/;
+            var x = i.match(y);
+            if(x != null){
+                document.getElementsByClassName("demo18")[0].style.display = "none";
+            }
+            else{
+                document.getElementsByClassName("demo18")[0].style.backgroundColor = "red";
+                document.getElementsByClassName("demo18")[0].innerHTML = "Plaese fill / correct email";
+            }
+
+            if(j.length == 9){
+                document.getElementsByClassName("demo19")[0].style.display = "none";
+            }
+            else{
+                document.getElementsByClassName("demo19")[0].style.backgroundColor = "red";
+                document.getElementsByClassName("demo19")[0].innerHTML = "Please fill / valid number and number should be 9 digit ";
+            }
+
+        }
+    </script>
+</body>
+</html>

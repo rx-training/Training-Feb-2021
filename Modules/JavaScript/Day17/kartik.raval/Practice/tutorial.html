@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial</title>
+</head>
+<body>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <p id="demo11"></p>
+    <p id="demo12"></p>
+    <p id="demo13"></p>
+    <input type="button" value="back" onclick="goback()">
+    <input type="button" value="Try this" onclick="myFunction()">
+    <script>
+        document.getElementById("demo1").innerHTML = "Screen height is "+screen.height;
+        document.getElementById("demo2").innerHTML = "Screen width is "+screen.width;
+        document.getElementById("demo3").innerHTML = "Avail Screen width is "+screen.availWidth;
+        document.getElementById("demo4").innerHTML = window.location.href;
+        document.getElementById("demo5").innerHTML = window.location.pathname;
+        document.getElementById("demo6").innerHTML = window.location.protocol;
+        document.getElementById("demo7").innerHTML = window.location.port;
+        document.getElementById("demo8").innerHTML = navigator.appName;
+        document.getElementById("demo9").innerHTML = navigator.appCodeName;
+        document.getElementById("demo10").innerHTML = navigator.appVersion;
+        document.getElementById("demo11").innerHTML = navigator.platform;
+        document.getElementById("demo12").innerHTML = navigator.javaEnabled();
+        document.getElementById("demo13").innerHTML = navigator.javaEnabled();
+        function goback(){
+            window.history.back()
+        }
+
+        function myFunction() {
+            var txt;
+            if (confirm("Press a button!")) {
+                txt = "You pressed OK!";
+            } else {
+                txt = "You pressed Cancel!";
+            }
+            document.getElementById("demo").innerHTML = txt;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-8">
+                <p>List of Country</p>
+                <select id="country">
+                    <option value="0" id="o_ps" selected>Please select country</option>
+                    <option value="1" id="o_ind">India</option>
+                    <option value="2" id="o_aus">Australia</option>
+                    <option value="3" id="o_eng">England</option>
+                    <option value="4" id="o_pak">Pakistan</option>
+                    <option value="5" id="o_nz">Newzealand</option>
+                </select><br><br>
+                <label>List of Countries : </label>
+                <label for="India" id="ind">India</label>
+                <label for="Australia" id="aus">Australia</label>
+                <label for="England" id="eng">England</label>
+                <label for="Pakistan" id="pak">Pakistan</label>
+                <label for="Newzealand" id="nz">Newzealand</label>
+                <br><br>
+                <label id="result"></label>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#country").change(function() {
+          var temp = $("#country").find("option:selected").text();
+          $("#result").text("You have selected : "+ temp);
+          
+          if(temp == "India")
+          {
+            $("#ind").hide();
+            $("#aus").show();
+            $("#eng").show();
+            $("#pak").show();
+            $("#nz").show();
+          }
+          else if(temp == "Australia"){
+            $("#ind").show();
+            $("#aus").hide();
+            $("#eng").show();
+            $("#pak").show();
+            $("#nz").show();
+          }
+          else if(temp == "England"){
+            $("#ind").show();
+            $("#aus").show();
+            $("#eng").hide();
+            $("#pak").show();
+            $("#nz").show();
+          }
+          else if(temp == "Pakistan"){
+            $("#ind").show();
+            $("#aus").show();
+            $("#eng").show();
+            $("#pak").hide();
+            $("#nz").show();
+          }
+          else if(temp == "Newzealand"){
+            $("#ind").show();
+            $("#aus").show();
+            $("#eng").show();
+            $("#pak").show();
+            $("#nz").hide();
+          }
+          else{
+            $("#ind").show();
+            $("#aus").show();
+            $("#eng").show();
+            $("#pak").show();
+            $("#nz").show();
+          }
+        })
+      });
+      
+        
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

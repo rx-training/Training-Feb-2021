@@ -1,0 +1,32 @@
+
+
+
+body{
+    background: linear-gradient(to right,#f93d66,#6d47d9);
+    font-weight: 700;
+    color: var(--color);
+    font-size: 22px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+.item{
+    background-color: var(--lightblue);
+    text-align: center;
+    padding: 5px;
+    border-radius: 2px;
+}
+.item:hover{
+    background-color: chartreuse;
+    cursor: pointer;
+    transform: translateY(5px);
+}
+@media(max-width:800px){
+    .container{
+        grid-template-columns: 1fr;
+        padding: 0 40px;
+    }
+}

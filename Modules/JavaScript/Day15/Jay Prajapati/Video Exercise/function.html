@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+<body>
+    <button onclick="myFunction1()">fun1</button>
+    <button onclick="myFunction2()">fun2 </button>
+    <button onclick="myFunction3()">fun3 </button>
+    <button onclick="myFunction4()">fun4</button>
+    <button onclick="myFunction5()">fun5 </button>
+    <button onclick="myFunction6()">fun6 </button>
+    <button onclick="myFunction7()">fun7 </button>
+    <button onclick="temp();">call by variable name with ()</button>
+    <button onclick="temp;">call by variable</button>
+
+    <script>
+        function myFunction1(){
+            console.log('Hello World');
+        };
+        myFunction1();
+
+        function myFunction2(){
+            console.log('Hello World' + 9908);
+        };
+        myFunction2();
+
+        function myFunction3(){
+            console.log('Hello World' + '84739');
+        };
+        myFunction3();
+
+        function myFunction4(){
+            console.log('Hello World' + 'this is sample');
+        };
+        myFunction4();
+
+        
+        function myFunction5(a,b){
+            console.log('Hello World' + (a * b));
+        };
+        myFunction4(54, 44);
+
+        
+        function myFunction6(a,b,c){
+            console.log(typeof c);
+        };
+        myFunction6(23, 53);
+
+
+        var temp = myFunction7(43,534);
+        function myFunction7(a,b){
+            console.log(a + b);
+        };
+        
+
+
+        var temp = myFunction8();
+        function myFunction8(){
+            console.log('Jay');
+        };
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="dropdown">
+              <button class="btn btn-warning btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                  4 : Grid & Flexbox
+              </button>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" href="p_grid_system.html">4.2 Grid System</a>
+                  <a class="dropdown-item" href="p_grid_alignment.html">4.3 Grid Alignment</a>
+                  <a class="dropdown-item" href="p_flexbox.html">4.4 Flexbox</a>
+                  <a class="dropdown-item" href="p_Automargin.html">4.5 Auto Margins and Wrap</a>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-3">
+          <div class="dropdown">
+              <button class="btn btn-danger btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                  5 : Javascript Widgets
+              </button>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" href="p_Carousel.html">5.2 Carousel</a>
+                  <a class="dropdown-item" href="p_collapse.html">5.3 Collapse</a>
+                  <a class="dropdown-item" href="p_Tooltips.html">5.4 Tooltips</a>
+                  <a class="dropdown-item" href="p_popovers.html">5.5 Popovers</a>
+                  <a class="dropdown-item" href="p_Modals.html">5.6 Modals</a>
+              </div>
+          </div>
+      </div>
+      </div>
+    </div><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 m-auto">
+                <!--Simple slider-->
+                <div id="slider1" class="carousel slide mb-5" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid" src="Img/Download1.jpg" alt="first slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="Img/Download2.jpg" alt="second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="Img/Download3.jpg" alt="third slide">
+                        </div>
+                    </div>
+                </div>
+                <!--Carousel with control-->
+                <div id="slider2" class="carousel slide mb-5" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid" src="Img/Download1.jpg" alt="first slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="Img/Download2.jpg" alt="second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="Img/Download3.jpg" alt="third slide">
+                        </div>
+                    </div>
+                    <a href="#slider2" class="carousel-control-prev" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+                    <a href="#slider2" class="carousel-control-next" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+                </div>
+                <br>
+                <!--Carousel with indicator-->
+                <div id="slider3" class="carousel slide mb-5" data-ride="carousel">
+                    <ol class="carousel-indicators"> 
+                        <li class="active" data-target="#slider3" data-slide-to="0"></li>
+                        <li data-target="#slider3" data-slide-to="1"></li>
+                        <li data-target="#slider3" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid" src="Img/Download1.jpg" alt="first slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="Img/Download2.jpg" alt="second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="Img/Download3.jpg" alt="third slide">
+                        </div>
+                    </div>
+                    <a href="#slider3" class="carousel-control-prev" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+                    <a href="#slider3" class="carousel-control-next" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+                </div>
+
+                <br>
+                <!--Carousel with caption-->
+                <div id="slider4" class="carousel slide mb-5" data-ride="carousel">
+                    <ol class="carousel-indicators"> 
+                        <li class="active" data-target="#slider4" data-slide-to="0"></li>
+                        <li data-target="#slider4" data-slide-to="1"></li>
+                        <li data-target="#slider4" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid" src="Img/Download1.jpg" alt="first slide">
+                            <div class="carousel-caption">
+                                <h3>Slide one</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="Img/Download2.jpg" alt="second slide">
+                            <div class="carousel-caption">
+                                <h3>Slide two</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="Img/Download3.jpg" alt="third slide">
+                            <div class="carousel-caption">
+                                <h3>Slide three</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#slider4" class="carousel-control-prev" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+                    <a href="#slider4" class="carousel-control-next" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        $('.carousel').carousel({
+            interval :1000,
+            keyboard: true,
+            pause: hover,
+            wrap:true
+        });
+        $("#slider4").on('slide.bs.carousel',function(){
+            console.log('slide');
+        });
+        $("#slider4").on('slid.bs.carousel',function(){
+          console.log('slid');
+        });
+    </script>
+</body>
+</html>

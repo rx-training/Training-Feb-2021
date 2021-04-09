@@ -1,0 +1,31 @@
+<!DOCTYPE html> 
+<html> 
+      
+<head> 
+    <title> 
+        How to get current date in JavaScript? 
+    </title> 
+</head> 
+  
+<body> 
+      
+    <p> 
+        Current Date is:  
+        <span class="output"></span> 
+    </p> 
+  
+    <button onclick="getCurrentDate()"> 
+        Get current Date 
+    </button> 
+      
+    <script type="text/javascript"> 
+        function getCurrentDate() { 
+            let date = new Date().toDateString(); 
+  
+            document.querySelector('.output').textContent 
+                    = date; 
+        } 
+    </script> 
+</body> 
+  
+</html>         

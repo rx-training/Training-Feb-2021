@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Click the button to demonstrate the prompt box.</p>
+
+<button onclick="myFunction()">Click Me</button>
+
+<h2 id="demo"></h2>
+
+<script>
+function myFunction() {
+  var num1 = prompt("Enter Three Number1 :");
+  var num2 = prompt("Enter Three Number2 :");
+  var num3 = prompt("Enter Three Number3 :");
+  if(num1 >= num2){
+    if(num1 >= num3)
+        var greater = num1;
+    else
+        var greater = num3;
+  }
+  else{
+    if(num2 >= num3)
+        var grater = num2;
+    else
+        var grater = num3;
+  }
+  var sum = 0;
+  if(greater>40){
+    if(num1>40)
+        sum = parseInt(num1) + parseInt(sum);
+    if(num2>40)
+        sum = parseInt(num2) + parseInt(sum);
+    if(num3>40)
+        sum = parseInt(num3) + parseInt(sum);
+  }
+  document.getElementById('demo').innerHTML = "Grater Number is :" + grater + " and sum of numbers which are grater than 40 is :" + sum;
+  }
+
+</script>
+</body>
+</html>

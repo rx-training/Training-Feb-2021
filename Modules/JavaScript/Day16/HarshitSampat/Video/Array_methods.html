@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Javascript Array Method</h2>
+    <h2>toString()</h2>
+    <p>the toString() method returns an array as a coma seperated string</p>
+    <p id=demo></p>   
+    <p style="color: rgb(175, 207, 126);" id="join">
+     <p  id="element" s><strong></strong></p>
+    <p style="color:aqua" id ="popped"></p></strong>
+    
+
+    <button onclick="push_element()">Clik here to push</button>
+    
+   <p id="demo4">
+    <p id="demo5"></p>
+    <script>
+        var fruits = ["Banana","Orange","Apple","Mango"];
+        document.getElementById("demo").innerHTML=fruits.toString();
+    </script>
+    <script>
+        var fruits = ["Banana","Orange","Apple"];
+        document.getElementById("join").innerHTML=fruits.join("#");
+    </script>
+    <script>
+        var fruits = ["Banana","Orange","Apple","Mango"];
+        document.getElementById("element").innerHTML = fruits.pop();
+        document.getElementById("popped").innerHTML=fruits;
+    </script>
+
+    <script>
+        var fruits = ["Banana","Orange","Apple","Mango"];
+        
+        function push_element(){
+        document.getElementById("demo4").innerHTML = fruits.push("kiwi","Grapes");
+        document.getElementById("demo5").innerHTML=fruits;
+        }
+    </script>
+    <script>
+        
+    </script>
+    
+    
+</body>
+</html>

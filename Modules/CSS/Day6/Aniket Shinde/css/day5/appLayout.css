@@ -1,0 +1,35 @@
+
+    #basicAppLayout  .header {
+        background-color: #07afa4;
+        color: white;
+        padding: 15px;
+    }
+    #basicAppLayout .categories{
+        margin-top: 10px;
+        background-color: wheat;
+        padding: 10px;
+    }
+    
+    #basicAppLayout .products .card:hover {
+        box-shadow: 5px 5px 8px 5px rgba(0,0,0,0.5);
+    }
+    
+    #basicAppLayout .footer {
+        margin-top: 10px;
+        background-color: gray;
+        color: #ffffff;
+        font-size: 12px;
+        padding: 15px;
+    }
+    #basicAppLayout .footer p{
+        text-align: center;
+        font-size: 15px;
+        width:100%;
+    }
+    #basicAppLayout .center{
+        text-align: center;
+    }
+    #basicAppLayout .row img{
+        width: 100%;
+        height: auto;
+    }

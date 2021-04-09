@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web fetch</title>
+</head>
+<body>
+<p id ="demo"> Fetch file  to change this text</p>
+<p>Click the button to get your coordinates</p>
+<button on click="getLocaation()">Click here to get your location </button>
+<p id="location"></p>
+    <script>
+    getText("fetch_info.txt");
+
+async function getText(file){
+    let myObject = await fetch(file);
+    let myText = await myObject.text();
+    document.getElementById("demo").innerHTML = myText;
+}
+</script>
+<script>
+var x = document.getElementById("location");
+function getLocaation(){
+    if (navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(showPosition,showError);
+    }else{
+        x.innerHTML = "Geolocation is not supported by this browser"
+    }
+}
+function showPosition(position){
+    x.innerHTML = "Latitude" + position.coords.latitude+ "<br>longitude:"+position.coords.longitude;
+}
+
+function showError(error){
+    switch(error.code){
+        case error.PERMISSION_DENIDE:
+            X.innerHTML = "Use denied the request for Geolocation"
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location Information is unavailable"
+            break;
+        case error.TIMEOUT:
+            x.innerHTML ="The request to get user location time out"
+            break;
+        case error.UNKNOWN_ERROR:
+            X.innerHTML = "An unknown error occured"
+            break;
+    }
+}
+</script>
+</body>
+</html>

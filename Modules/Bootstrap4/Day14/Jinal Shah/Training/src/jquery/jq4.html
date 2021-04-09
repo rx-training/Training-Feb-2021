@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../scss/style.scss">
+        <title>Training Content Site</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+        <style>
+            .div1{
+                margin-left: 300px;
+                margin-right: 200px;
+                margin-top: 100px;
+            }
+            .con{
+                color: white;
+                padding: 30px;
+                display: none;
+                margin-top: 20px;
+                text-align: center;
+                background: rgb(41, 124, 124);
+            }
+            @media screen and (max-width: 700px) {
+
+            .div1{
+                margin-left: 30px;
+                margin-right: 20px;
+                margin-top: 10px;
+            }
+            .sidebar-container {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .sidebar-container a {float: left;}
+            
+            }
+          
+            @media screen and (max-width: 400px) {
+            .sidebar-container a {
+                text-align: center;
+                float: none;
+            }
+            }
+        </style>
+
+    </head>
+
+    <body id="home"  style="background-color: black;">
+        
+        <!----------- nav bar ------------->
+        <nav class="navbar navbar-expand-md  navbar-dark fixed-top py-2">
+            <div class="container">
+                <a href="index.html" class="navbar-brand">
+                    <img src="../img/download.jpg" width="50" height="50" alt="logo">
+                        <h3 class="d-inline align-middle">Training Content</h3>
+                </a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../HTML/htmlmain.html" class="nav-link">HTML</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../CSS_/cssmain.html" class="nav-link">CSS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../Bootstrap/bootmain.html" class="nav-link">Bootstrap</a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="../javascript/jsmain.html" class="nav-link">Javascript</a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="../jquery/jqmain.html" class="nav-link">jQuery</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+<!----------- side bar ------------->
+        <div class="sidebar-container col-md-3">
+
+            <div class=" sidebar-logo">
+              Day 22_23
+            </div>
+            <ul class="sidebar-navigation">
+              <li class="header">Practice</li>
+              <li>
+                <a href="jq1.html">Practice 1</a>
+              </li>
+              <li>
+                <a href="jq2.html">Practice 2</a>
+              </li>
+              <li>
+                <a href="jq3.html">Practice 3</a>
+              </li>
+              <li class="header">Assignment</li>
+              <li>
+                <a href="jq4.html">Assignment 1</a>
+              </li>
+            </ul><br>
+
+            <div class=" sidebar-logo">
+                Day 24
+            </div>
+            <ul class="sidebar-navigation">
+                <li class="header">Practice</li>
+                <li>
+                  <a href="jqq1.html" target="_blank">Practice 1</a>
+                </li>
+                <li>
+                  <a href="jqq2.html" target="_blank">Practice 2</a>
+                </li>
+                <li>
+                    <a href="jqq3.html" target="_blank">Practice 3</a>
+                </li>
+                <li class="header">Assignment</li>
+                <li>
+                  <a href="jqq4.html">Assignment 1</a>
+                </li>
+            </ul><br>
+
+          </div>
+
+          <div class="div1 form-group">
+            <div>
+            <label for="location" style="color: white;">Select Country</label>
+            <select id="location" class="custom-select">
+                <option value="Select">Please Select</option>
+                <option value="India">India</option>
+                <option value="Newzealand">New Zealand</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="Russia">Russia</option>
+                <option value="Australia">Australia</option>
+            </select>   
+            </div>
+            <div class="Select con"> <h4>Country List :</h4>
+                                                     <strong>India</strong><br> 
+                                                     <strong>New Zealand</strong><br>
+                                                     <strong>Malaysia</strong><br>
+                                                     <strong>Russia</strong><br>
+                                                     <strong>Australia</strong><br></div>
+            <div class="India con">You have selected <strong>India</strong> </div>
+            <div class="Newzealand con">You have selected <strong>New Zealand</strong> </div>
+            <div class="Malaysia con">You have selected <strong>Malaysia</strong> </div>
+            <div class="Russia con">You have selected <strong>Russia</strong> </div>
+            <div class="Australia con">You have selected <strong>Australia</strong> </div>
+
+          <script>
+            $(document).ready(function(){
+                $("select").change(function(){
+                    $(this).find("option:selected").each(function(){
+                        var optionValue = $(this).attr("value");
+                        if(optionValue){
+                            $(".con").not("." + optionValue).hide();
+                            $("." + optionValue).show();
+                        } else{
+                            $(".con").hide();
+                        }
+                    });
+                }).change();
+            });
+        </script>
+         
+
+
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/popper.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+    </body>
+</html>

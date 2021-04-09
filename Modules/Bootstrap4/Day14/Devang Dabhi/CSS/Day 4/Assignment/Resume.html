@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>resume</title>
+    <style>
+      h3 {
+    color: rgb(17, 16, 16);
+    }  
+
+div.a{
+    border: solid 1px;
+    background-color : rgb(22, 207, 231);
+}
+article{
+    border: solid 1px;
+    background-color:  rgb(22, 207, 231);
+}
+table, th, td {
+  border: 1px solid black;
+}
+
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main main main'
+    'footer footer footer footer footer footer';
+  grid-gap: 3px;
+  background-color: black;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+/* for tablets */
+@media only screen and (max-width: 700px) {
+    .grid-container{
+<div class="item3">
+grid-template-columns:1fr;
+        grid-template-areas: 'header header header header '
+	'header header header header '
+        'menu menu menu menu '
+        'main main main main '
+        'footer footer footer footer';
+    }
+} 
+
+  /* for mobiles */
+@media only screen and (max-width: 400px) {
+    .grid-container{
+grid-template-columns:1fr;
+<div class="item3">	
+        grid-template-areas: 'header header header'
+	'header header header'
+        'menu menu menu'
+        'main main main'
+        'main main main'
+        'footer footer footer;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+  <div class="item1">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+    <div class="container">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse"  >
+            <span class="navbar-toggler-icon">
+            </span>
+        </button>
+        <p><img src="devanglogo.jpg" alt="DEVANG-LOGO"  height= 100; width=100></p>  
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="../../../HTML/website.html" class="nav-link">HTML</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../../../CSS/css starting.html" class="nav-link">CSS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../../../Bootstrap/Starting.html" class="nav-link">Bootstrap</a>
+                </li>
+            </ul>
+        </div>        
+    </div>
+</nav>
+
+</div>
+
+<div class="item2">
+    <div class="container text-end">
+    <div>
+    <h6><button type="button" class="collapsible">Day 4</button></h6>
+    <hr>
+    <h6><button type="button" class="collapsible">Practice</button></h6>
+
+    <ul>
+            <h6><li><a href="../practice/displayproperties.html">Display Properties</a></li></h6>
+            <h6><li><a href="../practice/H1 And H3 tag.html">H1 And H3 tag</a></li></h6>
+            <h6><li><a href="../practice/Paragraph.border.html">Paragraph Border</a></li></h6>
+            <h6><li><a href="../practice/Student.html">Student</a></li></h6>
+            <h6><li><a href="../practice/Universal_selector.html">Universal Selector</a></li></h6>
+    </ul>
+    </div>
+    <div class="text-center">
+     <h6> <button type="button" class="collapsible">Assignment</button></h6>
+      <ul>
+      <h6><li><a href="../Assignment/Resume.html">Resume</a></li></h6>
+      </ul>
+    </div>
+    <div>
+      <h6><button type="button" class="collapsible">Day Video Exercise</button></h6>
+      <ul>
+      <h6><li><a href="../Video Exercise/Video_Exercise.html">Task 1</a></li></h6>
+      </ul>
+    </div>
+    </div>
+
+    <div class="container text-end">
+    <div>
+    <h6><button type="button" class="collapsible">Day 5</button></h6>
+    <hr>
+    <h6><button type="button" class="collapsible">Practice</button></h6>
+
+    <ul>
+            <h6><li><a href="../../Day 5/Practice/absolute.html" target="blank">Absolute</a></li></h6>
+            <h6><li><a href="../../Day 5/Practice/fixed.html" target="blank">Fixed</a></li></h6>
+            <h6><li><a href="../../Day 5/Practice/inline-block.html" target="blank">inline-block</a></li></h6>
+            <h6><li><a href="../../Day 5/Practice/overflow-property.html" target="blank">Overflow Property</a></li></h6>
+            <h6><li><a href="../../Day 5/Practice/relative.html"target="blank">relative</a></li></h6>
+            <h6><li><a href="../../Day 5/Practice/static.html" target="blank">Static</a></li></65>
+
+    </ul>
+    </div>
+    <div class="text-center">
+     <h6> <button type="button" class="collapsible">Assignment</button></h6>
+      <ul>
+      <h6><li><a href="../../Day 5/Assignment/home.html" target="blank">Task-Project</a></li></h6>
+      </ul>
+    </div>
+    <div>
+      <h6><button type="button" class="collapsible">Day Video Exercise</button></h6>
+      <ul>
+      <h6><li><a href="../../Day 5/Video/video-exercise.html"target="blank">Task 1</a></li></h6>
+      <h6><li><a href="../../Day 5/Video/marjin-padding-border.html" target="blank">Maggin-padding Border</a></li></65>
+      </ul>
+    </div>
+
+    <div>
+    <h6><button type="button" class="collapsible">Day 6</button></h6>
+    <hr>
+    <h6><button type="button" class="collapsible">Practice</button></h6>
+
+    <ul>
+            <h6><li><a href="../../Day 6/practice/box model.html"target="blank">Box Model</a></li></h6>
+            <h6><li><a href="../../Day 6/practice/flexbox.html" target="blank">Flexbox</a></li></h6>
+            <h6><li><a href="../../Day 6/practice/flexbox_image_gallery.html"target="blank">Gallery</a></li></h6>
+            <h6><li><a href="../../Day 6/practice/flexbox-right to left.html"target="blank">Right to left</a></li></h6>
+    </ul>
+    </div>
+    <div class="text-center">
+     <h6> <button type="button" class="collapsible">Assignment</button></h6>
+      <ul>
+      <h6><li><a href="../../Day 6/assignment/website.html" target="blank">Task-Project</a></li></h6>
+      </ul>
+    </div>
+    <div>
+    <h6><button type="button" class="collapsible">Day 7</button></h6>
+    <hr>
+    <h6><button type="button" class="collapsible">Practice</button></h6>
+
+    <ul>
+            <h6><li><a href="../../Day 7/practical/border.html">Border</a></li></h6>
+            <h6><li><a href="../../Day 7/practical/breakpoint.html">Breakpoint</a></li></h6>
+            <h6><li><a href="../../Day 7/practical/font size.html">Font-size</a></li></h6>
+            <h6><li><a href="../../Day 7/practical/Hide-Element.html">Hide Element</a></li></h6>
+    </ul>
+    </div>
+    <div class="text-center">
+     <h6> <button type="button" class="collapsible">Assignment</button></h6>
+      <ul>
+      <h6><li><a href="../../Day 7/assignment/photo album.html" target="blank">Photo Album</a></li></h6>
+      </ul>
+    </div>
+    <div>
+    <h6><button type="button" class="collapsible">Day 8</button></h6>
+    <hr>
+    <h6><button type="button" class="collapsible">Practice</button></h6>
+
+    <ul>
+            <h6><li><a href="../../Day 8/practical/sort.html"target="blank">Align Content</a></li></h6>
+            <h6><li><a href="../../Day 8/practical/grid-area Property.html"target="blank">grid Area</a></li></h6>
+            <h6><li><a href="../../Day 8/practical/grid-displayproperties.html"target="blank">grid Dispaly</a></li></h6>
+            <h6><li><a href="../../Day 8/practical/grid-template-columns.html"target="blank">Grid Column</a></li></h6>
+            <h6><li><a href="../../Day 8/practical/grid-template-rows.html"target="blank">Grid Row</a></li></h6>
+            <h6><li><a href="../../Day 8/practical/justify-content Property.html"target="blank">justify-contect</a></li></h6>
+            <h6><li><a href="../../Day 8/practical/responsive .html"target="blank">responsive</a></li></h6>
+            <h6><li><a href="../../Day 8/practical/row and column gap.html"target="blank">row and column gap</a></li></h6>
+            <h6><li><a href="../../Day 8/practical/sort.html"target="blank">Sort</a></li></h6>
+    </ul>
+    </div>
+    <div class="text-center">
+     <h6> <button type="button" class="collapsible">Assignment</button></h6>
+      <ul>
+      <h6><li><a href="../../Day 8/Assignment/website.html" target="blank">Task-Project</a></li></h6>
+      </ul>
+    </div>
+    </div>
+    
+
+    </div>
+  <div class="item3">
+    <div class="a">
+<h1> Devang Dabhi</h1>
+<h3>BE.IT</h3>
+<h3>7405182981</h3>
+<h3>dddabhi.7d@gmail.com</h3>
+</div>
+<hr>
+<article><h3>CAREER OBJECTIVES:</h3>
+<p> To utilize my technical and management skills in a dynamic professional environment to achieve professional growth while being innovative, resourceful, and flexible.</p>
+</article>
+<br>
+<article><h3>ACHIVEMENTS</h3>
+    <ul type="circle">
+<li> Won Gold-medal for the 1st prize in the event Blind Coding (A national-level event)</li>
+<li> Secured 3rd rank in Chess at Khel Mahakumbh at Sihor tehsil level. </li>
+<li> Secured 1st position in Chess during school time. </li>
+</ul>
+</article>
+<br>
+<div class="a">
+<h3>Languages Known</h3>
+<table>
+<tr>
+    <td> C</td>
+    <td>C++</td>
+</tr>  
+<tr>
+    <td> HTML/CSS</td>
+    <td> PHP</td>
+</tr>  
+<tr>
+    <td>SQL</td>
+    <td>JAVA</td>
+</tr> 
+</table>
+</div>
+<br>
+<div>
+<h3>Personal Detail</h3>
+<table>
+<tr>
+    <td> DOB</td>
+    <td>28/05/2000</td>
+</tr>  
+<tr>
+    <td> Father’s Full name</td>
+    <td> Late Shri Devendrabhai J Dabhi</td>
+</tr>  
+<tr>
+    <td>Nationality</td>
+    <td> Indian</td>
+</tr> 
+<tr>
+    <td> Marital Status</td>
+    <td>Single  </td>
+    <tr>
+</tr>  
+    <td> Areas of Interest </td>
+    <td> Playing chess, solving mathematical problem, Designing And coding website, designing backend and managing team.</td>
+</tr>  
+</tr>  
+<td> Family members </td>
+<td> 1 ( Mother)</td>
+</tr>  
+</table>
+</div>
+<br>
+<div class="a">
+<h3>Project</h3>
+<video width="520" height="440" controls>
+    <source src="Project.mp4" type="video/mp4">
+</video>
+</div>  </div>  
+  <div class="item4">
+    <footer class="main-footer py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row text-center">
+        <div class="col-md-6 ml-auto">
+            <p class="lead">Copyright &Copy;2017</p>
+        </div>
+        </div>
+    </div>
+</footer>
+  </div>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+

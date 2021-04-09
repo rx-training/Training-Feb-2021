@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <title>Bootstrap 4 Starter Pack</title>
+    </head>
+
+    <body id="home">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-0 navbar-dark bg-dark">
+            <div class="container">
+                <a href="index.html" class="navbar-brand">Blogen</a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link active">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./posts.html" class="nav-link">Posts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./category.html" class="nav-link">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./users.html" class="nav-link">Users</a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="dropdown nav-item mr-3"><a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="fa fa-user"></i> Welcome Brad</a>
+                            <div class="dropdown-menu">
+                                <a href="../html/profile.html" class="dropdown-item"><i class="fa fa-user-circle"></i> Profile</a>
+                                <a href="../html/settings.html" class="dropdown-item"><i class="fa fa-gear"></i> Settings</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="./logout.html" class="nav-link"><i class="fa fa-user-times"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!----------------------- Dashborad -------------------------->
+
+        <div>
+            <div class="page-header bg-primary text-white mt-5 py-3">
+                <h3><i class="fa fa-user"> Blogen Admin</i></h3>
+            </div>
+            <div class="bg-light py-4" style="padding: 200px;">
+            </div>
+        </div>
+
+        <!----------------------- Table & Cards -------------------------->
+
+        <div class="container">
+            <div class="card mt-4" style="width: 900px; margin-left: 80px;">
+                <div class="card-header bg-light">
+                    <h3><b>Edit Settings</b></h3>
+                </div>
+                <div class="card-body">
+                    <h3>Allow User Registrations</h3>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email</label><br>
+                        <input type="text" class="form-control" id="email"><br>
+                        <label class="form-label" for="password">Email</label><br>
+                        <input type="text" class="form-control" id="password"><br>
+                        <a href="../index.html"><button type="button" class="btn btn-outline-secondary btn-primary btn-block text-white">Login</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!----------------- footer ------------------->
+
+        <footer>
+            <div class="container-fluid bg-dark text-white py-4 text-center mt-4">
+                <p class="lead">Copyright &copy;2021 Blogen</p>
+            </div>
+        </footer>
+
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/popper.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+    </body>
+</html>
