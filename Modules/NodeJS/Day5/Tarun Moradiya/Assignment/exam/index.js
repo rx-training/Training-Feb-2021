@@ -6,10 +6,20 @@ const emitter = new EventEmitter()
 
 const users = require('./data/users.json')
 const questions = require('./data/questions.json')
+const { async } = require('rxjs')
+const { count } = require('console')
 
 //set promt for exam
 
 var Examprompt = inquirer.createPromptModule();
+
+//global score
+
+// var score = 0
+
+//set max emmiters
+
+// emitter.setMaxListeners(Infinity)
 
 //register events 
 
@@ -36,7 +46,7 @@ questions.forEach((element, index , arr) => {
         name: `que${index+1}`,
         message: `${index+1}: ${element.question}`,
         choices: [
-            `a: ${element.distractor1}`, `b: ${element.distractor2}`, `c: ${element.distractor3}`, `d: ${element.correct_answer}`
+            element.distractor1, element.distractor2, element.distractor3, element.correct_answer
         ]
     })
 })
@@ -47,6 +57,7 @@ questions.forEach((element, index , arr) => {
 //--------on load user login function 
 
 function load() {
+    emitter.removeListener('load', () => {console.log('removed load')})
     inquirer.prompt(
         [
             {
@@ -70,22 +81,22 @@ function load() {
             // console.log('value of check: ', check)
     
             if (check) {
-                console.log('You are now logged in!!!')
+                console.log('\nYou are now logged in!!!')
     
                 inquirer.prompt(
                     {
                         type: 'confirm',
                         name: 'confirm',
-                        message: 'Do You want to start the exam righ now? : '
+                        message: '\nDo You want to start the exam righ now? : '
                     }
                 ).then(
                     answers => {
                         if(answers['confirm'] == true){
-                            console.log('Exam Started...')
+                            console.log('\nExam Started...')
     
                             emitter.emit('startExam')
                         } else {
-                            console.log('Exam Teminated.')
+                            console.log('\nExam Teminated.')
                         }
                     }
                 )
@@ -97,38 +108,83 @@ function load() {
     })
 }
 
+// //ask que
+
+// async function ask(que) {
+//     return inquirer.prompt(
+//         que
+//     ).then(
+//         answers => {
+//            console.log(answers)
+//         } 
+//     ).catch(err => {
+//         console.error('Something went wrong')
+//     })
+
+    // const readline = require('readline').createInterface({
+    //     input: process.stdin,
+    //     output: process.stdout
+    //   })
+      
+    //   readline.question(`${que.message}\n${que.choices}`
+    //       , ans => {
+    //     console.log(`ans: ${ans}`)
+    //     if(ans[0] == 'd') {
+    //         score++
+    //     }
+    //     readline.close()
+    //   })
+
+    //   return readline
+// }
+
 //start exam function
 
-function startExam() {
+async function startExam() {
+
+    let minute = 30
+
+    console.log(`You have ${minute} minutes to comlpete exam.\n`)
+
     let timer = setTimeout(() => {
         emitter.emit('timesUp')
-    }, 1000 * 5)
+    }, 1000 * 60 * minute)
+
+    // myQeustions.forEach(async (element, index, arr) => {
+    //     let ans = await ask(element)
+    //     console.log(ans)
+    // }) 
+
+    let exprompt = await Examprompt(
+        myQeustions
+    )
 
     // console.log(myQeustions)
-
-    Examprompt(
-        myQeustions
-    ).then(
-        answers => {
-            emitter.emit('endExam', answers)
-        } 
-    ).catch(err => {
-        console.error('Something went wrong')
-    })
+    clearTimeout(timer)
+    emitter.emit('endExam', exprompt)
 }
+    
 
 //end exam function
 
-function endExam(answers) {
-    console.log(answers['Que1'])
+function endExam(exprompt) {
+    console.log('\nexam ended!!')
+
+    exprompt.then(
+        answers => {
+            console.log(answers)
+        } 
+    ).catch(err => {
+        console.error('\nSomething went wrong')
+    })
+
+    // console.log(score)
+    emitter.removeAllListeners('exit')
 }
 
 //timesup
 
 function timesUp() {
-    Examprompt.then(
-        answers => {
-            emitter.emit('endExam', answers)
-        } 
-    )
+    console.log('\n\ntime is over!!!')
+    emitter.emit('endExam', Examprompt)
 }
