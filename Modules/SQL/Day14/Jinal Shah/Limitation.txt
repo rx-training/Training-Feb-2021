@@ -1,0 +1,36 @@
+Trigger Limitations :
+
+=> Triggers can be nested to up to 32 levels. 
+    A trigger is considered to be nested when it performs an action that fires another trigger.
+
+=> Batch's first statement should be 'CREATE TRIGGER'
+
+=> The same trigger action can be defined for more than one user action in the same CREATE TRIGGER statement.
+    for example, INSERT and UPDATE 
+
+=> Any SET statement can be specified inside a trigger. 
+
+=> If we have defined any set option, then it would remain in effect during the execution of the trigger.
+    And then reverts to its former setting.
+
+=> The following Transact-SQL statements aren't allowed in a DML trigger:
+    - ALTER DATABASE
+    - CREATE DATABASE
+    - DROP DATABASE
+    - RESTORE DATABASE
+    - RESTORE LOG
+    - RECONFIGURE
+
+=> The following Transact-SQL statements aren't allowed inside the body of a DML trigger 
+    when it's used against the table or view that's the target of the triggering action.
+
+    - CREATE INDEX 
+    - ALTER INDEX
+    - DROP INDEX
+    - DROP TABLE
+    - ALTER PARTITION FUNCTION
+
+=> ALTER TABLE when used to do the following:
+    - Add, modify, or drop columns.
+    - Switch partitions.
+    - Add or drop PRIMARY KEY or UNIQUE constraints.

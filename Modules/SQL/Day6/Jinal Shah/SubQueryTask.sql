@@ -86,9 +86,11 @@
 
 /* 15. Write a query to fetch even numbered records from employees table.  */
 		
-
+		SELECT * FROM(SELECT ROW_NUMBER() OVER (ORDER BY EmployeeID) AS even-data,* FROM employees) AS e1
+		WHERE e1 % 2 = 0;
 
 /* 16. Write a query to find the 5th maximum salary in the employees table.  */
+
 		SELECT * FROM (SELECT DENSE_RANK() OVER (ORDER BY Salary DESC) 'Max',* FROM Employees) 
 		AS e WHERE [Max] = 5;
 
