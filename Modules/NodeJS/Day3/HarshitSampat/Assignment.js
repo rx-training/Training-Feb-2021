@@ -1,4 +1,4 @@
-const { on } = require("node:events")
+
 
 class Mobike{
     constructor(Days){
@@ -12,19 +12,20 @@ class Mobike{
             if(i<6){
                 charge=i*chLessThenFive
             }
-            if(i>5 && this.Days<11){
+            if(i>5 ){
                 charge=charge+(i-(i-1))*ChBetSixTen
             }
             if(i>10){
                 charge =charge+(i-(i-1))*ChGreaterthenTen
             } 
-            return charge
+        
         }
+        return charge
     }
 }
 var Bike_no,Phone_no,Name,Days
 var arg = process.argv.forEach((val,index) =>{
-    console.log(`$(index):$(val)`)
+    console.log(`${index}:${val}`)
     if(index==2){
         Bike_no=parseInt(val);
     }
