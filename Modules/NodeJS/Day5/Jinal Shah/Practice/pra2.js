@@ -30,3 +30,25 @@ myEmitter.emit('eventOne');
 
 myEmitter.once('eventOnce', () => console.log('eventOnce once fired'));
 myEmitter.emit('eventOnce');
+
+
+//------------ 3.Registering for the Event With Callback Parameters
+
+myEmitter.on('status', (code, msg)=> console.log(`Got ${code} and ${msg}`));
+myEmitter.emit('status', 200, 'ok');
+
+
+//------------ 4.Unregistering Events
+
+myEmitter.off('eventOne', c1);
+myEmitter.emit('eventOne');  // noop
+
+
+//------------ 5.Getting Listener Count
+
+console.log(myEmitter.listenerCount('eventOne'));
+
+
+//------------ 6.Getting Raw Listeners
+
+console.log(myEmitter.rawListeners('eventOne'));
