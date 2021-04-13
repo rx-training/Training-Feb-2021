@@ -27,6 +27,13 @@ function getRepositories(username, callback) {
     }, 2000);
 }
 
+function getCommits(repo, callback) {
+    setTimeout(() => {
+        console.log('calling an git api..')
+        callback(['commit'])
+    }, 2000);
+}
+
 //syncronous version looks cleaner
 
 console.log('Before')
