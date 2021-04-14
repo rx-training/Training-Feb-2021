@@ -45,7 +45,6 @@ app.get('/students/:ID/result',(req,res)=>{
 app.put('/students/:ID/updateMarks',(req,res)=>{
     const student =Students.find(c=>c.ID === parseInt(req.params.ID))
     if(!student)res.send('<h2 style ="color":"red">Hey dear!!not found try another id</h2>')
-    student.Result.Eng = student.body.result.Eng
-    
-    res.send(student)
+    student.Result.Eng= req.body.Result.Eng
+        res.send(student)
 })
