@@ -95,8 +95,8 @@ State NVARCHAR(20));
 SELECT * FROM DealerShip;
 
 INSERT INTO DealerShip
-VALUES(5,'Toyota Performance','Kubernagar','Ahmedabad','Gujarat')
-(3,'Ferrari Sales','SG Highway','Ahmedabad', 'Gujarat')
+VALUES(5,'Toyota Performance','Kubernagar','Ahmedabad','Gujarat'),
+(3,'Ferrari Sales','SG Highway','Ahmedabad', 'Gujarat'),
 (1,'Hero Honda Car World','sola','Ahmedabad','Gujarat'),
 		(2,'Concept Hyundai','Himmatnagar-Ahmedabad Highway','Himmatnagar','Gujarat');
 
@@ -389,16 +389,14 @@ AND CustomerID IN (SELECT C.CustomerID
 sold the most cars for the company at dealerships located in
 Gujarat between March 1, 2010 and March 31, 2010.*/
 
-SELECT SP.Name, SP.SalesPersonID
-FROM SalesPerson AS SP
-WHERE SP.SalesPersonID = (SELECT SalesPersonID
-FROM Sales
-GROUP BY SalesPersonID
-HAVING COUNT(SalesPersonID) >= ALL (SELECT COUNT(SalesPersonID)
-FROM Sales
-WHERE SaleDate BETWEEN '03-01-2010' AND '03-31-2010'
-GROUP BY SalesPersonID
-))
+SELECT TOP(1) S.SalesPersonId, SP.Name
+FROM SalesPerson AS SP JOIN Sales AS S
+ON SP.SalesPersonId = S.SalesPersonId JOIN DealerShip as D
+ON D.DealerShipID = S.DealerShipID
+WHERE D.State = 'Gujarat' 
+AND S.SaleDate BETWEEN '2010-03-01' AND '2010-03-31'
+GROUP BY S.SalesPersonId, SP.Name
+ORDER BY COUNT(s.SalesPersonId) DESC
 
 /*16. Calculate the payroll for the month of March 2010.
 	* The payroll consists of the name, salesperson ID,

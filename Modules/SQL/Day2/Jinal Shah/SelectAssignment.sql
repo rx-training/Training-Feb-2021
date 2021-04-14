@@ -1,20 +1,22 @@
 
+	-------sqldb2--------
+
 /* Get all employee details from the Employee table */
 	SELECT * FROM Employees
 
 /* Get FirstName, LastName from Employees table */
 	SELECT FirstName,LastName FROM Employees
 
-/* Get FirstName from Employees table using alias name “Employee Name” */
+/* Get FirstName from Employees table using alias name ï¿½Employee Nameï¿½ */
 	SELECT FirstName AS 'Employee Name' FROM Employees
 
-/* Get employee details from Employees table whose Employee Name is “Steven” */
+/* Get employee details from Employees table whose Employee Name is ï¿½Stevenï¿½ */
 	SELECT * FROM Employees WHERE FirstName='Steven'
 
-/* Get employee details from Employees table whose Employee Name are “Neena” and “Lex” */
+/* Get employee details from Employees table whose Employee Name are ï¿½Neenaï¿½ and ï¿½Lexï¿½ */
 	SELECT * FROM Employees WHERE FirstName IN ('Neena','Lex')
 
-/* Get employee details from Employees table whose Employee name are not “Neena” and “Neena” */
+/* Get employee details from Employees table whose Employee name are not ï¿½Neenaï¿½ and ï¿½Neenaï¿½ */
 	SELECT * FROM Employees WHERE FirstName NOT IN ('Neena','Lex')
 
 /* Get employee details from Employees table whose Salary between 5000 and 8000 */
@@ -23,7 +25,7 @@
 /* Write a query to get the names (FirstName, LastName), Salary, PF of all the Employees (PF is calculated as 12% of salary). */
 	SELECT FirstName+' '+LastName AS 'Employee Name',Salary,'PF'=Salary*0.12 FROM Employees
 
-/* Get employee details from Employees table whose FirstName starts with ‘N’ */
+/* Get employee details from Employees table whose FirstName starts with ï¿½Nï¿½ */
 	SELECT * FROM Employees WHERE FirstName LIKE 'N%'
 
 /* Write a query to get unique department ID from Employees table */

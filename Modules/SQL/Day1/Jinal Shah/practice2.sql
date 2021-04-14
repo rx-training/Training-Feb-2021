@@ -1,3 +1,5 @@
+--------sqldb1--------
+
 CREATE TABLE JobHistory1 (
 	EmployeeId decimal(6,0) NOT NULL,
 	StartDate varchar(20) NOT NULL,

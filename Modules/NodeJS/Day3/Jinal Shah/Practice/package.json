@@ -1,0 +1,15 @@
+{
+  "name": "practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "practice1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node practice"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node": "^15.12.0"
+  }
+}

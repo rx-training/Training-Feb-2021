@@ -1,28 +1,31 @@
+
+ -------sqldb2---------
+
 SELECT * FROM Employees
 
---Write SQL statement to change the Email column of Employees table with ‘not available’ for all employees.
+--Write SQL statement to change the Email column of Employees table with ï¿½not availableï¿½ for all employees.
 
 		ALTER TABLE Employees DROP CONSTRAINT ukEmail
 
 		UPDATE Employees SET Email = 'not available'
 
-/* Write a SQL statement to change the Email and CommissionPct column of employees table with ‘not available’ 
+/* Write a SQL statement to change the Email and CommissionPct column of employees table with ï¿½not availableï¿½ 
 	and 0.10 for all employees. */
 
 		UPDATE Employees SET Email = 'not available', CommissionPct = 0.10
 
-/* Write a SQL statement to change the Email and CommissionPct column of employees table with ‘not available’ 
+/* Write a SQL statement to change the Email and CommissionPct column of employees table with ï¿½not availableï¿½ 
 	and 0.10 for those employees whose DepartmentID is 110. */
 
 		UPDATE Employees SET Email = 'not available', CommissionPct = 0.10 WHERE DepartmentID = 110;
 
-/* Write a SQL statement to change the Email column of employees table with ‘not available’ for those employees 
+/* Write a SQL statement to change the Email column of employees table with ï¿½not availableï¿½ for those employees 
 	whose DepartmentID is 80 and gets a commission is less than 20% */
 
 		UPDATE Employees SET Email = 'not available' WHERE DepartmentID = 80 AND CommissionPct <0.20
 
-/* Write a SQL statement to change the Email column of employees table with ‘not available’ for those 
-	employees who belongs to the ‘Accouning’ department. */
+/* Write a SQL statement to change the Email column of employees table with ï¿½not availableï¿½ for those 
+	employees who belongs to the ï¿½Accouningï¿½ department. */
 
 		UPDATE Employees SET 
 

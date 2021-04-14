@@ -1,0 +1,4 @@
+Addition is=1221
+ubtraction is=-9
+Multiplication is=252
+Division is=0.5714285714285714
