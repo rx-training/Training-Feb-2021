@@ -2,6 +2,7 @@
 const router = require('express').Router();
 
 const studentsRoute = require('./students/index');
+const employeesRoute = require('./employees/index')
 const userRoutes = require('./users/index');
 
 const authentication = require('../middlewares/authentication');
@@ -18,6 +19,9 @@ router.get('/', (req, res) => {
 
 // http://localhost:3000/students
 router.use('/students', authentication, studentsRoute);
+
+// http://localhost:3000/employees
+router.use('/employees', authentication, employeesRoute);
 
 // http://localhost:3000/users
 router.use('/users', userRoutes);

@@ -7,15 +7,14 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
-const feesRouter = require('./routes/fees');
-const resultsRouter = require('./routes/results')
+// var usersRouter = require('./routes/users');
 
 var app = express();
 
 //register confg
-global.config = require('./config/config')
+global.auth = require('./config/config')
+
+global.students = require('./data/students.json')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,9 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/fees', feesRouter);
-app.use('/results', resultsRouter);
+// app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

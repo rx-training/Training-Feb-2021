@@ -62,7 +62,7 @@ router.put('/:id', (req, res) => {
     const emp = employees.find(c => c.empId == id)
 
     //check if employee exist
-    if(!id) return res.status(404).send(`Employee with id ${id} is not found`)
+    if(!emp) return res.status(404).send(`Employee with id ${id} is not found`)
 
     if(req.body.firstname) emp.firstname = req.body.firstname
     if(req.body.lastname) emp.lastname = req.body.lastname
@@ -85,7 +85,7 @@ router.delete('/:id', (req, res) => {
     const emp = employees.find(c => c.empId == id)
 
     //check if employee exist
-    if(!id) return res.status(404).send(`Employee with id ${id} is not found`)
+    if(!emp) return res.status(404).send(`Employee with id ${id} is not found`)
 
     const index = employees.indexOf(emp)
 
