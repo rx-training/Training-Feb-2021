@@ -17,19 +17,19 @@
         <form action="" method="">
             <div class="form-group"> 
                 <label for="employee_id" value = 'EmpID'>Employee ID:</label> 
-                <input type="text" class="form-control form-field" id="employee_id" name="employee_id" placeholder="12345" pattern="[a-zA-Z]">
+                <input type="text" class="form-control form-field" id="employee_id" name="employee_id" placeholder="12345" required>
             </div>
             <div class="form-group"> 
                 <label for="employee_name" value ='EmpName'>Employee Name:</label> 
-                <input type="text" class="form-control form-field" id="employee_name" name="employee_name" placeholder="Jhon Doe">
+                <input type="text" class="form-control form-field" id="employee_name" name="employee_name" placeholder="Jhon Doe" pattern="[A-Za-z]{5,15}" required>
             </div>
             <div class="form-group"> 
                 <label for="employee_email" value='EmpEmail'>Employee Email:</label> 
-                <input type="email" class="form-control form-field" id="employee_email" name="employee_email" placeholder="Enter Email">
+                <input type="email" class="form-control form-field" id="employee_email" name="employee_email" placeholder="Enter Email" required>
             </div>
             <div class="form-group"> 
                 <label for="employee_contact"value="ContactNumber">Contact number</label> 
-                <input type="text" class="form-control form-field" id="employee_contact" name="employee_contact" pattern="[1-9]{1}[0-9]{9}" placeholder="Enter mobile number">
+                <input type="text" class="form-control form-field" id="employee_contact" name="employee_contact" pattern="[1-9]{1}[0-9]{9}" placeholder="Enter mobile number" required>
             </div>
             <div class="row">
                 <div class="col-6">
@@ -50,15 +50,15 @@
                 <legend class="col-form-label">Gender:</legend>
                     
                 <div class="form-check pb-2">
-                    <input type="radio" id="male"class="form-check-input" name="gridRadios"value="option1">
+                    <input type="radio" id="male"class="form-check-input" name="gridRadios"value="Male" onsubmit="subData(this.value)">
                     <label class="form-check-label"for="male">Male</label>
                 </div>
                 <div class="form-check pb-2">
-                    <input type="radio" id="female" class="form-check-input" name="gridRadios" value="option2">
+                    <input type="radio" id="female" class="form-check-input" name="gridRadios" value="Female" onsubmit="subData(this.value)">
                     <label class="form-check-label"for="female">Female</label>
                 </div>
                 <div class="form-check pb-2">
-                    <input type="radio" id="other" class="form-check-input" name="gridRadios" value="option2">
+                    <input type="radio" id="other" class="form-check-input" name="gridRadios" value="Other" onsubmit="subData(this.value)">
                     <label class="form-check-label"for="other">Other</label>
                 </div>
 
@@ -125,10 +125,25 @@
 
 
 
-            <button type="button" class="btn btn-secondary btn-block m-2" onclick="subData()">Submit</button>
+            <button type="submit" class="btn btn-secondary btn-block m-2" onclick="subData()">Submit</button>
             <br>
         </form>
+        <table id = "displayTable" class="table table-bordered mt-5">
+            <tr>
+                <th>EmpID</th>
+                <th>EmpName</th>
+                <th>Email</th>
+                <th>ContactNumber</th>
+                <th>DoJ</th>
+                <th>Age</th>
+                <!-- <th>Gender</th>
+                <th>Designation</th>
+                <th>Country</th>
+                <th>State</th> -->
+            </tr>
+        </table>
     </div>
+
     <script>
         // function EmpName(){
         //     var namePatt = RegExp('/^([^0-9]*)$/');
@@ -162,30 +177,68 @@
                                 break;
             }
         }
+            
+            // function selGender(selectedGender){
+            //     gender = selectedGender;
+                
+            // }
+            // console.log(gender);
 
+        var row = 1;
+        function subData(gender){
+            var id = document.getElementById('employee_id').value;
+            var name= document.getElementById('employee_name').value;
+            var email= document.getElementById('employee_email').value;
+            var phone= document.getElementById('employee_contact').value;
+            var DoJ= document.getElementById('joining-date').value;
+            var Age = document.getElementById('age').value;
+            var DoJ= document.getElementById('joining-date').value;
+            //var DoJ= document.getElementById('joining-date').value;
+            // console.log(Age);
+            // var gender;
+            // if(!id )
+            // {
+            //     alert('Id and name should be inserted');
+            // }
+            //console.log(gender);
+            var display = document.getElementById('displayTable');
 
+            var newRow = display.insertRow(row);
+            var cel1 = newRow.insertCell(0);
+            var cel2 = newRow.insertCell(1);
+            var cel3 = newRow.insertCell(2);
+            var cel4 = newRow.insertCell(3);
+            var cel5 = newRow.insertCell(4);
+            var cel6 = newRow.insertCell(5);
+            
+            
+            cel1.innerHTML = id;
+            cel2.innerHTML = name;
+            cel3.innerHTML = email;
+            cel4.innerHTML = phone;
+            cel5.innerHTML = DoJ;
+            cel6.innerHTML = Age;
 
-        function subData(){
-            let EmpsData = [];
+            row++;
 
-            let EmpData = {
-                id: document.getElementById('employee_id').value,
-                name: document.getElementById('employee_name').value,
-                email: document.getElementById('employee_email').value,
-                phone: document.getElementById('employee_contact').value,
-                DoJ: document.getElementById('joining-date').value
-                // age:document.getElementByID().value;
-                // Gender:document.getElementByID().value;
-                // id:document.getElementByID().value;
-                // Designation:document.getElementByID().value;
-                // Country:document.getElementByID().value;
-                // State:document.getElementByID().value;
-            }
-
-            EmpsData.push(EmpData);
-            document.querySelector('form').reset();
-            console.log(EmpsData);
         }
+
+
+            //let EmpsData = [];
+            
+        //     let EmpData = {
+        //         id: document.getElementById('employee_id').value,
+        //         name: document.getElementById('employee_name').value,
+        //         email: document.getElementById('employee_email').value,
+        //         phone: document.getElementById('employee_contact').value,
+        //         DoJ: document.getElementById('joining-date').value
+               
+        //     }
+
+        //     EmpsData.push(EmpData);
+        //     document.querySelector('form').reset();
+        //     console.log(EmpsData);
+        // }
     </script>
     <!-- Optional JavaScript; choose one of the two! -->
 
