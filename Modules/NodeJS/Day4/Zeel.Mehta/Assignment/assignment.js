@@ -1,14 +1,15 @@
-
 const { isString } = require('util');
-
-var url2="http://localhost:3001/vowefind?input=rita";
+//var url2="http://localhost:3001/vowefind?input=rita";
 const url=require('url');
-var url1="http://localhost:3001/product?param1=5&param2=10";
+//var url1="http://localhost:3001/product?param1=5&param2=10";
 var http=require('http');
 var file=require('fs');
+var fs =require('fs');
+
 http.createServer((req,res)=>{
-    console.log(req.url);
-    if(req.url=="/")
+    var Mypath=new URL('http://localhost:3001'+req.url)
+    
+    if(Mypath.pathname==="/")
     {
         file.readFile("./person.json",(err,data)=>{
             console.log(JSON.parse(data.toString()));
@@ -18,35 +19,50 @@ http.createServer((req,res)=>{
         });
         
     }
-    else if(req.url=="/product?param1=5&param2=10")
+    else if(Mypath.pathname==="/product")
     {
-        var str =url.parse(url1,true).query;
-        var param1=(str.param1);
-        var param2=(str.param2);
-        var result=Number(param1)+Number(param2);
-
-           res.write(`Result :  ${result}`);
-           res.end();
+        
+        var result 
+        let n1=parseInt(Mypath.searchParams.get("param1"));
+        let n2=parseInt(Mypath.searchParams.get("param2"));
+        result=n1+n2;
+                console.log("Result of "+n1+" & " +n2+ " = " +result);
+       
+              res.write("Result of "+n1+" & " +n2+ " = " +result.toString());
+              res.end();
+        
     }
-    else if(req.url=="/vowefind?input=rita")
+    else if(Mypath.pathname==="/vowefind")
     {
-        var str =url.parse(url2,true).query;
-        var istring=(str.input);
-
-         const r = istring.split("");
-
-       for(i=0; i<istring.length; i++)
+        let str=(Mypath.searchParams.get("input"));
+        console.log("String : "+str);
+         let r = str.split("");
+       for(i=0; i<str.length; i++)
         {
             let m = r[i].match(/[aeiou]/gi)
             if(m!=null)
             {
+                console.log("First Vowel : " +m)
                 res.write(` First Vowel :  ${m} \n`);
                 break;
             }
-        }
-    
-        
+        } 
            res.end();
+    }
+    else if(Mypath.pathname==="/upload")
+    {
+        
+        fs.readFile('ass.html', 'utf8', function(err, data) {
+            console.log(data);
+            res.write(`${data}`);
+            res.end();
+          })
+           
+          fs.createWriteStream("Files/ass1.txt");
+          fs.copyFile('ass.html', 'Files/ass1.txt', (err) => {
+            if (err) throw err;
+            console.log('Rename complete!');
+          });   
     }
 //res.end();
 }).listen(3001,()=>{

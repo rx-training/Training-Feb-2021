@@ -19,3 +19,34 @@ fs.readFile('demo1.txt', 'utf8', function(err, contents) {
  fs.readFile('demo2.txt', 'utf8', function(err, contents) {
       console.log(contents);
   })
+
+  // const file1='demo1.txt'
+  // const file2='demo2.txt'
+  // readFiles(file1,file2)
+  // async function readFiles(file1,file2)
+  // {
+  //   try{
+  //     await fs.readFile(file1,'utf-8',(err,data)=>
+  //     {
+  //       if(err)
+  //       {
+  //         console.error(err)
+  //         return
+  //       }
+  //       console.log(data)
+  //     })
+  //     await fs.readFile(file2,'utf-8',(err,data)=>
+  //     {
+  //       if(err)
+  //       {
+  //         console.error(err)
+  //         return
+  //       }
+  //       console.log(data)
+  //     })
+  //   }
+  //   catch(err)
+  //   {
+  //     console.log(err)
+  //   }
+  // }

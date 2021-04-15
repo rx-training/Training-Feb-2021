@@ -1,12 +1,12 @@
 {
-  "name": "assignment4",
+  "name": "practice",
   "version": "1.0.0",
   "description": "",
-  "main": "assignment4.js",
+  "main": "practice.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "debug": "nodemon --inspect assignment4.js",
-    "serve": "nodemon assignment4.js",
+    "debug": "nodemon --inspect expressdemo.js",
+    "serve": "nodemon expressdemo.js",
     "start": "node serve"
   },
   "author": "",
