@@ -9,7 +9,9 @@ namespace VowelsName
             string myStr;
             int i, len, vowel_count;
 
-            myStr = "Parth Shah";
+            Console.WriteLine("Enter the String: ");
+            myStr = Console.ReadLine();
+            //myStr = "Parth Shah";
 
             vowel_count = 0;
      
