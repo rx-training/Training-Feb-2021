@@ -1,5 +1,5 @@
 var router = require('express').Router()
-const verifyToken = require('./verifyToken')
+const verifyToken = require('../Authentication/verifyToken')
 
 
 const results =[
