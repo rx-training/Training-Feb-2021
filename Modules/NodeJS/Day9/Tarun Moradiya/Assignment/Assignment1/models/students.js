@@ -4,46 +4,50 @@ const fs = require('fs');
 
 // validate student
 async function validateStudent(student) {
-    const studentSchema = Joi.object({
-        Name: Joi.string()
-            .required(),
-
-        Address: Joi.string()
-            .required(),
-
-        Fees: Joi.object({
-            Amount: Joi.number()
+    try {
+        const studentSchema = Joi.object({
+            Name: Joi.string()
                 .required(),
-
-            PaymentDate: Joi.date()
-            .required(),
-
-            Status: Joi.any().valid('true', 'false').error(() => 'Gender should be true (or) false')
-            .required()
-        }).required(),
-
-        Result: Joi.object({
-            Hindi: Joi.number()
-                .integer()
-                .min(0)
-                .max(100)
+    
+            Address: Joi.string()
                 .required(),
-
-            Eng: Joi.number()
-                .integer()
-                .min(0)
-                .max(100)
-                .required(), 
-
-            Math: Joi.number()
-                .integer()
-                .min(0)
-                .max(100)
-                .required(), 
-        })
-    });
-
-    return await studentSchema.validate(student);
+    
+            Fees: Joi.object({
+                Amount: Joi.number()
+                    .required(),
+    
+                PaymentDate: Joi.date()
+                .required(),
+    
+                Status: Joi.any().valid('true', 'false').error(() => 'Gender should be true (or) false')
+                .required()
+            }).required(),
+    
+            Result: Joi.object({
+                Hindi: Joi.number()
+                    .integer()
+                    .min(0)
+                    .max(100)
+                    .required(),
+    
+                Eng: Joi.number()
+                    .integer()
+                    .min(0)
+                    .max(100)
+                    .required(), 
+    
+                Math: Joi.number()
+                    .integer()
+                    .min(0)
+                    .max(100)
+                    .required(), 
+            })
+        });
+    
+        return await studentSchema.validate(student);
+    } catch (error) {
+        res.status(500).send(error)
+    }
 }
 
 // get grade
