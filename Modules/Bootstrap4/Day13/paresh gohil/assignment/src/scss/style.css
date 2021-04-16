@@ -1,0 +1,24 @@
+.navbar {
+  -webkit-box-shadow: 2px 2px 5px #3292a6;
+          box-shadow: 2px 2px 5px #3292a6;
+  opacity: 0.9;
+  background: #fff;
+}
+
+.navbar .nav-item {
+  font-size: 1.0rem;
+  padding-right: 20px;
+}
+
+.page-header {
+  padding-left: 200px;
+}
+
+.bg-light1 {
+  padding-left: 200px;
+}
+
+.bg-light1 .btn {
+  width: 230px;
+}
+/*# sourceMappingURL=style.css.map */
