@@ -1,0 +1,24 @@
+[
+  {
+    "customerID": 1,
+    "customerName": "Meet",
+    "customerAddress": "Ahmedabad"
+  },
+  {
+    "customerID": 2,
+    "customerName": "Bhargav",
+    "customerAddress": "Patan"
+  },
+  {
+    "customerID": 3,
+    "customerName": "Parth",
+    "customerAddress": "mehsana"
+  },
+  {
+    "customerID": 4
+  },
+  {
+    "customerID": 5,
+    "customerAddress": "Patan"
+  }
+]
