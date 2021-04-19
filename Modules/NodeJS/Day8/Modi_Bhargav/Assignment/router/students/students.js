@@ -5,12 +5,8 @@ const fs = require('fs');
 const router2 = express.Router();
 const stdFees = require('./stdFees/fees')
 const stdResult = require('./stdResult/result')
-
-
 class Students {
   static StudentList(req, res) {
-
-
     res.send(student);
     res.end();
   };
@@ -23,10 +19,7 @@ class Students {
     }
   }
   static InsertData(req, res) {
-    const NewStd = {
-      ID: student.length + 1,
-      Name: req.body.Name
-    }
+    const NewStd = req.body
     student.push(NewStd)
     fs.writeFile('./student.json', JSON.stringify(student), (error) => {
       console.log(error)
@@ -38,8 +31,11 @@ class Students {
     if (req.params.id) {
       const Std = employee.find(u => u.ID === parseInt(req.params.id))
       if (!Std) res.status(404).send("Your Id Is Not Found")
-      const index = student.indexOf(Std)
-      student[index].Name = req.body.Name;
+
+      const newData = req.body
+      for (let i in newData) {
+        Std[i] = newData[i]
+      }
       fs.writeFile('./student.json', JSON.stringify(student), (error) => {
         console.log(error)
       });
@@ -68,8 +64,8 @@ router2.post('/all', Students.InsertData);
 router2.put('/:id', Students.UpdateData);
 router2.delete('/:id', Students.DeleteData);
 
-router2.use('/:id/child/fees',stdFees);
-router2.use('/:id/child/result',stdResult);
+router2.use('/:id/child/fees', stdFees);
+router2.use('/:id/child/result', stdResult);
 
 
 module.exports = router2;
