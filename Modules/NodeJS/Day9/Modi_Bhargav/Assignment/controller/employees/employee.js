@@ -17,19 +17,9 @@ class Employees {
     }
   }
   static InsertData(req, res) {
-    const NewEmp = {
-      empId: employee.length + 1,
-      firstName: req.body.firstName,
-      middleName: req.body.middleName,
-      lastName: req.body.lastName,
-      gender: req.body.gender,
-      hireDate: req.body.hireDate,
-      phoneNumber: req.body.phoneNumber,
-      dateOfBirth: req.body.dateOfBirth,
-      city: req.body.city,
-      Country: req.body.Country
-    }
-    employee.push(NewEmp)
+    const NewEmployee = req.body
+    employee.push(NewEmployee)
+
     fs.writeFile('./employee_JSON/employee.json', JSON.stringify(employee), (error) => {
       console.log(error)
     });
@@ -38,10 +28,15 @@ class Employees {
   };
   static UpdateData(req, res) {
     if (req.params.id) {
-      const Emp = employee.find(u => u.empId === parseInt(req.params.id))
-      if (!Emp) res.status(404).send("Your Id Is Not Found")
-      const index = employee.indexOf(Emp)
-      employee[index].firstName = req.body.firstName;
+      const empUpdate = employee.find(u => u.empId === parseInt(req.params.id))
+
+      if (!empUpdate) res.status(404).send("Your Id Is Not Found")
+
+      const newData = req.body
+      for (let i in newData) {
+        empUpdate[i] = newData[i]
+      }
+
       fs.writeFile('./employee_JSON/employee.json', JSON.stringify(employee), (error) => {
         console.log(error)
       });
@@ -52,9 +47,12 @@ class Employees {
   static DeleteData(req, res) {
     if (req.params.id) {
       let empData = employee.find(d => d.empId == parseInt(req.params.id))
+
       if (!empData) res.status(404).send("Your Id Is Not Found")
+
       let index = employee.indexOf(empData)
       employee.splice(index, 1)
+      
       fs.writeFile('./employee_JSON/employee.json', JSON.stringify(employee), (error) => {
         console.log(error)
       });
@@ -70,6 +68,6 @@ router1.post('/all', Employees.InsertData);
 router1.put('/:id', Employees.UpdateData);
 router1.delete('/:id', Employees.DeleteData);
 
-router1.use('/:id/child/assignment',childData);
+router1.use('/:id/child/assignment', childData);
 
 module.exports = router1;

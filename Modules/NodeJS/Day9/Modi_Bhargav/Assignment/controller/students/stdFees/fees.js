@@ -15,10 +15,15 @@ class Fees {
   }
   static feesUpdate(req, res) {
 
-    let amountUpdate = student.find(u => u.ID === parseInt(req.params.id))
-    if (!amountUpdate) res.status(404).send("Your students Id Is Not Found")
-    let index = student.indexOf(amountUpdate)
-    student[index].Fees.Amount = req.body.Amount;
+    let feesUpdate = student.find(u => u.ID === parseInt(req.params.id))
+    
+    if (!feesUpdate) res.status(404).send("Your students Id Is Not Found")
+
+    const newData = req.body
+    for (let i in newData) {
+      feesUpdate[i] = newData[i]
+    }
+
     fs.writeFile('./student_JSON/student.json', JSON.stringify(student), (error) => {
       console.log(error)
     });
@@ -28,7 +33,7 @@ class Fees {
 };
 
 
-feesRouter.get('/',Fees.feesFind)
+feesRouter.get('/', Fees.feesFind)
 feesRouter.put('/', Fees.feesUpdate)
 
 module.exports = feesRouter

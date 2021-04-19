@@ -1,8 +1,8 @@
 [
   {
     "ID": 1,
-    "Name": "Reena",
-    "Address": "Ahmedabad",
+    "Name": "Meet",
+    "Address": "Patan",
     "Fees": {
       "Amount": 12000,
       "PaymentDate": "12/12/2020",
@@ -21,7 +21,7 @@
     "Name": "Rita",
     "Address": "Surat",
     "Fees": {
-      "Amount":15000,
+      "Amount": 15000,
       "PaymentDate": "12/12/2020",
       "Status": "false"
     },

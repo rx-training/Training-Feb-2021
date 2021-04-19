@@ -15,10 +15,14 @@ class Result {
   }
   static resultUpdate(req, res) {
 
-    let resUp = student.find(u => u.ID === parseInt(req.params.id))
-    if (!resUp) res.status(404).send("Your students Id Is Not Found")
-    let index = student.indexOf(resUp)
-    student[index].Result.Eng = req.body.Eng;
+    let resultUpdate = student.find(u => u.ID === parseInt(req.params.id))
+    
+    if (!resultUpdate) res.status(404).send("Your students Id Is Not Found")
+
+    const newData = req.body
+      for (let i in newData) {
+        resultUpdate[i] = newData[i]
+      }
     fs.writeFile('./student_JSON/student.json', JSON.stringify(student), (error) => {
       console.log(error)
     });

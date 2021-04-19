@@ -33,7 +33,12 @@ class Assignment {
     const empUpdate = empFind.Assignment.find(b => b.AssignmentId === parseInt(req.params.assid))
 
     if (!empUpdate) res.status(404).send("Your Id Is Not Found")
-    empUpdate.AssignmentName = req.body.AssignmentName;
+
+    const newData = req.body
+      for (let i in newData) {
+        empUpdate[i] = newData[i]
+      }
+    
     fs.writeFile('./employee_JSON/employee.json', JSON.stringify(employee), (error) => {
       console.log(error)
     });
