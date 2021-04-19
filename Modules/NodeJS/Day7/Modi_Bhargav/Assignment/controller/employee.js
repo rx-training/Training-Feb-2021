@@ -10,26 +10,14 @@ class Employees {
     res.end();
   }
   static EmployeeFind(req, res) {
-    if (req.params.id) {
-      let employeeData = employee.find(f => f.empId === parseInt(req.params.id))
-      if (!employeeData) res.status(404).send("Your Id Is Not Found")
-      return res.status(200).send(employeeData);
-    }
+    let employeeData = employee.find(f => f.empId === parseInt(req.params.id))
+    if (!employeeData) res.status(404).send("Your Id Is Not Found")
+    return res.status(200).send(employeeData);
   }
   static InsertData(req, res) {
-    const NewEmp = {
-      empId: employee.length + 1,
-      firstName: req.body.firstName,
-      middleName: req.body.middleName,
-      lastName: req.body.lastName,
-      gender: req.body.gender,
-      hireDate: req.body.hireDate,
-      phoneNumber: req.body.phoneNumber,
-      dateOfBirth: req.body.dateOfBirth,
-      city: req.body.city,
-      Country: req.body.Country
-    }
-    employee.push(NewEmp)
+    const newData = req.body
+    employee.push(newData)
+
     fs.writeFile('./employee.json', JSON.stringify(employee), (error) => {
       console.log(error)
     });
@@ -40,8 +28,10 @@ class Employees {
     if (req.params.id) {
       const Emp = employee.find(u => u.empId === parseInt(req.params.id))
       if (!Emp) res.status(404).send("Your Id Is Not Found")
-      const index = employee.indexOf(Emp)
-      employee[index].firstName = req.body.firstName;
+      const newData = req.body
+      for (let i in newData) {
+        Emp[i] = newData[i]
+      }
       fs.writeFile('./employee.json', JSON.stringify(employee), (error) => {
         console.log(error)
       });
@@ -70,6 +60,6 @@ router.post('/all', Employees.InsertData);
 router.put('/:id', Employees.UpdateData);
 router.delete('/:id', Employees.DeleteData);
 
-router.use('/:id/child/assignment',childData);
+router.use('/:id/child/assignment', childData);
 
 module.exports = router;

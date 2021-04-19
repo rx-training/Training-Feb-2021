@@ -59,8 +59,10 @@ app.get('/students/:ID/result',(req,res) => {
 app.put('/students/:ID',(req,res) => {
   let student = students.find(u => u.ID === parseInt(req.params.ID))
   if(!student) res.status(404).send("Your students Id Is Not Found")
-  let index = students.indexOf(student)
-  students[index].Result.Eng = req.body.Result.Eng;
+  const newData = req.body
+    for (let i in newData) {
+      student[i] = newData[i]
+    }
   fs.writeFile('./student.json',JSON.stringify(students),(error) => {
     console.log(error)
   });
