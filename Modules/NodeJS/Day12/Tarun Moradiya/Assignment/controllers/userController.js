@@ -2,13 +2,14 @@
 const jwt = require('jsonwebtoken');
 const _ = require('lodash');
 const bcrypt = require('bcrypt');
+const Joi = require('joi');
 
 const {User, validateUser} = require('../models/user')
 
 //get user data
 exports.getUser = async function (req, res) {
     user = await User.findById(req.user._id).select('-Password');
-    res.send('<h1>Users:</h1>', user);
+    res.send(_.pick(user, [ '_id', 'name', 'email', 'isAdmin' ]));
 }
 
 //add user
@@ -26,15 +27,12 @@ exports.addUser = async (req, res) => {
   
     await user.save();
 
-    const token = user.generateAuthToken()
-
-    res.header('x-auth-token', token).send(_.pick(user, [ '_id', 'name', 'email' ]));
-
+    res.send(_.pick(user, [ '_id', 'name', 'email' ]));
 
 };
 
 // login
-exports.login = (req, res) => {
+exports.login = async (req, res) => {
     const { error } = validate(req.body); 
     if (error) return res.status(400).send(error.details[0].message);
 
@@ -46,21 +44,22 @@ exports.login = (req, res) => {
 
     // generate token
     const token = user.getAuthToken();
+    console.log(user, token)
     
-    res.send(token)
+    res.header('x-auth-token', token).send(_.pick(user, [ '_id', 'name', 'email' ]));
 
 }
 
-outer.post('/', async (req, res) => {
-    
-});
-
-function validate(user) {
-    const schema = {
-      email: Joi.string().min(5).max(255).required().email(),
-      password:Joi.string().min(2).max(255).required(),
-    };
-  
-    return Joi.validate(user, schema);
+async function validate(user) {
+    try {
+        const schema = {
+            email: Joi.string().min(5).max(255).required().email(),
+            password:Joi.string().min(2).max(255).required(),
+          };
+        
+          return await Joi.validate(user, schema);
+    } catch(err) {
+        console.error(err);
+    }
   }
 

@@ -30,7 +30,7 @@ const User = mongoose.model('User', new mongoose.Schema({
   }))
 
   //Information expert principle    
-  userSchema.model.generateAuthToken = function() {
+  userSchema.methods.generateAuthToken = function() {
     const token = jwt.sign({_id: this._id, isAdmin: this.isAdmin}, config.get('jwtPrivateKey'));
     return token
 
