@@ -1,0 +1,78 @@
+[
+    {
+        "Que":"Which of following command starts a REPL session?",
+        "Options":{"Op1":"$ node","Op2":"$ node start","Op3":"$ node repl","Op4":"$ node console"}
+    },
+    {
+        "Que":"What is Callback?",
+        "Options":{
+            "Op1":"Callback is an asynchronous equivalent for a function. ",
+            "Op2":"B - Callback is a technique in which a method call back the caller method.",
+            "Op3":"C - Both of the above.",
+            "Op4":"D - None of the above."}
+    },
+    {
+        "Que":"Which of the following code gets length of a buffer buf?",
+        "Options":{
+            "Op1":"buf.length",
+            "Op2":"buf.size",
+            "Op3":"buf.length()",
+            "Op4":"buf.size()"}
+    },
+    {
+        "Que":"Which of the following is true about File I/O in Node applications?",
+        "Options":{
+            "Op1":"Node implements File I/O using simple wrappers around standard POSIX functions.",
+            "Op2":"Node File System (fs) module should be imported for File I/O opearations.",
+            "Op3":"Both of the above.",
+            "Op4":"None of the above."}
+    },
+    {
+        "Que":"Which method of fs module is used to truncate a file?",
+        "Options":{
+            "Op1":"fs.delete(fd, len, callback)",
+            "Op2":"fs.remove(fd, len, callback)",
+            "Op3":"fs.ftruncate(fd, len, callback)",
+            "Op4":"None of the above."}
+    },
+    {
+        "Que":"Which of the following is true about process global object?",
+        "Options":{
+            "Op1":"The process object is an instance of EventEmitter.",
+            "Op2":"process emits exit event when process is about to exit.",
+            "Op3":"process emits uncaughtException when when an exception bubbles all the way back to the event loop.",
+            "Op4":"All of the above."}
+    },
+    {
+        "Que":"Which of the following module is required for path specific operations?",
+        "Options":{
+            "Op1":"os module",
+            "Op2":"fs module",
+            "Op3":"path module",
+            "Op4":"None of the above."}
+    },
+    {
+        "Que":"Which of the following module is required for DNS specific operations?",
+        "Options":{
+            "Op1":"dns module",
+            "Op2":"web module",
+            "Op3":"net module",
+            "Op4":"None of the above."}
+    },
+    {
+        "Que":"Which of the following module is required to create a child process?",
+        "Options":{
+            "Op1":"process module",
+            "Op2":"child_process module",
+            "Op3":"child module",
+            "Op4":"web module"}
+    },
+    {
+        "Que":"Which statement executes the code of sample.js file?",
+        "Options":{
+            "Op1":"nodejs sample.js",
+            "Op2":"node sample.js",
+            "Op3":"sample.js",
+            "Op4":"None of the above"}
+    }
+]

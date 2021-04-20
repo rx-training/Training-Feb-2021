@@ -1,0 +1,27 @@
+[
+    {
+        "courseName":"C language",
+        "courseLength":"3 months",
+        "fees":10000
+    },
+    {
+        "courseName":"Data Structure",
+        "courseLength":"4 months",
+        "fees":15000
+    },
+    {
+        "courseName":"Algorithms",
+        "courseLength":"5 months",
+        "fees":21000
+    },
+    {
+        "courseName":"Computer Networks",
+        "courseLength":"8 months",
+        "fees":11000
+    },
+    {
+        "courseName":"TOC",
+        "courseLength":"2 months",
+        "fees":8000
+    }
+]
