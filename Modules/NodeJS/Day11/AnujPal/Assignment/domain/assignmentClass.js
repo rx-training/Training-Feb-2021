@@ -26,10 +26,11 @@ class Assignment {
             const assignment = await Assignment1.find({ aid: req.params.aid });
             res.send(assignment);
         }
-        catch (err) {
+        catch(err)
+        {
             console.error("Error Occurred");
         }
-
+     
 
 
 

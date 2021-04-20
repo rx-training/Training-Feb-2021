@@ -1,0 +1,36 @@
+[
+    {
+        "empID": 1,
+        "assignments": [
+            {
+                "aid": 1,
+                "status": "pending"
+            },
+            {
+                "aid": 2,
+                "status": "pending"
+            },
+            {
+                "aid": 3,
+                "status": "completed"
+            }
+        ]
+    },
+    {
+        "empID": 2,
+        "assignments": [
+            {
+                "aid": 1,
+                "status": "completed"
+            },
+            {
+                "aid": 2,
+                "status": "completed"
+            },
+            {
+                "aid": 3,
+                "status": "completed"
+            }
+        ]
+    }
+]

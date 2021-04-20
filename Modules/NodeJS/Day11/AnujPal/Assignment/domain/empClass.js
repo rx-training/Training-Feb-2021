@@ -2,7 +2,6 @@ const fs = require('fs');
 const expres = require('express');
 const app = expres();
 const jwt = require('jsonwebtoken');
-const employees = require("../controller/Parent/employee.json");
 const emp = require('../Models/employee');
 app.use(expres())
 
@@ -19,7 +18,7 @@ class employee {
 
     static async employeeByID(req, res) {
         try {
-            const employee = await emp.find({empID : req.params.id});
+            const employee = await emp.find({ empID: req.params.id });
             res.json(employee);
         }
         catch (err) {
@@ -56,13 +55,12 @@ class employee {
 
     }
 
-    static  async empdelete(req, res) {
-        try{
-        const employee=await emp.findByIdAndRemove(req.params.id);
-        res.send(employee);
+    static async empdelete(req, res) {
+        try {
+            const employee = await emp.findByIdAndRemove(req.params.id);
+            res.send(employee);
         }
-        catch(err)
-        {
+        catch (err) {
             res.send('Error');
         }
 
@@ -71,14 +69,13 @@ class employee {
     }
 
     static async empput(req, res) {
-        try
-        {        const employee = await emp.findById(req.params.id);
+        try {
+            const employee = await emp.findById(req.params.id);
             employee.name = req.body.name;
             const a1 = await employee.save();
             res.json(a1);
         }
-        catch(err)
-        {
+        catch (err) {
             console.error("Error Occcured");
         }
 

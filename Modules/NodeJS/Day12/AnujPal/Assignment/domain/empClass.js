@@ -2,7 +2,6 @@ const fs = require('fs');
 const expres = require('express');
 const app = expres();
 const jwt = require('jsonwebtoken');
-const employees = require("../controller/Parent/employee.json");
 const emp = require('../Models/employee');
 app.use(expres())
 
@@ -13,17 +12,18 @@ class employee {
             res.json(employees);
         }
         catch (err) {
-            res.json("Error");
+            res.json(err.message);
         }
     }
 
     static async employeeByID(req, res) {
         try {
-            const employee = await emp.find({empID : req.params.id});
+            const employee = await emp.find({ empID: req.params.id });
+            if(employee.length==0) throw new Error('Employee Not Found!!!!!!!!');
             res.json(employee);
         }
         catch (err) {
-            res.json("Error");
+            res.json(err.message);
         }
 
     }
@@ -41,7 +41,7 @@ class employee {
     }
     static async emppost(req, res) {
         const employee = new emp({
-            empID: req.body.id,
+            empID : req.body.empID,
             name: req.body.name,
             assignments: req.body.assignments
         });
@@ -50,20 +50,23 @@ class employee {
             res.json(a1);
         }
         catch (err) {
-            res.send('Error');
+
+            res.json(err.message);
+
+
         }
 
 
     }
 
-    static  async empdelete(req, res) {
-        try{
-        const employee=await emp.findByIdAndRemove(req.params.id);
-        res.send(employee);
+    static async empdelete(req, res) {
+        try {
+            const employee = await emp.deleteOne({ empID: req.params.id })
+            if(employee.deletedCount==0) throw new Error('Employee not found')
+            res.send("Employee deleted");
         }
-        catch(err)
-        {
-            res.send('Error');
+        catch (err) {
+            res.json(err.message);
         }
 
 
@@ -71,17 +74,19 @@ class employee {
     }
 
     static async empput(req, res) {
-        try
-        {        const employee = await emp.findById(req.params.id);
-            employee.name = req.body.name;
-            const a1 = await employee.save();
-            res.json(a1);
-        }
-        catch(err)
-        {
-            console.error("Error Occcured");
-        }
 
+
+        try {
+            const employee = await emp.updateOne({ empID: req.params.id }, {
+                $set: {
+                    name: req.body.name
+                }
+            })
+            res.json(employee);
+        } 
+        catch (err) {
+            res.json(err.message);
+        }
 
     }
 }

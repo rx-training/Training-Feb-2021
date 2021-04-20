@@ -4,7 +4,7 @@ const { off } = require('process');
 const router = express.Router();
 router.use(express.json());
 const Assignment1 = require('../Models/assignment');
-const { findById } = require('../Models/assignment');
+const { findById, findOneAndUpdate } = require('../Models/assignment');
 const { stringify } = require('querystring');
 
 
@@ -17,20 +17,20 @@ class Assignment {
             res.json(assignment);
         }
         catch (err) {
-            console.error("Error Occured");
+            res.json(err.message);
         }
     }
 
     static async getAid(req, res) {
         try {
             const assignment = await Assignment1.find({ aid: req.params.aid });
-            res.send(assignment);
+           
+            if (assignment.length==0)   throw new Error('Assignment Not Found');
+            else res.json(assignment);
         }
         catch (err) {
-            console.error("Error Occurred");
+            res.json(err.message);
         }
-
-
 
 
     }
@@ -42,42 +42,45 @@ class Assignment {
                 aid: req.body.aid,
                 status: req.body.status
             });
-            const Assignment1 = await assignment.save();
+            const assignment1 = await assignment.save();
             res.send(assignment1);
         }
         catch (err) {
-            console.error("Error occured");
+            res.json(err.message);
         }
 
 
     }
 
     static async putStatus(req, res) {
+
         try {
             const assignment1 = await Assignment1.updateOne({ aid: req.params.aid }, {
                 $set: {
                     status: req.body.status
                 }
             })
-
-
-            res.json(assignment1);
-
+            res.json(assignment1)
         }
         catch (err) {
-            console.error("Error Occured");
+            res.json(err.message);
         }
-
 
     }
 
     static async removeAssignmnent(req, res) {
         try {
+
             const a1 = await Assignment1.deleteOne({ aid: req.params.aid })
-            res.json(a1);
+            console.log(a1);
+            if (a1.deletedCount==0)   throw new Error('Assignment Not Deleted');
+            else
+            {
+            res.json("Assignment Deleted");
+            }
         }
         catch (err) {
-            console.error("Error Occured");
+            res.json(err.message);
         }
 
     }
