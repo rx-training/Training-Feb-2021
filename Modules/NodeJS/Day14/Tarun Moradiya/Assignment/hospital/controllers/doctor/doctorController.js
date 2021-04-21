@@ -1,5 +1,5 @@
 //import modules
-const {Doctor, validateDoc: validate } = require('../models/doctors');
+const {Doctor, validateDoc: validate } = require('../../models/doctors');
 
 const _ = require('lodash');
 

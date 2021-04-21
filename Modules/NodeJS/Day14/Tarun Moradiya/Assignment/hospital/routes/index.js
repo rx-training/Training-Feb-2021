@@ -26,7 +26,7 @@ router.use('/users', userRoute);
 router.use('/patients', patientRoute);
 
 //http://localhost:3000/users
-router.use('/doctors', auth, doctorRoute);
+router.use('/doctors', doctorRoute);
 
 //http://localhost:3000/users
 router.use('/assistants', auth, assistantRoute);
