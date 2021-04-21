@@ -1,0 +1,19 @@
+{
+  "name": "assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "assignment.js",
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "nodemon --inspect assignment.js",
+    "serve": "nodemon assignment.js",
+    "start": "node serve"
+  },
+  "author": "",
+  "license": "ISC"
+}

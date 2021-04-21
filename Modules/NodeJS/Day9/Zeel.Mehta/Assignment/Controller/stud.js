@@ -1,20 +1,22 @@
 const express=require("express");
 const router=express.Router({mergeParams:true});
 router.use(express.json())
-const ass=require("../ass.json");
-const child=require("./Child/ass");
+const stud=require("../students.json");
+// const jwt = require('jsonwebtoken');
+ const childr=require("./Child/result");
+ const childf=require("./Child/fees");
 
 // // const {json} =require('body-parser');
 
-class Employee
+class Student
 {
-    static EmpList(req,res )
+    static StudList(req,res )
     {
         console.log(req.params.id);  
        //  return res.json(list);
         if(req.params.id)
         {
-           const obj=ass.find(p=>p.ID==req.params.id);
+           const obj=stud.find(p=>p.ID===parseInt(req.params.id));
            console.log(obj);
            
            return res.status(200).json(obj);
@@ -22,16 +24,16 @@ class Employee
         }
         else
        {
-           return res.json(ass);
+           return res.json(stud);
        }
        
     }
 }
-router.get("/", Employee.EmpList);
-router.get("/:id", Employee.EmpList);
+router.get("/", Student.StudList);
+router.get("/:id", Student.StudList);
 // router.post("/:id", Employee.EmpList);
 
-
-router.use("/:id/child/assignment",child);
+router.use("/:id/result",childr);
+router.use("/:id/fees",childf);
 
 module.exports=router;
