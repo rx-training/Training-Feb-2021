@@ -28,7 +28,7 @@ exports.addNewpaitent = async (req,res) =>{
     const validatePaitent = validate(req.body)
     
     //error if not validate
-    if(!validatePatient) res.status(400).send('Please enter valid values');
+    if(!validatePaitent) res.status(400).send('Please enter valid values');
 
     const paitent = new Paitent({
         patientName :req.body.patientName,

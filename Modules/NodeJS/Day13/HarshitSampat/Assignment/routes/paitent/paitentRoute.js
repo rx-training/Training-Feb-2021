@@ -21,7 +21,7 @@ router.put('/:id',updatePaitent)
 router.delete('/:id',deletepaitent)
 
 //child route
-router.use(':id/reports',(req,res,next)=>{
+router.use('/:id/reports',(req,res,next)=>{
     req.paitentId = req.params.id;
     next();
 

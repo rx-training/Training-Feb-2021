@@ -8,10 +8,10 @@ const {getAllPaitent ,getmedicine,getSummary} = require('../../controllers/repor
 router.get('/',getAllPaitent)
 
 //get medicines
-router.get('/',getmedicine)
+router.get('/medicine',getmedicine)
 
 //get Summary
-router.get('/',getSummary)
+router.get('/summary',getSummary)
 
 module.exports= router
 

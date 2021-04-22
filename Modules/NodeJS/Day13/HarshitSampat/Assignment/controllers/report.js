@@ -4,7 +4,7 @@ const {Paitent, validatePatient:validate} = require('../Models/patients')
 exports.getAllPaitent = async (req,res)=>{
 
     //get paitent
-    const paitent = await Paitent.findbyId(req.paitentId);
+    const paitent = await Paitent.findById(req.paitentId);
     
     //if not found then error
     if(!paitent) return res.status(401).send('Paitent with given id is not found')
@@ -19,10 +19,10 @@ exports.getAllPaitent = async (req,res)=>{
     }
     else{
         //get all paitent
-        const report = await paitent.doctors()
+        const report = await paitent.doctors
         
         //send response
-        res.send(reports)
+        res.send(report)
     }
 
 }   
@@ -43,9 +43,10 @@ exports.getmedicine  = async (req,res)=>{
     paitent.doctors.forEach(element =>  {
         if(element.medicine.morning.length>0) medicines =medicines.concat(element.medicine.morning);
         if(element.medicine.afternoon.length>0) medicines =medicines.concat(element.medicine.afteernoon);
-        if(element.medicine.evening.length>0) medicines =medicines.concat(element.medicine.morning);
+        if(element.medicine.night.length>0) medicines =medicines.concat(element.medicine.morning);
     });
     medicines = medicines.filter((item, i, arr) => arr.indexOf(item) === i);
+    res.send(medicines)
 }
 
 //get medcine list 
