@@ -1,25 +1,24 @@
 const mongoose = require('mongoose');
 
-
 const assignmentSchema = new mongoose.Schema({
 
-    aid :
+    aid:
     {
-        type : Number,
-        required : [true,'You cannot leave the assignmentID'],
+        type: Number,
+        required: [true, 'You cannot leave the assignmentID'],
         unique: true
     },
     empID:
     {
         type: Number,
-        required: [true,'You cannot leave the empID']
+        required: [true, 'You cannot leave the empID']
     },
 
     status: {
         type: String,
-        enum : ['pending','completed'],
-        default : 'pending'
-      
+        enum: ['pending', 'completed'],
+        default: 'pending'
+
     }
 
 });
