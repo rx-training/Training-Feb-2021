@@ -1,8 +1,13 @@
 const mongoose = require('mongoose');
+const Technology = require('./technologies');
 
 //create schema
 
 const daySchema = new mongoose.Schema({
+    tech: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Technology'
+    },
     name: {
         type: String,
         required: true
@@ -42,6 +47,7 @@ const Day = mongoose.model('Day', daySchema);
 //validate
 async function validate(day) {
     const schema = Joi.object({
+        tech: Joi.string().required(),
         name: Joi.string().required(),
         whatToLearn: Joi.array().required(),
         practiceExercise: Joi.array(),

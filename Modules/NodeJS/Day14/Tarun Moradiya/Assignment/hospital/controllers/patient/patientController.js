@@ -19,7 +19,7 @@ exports.getPatient = async (req, res) => {
     } else {
 
         //get all patients
-        const patients = await Patient.find().find().populate('doctors.doctor');;
+        const patients = await Patient.find().populate('doctors.doctor');;
 
         //send response
         res.send(patients);

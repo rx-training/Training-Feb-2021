@@ -1,10 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const Joi = require('joi');
+
+Joi.objectId = require('joi-objectid')(Joi);
 
 const indexRouter = require('./routes/index');
 
 //initialize app
 const app = express();
+
+//middleware
+app.use(express.json());
 
 //connect to mongodb
 mongoose.connect('mongodb://localhost/RxTraining', { useNewUrlParser: true, useUnifiedTopology: true })
