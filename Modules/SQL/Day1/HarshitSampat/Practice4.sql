@@ -1,4 +1,5 @@
-USE demo1;
+
+VARCHARUSE demo1;
 
 
 

@@ -1,4 +1,8 @@
-CREATE DATABASE AssignmentDay26
+CREATE DATABASE AssignmentDay26;
+GO
+
+USE AssignmentDay26;
+GO
 
 CREATE TABLE  Employees (
     EmployeeID decimal(6,0) NOT NULL DEFAULT '0',

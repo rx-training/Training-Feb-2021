@@ -1,3 +1,6 @@
+
+------sqldb1----------
+
 CREATE TABLE Jobs2 ( 
 JobId varchar(20) PRIMARY KEY, 
 JobTitle varchar(35) DEFAULT ' ', 

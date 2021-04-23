@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Department</title>
+     <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!--JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
+        <div class="container">
+            <a href="#" class="navbar-brand">HR Management</a>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 m-auto">
+                <h1 class="h3">Login</h1>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="email">Enter Email</label>
+                        <input type="email" name="email" id="email" class="form-control"/>
+                        <label id="erremail" style="color: red;display:none;">Please enter email</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="pass">Enter Password</label>
+                        <input type="password" name="password" id="pass" class="form-control"/>
+                        <label id="errpass" style="color: red;display:none;">Please enter password</label>
+                    </div>
+                    <input class="btn btn-primary w-100 mt-2" type="submit" onclick="return validateLogin(this.form);" value="Login" />
+                    <div class="mt-4" id="msg" style="color: red;"></div>
+                </form>                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function fetchData(file){
+            var elist=await fetch(file);
+            var ejson=await elist.json();
+            return ejson;
+        }
+        fetchData("employees.json").then((elist)=>{
+            var estring=JSON.stringify(elist);
+            localStorage.setItem("Employees",estring);
+        });
+
+        function validateLogin(form){
+            var email=form.email.value;
+            var pass=form.password.value;
+            if(email=="")
+            {
+                document.getElementById("erremail").style.display="inline-block";
+                return false;
+            }
+            if(pass==""){
+                document.getElementById("errpass").style.display="inline-block";
+                return false;
+            }
+            else{
+                // validation of Login for HR
+                document.getElementById("erremail").style.display="none";
+                document.getElementById("errpass").style.display="none";
+                var temp=localStorage.getItem("Employees");
+                var elist=JSON.parse(temp);
+                if(elist==null){
+                    document.getElementById("msg").innerHTML="Sorry, data not available at LocalStorage";
+                    return false;
+                }
+                else{
+                    for(var i=0;i<elist.length;i++){
+                        if(email==elist[i].email) break;
+                    }
+                    if(i>=elist.length){
+                        document.getElementById("msg").innerHTML="Sorry, Email-id not found";
+                        return false;
+                    }
+                    else{
+                        if(elist[i].Designation=="HR"){
+                            if(elist[i].password==pass){
+                                elist[i].Login=1;
+                                localStorage.setItem('Employees',JSON.stringify(elist));
+                                window.location.href="dashboard.html";
+                            }else{
+                                document.getElementById("msg").innerHTML="Sorry, Password doesn't match";
+                                return false;
+                            }
+                        }
+                        else{
+                            document.getElementById("msg").innerHTML="Sorry, Only HR can Login";
+                            return false;
+                        }
+                    }
+                    return false;
+                }
+            }
+            return false;
+        }
+    </script>
+
+     <!-- Bootstrap JS CDN -->
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,3 +1,6 @@
+USE AssignmentDay30;
+GO
+
 --1. Write a query to find the names (first_name, last_name) and salaries of the employees who have higher salary than the employee whose last_name='Bull'. 
 SELECT 
 	FirstName+' '+LastName AS 'EmployeeName',

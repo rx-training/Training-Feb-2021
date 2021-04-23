@@ -1,0 +1,1 @@
+Create first txt files, write some dummy text. Read first file content and print it in the console. 

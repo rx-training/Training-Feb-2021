@@ -1,0 +1,56 @@
+body 
+{
+    font-family: sans-serif;
+    background: linear-gradient(to right, #b92b27, #1565c0)
+}
+.eform 
+{ 
+    padding: 40px;   
+    background: #191919;
+    transition: 0.25s;  
+}
+.eform label
+{             
+    padding: 10px 2px;                
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;                
+}
+.float-right
+{       
+    background: none;      
+    border: 2px solid #3498db;
+    padding: 10px 10px;                
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;   
+    width: 290px;             
+}
+
+
+.eform input:focus
+{
+    width: 300px;
+    border-color: #f58bb3
+}
+.eform input[type="button"] 
+{
+    background: none;
+    display: block; 
+    text-align: center;
+    border: 2px solid #2ecc71;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    width: 420px;
+    padding: 10px 5px;
+    outline: none;
+    
+}
+
+.eform input[type="button"]:hover 
+{
+    border-color: #f58bb3
+}

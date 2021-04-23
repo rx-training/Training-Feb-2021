@@ -13,20 +13,33 @@
     </head>
     <body style="background: linear-gradient(to bottom, #ffffff, #ff4665)">
         <div class="container border border-dark rounded text-center col-lg-4" >
-            <h1>JavaScript Closures</h1>
-            <p>Counting with a local variable.</p>
-            <button type="button" onclick="myFunction()" class="btn btn-danger">Count!</button>
-            <br><br><p id="demo" class="bg-light text-danger">0</p>
+            <h1>Function Apply</h1>
+            <p>Pass employee object</p>
+            <h3>Employees : </h3><br>
+            <div class="border border-dark bg-danger text-light">
+                <p id="emp1"></p>
+                <p id="emp2"></p>
+            </div>
+
             <script>
-                var add = (function ()
-                {
-                  var counter = 0;
-                  return function () {counter += 1; return counter;}
-                })();
-                function myFunction()
-                {
-                  document.getElementById("demo").innerHTML = add();
+                var emp={
+                    details:function(){
+                        return this.fname + " " + this.sname;
+                    }
                 }
+                var emp1={
+                    fname : "Zeel",
+                    sname : "Mehta"
+                }
+                var emp2={
+                    fname : "Aneri",
+                    sname : "Joshi"
+                }
+
+                var a=emp.details.apply(emp1);
+                document.getElementById("emp1").innerHTML=a;
+                var a=emp.details.apply(emp2);
+                document.getElementById("emp2").innerHTML=a;
             </script>
         </div>
         

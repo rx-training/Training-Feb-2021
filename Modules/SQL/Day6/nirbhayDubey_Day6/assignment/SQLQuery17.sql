@@ -1,3 +1,6 @@
+USE AssignmentDay30;
+GO
+
 --1. Write a query to find the addresses (location_id, street_address, city, state_province, country_name) of all the departments. 
 CREATE VIEW DeptAddresses AS
 SELECT 

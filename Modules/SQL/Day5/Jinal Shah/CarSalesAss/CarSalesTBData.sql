@@ -1,3 +1,6 @@
+
+------------SalesCar-------------
+
 CREATE TABLE car 
 (
 	carid INT,

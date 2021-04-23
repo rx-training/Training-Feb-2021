@@ -1,3 +1,6 @@
+USE AssignmentDay29;
+GO
+
 CREATE TABLE Assignment.Employees(
 	EMPLOYEE_ID int CONSTRAINT PkEid PRIMARY KEY IDENTITY,
 	FIRST_NAME varchar(20) NOT NULL,
@@ -52,6 +55,7 @@ GO
 SELECT * FROM Assignment.Incentive;
 GO
 
+--Get difference between JOINING_DATE and INCENTIVE_DATE from employee and incentives table
 SELECT 
 	e.EMPLOYEE_ID,
 	e.FIRST_NAME+' '+e.LAST_NAME AS 'Employee Name',
@@ -60,6 +64,7 @@ FROM Assignment.Employees e JOIN Assignment.Incentive i
 ON e.EMPLOYEE_ID=i.EMPLOYEE_REF_ID;
 GO
 
+--Select first_name, incentive amount from employee and incentives table for those employees who have incentives and incentive amount greater than 3000
 SELECT 
 	e.EMPLOYEE_ID,
 	e.FIRST_NAME,
@@ -69,6 +74,7 @@ ON e.EMPLOYEE_ID=i.EMPLOYEE_REF_ID
 WHERE i.INCENTIVE_AMOUNT>3000;
 GO
 
+--Select first_name, incentive amount from employee and incentives table for all employees even if they didn’t get incentives.
 SELECT 
 	e.EMPLOYEE_ID,
 	e.FIRST_NAME,
@@ -77,6 +83,7 @@ FROM Assignment.Employees e LEFT OUTER JOIN Assignment.Incentive i
 ON e.EMPLOYEE_ID=i.EMPLOYEE_REF_ID;
 GO
 
+--Select EmployeeName, ManagerName from the employee table.
 SELECT 
 	e.FIRST_NAME+' '+e.LAST_NAME AS 'Employee Name',
 	m.FIRST_NAME+' '+m.LAST_NAME AS 'Manager Name' 
@@ -84,6 +91,7 @@ FROM Assignment.Employees e, Assignment.Employees m
 WHERE e.MANAGER_ID=m.EMPLOYEE_ID;
 GO
 
+--Select first_name, incentive amount from employee and incentives table for all employees even if they didn’t get incentives and set incentive amount as 0 for those employees who didn’t get incentives.
 SELECT
 	e.EMPLOYEE_ID,
 	e.FIRST_NAME,

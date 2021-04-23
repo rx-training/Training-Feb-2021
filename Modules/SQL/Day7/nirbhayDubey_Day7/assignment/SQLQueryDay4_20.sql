@@ -1,3 +1,6 @@
+USE AssignmentDay31;
+GO
+
 --------DAY4 TASK with 'WITH' Clause and Derived Table--------------
 
 --using 'WITH'
