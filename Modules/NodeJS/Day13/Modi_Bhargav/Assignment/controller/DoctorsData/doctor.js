@@ -8,7 +8,7 @@ const doctorRouter = express.Router();
 
 class Doctors {
   static async doctorsList(req, res) {
-    const doctorData = await docData.find().select('-patientList -__v')
+    const doctorData = await docData.find().select('-__v')
     res.send(doctorData);
   }
 
@@ -16,7 +16,7 @@ class Doctors {
 
     const ID = parseInt(req.params.id)
     const selectData = await docData.find({ docId: ID })
-      .select('-patientList -__v')
+      .select('-__v')
     if (selectData.length == 0) res.status(404).send("Your Id Is Not Found")
     res.status(200).send(selectData);
   }
@@ -70,20 +70,16 @@ class Doctors {
   static async docpatientFind(req, res) {
 
     const docID = parseInt(req.params.id)
-    const selectData = await docData.find({ docId: docID }).select('-patientList -__v')
+    const selectData = await docData.find({ docId: docID }).select('-__v')
     if (selectData.length == 0) res.status(404).send("Your Doctors Is Not Found")
 
     const patainDetails = await patientDatas.find()
       .populate("Doctors")
-    // console.log(patainDetails)
     var patientData = []
-    for(var i of patainDetails){
-      // console.log(i.Doctors)
-      for (var j of i.Doctors){
-        // console.log(j.docId,i.Id)
-        if(j.docId == docID){
-          const patients = await patientDatas.find({Id:i.Id}).select('Id patientName phoneNumber -_id')
-          // console.log(patients)
+    for (var i of patainDetails) {
+      for (var j of i.Doctors) {
+        if (j.docId == docID) {
+          const patients = await patientDatas.find({ Id: i.Id }).select('Id patientName phoneNumber -_id')
           patientData.push(patients)
         }
       }
