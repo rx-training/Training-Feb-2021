@@ -71,7 +71,7 @@ class Doctors {
 
     const docID = parseInt(req.params.id)
     const selectData = await docData.find({ docId: docID }).select('-__v')
-    if (selectData.length == 0) res.status(404).send("Your Doctors Is Not Found")
+    if (selectData.length == 0) return res.status(404).send("Your Doctors Is Not Found")
 
     const patainDetails = await patientDatas.find()
       .populate("Doctors")
@@ -84,7 +84,7 @@ class Doctors {
         }
       }
     }
-    if (patientData.length == 0) res.status(404).send("Not a Any Patient Has Visited This Doctor")
+    if (patientData.length == 0) return res.status(404).send("Not a Any Patient Has Visited This Doctor")
 
     res.send(patientData)
   };

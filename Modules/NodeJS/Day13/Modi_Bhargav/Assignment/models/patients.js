@@ -19,7 +19,7 @@ const patientSchema = new mongoose.Schema({
     type: Number,
     validate: {
       validator: function (v) {
-        return /\d{10}/.test(v);
+        return /^\d{10}/.test(v);
       },
       message: props => `${props.value} please your phone number length max 10 Number`
     },
