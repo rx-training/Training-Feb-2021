@@ -113,11 +113,11 @@ namespace day11assignment
                 using (var context = new HospitalsContext())
                 {
 
-                  
+                    Doctor d = new Doctor();
                         //var doctor = context.Doctors.First<Doctor>();
                         Console.WriteLine("Enter Id in which u want to update data :");
                         int v = Convert.ToInt32(Console.ReadLine());
-                        Doctor d = context.Doctors.FirstOrDefault(f=> f.DrId == v);
+                         d = context.Doctors.FirstOrDefault(f=> f.DrId == v);
                         if (d != null)
                         { 
                         Console.WriteLine("What u want to update ? Press 1. for Name 2. For DepartmentId 3. Gender 4. Designation: ");
@@ -127,9 +127,11 @@ namespace day11assignment
                             Console.WriteLine("Enter updated Name : ");
                             string upName = Console.ReadLine();
                             d.DrName = upName;
+                            Console.WriteLine(d.DrName,d.DrId);
+                            
                             context.Doctors.Update(d);
 
-                            HospitalsContext.SaveChanges();
+                            context.SaveChanges();
 
                             Console.WriteLine(d.DrId + " " + d.DrName + " " + d.DeptId + " " + d.Designation);
                         }
@@ -138,6 +140,7 @@ namespace day11assignment
                             Console.WriteLine("Enter Department ID");
                             int updeptId = v;
                             d.DeptId = updeptId;
+
                         }
                         else if (option == 3)
                         {
