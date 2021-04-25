@@ -1,0 +1,26 @@
+//import modules
+const router = require('express').Router(); 
+
+const {login, getUser, addUser} = require('../../controllers/userController');
+const auth = require('../../middlewares/auth');
+
+// routes
+
+// users page
+// GET http://localhost:3000/users
+router.get('/me', auth, getUser);
+
+//user Registration
+//POST http://localhost:3000/users
+router.post('/', addUser)
+
+// user login page
+// GET http://localhost:3000/users/login
+router.get('/login', (req, res) => res.render('pages/login'));
+
+// user login 
+// POST http://localhost:3000/users/login
+router.post('/login', login);
+
+//exports
+module.exports = router;
