@@ -1,0 +1,36 @@
+html {
+  scroll-behavior: smooth;
+}
+
+#home-section {
+  background: url("../img/mountains.jpg");
+  background-size: cover;
+}
+
+#home-section .home-inner {
+  background-color: #17a2b882 !important;
+}
+
+#author-section .card:hover {
+  background-color: #17a2b8;
+  color: #f8f9fa !important;
+}
+
+#author-section .card:hover i {
+  color: #f8f9fa !important;
+}
+
+#author-section .card-footer {
+  border: none;
+  background: none;
+}
+
+#author-section i {
+  margin: auto;
+  font-size: 18px;
+}
+
+#author-section img {
+  margin-top: -50px;
+}
+/*# sourceMappingURL=style.css.map */

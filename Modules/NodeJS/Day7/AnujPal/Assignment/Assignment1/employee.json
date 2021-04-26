@@ -1,0 +1,51 @@
+[
+    {
+        "empID": 1,
+        "fname": "Pal",
+        "lname": "Anuj",
+        "city": "Ahmedabad",
+        "country": "India",
+        "dob": "06-03-1998",
+        "gender": "M",
+        "assignments": [
+            "a1",
+            "a2",
+            "a3",
+            "a4",
+            "a5"
+        ]
+    },
+    {
+        "empID": 2,
+        "fname": "Mehta",
+        "lname": "Harshad",
+        "city": "Surat",
+        "country": "India",
+        "dob": "06-04-1998",
+        "gender": "M",
+        "assignments": [
+            "a1",
+            "a2",
+            "a3"
+        ]
+    },
+    {
+        "empID": 3,
+        "fname": "singh",
+        "lname": "shivam",
+        "city": "Ahmedabad",
+        "country": "India",
+        "dob": "18-03-1998",
+        "gender": "M",
+        "assignments": [
+            "a1",
+            "a2",
+            "a3",
+            "a4"
+        ]
+    },
+    {
+        "empID": 4,
+        "city": "Surat"
+    }
+]
