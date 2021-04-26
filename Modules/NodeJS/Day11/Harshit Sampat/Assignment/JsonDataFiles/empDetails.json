@@ -1,0 +1,208 @@
+[
+    {
+        "Emp_Id": 2,
+        "addressline1": "Ranip",
+        "addressline2": "Ahmedabad",
+        "assignment": [
+            {
+                "Assignment_id": 1,
+                "AssignmentCaegory": "Simple",
+                "AssignmentName": "Example2",
+                "AssignmentProjectEndDate": "15/12/2212",
+                "AssignmentStats": "completed",
+                "endTime": "22:54",
+                "JobId": "2122",
+                "LastUpdated": "11/12/2021",
+                "Location": "Ahmedabad",
+                "ManagerAssistant": "13212",
+                "ManagerID": "12212"
+            },
+            {
+                "Assignment_id": 2,
+                "AssignmentCaegory": "Simple",
+                "AssignmentName": "Example2",
+                "AssignmentProjectEndDate": "14/09/2012",
+                "AssignmentStats": "completed",
+                "endTime": "21:00",
+                "JobId": "2143",
+                "LastUpdated": "12/01/2022",
+                "Location": "Ahmedabad",
+                "ManagerAssistant": "12212",
+                "ManagerID": "1122"
+            }
+        ],
+        "citizenship": 
+            {
+                "CitizenshipId": "1",
+                "CitizenshipLegislationCode": "12312"
+            },
+        "city": "Ahmedabad",
+        "CorespondusLanguage": "Gujarati",
+        "country": "India",
+        "DOB": "01/01/2000",
+        "licence": 
+            {
+                "licence_id": "123212",
+                "licenceExpirationDate": "03/02/2040",
+                "licence_no": "1212"
+            },
+        "gender": "M",
+        "HireDate": "01/02/2021",
+        "mobileno": "234325775",
+        "lastName": "Patel",
+        "MaritalStatus": "Maarrid"
+    },
+    {
+        "Emp_Id": 3,
+        "addressline1": "Bopal",
+        "addressline2": "Ahmedabad",
+        "assignment": [
+            {
+                "Assignment_id": 1,
+                "AssignmentCaegory": "Simple",
+                "AssignmentName": "Example1",
+                "AssignmentProjectEndDate": "12/08/2012",
+                "AssignmentStats": "completed",
+                "endTime": "04:00",
+                "JobId": "2144",
+                "LastUpdated": "15/09/2020",
+                "Location": "Ahmedabad",
+                "ManagerAssistant": "13212",
+                "ManagerID": "12252"
+            }
+        ],
+        "citizenship": {},
+        "city": "Ahmedabad",
+        "CorespondusLanguage": "Gujarati",
+        "country": "India",
+        "DOB": "06/5/2003",
+        "licence": {},
+        "gender": "F",
+        "HireDate": "01/01/2021",
+        "mobileno": "34343434",
+        "lastName": "Sanakar",
+        "MaritalStatus": "Married"
+    },
+    {
+        "Emp_Id": 4,
+        "addressline1": "Sheelaj",
+        "addressline2": "Ahmedabad",
+        "assignment": 
+        [
+            {
+                "Assignment_id": 1,
+                "AssignmentCaegory": "Simple",
+                "AssignmentName": "Example1",
+                "AssignmentProjectEndDate": "12/12/2020",
+                "AssignmentStats": "completed",
+                "endTime": "21:54",
+                "JobId": "2123",
+                "LastUpdated": "10/12/2021",
+                "Location": "Ahmedabad",
+                "ManagerAssistant": "13212",
+                "ManagerID": "12212"
+            },
+            {
+                "Assignment_id": 2,
+                "AssignmentCaegory": "Simple",
+                "AssignmentName": "Example1",
+                "AssignmentProjectEndDate": "13/09/2012",
+                "AssignmentStats": "completed",
+                "endTime": "22:00",
+                "JobId": "2143",
+                "LastUpdated": "15/09/2021",
+                "Location": "Ahmedabad",
+                "ManagerAssistant": "13212",
+                "ManagerID": "12212"
+            }
+        ],
+        "citizenship": 
+            {
+                "CitizenshipId": "2",
+                "CitizenshipLegislationCode": "12312"
+            },
+        "city": "Ahmedabad",
+        "CorespondusLanguage": "Gujarati",
+        "country": "India",
+        "DOB": "01/05/2000",
+        "licence": 
+            {
+                "licence_id": "121212",
+                "licenceExpirationDate": "09/02/1211",
+                "licence_no": "121"
+            },
+        "gender": "M",
+        "HireDate": "01/03/2021",
+        "mobileno": "234322772",
+        "lastName": "dave",
+        "MaritalStatus": "Maarrid"
+    },
+    {
+        "Emp_Id": 5,
+        "addressline1": "Bhestan",
+        "addressline2": "Surat",
+        "assignment": [
+            {
+                "Assignment_id": 1,
+                "AssignmentCaegory": "Simple",
+                "AssignmentName": "Example2",
+                "AssignmentProjectEndDate": "12/11/21",
+                "AssignmentStats": "completed",
+                "endTime": "12:22",
+                "JobId": "2115",
+                "LastUpdated": "07/12/2021",
+                "Location": "Ahmedabad",
+                "ManagerAssistant": "17212",
+                "ManagerID": "12216"
+            },
+            {
+                "Assignment_id": 2,
+                "AssignmentCaegory": "Simple",
+                "AssignmentName": "Example1",
+                "AssignmentProjectEndDate": "12/09/2012",
+                "AssignmentStats": "completed",
+                "endTime": "21:00",
+                "JobId": "2142",
+                "LastUpdated": "15/09/2021",
+                "Location": "Surat",
+                "ManagerAssistant": "13212",
+                "ManagerID": "12212"
+            },
+            {
+                "Assignment_id": 3,
+                "AssignmentCaegory": "Simple",
+                "AssignmentName": "Example1",
+                "AssignmentProjectEndDate": "13/09/2012",
+                "AssignmentStats": "completed",
+                "endTime": "09:00",
+                "JobId": "2143",
+                "LastUpdated": "13/09/2021",
+                "Location": "Surat",
+                "ManagerAssistant": "13212",
+                "ManagerID": "12212"
+            }
+        ],
+        "citizenship": 
+            {
+                "CitizenshipId": "21",
+                "CitizenshipLegislationCode": "12322"
+            },
+        "city": "Surat",
+        "CorespondusLanguage": "Gujarati",
+        "country": "India",
+        "DOB": "02/04/2000",
+        "licence": 
+            {
+                "licence_id": "112134",
+                "licenceExpirationDate": "03/02/2040",
+                "licence_no": ""
+            },
+        "gender": "M",
+        "HireDate": "01/01/2021",
+        "mobileno": "234335775",
+        "lastName": "Dudhvala",
+        "MaritalStatus": "Single"
+    }
+]
+
+ 

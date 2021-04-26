@@ -4,7 +4,10 @@
   "description": "",
   "main": "test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug":"nodemon --inspect practice_3.js",
+    "serve":"nodemon practice_3.js",
+    "start":"node practice_3.js"
   },
   "author": "",
   "license": "ISC",
