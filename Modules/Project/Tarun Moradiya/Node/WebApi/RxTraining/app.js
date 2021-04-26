@@ -27,6 +27,7 @@ mongoose.connect('mongodb://localhost/RxTraining', { useNewUrlParser: true, useU
 
 //check if env variable is set
 if(!config.get('secretKey') || !config.get('algorithm')) console.error('FATAL ERROR: secretKey or alorithm is not set');
+if(!config.get('ID') || !config.get('SECRET')) console.error('FATAL ERROR: ID or SECRET is not set');
 
 //set RxTraining_secretKey=RxWeb
 //set RxTraining_algorithm=HS256
