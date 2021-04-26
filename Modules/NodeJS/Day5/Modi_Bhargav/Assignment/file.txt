@@ -1,0 +1,15 @@
+Que1. - Which of the following is true about Node.JS?
+
+A - Node.js is a JavaScript based framework/platform  
+    built on Google Chrome's JavaScript V8 Engine.   
+B - Node.JS is used to delevop I/O intensive web    
+    applications like video streaming sites, single page applications and other web application.
+C - Node.js is open source and is completely free to use.
+D - All of the above.
+
+Que2. -What npm stands for?
+
+A - Node Package Manager.
+B - Node Project Manager.
+C - New Project Manager.
+D - New Package Manager.

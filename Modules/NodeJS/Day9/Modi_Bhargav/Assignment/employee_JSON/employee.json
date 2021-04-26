@@ -1,0 +1,71 @@
+[
+  {
+    "empId": 1,
+    "middleName": "Dipakkumar",
+    "lastName": "Modi",
+    "gender": "male",
+    "hireDate": "01/02/2021",
+    "phoneNumber": 9924342506,
+    "dateOfBirth": "20/12/1998",
+    "city": "Patan",
+    "Country": "India",
+    "Assignment": [
+      {
+        "AssignmentId": 101,
+        "AssignmentName": "Router",
+        "AssignmentStatus": "Completed"
+      },
+      {
+        "AssignmentId": 102,
+        "AssignmentName": "express",
+        "AssignmentStatus": "Completed"
+      },
+      {
+        "AssignmentId": 103,
+        "AssignmentName": "Http",
+        "AssignmentStatus": "Completed"
+      }
+    ]
+  },
+  {
+    "empId": 2,
+    "firstName": "Meet",
+    "middleName": "Dipakkumar",
+    "lastName": "Modi",
+    "gender": "male",
+    "hireDate": "01/01/2021",
+    "phoneNumber": 6573536363,
+    "dateOfBirth": "21/01/2003",
+    "city": "Mehsana",
+    "Country": "India",
+    "Assignment": [
+      {
+        "AssignmentId": 201,
+        "AssignmentName": "Router",
+        "AssignmentStatus": "None"
+      },
+      {
+        "AssignmentId": 202,
+        "AssignmentName": "Express",
+        "AssignmentStatus": "Completed"
+      },
+      {
+        "AssignmentId": 203,
+        "AssignmentName": "http",
+        "AssignmentStatus": "Completed"
+      }
+    ]
+  },
+  {
+    "empId": 3,
+    "firstName": "Monika",
+    "middleName": "Dipakkumar",
+    "lastName": "Modi",
+    "gender": "male",
+    "hireDate": "01/01/2021",
+    "phoneNumber": 6573536363,
+    "dateOfBirth": "21/01/2003",
+    "city": "Mehsana",
+    "Country": "India"
+  }
+]
