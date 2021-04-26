@@ -8,10 +8,29 @@ mongoose.connect('mongodb://localhost/Stud_Emp_DB',{useNewUrlParser: true, useUn
 
 // Create Schemas
 const employeesSchema = new mongoose.Schema({
-        ID: String,
-        AddressLine1: String,
-        AddressLine2: String,
-        AddressLine3: String,
+        ID: {
+            type: String,
+            required: true,
+            maxlength: 25
+        },
+        AddressLine1: {
+            type: String,
+            required: true,
+            minlength: 5,
+            maxlength: 25
+        },
+        AddressLine2: {
+            type: String,
+            required: true,
+            minlength: 5,
+            maxlength: 25
+        },
+        AddressLine:  {
+            type: String,
+            required: true,
+            minlength: 5,
+            maxlength: 25
+        },
         assignments : Array
     });
     
