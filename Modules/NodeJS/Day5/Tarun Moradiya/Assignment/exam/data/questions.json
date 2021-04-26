@@ -1,24 +1,290 @@
 [
     {
-                    "question": "Who proposed the theory of evolution by natural selection?",
-                    "distractor3": "Scopes",
-                    "distractor1": "Linnaeus",
-                    "distractor2": "shaw",
-                    "correct_answer": "darwin"
-    },
-    {
-                    "question": "Each specific polypeptide has a unique linear sequence of which acids?",
-                    "distractor3": "hydrochloric",
-                    "distractor1": "fatty",
-                    "distractor2": "lactic",
-                    "correct_answer": "amino"
-    },
-    {
-                    "question": "A frameshift mutation is a deletion or insertion of one or more of what that changes the reading frame of the base sequence?",
-                    "distractor3": "genes",
-                    "distractor1": "proteins",
-                    "distractor2": "carotenoids",
-                    "correct_answer": "nucleotides",
-                    "support": "A frameshift mutation is a deletion or insertion of one or more nucleotides that changes the reading frame of the base sequence. Deletions remove nucleotides, and insertions add nucleotides. Consider the following sequence of bases in RNA:."
-    }
+        "question": "Who proposed the theory of evolution by natural selection?",
+        "distractor3": "Scopes",
+        "distractor1": "Linnaeus",
+        "distractor2": "shaw",
+        "correct_answer": "darwin",
+        "support": ""
+},
+{
+        "question": "Each specific polypeptide has a unique linear sequence of which acids?",
+        "distractor3": "hydrochloric",
+        "distractor1": "fatty",
+        "distractor2": "lactic",
+        "correct_answer": "amino",
+        "support": ""
+},
+{
+        "question": "A frameshift mutation is a deletion or insertion of one or more of what that changes the reading frame of the base sequence?",
+        "distractor3": "genes",
+        "distractor1": "proteins",
+        "distractor2": "carotenoids",
+        "correct_answer": "nucleotides",
+        "support": "A frameshift mutation is a deletion or insertion of one or more nucleotides that changes the reading frame of the base sequence. Deletions remove nucleotides, and insertions add nucleotides. Consider the following sequence of bases in RNA:."
+},
+{
+        "question": "What is an area of land called that is wet for all or part of the year?",
+        "distractor3": "tundra",
+        "distractor1": "plains",
+        "distractor2": "grassland",
+        "correct_answer": "wetland",
+        "support": "A wetland is an area that is wet for all or part of the year. Wetlands are home to certain types of plants."
+},
+{
+        "question": "Surface waters are heated by the radiation from?",
+        "distractor3": "gamma rays",
+        "distractor1": "decomposition",
+        "distractor2": "the moon",
+        "correct_answer": "the sun",
+        "support": ""
+},
+{
+        "question": "What are arteries, veins, and capillaries examples of?",
+        "distractor3": "tissue",
+        "distractor1": "muscles",
+        "distractor2": "organs",
+        "correct_answer": "blood vessels",
+        "support": "Blood vessels include arteries, veins, and capillaries."
+},
+{
+        "question": "Biochemical reactions of metabolism include what two general categories?",
+        "distractor3": "telltale and anabolic",
+        "distractor1": "innumerable and anabolic",
+        "distractor2": "discrete and telltale",
+        "correct_answer": "catabolic and anabolic",
+        "support": "Biochemical reactions of metabolism can be divided into two general categories: catabolic reactions and anabolic reactions. You can watch an animation showing how the two categories of reactions are related at this URL: http://classes. midlandstech. edu/carterp/courses/bio225/chap05/lecture1. htm."
+},
+{
+        "question": "Compounds with aluminum and silicon are commonly found in the clay fractions of soils derived from what?",
+        "distractor3": "mineral ash",
+        "distractor1": "volatile ash",
+        "distractor2": "ground ash",
+        "correct_answer": "volcanic ash",
+        "support": "Compounds with aluminum and silicon are commonly found in the clay fractions of soils derived from volcanic ash. One of these compounds is vermiculite, which is formed in reactions caused by exposure to weather. Vermiculite has the following formula: Ca0.7[Si6.6Al1.4]Al4O20(OH)4. (The content of calcium, silicon, and aluminum are not shown as integers because the relative amounts of these elements vary from sample to sample. ) What is the mass percent of each element in this sample of vermiculite?."
+},
+{
+        "question": "What organ has four major regions: the cerebrum, the diencephalon, the stem, and the cerebellum?",
+        "distractor3": "heart",
+        "distractor1": "liver",
+        "distractor2": "lungs",
+        "correct_answer": "brain",
+        "support": "13.2 | The Central Nervous System By the end of this section, you will be able to: \u2022 Name the major regions of the adult brain \u2022 Describe the connections between the cerebrum and brain stem through the diencephalon, and from those regions into the spinal cord \u2022 Recognize the complex connections within the subcortical structures of the basal nuclei \u2022 Explain the arrangement of gray and white matter in the spinal cord The brain and the spinal cord are the central nervous system, and they represent the main organs of the nervous system. The spinal cord is a single structure, whereas the adult brain is described in terms of four major regions: the cerebrum, the diencephalon, the brain stem, and the cerebellum. A person\u2019s conscious experiences are based on neural activity in the brain. The regulation of homeostasis is governed by a specialized region in the brain. The coordination of reflexes depends on the integration of sensory and motor pathways in the spinal cord."
+},
+{
+        "question": "What can refer to a rope in a particular shape and a genetic structure involved in splicing?",
+        "distractor3": "noose",
+        "distractor1": "braid",
+        "distractor2": "tourniquet",
+        "correct_answer": "lariat",
+        "support": "A lariat can refer to a rope in the form of a lasso. But it is also a genetic structure involved in splicing."
+},
+{
+        "question": "What is the ratio of the mass of an object to its volume?",
+        "distractor3": "diameter",
+        "distractor1": "frequency",
+        "distractor2": "median",
+        "correct_answer": "density",
+        "support": "Density is the ratio of the mass of an object to its volume."
+},
+{
+        "question": "What is the most common type of anemia?",
+        "distractor3": "vitamin k - def",
+        "distractor1": "vitamin d - def",
+        "distractor2": "calcium - def",
+        "correct_answer": "iron-def",
+        "support": "Anemia may not have any symptoms. Some people with anemia feel weak or tired in general or during exercise. They also may have poor concentration. People with more severe anemia often get short of breath during times of activity. Iron-deficiency anemia is the most common type of anemia. It occurs when the body does not receive enough iron. Since there is not enough iron, hemoglobin, which needs iron to bind oxygen, cannot function properly."
+},
+{
+        "question": "What stimulates milk production in mammals?",
+        "distractor3": "estrogen",
+        "distractor1": "testosterone",
+        "distractor2": "neurotoxin",
+        "correct_answer": "prolactin",
+        "support": ""
+},
+{
+        "question": "During telophase , the chromosomes begin to uncoil and form what?",
+        "distractor3": "mitochondria",
+        "distractor1": "mucosa",
+        "distractor2": "nucleus",
+        "correct_answer": "chromatin",
+        "support": "During telophase , the chromosomes begin to uncoil and form chromatin. This prepares the genetic material for directing the metabolic activities of the new cells. The spindle also breaks down, and new nuclear membranes form."
+},
+{
+        "question": "The science dealing with the study of the atmosphere is known as what?",
+        "distractor3": "cosmology",
+        "distractor1": "geology",
+        "distractor2": "climatology",
+        "correct_answer": "meteorology",
+        "support": "Meteorologists don\u2019t study meteors\u2014they study the atmosphere! The atmosphere is a thin layer of gas that surrounds Earth. The word \u201cmeteor\u201d refers to things in the air. Meteorology includes the study of weather patterns, clouds, hurricanes, and tornadoes. Meteorology is very important. Using radars and satellites, meteorologists work to predict, or forecast, the weather ( Figure below ). Meteorologists are getting better at predicting the weather all the time. Meteorologists wonder how to better predict weather. They wonder what the effects of rising water vapor in the atmosphere will be on weather."
+},
+{
+        "question": "On what basis are the eras of the phanerozoic eon separated?",
+        "distractor3": "low birth rates",
+        "distractor1": "mass birthings",
+        "distractor2": "sparse extinctions",
+        "correct_answer": "mass extinctions",
+        "support": "The eras of the Phanerozoic Eon are separated by mass extinctions . During these events, large numbers of organisms became extinct very rapidly. There have been several extinctions in the Phanerozoic. Two mass extinctions stand out more than the others. One took place at the end of the Paleozoic. The other took place at the end of the Mesozoic."
+},
+{
+        "question": "What type of response is generated when a stimulus is received by the nervous system?",
+        "distractor3": "a action potential",
+        "distractor1": "a neural response",
+        "distractor2": "a sensory response",
+        "correct_answer": "a motor response",
+        "support": ""
+},
+{
+        "question": "Fluid in the pseudocoelom serves as a hydrostatic what?",
+        "distractor3": "vacuum",
+        "distractor1": "shower",
+        "distractor2": "cell membrane",
+        "correct_answer": "skeleton",
+        "support": ""
+},
+{
+        "question": "How will global warming eliminate some islands and reduce the area of others?",
+        "distractor3": "lower sea levels",
+        "distractor1": "affect sea levels",
+        "distractor2": "unafect sea levels",
+        "correct_answer": "raise sea levels",
+        "support": ""
+},
+{
+        "question": "What is the term for the secretion of saliva?",
+        "distractor3": "craving",
+        "distractor1": "excretion",
+        "distractor2": "perspiration",
+        "correct_answer": "salivation",
+        "support": "Regulation of Salivation The autonomic nervous system regulates salivation (the secretion of saliva). In the absence of food, parasympathetic stimulation keeps saliva flowing at just the right level for comfort as you speak, swallow, sleep, and generally go about life. Over-salivation can occur, for example, if you are stimulated by the smell of food, but that food is not available for you to eat. Drooling is an extreme instance of the overproduction of saliva. During times of stress, such as before speaking in public, sympathetic stimulation takes over, reducing salivation and producing the symptom of dry mouth often associated with anxiety. When you are dehydrated, salivation is reduced, causing the mouth to feel dry and prompting you to take action to quench your thirst. Salivation can be stimulated by the sight, smell, and taste of food. It can even be stimulated by thinking about food. You might notice whether reading about food and salivation right now has had any effect on your production of saliva. How does the salivation process work while you are eating? Food contains chemicals that stimulate taste receptors on the tongue, which send impulses to the superior and inferior salivatory nuclei in the brain stem. These two nuclei then send back parasympathetic impulses through fibers in the glossopharyngeal and facial nerves, which stimulate salivation. Even after you swallow food, salivation is increased to cleanse the mouth and to water down and neutralize any irritating chemical remnants, such as that hot sauce in your burrito. Most saliva is swallowed along with food and is reabsorbed, so that fluid is not lost."
+},
+{
+        "question": "What is the most common sti in the u.s.?",
+        "distractor3": "herpes",
+        "distractor1": "syphilis",
+        "distractor2": "genital warts",
+        "correct_answer": "chlamydia",
+        "support": "Chlamydia is the most common STI in the U. S. As shown in the graph in Figure below , females are much more likely than males to develop chlamydia. Like most STIs, rates of chlamydia are highest in teens and young adults."
+},
+{
+        "question": "What plant structures are the main avenues by which water evaporates from the sporophyte?",
+        "distractor3": "chloroplasts",
+        "distractor1": "veins",
+        "distractor2": "chlorophyll",
+        "correct_answer": "stomata",
+        "support": ""
+},
+{
+        "question": "Decomposers break down dead organisms into nutrients and what?",
+        "distractor3": "tissues",
+        "distractor1": "soil",
+        "distractor2": "fluids",
+        "correct_answer": "gases",
+        "support": "Decomposers break down dead organisms into nutrients and gases so that they can be used by other organisms."
+},
+{
+        "question": "What is the term for the use of technology to treat genetic disorders or change organisms so they are more useful to people?",
+        "distractor3": "nanotechnology",
+        "distractor1": "physiology",
+        "distractor2": "biology",
+        "correct_answer": "biotechnology",
+        "support": "Biotechnology is the use of technology to treat genetic disorders or change organisms so they are more useful to people. Methods include gene cloning. Applications include gene therapy and genetically modified food crops."
+},
+{
+        "question": "What science specialty, with a set of like-named scientific laws, refers to the study of energy and energy transfer involving physical matter?",
+        "distractor3": "chemistry",
+        "distractor1": "meteorology",
+        "distractor2": "geology",
+        "correct_answer": "thermodynamics",
+        "support": "6.3 | The Laws of Thermodynamics By the end of this section, you will be able to: \u2022 Discuss the concept of entropy \u2022 Explain the first and second laws of thermodynamics Thermodynamics refers to the study of energy and energy transfer involving physical matter. The matter and its environment relevant to a particular case of energy transfer are classified as a system, and everything outside of that system is called the surroundings. For instance, when heating a pot of water on the stove, the system includes the stove, the pot, and the water. Energy is transferred within the system (between the stove, pot, and water). There are two types of systems: open and closed. An open system is one in which energy can be transferred between the system and its surroundings. The stovetop system is open because heat can be lost into the air. A closed system is one that cannot transfer energy to its surroundings. Biological organisms are open systems. Energy is exchanged between them and their surroundings, as they consume energystoring molecules and release energy to the environment by doing work. Like all things in the physical world, energy is subject to the laws of physics. The laws of thermodynamics govern the transfer of energy in and among all systems in the universe."
+},
+{
+        "question": "What type of tissue makes up the brain and the nerves that connect the brain to all parts of the body?",
+        "distractor3": "peripheral tissue",
+        "distractor1": "benign tissue",
+        "distractor2": "neurotransmitters",
+        "correct_answer": "nervous tissue",
+        "support": "Nervous tissue is made up of neurons, or nerve cells, that carry electrical messages. Nervous tissue makes up the brain and the nerves that connect the brain to all parts of the body."
+},
+{
+        "question": "Periodic refers to something that does what?",
+        "distractor3": "falls",
+        "distractor1": "dies",
+        "distractor2": "fail",
+        "correct_answer": "repeat",
+        "support": "Mendeleev\u2019s table of the elements is called a periodic table because of its repeating pattern. Anything that keeps repeating is referred to as periodic. Other examples of things that are periodic include the monthly phases of the moon and the daily cycle of night and day. The term period refers to the interval between repetitions. In a periodic table, the periods are the rows of the table. In Mendeleev\u2019s table, each period contains eight elements, and then the pattern repeats in the next row."
+},
+{
+        "question": "Blood is pumped from the heart, pushing open which valves?",
+        "distractor3": "thoracic and aortic",
+        "distractor1": "aortic and carotid",
+        "distractor2": "pulmonary and respiratory",
+        "correct_answer": "pulmonary and aortic semilunar",
+        "support": "Ventricular Systole Ventricular systole (see Figure 19.27) follows the depolarization of the ventricles and is represented by the QRS complex in the ECG. It may be conveniently divided into two phases, lasting a total of 270 ms. At the end of atrial systole and just prior to atrial contraction, the ventricles contain approximately 130 mL blood in a resting adult in a standing position. This volume is known as the end diastolic volume (EDV) or preload. Initially, as the muscles in the ventricle contract, the pressure of the blood within the chamber rises, but it is not yet high enough to open the semilunar (pulmonary and aortic) valves and be ejected from the heart. However, blood pressure quickly rises above that of the atria that are now relaxed and in diastole. This increase in pressure causes blood to flow back toward the atria, closing the tricuspid and mitral valves. Since blood is not being ejected from the ventricles at this early stage, the volume of blood within the chamber remains constant. Consequently, this initial phase of ventricular systole is known as isovolumic contraction, also called isovolumetric contraction (see Figure 19.27). In the second phase of ventricular systole, the ventricular ejection phase, the contraction of the ventricular muscle has raised the pressure within the ventricle to the point that it is greater than the pressures in the pulmonary trunk and the aorta. Blood is pumped from the heart, pushing open the pulmonary and aortic semilunar valves. Pressure generated by the left ventricle will be appreciably greater than the pressure generated by the right ventricle, since the existing pressure in the aorta will be so much higher. Nevertheless, both ventricles pump the same amount of blood. This quantity is referred to as stroke volume. Stroke volume will normally be in the range of 70\u201380 mL. Since ventricular systole began with an EDV of approximately 130 mL of blood, this means that there is still 50\u201360 mL of blood remaining in the ventricle following contraction. This volume of blood is known as the end systolic volume (ESV)."
+},
+{
+        "question": "What term refers to a list of the elements that will replace the ones below them in single-replacement reactions?",
+        "distractor3": "Up series",
+        "distractor1": "growth series",
+        "distractor2": "probably series",
+        "correct_answer": "activity series",
+        "support": "Chemical reactivity trends are easy to predict when replacing anions in simple ionic compounds\u2014simply use their relative positions on the periodic table. However, when replacing the cations, the trends are not as straightforward. This is partly because there are so many elements that can form cations; an element in one column on the periodic table may replace another element nearby, or it may not. A list called the activity series does the same thing the periodic table does for halogens: it lists the elements that will replace elements below them in single-replacement reactions. A simple activity series is shown below."
+},
+{
+        "question": "What cause many human diseases by killing host cells or disturbing their homeostasis?",
+        "distractor3": "bacteria",
+        "distractor1": "parasites",
+        "distractor2": "cancer",
+        "correct_answer": "viruses",
+        "support": "Viruses cause many human diseases by killing host cells or disturbing their homeostasis. Viruses are not affected by antibiotics. Several viral diseases can be treated with antiviral drugs or prevented with vaccines."
+},
+{
+        "question": "What two types of digestive systems do invertebrates have?",
+        "distractor3": "slow or complete",
+        "distractor1": "fast or slow",
+        "distractor2": "unstable or complete",
+        "correct_answer": "incomplete or complete",
+        "support": "Invertebrates have one of two types of digestive system: an incomplete or complete digestive system. Both are shown in Figure below . An incomplete digestive system consists of a digestive cavity with one opening. The single opening serves as both mouth and anus. A complete digestive system consists of a digestive tract with two openings. One opening is the mouth. The other is the anus."
+},
+{
+        "question": "What are ectothermic vertebrates that divide their time between freshwater and terrestrial habitats?",
+        "distractor3": "arthropods",
+        "distractor1": "mammals",
+        "distractor2": "reptiles",
+        "correct_answer": "amphibians",
+        "support": "Amphibians are ectothermic vertebrates that divide their time between freshwater and terrestrial habitats."
+},
+{
+        "question": "During exercise, the rate of blood returning to the heart does this?",
+        "distractor3": "reduces",
+        "distractor1": "remains stable",
+        "distractor2": "changes randomly",
+        "correct_answer": "increases",
+        "support": "Correlation Between Heart Rates and Cardiac Output Initially, physiological conditions that cause HR to increase also trigger an increase in SV. During exercise, the rate of blood returning to the heart increases. However as the HR rises, there is less time spent in diastole and consequently less time for the ventricles to fill with blood. Even though there is less filling time, SV will initially remain high. However, as HR continues to increase, SV gradually decreases due to decreased filling time. CO will initially stabilize as the increasing HR compensates for the decreasing SV, but at very high rates, CO will eventually decrease as increasing rates are no longer able to compensate for the decreasing SV. Consider this phenomenon in a healthy young individual. Initially, as HR increases from resting to approximately 120 bpm, CO will rise. As HR increases from 120 to 160 bpm, CO remains stable, since the increase in rate is offset by decreasing ventricular filling time and, consequently, SV. As HR continues to rise above 160 bpm, CO actually decreases as SV falls faster than HR increases. So although aerobic exercises are critical to maintain the health of the heart, individuals are cautioned to monitor their HR to ensure they stay within the target heart rate range of between 120 and 160 bpm, so CO is maintained. The target HR is loosely defined as the range in which both the heart and lungs receive the maximum benefit from the aerobic workout and is dependent upon age."
+},
+{
+        "question": "What is the pattern of spacing among individuals within the boundaries of the population?",
+        "distractor3": "equilibrium",
+        "distractor1": "frequency",
+        "distractor2": "diffusion",
+        "correct_answer": "dispersion",
+        "support": ""
+},
+{
+        "question": "What level is a feeding position in a food chain or web?",
+        "distractor3": "singular",
+        "distractor1": "neural",
+        "distractor2": "differentiation",
+        "correct_answer": "trophic",
+        "support": "Each food chain or food web has organisms at different trophic levels. A trophic level is a feeding position in a food chain or web. The trophic levels are identified in the food web in Figure above . All food chains and webs have at least two or three trophic levels, but they rarely have more than four trophic levels. The trophic levels are:."
+},
+{
+        "question": "What do most of the noble gas elements have in common?",
+        "distractor3": "four valence electrons",
+        "distractor1": "two valence electrons",
+        "distractor2": "zero valence electrons",
+        "correct_answer": "eight valence electrons",
+        "support": "Atoms can join together by forming a chemical bond, which is a very strong attraction between two atoms. Chemical bonds are formed when electrons in different atoms interact with each other to make an arrangement that is more stable than when the atoms are apart. What causes atoms to make a chemical bond with other atoms, rather than remaining as individual atoms? A clue comes by considering the noble gas elements, the rightmost column of the periodic table. These elements\u2014helium, neon, argon, krypton, xenon, and radon\u2014do not form compounds very easily, which suggests that they are especially stable as lone atoms. What else do the noble gas elements have in common? Except for helium, they all have eight valence electrons. Chemists have concluded that atoms are especially stable if they have eight electrons in their outermost shell. This useful rule of thumb is called the octet rule, and it is a key to understanding why compounds form."
+}
 ]
