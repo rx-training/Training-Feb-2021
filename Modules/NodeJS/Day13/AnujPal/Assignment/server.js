@@ -11,7 +11,7 @@ app.listen(3000, (err) => {
 
 });
 
- app.use("/Hospital",router);
+ app.use("/Home",router);
 
 
 // connecting to the database
