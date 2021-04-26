@@ -17,6 +17,10 @@ const atmSchema = new mongoose.Schema({
     {
         type: Number,
         required: true
+    },
+    account:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Account'
     }
 
 })

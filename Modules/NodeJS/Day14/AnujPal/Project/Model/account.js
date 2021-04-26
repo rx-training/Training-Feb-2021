@@ -1,22 +1,32 @@
-const mongoose=require('mongoose')
+const mongoose = require('mongoose')
 
 const accountSchema = new mongoose.Schema({
-    accountNo:{
+    accountNo: {
         type: String,
-        required:true,
-        unique:true
+        required: true,
+        unique: true
     },
 
-    accountHolderName:{
-        type:String,
-        required:true
+    accountHolderName: {
+        type: String,
+        required: true
     },
-    CIF:{
-        type:String,
-        required:true
+    CIF: {
+        type: String,
+        required: true
     },
-    branchCode:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Branch'
+    branchCode: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Branch'
+    },
+    balance: {
+        type: Number,
+        required: true
+    },
+    ATM: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'ATM'
     }
 })
+
+module.exports = accountSchema
