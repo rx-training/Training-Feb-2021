@@ -2,7 +2,7 @@ const express=require("express");
 const router=express.Router({mergeParams:true});
 router.use(express.json())
 
- const restaurantdata = require('../modules/restaurant')
+ const restaurantdata = require('../models/restaurant')
 
 class Restaurant
 {

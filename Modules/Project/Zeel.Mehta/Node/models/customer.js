@@ -38,32 +38,32 @@ const Customer = mongoose.model('Customer', customerSchema)
 
 module.exports = Customer
 
-// async function createCustomer() {
-//     const c1= new Customer({
-//         Customer_ID : 1,
-//         Customer_Name : 'Bhavyaraj Singh',        
-//         Customer_Address : "Ahmedabad",
-//         Customer_No : 9323536323        
-//     });
-//     const c2= new Customer({
-//         Customer_ID : 2,
-//         Customer_Name : 'Aangi Shah',        
-//         Customer_Address : "Gandhinagar",
-//         Customer_No : 8482898381        
-//     });
-//     const c3= new Customer({
-//         Customer_ID : 3,
-//         Customer_Name : 'Aalap Amin',        
-//         Customer_Address : "Vadodara",
-//         Customer_No : 7279787310        
-//     });
-//     try{
-//         const result = await c3.save();
-//         console.log(result);
-//     }
-//      catch(ex){
-//          for(field in ex.errors)
-//             console.log(ex.errors[field].message);
-//      } 
-// }
-// createCustomer();
+async function createCustomer() {
+    const c1= new Customer({
+        Customer_ID : 1,
+        Customer_Name : 'Bhavyaraj Singh',        
+        Customer_Address : "Ahmedabad",
+        Customer_No : 9323536323        
+    });
+    const c2= new Customer({
+        Customer_ID : 2,
+        Customer_Name : 'Aangi Shah',        
+        Customer_Address : "Gandhinagar",
+        Customer_No : 8482898381        
+    });
+    const c3= new Customer({
+        Customer_ID : 3,
+        Customer_Name : 'Aalap Amin',        
+        Customer_Address : "Vadodara",
+        Customer_No : 7279787310        
+    });
+    try{
+        const result = await c3.save();
+        console.log(result);
+    }
+     catch(ex){
+         for(field in ex.errors)
+            console.log(ex.errors[field].message);
+     } 
+}
+createCustomer();
