@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Joi = require('joi');
-const config = require('config')
+const config = require('config');
+const cookieParser = require('cookie-parser');
 
 Joi.objectId = require('joi-objectid')(Joi);
 
@@ -17,6 +18,7 @@ app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(express.static(__dirname + '/public'))
+app.use(cookieParser());
 
 //connect to mongodb
 mongoose.connect('mongodb://localhost/RxTraining', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })

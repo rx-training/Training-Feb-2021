@@ -7,8 +7,8 @@ const config = require('config')
 // middleware
 router.use((req, res, next) => {
 
-    // get token from header
-    const token = req.headers['x-access-token'];
+    // get token from cookie
+    const token = req.cookies.token || '';
     console.log(token)
 
     if(!token) return res.redirect('/users/login');

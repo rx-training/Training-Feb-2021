@@ -47,7 +47,8 @@ userSchema.methods.getAuthToken = function() {
         {
             _id: this._id,
             email: this.email,
-            isAdmin: this.isAdmin
+            isAdmin: this.isAdmin,
+            department: this.department
         },
         config.get('secretKey'),
         {

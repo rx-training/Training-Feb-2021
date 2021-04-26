@@ -17,13 +17,13 @@ router.get('/', async (req, res) => res.redirect('/technologies'));
 //child routes
 
 //http://localhost:3000/departments
-router.use('/departments', deptRouter);
+router.use('/departments', auth, deptRouter);
 
 //http://localhost:3000/technologies
-router.use('/technologies', techRouter);
+router.use('/technologies', auth, techRouter);
 
 //http://localhost:3000/plans
-router.use('/plans', planRouter);
+router.use('/plans', auth, planRouter);
 
 //http://localhost:3000/users
 router.use('/users', userRouter);

@@ -10,8 +10,17 @@ const {Technology} = require('../models/technology')
 
 //get user data
 exports.getUser = async function (req, res) {
-    user = await User.findById(req.user._id).select('-Password');
-    res.send(_.pick(user, [ '_id', 'name', 'email', 'isAdmin' ]));
+    const Tech = await Technology.find();
+    const user = await User.findById(req.user._id);
+    res.render('pages/users', { user, Tech });
+}
+
+//get users data
+exports.getUsers = async function (req, res) {
+    const users = await User.find({email: { $nin: req.user.email }}).populate('department');
+    const dept = await Department.find();
+    const Tech = await Technology.find();
+    res.render('pages/users', { users, Tech, dept });
 }
 
 //add user
@@ -22,8 +31,8 @@ exports.addUser = async (req, res) => {
     let user = await User.findOne({ email: req.body.email });
     if(user) return res.status(400).send('user already registered');
 
-    let department = await Department.findOne({ name: req.body.department });
-    let deptId = department._id
+    console.log(req.body)
+    let department = await Department.findById(req.body.department);
 
     if (!department) return res.status(400).send('department not found');
 
@@ -32,14 +41,14 @@ exports.addUser = async (req, res) => {
         email: req.body.email, 
         password: req.body.password, 
         isAdmin: req.body.isAdmin, 
-        department: deptId});
+        department: department});
 
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(user.password, salt)
   
     await user.save();
 
-    res.redirect('/users/login');
+    res.redirect('back');
 
 };
 
@@ -56,12 +65,22 @@ exports.login = async (req, res) => {
     if(!validPassword) return res.status(400).send('Invalid email or password');
 
     // generate token
-    global.token = user.getAuthToken();
+    const token = user.getAuthToken();
     console.log(user, token)
 
-    
-    res.header('x-auth-token', global.token).redirect('/');
+    //set cookie and send
+    res.cookie('token', token, {
+        expires: new Date(Date.now() + 360000),
+        secure: false, // set to true if your using https
+        httpOnly: true,
+      }).redirect('/');
 
+}
+
+//logout
+exports.logout = async function(req, res) {
+    //delete cookie and redirect to login page
+    res.clearCookie('token').redirect('/users/login');
 }
 
 async function validate(user) {
