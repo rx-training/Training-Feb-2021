@@ -5,7 +5,7 @@ function checkFunction(eid,epw)
         if(epw == "admin1")        
         {
             console.log("login...");
-            window.location.href = "emp.html";
+            window.location.href = "emp1.html";
         }
         else
         {
@@ -45,9 +45,10 @@ function validateForm() {
     }
 
 
-    var myObj = {name: ename, no: ecno};
+  /*  var myObj = {name: ename, no: ecno};
 var myJSON = JSON.stringify(myObj);
-window.location = "emp2.html" + myJSON;
+window.location = "emp1.html";
     return false;
-}
+*/
 
+}
