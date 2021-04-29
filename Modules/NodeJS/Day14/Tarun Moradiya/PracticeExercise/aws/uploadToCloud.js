@@ -13,7 +13,7 @@ const uploadFile = (fileName) => {
         Bucket: BUCKET_NAME,
         Key: fileName, // File name you want to save as in S3
         Body: fileContent,
-        ContentType: video/mp4
+        ContentType: 'video/mp4'
     };
 
     // Uploading files to the bucket

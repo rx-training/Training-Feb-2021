@@ -33,10 +33,10 @@ async function validateTech(tech) {
         techType: Joi.string().valid('frontend', 'backend', 'common').required(),
         modules: Joi.array().items(Joi.object({
             topic: Joi.string(),
+            description: Joi.string(),
                 contents: Joi.array().items(Joi.object({
                     contentName: Joi.string(),
                     contentUrl: Joi.string(),
-                    description: Joi.string(),
                 }))
         })),
     });
@@ -48,10 +48,10 @@ async function validateTech(tech) {
 async function validateModule(tech) {
     const schema = Joi.object({
         topic: Joi.string(),
+        description: Joi.string(),
         contents: Joi.array().items(Joi.object({
             contentName: Joi.string(),
             contentUrl: Joi.string(),
-            description: Joi.string(),
         }))
     });
 
@@ -63,7 +63,6 @@ async function validateContent(tech) {
     const schema = Joi.object({
         contentName: Joi.string(),
         contentUrl: Joi.string(),
-        description: Joi.string(),
     });
 
     return await schema.validate(tech);

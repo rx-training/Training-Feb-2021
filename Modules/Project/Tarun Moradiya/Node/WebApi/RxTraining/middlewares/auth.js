@@ -9,7 +9,7 @@ router.use((req, res, next) => {
 
     // get token from cookie
     const token = req.cookies.token || '';
-    console.log(token)
+    // console.log(token)
 
     if(!token) return res.redirect('/users/login');
 
@@ -31,7 +31,7 @@ router.use((req, res, next) => {
             }
 
             req.user= decoded;
-            console.log(decoded);
+            // console.log(decoded);
             next();
         }
     );

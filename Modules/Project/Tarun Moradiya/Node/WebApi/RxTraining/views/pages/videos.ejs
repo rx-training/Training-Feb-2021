@@ -26,10 +26,10 @@
                             </div>
                         <% }) %>
                         <div class="item-hl p-4" style="width: 30%">
-                            <button class="btn btn-warning w-100 h-75" data-toggle="modal" data-target="#addContent"><i class="fas fa-plus"></i></button>
+                            <button class="btn btn-warning w-100 h-75" data-toggle="modal" data-target="#addContent<%= element._id %>"><i class="fas fa-plus"></i></button>
                             <p class="lead text-center w-100">Add Video</p>
 
-                            <div class="modal" id="addContent">
+                            <div class="modal" id="addContent<%= element._id %>">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -46,10 +46,7 @@
                                                     <label for="content">Add Video</label>
                                                     <input type="file"  id="content" name="content" class="form-control" multiple required>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label for="description">Video Description</label>
-                                                    <textarea type="text"  id="description" name="description" class="form-control"></textarea>
-                                                </div>
+                                                
                                             </div>
                                             <div class="modal-footer">
                                                 <button class="btn btn-secondary" data-dismiss="modal">close</button>
@@ -80,6 +77,10 @@
                         <div class="form-group">
                             <label for="topic">Topic</label>
                             <input type="text"  id="topic" name="topic" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Video Description</label>
+                            <textarea type="text"  id="description" name="description" class="form-control"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="contents">Contents</label>

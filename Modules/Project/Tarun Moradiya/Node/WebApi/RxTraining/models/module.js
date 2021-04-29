@@ -8,6 +8,10 @@ const moduleSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
+    description: {
+        type: String,
+        trim: true
+    },
     contents: [{
         contentName: {
             type: String,
@@ -16,10 +20,6 @@ const moduleSchema = new mongoose.Schema({
         contentUrl: {
             type: String,
             required: true
-        },
-        description: {
-            type: String,
-            trim: true
         }
     }]
 });
