@@ -1,98 +1,73 @@
-
-const fs = require('fs');
-const AWS = require('aws-sdk');
-const config = require('config');
-const path = require('path');
+const debug = require("debug")("rx:aws");
+const fs = require("fs");
+const AWS = require("aws-sdk");
+const config = require("config");
+const path = require("path");
 
 const s3 = new AWS.S3({
-    accessKeyId: config.get('ID'),
-    secretAccessKey: config.get('SECRET')
+  accessKeyId: config.get("ID"),
+  secretAccessKey: config.get("SECRET"),
 });
 
 class AwsHelper {
-    async uploadFile(fileName, filepath) {
-        return new Promise(async (resolve, reject) => {
-            fs.readFile(filepath, (err, data) => {
-                if (err) throw err;
-                let key = fileName.replace(/\s/g, '_');
-                const params = {
-                    Bucket: 'rx-bucket', // pass your bucket name
-                    Key: key, // file will be saved as rx-bucket/tech_name/topic_name/video_name.mp4
-                    ACL: 'public-read',
-                    Body: data
-                };
+  async uploadFile(fileName, filepath) {
+    return new Promise(async (resolve, reject) => {
+      try {
+        fs.readFile(filepath, (err, data) => {
+          if (err) throw err;
+          debug("uploading...");
+          let key = fileName.replace(/\s/g, "_");
+          const params = {
+            Bucket: "rx-bucket", // pass your bucket name
+            Key: key, // file will be saved as rx-bucket/tech_name/topic_name/video_name.mp4
+            ACL: "public-read",
+            Body: data,
+          };
 
-                s3.upload(params, async function(s3Err, data) {
-                    fs.unlink(filepath, (Ferr) => {
-                        if (Ferr) {
-                        console.error(Ferr)
-                        return 
-                        }});
-                        
-                    if (s3Err) throw reject(s3Err)
-                    console.log(`File uploaded successfully at ${data.Location}`);
-                    resolve(data.Location)
-                });
+          s3.upload(params, async function (s3Err, data) {
+            if (s3Err) reject(s3Err);
+            debug(`File uploaded successfully at ${data.Location}`);
+            fs.unlink(filepath, (Ferr) => {
+              if (Ferr) {
+                console.error(Ferr);
+                return;
+              }
             });
-        })
-    }
 
-    //to upload multiple files
-    async uploadFiles(files, folder) {
+            resolve(data.Location);
+          });
+        });
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
 
-        return new Promise(async (resolve, reject) => {
-            let arr = [];
-            let filepath, dataLocation, fileNameKey;
+  async delelteFile(fileName) {
+    return new Promise((resolve, reject) => {
+      try {
+        debug("deleting...");
+        const myUrl = fileName.split("/");
+        const len = myUrl.length;
+        const deleteParam = {
+          Bucket: "rx-bucket",
+          Key: `${myUrl[len - 3]}/${myUrl[len - 2]}/${myUrl[len - 1]}`,
+        };
 
-            try {
-                for(let i = 0; i < files.length; i++) {
-
-                    filepath = path.join(files[i].destination, files[i].filename);
-
-                    fileNameKey = `${folder}/${files[i].originalname}`
-
-                    dataLocation = await this.uploadFile(fileNameKey, filepath);
-
-                    let contName = files[i].originalname;
-                    contName = contName.replace(path.extname(contName), '') 
-
-                    arr.push({
-                        contentName: contName,
-                        contentUrl: dataLocation,
-                    })
-                }
-    
-                resolve(arr);
-
-            } catch (error) {
-                reject(error)
-            }
-        }) 
-    }
-
-    async delelteFile(fileName) {
-        return new Promise((resolve, reject) => {
-            console.log('deleting..')
-            const myUrl = fileName.split('/');
-            const len = myUrl.length;
-            const deleteParam = {
-                Bucket: 'rx-bucket',
-                Key: `${myUrl[len-3]}/${myUrl[len-2]}/${myUrl[len-1]}`
-            };   
-             
-            s3.deleteObject(deleteParam, function(err, data) {
-                if (err) {
-                    console.log(err, err.stack);
-                    reject(err)
-                }
-                else {
-                    console.log('delete', data);
-                    resolve(data)
-                }
-            });
-        })
-    }
-
+        s3.deleteObject(deleteParam, function (err, data) {
+          if (err) {
+            debug(err, err.stack);
+            reject(err);
+          } else {
+            debug("deleted", data);
+            resolve(data);
+          }
+        });
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
 }
 
 module.exports = AwsHelper;
@@ -110,7 +85,6 @@ module.exports = AwsHelper;
 //   });
 // };
 
-
 // exports.deletefile = (fileName) => {
 //     var deleteParam = {
 //         Bucket: 'rx-bucket',
@@ -122,10 +96,10 @@ module.exports = AwsHelper;
 //                 {Key: fileName}
 //             ]
 //         }
-//     };   
-     
+//     };
+
 //     s3.deleteObjects(deleteParam, function(err, data) {
-//         if (err) console.log(err, err.stack);
-//         else console.log('delete', data);
+//         if (err) debug(err, err.stack);
+//         else debug('delete', data);
 //     });
 // }

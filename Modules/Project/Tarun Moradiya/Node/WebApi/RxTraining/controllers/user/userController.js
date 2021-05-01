@@ -1,64 +1,63 @@
 //import modules
-const router = require('express').Router(); 
+const router = require("express").Router();
 
-const UserDomain = require('../../domains/userDomain');
-const auth = require('../../middlewares/auth');
-const admin = require('../../middlewares/admin');
-
+const UserDomain = require("../../domains/userDomain");
+const auth = require("../../middlewares/auth");
+const admin = require("../../middlewares/admin");
 
 class UserController {
-    //To get user
-    static async get(req, res) {
-      const userDomain = new UserDomain();
-      userDomain.getUser(req, res);
-    }
-    //To get user
-    static async getUsers(req, res) {
-        const userDomain = new UserDomain();
-        userDomain.getUsers(req, res);
-      }
-    //To insert user
-    static async insertUser(req, res) {
-        const userDomain = new UserDomain();
-        userDomain.insertUser(req, res);
-    }
-    //To login
-    static async login(req, res) {
-        const userDomain = new UserDomain();
-        userDomain.login(req, res);
-    }
-    //To logout
-    static async logout(req, res) {
-        const userDomain = new UserDomain();
-        userDomain.logout(req, res);
-    }
+  //To get user
+  static async get(req, res) {
+    const userDomain = new UserDomain();
+    userDomain.getUser(req, res);
   }
+  //To get user
+  static async getUsers(req, res) {
+    const userDomain = new UserDomain();
+    userDomain.getUsers(req, res);
+  }
+  //To insert user
+  static async insertUser(req, res) {
+    const userDomain = new UserDomain();
+    userDomain.insertUser(req, res);
+  }
+  //To login
+  static async login(req, res) {
+    const userDomain = new UserDomain();
+    userDomain.login(req, res);
+  }
+  //To logout
+  static async logout(req, res) {
+    const userDomain = new UserDomain();
+    userDomain.logout(req, res);
+  }
+}
 
 // routes
 
 // users page
 // GET http://localhost:3000/users
-router.get('/', [auth, admin], UserController.getUsers);
+router.get("/", [auth, admin], UserController.getUsers);
 
 // user profile page
 // GET http://localhost:3000/users
-router.get('/me', auth, UserController.get);
+router.get("/me", auth, UserController.get);
 
 //user Registration
 //POST http://localhost:3000/users
-router.post('/', UserController.insertUser)
+router.post("/", UserController.insertUser);
 
 // user login page
 // GET http://localhost:3000/users/login
-router.get('/login', (req, res) => res.render('pages/login'));
+router.get("/login", (req, res) => res.render("pages/login"));
 
 // user logout
 // GET http://localhost:3000/users/login
-router.get('/logout', UserController.logout);
+router.get("/logout", UserController.logout);
 
-// user login 
+// user login
 // POST http://localhost:3000/users/login
-router.post('/login', UserController.login);
+router.post("/login", UserController.login);
 
 //exports
 module.exports = router;

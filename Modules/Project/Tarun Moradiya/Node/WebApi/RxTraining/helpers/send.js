@@ -1,30 +1,24 @@
+var amqp = require("amqplib");
+var debug = require("debug")("rx:send");
 
-var amqp = require('amqplib/callback_api');
+async function connect() {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const amqpServer = "amqp://localhost";
+      const connection = await amqp.connect(amqpServer);
+      const channel = await connection.createChannel();
 
-async function sendToQueue(msg) {
-        
-        amqp.connect('amqp://localhost', function(error0, connection) {
-            if (error0) {
-                throw error0;
-            }
-            connection.createChannel(function(error1, channel) {
-                if (error1) {
-                    throw error1;
-                }
+      debug("connected");
 
-                var queue = 'upload';
+      await channel.assertQueue("upload");
+      await channel.assertQueue("delete");
 
-                channel.assertQueue(queue, {
-                    durable: false
-                });
-                channel.sendToQueue(queue, Buffer.from(msg));
-
-                console.log(" [x] Sent %s", msg);
-            });
-            setTimeout(function() {
-                connection.close();
-            }, 500);
-        });
+      resolve(channel);
+    } catch (error) {
+      debug(error);
+      reject(new Error(error));
+    }
+  });
 }
 
-module.exports = sendToQueue;
+module.exports = connect;
