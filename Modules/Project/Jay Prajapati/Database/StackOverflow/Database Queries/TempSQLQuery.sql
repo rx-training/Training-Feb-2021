@@ -6,7 +6,7 @@ SELECT * FROM UserLoginDetails;
 SELECT * FROM Users;
 SELECT * FROM Education;
 SELECT * FROM WorkExperience;
-SELECT * FROM BadgesEarnedByUser
+SELECT * FROM BadgesEarnedByUser;
 
 SELECT * FROM Questions
 SELECT * FROM Badges
