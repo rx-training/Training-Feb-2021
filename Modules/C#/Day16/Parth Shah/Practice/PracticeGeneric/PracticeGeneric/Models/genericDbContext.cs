@@ -16,8 +16,8 @@ namespace PracticeGeneric.Models
             : base(options)
         {
         }
-        public virtual DbSet<Employee> Employees { get; set; }
-        public virtual DbSet<Incentive> Incentives { get; set; }
+        public  DbSet<Employee> Employees { get; set; }
+        public DbSet<Incentive> Incentives { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

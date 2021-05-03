@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PracticeGeneric.Interface;
 using PracticeGeneric.Models;
 using System;
@@ -11,6 +12,7 @@ namespace PracticeGeneric.Repositories
     public abstract class GenericRepository<T> : IGeneric<T> where T : class
     {
         protected readonly genericDbContext context;
+
 
         public GenericRepository(genericDbContext _context)
         {
@@ -26,6 +28,7 @@ namespace PracticeGeneric.Repositories
         public void  Delete (T entity)
         
         {
+
             context.Remove(entity);
             context.SaveChanges();
         }

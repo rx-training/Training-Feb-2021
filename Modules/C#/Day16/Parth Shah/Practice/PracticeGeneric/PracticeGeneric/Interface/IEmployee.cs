@@ -8,6 +8,6 @@ namespace PracticeGeneric.Interface
 {
     public interface IEmployee : IGeneric<Employee>
     {
-
+     
     }
 }

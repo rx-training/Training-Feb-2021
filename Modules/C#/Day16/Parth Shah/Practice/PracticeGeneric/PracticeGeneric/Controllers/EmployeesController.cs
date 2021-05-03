@@ -14,10 +14,11 @@ namespace PracticeGeneric.Controllers
     [ApiController]
     public class EmployeesController : ControllerBase
     {
-        IEmployee Employee;
-        public EmployeesController(IEmployee Employee)
+        //private IGeneric<Employee> _repository;
+        private IEmployee Employee;
+        public EmployeesController(IEmployee Employees)
         {
-            this.Employee = Employee;
+            Employee = Employees;
         }
 
         // GET: api/Employees
@@ -49,19 +50,31 @@ namespace PracticeGeneric.Controllers
       // POST: api/Employees
       // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
       [HttpPost]
-      public void PostEmployee(Employee employee)
+      public IActionResult PostEmployee(Employee employee)
       {
 
             Employee.Create(employee);
+            return Ok(employee);
         
       }
 
-        //    DELETE: api/Employees/5
-        //    [HttpDelete("{id}")]
-        //    public void DeleteEmployee(int id)
-        //    {
-        //        Employee.Delete(id);
-        //    }
+        //DELETE: api/Employees/5
+        [HttpDelete("{id}")]
+        public IActionResult DeleteEmployee(int id)
+        {
+            var emp = Employee.GetById(id);
+            if (emp == null)
+            {
+                return NotFound();
+            }
+
+
+
+            Employee.Delete(emp);
+            return NoContent();
+
+
+        }
 
     }
 }

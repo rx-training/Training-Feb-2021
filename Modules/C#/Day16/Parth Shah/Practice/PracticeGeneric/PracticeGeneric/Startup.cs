@@ -36,6 +36,7 @@ namespace PracticeGeneric
             services.AddTransient<IEmployee , EmployeeRepository >();
             services.AddTransient<IIncentive, IncentiveRepository>();
             
+            
             services.AddDbContext<genericDbContext>(p => p.UseSqlServer("Data Source=DESKTOP-VBU96E5\\SQLEXPRESS01;Initial Catalog=genrericDb;Integrated Security=True"));
             services.AddSwaggerGen(c =>
             {
