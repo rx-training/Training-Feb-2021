@@ -25,7 +25,7 @@ function People() {
       </Person>
       <Person person={friends[1]} />
       <Person person={friends[2]} />
-      <Person person={friends[3]} />
+      <Person person={friends[3]} />  
     </section>
   );
 }
