@@ -1,5 +1,4 @@
 var nodemailer = require('nodemailer');
-
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -12,7 +11,7 @@ var mailOptionsSignUp = {
     from: 'anujpal631998@gmail.com',
     to: 'anujpal160180107030@gmail.com',
     subject: 'SignUp',
-    text: `You Signup the system!!!!!!!!`
+    html: `You Signup the system!!!!!!!!`
            
 };
 
