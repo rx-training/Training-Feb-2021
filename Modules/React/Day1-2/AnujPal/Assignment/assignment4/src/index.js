@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "bootstrap/dist/css/bootstrap.css";
 const students = [
   {
     src:
@@ -32,16 +32,16 @@ const students = [
     collegeName: "IIMA",
     Address: "Ahmedabad",
     srcc:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8HytWM-qG1txCV434ZbbjMsnnkVFFMgXtObTlbfLZxb-1vLPaUNslNQip5RkMsoKDBxg&usqp=CAU",
+    "https://gtu-info.com/Photos/Logo/College/018_GEC_Dahod_Logo.png",
   },
 ];
 
 const PersonalComponent = (props) => {
   return (
     <article className="personal">
-      <h3>ID : {props.ID}</h3>
-      <h3>Name : {props.fname + " " + props.lname}</h3>
-      <h3>DOB : {props.DOB}</h3>
+      <h4 className="h5">ID : {props.ID}</h4>
+      <h4 className="h5">Name : {props.fname + " " + props.lname}</h4>
+      <h4 className="h5">DOB : {props.DOB}</h4>
       <hr></hr>
     </article>
   );
@@ -49,16 +49,16 @@ const PersonalComponent = (props) => {
 
 const CollegeComponent = (props) => {
   return (
-    <article className="college">
-      <img
-        className="image"
-        src={props.srcc}
-        alt=""
-        height="100px"
-        width="200px"
-      />
-      <h3 className="h1">CollegeName : {props.collegeName}</h3>
-      <h3 className="h2">Address : {props.Address}</h3>
+    <article className="container">
+      <div className="row">
+        <div className="col">
+          <img className="img-fluid mb-5" src={props.srcc} alt="" />
+        </div>
+        <div className="col ">
+          <h4 className="h5 mt-3">CollegeName : {props.collegeName}</h4>
+          <h4 className="h5 mt-3">Address : {props.Address}</h4>
+        </div>
+      </div>
     </article>
   );
 };
@@ -69,58 +69,65 @@ const Image = (props) => {
 
 const StudentIdCard = (props) => {
   return (
-    <article className="studentIdCard">
-      <Image src={props.src}></Image>
-      <PersonalComponent
-        ID={props.ID}
-        fname={props.fname}
-        lname={props.lname}
-        DOB={props.DOB}
-      ></PersonalComponent>
-      <CollegeComponent
-        srcc={props.srcc}
-        collegeName={props.collegeName}
-        Address={props.Address}
-      ></CollegeComponent>
-    </article>
+    <div className="container w-100">
+      <article className="studentIdCard border border-secondary">
+        <Image src={props.src}></Image>
+        <PersonalComponent
+          ID={props.ID}
+          fname={props.fname}
+          lname={props.lname}
+          DOB={props.DOB}
+        ></PersonalComponent>
+        <CollegeComponent
+          srcc={props.srcc}
+          collegeName={props.collegeName}
+          Address={props.Address}
+        ></CollegeComponent>
+      </article>
+    </div>
   );
 };
 const Assignment = (props) => {
   let stu = props.data;
   console.log(stu);
   return (
-    <section class="assignment">
-      <StudentIdCard
-        src={stu[0].src}
-        ID={stu[0].ID}
-        fname={stu[0].fname}
-        lname={stu[0].lname}
-        DOB={stu[0].DOB}
-        collegeName={stu[0].collegeName}
-        Address={stu[0].Address}
-        srcc={stu[0].srcc}
-      ></StudentIdCard>
-      <StudentIdCard
-        src={stu[1].src}
-        ID={stu[1].ID}
-        fname={stu[1].fname}
-        lname={stu[1].lname}
-        DOB={stu[1].DOB}
-        collegeName={stu[1].collegeName}
-        Address={stu[1].Address}
-        srcc={stu[1].srcc}
-      ></StudentIdCard>
-
-      <StudentIdCard
-        src={stu[2].src}
-        ID={stu[2].ID}
-        fname={stu[2].fname}
-        lname={stu[2].lname}
-        DOB={stu[2].DOB}
-        collegeName={stu[2].collegeName}
-        Address={stu[2].Address}
-        srcc={stu[2].srcc}
-      ></StudentIdCard>
+    <section class="row">
+      <div className="col">
+        <StudentIdCard
+          src={stu[0].src}
+          ID={stu[0].ID}
+          fname={stu[0].fname}
+          lname={stu[0].lname}
+          DOB={stu[0].DOB}
+          collegeName={stu[0].collegeName}
+          Address={stu[0].Address}
+          srcc={stu[0].srcc}
+        ></StudentIdCard>
+      </div>
+      <div className="col">
+        <StudentIdCard
+          src={stu[1].src}
+          ID={stu[1].ID}
+          fname={stu[1].fname}
+          lname={stu[1].lname}
+          DOB={stu[1].DOB}
+          collegeName={stu[1].collegeName}
+          Address={stu[1].Address}
+          srcc={stu[1].srcc}
+        ></StudentIdCard>
+      </div>
+      <div className="col">
+        <StudentIdCard
+          src={stu[2].src}
+          ID={stu[2].ID}
+          fname={stu[2].fname}
+          lname={stu[2].lname}
+          DOB={stu[2].DOB}
+          collegeName={stu[2].collegeName}
+          Address={stu[2].Address}
+          srcc={stu[2].srcc}
+        ></StudentIdCard>
+      </div>
     </section>
   );
 };
