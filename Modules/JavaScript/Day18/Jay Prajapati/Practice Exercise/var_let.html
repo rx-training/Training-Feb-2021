@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 2</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container col-lg-5 mt-5">
+
+       
+        <h1 class=" text-center bg-info py-4">Variables Vs Literals</h1>
+        <!-- <button class="btn btn-primary" onclick="return varFunc()">var value</button>
+        <p id="demo1"></p>
+        <button class="btn btn-primary" onclick="return letFunc()">let value</button> -->
+        <h3 class="display-6 text-success mt-5"id="demo1"></h3>
+        <h3 class="display-6 text-success"id="demo2"></h3>
+        <h3 class="display-6 text-warning"id="demo3"></h3>
+        <h3 class="display-6 text-danger"id="demo4"></h3>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script>
+
+
+        // calling x after definition 
+        var a = 5; 
+        //document.write(x, "\n"); 
+        document.getElementById('demo1').innerHTML = "Calling variable a after definition : " + a;
+  
+        // calling y after definition  
+        let b = 10; 
+        //document.write(y, "\n"); 
+        document.getElementById('demo2').innerHTML = "Calling literal b after definition : " +  b;
+  
+        // calling var z before definition will return undefined 
+        //document.write(z, "\n"); 
+        document.getElementById('demo3').innerHTML = "Calling variable c before definition will return undefined : " + c;
+        var c = 2; 
+  
+        // calling let a before definition will give error 
+        //document.write(a); 
+        
+        document.getElementById('demo4').innerHTML = "Calling literal d before definition will give error : ";
+        document.getElementById('demo4').innerHTML = d;
+        let d = 3; 
+
+
+
+
+
+
+
+
+
+
+
+        // function varFunc() {
+        //     var x = 10;
+        //     var i=0;
+        //     {
+        //         var x = 45;
+        //         document.getElementById("demo1").innerHTML = "value inside block " + x + "<br>";
+        //     }
+        //     document.getElementById("demo1").innerHTML += "value outside block " + x + "<br>";
+        //     document.getElementById("demo1").innerHTML += "value of i before loop " + i + "<br>";
+        //     for(var i = 0; i<5; i++){
+
+        //     }
+        //     document.getElementById("demo1").innerHTML += "value of i after block " + i + "<br>";
+        //     return false;
+        // }
+
+        // function letFunc() {
+        //     let x = 10;
+        //     let i=0;
+        //     {
+        //         let x = 45;
+        //         document.getElementById("demo2").innerHTML = "value inside block " + x + "<br>";
+        //     }
+        //     document.getElementById("demo2").innerHTML += "value outside block " + x + "<br>";
+        //     document.getElementById("demo2").innerHTML += "value of i before loop " + i + "<br>";
+        //     for(let i = 0; i<5; i++){
+
+        //     }
+        //     document.getElementById("demo2").innerHTML += "value of i after block " + i + "<br>";
+        //     return false;
+        // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+// Main Sass File
+$info-color: #17a2b882;
+
+
+html{
+    scroll-behavior: smooth;
+}
+#home-section{
+    background: url('../img/mountains.jpg');
+    background-size: cover;
+    //min-height: 600px;
+
+    .home-inner{
+        background-color: #17a2b882 !important;
+        //min-height: 600px;
+    }
+}
+
+#author-section{
+    .card:hover{
+        background-color: #17a2b8;
+        color: #f8f9fa !important;
+        i{
+            color: #f8f9fa !important;
+        }
+    }
+    .card-footer{
+        border: none;
+        background: none;
+    }
+    i{
+        
+        margin: auto;
+        font-size: 18px;
+    }
+    
+
+}
+#author-section{
+    img{
+        margin-top: -50px;
+    }
+}
+

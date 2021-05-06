@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+   
+        div,span{
+        border: 1px solid black;
+        padding: 20px;
+        margin : 30px;
+        }
+.ancestors * { 
+  display: block;
+  border: 2px solid lightgrey;
+  color: lightgrey;
+  padding: 5px;
+  margin: 15px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#child").parentsUntil("#greatGrandParent").css({"color": "red", "border": "2px solid red"});
+  $('#greatGrandParent').children().css({"color":"blue"});
+});
+</script>
+</head>
+
+<body class="ancestors"> body (great-great-grandparent)
+  <div id="greatGrandParent" class="border p-5">greatGrandParent
+    <div id="grandParent" class="border p-5">grandParent
+        <div id="parent" class="border p-5">parent
+            <div id="child" class="border p-5"> Hello World</div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

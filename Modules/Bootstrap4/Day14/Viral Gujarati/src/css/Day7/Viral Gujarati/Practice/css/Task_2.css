@@ -1,0 +1,25 @@
+body{
+    border: solid blue;
+}
+
+/* large mobile */
+@media screen and (min-width: 414px){
+body{
+    border: solid red;
+}
+}
+
+
+/* mobile device */ 
+@media screen and (max-width: 375px){
+body{
+    border: solid green;
+}
+}
+
+ /* ipad */
+ @media screen and (min-width: 768px){
+body{
+    border: solid hotpink;
+}
+}

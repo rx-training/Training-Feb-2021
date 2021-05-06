@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/day3/mainstyle.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@100;400&display=swap" rel="stylesheet"> 
+        <title>Radix Tasks - Aniket Shinde</title>
+    </head>
+
+    <body>
+
+        <!-- Navbar -->
+        <header id="header_section">
+            <div class="my-navbar fixed-top">
+                <div class="container">
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <img src="../img/logo_radix.jpg" alt="Radic Logo" class="img-fluid mx-2" width="100" height="50">
+                        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarLinks">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarLinks">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                                <li class="nav-item"><a href="../htmlMain.html" class="nav-link">Html</a></li>
+                                <li class="nav-item"><a href="../cssMain.html" class="nav-link">Css</a></li>
+                                <li class="nav-item"><a href="../bootstrapMain.html" class="nav-link">Bootstrap</a></li>
+                                <li class="nav-item"><a href="" class="nav-link">Javascript</a></li>
+                                <li class="nav-item"><a href="" class="nav-link">JQuery</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Menu Section -->
+        <div id="menu_section" >
+            <div class="container-fluid">
+              <div class="row py-5">
+                <div class="col-lg-3">
+                    <div class="list-group" id="list-tab" role="tablist">
+                        <a class="list-group-item list-group-item-action bg-primary" data-toggle="collapse" href="#day3">Day 3</a>
+                        <div  id="accordion1">
+                            <div id="day3" class="collapse">
+                                <ul class="list-group">
+                                    <li class="list-group-item"><a data-toggle="collapse" href="#practiceDay3">Practice</a>
+                                        <div id="practiceDay3" class="collapse show" data-parent="#accordion1">
+                                            <ul class="list-group">
+                                                <li class="list-group-item"><a href="studentReportCard.html">Student Report Card</a></li>
+                                                <li class="list-group-item"><a href="loginForm.html">Login Form</a></li>
+                                                <li class="list-group-item"><a href="articlenews.html">Article News</a></li>
+                                                <li class="list-group-item"><a href="departments.html">Departments</a></li>
+                                                <li class="list-group-item"><a href="horizontalMenu.html">Horizontal Navbar</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item"><a data-toggle="collapse" href="#assignmentDay3">Assignment</a>
+                                        <div id="assignmentDay3" class="collapse" data-parent="#accordion1">
+                                            <ul class="list-group">
+                                              <li class="list-group-item"><a href="employeeDetailsForm.html">Employee Details Form</a></li>
+                                              </ul>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item"><a data-toggle="collapse" href="#videoTaskDay3">Video Task</a>
+                                        <div id="videoTaskDay3" class="collapse" data-parent="#accordion1">
+                                            <ul class="list-group">
+                                              <li class="list-group-item"><a href="videotasks.html">Task 1</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Departments -->
+                <div class="col-lg-9 mx-auto py-2">
+                    <div id="department">
+                        <h1>Multi Level Lists</h1>
+                        <ul>
+                            <li>CEO
+                                <ul type="square">
+                                    <li>Development
+                                        <ol type="I">
+                                            <li>Front-end Developers</li>
+                                            <li>Back-end Developers</li>
+                                        </ol>
+                                    </li>
+                                    <li>Design
+                                        <ol type="1">
+                                            <li>Graphic Design</li>
+                                            <li>Web Design</li>
+                                            <li>Animation Design</li>
+                                        </ol>
+                                    </li>
+                                    <li>Quality Assurance
+                                        <ol type="A">
+                                            <li>Manual QA</li>
+                                            <li>Automated QA</li>
+                                        </ol>
+                                    </li>
+                                    <li>Customer Services</li>
+                                </ul>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+            
+
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/popper.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!--Need to develop an application for HR department to manage employee details. 
+Description of the task
+The HR should be allowed to login into the system.The Ability to capture 
+and modify employee data Create the Array and relevant forms for inserting and 
+updating data into the system.Login should get validated and necessary message 
+should be displayed.Proper validations should be done for employee data which is being captured. 
+Following validation should be done:
+
+Name Should not be containing any digitContact Number should be number.
+The address of the employee should be captured through dynamic lists. For example, if the Country is selected adjacent states should be loaded.
+-->
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Hr Development</title>
+
+
+        
+            
+        <style>
+            form {border: 3px solid whitesmoke}
+            
+            input[type=text], 
+            input[type=password] 
+            {
+              width: 100%;
+              padding: 12px 20px;
+              margin: 8px 0;
+              box-sizing: border-box;
+            }
+                
+                button {
+                background-color: grey;
+                color: white;
+                padding: 15px 25px;
+                margin: 8px 0;
+                border: none;
+                width: 100%;
+                }
+            
+        
+            </style>
+    </head>
+
+    <body>
+        <form>   
+          <h2><center>Login Form</center></h2>
+
+  <div class="container">
+    <label for="name"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="name" required> <br>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" pattern="(?=.*[a-z])(?=.*[A-Z])" required>
+        
+    <button type="submit"><a href="../form.html">Login</a></button>
+    
+  </div>
+
+</form>
+
+</body>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

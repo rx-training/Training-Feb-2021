@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width,initial-scale-1.0">
+        <style>
+            .news1 {
+                margin: 0;
+                padding: 5px;
+                background-color: lightgray;
+            }
+            .menu {
+                font-size: large;
+                background-color: lightskyblue;
+            }
+        </style>
+            <title>
+                Practice Exercise 
+            </title>
+        <link rel="stylesheet" href="zstyle.css">
+    </head>
+    <body class="zbody">
+        <div class="grid-container">
+        <header class="zheader">
+            <img src="logo.png" height="100" width="100">
+                <label class="logo">
+                    <img src="l.png" height="80">
+                </label>
+            <div class="nav">
+                <ul class="ullist">
+                    <li><a class="path" href="main.html">HTML</a></li>
+                    <li><a class="path" href="css.html">CSS</a></li>
+                    <li><a class="path" href="bs.html">BOOTSTRAP</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="sidebar">
+            <ul class="ullist">
+                <li><h3>Day3</h3>
+                    <ul class="ullist">
+                        <li>Assignment
+                            <ul class="ullist">
+                                <li><a class="path" href="htmlassignment1.html">Assignment1</a></li>
+                            </ul>
+                        </li><br/>
+                        <li>Practice
+                            <ul class="ullist">
+                                <li><a class="path" href="htmlp1.html">Exercise1</a></li><br>
+                                <li><a class="path" href="htmlp2.html">Exercise2</a></li><br>
+                                <li><a class="path" href="htmlp3.html">Exercise3</a></li><br>
+                                <li><a class="path" href="htmlp4.html">Exercise4</a></li><br>
+                                <li><a class="path" href="htmlp5.html">Exercise5</a></li>
+                            </ul>
+                        </li><br/>
+                        <li>Video Exercise
+                            <ul class="ullist">
+                                <li><a class="path" href="htmlv1.html">V.Exercise1</a></li><br>
+                                <li><a class="path" href="htmlv2.html">V.Exercise2</a></li>
+                            </ul>
+                        </li><br>
+                    </ul> 
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <p>HELLO !</p>
+
+        <!----------------------Form--------------------->
+        <form id="myform">
+            <label for="date-input">Please choose a date : </label>
+            <input type="date" id="date-input">
+            <br><br>
+
+            <label for="time-input">Please enter a time : </label>
+            <input type="time" id="time-input">
+            <br><br>
+
+            <label for="month-input">Please enter a month : </label>
+            <input type="month" id="month-input">
+            <br><br>
+
+            <label for="week-input">Please enter a week : </label>
+            <input type="week" id="week-input">
+            <br><br>
+
+            <label for="range-data">Range : </label>
+            <input type="range" id="range-data" min="1" max="10">
+            <br><br>
+
+            <label for="search-data">Search : </label>
+            <input type="search" id="search-data" placeholder="Enter search term">
+            <br><br>
+
+            <label for="tel-data">Telephone : </label>
+            <input type="tel" id="tel-data" required>
+            <br><br>
+
+            <input type="submit" value="submit">
+            <br><br>
+
+            <label for="email-data">Email : </label>
+            <input type="email" id="email-data" required multiple>
+            <br><br>
+
+            <label for="color-data">Color : </label>
+            <input type="color" id="color-data">
+            <br><br>
+
+            <label for="list-data">Data List : </label>
+            <input type="text" list="myDataList">
+            <br><br>
+
+            <datalist id="myDataList">
+                <option label="Mr." value="Mr."></option>
+                <option label="Mrs." value="Mrs."></option>
+                <option label="Ms." value="Ms."></option>
+            </datalist>
+            <br><br>
+
+            <label for="progress-data">Progress Bar : </label>
+            <progress id="progress-data" value="5" max="15"></progress>
+            <br><br>
+
+            <label for="meter-data">Meter :</label>
+            <meter id="meter-data" min="10" max="100" value="50" low="20" high="70" optimum="50"></meter>
+            <br><br>
+
+        </form>
+
+        <!----------------------Outside The Form--------------------->
+        <label for="outsideText-data">Other Text :</label>
+        <input type="text" id="outsideText-data" form="myform">
+    </body>
+</html>

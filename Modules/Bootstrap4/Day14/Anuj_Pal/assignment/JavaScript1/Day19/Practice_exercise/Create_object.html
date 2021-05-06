@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function User(firstName, lastName, dateOfBirth) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.dateOfBirth = dateOfBirth;
+
+            this.getName = function () {
+                return "User's name: " + this.firstName + " " + this.lastName;
+            }
+        }
+        
+
+        var user001 = new User("John", "Smith", 1985);
+        document.write(user001.firstName);
+        document.write(user001.lastName);
+    </script>
+</body>
+
+</html>

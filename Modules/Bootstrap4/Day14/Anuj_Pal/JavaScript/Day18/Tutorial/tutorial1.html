@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+         function add(a,b,callback)
+         {
+             callback (a+b);
+         }
+         function print(c)
+         {
+             console.log(c);
+         }
+         add(10,12, function print(c)
+         {
+             console.log(c);
+         }
+         add(10,12,(c)=>{
+             console.log(c);
+         }
+         setInterval(myfun,3000);
+         function myfun()
+         {
+             document.write("helllo everyone");
+         }
+
+
+        function dostuff(data) {
+            return new Promise((resolve, reject) => {
+                let successMessage = {
+                    status='success',
+                    alert('all is well')
+                };
+                let errorMessage = {
+                    status='failed',
+                    alert('there was an error')
+                };
+            }
+            if (typeof (data) == 'boolean' && data == true) {
+                resolve(successMessage);
+            }
+
+            else {
+                reject(errorMessage);
+
+            }
+
+            
+            )
+        }
+
+        dostuff(true).then((successMessage)=> {
+             document.write(successMessage.status) },
+            (errorMessage)=>{
+                document.write(errorMessage.status)
+            }
+        );
+
+    </script>
+</body>
+
+</html> 
+
+ <!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Promise</h2>
+
+<p id="demo"></p>
+
+<script>
+function myDisplayer(some) {
+  document.getElementById("demo").innerHTML = some;
+}
+
+let myPromise = new Promise(function(myResolve, myReject) {
+  let x = 0;
+
+
+
+  if (x == 0) {
+    myResolve("OK");
+  } else {
+    myReject("Error");
+  }
+});
+
+myPromise.then(
+  function(value) {myDisplayer(value);},
+  function(error) {myDisplayer(error);}
+);
+</script> -->
+
+<!-- 
+<script>
+
+    let empty_tank = function () {
+        return new Promise function(resolve, reject) {
+            
+                resolve("the fuel is not full")
+        })
+            
+        }
+
+        let engine = function () {
+            return new Promise function(resolve, reject) {
+                {
+                    resolve("the engine is heating now");
+                }
+            }
+        }
+
+        let travel = function () {
+            return new Promise function(resolve, reject) {
+                resolve("the car is ready for the travel");
+            }
+        }
+
+        empty_tank().then(function () {
+            return engine;
+        }).then(function () {
+            return travel;
+        }).then(function () {
+            cosole.console.log("done!");
+        })
+</script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let car= new Promise(function(resolve,reject){
+            let fuel_tank = true;
+            if(fuel_tank)
+            {
+                resolve()
+            }
+            else
+            {
+                reject()
+            }
+
+        });
+
+        car.then(function() {
+            document.write("car tank is full happy driving");
+        }).catch(function()
+        {
+            document.write("tank is not full");
+        })
+
+
+
+
+    </script>
+</body>
+</html>

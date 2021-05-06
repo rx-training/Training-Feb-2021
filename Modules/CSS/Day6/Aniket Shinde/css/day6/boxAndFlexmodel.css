@@ -1,0 +1,76 @@
+
+
+ #boxFlex-section   div{
+        display: inline-block;
+    }
+    #boxFlex-section   .div1{
+        background-color: cyan;
+        height: 150px;
+        width: 300px;
+        margin: 10px;
+        overflow: hidden;
+    }
+    #boxFlex-section  .div2{
+        background-color: rgb(152, 248, 108);
+        height: 150px;
+        width: 300px;
+        margin: 10px;
+        overflow:visible;
+    }
+    #boxFlex-section .div3{
+        background-color: rgb(236, 165, 117);
+        height: 150px;
+        width: 300px;
+        margin: 10px;
+        padding: 25px;
+        overflow:scroll;
+    }
+    #boxFlex-section   .div4{
+        background-color: rgb(247, 158, 235);
+        height: 150px;
+        width: 300px;
+        margin: 10px;
+        padding: 25px;
+        border: 25px solid crimson;
+        overflow: auto;
+    }
+    #boxFlex-section h2{
+        color: crimson;
+        text-align: center;
+        margin-top: 50px;
+    }
+    #boxFlex-section .flex-container {
+        display: flex;
+        background-color: darkcyan;
+    }
+      
+    #boxFlex-section .flex-container div {
+        background-color: #f5c8c8;
+        margin: 10px;
+        padding: 20px;
+        font-size: 30px;
+    }
+    #boxFlex-section .flex-container-columns {
+        display: flex;
+        flex-direction: column;
+        background-color: darkcyan;
+    }
+    #boxFlex-section .flex-container-columns div {
+        background-color: #f5c8c8;
+        margin: 10px;
+        padding: 20px;
+        font-size: 30px;
+    }
+    #boxFlex-section .flex-container-reverse {
+        display: flex;
+        background-color: darkcyan;
+        flex-direction: row-reverse;
+    }
+    #boxFlex-section .flex-container-reverse div {
+        background-color: #f5c8c8;
+        margin: 10px;
+        padding: 20px;
+        font-size: 30px;
+    }
+    
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+     body{
+        background-color: silver;
+    }
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-gap: 10px;
+  background-color:rgb(68, 68, 68);
+         padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.item1 {
+  grid-column: 1 / 3;
+}
+</style>
+</head>
+<body>
+
+<h1>The grid-column Property</h1>
+
+<p>Use the <em>grid-column</em> property to specify where to place an item.</p>
+<p>Item1 will start on column 1 and end before column 5:</p>
+
+<div class="grid-container">
+  <div class="item1">Z</div>
+  <div class="item2">E</div>
+  <div class="item3">E</div>  
+  <div class="item4">L</div>
+  <div class="item5">M</div>
+  <div class="item6">E</div>
+  <div class="item7">H</div>
+  <div class="item8">T</div>  
+  <div class="item9">A</div>
+  
+</div>
+
+</body>
+</html>

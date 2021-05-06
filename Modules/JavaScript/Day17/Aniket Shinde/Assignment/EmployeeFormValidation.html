@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Employee Form</title>
+</head>
+<body>
+
+    <div class="col-md-10 col-lg-9 my-5 mx-auto">
+        <div class="card border border-info">
+            <div class="card-header bg-info text-center">
+                <h4 class="text-white">Employee Details Form</h4>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <p class="alert alert-danger" id="empIderror" style="display: none;"></p>
+                    <p class="alert alert-danger" id="nameerror" style="display: none;"></p>
+                    <p class="alert alert-danger" id="emailerror" style="display: none;"></p>
+                    <p class="alert alert-danger" id="contacterror" style="display: none;"></p>
+                    <p class="alert alert-danger" id="dojerror" style="display: none;"></p>
+                    <p class="alert alert-danger" id="deserror" style="display: none;"></p>
+                    <p class="alert alert-danger" id="salaryerror" style="display: none;"></p>
+                    <p class="alert alert-danger" id="ageerror" style="display: none;"></p>
+                    <p class="alert alert-danger" id="gendererror" style="display: none;"></p>
+                    <p class="alert alert-danger" id="locationerror" style="display: none;"></p>
+                </div>
+                <form>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="empId">Employee ID</label>
+                                <input type="text" class="form-control" id="empId" name="empId">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="name">Employee Full Name</label>
+                                <input type="text" class="form-control" id="name" name="name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" class="form-control" id="email" name="email">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="designation">Designation</label>
+                                <input type="text" class="form-control" id="designation" name="designation">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="age">Employee Age</label>
+                                <input type="number" class="form-control" id="age" name="age" min=18 max=60>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="salary">Employee Salary</label>
+                                <input type="text" class="form-control" id="salary" name="salary">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <select class="form-control" id="location">
+                                  <option>Select City</option>
+                                  <option>Ahmedabad</option>
+                                  <option>Mumbai</option>
+                                  <option>Bengalore</option>
+                                  <option>Surat</option>
+                                  <option>Pune</option>
+                                  <option>Delhi</option>
+                                  <option>Hyderabad</option>
+                                </select>
+                              </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="doj">Date Of Joining</label>
+                                <input type="text" class="form-control" id="doj" name="doj">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="contact">Contact Number</label>
+                                <input type="text" class="form-control" id="contact" name="contact">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="gender" class="d-block">Gender</label>
+                                <div class="form-check form-check-inline pt-1">
+                                    <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                                    <label class="form-check-label" for="inlineRadio1">Male</label>
+                                </div>
+                                <div class="form-check form-check-inline pt-1 pl-3">
+                                    <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                                    <label class="form-check-label" for="inlineRadio2">Female</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mx-auto">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-outline-info form-control mx-auto mt-2" onclick="checkDetails()">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- <button type="button" class="btn btn-primary" onclick="pushItem(listitem1)">Push Item</button>
+                <button type="button" class="btn btn-warning" onclick="removeItem()">Remove Item</button> -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/day17Script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+#div{
+    overflow: auto;
+    border: 2px solid rgb(207, 181, 141);
+    height: 300px;
+    width: 300px;
+}

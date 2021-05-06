@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Callback</title>
+</head>
+<body>
+
+    <div class="col-md-8 col-lg-6 my-5 mx-auto">
+        <div class="card border border-dark">
+            <div class="card-header bg-dark text-center">
+                <h4 class="text-white">Callback Function</h3>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="num1">Enter a Number</label>
+                        <input type="number" class="form-control" id="num1" name="num1">
+                        <p id="errormsg1" class="alert alert-danger my-2" style="display: none;">Field should not be empty...</p>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="squareNumber(num1, print)">Submit</button>
+                    <p class="alert alert-success alert-dismissible mt-2 py-2" id="answer1" style="display: none;"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8 col-lg-6 my-5 mx-auto">
+        <div class="card border border-dark">
+            <div class="card-header bg-dark text-center">
+                <h4 class="text-white">var and let keyword</h3>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <p class="my-2">var x = 50; //Global scope<br>let y = 50; //Global scope<br>
+                            After the execution of below code let check the value of x and y.<br>
+                            if(true){<br>
+                                var x = 100;<br>
+                                let y = 100;<br>
+                            }<br>
+                            We can say that the var keyword declares variable globally and let keyword declares variable locally( the scope is within block in which it declared ).
+
+                        </p>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="change()">check values</button>
+                    <p class="alert alert-success alert-dismissible mt-2 py-2" id="answer2" style="display: none;"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8 col-lg-6 my-5 mx-auto">
+        <div class="card border border-dark">
+            <div class="card-header bg-dark text-center">
+                <h4 class="text-white">Reverse string with Promise</h3>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="str1">Enter a string</label>
+                        <input type="text" class="form-control" id="str1" name="str1">
+                        <p id="errormsg2" class="alert alert-danger my-2" style="display: none;">Field should not be empty...</p>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="callPromiseForReverse(str1)">Submit</button>
+                    <p class="alert alert-success alert-dismissible mt-2 py-2" id="reverseAns" ></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="../assets/js/day18Script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

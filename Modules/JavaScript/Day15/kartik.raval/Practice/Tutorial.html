@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+    //Variables
+    var order=121;
+    console.log(typeof order);
+    var order1="D-121";
+    console.log(typeof order1);
+    var order1=true;
+    console.log(typeof order1);
+    var order1=function(item){};
+    console.log(typeof order1);
+
+    //Function
+    function printOrder(orderId){
+        console.log("Printing order:"+ orderId)
+    }
+    printOrder(121);
+
+
+    function caltotalprice(quantity, price){
+        console.log("Total price :"+ (quantity*price));
+    }
+    caltotalprice(1,1);
+
+    var activateorder = function(){
+        console.log("Order activated");
+    }
+    activateorder();
+
+    //if & switch
+    var total = 99.99;
+    var freeshipping = false;
+    if(total >= 100.00){
+        freeshipping = true;
+    }
+    else{
+        freeshipping=false;
+    }
+    console.log(freeshipping);
+
+    var total = 99.99;
+    var saving;
+    var freeshipping;
+    if(total >= 100.00){
+        freeshipping = true;
+        saving = 29.99
+    }
+    else{
+        freeshipping=false;
+        saving = 0;
+    }
+    console.log(saving);
+
+
+    var orderType = "business";
+    var shipMethod;
+    switch(orderType){
+        case 'business': shipMethod = 'FedEx';
+        break;
+        case 'personal1': shipMethod = 'UPS Ground';
+        break;
+        default: shipMethod = 'USPS';
+    }
+    console.log(shipMethod);
+
+    var orderTotal = 99.99;
+    var discount;
+
+    switch(true){
+        case orderTotal >=50 && orderTotal <= 75:
+        discount = 10;
+        break;
+
+        case orderTotal >= 75 && orderTotal <= 100:
+        discount = 20;
+        break;
+
+        case orderTotal >= 100:
+        discount = 30;
+        break;
+
+        default:
+        discount = 0;
+    }
+    console.log("Discount: "+discount);
+
+    //While & do-while
+    var lineItemCount = 3;
+    var currentItem = 0;
+    while(currentItem < lineItemCount)
+    {
+        console.log("Item: "+currentItem);
+        currentItem++;
+    }
+
+    var lineItemCount = 3;
+    var currentItem = 0;
+    do{
+            console.log("D0- while item: "+currentItem);
+            currentItem++;
+    }
+    while(currentItem < lineItemCount);
+
+
+    var lineItemCounts = 3;
+    var currentItems= undefined;
+    do{
+        console.log("items: "+currentItems);
+        currentItems++;
+    }while(currentItems<lineItemCounts)
+
+    //for loop
+
+    var lineitems = {
+        product: 'Widget 1',
+        quantity: 4,
+        price: 9.50
+    };
+    for(var field in lineitems){
+        console.log("for = "+ field + ":"+ lineitems[field]);
+    }
+
+    function hello() {
+        alert("Welcome to my page level application");
+    }
+
+    </script>
+    <script src="../Assets/demo.js"></script>
+</head>
+<body>
+    <input type="button" value="inline Click me" onclick="alert('Welcome to my inline application')">
+    <input type="button" value="page level click me" onclick="hello()">
+    <input type="button" value="external click me" onclick="demo()">
+    <p id="total"></p>
+
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .descendants * { 
+          display: block;
+          border: 2px solid lightgrey;
+          color: lightgrey;
+          padding: 5px;
+          margin: 15px;
+        }
+        .siblings * { 
+          display: block;
+          border: 2px solid lightgrey;
+          color: lightgrey;
+          padding: 5px;
+          margin: 15px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $("div").first().find("span").css({"color": "red", "border": "2px solid red"});
+          $("h2").next().css({"color": "red", "border": "2px solid red"});
+          $("h2").last().nextAll().css({"color": "red", "border": "2px solid red"});
+          $("p").filter(".intro").css("background-color", "yellow");
+        });
+    </script>
+</head>
+<body>
+
+    <h1>Filter()</h1>
+
+    <p>My name is Donald.</p>
+    <p class="intro">I live in Ahmedabad.</p>
+    <p class="intro">I have completed my degree in I.T</p>
+    <p>My best friend is XYZ.</p>
+<hr>
+    <h1>Find()</h1>
+    <div class="descendants" style="width:500px;">div (current element)
+ 
+      <p>p (child)
+        <span>span (grandchild)</span>   
+      </p>
+      <p>p (child)
+        <span>span (grandchild)</span>
+      </p> 
+    </div>
+<hr>
+    <h1>Next()</h1>
+    <div class="siblings">div (parent)
+        <p>p</p>
+        <span>span</span>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <p>p</p>
+    </div>
+<hr>
+    <h1>NextAll</h1>
+    <div class="siblings">div (parent)
+        <p>p</p>
+        <span>span</span>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <p>p</p>
+    </div>
+
+
+
+</body>
+</html>

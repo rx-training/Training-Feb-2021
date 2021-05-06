@@ -1,0 +1,13 @@
+{
+  "name": "rambo_rantal_bikes",
+  "version": "1.0.0",
+  "description": "System allows users to add customer details with bike rented. It computes rent for each customer. Systems displays the Bike details with summation of days of hire and rental payment. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Tarun Moradiya",
+  "license": "ISC"
+}

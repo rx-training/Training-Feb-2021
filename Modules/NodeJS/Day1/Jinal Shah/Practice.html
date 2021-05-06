@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //Unicode, Semicolons, White space, Case sensitive, Comments, Literals and Identifiers, Reserved words
+
+        function comment() 
+        {
+            // This is a one line JavaScript comment
+            console.log('Hello world!');
+             /* This comment spans multiple lines. Notice
+                that we don't need to end the comment until we're done. */
+        }
+        comment();
+
+        function comment1(x) {
+            console.log('Hello ' + x /* insert the value of x */ + ' !');
+        }
+        comment1('world');
+
+        /* A specialized third comment syntax, the *hashbang comment*
+           it begins with #! and is only valid at the absolute start of a script or module. */
+
+        // Literals :
+
+            /* Null literal, Boolean literal, Numeric literals, Numeric literals, Boolean literal, Null literal */
+
+            // Object literals :
+                var o = { a: 'foo', b: 'bar', c: 42 };
+                console.log(o);
+
+                // shorthand notation. New in ES2015
+                var a = 'foo', b = 'bar', c = 42;
+                console.log(a);
+                var o1 = {a, b, c};
+                console.log(o1);
+
+                // instead of
+                var o2 = { a: a, b: b, c: c };
+                console.log(o2);
+
+            // Template literals :
+
+                console.log(`string text`);
+
+                console.log(  `string text line 1
+                                string text line 2`);
+
+                //console.log(`string text ${expression} string text`);  
+                console.log(`string text ${ 6+4 } string text`);  
+
+        //-------------------------------- TYPES -------------------------------------------
+        
+        let foo = 42;    // foo is now a number
+        foo     = 'bar'; // foo is now a string
+        foo     = true;  // foo is now a boolean
+
+        //------------------------------------- functions ------------------------------------------
+        
+        const factorial = function fac(n) { return n < 2 ? 1 : n * fac(n - 1) }
+
+        console.log(factorial(3))
+
+        function fac(n) { return n < 2 ? 1 : n * fac(n - 1) }
+        console.log(fac(5))
+
+        //-------------------------- this keyword ---------------------------
+
+        const test = {
+        val1: 42,
+        func: function() {
+            return this.val1;
+        },
+        };
+
+        console.log(test.func());
+
+        // In web browsers, the window object is also the global object:
+        console.log(this === window); // true
+
+        a = 37;
+        console.log(window.a); // 37
+
+        this.b = "MDNf";
+        console.log(window.b)  // "MDN"
+        console.log(b)  
+
+      
+    </script>
+
+</body>
+</html>

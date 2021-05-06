@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //.............area of square...............
+        var square = function(a){
+            return (Math.PI)*a*a;
+        };
+        console.log(square(25));
+
+        //.............area of rectangle.............
+        var rec = Function("a","b","return a*b");
+        console.log(rec(25,20));
+
+        //..........Function hosing...............
+        //..........addvantage:-call the function before function define................
+        showProduct();
+
+        function showProduct(){
+            console.log("showing a Product");
+        }
+
+        //.......Function call................
+        var call = function(){
+            console.log(this);
+        };
+        var zip = {
+            fieldName : "xyz",
+            address : "Ahmadabad",
+            designation: "Traniee"
+        };
+        call.call(zip);
+
+        //..............Function apply.........
+        var call1 = function(a,b,c){
+            console.log(a + " " + b + " " + c);
+        };
+        var zip1 = {
+            fieldName : "xyz",
+            address : "Ahmadabad",
+            designation: "Traniee"
+        };
+        
+        call1.apply(zip1,["ABC","Baroda","Trainee"]);
+
+        //.................Function clouse..........
+        var salaryUpdater = function (salary){
+            var currentSalary = salary;
+            var generator = function(){
+                currentSalary += 10000;
+                return currentSalary;
+            };
+            return generator;
+        };
+
+        var updateFn = salaryUpdater(50000);
+        updateFn();
+        console.log(updateFn());
+
+        
+    </script>
+</body>
+</html>

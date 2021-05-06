@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Calculator</title>
+    <script>
+     function calculator(){
+            var a = document.getElementById("add").checked;
+            var b = document.getElementById("sub").checked;
+            var c = document.getElementById("mul").checked;
+            var d = document.getElementById("div").checked;
+            var y = document.getElementById("yy").value;
+            var z = document.getElementById("zz").value;
+            var num;
+
+            if(a == true){
+                num = parseInt(y) + parseInt(z);
+                document.getElementById("answer").innerHTML ="Answer is"+num;
+            }
+            else if(b == true){
+                num = parseInt(y) - parseInt(z);
+                document.getElementById("answer").innerHTML = "Answer is"+num;
+            }
+            else if(c == true){
+                num = parseInt(y) * parseInt(z);
+                document.getElementById("answer").innerHTML = "Answer is"+num;            }
+            else{
+                num = parseInt(y) / parseInt(z);
+                document.getElementById("answer").innerHTML = "Answer is"+num;
+            }
+        }</script>
+  </head>
+  <body>
+  <form>
+       <label for="first"> Enter First number</label>
+        <input type="number" id="yy" value=" " required>
+        <label for="second"> Enter second number</label>
+        <input type="number" id="zz" value=" " required><br>
+    <hr>
+        <input type="radio" name="radio" id="add">Addition<br>
+        <input type="radio" name="radio" id="sub">Subtraction<br>
+        <input type="radio" name="radio" id="mul">Multiplication<br>
+        <input type="radio" name="radio" id="div">Division<br>
+        <hr>
+        <button type="button" class="btn btn-primary"  onclick="calculator()">Calculate</button>
+        <button type="reset" class="btn btn-danger" >Reset</button><br>
+        <label for="first" id="answer"></label>
+
+    </form>    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

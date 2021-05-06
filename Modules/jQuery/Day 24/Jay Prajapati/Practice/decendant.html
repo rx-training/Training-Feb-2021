@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <style>
+        div,span{
+        border: 1px solid black;
+        padding: 20px;
+        margin : 30px;
+    }
+    </style>
+    
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container col-lg-6 py-5">
+        <h1 class="bg-dark text-light">Hello, world!</h1>
+        <div id="greatGrandParent" class="border p-5">greatGrandParent
+            <div id="grandParent" class="border p-5">grandParent
+                <div id="parent" class="border p-5">parent
+                    <div id="child" class="border p-5"> Hello World</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('#greatGrandParent').children().css({"color":"red"});
+        });
+    </script>
+
+   
+  </body>
+</html>

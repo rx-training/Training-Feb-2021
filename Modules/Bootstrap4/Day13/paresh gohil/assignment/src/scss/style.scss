@@ -1,0 +1,25 @@
+// Main Sass File
+$primary: #3292a6;
+
+.navbar{
+    box-shadow: 2px 2px 5px $primary;
+    opacity: 0.9;
+    background: #fff;
+
+    .nav-item{
+        font-size: 1.0rem;
+        padding-right: 20px;
+    }
+}
+
+.page-header{
+    padding-left: 200px;
+}
+
+.bg-light1{
+    padding-left: 200px;
+
+    .btn{
+        width: 230px;
+    }
+}
