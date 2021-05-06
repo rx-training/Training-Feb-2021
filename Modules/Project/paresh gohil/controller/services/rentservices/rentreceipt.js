@@ -3,6 +3,7 @@ const app = express()
 const router = express.Router()
 const {Rentreceipt} = require("../../../model/rentreceipt")
 const authenticate = require("../../authentication/authentication")
+const Email = require("../../../domain/emailsend")
 
 app.use(express.json())
 
@@ -18,6 +19,12 @@ class rentals{
     static async posts(req,res){
         const payrent1 = new Rentreceipt(req.body)
         const result = await payrent1.save()
+
+        //receipt send via mail
+        const email = await req.body.T_Email
+        const otp = "receipt send"
+        const email1 = await Email(email,otp)
+        
         res.send(result)
     }
 }
