@@ -11,7 +11,7 @@ const ResultSchema=new Schema({
         required:true
     },
     subjects_marks:{
-        type:[String],
+        type:Array,
         required:true
     },
     Total:{

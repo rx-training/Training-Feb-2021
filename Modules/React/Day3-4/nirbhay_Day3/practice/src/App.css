@@ -1,0 +1,13 @@
+/* .books {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+} */
+.book {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 1rem;
+  margin: 2rem;
+  padding: 1rem;
+  border: 1px solid teal;
+}

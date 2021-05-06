@@ -4,7 +4,7 @@ const Schema=mongoose.Schema;
 const CourseSchema=new Schema({
 
     tags:{
-        type:String,
+        type:Array,
     },
     date:{
         type:Date
