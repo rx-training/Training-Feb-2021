@@ -4,7 +4,8 @@ const express = require("express")
 const app = express()
 const router = express.Router()
 const {User} = require("../../model/user")
-const Email = require("../../domain/emailsend")
+const {Email} = require("../../domain/emailsend")
+const {verifyOTP} = require("../../domain/emailsend")
 
 app.use(express.json())
 
@@ -29,22 +30,16 @@ class users{
         user1.User_Password = await bcrypt.hash(user1.User_Password,salt)
 
         //otp send via mail
-        const email = await req.body.User_Email
-        const otp = Math.floor(1000 + Math.random() * 9000).toString()
-        const email1 = await Email(email,otp)
+        const email1 = await Email(req.body.User_Email)
 
         const result = await user1.save()        
         res.send(result)
     }
-    static async otps(req,res){
-        const reqotp = req.body.otp
+    static otps(req,res){
+        
+        const otp = verifyOTP(req.body.otp)
+        res.send(otp)
 
-        if(reqotp !== otp){
-            res.send("otp not correct")
-        }
-        else{
-            res.send("ragistration done!!")
-        }
     }
     static async puts(req,res){
         const user1 = User.find({UserID : req.params.UserID})
