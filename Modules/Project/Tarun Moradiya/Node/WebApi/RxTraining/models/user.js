@@ -38,9 +38,21 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  permissions: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Technology",
+    },
+  ],
 });
 
 //create method
+
+userSchema.methods.setPermission = async function () {
+  this.permissions = this.department.permissions;
+  console.log(this.permissions);
+  await this.save();
+};
 
 userSchema.methods.getAuthToken = function () {
   const token = jwt.sign(
@@ -49,6 +61,7 @@ userSchema.methods.getAuthToken = function () {
       email: this.email,
       isAdmin: this.isAdmin,
       department: this.department,
+      permissions: this.permissions,
     },
     config.get("secretKey"),
     {

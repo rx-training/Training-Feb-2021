@@ -31,6 +31,11 @@ class UserController {
     const userDomain = new UserDomain();
     userDomain.logout(req, res);
   }
+  //To logout
+  static async setPermission(req, res) {
+    const userDomain = new UserDomain();
+    userDomain.setPermission(req, res);
+  }
 }
 
 // routes
@@ -58,6 +63,10 @@ router.get("/logout", UserController.logout);
 // user login
 // POST http://localhost:3000/users/login
 router.post("/login", UserController.login);
+
+// set user permission
+// POST http://localhost:3000/users/:id/permissions
+router.post("/:id/permissions", UserController.setPermission);
 
 //exports
 module.exports = router;

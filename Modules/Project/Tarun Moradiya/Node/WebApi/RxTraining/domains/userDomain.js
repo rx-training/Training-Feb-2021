@@ -17,7 +17,7 @@ class UserDomain {
       }).populate("department");
       const dept = await Department.find();
       const Tech = await Technology.find();
-      res.render("pages/users", { users, Tech, dept });
+      res.render("pages/users", { users, Tech, dept, User: req.user });
     } catch (error) {
       res.send(error);
     }
@@ -28,7 +28,7 @@ class UserDomain {
     try {
       const Tech = await Technology.find();
       const user = await User.findById(req.user._id);
-      res.render("pages/users", { user, Tech });
+      res.render("pages/users", { user, Tech, User: req.user });
     } catch (error) {
       res.send(error);
     }
@@ -48,12 +48,19 @@ class UserDomain {
 
       if (!department) return res.status(400).send("department not found");
 
+      let isAdmin = false;
+
+      if (req.body.admin == "true") {
+        isAdmin = true;
+        department = null;
+      }
+
       user = new User({
         name: req.body.name,
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
-        isAdmin: req.body.isAdmin,
+        isAdmin: isAdmin,
         department: department,
       });
 
@@ -61,6 +68,8 @@ class UserDomain {
       user.password = await bcrypt.hash(user.password, salt);
 
       await user.save();
+
+      user.setPermission();
 
       res.redirect("back");
     } catch (error) {
@@ -106,6 +115,22 @@ class UserDomain {
     try {
       //delete cookie and redirect to login page
       res.clearCookie("token").redirect("/users/login");
+    } catch (error) {
+      res.send(error);
+    }
+  }
+
+  //To set permission
+  async setPermission(req, res) {
+    try {
+      const user = await User.findById(req.params.id);
+
+      user.permissions = req.body.tech;
+
+      await user.save();
+
+      console.log(user);
+      res.redirect("back");
     } catch (error) {
       res.send(error);
     }

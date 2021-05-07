@@ -28,7 +28,7 @@ class PlanDomain {
 
         const Tech = await Technology.find();
         //response
-        res.render("pages/plans", { plans, Tech });
+        res.render("pages/plans", { plans, Tech, User: req.user });
       }
     } catch (error) {
       res.send(error);

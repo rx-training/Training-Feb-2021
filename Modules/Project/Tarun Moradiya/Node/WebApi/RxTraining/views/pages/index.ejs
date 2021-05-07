@@ -4,13 +4,14 @@
     <%- include('../partials/head', { title : 'RxTraining' }) %>
   </head>
   <body>
-    <header><%- include('../partials/header', {Tech}) %></header>
+    <header><%- include('../partials/header', {Tech, User}) %></header>
     <main>
       <div class="container">
         <div class="card-deck m-auto mt-5">
           <div class="card">
             <div class="card-header bg-primary p-3 text-light font-weight-bold">
               <h4 class="d-inline-block">Common</h4>
+              <% if(User.isAdmin){ %>
               <button
                 class="btn btn-warning float-right addTechbtn"
                 data-toggle="modal"
@@ -18,22 +19,26 @@
               >
                 <i class="fas fa-plus"></i>
               </button>
+              <% } %>
             </div>
             <div class="card-body">
               <ul class="list-group">
                 <% const common = Tech.filter(t => t.techType == 'common') %> <%
-                common.forEach((element => { %>
+                common.forEach((element => { %> <% if (User.isAdmin ||
+                (User.permissions.indexOf(""+element._id) != "-1")){ %>
                 <li class="list-group-item">
                   <a
-                    href="/technologies/<%= element._id %>/modules/videos"
+                    href="/technologies/<%= element._id %>/videos"
                     class="list-group-item-action"
                     ><%= element.name %></a
                   >
+                  <% if(User.isAdmin){ %>
                   <a
                     href="/technologies/<%= element._id %>/delete"
                     class="btn btn-danger float-right deleteTech"
                     ><i class="fas fa-trash-alt"></i
                   ></a>
+                  <% } %>
                   <!-- <div class="d-inline">
                                         <div class="d-none elementName"><%= element.name %></div>
                                         <div class="d-none elementType"><%= element.techType %></div>
@@ -42,13 +47,14 @@
                                         </button>
                                     </div> -->
                 </li>
-                <% })) %>
+                <% } %> <% })) %>
               </ul>
             </div>
           </div>
           <div class="card">
             <div class="card-header bg-primary p-3 text-light font-weight-bold">
               <h4 class="d-inline-block">FrontEnd Framework</h4>
+              <% if(User.isAdmin){ %>
               <button
                 class="btn btn-warning float-right addTechbtn"
                 data-toggle="modal"
@@ -56,22 +62,25 @@
               >
                 <i class="fas fa-plus"></i>
               </button>
+              <% } %>
             </div>
             <div class="card-body">
               <ul class="list-group">
                 <% const front = Tech.filter(t => t.techType == 'frontend') %>
-                <% front.forEach((element => { %>
+                <% front.forEach((element => { %> <% if (User.isAdmin ||
+                (User.permissions.indexOf(""+element._id) != "-1")){ %>
                 <li class="list-group-item">
                   <a
-                    href="/technologies/<%= element._id %>/modules/videos"
+                    href="/technologies/<%= element._id %>/videos"
                     class="list-group-item-action"
                     ><%= element.name %></a
                   >
+                  <% if(User.isAdmin){ %>
                   <a
                     href="/technologies/<%= element._id %>/delete"
                     class="btn btn-danger float-right"
-                    ><i class="fas fa-trash-alt"></i
-                  ></a>
+                    ><i class="fas fa-trash-alt"></i></a
+                  ><% } %>
                   <!-- <div class="d-inline">
                                         <div class="d-none elementName"><%= element.name %></div>
                                         <div class="d-none elementType"><%= element.techType %></div>
@@ -80,36 +89,39 @@
                                         </button>
                                     </div> -->
                 </li>
-                <% })) %>
+                <% } %> <% })) %>
               </ul>
             </div>
           </div>
           <div class="card">
             <div class="card-header bg-primary p-3 text-light font-weight-bold">
               <h4 class="d-inline-block">BackEnd Framework</h4>
+              <% if(User.isAdmin){ %>
               <button
                 class="btn btn-warning float-right addTechbtn"
                 data-toggle="modal"
                 data-target="#addModal"
               >
-                <i class="fas fa-plus"></i>
-              </button>
+                <i class="fas fa-plus"></i></button
+              ><% } %>
             </div>
             <div class="card-body">
               <ul class="list-group">
                 <% const back = Tech.filter(t => t.techType == 'backend') %> <%
-                back.forEach((element => { %>
+                back.forEach((element => { %> <% if (User.isAdmin ||
+                (User.permissions.indexOf(""+element._id) != "-1")){ %>
                 <li class="list-group-item">
                   <a
-                    href="/technologies/<%= element._id %>/modules/videos"
+                    href="/technologies/<%= element._id %>/videos"
                     class="list-group-item-action"
                     ><%= element.name %></a
                   >
+                  <% if(User.isAdmin){ %>
                   <a
                     href="/technologies/<%= element._id %>/delete"
                     class="btn btn-danger float-right"
-                    ><i class="fas fa-trash-alt"></i
-                  ></a>
+                    ><i class="fas fa-trash-alt"></i></a
+                  ><% } %>
                   <!-- <div class="d-inline">
                                         <div class="d-none elementName"><%= element.name %></div>
                                         <div class="d-none elementType"><%= element.techType %></div>
@@ -118,7 +130,7 @@
                                         </button>
                                     </div> -->
                 </li>
-                <% })) %>
+                <% } %> <% })) %>
               </ul>
             </div>
           </div>

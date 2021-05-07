@@ -4,7 +4,7 @@
     <%- include('../partials/head', { title : 'RxTraining' }) %>
   </head>
   <body>
-    <header><%- include('../partials/header', {Tech}) %></header>
+    <header><%- include('../partials/header', {Tech, User}) %></header>
     <main>
       <div class="container">
         <% if(typeof users != 'undefined' && Array.isArray(users)) { %>
@@ -25,6 +25,7 @@
               <th>Email</th>
               <th>Department</th>
               <th>isAdmin</th>
+              <th>Permision</th>
             </tr>
           </thead>
           <tbody>
@@ -33,9 +34,74 @@
               <td scope="row"><%= element.username %></td>
               <td><%= element.name %></td>
               <td><%= element.email %></td>
-              <td><%= element.department.name %></td>
+              <td><%= element.department ? element.department.name : "" %></td>
               <td><%= element.isAdmin %></td>
+              <td>
+                <button
+                  class="btn btn-info float-right"
+                  data-toggle="modal"
+                  data-target="#addPermission<%= element._id %>"
+                >
+                  Permision
+                </button>
+              </td>
             </tr>
+
+            <div class="modal" id="addPermission<%= element._id %>">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Add User</h5>
+                    <button class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <form
+                    action="/users/<%= element._id %>/permissions"
+                    method="POST"
+                  >
+                    <div class="modal-body">
+                      <div class="form-group">
+                        <legend>
+                          Give Permission for defferent technologies
+                        </legend>
+                        <% Tech.forEach(tech => { %> <% if(
+                        element.permissions.indexOf(tech._id) !="-1") { %>
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value="<%= tech._id %>"
+                              name="tech"
+                              checked
+                            /><%= tech.name %>
+                          </label>
+                        </div>
+                        <% } else { %>
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value="<%= tech._id %>"
+                              name="tech"
+                            /><%= tech.name %>
+                          </label>
+                        </div>
+                        <% } %> <% }) %>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-secondary" data-dismiss="modal">
+                        close
+                      </button>
+                      <button class="btn btn-primary" type="submit">
+                        Submit
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
             <% }); %>
           </tbody>
         </table>
@@ -49,6 +115,7 @@
               <th>Name</th>
               <th>Email</th>
               <th>isAdmin</th>
+              <th>Permision</th>
             </tr>
           </thead>
           <tbody>
@@ -57,9 +124,68 @@
               <td><%= user.name %></td>
               <td><%= user.email %></td>
               <td><%= user.isAdmin %></td>
+              <td>
+                <button
+                  class="btn btn-info float-right"
+                  data-toggle="modal"
+                  data-target="#checkPermission"
+                >
+                  Permision
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
+        <div class="modal" id="checkPermission">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">User Permision</h5>
+                <button class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <form action="#">
+                <div class="modal-body">
+                  <div class="form-group">
+                    <legend>Give Permission for defferent technologies</legend>
+                    <% Tech.forEach(tech => { %> <% if(
+                    user.permissions.indexOf(tech._id) !="-1") { %>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value="<%= tech._id %>"
+                          name="tech"
+                          checked
+                          disabled
+                        /><%= tech.name %>
+                      </label>
+                    </div>
+                    <% } else { %>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value="<%= tech._id %>"
+                          name="tech"
+                          disabled
+                        /><%= tech.name %>
+                      </label>
+                    </div>
+                    <% } %> <% }) %>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-secondary" data-dismiss="modal">
+                    close
+                  </button>
+                  <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
         <% } %>
       </div>
     </main>
@@ -69,7 +195,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Add Plan</h5>
+            <h5 class="modal-title">Add User</h5>
             <button class="close" data-dismiss="modal">&times;</button>
           </div>
           <form action="/users" method="POST">
@@ -131,7 +257,8 @@
                     <input
                       class="form-check-input"
                       type="checkbox"
-                      value="option1"
+                      value="true"
+                      name="admin"
                     />
                     Is Admin
                   </label>

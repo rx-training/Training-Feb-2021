@@ -13,7 +13,8 @@
         >
         <ul class="dropdown-menu">
           <% let tech = Tech.filter(t => t.techType == 'common') %> <%
-          tech.forEach((element => { %>
+          tech.forEach((element => { %><% if (User.isAdmin ||
+          (User.permissions.indexOf(""+element._id) != "-1")){ %>
           <li class="dropdown-submenu">
             <a class="dropdown-item dropdown-toggle" href="#"
               ><%= element.name %></a
@@ -42,7 +43,7 @@
               </li>
             </ul>
           </li>
-          <% })) %>
+          <% } %> <% })) %>
         </ul>
       </li>
       <li class="nav-item dropdown">
@@ -51,7 +52,8 @@
         >
         <ul class="dropdown-menu">
           <% tech = Tech.filter(t => t.techType == 'frontend') %> <%
-          tech.forEach((element => { %>
+          tech.forEach((element => { %> <% if (User.isAdmin ||
+          User.permissions.indexOf(""+element._id) != "-1"){ %>
           <li class="dropdown-submenu">
             <a class="dropdown-item dropdown-toggle" href="#"
               ><%= element.name %></a
@@ -85,7 +87,7 @@
               </li>
             </ul>
           </li>
-          <% })) %>
+          <% } %> <% })) %>
         </ul>
       </li>
       <li class="nav-item dropdown">
@@ -93,8 +95,9 @@
           >BackEnd Framework</a
         >
         <ul class="dropdown-menu">
-          <% tech = Tech.filter(t => t.techType == 'backend') %> <%
-          tech.forEach((element => { %>
+          <% tech = Tech.filter(t => t.techType == 'backend') %><%
+          tech.forEach((element => { %> <% if (User.isAdmin ||
+          User.permissions.indexOf(""+element._id) != "-1"){ %>
           <li class="dropdown-submenu">
             <a class="dropdown-item dropdown-toggle" href="#"
               ><%= element.name %></a
@@ -128,7 +131,7 @@
               </li>
             </ul>
           </li>
-          <% })) %>
+          <% } %> <% })) %>
         </ul>
       </li>
       <li class="nav-item dropdown">
@@ -137,7 +140,10 @@
         ></a>
         <div class="dropdown-menu">
           <a href="/users/me" class="dropdown-item">User Profile</a>
+          <% if(User.isAdmin){ %>
           <a href="/users" class="dropdown-item">Users</a>
+          <a href="/departments" class="dropdown-item">Departments</a>
+          <% } %>
         </div>
       </li>
       <li class="nav-item">

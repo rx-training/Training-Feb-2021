@@ -1,4 +1,8 @@
 const { Department, validate } = require("../models/department");
+const { Technology } = require("../models/technology");
+const { User } = require("../models/user");
+
+const debug = require("debug")("rx:dept");
 
 class DepartmentDomain {
   //To get Departments
@@ -17,9 +21,9 @@ class DepartmentDomain {
     } else {
       //get all data
       const depts = await Department.find();
-
+      const Tech = await Technology.find();
       //response
-      res.send(depts);
+      res.render("pages/departments", { depts, Tech, User: req.user });
     }
   }
 
@@ -40,7 +44,8 @@ class DepartmentDomain {
     dept = await dept.save();
 
     //response
-    res.send(dept);
+    debug(dept);
+    res.redirect("back");
   }
 
   //To delete a Department
@@ -81,6 +86,32 @@ class DepartmentDomain {
 
     //response
     res.send(dept);
+  }
+
+  async setPermission(req, res) {
+    try {
+      const dept = await Department.findById(req.params.id);
+
+      dept.permissions = req.body.tech;
+
+      await dept.save();
+
+      debug("dept:" + dept);
+
+      const users = await User.updateMany(
+        { department: req.params.id },
+        {
+          $set: {
+            permissions: req.body.tech,
+          },
+        }
+      );
+
+      debug("users:" + users);
+      res.redirect("back");
+    } catch (error) {
+      res.send(error);
+    }
   }
 }
 

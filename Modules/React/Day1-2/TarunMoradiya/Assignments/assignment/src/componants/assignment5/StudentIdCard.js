@@ -28,7 +28,7 @@ const StudentIdCard = (props) => {
   const { id, fname, lname, dob } = props.student.personal;
   const { name, addr, logo } = props.student.college;
   return (
-    <div className="card w-25 mx-2 p-2 text-center">
+    <div className="card w-25 my-2 p-2 text-center">
       <Image className="card-img-top" img={img} />
       <Personal
         className="card-text"

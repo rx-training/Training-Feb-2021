@@ -23,6 +23,11 @@ class DepartmentController {
     const departmentDomain = new DepartmentDomain();
     departmentDomain.deleteDepartment(req, res);
   }
+  //To change permissions
+  static async setPermission(req, res) {
+    const departmentDomain = new DepartmentDomain();
+    departmentDomain.setPermission(req, res);
+  }
 }
 
 //routes
@@ -48,6 +53,9 @@ router.post("/:id/update", admin, DepartmentController.updateDepartment);
 //DELETE http://localhost:3000/departments/:id
 // router.delete('/:id', admin, deleteDept);
 router.get("/:id/delete", admin, DepartmentController.deleteDepartment);
+
+//POST http://localhost:3000/departments/:id/permissions
+router.post("/:id/permissions", admin, DepartmentController.setPermission);
 
 //exports
 module.exports = router;

@@ -3,27 +3,30 @@ import React, { Component } from "react";
 export default class studentIdCard extends Component {
   constructor(props) {
     super(props);
-    this.state = props;
+    this.state = { props: props };
   }
   render() {
+    const {
+      children,
+      student: {
+        img,
+        personal: { id, fname, lname, dob },
+        college: { name, addr, logo },
+      },
+    } = this.state.props;
     console.log(this.state);
     return (
-      <div className="card w-25 m-2 p-2 text-center">
-        <Image className="card-img-top" img={this.state.student.img} />
-        {this.state.children}
+      <div className="card w-25 my-2 p-2 text-center">
+        <Image className="card-img-top" img={img} />
+        {children}
         <Personal
           className="card-text"
-          id={this.state.student.personal.id}
-          fname={this.state.student.personal.fname}
-          lname={this.state.student.personal.lname}
-          dob={this.state.student.personal.dob}
+          id={id}
+          fname={fname}
+          lname={lname}
+          dob={dob}
         />
-        <College
-          className="card-text"
-          name={this.state.student.college.name}
-          addr={this.state.student.college.addr}
-          logo={this.state.student.college.logo}
-        />
+        <College className="card-text" name={name} addr={addr} logo={logo} />
       </div>
     );
   }

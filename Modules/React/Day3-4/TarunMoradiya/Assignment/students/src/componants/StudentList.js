@@ -12,7 +12,11 @@ export default class StudentList extends Component {
     return (
       <div className="row">
         {this.state.students.map((item) => (
-          <StudentIdCard className="col-md-6" student={item} />
+          <StudentIdCard
+            className="col-md-6"
+            key={item.personal.id}
+            student={item}
+          />
         ))}
       </div>
     );

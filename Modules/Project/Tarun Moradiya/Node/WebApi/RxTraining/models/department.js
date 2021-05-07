@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
+const { Technology } = require("./technology");
 
 //create schema
 const deptSchema = new mongoose.Schema({
@@ -8,6 +9,12 @@ const deptSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
+  permissions: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Technology",
+    },
+  ],
 });
 
 //create class

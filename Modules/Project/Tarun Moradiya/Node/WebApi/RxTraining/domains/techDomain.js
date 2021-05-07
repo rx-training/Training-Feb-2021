@@ -36,7 +36,7 @@ class TechnologyDomain {
         const Tech = await Technology.find();
 
         //response
-        res.render("pages/index", { Tech });
+        res.render("pages/index", { Tech, User: req.user });
       }
     } catch (error) {
       res.send(error);

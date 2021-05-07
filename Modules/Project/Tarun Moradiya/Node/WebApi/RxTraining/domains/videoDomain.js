@@ -36,6 +36,7 @@ class VideoDomain {
           Tech,
           techName: await tech.name,
           techId: await tech._id,
+          User: req.user,
         });
       }
     } catch (error) {
