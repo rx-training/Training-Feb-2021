@@ -12,7 +12,7 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .showData  {
-  align:center;
+
   margin: auto;
   width: 80%;
   text-align: center;
@@ -24,7 +24,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   text-align: center;
-  color:green
+  color:rgb(102, 250, 102)
 }
 
 #students > section {
@@ -38,7 +38,7 @@ body {
   box-shadow:2px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-#students >section  .img {
+section> .img {
   border-radius: 0.3rem;
   position: relative;
   top: -25px;

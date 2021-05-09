@@ -1,4 +1,4 @@
-const config = require('config');
+//const config = require('../config/');
 const verifyTOken = require('../Authentication/verifytoken')
 const express= require('express');
 const router = express.Router();
