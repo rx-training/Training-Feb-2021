@@ -26,7 +26,7 @@ export const tourData = [
   {
     id: 4,
     city: "London",
-    img: "./img/london.png",
+    img: "./img/london.jpg",
     name: "London Susi Tour",
     info:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad iste quasi tempora incidunt deleniti animi!",
