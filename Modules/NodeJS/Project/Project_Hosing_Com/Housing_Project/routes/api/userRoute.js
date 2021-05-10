@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/',getResponse)
 
 //Post request
-router.post('/addRequest',login)
+router.post('/login',login)
 
 
 //export modules

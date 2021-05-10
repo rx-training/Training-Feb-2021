@@ -12,10 +12,10 @@ const rent = require('./api/rentRoute');
 const solarRooftop = require('./api/solarRooftop')
 const user = require('./api/userRoute')
 
-if(!config.get('jwtPrivatKey')){
-    console.error('FATAL ERROR : jwtPrivatKey is not defined')
-    process.exit(1);
-  }
+// if(!config.get('jwtPrivatKey')){
+//     console.error('FATAL ERROR : jwtPrivatKey is not defined')
+//     process.exit(1);
+//   }
 
 //get request upto index
 router.get('/',(req,res)=>{
@@ -23,7 +23,7 @@ router.get('/',(req,res)=>{
 })
 
 //api routers
-router.use('/api/interior',verifyTOken,interiorMatrials);
+router.use('/api/interior',interiorMatrials);
 router.use('/api/packersAndMovers',verifyTOken ,packersAndMoversRoute);
 router.use('/api/payment',verifyTOken,payment)
 router.use('/api/property',proprty);

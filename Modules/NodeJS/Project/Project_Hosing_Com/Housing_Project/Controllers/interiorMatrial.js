@@ -13,16 +13,18 @@ exports.getInterriorDetails= async(req,res)=>{
     }
     else{
         const getInterior = await Interior.find()
+        res.send(getInterior)
     }
 }
 
 //add new details of Interrior
+try{
 exports.addNewInteriorDetails= async(req,res)=>{
     
     
   const addNewInteriorDetails=new  Interior({ 
+    // User:req.body.User,
     User:req.body.User,
-    City:req.params.City,
     pinCode:req.body.pinCode,
     vendor:req.body.vendor,
     Budget:req.body.Budget,
@@ -37,5 +39,8 @@ exports.addNewInteriorDetails= async(req,res)=>{
   //send Details to databse
   res.send(addNewInteriorDetails)
 }
-
+}
+catch{
+  res.send("Something went wrong")
+}
 

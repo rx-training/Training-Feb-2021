@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const{User} = require('../Models/userModel')
 const _ = require('lodash')
-
+const bcrypt = require('bcrypt')
 //const  {token} = require('morgan')
 
 

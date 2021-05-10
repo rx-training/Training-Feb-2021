@@ -5,13 +5,16 @@
 // import index router 
 const indexrouter =require('./routes/index') 
 
+//import secret key globally
+global.config = require('./config')
+
 //initialize app
 const app = express()
 
 //connect to mongodb
 mongoose.connect('mongodb://localhost/hosih_hwarshit',{useNewUrlParser:true, useUnifiedTopology:true})
     .then(() => console.log('Mongodb connect..'))
-    .catch(err => console.error('Somethin went wrong check connection ',err))
+    .catch(err => console.error('Something went wrong check connection ',err))
 
 //middleware
 app.use(express.json())
