@@ -1,0 +1,22 @@
+body {
+  padding-bottom: 4rem;
+}
+.card {
+  padding: 1rem;
+  margin: 1rem;
+}
+.card .row .col-md-10 .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card .row .col-md-10 .row .col-lg-11 i {
+  font-size: 1.8rem;
+  color: #0d6efd;
+}
+.card .row .col-md-10 .row .col-lg-11 i:hover {
+  color: #0a47a1;
+}
+.card .row .col-md-10 .row .col-lg-11 i:active {
+  color: #126aee;
+}
