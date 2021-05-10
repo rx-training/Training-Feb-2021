@@ -1,9 +1,6 @@
 "use strict";
 exports.__esModule = true;
 exports.checkingInterview = void 0;
-//main file is recruiting.ts in which all files of functions are imported and can call using switch case ://
-//==========this department check interviews and create interviews if interview is needed :=============================//
-console.log('\n+++++++++++++++++++++++++++++++++++++ Welcome to interview department Portal +++++++++++++++++++++++++++++++\n');
 //create or schedule  interview 
 var inter = [
     { intId: 1, intName: '.net', intVac: 23, intHandler: 'Mr.Mehta', intDate: new Date("2021/2/2") },

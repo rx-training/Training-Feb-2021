@@ -1,8 +1,7 @@
 "use strict";
-//===========Applicants data =================//
+//main file is main.ts in which all files of functions are imported and you can call using switch case ://
 exports.__esModule = true;
 exports.checkingApplicants = void 0;
-console.log('====================Welcome to Applicants Data ==================================');
 var app = [
     { appId: 1, appFnmae: 'Labhu', appLname: 'Patel', appDOB: new Date(1999 / 9 / 9), appAddress: 'Mumbai', appField: 'node', appNumber: 465464656, appCGPA: 8 },
     { appId: 2, appFnmae: 'Bhikhu', appLname: 'Chorasiya', appDOB: new Date(1999 / 8 / 26), appAddress: 'Halvad', appField: '.net', appNumber: 465464658, appCGPA: 4.5 },

@@ -1,8 +1,7 @@
 "use strict";
-//main file is recruiting.ts in which all files of functions are imported and you can call using switch case ://
+//main file is main.ts in which all files of functions are imported and you can call using switch case ://
 exports.__esModule = true;
 exports.checkingVacancy = void 0;
-console.log('\n+++++++++++++++++++++++++++++++++++++ Welcome to vacany department Portal +++++++++++++++++++++++++++++++\n');
 //====================================================Creating Vacancies :=======================================================//
 var department = [
     { id: 1, DeptName: '.net', Vacancies: 23 },
