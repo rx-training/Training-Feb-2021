@@ -1,25 +1,24 @@
-import React, { Component } from 'react'
-import Book from "./Book"
-
-
+import React, { Component } from "react";
+import Book from "./Book";
+import bookData from "./bookData";
 
 export default class BookList extends Component {
-    books=[
-        {
-            Book:"Book Number One",
-            Author:"Anuj Pal"
-        },
-        {
-            Book:"Book Number Two ",
-            Author:"Mukesh Pal"
-        }
-    ]
-    render() {
-        return (
-            <section>
-                <h3>This is our BookList</h3>
-                <Book book={this.books[0]}></Book>
-            </section>
-        )
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      books: bookData,
+    };
+  }
+
+  render() {
+    const books = this.state.books;
+    return (
+      <section>
+        <h3>This is our BookList</h3>
+        {this.state.books.map((item, index) => (
+          <Book key={item.id} info={item}></Book>
+        ))}
+      </section>
+    );
+  }
 }

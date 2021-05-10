@@ -1,7 +1,6 @@
-
 import React, { Children } from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "bootstrap/dist/css/bootstrap.css";
 const info = {
   ID: 101,
   fname: "Anuj",
@@ -12,21 +11,27 @@ const info = {
 };
 
 const Image = () => {
-  return(  <img
-    src="https://c1.wallpaperflare.com/preview/475/75/706/suit-sufi-blue-business.jpg"
-    alt="Image1"
-    height="200px"
-    width="390px"
-  />)
-
+  return (
+    <img
+      src="https://c1.wallpaperflare.com/preview/475/75/706/suit-sufi-blue-business.jpg"
+      alt="Image1"
+      height="200px"
+      width="448px"
+    />
+  );
 };
 const PersonalComponent = () => {
   return (
-    <article className="personal">
-     <Image></Image>
-      <h3>ID : {info.ID}</h3>
-      <h3>Name : {info.fname + " " + info.lname}</h3>
-      <h3>DOB : {info.DOB}</h3>
+    <article>
+      <div>
+        <Image></Image>
+      </div>
+      <div className="mt-3 text-left">
+        <h4 className="h5">ID : {info.ID}</h4>
+        <h4 className="h5">Name : {info.fname + " " + info.lname}</h4>
+        <h4 className="h5">DOB : {info.DOB}</h4>
+      </div>
+
       <hr></hr>
     </article>
   );
@@ -34,35 +39,47 @@ const PersonalComponent = () => {
 
 const CollegeComponent = () => {
   return (
-    <article className="college">
-      <img
-        className="image"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbyo7ly10vWaYm2aIJG5rZgTtZGdb6YazeMQm00lOEVrlmyvGF17_1z21aM6Hh-nv1L0&usqp=CAU"
-        alt=""
-        height="100px"
-        width="200px"
-      />
-      <h3 className="h1">CollegeName : {info.collegeName}</h3>
-      <h3 className="h2">Address : {info.Address}</h3>
+    <article>
+      <div className="row">
+        <div className="col ">
+          <img
+            className=" mr-0"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbyo7ly10vWaYm2aIJG5rZgTtZGdb6YazeMQm00lOEVrlmyvGF17_1z21aM6Hh-nv1L0&usqp=CAU"
+            alt=""
+            width="180px"
+            height="100px"
+          />
+        </div>
+        <div className="col ml-0">
+          <h4 className="h5">CollegeName : {info.collegeName}</h4>
+          <h4 className="h5">Address : {info.Address}</h4>
+        </div>
+      </div>
     </article>
   );
 };
 
-  const StudentIdCard = (props) => {
-    console.log(props.children)
+const StudentIdCard = (props) => {
+  console.log(props.children);
   return (
-    <article className="studentIdCard">
-  
-    {props.children}
-      <PersonalComponent></PersonalComponent>
-      <CollegeComponent></CollegeComponent>
-    </article>
+    <div>
+      {props.children}
+      <article
+        className=" m-auto border border-primary  "
+        style={{ width: "450px" }}
+      >
+        <PersonalComponent></PersonalComponent>
+        <CollegeComponent></CollegeComponent>
+      </article>
+    </div>
   );
 };
 const Assignment = () => {
   return (
-    <section class="assignment">
-      <StudentIdCard><p> Student Details</p></StudentIdCard>
+    <section class="m-auto text-center  ">
+      <StudentIdCard>
+        <p className="h3 mt-5 mb-5"> Student Details</p>
+      </StudentIdCard>
     </section>
   );
 };

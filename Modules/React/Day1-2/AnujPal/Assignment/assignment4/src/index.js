@@ -49,7 +49,7 @@ const PersonalComponent = (props) => {
 
 const CollegeComponent = (props) => {
   return (
-    <article className="container">
+    <article >
       <div className="row">
         <div className="col">
           <img className="img-fluid mb-5" src={props.srcc} alt="" />
@@ -64,12 +64,12 @@ const CollegeComponent = (props) => {
 };
 
 const Image = (props) => {
-  return <img src={props.src} alt="Image1" height="200px" width="400x" />;
+  return <img src={props.src} alt="Image1" height="200px" width="320x" />;
 };
 
 const StudentIdCard = (props) => {
   return (
-    <div className="container w-100">
+    <div >
       <article className="studentIdCard border border-secondary">
         <Image src={props.src}></Image>
         <PersonalComponent
@@ -91,6 +91,7 @@ const Assignment = (props) => {
   let stu = props.data;
   console.log(stu);
   return (
+    <div className="container">
     <section class="row">
       <div className="col">
         <StudentIdCard
@@ -128,7 +129,9 @@ const Assignment = (props) => {
           srcc={stu[2].srcc}
         ></StudentIdCard>
       </div>
+>
     </section>
+    </div>
   );
 };
 

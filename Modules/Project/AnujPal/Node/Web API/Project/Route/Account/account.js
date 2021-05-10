@@ -84,7 +84,6 @@ class demoAccount {
 
 
 
-
 // API for inserting the account information
 accountRouter.post("/insertAccount",verifyToken, ensureToken, demoAccount.insertAccount)
 
