@@ -80,7 +80,28 @@ class demoAccount {
             .limit(10)
         res.json(statement)
     }
+
+    static async NEFT(req,res){
+    
+       
+       const debitAccount=await Account.updateOne({accountNo:req.body.debitAccount},{
+           $inc :{
+                balance:-parseInt(req.params.amount)
+           }
+       })
+       const creditAccount=await Account.updateOne({accountNo:req.body.creditAccount},{
+        $inc :{
+             balance:req.params.amount
+        }
+    })
+    res.json(creditAccount)
+    }
+   
+
+   
 }
+
+
 
 
 
@@ -95,4 +116,7 @@ accountRouter.get("/debit/:accountNo/:amount", verifyToken, ensureToken, demoAcc
 
 // API for getting mini satatement for tranjaction
 accountRouter.get("/miniStatement", verifyToken, ensureToken, demoAccount.miniStatement)
+
+// API for NEFT
+accountRouter.get("/NEFT/:amount", verifyToken, ensureToken, demoAccount.NEFT)
 module.exports = accountRouter;
