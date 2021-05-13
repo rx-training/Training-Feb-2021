@@ -10,7 +10,7 @@ var jwt =require('jsonwebtoken')
 
 /* GET users listing. */
 exports.getResponse = async function(req, res, next) {
-  res.send('respond with a resource');
+  res.send('Welcome please login');
 };
 
 exports.login = async function(req,res,next){
