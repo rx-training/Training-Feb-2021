@@ -17,7 +17,7 @@ export default class UncontrolledForms extends Component {
         <form onSubmit={this.handleSubmit}>
           <input type="text" ref="myName"/>
           <input type="email" ref={(orange)=>{this.email=orange}} />
-          <button type="submit">submit</button>
+          <button type="submit" >submit</button>
         </form>
         <p ref="myText">Hello World</p>
       </section>
