@@ -1,3 +1,16 @@
+// export interface ReferenceDetails{
+//     ReferenceThrough:string,
+//     Address:{
+//         City:string,
+//         TelNo:string
+//     }
+// }
+export interface Emergency{
+    Relation:string,
+    Number:string
+}
+
+
 export interface Student{
     Name :{
         FirstName:string, 
@@ -10,8 +23,8 @@ export interface Student{
     Address:{
         City:string,
         State:string,
-        Pin:number
-    };
+        Pin:string
+    }
     Father:{
         Name:{
             FirstName:string,
@@ -38,18 +51,18 @@ export interface Student{
         Phone:string
 
     };
-}
-export interface Emergency{
-    Relation:string,
-    Number:string
-}
-export interface ReferenceDetails{
-    ReferenceThrough:string,
-    Address:{
-        City:string,
-        TelNo:string
+    EmergencyContactList:Array<Emergency>;
+    ReferenceDetails:{
+        ReferenceThrough:string,
+        Address:{
+            City:string,
+            TelNo:string
+        }
     }
+    
 }
+
+
 
 
 // let s:Student = {Name :{FirstName:"jay",MiddleName:"s",LastName:"pra"}}

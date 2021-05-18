@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder,FormArray, Validators, FormControl} from '@angular/forms';
+import {FormBuilder,FormArray,FormGroup, Validators, FormControl} from '@angular/forms';
 import {DOBValidator} from './DateOfBirth.validator';
 import {Student} from '../Model/interface';
 
@@ -12,76 +12,77 @@ export class StudentFormBuilderComponent implements OnInit {
 
   student :Array<Student>=[];
 
-
-Submit(){
-  this.student.push(this.StudentForm.value);
-  console.log(this.student);
-}
-
-
-
-
-//  StudentForm:FormGroup;
-StudentForm= this.Form.group({
-  Name : this.Form.group({
-    FirstName:['',Validators.required],
-    MiddleName:['',Validators.required],
-    LastName: ['',Validators.required]
-  }),
-  DOB : ['',[Validators.required,DOBValidator]],
-  PlaceOfBirth:['',Validators.required],
-  FirstLanguage:['',Validators.required],
-  Address:this.Form.group({
-    City : ['',Validators.required],
-    State:['',Validators.required],
-    Pin : ['',[Validators.required, Validators.pattern(/^\d{6}$/)]]
-  }),
-  Father : this.Form.group({
-    Name : this.Form.group({
-      FirstName : ['',Validators.required],
-    MiddleName : ['',Validators.required],
-    LastName : ['',Validators.required]
-    }),
-    Email : ['',[Validators.required,Validators.email]],
-    EducationQualification : [''],
-    Profession : [''],
-    Designation : [''],
-    Phone : ['',[Validators.required,Validators.pattern(/^\d{10}$/)]],
-  }),
-  
-
-  Mother : this.Form.group({
-      Name : this.Form.group({
-      FirstName : [''],
-      MiddleName : [''],
-      LastName : ['']
-    }),
-    Email : ['',Validators.email],
-    EducationQualification : [''],
-    Profession : [''],
-    Designation : [''],
-    Phone : ['',Validators.pattern(/^\d{10}$/)],
-  }),
-  EmergencyContactList: this.Form.array([
-    this.Form.group({
-      Relation : [''],
-      Number : ['']
-    })
-  ]),
-  ReferenceDetails : this.Form.group({
-    ReferenceThrough : [''],
-    Address : this.Form.group({
-      City : [''],
-      TelNo : ['',Validators.pattern(/^\d{10}$/)]
-    })
-  })
-});
-
-
+  StudentForm!:FormGroup;
 
   constructor(private Form: FormBuilder){
     
   }
+
+
+
+
+ngOnInit(){
+  this.StudentForm= this.Form.group({
+    Name : this.Form.group({
+      FirstName:['',Validators.required],
+      MiddleName:['',Validators.required],
+      LastName: ['',Validators.required]
+    }),
+    DOB : ['',[Validators.required,DOBValidator]],
+    PlaceOfBirth:['',Validators.required],
+    FirstLanguage:['',Validators.required],
+    Address:this.Form.group({
+      City : ['',Validators.required],
+      State:['',Validators.required],
+      Pin : ['',[Validators.required, Validators.pattern(/^\d{6}$/)]]
+    }),
+    Father : this.Form.group({
+      Name : this.Form.group({
+        FirstName : ['',Validators.required],
+      MiddleName : ['',Validators.required],
+      LastName : ['',Validators.required]
+      }),
+      Email : ['',[Validators.required,Validators.email]],
+      EducationQualification : [''],
+      Profession : [''],
+      Designation : [''],
+      Phone : ['',[Validators.required,Validators.pattern(/^\d{10}$/)]],
+    }),
+    
+  
+    Mother : this.Form.group({
+        Name : this.Form.group({
+        FirstName : [''],
+        MiddleName : [''],
+        LastName : ['']
+      }),
+      Email : ['',Validators.email],
+      EducationQualification : [''],
+      Profession : [''],
+      Designation : [''],
+      Phone : ['',Validators.pattern(/^\d{10}$/)],
+    }),
+    EmergencyContactList: this.Form.array([
+      this.Form.group({
+        Relation : ['',Validators.required],
+        Number : ['',[Validators.required,Validators.pattern(/^\d{10}$/)]]
+      })
+    ]),
+    ReferenceDetails : this.Form.group({
+      ReferenceThrough : [''],
+      Address : this.Form.group({
+        City : [''],
+        TelNo : ['',Validators.pattern(/^\d{10}$/)]
+      })
+    })
+  });
+  
+}
+studentArray : Array<Student>=[];
+
+
+
+
 
   get getEmergencyContactList(){
     return this.StudentForm.get('EmergencyContactList') as FormArray;
@@ -179,10 +180,77 @@ get getMotherPhone(){
 get referenceTelNo(){
   return this.StudentForm.controls.ReferenceDetails.get('Address')?.get('TelNo');
 }
+/// Student Dummy Data
 
-
-
-  ngOnInit(): void {
+s : Student = {
+  Name :{
+  FirstName:"Adam",
+  MiddleName:"John",
+  LastName:"Smith"
+},
+DOB:new Date('1/2/2011'),
+PlaceOfBirth:"vijapur",
+FirstLanguage:"Gujarati",
+Address:{
+  City:"Vijapur",
+  State:"Gujarat",
+  Pin :"123456"
+},
+Father:{
+  Name:{
+    FirstName:"Shaileshbhai",
+    MiddleName:"Amrutlal",
+    LastName:"Prjapati"
+  },
+  Email:"abc@gmail.com",
+  EducationQualification:"dfhaf",
+  Profession:"dfjahif",
+  Designation:"djfau",
+  Phone:"1234523432"
+},
+Mother:{
+  Name:{
+    FirstName:"dfhald",
+    MiddleName:"dfjad",
+    LastName:"erjfnvl"
+  },
+  Email:"dfhad@gmail.com",
+  EducationQualification:"faenfd",
+  Profession:"fhaunvdfc",
+  Designation:"faufnd",
+  Phone:"1234567890"
+},
+EmergencyContactList:[
+  {
+    Relation :"gsjirh",
+    Number:"1234567890"
   }
+  ],
+  ReferenceDetails:{
+    ReferenceThrough:"hgflhj",
+    Address:{
+      City:"ahffj",
+    TelNo:"1234567890"
+    }
+  }
+}
+
+LoadData(){
+  this.StudentForm.patchValue(this.s);
+}
+
+Submit(){
+  this.studentArray.push(this.StudentForm.value);
+  console.log(this.studentArray);
+  
+  
+}
+// Submit(){
+//   this.student.push(this.StudentForm.value);
+//   console.log(this.student);
+// }
+
+
+  
 
 }
