@@ -7,7 +7,7 @@ export default class RoomProvider extends Component {
     rooms: [],
     sortedRooms: [],
     featuredRooms: [],
-    loading: true,
+    loading:false,
   };
   componentDidMount() {
     let rooms = this.formatData(items);
@@ -44,5 +44,15 @@ export default class RoomProvider extends Component {
 }
 
 const RoomConsumer = RoomContext.Consumer;
+
+export function withRoomConsumer(Component) {
+  return function ConsumerWrapper(props) {
+    return <RoomConsumer>
+      {value=><Component {...props} context={value}></Component>}
+    </RoomConsumer>
+    
+  }
+  
+}
 
 export { RoomConsumer, RoomProvider, RoomContext };
