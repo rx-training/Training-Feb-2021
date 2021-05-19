@@ -12,7 +12,7 @@ import { withRoomConsumer } from "../context";
   }
   return (
     <>
-      helo from rooms container
+      
       <RoomsFilter  rooms={rooms}></RoomsFilter>
       <RoomsList rooms={sortedRooms} ></RoomsList>
     </>

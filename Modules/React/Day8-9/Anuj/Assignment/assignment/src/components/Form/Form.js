@@ -7,26 +7,57 @@ import students from "../../studentData";
 import { reset } from "chalk";
 
 export default class Form extends Component {
-  reset = (e) => {
-    e.preventDefault();
-    document.getElementById("form").reset();
+  state = {
+    country: {
+      India: ["Gujarat", "Maharashtra",'Punjab','UP'],
+      Australia: ["California", "Texas",'Florida'],
+      Canada: ["Alberta", "Columbia"],
+    },
+  
+    selectedState:"Gujarat",
+    selectedCountry:"India",
+    states:{
+      Gujarat:["Ahmedabad","Surat","Bhavnagar"],
+      Maharashtra:["Mumbai","Pune"],
+      Punjab:["Ludhiana","Amritsar"],
+      UP:["Lucknow","Unnao"],
+      California:["Los-Angeles","San-joe"],
+      Texas:["Houseton","Dallas"],
+      Florida:["Miami","Tampa"],
+      Alberta:["Calgarie","Airtdri"],
+      Columbia:["Cali","Santa-Marta"]
+    }
   };
+ 
+
   render() {
+   
     const info = this.props.info.students;
 
     const { handleChange, handleSubmit, formValidation } = this.props;
     const {
       ID,
       fname,
+      mname,
       lname,
+      ffname,
+      fmname,
+      flname,
+      DOB,
+      email,
+      collegeName ,
       studentImage,
-      collegeName,
+      collegeLogo,
+      student ,
+      students,
       idError,
-      nameError,
-      dateError,
+      nameError ,
+      dateError ,
       emailError,
       collegeNameError,
-      show,
+      fnameError,
+      selectedCountry
+      
     } = this.props.info;
     return (
       <React.Fragment>
@@ -44,7 +75,7 @@ export default class Form extends Component {
                   value={ID}
                   onChange={handleChange}
                 />
-                <div className="text-danger"> {show ? idError : null}</div>
+                <div className="text-danger"> { idError}</div>
               </div>
             </div>
             <div class="form-group w-50 mx-auto mt-3 row">
@@ -55,7 +86,7 @@ export default class Form extends Component {
                   className="form-control "
                   placeholder="Enter first name"
                   name="fname"
-                  // value={this.state.fname}
+                 value={fname}
                   onChange={handleChange}
                 />
               </div>
@@ -66,6 +97,7 @@ export default class Form extends Component {
                   placeholder="Enter middle name"
                   name="mname"
                   onChange={handleChange}
+                  value={mname}
                 />
               </div>
               <div className="col">
@@ -75,9 +107,10 @@ export default class Form extends Component {
                   placeholder="Enter last name"
                   name="lname"
                   onChange={handleChange}
+                  value={lname}
                 />
               </div>
-              <div className="text-danger"> {show ? nameError : null}</div>
+              <div className="text-danger"> { nameError}</div>
             </div>
 
             <div className="form-group w-50 mx-auto mt-3 row">
@@ -89,9 +122,10 @@ export default class Form extends Component {
                   placeholder="Enter date of birth"
                   name="DOB"
                   onChange={handleChange}
+                  value={DOB}
                 />
               </div>
-              <div className="text-danger"> {show ? dateError : null}</div>
+              <div className="text-danger"> {dateError}</div>
             </div>
             <div className="form-group w-50 mx-auto mt-3 row">
               <label className="h5">Enter E-mail </label>
@@ -102,9 +136,10 @@ export default class Form extends Component {
                   placeholder="Enter date of birth"
                   name="email"
                   onChange={handleChange}
+                  value={email}
                 />
               </div>
-              <div className="text-danger"> {show ? emailError : null}</div>
+              <div className="text-danger"> {emailError}</div>
             </div>
             <div class="form-group w-50 mx-auto mt-3 row">
               <label className="h5">Father Name</label>
@@ -116,6 +151,7 @@ export default class Form extends Component {
                   name="ffname"
                   // value={this.state.fname}
                   onChange={handleChange}
+                  value={ffname}
                 />
               </div>
               <div className="col">
@@ -125,6 +161,7 @@ export default class Form extends Component {
                   placeholder="Enter middle name"
                   name="fmname"
                   onChange={handleChange}
+                  value={fmname}
                 />
               </div>
               <div className="col">
@@ -134,19 +171,55 @@ export default class Form extends Component {
                   placeholder="Enter last name"
                   name="flname"
                   onChange={handleChange}
+                  value={flname}
                 />
+              </div>
+              <div className="text-danger"> { fnameError}</div>
+            </div>
+            <div className="form-group w-50 mx-auto mt-3 mb-3 row">
+              <div className="col">
+                <label className="h5">Select Country Name</label>
+                <select
+                  className="w-100 h-75"
+                  onChange={(e)=>{this.setState({selectedCountry:e.target.value})}}>
+                
+               
+                  <option selected value="please select country">please select country</option>
+                  <option  value="India">India</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Canada">Canada</option>
+                </select>
+              </div>
+              
+            </div>
+            <div className="form-group w-50 mx-auto mt-3 mb-3 row">
+              <div className="col">
+                <label className="h5">Select State Name</label>
+                
+                <select className="w-100 h-75" id="state" onChange={(e)=>{this.setState({selectedState:e.target.value})}}>
+                <option selected value="please select state">please select state</option>
+                  {this.state.country[this.state.selectedCountry].map((e, key) => {
+                    return (
+                      <option key={key} value={e}>
+                        {e}
+                      </option>
+                    );
+                  })}
+                </select>
               </div>
             </div>
             <div className="form-group w-50 mx-auto mt-3 mb-3 row">
               <div className="col">
                 <label className="h5">Select City Name</label>
-                <select className="w-100 h-75">
-                  <option value="Ahmedabad">Ahmedabad</option>
-                  <option value="Surat">Surat</option>
-                  <option selected value="Gandhinagar">
-                    Gandhinagar
-                  </option>
-                  <option value="Bharuch">Bharuch</option>
+                <select className="w-100 h-75" id="city" >
+                <option selected value="please select city">please select city</option>
+                  {this.state.states[this.state.selectedState].map((e, key) => {
+                    return (
+                      <option key={key} value={e}>
+                        {e}
+                      </option>
+                    );
+                  })}
                 </select>
               </div>
             </div>
@@ -161,6 +234,8 @@ export default class Form extends Component {
                   id="image"
                   onChange={handleChange}
                   name="studentImage"
+                  
+           
                 />
               </div>
             </div>
@@ -174,9 +249,13 @@ export default class Form extends Component {
                   name="collegeName"
                   // value={this.state.collegeName}
                   onChange={handleChange}
+                  value={collegeName}
                 />
               </div>
-              <div className="text-danger"> {show ? collegeNameError : null}</div>
+              <div className="text-danger">
+                {" "}
+                {collegeNameError }
+              </div>
             </div>
             <div class="form-group w-50 mx-auto m-3 row">
               <label className="h5 mt-4 mb-3">Select College Logo</label>
@@ -187,6 +266,7 @@ export default class Form extends Component {
                   placeholder="Select College Logo"
                   name="collegeLogo"
                   onChange={handleChange}
+              
                 />
               </div>
             </div>

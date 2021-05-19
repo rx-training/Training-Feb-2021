@@ -18,19 +18,23 @@ export default class App extends Component {
       email: "",
       collegeName: "",
       studentImage: null,
-      collegeLogo: null,
+      collegeLogo: "",
       student: {},
       students: students,
       idError: "",
       nameError: "",
       dateError: "",
-      emailError:"",
-      collegeNameError:"",
-      show: false,
+      emailError: "",
+      collegeNameError: "",
+      fnameError:""
+
+      
+      
     };
 
     this.studentImage = React.createRef();
     this.collegeLogo = React.createRef();
+    console.log(this.studentImage);
   }
   handleChange = (e) => {
     const name = e.target.name;
@@ -68,7 +72,7 @@ export default class App extends Component {
           });
         } else {
           this.setState({
-            show: false,
+            idError:"",
           });
         }
 
@@ -82,33 +86,57 @@ export default class App extends Component {
           });
         } else {
           this.setState({
-            show: false,
+            nameError:""
           });
         }
         break;
+
+        case ("ffname", "fmname", "flname"):
+          if (val.length <= 0) {
+            this.setState({
+              fnameError: "first name,niddlename or lastname cannot be blank",
+              show: true,
+            });
+          } else {
+            this.setState({
+              fnameError:""
+            });
+          }
+          break;
 
       case "DOB":
         const regex = new RegExp(
           "^(1[0-2]|0[1-9])/(3[01]|[12][0-9]|0[1-9])/[0-9]{4}$"
         );
-        console.log(regex.test(val));
         if (!regex.test(val)) {
           this.setState({
-            dateError: "Enter Valid date Format",
-            show: true,
+            dateError: "Enter valid format",
           });
         } else {
           this.setState({
-            show: false,
+            dateError: "",
           });
         }
-        break
-        
-        case'email':
-        const regex1=new RegExp("/^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/");
+        break;
+
+      case "email":
+        const regex1 = new RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
         if (!regex1.test(val)) {
+          console.log(regex1.test(val));
           this.setState({
-            emailError: "Enter Valid email Format",
+            emailError: "Enter valid e-mail Address",
+          });
+        } else {
+          this.setState({
+            emailError: "",
+          });
+        }
+        break;
+
+      case "collegeName":
+        if (val.length <= 0) {
+          this.setState({
+            collegeNameError: "CollegeName cannot be blank",
             show: true,
           });
         } else {
@@ -116,22 +144,7 @@ export default class App extends Component {
             show: false,
           });
         }
-        break
-
-        case 'collegeName':
-          if (val.length <= 0) {
-            this.setState({
-              collegeNameError : "CollegeName cannot be blank",
-              show: true,
-            });
-          } else {
-            this.setState({
-              show: false,
-            });
-          }
-          break;
-
-
+        break;
     }
   };
 
@@ -142,10 +155,27 @@ export default class App extends Component {
     this.setState({
       ID: "",
       fname: "",
+      mname: "",
       lname: "",
+      ffname: "",
+      fmname: "",
+      flname: "",
+      DOB: "",
+      email: "",
       collegeName: "",
-      studentImage: null,
+      studentImage:null,
+      collegeLogo: "",
+      student: {},
+      students: students,
+      idError: "",
+      nameError: "",
+      dateError: "",
+      emailError: "",
+      collegeNameError: "",
+      selectedCountry:"please select country"
+
     });
+    
   };
 
   render() {
