@@ -18,7 +18,7 @@ function App() {
   //all expenses,add expense
   const [expenses, setExpenses] = useState(initialExpenses);
   //single expense
-  const [charge, setCharge] = useState("");
+  const [charge, setCharge] = useState("");      
   //single amout
   const [amount, setAmount] = useState("");
   //alert
