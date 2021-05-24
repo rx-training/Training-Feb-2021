@@ -3,11 +3,12 @@
 var ImageKit = require("imagekit");
 const fs = require("fs");
 const debug = require("debug")("std:imgkit");
+const { publicKey, privateKey, urlEndpoint } = require("../config/config");
 
 var imagekit = new ImageKit({
-  publicKey: "public_T4+b4l6DBIKW6sVPH3L+DJv8TkY=",
-  privateKey: "private_iHvKJRh42h8bw7zamDDjareNFJE=",
-  urlEndpoint: "https://ik.imagekit.io/z1hlockgora",
+  publicKey: publicKey,
+  privateKey: privateKey,
+  urlEndpoint: urlEndpoint,
 });
 
 class ImgKit {
