@@ -22,7 +22,11 @@ export default class App extends Component {
 
   handleChange = (e) => {
     const nam = e.target.name;
-    const val = e.target.value;
+    let val = e.target.value;
+    if (e.target.type === "file") {
+      val = { path: val, file: e.target.files[0] };
+    }
+    console.log(val);
     this.setState({
       [nam]: val,
     });
@@ -30,16 +34,18 @@ export default class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    let myImg = this.state.img.split("\\");
+    let myImg = this.state.img.path.split("\\");
     myImg = `img/${myImg[myImg.length - 1]}`;
-    let myLogo = this.state.collegeLogo.split("\\");
+    let myLogo = this.state.collegeLogo.path.split("\\");
     myLogo = `img/${myLogo[myLogo.length - 1]}`;
     const newStudent = {
       id: this.state.id,
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       img: myImg,
+      // img: this.state.img.file,
       collegeName: this.state.collegeName,
+      // collegeLogo: this.state.collegeLogo.file,
       collegeLogo: myLogo,
     };
     const updatedStudents = [...this.state.students, newStudent];

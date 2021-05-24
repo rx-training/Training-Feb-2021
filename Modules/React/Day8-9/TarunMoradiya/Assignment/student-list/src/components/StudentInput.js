@@ -46,7 +46,7 @@ export default function StudentInput({
             </label>
             <input
               type="file"
-              value={img}
+              value={img.path ? img.path : ""}
               name="img"
               onChange={handleChange}
               className="form-control text-capitalize"
@@ -70,7 +70,7 @@ export default function StudentInput({
             </label>
             <input
               type="file"
-              value={collegeLogo}
+              value={collegeLogo.path ? collegeLogo.path : ""}
               name="collegeLogo"
               onChange={handleChange}
               className="form-control text-capitalize"
