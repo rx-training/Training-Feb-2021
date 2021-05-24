@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./clg-img copy/GECD.png";
+
 
 export default class Student extends Component {
   render() {
@@ -7,20 +7,20 @@ export default class Student extends Component {
     console.log(info);
 
     return (
-      <div className=" ">
+      <div className="container ">
         <div className="row w-50 mx-auto border border-primary">
           <div className="col border  border-danger h-25 w-25">
             <img
               className="card-img-top h-50 w-50 d-flex justify-self mx-auto mb-0  "
               src={info.collegeLogo}
-              alt="college image"
+              alt="college "
             />
           </div>
           <div className="col border  border-danger h-25 w-25">
             <img
               className="card-img-top h-50 w-50 d-flex justify-self mx-auto mb-0  "
               src={info.studentImage}
-              alt="college image"
+              alt="student"
             />
           </div>
           <hr></hr>
@@ -30,15 +30,21 @@ export default class Student extends Component {
               Name : {info.fname} {info.mname} {info.lname}
             </h6>
             <h6>
-             Father's Name : {info.ffname} {info.fmname} {info.flname}
+              Father's Name : {info.ffname} {info.fmname} {info.flname}
             </h6>
-            
+
             <h6>College Name : {info.collegeName}</h6>
             <h6>DOB : {info.DOB}</h6>
             <h6>E-mail : {info.email}</h6>
           </div>
-
-      
+        </div>
+        <div className="row w-50 mx-auto">
+          <div className="col h-25 w-25">
+            <button type="button" className="bg-primary w-100">Edit</button>
+          </div>
+          <div className="col h-25 w-25">
+          <button type="button" className="bg-danger w-100">Delete</button>
+          </div>
         </div>
       </div>
     );

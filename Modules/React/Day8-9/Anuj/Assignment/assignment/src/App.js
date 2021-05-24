@@ -17,7 +17,7 @@ export default class App extends Component {
       DOB: "",
       email: "",
       collegeName: "",
-      studentImage: null,
+      theInputKey: "",
       collegeLogo: "",
       student: {},
       students: students,
@@ -26,10 +26,11 @@ export default class App extends Component {
       dateError: "",
       emailError: "",
       collegeNameError: "",
-      fnameError:""
-
-      
-      
+      fnameError: "",
+      submit: false,
+      selectedCountry: "India",
+      selectedState:"Gujarat",
+      selectedDegree:""
     };
 
     this.studentImage = React.createRef();
@@ -38,7 +39,6 @@ export default class App extends Component {
   }
   handleChange = (e) => {
     const name = e.target.name;
-    const value = e.target.value;
     if (name === "studentImage") {
       this.setState({
         studentImage: URL.createObjectURL(e.target.files[0]),
@@ -72,7 +72,7 @@ export default class App extends Component {
           });
         } else {
           this.setState({
-            idError:"",
+            idError: "",
           });
         }
 
@@ -86,23 +86,23 @@ export default class App extends Component {
           });
         } else {
           this.setState({
-            nameError:""
+            nameError: "",
           });
         }
         break;
 
-        case ("ffname", "fmname", "flname"):
-          if (val.length <= 0) {
-            this.setState({
-              fnameError: "first name,niddlename or lastname cannot be blank",
-              show: true,
-            });
-          } else {
-            this.setState({
-              fnameError:""
-            });
-          }
-          break;
+      case ("ffname", "fmname", "flname"):
+        if (val.length <= 0) {
+          this.setState({
+            fnameError: "first name,niddlename or lastname cannot be blank",
+            show: true,
+          });
+        } else {
+          this.setState({
+            fnameError: "",
+          });
+        }
+        break;
 
       case "DOB":
         const regex = new RegExp(
@@ -145,13 +145,15 @@ export default class App extends Component {
           });
         }
         break;
+        default:
+          console.log("no one matched");
     }
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const file = e.target.value;
     this.state.students.push(this.state);
+
     this.setState({
       ID: "",
       fname: "",
@@ -163,8 +165,8 @@ export default class App extends Component {
       DOB: "",
       email: "",
       collegeName: "",
-      studentImage:null,
-      collegeLogo: "",
+      studentImage: "",
+      collegeLogo: this.collegeLogo.current.defaultValue,
       student: {},
       students: students,
       idError: "",
@@ -172,13 +174,14 @@ export default class App extends Component {
       dateError: "",
       emailError: "",
       collegeNameError: "",
-      selectedCountry:"please select country"
-
+      submit: true,
+      selectedCountry: "",
     });
     
   };
 
   render() {
+
     return (
       <div>
         <Form
@@ -186,6 +189,8 @@ export default class App extends Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
           formValidation={this.formValidation}
+          studentImage={this.studentImage}
+          collegeLogo={this.collegeLogo}
         ></Form>
       </div>
     );
