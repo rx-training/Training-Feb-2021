@@ -103,6 +103,7 @@ class Form extends Component {
     else{
       this.setState({phoneError : ""})
     }
+    return true
   }
 
 
@@ -152,6 +153,12 @@ class Form extends Component {
 //       [event.target.name] : event.target.value
       })    
     }
+    else if(event.target.name === "DOB"){
+      this.setState({
+        [event.target.name] : event.target.value
+      })
+    }
+
     else if(this.stringValidaion(event.target.value)){
       this.setState({
 //           images : URL.createObjectURL(this.refs.logoimg.files[0]),
