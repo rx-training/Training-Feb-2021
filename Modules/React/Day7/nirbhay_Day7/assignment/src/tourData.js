@@ -2,7 +2,7 @@ export const tourData = [
   {
     id: 1,
     city: "new york",
-    img: "./img/newyorkbridge.jpg",
+    img: "/img/newyorkbridge.jpg",
     name: "new york bridge tour",
     info:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, iusto temporibus illum quae delectus et? Sequi sapiente aliquid corporis nisi?",
@@ -10,7 +10,7 @@ export const tourData = [
   {
     id: 2,
     city: "paris",
-    img: "./img/paris.jpg",
+    img: "/img/paris.jpg",
     name: "paris light tour",
     info:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, iusto temporibus illum quae delectus et? Sequi sapiente aliquid corporis nisi?",
@@ -18,7 +18,7 @@ export const tourData = [
   {
     id: 3,
     city: "london",
-    img: "./img/london.jpg",
+    img: "/img/london.jpg",
     name: "london royal place tour",
     info:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, iusto temporibus illum quae delectus et? Sequi sapiente aliquid corporis nisi?",
@@ -26,7 +26,7 @@ export const tourData = [
   {
     id: 4,
     city: "tokyo",
-    img: "./img/tokyo.jpg",
+    img: "/img/tokyo.jpg",
     name: "tokyo sushi tour",
     info:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, iusto temporibus illum quae delectus et? Sequi sapiente aliquid corporis nisi?",
