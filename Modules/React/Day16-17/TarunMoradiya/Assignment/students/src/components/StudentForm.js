@@ -57,7 +57,7 @@ export default function StudentForm(props) {
         const mother = res.data.mother;
         const father = res.data.father;
         setEditItem(true);
-        setId(student._id);
+        setId(res.data._id);
 
         setStudent({
           firstName: res.data.firstName,
@@ -71,9 +71,9 @@ export default function StudentForm(props) {
           country: res.data.country,
           email: res.data.email,
           pin: res.data.pin,
-          img: res.data.img,
+          img: { file: res.data.img },
           collegeName: res.data.collegeName,
-          collegeLogo: res.data.collegeLogo,
+          collegeLogo: { file: res.data.collegeLogo },
           referenceDetail: res.data.refDetail,
           referenceThrough: res.data.refThrough,
           addr: res.data.addr,
