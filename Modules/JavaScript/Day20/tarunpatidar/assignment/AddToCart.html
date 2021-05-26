@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Add To Cart</title>   
+</head>
+<body>
+    <div class="container bg-info my-5">
+        <div class="row">
+            <div class="col-2 border border-dark">ProductID</div>
+            <div class="col-3 border border-dark">ProductName</div>
+            <div class="col-2 border border-dark">Price</div>
+            <div class="col-1 border border-dark">Quantity</div>
+            <div class="col-3 border border-dark"></div>
+            <div class="col-1 border border-dark"></div>
+        </div>
+        <div class="row" id="click1">
+            <div class="col-2 border border-dark" id="1">1</div>
+            <div class="col-3 border border-dark" id="2">Cheese</div>
+            <div class="col-2 border border-dark" id="3">100</div>
+            <div class="col-1 border border-dark" id="4">1</div>
+            <div class="col-3 border border-dark"><input class="my-2 py-0 bg-success" onclick="getproduct(click1)" type="button" value="Add to Cart"></div>
+            <div class="col-1 border border-dark"></div>
+        </div>
+        <div class="row" id="click2">
+            <div class="col-2 border border-dark" id="5">2</div>
+            <div class="col-3 border border-dark" id="6">Pen</div>
+            <div class="col-2 border border-dark" id="7">150</div>
+            <div class="col-1 border border-dark" id="8">2</div>
+            <div class="col-3 border border-dark"><input class="my-2 py-0 bg-success" onclick="getproduct(click2)" type="button" value="Add to Cart"></div>
+            <div class="col-1 border border-dark"></div>
+        </div>
+        <div class="row" id="click3">
+            <div class="col-2 border border-dark" id="9">3</div>
+            <div class="col-3 border border-dark" id="10">Butter</div>
+            <div class="col-2 border border-dark" id="11">100</div>
+            <div class="col-1 border border-dark" id="12">1</div>
+            <div class="col-3 border border-dark"><input class="my-2 py-0 bg-success" onclick="getproduct(click3)" type="button" value="Add to Cart"></div>
+            <div class="col-1 border border-dark"></div>
+        </div>
+        <div class="row" id="click4">
+            <div class="col-2 border border-dark" id="13">4</div>
+            <div class="col-3 border border-dark" id="14">Pencil</div>
+            <div class="col-2 border border-dark" id="15">10</div>
+            <div class="col-1 border border-dark" id="16">1</div>
+            <div class="col-3 border border-dark"><input class="my-2 py-0 bg-success" onclick="getproduct(click4)" type="button" value="Add to Cart"></div>
+            <div class="col-1 border border-dark"></div>
+        </div>
+    </div>
+
+    <div class="container bg-dark text-center" id="click5">
+        <input type="button" class="my-3 py-2 bg-primary" onclick="getproduct(click5)" value="Summary">
+    </div>
+    <script src="./cart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

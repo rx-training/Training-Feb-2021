@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .blue{
+            background-color: blue;
+            color: white;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(
+            function(){
+                $("h1").css({"border":"1px solid black"});
+                $("h1").click(function()
+                {
+                    $("h1").css({"background-color":"yellow"});
+                });
+                $("p").click(function()
+                {
+                    // alert($("p").text());
+                    //alert($(this).text());
+                    alert($(this).html());
+                })
+                $("#learning").text("Learning Id,class and element selectors")
+
+                $(".green").css({"background":"green","color":"white"});
+
+                $("[type = 'button']").click(function()
+                {
+                    $("#learning").attr("class","blue");
+                })
+                $("#btnAdd").click(function()
+                {
+                    var a =  $("#num1").val();
+                    var b = $("#num2").val();
+                    var c = parseInt(a) + parseInt(b);
+                    $("#result").val("Addition is :" + c);
+                    $("#result1").html("<font color='green'> Addition is :" + c + "</font>");
+                    $("#result1").toggle();
+                })
+                city1 = "";
+                $("#Display").click(function()
+                {
+                    $("#city li").each(
+                        function(index,element)
+                        {
+                            //alert($(element).text());
+                            city1 += $(element).text()+ ',';
+                        }
+                    )
+                    var city3 = city1.slice(0,25);
+                    $("#city2").html(city3).css({"color":"green"}); 
+                })
+
+            }
+        );
+    </script>
+</head>
+<body>
+    <h1 class="green">Learning JQuery</h1>
+
+    <p class="green">
+        <b>Learning selectors</b>
+    </p>
+    <p id="learning">
+        <b>Element Selector,Id selector and class selector</b>
+    </p>
+
+    <h2 class="green">Learning SQL</h2>
+
+    <input type="button" value="click me">
+
+    <form>
+        Enetr first number <input type="text" id="num1"><br>
+        Enetr second number <input type="text" id="num2"><br>
+        <input type="text" id="result" disabled>
+        <p id="result1"></p>
+
+        <input type="button" id="btnAdd" value="Add">
+    </form>
+
+    <input type="button" id="Display" value="Display">
+    <ul id="city">
+        <li>Mumbai</li>
+        <li>Ahmedabad</li>
+        <li>Vadodara</li>
+    </ul>
+
+    <p id="city2"></p>
+</body>
+</html>

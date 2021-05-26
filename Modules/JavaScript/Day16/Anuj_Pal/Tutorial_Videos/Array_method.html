@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="demo">
+        write the array content here
+    </p>
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo").innerHTML = fruits.toString();
+    </script>
+    <script>
+        function show() {
+            for (var i = 0; i < fruits.length; i++) {
+                document.write("Element " + i + " contains: " + fruits[i] + "<br />");
+            }
+
+        }
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo").innerHTML = fruits.join(" * ");
+        var x = fruits.pop();
+        document.write(x);
+        fruits.push("kiwi");   
+        show();
+        
+        fruits.shift();
+        show();
+        fruits.unshift("lemon");
+        show();
+        delete fruits[0];
+        show();
+        fruits.splice(2, 2, "Lemon", "Kiwi");
+        show();
+        var veg=["brinjal","potato","chilli"]
+        var concat =fruits.concat(veg);
+    
+    </script>
+
+
+</body>
+
+</html>

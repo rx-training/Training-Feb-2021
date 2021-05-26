@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Responsive menu list</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <style>
+        
+        thead {color: green;}
+        tbody {color: blue;}
+        tfoot {color: red;}
+        
+        table, th, td {
+          border: 1px solid black;
+          vertical-align: middle;
+          border-collapse: collapse;
+        }
+        th,
+        td {
+            padding: 9px;
+            text-align: center;
+        }
+        table {
+            width: 60%;
+           
+            background-color: #f7f8fc;
+        }
+        table {
+            text-align: center;
+        }
+        h1{
+            font-style: italic;
+          }
+          tbody, thead, tfoot{
+              font-weight: bold;
+          }
+          table, th, td, tr{
+         border: 2px solid powderblue;
+         margin: 10px;
+          }
+          .table {
+            border:"1px solid black";
+            padding:  5px; 
+            margin-left: 25px; 
+            
+            height: 200px;
+             width: 350px;
+             position: absolute;
+             top: 250px;
+             text-align: left;
+          }
+
+        </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <h2><u>My Training Works</u></h2><br>
+            <h2><u>Radix Web</u></h2>
+           
+            <div id="parth"><img src="../parth.PNG" style="height: 112px; padding-left: 10px;"></div>
+        </div>
+        <div id="nav">
+            <a href="../menulist.html" target="_self">Html</a>
+            <a href="../css.html" target="_self">CSS</a>
+            <a href="https://www.cushahuniversity.ac.in/contact_us.php" target="_self">Bootstrap</a>
+        </div>
+        <div id="container">
+            <div id="left"> <p class="head">Html Works</p><hr color="black"><br><br>
+                <table class="table" style="margin-top: 0px;">
+                    <tr>
+                        <td>
+            <ul>
+               <li class="leftdiv" style="text-align: center;">Day 1
+               </ul></td>
+            </tr>
+            <tr>
+                <td>
+                <li class="leftdiv">Assighnment
+                    <ul>
+                        <li> <a href="../day1/employee.html">Employee </a></li>
+                    </ul>
+                 </li>
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                    <li class="leftdiv">Practices:-</li>
+                    <ul>
+                        <li><a href="../day1/article.html">article news</a></li>
+                        <li><a href="../day1/HR.html">Hr manager list</a></li>
+                        
+                        <li><a href="../day1/duplogin.html">Login Form</a></li>
+                        <li><a href="../day1/studentcard.html">student report card</a></li>
+                     
+                    </ul>
+                </td>
+                </tr>
+               </ul>
+            </li>
+
+             
+
+            </ul>
+        </table>
+            
+            </div>
+            <div id="right" style="overflow-y: scroll; overflow-x: scroll;">
+                
+                <center>
+                    <h1><u>C.U.Shah University</u></h1>
+                    <h1>Student Report Card</h1><br>
+                    <h1>Detail Information:</h1>
+              
+                
+    <table border="1px">
+        <tr>
+            <td>Name:</td>
+            <td>Parth J Shah</td>
+        </tr>
+        <tr>
+            <td>Enrollment no:</td>
+            <td>17TE403004</td>
+        </tr>
+        <tr> 
+            <td>Year of Passing:</td>
+            <td>2020</td>
+        </tr>
+    </table>
+    <h1> Report card</h1>
+  
+        <table border="1px">
+            <thead>
+              <tr>
+                <th>Sr.no</th>
+                <th>Subject Name</th>
+                <th>Grades</th>
+              <tr>  
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Computer Graphics</td>
+                    <td>A1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Fundamentals of Web Designing </td>
+                    <td>A2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Android Application</td>
+                    <td>B1</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Java</td>
+                    <td>B2</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>service Oriented Architecture</td>
+                    <td>A1</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Maths 3</td>
+                    <td>A2</td>
+                </tr>
+
+            </tbody>
+        <tfoot>
+          <tr>
+            <td>CGPA: 8.86 </td>
+            <td>SGPA: 9.96 </td>
+            <td>Total No.Of Backlogs:0</td>
+          </tr>
+        
+    </table> 
+    <table border="no"> 
+        <tr padding="50px">
+            <td>Sigature of Head of department:         </td>
+            <td>Sigature of Head of exam department:    </td>
+        </tr>
+        <tr  padding="50px" margin="30px" width="100px">
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</center>
+    </div>
+           
+        </div>
+        <div id="footer">
+            <h1>Copyright by C.U.Shah University</h1>
+        </div>
+    </div>
+</body>
+</html>

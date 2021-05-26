@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>javascript</h1>
+    <p id="demo"></p>
+
+    <script>
+
+        // variable.......
+
+        var order = 10;
+        console.log(order);
+
+        var a = "hello";
+        console.log(a);
+
+        var b;
+        console.log(b);
+
+        c = 50;
+        console.log(c);
+
+        var d = 100;
+        console.log(typeof d);
+
+        var e = 100.50;
+        console.log(typeof e);
+
+        var f = "hi";
+        console.log(typeof f);
+
+        var g = {
+            oredr: "one",
+            ab: "two"
+        }
+        console.log(typeof g);
+
+        var h = true;
+        console.log(typeof h);
+
+        function abc(){}
+        console.log(typeof abc);
+
+        // fuction ...........
+
+        function xyz(){
+            console.log("hello");
+        }
+        xyz();
+
+        function abc(xz){
+            console.log(xz);
+        }
+        abc(20);
+
+        function abc(quantity , price){
+            console.log(quantity * price);
+        }
+        abc(2 , 4.00);
+
+        function abc(quantity , price){
+            return quantity * price;
+        }
+
+        var c = abc(20 , 2);
+        console.log(c);
+
+        var z = function(){
+            console.log("function");
+        }
+        z;
+        z();
+
+        // if-else and switch..............
+
+        var a = 20;
+        if(a > 10){
+            console.log("true");
+        }
+        else
+            consle.log("false");
+
+        var b = "yes";
+        var d;
+
+        switch(b){
+            case 'yes': d= "1"
+            break;
+            case 'no': d = "2"
+            break;
+            default: d="3" 
+        }
+        console.log(d);
+
+        // while and do-while............................
+ 
+        "use strict";
+        var p = 0;
+        while(p<3){
+            console.log(p);
+            p++;
+        }
+ 
+
+        // for loop ....
+        j = "";
+        for (var i = 0; i< 3 ; i++) {
+            j += i;
+        }
+        
+        document.getElementById("demo").innerHTML = j;
+
+        var cd=10;
+        var ac=20;
+
+        console.log(cd + ac);
+        console.log(ac-cd);
+        console.log(cd*ac);
+        console.log(cd / 2);
+        console.log(ac%cd);
+
+        ++cd;
+        console.log(cd);
+        
+        var t = -cd;
+
+        console.log(t);
+
+        var t = parseInt('1010',2);
+        var j = parseInt('0110',2);
+
+        k = t & j;
+        console.log(k.toString(2));
+
+        var aj = true && true;
+        var bj = true || false;
+        console.log(aj);
+        console.log(bj);
+
+        var obj={
+            name: "hii"
+        };
+        var obj1 = obj;
+        obj1.name="byy";
+
+        console.log(obj1.name);
+
+        var a = [0,1,2];
+        var i;
+        for(i=0;i<a.length;i++){ console.log(i);}
+
+        var a = [1,2,3];
+        console.log(a.join('|'));
+        console.log(a[2]);
+    </script>
+</body>
+</html>

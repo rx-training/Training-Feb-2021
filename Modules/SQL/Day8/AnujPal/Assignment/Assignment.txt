@@ -1,0 +1,152 @@
+					Fill In The Blanks
+
+
+1) The value of a primary key must be....
+Ans: Unique
+
+2) A foreign key works in conjunction with primary key or unique constraints to enforce
+____________ between table
+
+Ans: Refferential Integrity
+
+3) Add an index to one or more columns to speed up data ____________.
+
+Ans: Retrieval
+
+4) Values in a clustered index are ____________.
+
+Ans: Sorted
+
+					Multiple Choice:
+
+
+1. Which of the following is not a constraint?
+	a. CHECK
+	b. DEFAULT
+	c. UNIQUE
+	d. INDEX
+
+Ans: (D)
+
+2. Which of the following things can help speed data retrieval?
+	a. A DEFAULT constraint
+	b. A primary key constraint
+	c. A clustered index
+	d. A foreign key constraint
+
+Ans: (C)
+
+3. Which of the following statements is not true with regard to foreign keys?
+	a. A foreign key is a combination of one or more columns used to establish and enforce
+	   link between the data in two tables.
+	b. You can create a foreign key by defining a foreign key constraint when you create or
+	alter a table.
+	c. A foreign key enforces referential integrity by ensuring only valid data is stored.
+	d. A table can contain only one foreign key.
+
+Ans: (D)
+
+5. Consider using a clustered index when:
+	a. Columns contain a large number of distinct values
+	b. Columns are accessed sequentially
+	c. Columns undergo frequent changes
+	d. Queries return large result sets
+
+Ans:
+
+6. Which of the following could not be used as a primary key?
+	a. A Social Security number
+	b. An address
+	c. An employee number
+	d. The serial number of an electronic component
+
+Ans: (B)
+
+7. How many clustered indexes can you have for a database?
+	a. 1
+	b. 2
+	c. 4
+	d. 8
+
+Ans: (A)
+
+8. What is the name for the situation in which more than one columns act as a primary
+key?
+	a. Composite primary key
+	b. Escalating key
+	c. Foreign key
+	d. Constraint key
+
+Ans: (A)
+
+
+
+		Scenario 4-2: Comparing Clustered and Non-Clustered Indexes
+
+Answer:
+1) Cluster index is a type of index that sorts the data rows in the table on their key values whereas the Non-clustered index stores the data at one location and indices at another location.
+2) Clustered index stores data pages in the leaf nodes of the index while Non-clustered index method never stores data pages in the leaf nodes of the index.
+3) Cluster index doesn’t require additional disk space whereas the Non-clustered index requires additional disk space.
+4) Cluster index offers faster data accessing, on the other hand, Non-clustered index is slower.
+
+
+Scenario 4-3: Creating a Clustered Index
+	You are a database administrator for the AdventureWorks Corporation. You recently created
+	some databases, and you’ve just realized how large the databases will become in the future.
+	Therefore, you need to create a new clustered index to help with overall performance.
+	Using the SSMS interface, what steps would you use to create a new clustered index on the
+	name column for the AdventureWorks database?
+
+Answer:
+
+		-->To create a clustered index by using Object Explorer<--
+
+Step-1) In Object Explorer, expand the table on which you want to create a clustered index.
+
+Step-2) Right-click the Indexes folder, point to New Index, and select Clustered Index....
+
+Step-3) In the New Index dialog box, on the General page, enter the name of the new index in the Index name box.
+
+Step-4) Under Index key columns, click Add....
+
+Step-5) In the Select Columns fromtable_name dialog box, select the check box of the table column to be added to the clustered index.
+
+Step-6) Click OK.
+
+Step-7) In the New Index dialog box, click OK.
+
+
+			-->To create a clustered index by using the Table Designer<--
+
+
+Step-1) In Object Explorer, expand the database on which you want to create a table with a clustered index.
+
+Step-2) Right-click the Tables folder and click New Table....
+
+Step-3) Create a new table as you normally would. For more information, see Create Tables (Database Engine).
+
+Step-4) Right-click the new table created above and click Design.
+
+Step-5) On the Table Designer menu, click Indexes/Keys.
+
+Step-6) In the Indexes/Keys dialog box, click Add.
+
+Step-7) Select the new index in the Selected Primary/Unique Key or Index text box.
+
+Step-8) In the grid, select Create as Clustered, and choose Yes from the drop-down list to the right of the property.
+
+Step-9) Click Close.
+
+Step-10) On the File menu, click Savetable_name.
+
+
+
+	Scenario 4-4: Creating a Clustered Index Using Transact-SQL
+As a database administrator, you need to increase the performance of the PlanetsID table, so
+you decide to create a clustered index. But instead of using SSMS, you decide to use queries
+to perform this task. Therefore, you create a new PlanetsID database using the following
+commands within SMMS.
+
+Ans:
+CREATE CLUSTERED INDEX i1 on PlanetsID(ID);
+

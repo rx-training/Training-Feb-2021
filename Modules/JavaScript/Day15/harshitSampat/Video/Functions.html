@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+<p id="demo">Click the button to change the text in this paragraph.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Hello World";
+}
+</script>
+
+<script>
+function printOrder(orderID){
+console.log('Printing Order '+ orderID);
+}
+printOrder("9002")    
+</script>
+<script>
+print_order(9003)
+function print_order(orderID){
+console.log('printing order is'+orderID);
+}
+</script>
+
+<script>
+        function calcTotalPrice(quantity,price){
+            console.log('Total price:'+(quantity*price));
+        }
+        calcTotalPrice(24,12.00)
+</script>
+
+<script>
+        function calcTotalPrice(quantity,price){
+            console.log('Total price:'+(quantity*price));
+            
+        };
+       var totalPrice = calcTotalPrice(11,11.00);
+       console.log(totalPrice);
+
+        
+       var totalPrice = calcTotalPrice(11,15.00);
+       console.log(totalPrice);
+</script>
+
+
+<script>
+    function getorder(){
+        //nothing return
+    };
+    var order = getorder();
+    console.log(order);
+
+</script>
+
+<Script>
+    var activateOrder = function(){
+            console.log("Order activated");
+    };
+    console.log(typeof activateOrder);   
+</Script>
+
+<Script>
+    var activateOrder = function(){
+            console.log("Order activated");
+    };
+    activateOrder(); 
+</Script>
+
+
+</body>
+</html>

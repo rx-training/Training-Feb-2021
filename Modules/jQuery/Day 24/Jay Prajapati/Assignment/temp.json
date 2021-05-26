@@ -1,0 +1,41 @@
+{"code":200,"meta":
+    {"pagination":
+        {
+            "total":1337,"pages":67,"page":1,"limit":20
+        }
+    },
+    "data":[
+        {
+            "id":1,"name":"Gurdev Dwivedi","email":"dwivedi_gurdev@oconnell.co","gender":"Female","status":"Active","created_at":"2021-03-02T03:50:03.638+05:30","updated_at":"2021-03-02T03:50:03.638+05:30"
+        },
+        {
+            "id":2,"name":"Amb. Charak Gill","email":"amb_charak_gill@heaney.biz","gender":"Male","status":"Active","created_at":"2021-03-02T03:50:03.650+05:30","updated_at":"2021-03-02T03:50:03.650+05:30"
+        },
+        {
+            "id":3,"name":"Sumitra Patil","email":"sumitra_patil@schowalter.name","gender":"Female","status":"Inactive","created_at":"2021-03-02T03:50:03.685+05:30","updated_at":"2021-03-02T03:50:03.685+05:30"
+        },
+        {
+            "id":6,"name":"Chandira Kaniyar VM","email":"chandira_kaniyar_vm@kuhlman.org","gender":"Male","status":"Active","created_at":"2021-03-02T03:50:03.720+05:30","updated_at":"2021-03-02T03:50:03.720+05:30"
+        },
+        {
+            "id":8,"name":"Goswamee Dwivedi","email":"goswamee_dwivedi@dickens.biz","gender":"Male","status":"Active","created_at":"2021-03-02T03:50:03.764+05:30","updated_at":"2021-03-02T03:50:03.764+05:30"
+        },
+        {
+            "id":9,"name":"Daevi Sethi","email":"daevi_sethi@anderson-weimann.io","gender":"Female","status":"Inactive","created_at":"2021-03-02T03:50:03.773+05:30","updated_at":"2021-03-02T03:50:03.773+05:30"
+        },
+        {
+            "id":12,"name":"Gabriela_moura","email":"gabi@moura.com","gender":"Male","status":"Inactive","created_at":"2021-03-02T03:50:03.826+05:30","updated_at":"2021-03-02T03:58:15.715+05:30"
+        },
+        {
+            "id":13,"name":"Parvati Nehru","email":"parvati_nehru@williamson.com","gender":"Female","status":"Inactive","created_at":"2021-03-02T03:50:03.830+05:30","updated_at":"2021-03-02T03:50:03.830+05:30"
+        },
+        {
+            "id":14,"name":"Adheesh Adiga","email":"adheesh_adiga@conn.org","gender":"Male","status":"Inactive","created_at":"2021-03-02T03:50:03.841+05:30","updated_at":"2021-03-02T03:50:03.841+05:30"
+        },
+        {
+            "id":16,"name":"Dipali Singh","email":"singh_dipali@johnston.info","gender":"Male","status":"Inactive","created_at":"2021-03-02T03:50:03.892+05:30","updated_at":"2021-03-02T03:50:03.892+05:30"
+        },
+        {
+            "id":17,"name":"Lakshmi Agarwal","email":"lakshmi_agarwal@littel-koelpin.com","gender":"Female","status":"Active","created_at":"2021-03-02T03:50:03.901+05:30","updated_at":"2021-03-02T03:50:03.901+05:30"
+        },
+        {"id":18,"name":"Gopee Namboothiri JD","email":"jd_gopee_namboothiri@murray.biz","gender":"Female","status":"Inactive","created_at":"2021-03-02T03:50:03.920+05:30","updated_at":"2021-03-02T03:50:03.920+05:30"},{"id":19,"name":"Devdan Pillai","email":"pillai_devdan@schuster-gislason.info","gender":"Female","status":"Active","created_at":"2021-03-02T03:50:03.945+05:30","updated_at":"2021-03-02T03:50:03.945+05:30"},{"id":20,"name":"Bhagwanti Johar","email":"johar_bhagwanti@greenholt-mueller.io","gender":"Male","status":"Active","created_at":"2021-03-02T03:50:03.970+05:30","updated_at":"2021-03-02T03:50:03.970+05:30"},{"id":21,"name":"Allasani Peddana Alterado","email":"allasani.peddana@15ce.com","gender":"Female","status":"Active","created_at":"2021-03-02T03:50:03.980+05:30","updated_at":"2021-03-02T05:22:48.079+05:30"},{"id":23,"name":"Kumar Bandopadhyay","email":"bandopadhyay_kumar@wiegand.name","gender":"Male","status":"Active","created_at":"2021-03-02T03:50:04.010+05:30","updated_at":"2021-03-02T03:50:04.010+05:30"},{"id":24,"name":"Ms. Prem Tandon","email":"prem_tandon_ms@bartell-haag.co","gender":"Female","status":"Inactive","created_at":"2021-03-02T03:50:04.026+05:30","updated_at":"2021-03-02T03:50:04.026+05:30"},{"id":28,"name":"Marut Khan DO","email":"khan_marut_do@dach.io","gender":"Female","status":"Inactive","created_at":"2021-03-02T03:50:04.068+05:30","updated_at":"2021-03-02T03:50:04.068+05:30"},{"id":29,"name":"Atmaja Dutta","email":"dutta_atmaja@graham-hauck.org","gender":"Female","status":"Inactive","created_at":"2021-03-02T03:50:04.088+05:30","updated_at":"2021-03-02T03:50:04.088+05:30"},{"id":30,"name":"Mrs. Dwaipayan Butt","email":"mrs_dwaipayan_butt@walker.io","gender":"Female","status":"Inactive","created_at":"2021-03-02T03:50:04.097+05:30","updated_at":"2021-03-02T03:50:04.097+05:30"}]}

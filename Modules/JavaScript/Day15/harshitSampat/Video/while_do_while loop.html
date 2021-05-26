@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var lineItemCount = 3;
+        var CurrentItem = 0;
+        while(CurrentItem < lineItemCount){
+            console.log("item: "+CurrentItem);
+            CurrentItem++;
+        }
+    </script>
+    
+    <script>
+        var lineItemCount = 3;
+        var CurrentItem = 0;
+        do{
+            console.log("item: "+CurrentItem);
+            CurrentItem++;
+        }
+        
+        while(CurrentItem < lineItemCount);
+    </script>
+
+<script>
+    var lineItemCount = 3;
+    var CurrentItem = undefined;
+    do{
+        console.log("item: "+CurrentItem);
+        CurrentItem++;
+    }
+    
+    while(CurrentItem < lineItemCount);
+</script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Function</title>
+</head>
+<body>
+
+    <div class="col-md-8 col-lg-6 my-5 mx-auto">
+        <div class="card border border-dark">
+            <div class="card-header bg-secondary text-center">
+                <h4 class="text-white">Function Expression - Area of Circle</h3>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="radius">Enter radius of circle</label>
+                        <input type="number" class="form-control" id="radius" name="radius">
+                        <p id="errormsg1" class="alert alert-danger my-2" style="display: none;">Input is not valid...</p>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="areaCircle(radius)">Find Area of Circle</button>
+                    <p class="alert alert-success alert-dismissible mt-2 py-2" id="circlearea" style="display: none;"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8 col-lg-6 my-5 mx-auto">
+        <div class="card border border-dark">
+            <div class="card-header bg-secondary text-center">
+                <h4 class="text-white">Function Constructor - Area of Rectangle</h3>
+            </div>
+            <div class="card-body">
+                <form class="form-row">
+                    <div class="form-group col-sm-6">
+                        <label for="length">Enter length</label>
+                        <input type="number" class="form-control" id="length" name="length">
+                        <p id="errormsg2" class="alert alert-danger my-2" style="display: none;">Input is not valid...</p>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="width">Enter width</label>
+                        <input type="number" class="form-control" id="width" name="width">
+                        <p id="errormsg3" class="alert alert-danger my-2" style="display: none;">Input is not valid...</p>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="rectArea(length,width)">Find Area of Rectangle</button>
+                    
+                </form>
+                <p class="alert alert-success alert-dismissible mt-2 py-2" id="rectarea" style="display: none;"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8 col-lg-6 my-5 mx-auto">
+        <div class="card border border-dark">
+            <div class="card-header bg-secondary text-center">
+                <h4 class="text-white">Function Hoisting</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <p>Function hoisting is javascript's default behavior of moving declarations to the top.</p>
+                    <div class="col-md-6">
+                        <p>
+                            //Example 1:<br><br>
+                            //Declaring Function <br>
+                            function myFunction(){<br>
+                                console.log("Hello world!");<br>
+                            }<br><br>
+                            //calling function<br>
+                            myFunction();<br>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>
+                            //Example 2:<br><br>
+                            //calling function<br>
+                            myFunction2();<br><br>
+                            //Declaring Function <br>
+                            function myFunction2(){<br>
+                                console.log("Hello world!");<br>
+                            }<br>
+                            
+                        </p>
+                    </div>
+                </div>
+                <p>Both example will give same output.</p>
+                <button type="button" class="btn btn-primary" onclick="checkHoisting()">See output</button>
+                <p class="alert alert-success mt-2 py-2" id="hoisting1"></p>
+                <p class="alert alert-success mt-2 py-2" id="hoisting2"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8 col-lg-6 my-5 mx-auto">
+        <div class="card border border-dark">
+            <div class="card-header bg-secondary text-center">
+                <h4 class="text-white">Employee object using Function</h3>
+            </div>
+            <div class="card-body">
+                <button type="button" class="btn btn-primary" onclick="createEmployee()">Create Employee</button>
+                <p class="alert alert-success mt-2 py-2" id="empobj"></p>
+               
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-8 col-lg-6 my-5 mx-auto">
+        <div class="card border border-dark">
+            <div class="card-header bg-secondary text-center">
+                <h4 class="text-white">Using Function Apply pass employee object to a function</h3>
+            </div>
+            <div class="card-body">
+                <button type="button" class="btn btn-primary" onclick="createEmployeeApply()">Apply</button>
+                <p class="alert alert-success mt-2 py-2" id="empobj2"></p>
+               
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8 col-lg-6 my-5 mx-auto">
+        <div class="card border border-dark">
+            <div class="card-header bg-secondary text-center">
+                <h4 class="text-white">Closure</h3>
+            </div>
+            <div class="card-body">
+                <p>Javascript closure enables a function to have "private" variables.</p>
+                <p>A closure is a function having access to the parent scope, even after the parent function has closed.</p>
+               
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="../assets/js/day19Script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        /* ------------------ addition ----------------- */
+        var total = 5 + 3;
+        console.log(total);
+
+        var total = 5.1 + 3.3;
+        console.log(total);
+
+        var total = 5.1 + 3.3;
+        console.log(total.toFixed(2));
+
+        var id = "PRD" + "X99";
+        console.log(id);
+
+        var id = "PRD" + 2000;
+        console.log(id);
+
+        var id =  2000 + "PRD";
+        console.log(id);
+
+        var id = "2000" + "400";
+        console.log(id);
+
+        var id = 2000 + "400";
+        console.log(id);
+
+        var id = 2000 + undefined;
+        console.log(id);
+
+        var id = "PRD" + undefined;
+        console.log(id);
+
+        var id = 2000 + null;
+        console.log(id);
+
+        var id = "PRD" + null;
+        console.log(id);
+
+        var id = 2000 + NaN;
+        console.log(id);
+
+        var id = "PRD" + NaN;
+        console.log(id);
+
+
+        /* ------------------ substraction ----------------- */
+
+        var total = 30 - 20;
+        console.log(total);
+
+        var total = 3.8 - 2.1;
+        console.log(total);
+
+        var total = 3.8 - 2.1;
+        console.log(total.toFixed(3));
+
+        var total = "300" - "200";
+        console.log(total);
+
+        var total = "PRD300" - "ITEM200";
+        console.log(total);
+
+        var total = 300 - undefined;
+        console.log(total);
+
+        var total = 300 - null;
+        console.log(total);
+
+        var obj = {
+            valueOf : function (){ return 100; }
+        };
+        var total = 300 - obj;
+        console.log(total);
+
+        var total = 300 - NaN;
+        console.log(total);
+
+        var total = 300 - "";
+        console.log(total);
+
+        /* ------------------ multiplication, division ,moduls----------------- */
+
+        var total = 9 * 3;
+        console.log(total);
+
+        var total = 1.1 * 1.1;
+        console.log(total);
+
+        var total = 1.1 * 1.1;
+        console.log(total);
+        if(total != 1.21)
+            console.log('big problem..');
+
+        var total = 1.1 * 1.1;
+        console.log(total);
+        if(total.toFixed(2) == 1.21)
+            console.log('fixed..');
+
+        var total = 20 * NaN;
+        console.log(total);
+
+        var total = 20 * undefined;
+        console.log(total);
+
+        var total = 20 * null;
+        console.log(total);
+
+        var obj = {
+            valueOf : function(){
+                return 100;
+            }
+        };
+        var total = 4 * obj;
+        console.log(total);
+
+        var total = 4 * Infinity;
+        console.log(total);
+
+        var total = -4 * Infinity;
+        console.log(total);
+
+        var total = 4 * "XYZ";
+        console.log(total);
+
+        var total = 9 / 0;
+        console.log(total);
+
+        var total = -9 / 0;
+        console.log(total);
+
+        var total = 9 / "3";
+        console.log(total);
+
+        var total = 9 % 4;
+        console.log(total);
+
+        var total = 9 % "     4    ";
+        console.log(total);
+
+         /* ------------------unary operators----------------- */
+
+        var level = 5;
+        ++level;
+        console.log(level);
+
+        var level = 5;
+        level++;
+        console.log(level);
+
+        var level = 5;
+        var nextlevel = ++level;
+        console.log(nextlevel);
+
+        var level = 5;
+        var nextlevel = level++;
+        console.log(nextlevel);
+
+        var level = 5;
+        var nextlevel = --level;
+        console.log(nextlevel);
+
+        var level = 5;
+        var nextlevel = level--;
+        console.log(nextlevel);
+
+        var level = 5;
+        var base = 10;
+        var nextlevel = level-- * base;
+        console.log(nextlevel);
+
+        var level = 5;
+        var base = 10;
+        var nextlevel = --level * base;
+        console.log(nextlevel);
+
+        var level1;
+        console.log(++level1);
+
+        var level1 = null;
+        console.log(++level1);
+
+        var value = 9;
+        value = +value;
+        console.log(value);
+
+        var value = -9;
+        value = +value;
+        console.log(value);
+
+        var value = 'calc';
+        value = +value;
+        console.log(value);
+
+        var value = 42;
+        value = -value;
+        console.log(value);
+
+        var value = -42;
+        value = -value;
+        console.log(value);
+
+        var value = 'calc';
+        value = -value;
+        console.log(value);
+
+
+        /* ------------------bitwise----------------- */
+
+        var num1 = parseInt('1010',2);
+        var num2 = parseInt('0110',2);
+        var total = num1 & num2;
+        console.log(total.toString(2));
+
+        var num1 = parseInt('1010',2);
+        var num2 = parseInt('0110',2);
+        var total = num1 | num2;
+        console.log(total.toString(2));
+
+        var num1 = parseInt('1010',2);
+        var num2 = parseInt('0110',2);
+        var total = num1 ^ num2;
+        console.log(total.toString(2));
+
+        var num1 = parseInt('0001',2);
+        num1 = num1 << 2;
+        console.log(num1.toString(2));
+
+        var num1 = parseInt('1000',2);
+        num1 = num1 >> 3;
+        console.log(num1.toString(2));
+
+        var num1 = -parseInt('1000',2);
+        num1 = num1 >> 3;
+        console.log(num1.toString(2));
+
+        var num1 = parseInt('1000',2);
+        num1 = num1 >>> 1;
+        console.log(num1.toString(2));
+
+        var num1 = -parseInt('1000',2);
+        num1 = num1 >>> 1;
+        console.log(num1.toString(2));
+
+
+        /* ------------------boolean----------------- */
+
+        var value = !true;
+        console.log(value);
+
+        var value = !99;
+        console.log(value);
+
+        var value = !0;
+        console.log(value);
+
+        var value = !"";
+        console.log(value);
+
+        var value = !"A";
+        console.log(value);
+
+        var value = !" ";
+        console.log(value);
+
+        var value2 = !new Object();
+        console.log(value2);
+
+        var value2 = !null;
+        console.log(value2);
+
+        var value2 = !undefined;
+        console.log(value2);
+
+        var value2 = !NaN;
+        console.log(value2);
+
+        var value2 = !!false;
+        console.log(value2);
+
+        var value2 = true && true;
+        console.log(value2);
+
+        var value2 = true && false;
+        console.log(value2);
+
+        var value2 = false && true;
+        console.log(value2);
+
+        var value2 = false && false;
+        console.log(value2);
+
+        var obj1 = {
+            calc : 'Logical AND'
+        };
+        var value3 = obj1 && 99;
+        console.log(value3);
+
+        var obj1 = {
+            calc : 'Logical AND'
+        };
+        var value3 = obj1 && 0;
+        console.log(value3);
+
+        var obj1 = {
+            calc : 'Logical AND'
+        };
+        var value3 = obj1 && obj1;
+        console.log(value3);
+
+        var obj1 = {
+            calc : 'Logical AND'
+        };
+        var value3 = true && obj1;
+        console.log(value3);
+
+        var value = null && 99;
+        console.log(value);
+
+        var value = "Z" && null;
+        console.log(value);
+
+        var value = "Z" && undefined;
+        console.log(value);
+
+        var value = "Z" && NaN;
+        console.log(value);
+
+        var value = false && productid;
+        console.log(value);
+
+        var productId1 = 5;
+        var value4 = false && ++productId1;
+        console.log(productId1);
+
+        var value = true || true ;
+        console.log(value);
+
+        var value = false || true ;
+        console.log(value);
+
+        var value = false || false ;
+        console.log(value);
+
+        var obj2 = {
+            calc : 'Logical OR'
+        };
+        var value5 = obj2 || 99;
+        console.log(value5);
+
+        var obj2 = {
+            calc : 'Logical OR'
+        };
+        var value5 = false || 99;
+        console.log(value5);
+
+        var defaultsettings = {
+            who : 'default'
+        };
+        var usersettings = {
+            who : 'user'
+        };
+        var value6 = usersettings || defaultsettings;
+        console.log(value6);
+
+        var defaultSettings = {
+            who : 'default'
+        };
+        var userSettings;
+        var value7 = userSettings || defaultSettings;
+        console.log(value7);
+
+
+    </script>
+
+</body>
+</html>

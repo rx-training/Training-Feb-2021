@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking point exapmle</title>
+    <style>
+      .point{
+          border: 2px solid black;
+          padding: 30px;
+          text-align: center;
+        font-size: 72px;
+        background-color: lightslategrey;
+        
+      }
+      @media only screen and (max-width:300px){
+          #box-1{
+             background-color: gray;
+          }
+        }
+
+        {}
+          @media(min-width:300px){
+          #box-1{
+             background-color: rgb(24, 54, 85);
+          }
+        }
+        @media(min-width:500px){
+          #box-1{
+             background-color: rgb(37, 16, 87);
+          }
+        }
+        @media(min-width:800px){
+          #box-1{
+             background-color: rgb(209, 135, 66);
+          }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="point" id="box-1">I am a Mobile</div>
+   
+</body>
+</html>

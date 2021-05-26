@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrange flexbox item in right to left direction</title>
+    <style>
+        .container{
+            color:cornsilk;
+            font-size: larger;
+            height:350px;
+            width : 100%;
+            border : 2px solid black;
+            display:flex;
+            flex-direction:row-reverse;
+        
+            flex-wrap: wrap;
+            justify-content: center;
+          
+           
+            background-color: rgb(240, 141, 61);
+        
+        }
+        
+        .item{
+            width :200px;
+            height :300px;
+            background-color: rgb(104, 102, 93);
+            border: 2px solid rgb(231, 28, 28);
+            margin: 10px;
+            padding : 3px;
+            
+        
+        
+        }
+        #item-1{
+            flex-grow: 2;
+        
+        }
+        #item-2{ flex-grow: 3
+            
+    
+            ;
+        flex-shrink: 3;}
+        #item-3{
+            order:40;
+        }
+        h1{
+            text-align: center;
+            background-color: rgb(96, 235, 91);
+        }
+        p{
+            font-size: xx-large;
+            font-style: italic;
+            text-align: center;
+        }
+            </style>
+        </head>
+        <body>
+            <h1> <u>This is a flex box which contains flex items and its arrange in a right to left direction</u> </h1>
+            <div class="container">
+                <div class="item" id="item-1">Box1</div>
+                <div class="item" id="item-2">Box2</div>
+                <div class="item" id="item-3">Box3</div>
+                
+            </div>
+            <p> This web page conatins use of all css flex tags and attributes as well as their properties. </p>
+        </body>
+        </html>

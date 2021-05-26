@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+        .con{
+            color: white;
+            padding: 20px;
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            background: rgb(41, 124, 124);
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $("select").change(function(){
+                $(this).find("option:selected").each(function(){
+                    var optionValue = $(this).attr("value");
+                    if(optionValue){
+                        $(".con").not("." + optionValue).hide();
+                        $("." + optionValue).show();
+                    } else{
+                        $(".con").hide();
+                    }
+                });
+            }).change();
+        });
+    </script>
+
+</head>
+<body>
+    
+
+    <div class="form-group col-md-6 p-5 m-5">
+        <div>
+        <label for="location">Select Country</label>
+        <select id="location" class="custom-select">
+            <option value="Select">Please Select</option>
+            <option value="India">India</option>
+            <option value="Newzealand">New Zealand</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Russia">Russia</option>
+            <option value="Australia">Australia</option>
+        </select>   
+        </div>
+        <div class="Select con"> <h4>Country List :</h4>
+                                                 <strong>India</strong><br> 
+                                                 <strong>New Zealand</strong><br>
+                                                 <strong>Malaysia</strong><br>
+                                                 <strong>Russia</strong><br>
+                                                 <strong>Australia</strong><br></div>
+        <div class="India con">You have selected <strong>India</strong> </div>
+        <div class="Newzealand con">You have selected <strong>New Zealand</strong> </div>
+        <div class="Malaysia con">You have selected <strong>Malaysia</strong> </div>
+        <div class="Russia con">You have selected <strong>Russia</strong> </div>
+        <div class="Australia con">You have selected <strong>Australia</strong> </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container bg-dark text-white text-center" style="width: 40%; height: 400px; padding-top: 130px; margin-top: 100px; ">
+        <legend>Date (DD-MM-YYYY)</legend>
+        <label for="date">Enter Date:</label>
+        <input type="text" id="demo1" value=" "><br><br>
+
+        <button class="btn btn-primary py-0 mb-2" onclick=date()>submit</button>
+    </div>
+
+    <script>
+        function date(){
+            var a = document.getElementById("demo1").value;
+            var b = a.search("-"); 
+            if (b != -1){
+                var c = a.trim().split("-");
+                if ( c[0].length == 2 && c[1].length == 2 && c[2].length == 4){
+                    var d = /[0-2][1-9]|[1-3][0]/g;
+                    var cd = c[0].match(d);
+                    var e = /[0][1-9]|[1][0-2]/g;
+                    var ef = c[1].match(e);
+                    console.log(ef);
+                    var f = /[0-9][0-9][0-9][1-9]|[1-9][0-9][0-9][0-9]/g;
+                    var dc = c[2].match(f);
+                    var g = /[0][2]/g;
+                    var gc = c[1].match(g);
+                    var h = /[0-2][1-9]|[1][0]|[2][0]/g;
+                    var hc = c[0].match(h);
+                    var i = /[0-2][1-8]|[1][0]|[2][0]/g;
+                    var ij = c[0].match(i);
+                    var j = c[2] % 4;
+                    var k = c[2] % 400;
+
+
+                    if(cd != null && ef != null && dc != null){
+                        if(j == 0){
+                            if(gc != null){
+                                if(hc != null){
+                                    alert("Date is valid");
+                                }
+                                else alert("Not valid date for Leap year");
+                            }
+                        }
+                        else if(k == 0){
+                            if(gc != null){
+                                if(hc != null){
+                                    alert("Date is valid");
+                                }
+                                else alert("Not valid date for Leap year");
+                            }
+                        }
+                        else{
+                            if(gc != null){
+                                if(ij != null){
+                                    alert("Date is valid");
+                                }
+                                else alert("Not valid date");
+                            }
+                        }
+                    }
+                    else {alert("Date is not valid");}
+                }
+                else {alert("Please enter valid date");}
+            }
+            else {alert("Please enter in DD-MM-YYYY format");}
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+</body>
+</html>

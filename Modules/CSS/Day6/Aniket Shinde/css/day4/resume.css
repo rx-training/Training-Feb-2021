@@ -1,0 +1,27 @@
+
+#resume-section h1 {
+    background-color: #07afa4;
+    padding: 5px 0px 0px 5px;
+    color: white;
+    text-align: center;
+}
+#resume-section  .topic{
+    margin-left: 15px;
+    padding-top: 10px;
+    color: #07afa4;
+    border-bottom: 5px solid #07afa4;
+}
+#resume-section .resume-header{
+    background-color: #07afa4;
+}
+#resume-section nav li a:hover {
+    text-decoration: underline;
+    color: white;
+}
+#resume-section nav li a {
+    color: white;
+}
+#resume-section img{
+    height: auto;
+    width: 100%;
+}

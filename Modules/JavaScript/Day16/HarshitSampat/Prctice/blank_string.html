@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<fieldset>
+    <legend>Empty or not</legend>
+    <h1>whether string is empty or not ?</h1>
+    <h3>"":</h3>&nbsp;
+    <p id="demo1"></p>
+    <h3>"abc": </h3>
+    <p id="demo2"></p>
+</fieldset>
+<fieldset>
+    
+    <script>
+        function ischeck(a){
+            if(a.length === 0){
+                return true;
+            }
+            else return false;
+        }
+
+        document.getElementById("demo1").innerHTML =  (ischeck(""));
+        document.getElementById("demo2").innerHTML = (ischeck("abc"));
+    </script>

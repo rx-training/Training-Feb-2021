@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="grid-container">
+  <div class="item1">
+  <header>
+<p><img src="devanglogo.jpg" alt="DEVANG-LOGO"  height= 150; width=250></p>  
+    <p><ul>
+            <li ><a href="website.html">HTML</a></li>
+            <li ><a href="css.html">CSS</a></li>
+            <li ><a href="bootstrap.html">BOOTSTRAP</a></li>
+          </ul> 
+        </p> 
+</header>
+
+  </div>
+  <div class="item2">
+    <button type="button" class="collapsible">Day 3</button>
+  <div class="content">
+      <button type="button" class="collapsible">Practice</button>
+      <div class="content">
+          <ul>
+            <li><a onclick="setUrlArticle()">Article tag</a></li>
+            <li><a onclick="setUrlHR()">HR</a></li>
+            <li><a onclick="setUrlReport()">Student Report Card</a></li>
+            <li><a onclick="setUrlLogin()">Login Form</a></li>
+            <li><a onclick="setUrlMenu()">Horizontal Menu</a></li>
+        
+          </ul>
+      </div>
+      <button type="button" class="collapsible">Assignment</button>
+      <div class="content">
+          <ul>
+              <li><a onclick="setUrlEmployeeForm()">Employee Details Form</a></li>
+          </ul>
+      </div>
+      <button type="button" class="collapsible">Video Task</button>
+      <div class="content">
+          <ul>
+              <li><a onclick="setUrlVideoTask1()">Task 1</a></li>
+              <li><a onclick="setUrlVideoTask2()">Task 2</a></li>
+
+          </ul>
+      </div>
+  </div>
+</div>  
+ 
+<div class="item3">
+  <iframe id="myFrame" src="" width="1050px" height="700px" style="border:1px solid black;">
+</iframe>
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+
+  function setUrlArticle(){
+      document.getElementById("myFrame").src ="./day 3/article_tag.html";
+  }
+  function setUrlHR(){
+      document.getElementById("myFrame").src = "./day 3/HR.html";
+  }
+  function setUrlReport(){
+      document.getElementById("myFrame").src = "./day 3/Student.html";
+  }
+  function setUrlLogin(){
+      document.getElementById("myFrame").src = "./day 3/Form.html";
+  }
+  function setUrlMenu(){
+      document.getElementById("myFrame").src = "./day 3/Horizontal_Manu.html";
+  }
+  function setUrlEmployeeForm(){
+      document.getElementById("myFrame").src = "./day 3/Employee_Details.html";
+  }
+  function setUrlVideoTask1(){
+      document.getElementById("myFrame").src = "./day 3/practice.html.html";
+  }
+  function setUrlVideoTask2(){
+      document.getElementById("myFrame").src = "./day 3/Form.practice.html";
+  }
+  
+  </script>
+  </div>  
+  <div class="item5">
+    <footer style="border:1px solid blue; height: 100 ;background-color: rgb(70, 66, 73);">
+    <h1>Devang Dabhi</h1>
+</footer>
+
+  </div>
+</div>
+
+</body>
+</html>

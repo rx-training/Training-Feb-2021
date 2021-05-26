@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .descendants *{
+                display: block;
+                border: 2px solid lightgrey ;
+                margin: 15px;
+                color: lightgrey;
+                padding: 5px;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("div").children().css({"color":"green","border":"2px solid yellow"});
+            });
+        </script> 
+        </head>
+    <body>
+        <div class="descendants" style="width:500px;">div(current element)
+            <p>p(child)
+                <span>span(grand child)</span>
+            </p>
+            <p>p(child)
+                <span>span(grand child)</span>
+            </p>
+         </div> 
+     </body>      
+
+</html>

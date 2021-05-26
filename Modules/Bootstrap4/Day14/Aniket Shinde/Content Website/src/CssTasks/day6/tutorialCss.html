@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../css/font-awesome.min.css">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@100;400&display=swap" rel="stylesheet"> 
+        <title>Radix Tasks - Aniket Shinde</title>
+    </head>
+<body>
+    <div id="myTasksDay6" class="mx-auto">
+    <header>
+        <div class="nav">
+            <img src="../../img/logo3.png" style="display: inline;">
+            <ul>
+                <li><a href="tutorialSite.html">HTML</a></li>
+                <li><a href="tutorialCss.html">CSS</a></li>
+                <li><a href="#">Bootstrap</a></li>
+                <li><a href="#">Javascript</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div style="margin-top: 40px; width: 300px; float: left; display:inline">
+        <button type="button" class="collapsible">Day 4</button>
+        <div class="content">
+            <button type="button" class="collapsible">Practice</button>
+            <div class="content">
+                <ul>
+                    <li><a href="../day4/audioandvideo.html">Audio and Video</a></li>
+                    <li><a href="../day4/borderPragraph.html">Pragraph Border</a></li>
+                    <li><a href="../day4/horizontalList.html">Horizontal List of Cities</a></li>
+                    <li><a href="../day4/StudentReportCardAlignment.html">Student Report Card Alignment</a></li>
+                    <li><a href="../day4/UniversalSelectorAndElementSelector.html">Universal & Element Selector</a></li>
+                </ul>
+            </div>
+            <button type="button" class="collapsible">Assignment</button>
+            <div class="content">
+                <ul>
+                    <li><a href="../day4/aniketShindeResume.html">Resume - Aniket Shinde</a></li>
+                </ul>
+            </div>
+            <button type="button" class="collapsible">Video Task</button>
+            <div class="content">
+                <ul>
+                    <li><a href="../day4/videoTasks.html">Task 1</a></li>
+                </ul>
+            </div>
+        </div>
+        <button type="button" class="collapsible">Day 5</button>
+        <div class="content">
+            <button type="button" class="collapsible">Practice</button>
+            <div class="content">
+                <ul>
+                    <li><a href="../day5/divsWithPosition.html">Divs with Display, Float, Overflow</a></li>
+                </ul>
+            </div>
+            <button type="button" class="collapsible">Assignment</button>
+            <div class="content">
+                <ul>
+                    <li><a href="../day5/basicAppLayout.html">Basic App Layout</a></li>
+                </ul>
+            </div>
+            <button type="button" class="collapsible">Video Task</button>
+            <div class="content">
+                <ul>
+                    <li><a href="../day5/cssVideoTutorials.html">Task 1</a></li>
+                </ul>
+            </div>
+        </div>
+        <button type="button" class="collapsible">Day 6</button>
+        <div class="content">
+            <button type="button" class="collapsible">Practice</button>
+            <div class="content">
+                <ul>
+                    <li><a href="../day6/boxAndFlexModels.html">Box And Flex Model</a></li>
+                    <li><a href="../day6/imageGalleryFlex.html">Image Gallery</a></li>
+                </ul>
+            </div>
+            <button type="button" class="collapsible">Assignment</button>
+            <div class="content">
+                <ul>
+                    <li><a href="../day6/tutorialSite.html">Tutorial Website</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>   
+    <iframe id="myFrame" src="" width="700px" height="700px" style="border:1px solid black;">
+    </iframe>
+
+    <div class="footer">
+        <h1 class="center">Have Any Question?</h1>
+        <p>We're very approachable and would love to speak to you. 
+            Feel free to call, send us an email, Tweet us or simply complete the enquiry form.</p>
+        
+            <p>Email : adshindeaniket@gmail.com</p>
+            <p>Supported By : Aniket Shinde</p>
+            <p>Contact : +91 8140763107</p>
+        
+    </div>
+    </div>
+
+      <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+
+        </script>
+</body>
+</html>

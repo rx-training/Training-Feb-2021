@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 1</title>
+    
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+        td{
+            width: 150px;
+        }
+    </style>
+
+</head>
+<body onload="storeLocalStorage()">
+    
+    <input type="button" onclick="GetProducts()" value="Get Data"><br><br>
+
+    <table id="result" style="border: 2px solid black; text-align: center;">
+        
+    </table>
+
+    <script type="text/javascript">
+
+        
+
+        function storeLocalStorage()
+        {
+            
+
+             Products = [ {"Name":"Cheese","Price":2.50,"Location":"Refrigerated foods"},
+                         {"Name":"Crisps","Price":3,"Location":"the Snack isle"},
+                         {"Name":"Pizza","Price":4,"Location":"Refrigerated foods"},
+                         {"Name":"Chocolate","Price":1.50,"Location":"the Snack isle"},
+                         {"Name":"Self-raising flour","Price":1.50,"Location":"Home baking"},
+                         {"Name":"Ground almonds","Price":3,"Location":"Home baking"}
+                        ]
+            ProductList = JSON.stringify(Products);
+            localStorage.setItem("ProductList",ProductList); 
+        }
+
+        function GetProducts()
+        {
+            var productLists = localStorage.getItem("ProductList");
+            console.log(productLists);
+            var PList = JSON.parse(productLists);
+
+            var trow="<tr><th>Product Name</th><th>price</th><th>Location</th>";
+                for(var item of PList)
+                {
+                    trow+= "<tr><td>"+item.Name +"</td><td>" +item.Price+"</td><td>" + item.Location+"</td></tr>"
+                    console.log(item.Name + " " + item.Price + " " + item.Location);
+                }
+                document.getElementById("result").innerHTML=trow;
+        }
+    </script>
+</body>
+</html>

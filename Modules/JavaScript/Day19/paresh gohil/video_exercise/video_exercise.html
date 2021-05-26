@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // var hireEmployee = function myHireEmployeeFn(name){
+        //     throw("Error");
+        // };
+        // var action = hireEmployee;
+        // action("jj");
+
+        var Employee = function (name) {
+            this.name = name;
+        };
+        var newEmployee = new Employee("jj");
+        console.log(newEmployee.name);
+
+        var Employee1 = function(name,boss){
+            this.name = name;
+            this.boss = boss;
+        };
+        var newEmployee1 = new Employee1("jj","JD Hogg");
+        console.log(newEmployee1.boss);
+
+        var e1 = new Employee("jj");
+        var e2 = new Employee("jv");
+        console.log(e1.__proto__ === e2.__proto__);
+
+        console.log(typeof Employee.prototype);
+
+        var Employee2 = function(name){
+            this.name = name;
+            this.salary = 50000;
+        };
+        Employee2.prototype.giveRaise = function(raise){
+            this.salary += raise;
+        };
+
+        var e11 = new Employee2("jj");
+        var e22 = new Employee2("jv");
+        e11.giveRaise(100000);
+        console.log(e11.salary);
+        console.log(e22.salary);
+
+        var updateZipCode = function(){
+            console.log(this);
+        };
+        updateZipCode.call({zip: "11787"});
+
+        var zipCode ={
+            zip: "11788"
+        };
+        updateZipCode.call(zipCode);
+
+        var updateZipCode1 = function(newZip , country){
+            console.log(newZip + " " + country);
+        };
+        var zipCode1 ={
+            zip: "11787"
+        };
+        updateZipCode1.call(zipCode1, "11888" , "us");
+
+        updateZipCode1.apply(zipCode1, ["11888", "ind"]);
+
+        //updateZipCode1.apply(zipCode1, "11888" , "ind");.................error
+
+        var salaryUpdater = function (salary){
+            var currentSalary = salary;
+            var generator = function(){
+                currentSalary += 10000;
+                return currentSalary;
+            };
+            return generator;
+        };
+
+        var updateFn = salaryUpdater(50000);
+        updateFn();
+        console.log(updateFn());
+
+        // (function(){
+        //     var employeeName = "jill";
+        // })();
+
+        // console.log(employeeName);..........error : employeeName is undefined
+
+        var orgChart ={
+            name: "Michael", subordinates:[
+                {
+                name:"Andy", subordinates:[
+                    {
+                        name:"Dwight", subordinates:[]
+                    },
+                    {
+                        name:"Kevin", subordinates:[]
+                    }
+                ]
+                }
+            ]
+        
+        };
+
+        var fn = function (topEmployee){
+            console.log(topEmployee.name);
+            for(var i= 0; i< topEmployee.subordinates.length;i++)
+            fn(topEmployee.subordinates[i]);
+        };
+        fn(orgChart);
+
+
+        var total = price * quantity;
+        var price = 3.00;
+        var quantity = 5;
+
+        console.log(total);
+
+
+        showProduct();
+
+        function showProduct(){
+            console.log("showing a Product");
+        }
+
+    </script>
+</body>
+</html>

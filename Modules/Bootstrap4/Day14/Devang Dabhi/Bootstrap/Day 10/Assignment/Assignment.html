@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  
+    <title>Manu</title>    <style>
+      
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main main main'
+    'footer footer footer footer footer footer';
+  grid-gap: 3px;
+  background-color: black;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+/* for tablets */
+@media only screen and (max-width: 700px) {
+    .grid-container{
+<div class="item3">
+grid-template-columns:1fr;
+        grid-template-areas: 'header header header header '
+	'header header header header '
+        'menu menu menu menu '
+        'main main main main '
+        'footer footer footer footer';
+    }
+} 
+
+  /* for mobiles */
+@media only screen and (max-width: 400px) {
+    .grid-container{
+grid-template-columns:1fr;
+<div class="item3">	
+        grid-template-areas: 'header header header'
+	'header header header'
+        'menu menu menu'
+        'main main main'
+        'main main main'
+        'footer footer footer;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+  <div class="item1">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+    <div class="container">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse"  >
+            <span class="navbar-toggler-icon">
+            </span>
+        </button>
+        <p><img src="devanglogo.jpg" alt="DEVANG-LOGO"  height= 100; width=100></p>  
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="../HTML/website.html" class="nav-link">HTML</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../CSS/css starting.html" class="nav-link">CSS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../Bootstrap/Starting.html" class="nav-link">Bootstrap</a>
+                </li>
+            </ul>
+        </div>        
+    </div>
+</nav>
+
+</div>
+
+<div class="item2">
+<div>
+  <h6><button type="button" class="collapsible">Day 9</button></h6>
+<h6><a href="./Day 9/Assignment/Assignment.html" target="blank">Assignment</a></h6>
+</div>
+<hr>
+<div>
+  <h6><button type="button" class="collapsible">Day 10</button></h6>
+<h6><a href="./Day 10/Assignment/Assignment.html" target="blank" >Assignment
+  </a></h6>
+</div>
+<hr>
+<div>
+  <h6><button type="button" class="collapsible">Day 11</button></h6>
+<h6><a href="./Day 11/Starter File/index.html"  target="blank">Painting And Drawing</a></h6>
+</div>
+<hr>
+<div>
+  <h6><button type="button" class="collapsible">Day 12</button></h6>
+<h6><a href="./Day 12/Looplab/src/index.html" target="blank" >Looplab</a></h6>
+</div>
+<hr>
+<div>
+  <h6><button type="button" class="collapsible">Day 13</button></h6>
+<h6><a href="./Day 13/Mizuxe/src/index.html"  target="blank">Mizuxe</a></h6>
+</div>
+
+  </div>
+  <div class="item3">
+    <header>
+    <h1 class="display-3 text-center my-4">Basic Typography</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="dropdown">
+              <button class="btn btn-primary btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                  2: Utilities
+              </button>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" href="../Files/Typography.html">2.2 Basic Typography</a>
+                  <a class="dropdown-item" href="../Files/Text_alignment_and_display.html">2.3 Text Alignment & Display</a>
+                  <a class="dropdown-item" href="../Files/Floats position.html">2.4 Floats & Position</a>
+                  <a class="dropdown-item" href="../Files/Color.html">2.5: Colors & Background</a>
+                  <a class="dropdown-item" href="../Files/Spacing.html">2.6 Spacing</a>
+                  <a class="dropdown-item" href="../Files/Sizing.html">2.7 Sizing</a>
+                  <a class="dropdown-item" href="../Files/break point.html">2.8 Breakpoints</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="dropdown">
+              <button class="btn btn-success btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                  3: CSS Components
+              </button>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" href="../Files/Button.html">3.2 Buttons</a>
+                  <a class="dropdown-item" href="../Files/navbar.html">3.3 Navbar</a>
+                  <a class="dropdown-item" href="../Files/listgroups_badges.html">3.4 List Groups & Badges</a>
+                  <a class="dropdown-item" href="../Files/form.html">3.5 Forms</a>
+                  <a class="dropdown-item" href="../Files/input groups.html">3.6 Input Groups</a>
+                  <a class="dropdown-item" href="../Files/Alert and Progess Bar.html">3.7 Alerts & Progress</a>
+                  <a class="dropdown-item" href="../Files/Table And Pagination.html">3.8 Tables & Pagination</a>
+                  <a class="dropdown-item" href="../Files/Card.html">3.9 Cards</a>
+                  <a class="dropdown-item" href="../Files/Media Object.html">3.10 Media Objects</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="dropdown">
+              <button class="btn btn-warning btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                  4: Grid & Flexbox
+              </button>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" href="../Files/Grid System.html">4.2 Grid System</a>
+                  <a class="dropdown-item" href="../Files/Grid Alignment.html">4.3 Grid Alignment</a>
+                  <a class="dropdown-item" href="../Files/Flex Box.html">4.4 Flexbox</a>
+                  <a class="dropdown-item" href="../Files/Auto Margin Wrapping Order.html">4.5 Auto Margins & Wrap</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="dropdown">
+              <button class="btn btn-danger btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                  5: JavaScript Widgets
+              </button>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" href="../Files/Carousel.html">5.2 Carousel</a>
+                  <a class="dropdown-item" href="../Files/Collapse.html">5.3 Collapse</a>
+                  <a class="dropdown-item" href="../Files/Tool tips.html">5.4 Tooltips</a>
+                  <a class="dropdown-item" href="../Files/Popovers.html">5.5 Popovers</a>
+                  <a class="dropdown-item" href="../Files/Models.html">5.6 Modals</a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </header>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  </div> 
+
+
+
+  <div class="item4">
+    <footer class="main-footer py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row text-center">
+        <div class="col-md-6 ml-auto">
+            <p class="lead">Copyright &Copy;2017</p>
+        </div>
+        </div>
+    </div>
+</footer>
+  </div>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

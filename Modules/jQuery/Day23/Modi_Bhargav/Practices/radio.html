@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>radio Select</title>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("input[name='radios']").click(function () {
+                $("#result").html("<h3>Your Selected Technology :</h3>" + $(this).val());
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container bg-danger mt-5">
+        <h1 class="text-center text-success h2">Choose The option And result</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <form>
+                    <div class="form-group">
+                        <label for="operation" class="text-white ml-2">1.Please Select Technology: </label>
+                        <div class="form-check mt-1 mx-2 text-white">
+                            <label for="radios">
+                                <input type="radio" id="addition" name="radios" value="PHP"> PHP
+                                <input type="radio" id="subtraction" name="radios" value="asp.net">ASP.Net
+                                <input type="radio" id="subtraction" name="radios" value="PERL"> PERL
+                                <input type="radio" id="subtraction" name="radios" value="JSP"> JSP
+                                <input type="radio" id="subtraction" name="radios" value="ASP"> ASP
+                                <input type="radio" id="subtraction" name="radios" value="REACT"> REACT
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <span class="h3" id="result"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

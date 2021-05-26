@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+.menu {
+  float:left;
+  width:20%;
+  text-align:center;
+}
+.menu a {
+  background-color:#800d0d;
+  padding:8px;
+  color: azure;
+  margin-top:7px;
+  display:block;
+  width:100%;
+  color:black;
+}
+.main {
+  float:left;
+  width:60%;
+  padding:0 20px;
+}
+.right {
+  background-color:#1b4901;
+  float:left;
+  width:20%;
+  padding:15px;
+  margin-top:7px;
+  text-align:center;
+}
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width:100%;
+  }
+}
+</style>
+</head>
+<body style="font-family:Verdana;color:#051131;">
+
+
+<div style="background-color:#0f928c;padding:1px;text-align:center;">
+  <h1 style="font-size: 10px;">Reponsive Layout</h1>
+</div>
+<div style="position: relative;">
+<div style="overflow:auto; background-color: rgb(190, 245, 89);">
+  <div class="menu" style="color: azure;">
+    <a href="#">Task 1</a>
+    <a href="#">Task 2</a>
+    <a href="#">Task 3</a>
+    <a href="#">Task 4</a>
+  </div>
+
+
+  <div class="main">
+    <h2>Responsive Layout</h2>
+    <p>This is responsive Layout</p>
+  </div>
+
+  <div class="right">
+    <h2>About</h2>
+    <p>This is all about Responsive webpage </p>
+  </div>
+</div>
+</div>
+<div style="background-color:#f55bd4;text-align:center;padding:10px;margin-top:7px;color: rgb(24, 1, 1);">footer</div>
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+         crossorigin="anonymous">
+
+    <title>Employees Details</title>
+  </head>
+  <body>
+    <div class="container col-lg-10 py-5">
+        <h1 class="bg-info text-light text-center py-4">Employees Details</h1>
+        <form action="" method="">
+            <div class="form-group"> 
+                <label for="employee_id" value = 'EmpID'>Employee ID:</label> 
+                <input type="text" class="form-control form-field" id="employee_id" name="employee_id" placeholder="12345" required>
+            </div>
+            <div class="form-group"> 
+                <label for="employee_name" value ='EmpName'>Employee Name:</label> 
+                <input type="text" class="form-control form-field" id="employee_name" name="employee_name" placeholder="Jhon Doe" pattern="[A-Za-z]{5,15}" required>
+            </div>
+            <div class="form-group"> 
+                <label for="employee_email" value='EmpEmail'>Employee Email:</label> 
+                <input type="email" class="form-control form-field" id="employee_email" name="employee_email" placeholder="Enter Email" required>
+            </div>
+            <div class="form-group"> 
+                <label for="employee_contact"value="ContactNumber">Contact number</label> 
+                <input type="text" class="form-control form-field" id="employee_contact" name="employee_contact" pattern="[1-9]{1}[0-9]{9}" placeholder="Enter mobile number" required>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group"> 
+                        <label for="birthdate" value = 'DoJ'>Date of Joining</label> 
+                        <input type="date" class="form-control form-field" id="joining-date" name="joining-date">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group"> 
+                        <label for="age" value="age">Age</label> 
+                        <input type="text" class="form-control form-field" id="age" name="age" placeholder="e.g. 22" >
+                    </div>
+                </div>
+            </div>
+            <fieldset class="form-group pb-2">
+            
+                <legend class="col-form-label">Gender:</legend>
+                    
+                <div class="form-check pb-2">
+                    <input type="radio" id="male"class="form-check-input" name="gridRadios"value="Male" onsubmit="subData(this.value)">
+                    <label class="form-check-label"for="male">Male</label>
+                </div>
+                <div class="form-check pb-2">
+                    <input type="radio" id="female" class="form-check-input" name="gridRadios" value="Female" onsubmit="subData(this.value)">
+                    <label class="form-check-label"for="female">Female</label>
+                </div>
+                <div class="form-check pb-2">
+                    <input type="radio" id="other" class="form-check-input" name="gridRadios" value="Other" onsubmit="subData(this.value)">
+                    <label class="form-check-label"for="other">Other</label>
+                </div>
+
+               </fieldset>
+            <div class="row">
+                
+                    <div class="form-group"> 
+                        <label for="designation">Designation</label><br>
+                        <select class="form-control form-field " id="designation" name="designation">
+                            <option value="">Select Designation</option>
+                            <option value="developer">Developer</option>
+                            <option value="designer">Designer</option>
+                            <option value="hr_manager">HR Manager</option>
+                        </select>
+                    </div>
+                
+                
+            </div>
+            
+            <div class="form-group"> 
+                <label for="location">Country:</label><br>
+                <select class="form-control form-field" id="country" name="Country" onchange="dispState()">
+                    <option value="" selected>Select Country</option>
+                    <option value="India">India</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="Afganistan">Afganistan</option>
+                    <option value="Australia">Australia</option>
+                    <option value="China">China</option>
+                    <option value="Shri-Lanka">Shri-Lanka</option>
+                </select>
+            </div>
+
+            <div class="form-group my-2" id="indiaState"> 
+                <!-- <label for="location">States:</label><br> -->
+                <select class="form-control form-field" id="state" name="states">
+                    <option value="" selected>Select States</option>
+                    <option value="">Gujarat</option>
+                    <option value="rajsthan">Rajsthan</option>
+                    <option value="Maharstra">Maharstra</option>
+                    <option value="Channai">Channai</option> 
+                </select>
+            </div>
+            <div class="form-group my-2" id="pakistanState"> 
+                <!-- <label for="location">States:</label><br> -->
+                <select class="form-control form-field" id="state" name="states">
+                    <option value="" selected>Select States</option>
+                    <option value="lahor">Lahor</option>
+                    <option value="indore">indore</option>
+                    
+                </select>
+            </div>
+
+            <div class="form-group my-2" id="chinaState"> 
+                <!-- <label for="location">States:</label><br> -->
+                <select class="form-control form-field" id="state" name="states">
+                    <option value="" selected>Select States</option>
+                    <option value="">Gujarat</option>
+                    <option value="rajsthan">Rajsthan</option>
+                    <option value="Maharstra">Maharstra</option>
+                    <option value="Channai">Channai</option> 
+                </select>
+            </div>
+
+
+
+
+            <button type="submit" class="btn btn-secondary btn-block m-2" onclick="subData()">Submit</button>
+            <br>
+        </form>
+        <table id = "displayTable" class="table table-bordered mt-5">
+            <tr>
+                <th>EmpID</th>
+                <th>EmpName</th>
+                <th>Email</th>
+                <th>ContactNumber</th>
+                <th>DoJ</th>
+                <th>Age</th>
+                <!-- <th>Gender</th>
+                <th>Designation</th>
+                <th>Country</th>
+                <th>State</th> -->
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        // function EmpName(){
+        //     var namePatt = RegExp('/^([^0-9]*)$/');
+        //     var name = document.getElementById('employee_name').value;
+        //     console.log(name.match(namePatt));
+        // }
+
+
+         document.getElementById("indiaState").style.display = "none";
+         document.getElementById("pakistanState").style.display = "none"; 
+         document.getElementById("chinaState").style.display = "none";
+        
+        function dispState(){
+            var c = (document.getElementById("country").value);
+            switch(c)
+            {
+                case 'India' : document.getElementById("indiaState").style.display = "block";
+         document.getElementById("pakistanState").style.display = "none"; 
+         document.getElementById("chinaState").style.display = "none";
+                                break;
+                
+                case 'Pakistan' : document.getElementById("indiaState").style.display = "none";
+         document.getElementById("pakistanState").style.display = "block"; 
+         document.getElementById("chinaState").style.display = "none";
+                               
+                                break;
+                
+                case 'China' : document.getElementById("indiaState").style.display = "none";
+         document.getElementById("pakistanState").style.display = "none"; 
+         document.getElementById("chinaState").style.display = "block";
+                                break;
+            }
+        }
+            
+            // function selGender(selectedGender){
+            //     gender = selectedGender;
+                
+            // }
+            // console.log(gender);
+
+        var row = 1;
+        function subData(gender){
+            var id = document.getElementById('employee_id').value;
+            var name= document.getElementById('employee_name').value;
+            var email= document.getElementById('employee_email').value;
+            var phone= document.getElementById('employee_contact').value;
+            var DoJ= document.getElementById('joining-date').value;
+            var Age = document.getElementById('age').value;
+            var DoJ= document.getElementById('joining-date').value;
+            //var DoJ= document.getElementById('joining-date').value;
+            // console.log(Age);
+            // var gender;
+            // if(!id )
+            // {
+            //     alert('Id and name should be inserted');
+            // }
+            //console.log(gender);
+            var display = document.getElementById('displayTable');
+
+            var newRow = display.insertRow(row);
+            var cel1 = newRow.insertCell(0);
+            var cel2 = newRow.insertCell(1);
+            var cel3 = newRow.insertCell(2);
+            var cel4 = newRow.insertCell(3);
+            var cel5 = newRow.insertCell(4);
+            var cel6 = newRow.insertCell(5);
+            
+            
+            cel1.innerHTML = id;
+            cel2.innerHTML = name;
+            cel3.innerHTML = email;
+            cel4.innerHTML = phone;
+            cel5.innerHTML = DoJ;
+            cel6.innerHTML = Age;
+
+            row++;
+
+        }
+
+
+            //let EmpsData = [];
+            
+        //     let EmpData = {
+        //         id: document.getElementById('employee_id').value,
+        //         name: document.getElementById('employee_name').value,
+        //         email: document.getElementById('employee_email').value,
+        //         phone: document.getElementById('employee_contact').value,
+        //         DoJ: document.getElementById('joining-date').value
+               
+        //     }
+
+        //     EmpsData.push(EmpData);
+        //     document.querySelector('form').reset();
+        //     console.log(EmpsData);
+        // }
+    </script>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+         crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
