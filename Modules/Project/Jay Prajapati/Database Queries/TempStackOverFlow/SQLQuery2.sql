@@ -1,4 +1,4 @@
-USE TempStackOverFlow;
+USE StackOverFlow;
 GO;
 
 --Veiws
@@ -20,24 +20,24 @@ GROUP BY Q.QuestionID,Q.Question,Q.TotalViews,Q.Vote
 
 /*2.	(UserID,NumberOfQuestionSAsk,NumberOfAnswersGive,NumberOfBadgesEarned)*/
 
-CREATE VIEW VwUserQADaetails
+CREATE VIEW VwUserQADetails
 AS
  SELECT U.UserID,U.FullName,NumberOfQuestionsAsked,NumberOfAnwersGive,NumberOfBadgesEarned
- FROM Users AS U
+ FROM AppUsers AS U
  LEFT OUTER JOIN (SELECT U.UserID AS 'UID', COUNT(QuestionID) AS 'NumberOfQuestionsAsked'
- FROM Users AS U
+ FROM AppUsers AS U
  LEFT OUTER JOIN Questions AS Q
  ON U.UserID = Q.UserID
  GROUP BY U.UserID)As CntQue
  ON U.UserID = CntQue.UID
  LEFT OUTER JOIN ( SELECT U.UserID AS 'UID', COUNT(AnswerID) AS 'NumberOfAnwersGive'
- FROM Users AS U
+ FROM AppUsers AS U
  LEFT OUTER JOIN Answers AS A
  ON U.UserID = A.USERID
  GROUP BY U.UserID) AS CntAns
  ON U.UserID = CntAns.UID
  LEFT OUTER JOIN ( SELECT U.UserID AS 'UID', COUNT(BEU.BadgeID) AS 'NumberOfBadgesEarned'
- FROM Users AS U
+ FROM AppUsers AS U
  LEFT OUTER JOIN BadgesEarnedByUser AS BEU
  ON U.UserID = BEU.UserID
  GROUP BY U.UserID) AS CntBgs
@@ -52,9 +52,9 @@ NumberOfBronzeBadgesEarned,Reputation)*/
 CREATE VIEW VwBadgesDetails
 AS
 SELECT U.UserID,U.FullName,NumberOfBronzeBadges,NumberOfSilverBadges,NumberOfGoldBadges
-FROM Users AS U
+FROM AppUsers AS U
 INNER JOIN(SELECT U.UserID, COUNT(BEU.BadgeID) AS 'NumberOfBronzeBadges'
-FROM Users AS U
+FROM AppUsers AS U
 LEFT OUTER JOIN (BadgesEarnedByUser AS BEU
 INNER JOIN Badges AS B
 ON BEU.BadgeID = B.BadgeID)
@@ -64,7 +64,7 @@ GROUP BY U.UserID
 ) AS CntBronze
 ON U.UserID = CntBronze.UserID
 INNER JOIN(SELECT U.UserID, COUNT(BEU.BadgeID) AS 'NumberOfSilverBadges'
-FROM Users AS U
+FROM AppUsers AS U
 LEFT OUTER JOIN (BadgesEarnedByUser AS BEU
 INNER JOIN Badges AS B
 ON BEU.BadgeID = B.BadgeID)
@@ -74,7 +74,7 @@ GROUP BY U.UserID
 ) AS CntSilver
 ON U.UserID = CntSilver.UserID
 INNER JOIN(SELECT U.UserID, COUNT(BEU.BadgeID) AS 'NumberOfGoldBadges'
-FROM Users AS U
+FROM AppUsers AS U
 LEFT OUTER JOIN (BadgesEarnedByUser AS BEU
 INNER JOIN Badges AS B
 ON BEU.BadgeID = B.BadgeID)

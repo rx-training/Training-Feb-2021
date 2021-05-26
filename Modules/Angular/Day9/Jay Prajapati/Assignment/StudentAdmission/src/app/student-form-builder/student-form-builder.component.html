@@ -2,27 +2,27 @@
     <h2 class="bg-info text-light text-center py-4">Student Admission Form</h2>
     <form [formGroup]="StudentForm" (ngSubmit)="Submit()">
       <div formGroupName="Name" ><label class="font-weight-bold">Student Details</label><br>
-        <ng-container class="form-group">
+        <div class="form-group">
           <label class="mt-2">FirstName :</label> 
           <input [class.is-invalid]="getStudentFirstName!.invalid && getStudentFirstName!.touched"  type="text" class="form-control" formControlName="FirstName" />
           <div *ngIf="getStudentFirstName!.invalid && getStudentFirstName!.touched">
             <small *ngIf="getStudentFirstName!.errors?.required" class="text-danger">FirstName is required</small>
           </div>
-        </ng-container>
-        <ng-container class="form-group">
+        </div>
+        <div class="form-group">
           <label class="mt-2">MiddleName : </label>
             <input type="text" [class.is-invalid]="getStudentMiddleName!.invalid && getStudentMiddleName!.touched" class="form-control" formControlName="MiddleName" />
             <div *ngIf="getStudentMiddleName!.invalid && getStudentMiddleName!.touched">
               <small *ngIf="getStudentMiddleName!.errors?.required" class="text-danger">FirstName is required</small>
             </div>
-        </ng-container>
-        <ng-container class="form-group">
+        </div>
+        <div class="form-group">
           <label class="mt-2">LastName : </label> 
           <input type="text" [class.is-invalid]="getStudentLastName!.invalid && getStudentLastName!.touched" class="form-control" formControlName="LastName" />
           <div *ngIf="getStudentLastName!.invalid && getStudentLastName!.touched">
             <small *ngIf="getStudentLastName!.errors?.required" class="text-danger">FirstName is required</small>
           </div>
-        </ng-container>
+        </div>
       </div>
   
       <ng-container class="form-group">
@@ -170,15 +170,24 @@
       <div formArrayName="EmergencyContactList">
         <label class="mt-2 font-weight-bold">Emergency Contact List : </label><br />
         <div *ngFor="let item of getEmergencyContactList.controls; index as i" >
-          <ng-container [formGroupName]="i" >
-            <ng-container class="">
-              <label>Relation : <input type="text" class="" formControlName="Relation" /></label>
-            </ng-container>
-            <ng-container>
-              <label class="ml-md-2">Phone Number :
-                <input type="number" class="" formControlName="Number" /></label>
-            </ng-container>
-          </ng-container>
+          <div [formGroupName]="i" class="row">
+            <div class="col-md-6">
+              <label>Relation : </label>
+              <input type="text" class="form-control" [class.is-invalid]="item.get('Relation')!.invalid && item.get('Relation')!.touched" formControlName="Relation" />
+              <div *ngIf="item.get('Relation')!.invalid && item.get('Relation')!.touched">
+                <small *ngIf="item.get('Relation')!.errors?.required" class="text-danger">Relation name is required</small>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label class="">Phone Number :
+                </label>
+                <input type="number" [class.is-invalid]="item.get('Number')!.invalid && item.get('Number')!.touched" class="form-control" formControlName="Number" />
+                <div *ngIf="item.get('Number')!.invalid && item.get('Number')!.touched">
+                  <small *ngIf="item.get('Number')!.errors?.required" class="text-danger">Mobile number is required</small>
+                  <small *ngIf="item.get('Number')!.errors?.pattern" class="text-danger">Mobile number must be in 10 digits</small>
+                </div>
+            </div>
+          </div>
           
         </div>
         <button class="btn-dark my-2" (click)="AddList()">Add New Relation <i class="fa fa-plus" aria-hidden="true"></i></button>
@@ -208,7 +217,67 @@
   
         </div>
       </div>
-      <button type="submit" [disabled]="!StudentForm.valid" class="btn btn-block btn-info mt-5" >Submit Data</button>
+      <div class="form-group my-3">
+        <button type="submit" [disabled]="!StudentForm.valid" class="btn btn-success" >Submit Data</button>
+      <button type="button" class="btn btn-info ml-2" (click)="LoadData()">Load Dummy Data</button>
+      </div>
     </form>
-    {{StudentForm.value | json}}
+    <!-- {{StudentForm.value | json}} -->
+
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">StudentName</th>
+            <th scope="col">DOB</th>
+            <th scope="col">PlaceOfBirth</th>
+            <th scope="col">FirstLanguage</th>
+            <th scope="col">Address</th>
+            <th scope="col">FatherName</th>
+            <th scope="col">Father's Email</th>
+            <th scope="col">Father's Qualification</th>
+            <th scope="col">Father's Profession</th>
+            <th scope="col">Father's Designation</th>
+            <th scope="col">Father's Phone</th>
+            <th scope="col">MotherName</th>
+            <th scope="col">Mother's Email</th>
+            <th scope="col">Mother's Qualification</th>
+            <th scope="col">Mother's Profession</th>
+            <th scope="col">Mother's Designation</th>
+            <th scope="col">Mother's Phone</th>
+            <th scope="col">ReferenceThrough</th>
+            <th scope="col">Reference City</th>
+            <th scope="col">Reference Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of studentArray; let i= index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{s.Name.FirstName}} {{s.Name.MiddleName}} {{s.Name.LastName}}</td>
+            <td>{{s.DOB}}</td>
+            <td>{{s.PlaceOfBirth}}</td>
+            <td>{{s.FirstLanguage}}</td>
+            <td>{{s.Address.City}},{{s.Address.State}},{{s.Address.Pin}}</td>
+            <td>{{s.Father.Name.FirstName}} {{s.Father.Name.MiddleName}} {{s.Father.Name.LastName}}</td>
+            <td>{{s.Father.Email}}</td>
+            <td>{{s.Father.EducationQualification}}</td>
+            <td>{{s.Father.Profession}}</td>
+            <td>{{s.Father.Designation}}</td>
+            <td>{{s.Father.Phone}}</td>
+            <td>{{s.Mother.Name.FirstName}} {{s.Mother.Name.MiddleName}} {{s.Mother.Name.LastName}}</td>
+            <td>{{s.Mother.Email}}</td>
+            <td>{{s.Mother.EducationQualification}}</td>
+            <td>{{s.Mother.Profession}}</td>
+            <td>{{s.Mother.Designation}}</td>
+            <td>{{s.Mother.Phone}}</td>
+            <td>{{s.ReferenceDetails.ReferenceThrough}}</td>
+            <td>{{s.ReferenceDetails.Address.City}}</td>
+            <td>{{s.ReferenceDetails.Address.TelNo}}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
   </div>
