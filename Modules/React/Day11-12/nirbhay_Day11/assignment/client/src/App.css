@@ -1,0 +1,268 @@
+body {
+  /* background: linear-gradient(#15a08d 50%, #25c587 50%); */
+  background: url("./images/Web1920–1.jpg");
+  background-size: cover;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  color: #3a3a3a;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-back {
+  width: 90%;
+  background-color: #ffffff;
+  background: url("./images/Web1920–1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  box-shadow: 1px 3px 20px #138d78;
+  border: 0.4rem solid #f4fffd;
+  border-radius: 1rem;
+  margin: 1.5rem 0 2rem 0;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  overflow: hidden;
+}
+@media screen and (max-width: 512px) {
+  .form-back {
+    width: 100%;
+  }
+}
+
+.form-back .form-header {
+  margin: 0;
+  padding: 0;
+  height: fit-content;
+}
+.form-back .form-header .form-load {
+  padding-top: 1.2rem;
+}
+.form-back .form-header .form-load .line {
+  width: 68%;
+  height: 0.15rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  margin: 0 auto;
+}
+.form-back .form-header .form-load .steps {
+  margin: 0 auto;
+  width: 100%;
+  transform: translateY(-25%);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  color: #ffffff;
+}
+@media screen and (max-width: 512px) {
+  .form-back .form-header .form-load .steps {
+    transform: translateY(-20%);
+  }
+}
+
+.form-back .form-header .form-load .steps .step .circle {
+  color: #d3d3d3;
+  height: 1.4rem;
+  width: 1.4rem;
+  font-weight: bold;
+  font-size: 0.73rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.form-back .form-header .form-load .steps .step p {
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+  margin: 0;
+}
+
+.form-back .form-header .form-load .steps .active {
+  color: #0d6357;
+}
+.form-back .form-header .form-load .steps .active .circle {
+  background-color: #0d6357;
+}
+
+.form-back form {
+  padding: 2rem 0 2rem 0;
+}
+
+/* CSS for Submit button */
+.form-back form .btnsubmit {
+  background: #0d6357;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+.form-back form button:hover {
+  background: #30a88a;
+}
+
+/* CSS for Input controls */
+.form-back form .form-control,
+.form-select {
+  border: none;
+  box-shadow: 1px 1px 10px #728b82;
+  background: #d0eee3;
+  color: #09443c;
+  padding: 0.7rem;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.form-back form .form-select:disabled {
+  background: #d0eee38f;
+}
+
+.form-back form .form-control::placeholder {
+  color: #09443c81;
+}
+
+.form-back form .form-control:focus,
+.form-select:focus {
+  box-shadow: 1px 1px 10px #728b82;
+  background: #f3fffb;
+}
+
+/* CSS for Input Validation */
+.form-back form .field {
+  position: relative;
+}
+.form-back form .feedback {
+  background: #e43b4cab;
+  position: absolute;
+  z-index: 1;
+  color: #ffffff;
+  display: none;
+  padding: 0.2rem;
+  margin-top: 0.2rem;
+  border-radius: 0.2rem;
+}
+.form-back form .is-invalid {
+  border: 1px solid #e43b4cce;
+  background-image: none !important;
+}
+
+/* CSS for StudentCard */
+.card {
+  margin: 2rem auto;
+  max-width: 45rem;
+  box-shadow: 2px 5px 10px rgb(160, 160, 160);
+  border: 0.2rem solid #ffffff;
+  background-image: linear-gradient(to bottom right, #8de1c0, #e4f5ee 60%);
+  transition: all 0.3s linear;
+  padding-bottom: 1rem;
+}
+
+.card .col-md-4 {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.card .col-md-4 img {
+  border: 5px solid #47bca2;
+  border-radius: 50%;
+  height: 9rem;
+  width: 9rem;
+}
+.card .card-title {
+  padding-top: 1rem;
+}
+.card:hover {
+  box-shadow: 2px 7px 18px rgb(141, 141, 141);
+}
+
+.card .buttonDiv {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.card #btntoggle {
+  border-radius: 50%;
+  border-style: none;
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0;
+  background-color: #ffc107;
+}
+.card #btntoggle:hover {
+  background-color: #ffc107b6;
+}
+.card #btntoggle:active {
+  background-color: #83650c;
+}
+
+.card #btndelete {
+  border-radius: 50%;
+  border-style: none;
+  background-color: #dc3545;
+  height: 1.5rem;
+  width: 1.5rem;
+  align-items: center;
+  padding: 0;
+  margin-left: 0.5rem;
+}
+.card #btndelete:hover {
+  background-color: #dc3546bb;
+}
+.card #btndelete:active {
+  background-color: #86202a;
+}
+.card button svg {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.card button path {
+  font-size: 1rem;
+  color: white;
+  font-weight: bolder;
+}
+
+/* CSS form Confirm-box */
+.confirm-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: #00000036;
+}
+.confirm-box .box {
+  width: 40%;
+  margin: 15% auto;
+  background: #e5fcf3;
+  border-radius: 0.5rem;
+}
+@media screen and (max-width: 768px) {
+  .confirm-box .box {
+    width: 75%;
+  }
+}
+.confirm-box .box .btn-confirm {
+  background: #0d6357;
+  color: #ffffff;
+}
+
+/* CSS for Navbar */
+.navbar {
+  background: #00000038;
+  color: #ffffff;
+}

@@ -1,0 +1,159 @@
+body {
+  background: #ffffff;
+  color: #2b3440;
+  padding-bottom: 5rem;
+}
+
+/* Navbar CSS */
+.navbar {
+  position: absolute;
+  z-index: 1;
+}
+.navbar #navbarText {
+  transition: all 0.3s linear;
+  text-align: center;
+}
+#navbarText .navbar-nav .nav-item .active {
+  border-bottom: 2px solid white;
+}
+#navbarText .navbar-nav .nav-link:hover {
+  border-bottom: 2px solid white;
+  border-color: rgb(235, 235, 235);
+  color: rgb(235, 235, 235) !important;
+}
+@media screen and (max-width: 992px) {
+  .navbar {
+    background: #0000006c;
+  }
+}
+
+/* Hero */
+.defaultHero,
+.homeHero,
+.roomsHero,
+.errorHero {
+  top: 0;
+  position: relative;
+  width: 100%;
+  background: url("./images/defaultBcg.jpeg") center/cover no-repeat;
+  display: flex;
+  height: 100vh;
+}
+.shadow {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0));
+  box-shadow: none !important;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+}
+.shadow .banner {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  color: #ffffff;
+  background: #0000006c;
+  padding: 2rem;
+  text-align: center;
+  transform: translate(-50%, -47%);
+}
+.homeHero .shadow .banner {
+  background: none;
+  padding: 0;
+}
+.shadow .banner h4 {
+  font-weight: 800 !important;
+  letter-spacing: 0.3rem;
+  word-spacing: 0.2rem;
+}
+.shadow .banner h1 {
+  font-weight: 800 !important;
+  letter-spacing: 0.3rem;
+}
+.shadow .banner a {
+  border-radius: 1.3rem;
+  font-size: 1.1rem;
+}
+
+/* Home CSS */
+.homeHero {
+  background: url("./images/homeHero.jpg") center/cover no-repeat;
+  height: 100vh;
+}
+.homeHero .shadow .fog {
+  height: 35vh;
+}
+
+/* Rooms CSS */
+.roomsHero {
+  background: url("./images/room-2.jpeg") center/cover no-repeat;
+  height: 70vh;
+}
+
+/* Error CSS */
+.errorHero {
+  background: url("./images/defaultBcg.jpeg") center/cover no-repeat;
+  min-height: 60vh;
+}
+.errorHero .shadow .banner {
+  padding: 3rem 0 3rem 0;
+}
+
+/* Title CSS */
+.title h3 {
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  line-height: 4rem;
+}
+.title .titleborder {
+  height: 0.3rem;
+  width: 5rem;
+  margin: 0 auto;
+  background-color: #48c0f5;
+  border-radius: 10rem;
+}
+
+/* Services CSS */
+.services .service-center article .titleborder {
+  height: 0.2rem;
+  width: 3rem;
+  border-radius: 10rem;
+  margin: 0 auto;
+  background-color: #48c0f5;
+}
+.services .service-center article span {
+  font-size: 3.5rem;
+  color: #48c0f5;
+}
+
+/* FeaturedRooms CSS */
+.featured-rooms .row .col-md-4 .card .card-img-top {
+  position: relative;
+}
+.featured-rooms .row .col-md-4 .card .card-img-top .price-tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000000af;
+  z-index: 1;
+  border-bottom-right-radius: 1rem;
+  color: white;
+}
+.featured-rooms .row .col-md-4 .card .card-img-top .shutter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #0000006c;
+  height: 0%;
+  z-index: 1;
+  letter-spacing: 0.1rem;
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+  align-items: center;
+  transition: height 0.2s linear;
+}
+.featured-rooms .row .col-md-4 .card:hover > .card-img-top .shutter {
+  height: 100%;
+}
