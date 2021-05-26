@@ -5,23 +5,26 @@ import { ExpenseForm } from "./components/ExpenseForm";
 import { ExpenseList } from "./components/ExpenseList";
 import { useState } from "react";
 
-const intialExpenses = [
-  {
-    id: uuid(),
-    charge: "rent",
-    amount: 1600,
-  },
-  {
-    id: uuid(),
-    charge: "car wash",
-    amount: 1600,
-  },
-  {
-    id: uuid(),
-    charge: "rent",
-    amount: 1600,
-  },
-];
+// const intialExpenses = [
+//   {
+//     id: uuid(),
+//     charge: "rent",
+//     amount: 1600,
+//   },
+//   {
+//     id: uuid(),
+//     charge: "car wash",
+//     amount: 1600,
+//   },
+//   {
+//     id: uuid(),
+//     charge: "rent",
+//     amount: 1600,
+//   },
+// ];
+
+const intialExpenses=localStorage.getItem('expenses')?JSON.parse(localStorage.getItem('expenses')):[]
+
 function App() {
   //''''''''''''''''''' for all expenses'''''''''''''''''''''''''''''''''''''''
   const [expenses, setExpenses] = useState(intialExpenses);
