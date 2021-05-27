@@ -36,7 +36,7 @@ namespace StackOverFlow
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            
             services.AddControllers();
 
 
@@ -67,6 +67,7 @@ namespace StackOverFlow
 
             // For Entity Framework  
             services.AddDbContext<StackOverFlowContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConnStr")));
+            
 
             // For Identity  
             services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -101,6 +102,12 @@ namespace StackOverFlow
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "StackOverFlow", Version = "v1" });
             });
+
+
+            services.AddControllersWithViews()
+                .AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

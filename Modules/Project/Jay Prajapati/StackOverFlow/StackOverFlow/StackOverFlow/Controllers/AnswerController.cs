@@ -8,19 +8,17 @@ using StackOverFlow.UnitOfWorkPattern;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace StackOverFlow.Controllers
 {
-    
-    [Route("api/{userid}/[controller]")]
+    [Route("api/{userId}/[controller]/{queId}")]
     [ApiController]
-    public class QuestionController : ControllerBase
+    public class AnswerController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly UserManager<ApplicationUser> userManager;
-        public QuestionController(IUnitOfWork unitOfWork, UserManager<ApplicationUser> userManager)
+        public AnswerController(IUnitOfWork unitOfWork, UserManager<ApplicationUser> userManager)
         {
             this._unitOfWork = unitOfWork;
             this.userManager = userManager;
@@ -28,62 +26,61 @@ namespace StackOverFlow.Controllers
         }
 
         [HttpGet]
-        [Route("{queId}")]
-        public ActionResult<Question> GetQuestion(int userid,int queId)
+        public ActionResult<List<Answer>> GetAnswer(int queId)
         {
             //var user = userManager.Users.First(x => x.UserName == User.Identity.Name);
             //if (!_unitOfWork.AppUsers.ValidateUser(user.Id, userid))
             //{
             //    return Unauthorized();
             //}
-            Question Que = _unitOfWork.Question.GetById(queId);
-            Que.TotalViews += 1;
-            _unitOfWork.Question.UpdateQuestion(queId, Que);
-            _unitOfWork.Complete();
-            return Que;
+            var ans = _unitOfWork.Answer.GetByQueId(queId);
+            //Answer ans = _unitOfWork.Answer.GetById(queId);
+            //_unitOfWork.Question.UpdateQuestion(queId, ans);
+            //_unitOfWork.Complete();
+            return ans;
         }
 
 
         [Authorize]
         [HttpPost]
-        public ActionResult<Question> PostQuestion(int userid, Question Que)
+        public ActionResult<Answer> PostAnswer(int userid,int queId, Answer ans)
         {
             var user = userManager.Users.First(x => x.UserName == User.Identity.Name);
             if (!_unitOfWork.AppUsers.ValidateUser(user.Id, userid))
             {
                 return Unauthorized();
             }
-            Que.UserId = userid;
-            Que.Vote = 0;
-            Que.TotalViews = 0;
-            Que.TimeOfAsk = DateTime.Now;
-            _unitOfWork.Question.Add(Que);
+            if (_unitOfWork.Question.GetById(queId) == null)
+            {
+                return BadRequest("Question Not Exists");
+            }
+            ans.UserId = userid;
+            ans.QuestionId = queId;
+            ans.Vote = 0;
+            _unitOfWork.Answer.Add(ans);
             _unitOfWork.Complete();
-            return Que;
+            return ans;
         }
 
 
         [Authorize]
         [HttpPut]
-        public ActionResult PutQuestion(int userid,int queId, Question que)
+        [Route("{ansId}")]
+        public ActionResult PutQuestion(int userid, int ansId, int queId, Answer ans)
         {
             var user = userManager.Users.First(x => x.UserName == User.Identity.Name);
             if (!_unitOfWork.AppUsers.ValidateUser(user.Id, userid))
             {
                 return Unauthorized();
             }
-            if (!_unitOfWork.Question.ValidateUserQuestion(userid,queId))
+            if (_unitOfWork.Question.GetById(queId) == null)
             {
-                return Unauthorized();
+                return BadRequest("Question Not Exists");
             }
-            _unitOfWork.Question.UpdateQuestion(queId, que);
+            _unitOfWork.Answer.UpdateAnswer(ansId, ans);
             _unitOfWork.Complete();
             return Ok();
 
         }
-
-
-
-
     }
 }

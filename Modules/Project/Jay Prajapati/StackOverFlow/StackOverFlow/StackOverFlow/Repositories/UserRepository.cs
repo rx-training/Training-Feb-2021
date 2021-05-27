@@ -1,7 +1,9 @@
-﻿using StackOverFlow.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using StackOverFlow.Models;
 using StackOverFlow.Models.Authentication;
 using StackOverFlow.Repositories.Interface;
 using System;
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,17 +17,22 @@ namespace StackOverFlow.Repositories
         {
             this.context = context;
         }
+        
+          
 
 
         public void UpdateUser(int id, AppUser user)
         {
+            user.UserId = id;
+            
             context.AppUsers.Update(user);
+
         }
 
 
         public bool ValidateUser(string cred, int id)
         {
-            var user = this.context.AppUsers.SingleOrDefault(x => x.UserId == id);
+            var user = this.context.AppUsers.AsNoTracking().SingleOrDefault(x => x.UserId == id);
             if (user == null || user.ApplicationUserId != cred)
             {
                 return false;

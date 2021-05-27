@@ -1,4 +1,5 @@
-﻿using StackOverFlow.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using StackOverFlow.Models;
 using StackOverFlow.Repositories.Interface;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,13 @@ namespace StackOverFlow.Repositories
         }
 
 
+        //public bool Any(Func<T, bool> predicate)
+        //{
+        //    return _context.Set<T>().AsNoTracking().Any(predicate);
+        //}
+
+
+
         public void Add(T entity)
         {
             _context.Set<T>().Add(entity);
@@ -29,6 +37,8 @@ namespace StackOverFlow.Repositories
         {
             return _context.Set<T>().Where(expression);
         }
+
+
         public IEnumerable<T> GetAll()
         {
             return _context.Set<T>().ToList();
@@ -38,10 +48,9 @@ namespace StackOverFlow.Repositories
             return _context.Set<T>().Find(id);
         }
 
-        //public T Update(int id, T entity)
+        //public virtual void Update(T entity)
         //{
-
-        //    return _context.Set<T>().Update(entity);
+        //    _context.Entry(entity).State = EntityState.Modified;
         //}
 
         public void Remove(T entity)

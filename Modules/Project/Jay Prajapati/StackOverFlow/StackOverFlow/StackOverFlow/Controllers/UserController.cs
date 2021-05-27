@@ -1,69 +1,77 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using StackOverFlow.Code;
 using StackOverFlow.Models;
 using StackOverFlow.Models.Authentication;
 using StackOverFlow.UnitOfWorkPattern;
 using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace StackOverFlow.Controllers
 {
     [Authorize]
-    [Route("api/[controller]")]
+    [Route("api/{id}/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly UserManager<ApplicationUser> userManager;
         
-        public UserController(IUnitOfWork unitOfWork )
+        public UserController(IUnitOfWork unitOfWork,UserManager<ApplicationUser> userManager )
         {
             this._unitOfWork = unitOfWork;
+            this.userManager = userManager;
             
         }
 
 
-        // GET: api/<UserController>
+        
+        //[HttpGet] 
+        //public IActionResult GetCurrentUserId() 
+        //{
+        //    var user = userManager.Users.First(x => x.UserName == User.Identity.Name);
+
+        //    return Ok(user); 
+        //}
+
+
+
+        //GET: api/<UserController>
         [HttpGet]
-        public IActionResult GetUser()
+        public ActionResult<AppUser> GetUser(int id)
         {
-
-            string userid = Code.ExtensionMethods.getUserName(this.User);
-            //this.User.FindFirst(u=>u.Value);
-            //string userid = 
-            //var u = _unitOfWork.Users.Find(u => u.ApplicationUserId == userId).First();
-
-            //if (!_unitOfWork.Users.ValidateUser(userId, id))
-            //{
-            //    return Unauthorized();
-            //}
-            //var user = _unitOfWork.Users.GetAll();
-            return Ok(userid);
-        }
-
-        [HttpPost]
-        public IActionResult PostUser(AppUser user)
-        {
-            var cred = User.Claims.FirstOrDefault(c => c.Type == "UserId").Value;
-            user.ApplicationUserId = cred;
-            _unitOfWork.AppUsers.Add(user);
-            _unitOfWork.Complete();
-            return Ok(user);
+            var user = userManager.Users.First(x => x.UserName == User.Identity.Name);
+            if (!_unitOfWork.AppUsers.ValidateUser(user.Id, id))
+            {
+                return Unauthorized();
+            }
+            AppUser myuser = _unitOfWork.AppUsers.GetById(id);
+            return myuser;
         }
 
         [HttpPut]
-        public IActionResult UpdateUser(int id,AppUser user)
+        public ActionResult<AppUser> PostUser(int id, AppUser user)
         {
+            var u = userManager.Users.AsNoTracking().First(x => x.UserName == User.Identity.Name);
+            if (!_unitOfWork.AppUsers.ValidateUser(u.Id, id))
+            {
+                return Unauthorized();
+            }
             _unitOfWork.AppUsers.UpdateUser(id, user);
             _unitOfWork.Complete();
-            return Ok(user);
+            return user;
         }
 
         
+
+
     }
 }

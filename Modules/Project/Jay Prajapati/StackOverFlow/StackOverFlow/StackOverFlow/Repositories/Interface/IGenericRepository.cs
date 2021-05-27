@@ -30,3 +30,4 @@ namespace StackOverFlow.Repositories.Interface
         //void RemoveRange(IEnumerable<T> entities);
     }
 }
+

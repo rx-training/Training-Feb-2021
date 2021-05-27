@@ -8,5 +8,7 @@ namespace StackOverFlow.Repositories.Interface
 {
     public interface IAnswerRepository : IGenericRepository<Answer>
     {
+        public void UpdateAnswer(int ansId, Answer ans);
+        public List<Answer> GetByQueId(int queId);
     }
 }
