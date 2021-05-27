@@ -1,7 +1,7 @@
 import React from "react";
 import { MdEdit, MdDelete } from "react-icons/md";
 
-export default function ExpenseItem({ expense }) {
+export default function ExpenseItem({ expense, handleDelete, handleEdit }) {
   return (
     <>
       <li className="list-group-item list-group-item-action">
@@ -13,10 +13,18 @@ export default function ExpenseItem({ expense }) {
             </span>
           </div>
           <div class="col-4 d-flex justify-content-end align-items-center">
-            <button className="btn fw-bold" type="button">
+            <button
+              className="btn text-success fw-bold"
+              type="button"
+              onClick={() => handleEdit(expense.id)}
+            >
               <MdEdit />
             </button>
-            <button className="btn fw-bold" type="button">
+            <button
+              className="btn text-danger fw-bold"
+              type="button"
+              onClick={() => handleDelete(expense.id)}
+            >
               <MdDelete />
             </button>
           </div>
