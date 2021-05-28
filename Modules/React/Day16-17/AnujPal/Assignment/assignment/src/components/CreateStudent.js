@@ -501,14 +501,40 @@
 
 import React from "react";
 import { UseForm } from "./UseForm";
+import { useState } from "react";
+import StudentService from "../services/StudentService";
 
-export const CreateStudent = () => {
-  const country= {
-            please: [],
-            India: ["Gujarat", "Maharashtra", "Punjab", "UP"],
-            Australia: ["California", "Texas", "Florida"],
-            Canada: ["Alberta", "Columbia"],
-          }
+export const CreateStudent = (props) => {
+  const { list, setList } = props;
+  const[Edit,setEdit]=useState(false)
+  console.log(list, setList);
+  const country = {
+    please: [],
+    India: ["Gujarat", "Maharashtra", "Punjab", "UP"],
+    Australia: ["California", "Texas", "Florida"],
+    Canada: ["Alberta", "Columbia"],
+  };
+  const states = {
+    Gujarat: ["Ahmedabad", "Surat", "Bhavnagar"],
+    Maharashtra: ["Mumbai", "Pune"],
+    Punjab: ["Ludhiana", "Amritsar"],
+    UP: ["Lucknow", "Unnao"],
+    California: ["Los-Angeles", "San-joe"],
+    Texas: ["Houseton", "Dallas"],
+    Florida: ["Miami", "Tampa"],
+    Alberta: ["Calgarie", "Airtdri"],
+    Columbia: ["Cali", "Santa-Marta"],
+  };
+  const [Error, setError] = useState({
+    idError: "",
+    nameError: "",
+    dateError: "",
+    emailError: "",
+    fnameError: "",
+    collegeNameError: "",
+  });
+
+
   const [values, handleChange] = UseForm({
     Id: "",
     fname: "",
@@ -522,17 +548,98 @@ export const CreateStudent = () => {
     collegeName: "",
     studentImage: null,
     collegeLogo: "",
-    student: {},
-    students: [],
-    idError: "",
-    nameError: "",
-    dateError: "",
-    emailError: "",
-
-    fnameError: "",
+    selectedState: "Gujarat",
+    selectedCountry: "India",
+    selectedDegree: "",
     submit: true,
     selectedCity: "",
   });
+  const formValidation = (e) => {
+    const input = e.target.name;
+    const val = e.target.value;
+    switch (input) {
+      case "Id":
+        if (val < 0) {
+          setError({ ...Error, idError: "Id cannot be negative" });
+        } else if (val.length <= 0) {
+          setError({ ...Error, idError: "Id cannot be blank" });
+        } else {
+          setError({ ...Error, idError: null });
+        }
+
+        break;
+
+      case "fname":
+      case "mname":
+      case "lname":
+        if (val.length <= 0) {
+          setError({
+            ...Error,
+            nameError: "first name,niddlename or lastname cannot be blank",
+          });
+        } else {
+          setError({ ...Error, nameError: null });
+        }
+        break;
+
+      case "ffname":
+      case "fmname":
+      case "flname":
+        if (val.length <= 0) {
+          setError({
+            ...Error,
+            fnameError: "first name,niddlename or lastname cannot be blank",
+          });
+        } else {
+          setError({ ...Error, fnameError: null });
+        }
+        break;
+
+      case "DOB":
+        const regex = new RegExp(
+          "^(1[0-2]|0[1-9])/(3[01]|[12][0-9]|0[1-9])/[0-9]{4}$"
+        );
+        if (!regex.test(val)) {
+          setError({ ...Error, dateError: "Enter Valid Date Format" });
+        } else {
+          setError({ ...Error, dateError: null });
+        }
+        break;
+
+      case "email":
+        const regex1 = new RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
+        if (!regex1.test(val)) {
+          setError({ ...Error, emailError: "Enter Valid E-mail Format" });
+        } else {
+          setError({ ...Error, emailError: null });
+        }
+        break;
+
+      case "collegeName":
+        console.log(input);
+        if (val.length <= 0) {
+          setError({
+            ...Error,
+            collegeNameError: "CollegeName cannot be empty",
+          });
+        } else {
+          setError({ ...Error, collegeNameError: null });
+        }
+        break;
+        default:
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    StudentService.createStudent(values).then((res)=>{
+      console.log(res.data);
+    })
+   props.history.push("/");
+    
+
+  };
+
   return (
     <React.Fragment>
       <div className="container mx-auto p-2  ">
@@ -548,8 +655,9 @@ export const CreateStudent = () => {
                 name="Id"
                 // value={this.state.ID}
                 onChange={handleChange}
+                onInput={formValidation}
               />
-              {/* <div className="text-danger"> {this.state.idError}</div> */}
+              <div className="text-danger"> {Error.idError}</div>
             </div>
           </div>
           <div class="form-group w-50 mx-auto mt-3 row">
@@ -562,6 +670,7 @@ export const CreateStudent = () => {
                 name="fname"
                 // value={this.state.fname}
                 onChange={handleChange}
+                onInput={formValidation}
               />
             </div>
             <div className="col">
@@ -571,6 +680,7 @@ export const CreateStudent = () => {
                 placeholder="Enter middle name"
                 name="mname"
                 onChange={handleChange}
+                onInput={formValidation}
                 // value={this.state.mname}
               />
             </div>
@@ -581,10 +691,11 @@ export const CreateStudent = () => {
                 placeholder="Enter last name"
                 name="lname"
                 onChange={handleChange}
+                onInput={formValidation}
                 // value={this.state.lname}
               />
             </div>
-            {/* <div className="text-danger"> {this.state.nameError}</div> */}
+            <div className="text-danger"> {Error.nameError}</div>
           </div>
 
           <div className="form-group w-50 mx-auto mt-3 row">
@@ -596,10 +707,11 @@ export const CreateStudent = () => {
                 placeholder="Enter date of birth"
                 name="DOB"
                 onChange={handleChange}
+                onInput={formValidation}
                 // value={this.state.DOB}
               />
             </div>
-            {/* <div className="text-danger"> {this.state.dateError}</div> */}
+            <div className="text-danger"> {Error.dateError}</div>
           </div>
           <div className="form-group w-50 mx-auto mt-3 row">
             <label className="h5">Enter E-mail </label>
@@ -610,10 +722,11 @@ export const CreateStudent = () => {
                 placeholder="Enter date of birth"
                 name="email"
                 onChange={handleChange}
+                onInput={formValidation}
                 // value={this.state.email}
               />
             </div>
-            {/* <div className="text-danger"> {this.state.emailError}</div> */}
+            <div className="text-danger"> {Error.emailError}</div>
           </div>
           <div class="form-group w-50 mx-auto mt-3 row">
             <label className="h5">Father Name</label>
@@ -625,7 +738,7 @@ export const CreateStudent = () => {
                 name="ffname"
                 // value={this.state.fname}
                 onChange={handleChange}
-                // value={this.state.ffname}
+                onInput={formValidation}
               />
             </div>
             <div className="col">
@@ -648,23 +761,17 @@ export const CreateStudent = () => {
                 // value={this.state.flname}
               />
             </div>
-            {/* <div className="text-danger"> {this.state.fnameError}</div> */}
+            <div className="text-danger"> {Error.fnameError}</div>
           </div>
-          {/* <div className="form-group w-50 mx-auto mt-3 mb-5 row">
+          <div className="form-group w-50 mx-auto mt-3 mb-5 row">
             <div className="col">
               <label className="h5">Education Qualification</label>
               <select
                 className="w-100 h-75"
-                onChange={(e) => {
-                  this.setState({ selectedDegree: e.target.value });
-                }}
+                name="selectedDegree"
+                onChange={handleChange}
               >
-                {this.state.submit ? (
-                  <option selected>please select</option>
-                ) : (
-                  <option>please select</option>
-                )}
-
+                <option selected>please select</option>
                 <option>BE</option>
                 <option>ME</option>
                 <option>BCA</option>
@@ -678,17 +785,10 @@ export const CreateStudent = () => {
               <label className="h5">Select Country Name</label>
               <select
                 className="w-100 h-75"
-                onChange={(e) => {
-                  this.setState({ selectedCountry: e.target.value });
-                }}
+                name="selectedCountry"
+                onChange={handleChange}
               >
-                {this.state.submit ? (
-                  <option selected value="please">
-                    please select country
-                  </option>
-                ) : (
-                  <option value="please">please select country</option>
-                )}
+                <option selected>please select country</option>
 
                 <option value="India">India</option>
                 <option value="Australia">Australia</option>
@@ -703,29 +803,20 @@ export const CreateStudent = () => {
               <select
                 className="w-100 h-75"
                 id="state"
-                onChange={(e) => {
-                  this.setState({ selectedState: e.target.value });
-                }}
+                name="selectedState"
+                onChange={handleChange}
               >
-                {this.state.submit ? (
-                  <option selected value="please select state">
-                    please select state
-                  </option>
-                ) : (
-                  <option value="please select state">
-                    please select state
-                  </option>
-                )}
+                <option selected value="please select state">
+                  please select state
+                </option>
 
-                {this.state.country[this.state.selectedCountry].map(
-                  (e, key) => {
-                    return (
-                      <option key={key} value={e}>
-                        {e}
-                      </option>
-                    );
-                  }
-                )}
+                {country[values.selectedCountry].map((e, key) => {
+                  return (
+                    <option key={key} value={e}>
+                      {e}
+                    </option>
+                  );
+                })}
               </select>
             </div>
           </div>
@@ -736,18 +827,15 @@ export const CreateStudent = () => {
                 className="w-100 h-75"
                 id="city"
                 name="selectedCity"
-                onChange={(e) => {
-                  this.setState({ selectedCity: e.target.value });
-                }}
+                // onChange={(e) => {
+                //  setCity(e.target.value)
+                // }}
+                onChange={handleChange}
               >
-                {this.state.submit ? (
-                  <option selected value="please select city">
-                    please select city
-                  </option>
-                ) : (
-                  <option value="please select city">please select city</option>
-                )}
-                {this.state.states[this.state.selectedState].map((e, key) => {
+                <option selected value="please select city">
+                  please select city
+                </option>
+                {states[values.selectedState].map((e, key) => {
                   return (
                     <option key={key} value={e}>
                       {e}
@@ -756,7 +844,7 @@ export const CreateStudent = () => {
                 })}
               </select>
             </div>
-          </div> */}
+          </div>
 
           <div class="form-group w-50 mx-auto mt-3 row">
             <div className="col">
@@ -782,10 +870,11 @@ export const CreateStudent = () => {
                 placeholder="Enter College Name"
                 name="collegeName"
                 onChange={handleChange}
+                onInput={formValidation}
                 // value={this.state.collegeName}
               />
             </div>
-            {/* <div className="text-danger"> {this.state.collegeNameError}</div> */}
+            <div className="text-danger"> {Error.collegeNameError}</div>
           </div>
           <div class="form-group w-50 mx-auto m-3 row">
             <label className="h5 mt-4 mb-3">Select College Logo</label>
@@ -804,7 +893,7 @@ export const CreateStudent = () => {
             <button
               className="btn w-100 btn-success mt-4"
               // disabled={this.state.submit}
-              // onClick={this.handleSubmit}
+              onClick={handleSubmit}
             >
               Submit
             </button>

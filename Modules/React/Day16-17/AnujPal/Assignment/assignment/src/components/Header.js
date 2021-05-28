@@ -4,8 +4,8 @@ export default class Header extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand">
-        <img className="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" style={{width:"150px", height:"50px"}}></img></a>
+        <a href="http://localhost:3000/" className="navbar-brand">
+        <img className=""  alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" style={{width:"150px", height:"50px"}}></img></a>
         <div>
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
