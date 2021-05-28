@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .ancestors * { 
+          display: block;
+          border: 2px solid lightgrey;
+          color: lightgrey;
+          padding: 5px;
+          margin: 15px;
+        }
+        .descendants * { 
+          display: block;
+          border: 2px solid lightgrey;
+          color: lightgrey;
+          padding: 5px;
+          margin: 15px;
+        }
+        .siblings * { 
+          display: block;
+          border: 2px solid lightgrey;
+          color: lightgrey;
+          padding: 5px;
+          margin: 15px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+         $("span").parent().css({"color": "red", "border": "2px solid red"});
+         $("div").eq(3).children().css({"color": "red", "border": "2px solid red"});
+         $("h2").last().siblings().css({"color": "red", "border": "2px solid red"});
+        });
+    </script>
+</head>
+<body>
+    <!---------parent()---------------->
+    <h2>ancestors</h2>
+    <div class="ancestors">
+      <div style="width:500px;">div (great-grandparent)
+        <ul>ul (grandparent)  
+          <li>li (direct parent)
+            <span>span</span>
+          </li>
+        </ul>   
+      </div>
+
+      <div style="width:500px;">div (grandparent)   
+        <p>p (direct parent)
+          <span>span</span>
+        </p> 
+      </div>
+    </div>
+<hr>
+    <!-------------descendants----------->
+    <h2>descendants</h2>
+    <div class="descendants" style="width:500p;">div (current element) 
+        <p>p (child)
+          <span>span (grandchild)</span>   
+        </p>
+        <p>p (child)
+          <span>span (grandchild)</span>
+        </p> 
+      </div>
+<hr>
+      <!----------siblings---------->
+      <h2>siblings</h2>
+      <div class="siblings">div (parent)
+        <p>p</p>
+        <span>span</span>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <p>p</p>
+      </div>
+      
+</body>
+</html>

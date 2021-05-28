@@ -1,0 +1,26 @@
+----------------------------867252968336144139647448
+Content-Disposition: form-data; name="data"; filename="demo.txt"
+Content-Type: text/plain
+
+1. 1.Write a Nodejs server that listen on port 3001 and which will read person.json and return a response in JSON format.
+
+http://localhost:3001
+
+2. Write a Nodejs server that serves as a RESTFUL API that takes two parameters in a GET call and produces their sum.
+
+http://localhost:3001/product?param1=5&param2=10
+
+3. Write a Nodejs server that serves as a RESTFUL API that accepts a string as an input name and returns the first vowel character from the string.
+
+ http://localhost:3001/vowefind?input=rita
+
+4. Write a Nodejs server that serve as a RESTFUL API that accepts a file content and writes them to the disk.
+
+http://localhost:3001/upload
+
+Online reference:
+
+https://www.tutorialspoint.com/nodejs/nodejs_utility_module.htm
+
+https://nodejs.org/api/http.html
+----------------------------867252968336144139647448--

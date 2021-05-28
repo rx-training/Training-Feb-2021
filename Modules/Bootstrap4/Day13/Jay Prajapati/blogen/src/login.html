@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Blogen Admin UI</title>
+    </head>
+
+    <body id="top" class="bg-dark">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+            <div class="container col-lg-9">
+                <a href="./index.html" class="navbar-brand">Blogen</a>
+                <button class="navbar-toggler d-none" data-toggle="collapse"
+                        data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse d-none" id="navbarCollapse">
+                    <ul class="navbar-nav d-none">
+                        <li class="nav-item"><a href="./index.html" class="nav-link">Dashboard</a></li>
+                        <li class="nav-item"><a href="./post.html" class="nav-link">Post</a></li>
+                        <li class="nav-item"><a href="./category.html" class="nav-link">Categories</a></li>
+                        <li class="nav-item"><a href="./user.html" class="nav-link">User</a></li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto d-none">
+                        <div class="dropdown">
+                            <button class="btn text-secondary dropdown-toggle" type="button" 
+                            id="dropdownButton" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false"><span class="fa fa-user"></span> Wellcome Brand</button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownButton">
+                                <a href="./profile.html" class="dropdown-item"><span class="fa fa-user-circle"></span> Profile</a>
+                                <a href="" class="dropdown-item"><span class="fa fa-gear"></span> Settings</a>
+                            </div>
+
+                        </div>
+                        <li class="nav-tiem"><a href="#" class="nav-link"><span class="fa fa-user-times"></span> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- home-head-section -->
+        <section class="pt-5 bg-primary" id="home-head-section">
+            <div class="container col-lg-9">
+                <h2 class="text-light py-2 m-0"><span class="fa fa-user"></span> Blogen Admin</h2>
+                
+            </div>
+        </section>
+
+        <!-- home-post-section -->
+        <section class="bg-light py-4">
+            <div class="container col-lg-9">
+                <div class="row align-items-end">
+                    <div class="container col-lg-6">
+                      <div class="card">
+                          <h3 class="card-header">
+                              Account Login
+                          </h3>
+                          <div class="card-body">
+                            <form action="">
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="psw" class="form-label">Password</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                                <button class="btn btn-block btn-primary">Login</button>
+                            </form>
+                          </div>
+                      </div>
+                    </div>
+            </div>
+        </section>
+        <!-- home-section -->
+        <!-- footer -->
+        <footer class="">
+            <div class="container col-lg-8">
+                <div class="py-5 text-center">
+                    <p class="text-light">Copyright <span>&copy;</span> 2021 Blogen Created by Jay Prajapati</p>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- Password Modal -->
+
+
+        <div class="modal fade" id="passwordModal" tabindex="-1"
+                role="dialog" aria-labelledby="passwordModalLabel" 
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header bg-primary">
+                            <h5 class="modal-title " id="passwordModalLabel">
+                                Change Password
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="upwd" class="form-label">Password</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="upwd" class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save Chages</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

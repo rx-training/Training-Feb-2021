@@ -1,0 +1,41 @@
+#content {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#content .container {
+    border: red 3px solid;
+    width: 500px;
+    height: 500px;
+} 
+
+#content .box {
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    line-height: 100px;
+    text-align: center;
+}
+
+#content .relative {
+    position: relative;
+    left: 150px;
+    top: 50px;
+}
+
+#content .absolute {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+}
+
+#content .static {
+    position: static;
+}
+
+#content .fixed {
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+}

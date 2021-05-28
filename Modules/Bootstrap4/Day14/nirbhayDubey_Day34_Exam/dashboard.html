@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Department</title>
+     <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!--JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
+        <div class="container">
+            <a href="#" class="navbar-brand">HR Management</a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <img  src="images/profile-icon-png.png" alt="" height="35">
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="hrname"> Here </a>
+                    <div class="dropdown-menu">
+                        <button href="#" class="dropdown-item" id="logout"> Logout </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 m-auto">
+                <h1 class="h3" id="welcome">Welcome</h1>              
+            </div>
+        </div>
+        <div class="row mt-5 mb-5">
+            <div class="col-lg-12">
+                <div id="accordion1">
+                    <!-- INSERT CODE -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse1">
+                                    Insert
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapse1" class="collapse" data-parent="#accordion1">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-5 m-auto">
+                                        <form action="#" class="pb-2">
+                                            <div class="form-group">
+                                                <label for="ename">Employee name</label>
+                                                <input type="text" id="ename" name="ename" class="form-control">
+                                                <label id="errename" style="color: red;display: none;"></label>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="eemail">Email ID</label>
+                                                <input type="email" id="eemail" name="eemail" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="epass">Password</label>
+                                                <input type="password" id="epass" name="epass" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="edesig">Designation</label>
+                                                <select type="text" id="edesig" name="edesig" class="custom-select">
+                                                    <option value="novalue">Choose...</option>
+                                                    <option value="HR">HR</option>
+                                                    <option value="Engineer">Engineer</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ecountry">Country</label>
+                                                <select type="text" id="ecountry" name="ecountry" class="custom-select" onchange="cunchange(this);">
+                                                    <option value="novalue">Choose...</option>
+                                                    <option value="India">India</option>
+                                                    <option value="other">Other</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="estate">State</label>
+                                                <select type="text" id="estate" name="estate" class="custom-select" onchange="stchange(this);" disabled>
+                                                    <option value="novalue">Choose...</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ecity">City</label>
+                                                <select type="text" id="ecity" name="ecity" class="custom-select" disabled>
+                                                    <option value="novalue">Choose...</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="econtact">Contact number</label>
+                                                <input type="text" id="econtact" name="econtact" class="form-control" maxlength="10"> 
+                                                <label id="errecontact" style="color: red;display: none;"></label>
+                                            </div>
+                                            <div class="my-3" id="errinsertmsg" style="color:red;display: none;">Hello</div>
+                                            <button type="submit" class="btn btn-primary" onclick="return insert(this.form);">Insert Record</button>
+                                            <button type="reset" class="btn btn-secondary" id="btnresetform">Reset</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+
+                    <!-- UPDATET CODE -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse2" id="btnupdate">
+                                    Update
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapse2" class="collapse" data-parent="#accordion1">
+                            <div class="card-body">
+                                <table class="table table-sm table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Password</th>
+                                            <th scope="col">Contact</th>
+                                            <th scope="col">Country</th>
+                                            <th scope="col">State</th>
+                                            <th scope="col">City</th>
+                                            <th scope="col">Designation</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody id="updatetbody">
+                                        
+                                      </tbody>
+                                </table>
+                                <button class="btn btn-info w-100" id="btnUpdateData">Update Data</button>
+                            </div>
+                          </div>
+                    </div>
+
+                    <!-- DELETE CODE -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse3" id="btndelete">
+                                    Delate
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapse3" class="collapse" data-parent="#accordion1">
+                            <div class="card-body">
+                                <table class="table table-sm table-dark">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Password</th>
+                                            <th scope="col">Contact</th>
+                                            <th scope="col">Country</th>
+                                            <th scope="col">State</th>
+                                            <th scope="col">Designation</th>
+                                            <th scope="col">Delete</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody id="deletetbody">
+                                        
+                                      </tbody>
+                                </table>
+                            </div>
+                          </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function bindData(){ 
+            var temp=localStorage.getItem("Employees");
+            var elist=JSON.parse(temp);
+            var flag=0;
+            for(var item of elist){
+                if(item.Login==1){
+                    flag=1;
+                    break;
+                }
+            }
+            if(flag==0) window.location.href="index.html";
+            document.getElementById("hrname").innerHTML=item.Name;
+            document.getElementById("welcome").innerHTML="Welcome, "+item.Name;
+            return item.email;
+        }
+        var sessionUserEmail=bindData();
+
+        function cunchange(country){
+            var sarr=["Gujarat","Rajasthan","Maharashtra","Punjab","Madhya-Pradesh","Andhra-Pradesh"];
+            if(country.value=="India"){
+                var state=document.getElementById("estate");
+                state.disabled=false;
+                var temp="<option value='novalue'>Choose...</option>";
+                for (const item of sarr) {
+                    temp+="<option value="+item+">"+item+"</option>";
+                }
+                state.innerHTML=temp;
+            }
+        }
+
+        function stchange(state){
+            var Gujarat=["Vadodara","Anand","Chhota Udaipur","Dahod","Kheda","Panchmahal","Ahmedabad","Gandhinagar","Banaskantha","Mehsana","Patan","Sabarkantha"];
+            var Rajasthan=["Jaipur","Jodhpur","Udaipur","Ajmer","Bikaner","Kota","Jaisalmer","Alwar","Beawar","Pushkar"];
+            var Maharashtra=["Andheri","Bandra","Borivali","Dahisar","Goregaon","Jogeshwari","Juhu","Kandivali west","Kandivali east","Khar","Malad","Santacruz","Vasai","Virar","Vile Parle"];
+            var Punjab=["Mandi Gobindgarh","Dhariwal","Bathinda","Pathankot","Jalandhar","Faridkot","Ludhiana","Khanna","Patiala","Amritsa"];
+            var Madhya=["Ujjain","Singrauli","Indore","Bhopal","Pithampur","Dewas","Mandideep","Jabalpur","Gwalior","Damoh"];
+            var Andhra=["Rajamahendravaram","Visakhapatnam"	,"Tirupati","Amaravati"];
+            var temp="<option value='novalue'>Choose...</option>";
+            var city=document.getElementById("ecity");
+            city.disabled=false;
+            switch(state.value){
+                case "Gujarat":
+                        for (const item of Gujarat) {
+                            temp+="<option value="+item+">"+item+"</option>";
+                        }
+                    break;
+                case "Rajasthan":
+                        for (const item of Rajasthan) {
+                            temp+="<option value="+item+">"+item+"</option>";
+                        }
+                    break;
+                case "Maharashtra":
+                        for (const item of Maharashtra) {
+                            temp+="<option value="+item+">"+item+"</option>";
+                        }
+                    break;
+                case "Punjab":
+                        for (const item of Punjab) {
+                            temp+="<option value="+item+">"+item+"</option>";
+                        }
+                    break;
+                case "Madhya":
+                        for (const item of Madhya) {
+                            temp+="<option value="+item+">"+item+"</option>";
+                        }
+                    break;
+                case "Andhra":
+                        for (const item of Andhra) {
+                            temp+="<option value="+item+">"+item+"</option>";
+                        }
+                    break;
+            }
+            city.innerHTML=temp;
+        }
+
+        // INSERT a new employee CODE
+        function insert(frm){
+            var ename=frm.ename.value;
+            var epass=frm.epass.value;
+            var edesig=frm.edesig.value;
+            var eemail=(frm.eemail.value).toLowerCase();
+            var econtact=frm.econtact.value;
+            var ecountry=frm.ecountry.value;
+            var estate=frm.estate.value;
+            var ecity=frm.ecity.value;
+
+            var errname=document.getElementById("errename");
+            var errcon=document.getElementById("errecontact");
+            var errmsg=document.getElementById("errinsertmsg");
+
+            if(ename=="" || edesig=="novalue" || eemail=="" || econtact=="" || epass=="" || ecountry=="novalue" || estate=="novalue" || ecity=="novalue"){
+                errmsg.style.display="block";
+                errmsg.innerHTML="Please fill values in all the fields correctly";
+                return false;
+            }
+            else{
+                var flag=0;
+                var pattename=/^[a-zA-Z_ ]{2,30}$/;
+                var pattecontact=/^[0-9]{10}$/;
+                if(!pattename.test(ename)){
+                    errname.style.display="block";
+                    errname.innerHTML="Name should contain only characters";
+                    flag=1;
+                }
+                if(!pattecontact.test(econtact)){
+                    errcon.style.display="block";
+                    errcon.innerHTML="Contact should be of 10-digit & contain only Numeric";
+                    flag=1;
+                }
+                if(flag==0){
+                    var newData={"Name":ename,"email":eemail,"password":epass,"Contat":econtact, "Country": ecountry, "state":estate,"city":ecity,"Designation":edesig,"Login":0};
+                    var temp=localStorage.getItem("Employees");
+                    var elist=JSON.parse(temp);
+                    elist[elist.length]=newData;
+                    localStorage.setItem("Employees",JSON.stringify(elist));
+                    alert("Employee Data Inserted Successfully");
+                    errmsg.style.display="none";
+                    errname.style.display="none";
+                    errcon.style.display="none";
+                    return false;
+                }
+            }
+        }
+        // SHOWING employees under Update CODE
+        document.getElementById("btnupdate").addEventListener("click",()=>{
+            var temp=localStorage.getItem("Employees");
+            var elist=JSON.parse(temp);
+            var temp="";
+            var index=0;
+            for (const item of elist) {
+                var odesig="HR";
+                if(item.Name==undefined){
+                    continue;   
+                }
+                if(item.Designation=="HR"){
+                    odesig="Engineer";
+                }
+                temp+="<tr>"+
+                        "<td scope='col'>"+
+                            "<input type='text' id='uename"+index+"' class='form-control' value='"+item.Name+"'>"+
+                        "</td>"+
+                        "<td scope='col'>"+
+                            "<input type='email' id='ueemail"+index+"' class='form-control' value='"+item.email+"'>"+
+                        "</td>"+
+                        "<td scope='col'>"+
+                            "<input type='password' id='uepass"+index+"' class='form-control' value='"+item.password+"'>"+    
+                        "</td>"+
+                        "<td scope='col'>"+
+                            "<input type='text' id='uecontact"+index+"' class='form-control' maxlength='10' value='"+item.Contat+"'> "+
+                        "</td>"+
+                        "<td scope='col'>"+
+                            "<select type='text' id='uecount"+index+"' class='custom-select' disabled>"+
+                                "<option value='India'>India</option>"+
+                            "</select>"+
+                        "</td>"+
+                        "<td scope='col'>"+
+                            "<select type='text' id='uestate"+index+"' class='custom-select' disabled>"+
+                                "<option value='"+item.state+"'>"+item.state+"</option>"+
+                            "</select>    "+
+                        "</td>"+
+                        "<td scope='col'>"+
+                            "<select type='text' id='uecity"+index+"' class='custom-select' disabled>"+
+                                "<option value='"+item.city+"'>"+item.city+"</option>"+
+                            "</select>"+
+                        "</td>"+
+                        "<td scope='col'>"+
+                            "<select type='text' id='uedesig"+index+"' class='custom-select'>"+
+                                "<option value='"+item.Designation+"'>"+item.Designation+"</option>"+
+                                "<option value='"+odesig+"'>"+odesig+"</option>"+
+                            "</select>"+
+                        "</td>"+
+                    "</tr>";
+                    index++;
+            }
+            document.getElementById("updatetbody").innerHTML=temp;
+        });
+
+        // UPDATE existing employees CODE
+        document.getElementById("btnUpdateData").addEventListener("click",()=>{
+            var temp=localStorage.getItem("Employees");
+            var elist=JSON.parse(temp);
+            var newList=[];
+            for(var i=0;i<elist.length;i++){
+                var unm=document.getElementById("uename"+i).value;
+                var uem=document.getElementById("ueemail"+i).value;
+                var ups=document.getElementById("uepass"+i).value;
+                var ucon=document.getElementById("uecontact"+i).value;
+                var ucoun=document.getElementById("uecount"+i).value;
+                var ust=document.getElementById("uestate"+i).value;
+                var uct=document.getElementById("uecity"+i).value;
+                var ude=document.getElementById("uedesig"+i).value;
+                var ulogin=(sessionUserEmail==uem)?1:0;
+
+                newList[i]={"Name":unm,"email":uem,"password":ups,"Contat":ucon, "Country": ucoun, "state":ust,"city":uct,"Designation":ude,"Login":ulogin};
+            }
+            localStorage.setItem("Employees",JSON.stringify(newList));
+            alert("Employee Data Updated Successfully");
+        });
+
+        // SHOWING employees under Delete CODE
+        document.getElementById("btndelete").addEventListener("click",()=>{
+            bindDelete();
+        });
+        function bindDelete(){
+            var temp=localStorage.getItem("Employees");
+            var elist=JSON.parse(temp);
+            var temp="";
+            var index=0;
+            for (const item of elist) {
+                if(item.Name==undefined){
+                    
+                }
+                else{
+                    if(item.Designation=="HR"){
+                        temp+="<tr>"+
+                            "<td scope='col'>"+item.Name+"</td>"+
+                            "<td scope='col'>"+item.email+"</td>"+
+                            "<td scope='col'>"+item.password+"</td>"+
+                            "<td scope='col'>"+item.Contat+"</td>"+
+                            "<td scope='col'>"+item.Country+"</td>"+
+                            "<td scope='col'>"+item.state+"</td>"+
+                            "<td scope='col'>"+item.Designation+"</td>"+
+                            "<td scope='col'>"+
+                                "<button class='btn btn-danger' disabled>remove</button>"+
+                                "</td>"+
+                        "</tr>";
+                    }
+                    else{
+                        temp+="<tr>"+
+                            "<td scope='col'>"+item.Name+"</td>"+
+                            "<td scope='col'>"+item.email+"</td>"+
+                            "<td scope='col'>"+item.password+"</td>"+
+                            "<td scope='col'>"+item.Contat+"</td>"+
+                            "<td scope='col'>"+item.Country+"</td>"+
+                            "<td scope='col'>"+item.state+"</td>"+
+                            "<td scope='col'>"+item.Designation+"</td>"+
+                            "<td scope='col'>"+
+                                "<button class='btn btn-danger' onclick='btndeleteemp(this);' value='"+index+"'>remove</button>"+
+                                "</td>"+
+                        "</tr>";
+                    }
+                }
+                index++;
+            }
+            document.getElementById("deletetbody").innerHTML=temp;
+        }
+
+        // DELETE existing employees CODE
+        function btndeleteemp(btn){
+            var index=btn.value;
+            var temp=localStorage.getItem("Employees");
+            var elist=JSON.parse(temp);
+            elist[index]="";
+            localStorage.setItem("Employees",JSON.stringify(elist));
+            document.getElementById("deletetbody").innerHTML="";
+            alert("Employee Data Deleted Successfully");
+            bindDelete();
+        }
+
+        document.getElementById("logout").addEventListener("click",()=>{
+            window.location.href="index.html";
+        });
+    </script>
+
+     <!-- Bootstrap JS CDN -->
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+</body>
+</html>

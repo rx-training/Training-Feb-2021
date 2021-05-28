@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Form Mobile */
+#head{
+    text-align: center;
+    background-color: skyblue;
+    padding: 10px;
+    border-radius: 5px;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+.column{
+    
+    padding: 5px;
+    
+}
+.column img{
+    border: 3px solid rgba(5, 10, 250, 0.5);
+}
+#sideHead{
+    font-size: medium;
+}
+
+@media screen and (min-width: 600px){
+    .column{
+        flex: 33.33%;
+        max-width: 33.33%;
+    }
+}
+@media screen and (min-width: 768px){
+    .column{
+        flex: 25%;
+        max-width: 25%;
+    }
+    #sideHead{
+        font-size: 25px;
+    }
+}

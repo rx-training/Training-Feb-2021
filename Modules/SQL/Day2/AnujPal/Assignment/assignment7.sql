@@ -1,0 +1,1 @@
+UPDATE employees SET JobId='SH_CLERK' WHERE EmployeeID = 118 AND   JobId NOT  LIKE 'SH%'

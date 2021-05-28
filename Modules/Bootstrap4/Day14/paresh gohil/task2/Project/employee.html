@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #data{
+            width: 80%;
+            margin-top: 20px;
+            margin-left: 120px;
+        }
+    </style>
+
+    <title>Document</title>
+</head>
+<body>
+    <form class="container mt-5 border border-dark bg-success text-white" style="width: 500px;">
+        <div class="py-2">
+            <label >Name</label>
+            <input  type="text" class="form-control" id="e1" placeholder="Name" required>
+        </div>
+        <div class="py-2">
+            <label>emailId</label>
+            <input type="email" class="form-control" id="e2" placeholder="emailid" required>
+        </div>
+        <div class="py-2">
+            <label>Phone Number</label>
+            <input type="number" class="form-control" id="e3" placeholder="Phone No." required>
+        </div>
+        <div class="py-2">
+            <label>Designation</label>
+            <input type="text" class="form-control" id="e4" placeholder="Designation" required>
+        </div>
+        <div class="py-2">
+            <label>City</label>
+            <select id="country" onchange="Changelist()">
+                <option value=" ">Choose Country</option>
+                <option value="India">INDIA</option>
+                <option value="Us">US</option>
+                <option value="Spain">Spain</option>
+            </select>
+            <select id="city"></select>
+        </div>
+        <button type="button" class="btn btn-primary m-2" onclick="employee()">submit</button>
+    </form>
+    <table class="table table-bordered" id="data">
+        <tr class="thead-dark">
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Designation</th>
+            <th>Country</th>
+            <th>City</th>
+        </tr>
+        <tr class="d1">
+
+        </tr>
+        
+
+    </table>
+
+    <script>
+        function employee(){
+            var a = document.getElementById("e1").value;
+            var b = document.getElementById("e2").value;
+            var c = document.getElementById("e3").value;
+            var d = document.getElementById("e4").value;
+            var o = document.getElementById("country").value;
+            var p = document.getElementById("city").value
+            var k = {};
+            var e = /[0-9]/g
+            var f = /[0-9]{9}/g
+            var h = a.match(e)
+            var i = b.match(f)
+            if(h != null){
+                alert("Please Enter valid name")
+            }
+            if(b == null){
+                alert("Please Enter valid Number")
+            }
+            k = {
+                "Name" : a,
+                "EmailID" : b,
+                "Phone_Number" : c,
+                "Designetion" : d,
+                "Country" : o,
+                "City" : p
+            }
+            var w = JSON.stringify(k)
+            localStorage.setItem("Employee",w)
+
+            var t =
+                         "<tr>"
+                         + "<td>"+ k.Name + "</td>"
+                         + "<td>"+ k.EmailID + "</td>"
+                         + "<td>"+ k.Phone_Number + "</td>"
+                         + "<td>"+ k.Country + "</td>"
+                         + "<td>"+ k.City + "</td>"
+                         + "</tr>"
+                    document.getElementById("data").innerHTML = t;
+                    
+       
+
+        }
+            var z = {};
+            z["India"] = ["Ahmedabad","Baroda","surat"];
+            z["Us"] = ["ABc","XYZ","PQR"];
+            z["Spain"] = ["pq","qr","rt"];
+        
+            var country = document.getElementById("country");
+            var city = document.getElementById("city");
+            
+        function Changelist(){
+            var j = country.options[country.selectedIndex].value
+            while(city.options.length){
+                city.remove(0);
+            }
+            var k = z[j];
+            if(k){
+                var l ;
+                for(l = 0;l<k.length;l++){
+                    var m = new Option(k[l],l);
+                    city.options.add(m);
+                }
+            }
+        }
+    
+    </script>
+</body>
+</html>

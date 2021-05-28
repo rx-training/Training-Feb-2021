@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+<body>
+    <script>
+        var value1 = 39874;
+        console.log(value1);
+        console.log(window.value1);
+        console.log(this === window);
+
+        var des = "hardware Product";
+
+        function updateProduct(){
+            des = "Updated Product";
+        }
+        updateProduct();
+        console.log(des);
+
+
+        var desc = "hardware Product";
+
+        function updateProduct(){
+          var  desc = "Updated Product";
+        }
+        updateProduct();
+        console.log(desc);
+
+
+        var dis = "Hello World";
+        function update(){
+            var dis = "hello javascript";
+            var updateid = function(){
+                console.log(dis);
+            }
+            updateid();
+        }
+        update();
+
+        
+        var dis1 = "Hello World";
+        function update(){
+            
+            var updateid = function(){
+                console.log(dis1);
+            }
+            updateid();
+        }
+        update();
+
+    </script>
+
+</body>
+</html>

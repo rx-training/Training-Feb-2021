@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Country</title>
+</head>
+<body>
+        <div class="container p-5 bg-warning mt-5">
+            <h1 class="pl-3 mb-5">Select Your Country:-</h1>
+             <form id="jqform">
+                 <fieldset class="form-group">
+                   <select name="countries" id="countries" class="form-control">
+                        <option value="India : United Kingdom : Australia : Switzerland : Canada">Please Select</option>
+                        <option value="India">India</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="Canada">Canada</option>
+                    </select>
+                            
+                 </fieldset>
+             </form>
+             <div id="output"></div>
+        </div>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <script>
+        console.log(document.getElementById('countries').value)
+        $(document).ready(function() {
+            $('#countries').change(
+                function() {
+                    event.preventDefault()
+                    let val = $(this).children('option:selected').val();
+
+                    if(val == 'all') {
+                        $('#output').html(`<p class="capitalize">You Have Selected India, United Kingdom, Australia, Switzerland, Canada</p>`);
+                    } else {
+                        $('#output').html(`<p class="capitalize bg-dark text-info">You Have Selected :- ${val}</p>`);
+                    }
+                }
+            )
+        })
+        
+    </script>
+    </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap4 CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-2">
+            <div class="col-lg-5 m-auto">   
+                <p class="h3 py-3">Math Operation using JavaScript</p>         
+                <form action="#">
+                    <div class="form-group">
+                        <label for="number1">Please enter first number</label>
+                        <input type="text" id="number1" name="no1" class="form-control" onblur="validate(number1,fb1);">
+                        <small id="fb1" style="display: none;color: red;">Please enter a valid number</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="number2">Please enter second number</label>
+                        <input type="text" id="number2" name="no2" class="form-control" onblur="validate(number2,fb2);">
+                        <small id="fb2" style="display: none;color: red;">Please enter a valid number</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="operation">Please select operation you want to perform :</label>
+                        <small id="fb3" style="display: none;color: red;">Please select an operation</small>
+                        <div class="form-check py-1">
+                            <input type="radio" id="op1" class="form-check-input" name="operation" value="+">
+                            <label class="form-check-label" for="op1">Addition (&plus;)</label>
+                        </div>
+                        <div class="form-check py-1">
+                            <input type="radio" id="op2" class="form-check-input" name="operation" value="-">
+                            <label class="form-check-label" for="op2">Subtraction (&minus;)</label>
+                        </div>
+                        <div class="form-check py-1">
+                            <input type="radio" id="op3" class="form-check-input" name="operation" value="*">
+                            <label class="form-check-label" for="op3">Multiplication (&times;)</label>
+                        </div>
+                        <div class="form-check py-1">
+                            <input type="radio" id="op4" class="form-check-input" name="operation" value="/">
+                            <label class="form-check-label" for="op4">Division (&divide;)</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" onclick="return calculate(this.form);">Calculate</button>
+                    <button type="reset" class="btn btn-secondary" id="btnresetform">Reset</button>
+                    <label class="form-control mt-3 p-2 bg-light text-dark" for="result" id="result"></label>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btnresetform").addEventListener("click",function(){
+            document.getElementById("result").innerHTML="";
+        });
+        function validate(num,fb){
+            if(isNaN(Number(num.value))){
+                fb.style.display ="block";
+            }else{
+                fb.style.display="none";
+            }
+        }
+        function calculate(frm){
+            var no1=Number(frm.no1.value);
+            var no2=Number(frm.no2.value);
+
+            if(no1==0){ fb1.style.display ="block"; return false; }
+            if(no2==0){ fb2.style.display ="block"; return false; }
+            var result;
+            switch(frm.operation.value){
+                case "+":result=no1+no2; break;
+                case "-":result=no1-no2; break;
+                case "*":result=no1*no2; break;
+                case "/":result=no1/no2; break;
+                default:
+                    fb3.style.display ="block";
+                    return false;
+            }
+            fb3.style.display ="none";
+            document.getElementById("result").innerHTML="Result is: "+result;
+            return false;
+        }
+    </script>
+
+    <!-- Bootstrap4 JS CDN -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

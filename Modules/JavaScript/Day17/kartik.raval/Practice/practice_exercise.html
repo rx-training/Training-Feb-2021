@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical</title>
+</head>
+<body>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <input type="text" id="p3" value="Hello">
+    <br><br><br>
+    <input type="button" value="Resize window" onclick="resize()">
+    <input type="button" value="Open window" onclick="openWin()">
+    <button onclick="window_location()">Location href</button><br><br>
+    
+    <p id="p4">Hello world!</p>
+    <p id="p5">Display none</p>
+    <p id="p6"></p>
+   
+    
+    <img id="image" alt="">
+    <script>
+        document.getElementById("p1").innerHTML = "Hello";
+        document.getElementsByTagName("p")[1].innerHTML = "Hello world"; 
+        document.getElementById("image").src = "img/demo1.jpeg";
+        document.getElementById("p3").value = "Have a nice day!";
+        document.getElementById("p4").style.color = "red";
+        document.getElementById("p5").style.display = "none";
+
+        function window_location(){
+           location.href="home.html";
+        }
+        var myWindow;
+        function openWin() {
+            myWindow = window.open("", "", "width=150, height=150");
+        }
+        function resize(){
+            myWindow.resizeTo(550,550);
+        }
+    </script>
+</body>
+</html>

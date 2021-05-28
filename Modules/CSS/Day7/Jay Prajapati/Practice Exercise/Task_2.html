@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query BreakPoints</title>
+    <style>
+        *{
+            box-sizing:border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0px;
+            padding: 0px;
+        }
+        /* For Mobile Device */
+        .col-1{
+            width: 100%;
+            border: 1px solid skyblue;
+            background-color: skyblue;
+            padding: 15px;
+        }
+        .navigation ul{
+            list-style-type: none;
+            padding:0;
+            margin: 0;
+        }
+        .navigation ul li{
+            text-align: center;
+            padding: 10px;
+            text-transform: capitalize;
+            font-weight: bold;
+
+        }
+        .navigation ul li:hover{
+            text-align: center;
+            padding: 10px;
+            background-color: snow;
+            text-transform: capitalize;
+        }
+        .col-2{
+            width: 100%;
+            border: 1px solid rgb(135, 235, 140);
+            background-color: rgb(135, 235, 140);
+            padding: 15px;
+        }
+        .col-3{
+            width: 100%;
+            border: 1px solid rgb(135, 235, 222);
+            background-color: rgb(135, 235, 222);
+            padding: 15px;
+        }
+        /* for tablet*/
+        @media screen and (min-width: 768px){
+            .row{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .col-1{
+                width: 25%;
+            }
+            .col-2{
+                width:75%
+            }
+            .col-3{
+                width: 100%;
+            }
+        }
+
+        /* for desktop */
+        @media screen and (min-width: 1024px){
+            .row{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .col-1{
+                width: 20%;
+            }
+            .col-2{
+                width:60%
+            }
+            .col-3{
+                width: 20%;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-1 navigation">
+            <uL>
+                <li>tab 1</li>
+                <li>tab 1</li>
+                <li>tab 1</li>
+                <li>tab 1</li>
+                <li>tab 1</li>
+            </uL>
+        </div>
+        <div class="col-2">
+            <h1>Media Query Breakpoin</h1>
+            <p>This is a paragraph to show the responsiveness of the page.
+                Try to resize of the page and watch the difference between 
+                different viewports
+            </p>
+        </div>
+        <div class="col-3">
+            <h1>Media Query Breakpoin</h1>
+            <p>This is a paragraph to show the responsiveness of the page.
+                Try to resize of the page and watch the difference between 
+                different viewports
+            </p>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

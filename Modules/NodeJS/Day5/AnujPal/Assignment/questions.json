@@ -1,0 +1,44 @@
+[
+    {
+        "QID": 1,
+        "Question": "Which of the following is not an operating system?",
+        "optionA": "Winodows",
+        "optionB": "Linux",
+        "optionC": "oracle",
+        "optionD": "Dos"
+    },
+    {
+        "QID": 2,
+        "Question": " What is the maximum length of the filename in DOS?",
+        "optionA": "4",
+        "optionB": "5",
+        "optionC": "8",
+        "optionD": "12"
+    },
+    {
+        "QID": 3,
+        "Question": " When was the first operating system developed?",
+        "optionA": "1948",
+        "optionB": "1949",
+        "optionC": "1950",
+        "optionD": "1951"
+    },
+    {
+        "QID": 4,
+        "Question": " When were MS windows operating systems proposed?",
+        "optionA": "1994",
+        "optionB": "1990",
+        "optionC": "1992",
+        "optionD": "1985"
+    },
+
+    {
+        "QID": 5,
+        "Question": " When were MS windows operating systems proposed?",
+        "optionA": ".txt",
+        "optionB": ".xls",
+        "optionC": ".ppt",
+        "optionD": ".bmp"
+    }
+
+]

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width:400px;
+            height:400px;
+            position: relative;
+            background: linear-gradient(rgb(154, 226, 125),rgb(202, 189, 113),rgb(220, 240, 109));
+        }
+        #animate{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background:linear-gradient(rgb(17, 15, 119),rgb(0, 140, 255),rgb(180, 235, 180));
+        }
+    </style>
+  
+</head>
+<body>
+    <p><button onclick="myMove()">Clcik here to animate</button></p>
+    <h2>My First javascript Animation</h2>
+    <div id ="container">
+     <div id="animate"></div>
+     </div>   
+     <script>
+         var id = null;
+         function myMove(){
+             var elem = document.getElementById('animate');
+             var pos = 0;
+             clearInterval(id);
+             id = setInterval(frame,15);
+             function frame( ){
+                 if(pos==350){
+                     clearInterval(id);
+
+                 }else{
+                        pos++;
+                        elem.style.top = pos + "px";
+                        elem.style.left= pos + "px";
+             }
+            }
+
+         }
+     </script>
+</body> 
+</html>

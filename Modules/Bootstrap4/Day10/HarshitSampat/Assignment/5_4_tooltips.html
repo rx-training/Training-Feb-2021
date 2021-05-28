@@ -89,43 +89,53 @@
 
     <br><br>
 
-    <!-- TOOLTIPS WITH HTML -->
-    
-    <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" data-html="true" title="<h3> Hello World </h3">>Tooltip with HTML</button>
-    <hr>
+  <!-- TOOLTIPS WITH HTML -->
+  <button id="hello"class="btn btn-primary" data-toggle="tooltip"
+  data-placement="top" data-html="true"
+  title="<h4>hello world</h4><p>Lorem ipsum dolor sit amet consectetur.</p>">
+  Tooltip in HTML 
+</button>
+  <hr>
 
-    <!-- TRIGGER WITH JS --> 
-    <button id="hello" class="btn btn-primary" onclick="showTooltip()">
-      Show Tooltip
-    </button>
+  <!-- TRIGGER WITH JS -->
+  <button class="btn btn-secondary" onclick="showTootip()">
+    Show Tooltip
+  </button>
 
-    <button id="hello" class="btn btn-primary" onclick="hideTooltip()">
-      Hide Tooltip
-    </button>
+  <button class="btn btn-secondary"onclick="hideTootip()">
+    Hide Tooltip
+  </button>
 
-    <button id="hello" class="btn btn-primary" onclick="toggleTooltip()">
-      Toggle Tooltip
-    </button>
+  <button class="btn btn-secondary"onclick="toggleTootip()">
+    Toggle Tooltip
+  </button>
 
-  </div>
+</div>
 
-  <div style="margin-top:500px;"></div>
+<div style="margin-top:500px;"></div>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-  <script>
-    // init the tooltip
-    $('[data-togel="tooltip"]').tooltip();
-     function showTooltip(){
-       $('#hello').tooltip('show');  
-       }
-       function hideTooltip(){
-         $('#hello'.tooltip('hide'))
-       }
-       function toggleTooltip(){
-         $('#hello'.toolltip('toggle'))
-       }
-  </script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+  crossorigin="anonymous"></script>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+    function showTootip(){
+      $('#hello').tooltip('show');
+    }
+
+    function hideTootip(){
+      $('#hello').tooltip('hide');
+    }
+
+    function toggleTootip(){
+      $('#hello').tooltip('toggle');
+    }
+</script>
 </body>
+
 </html>

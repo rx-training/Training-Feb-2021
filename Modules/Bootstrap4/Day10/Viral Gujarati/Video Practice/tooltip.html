@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>tooltip</title>
+  </head>
+  <body>
+    <div class="container">
+
+        <!-- TOOLTIPS -->
+        <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="tooltip on top">Tooltip on
+            Top</button>
+        <button class="btn btn-success" data-toggle="tooltip" data-placement="right" title="tooltip on right">Tooltip on
+            Right</button>
+        <button class="btn btn-warning" data-toggle="tooltip" data-placement="bottom" title="tooltip on bottom">Tooltip
+            on Bottom</button>
+        <button class="btn btn-danger" data-toggle="tooltip" data-placement="left" title="tooltip on left">Tooltip on
+            Left</button>
+
+        <br><br>
+
+        <!-- TOOLTIPS WITH HTML -->
+        <button id="hello" class="btn btn-primary" data-toggle="tooltip" data-placement="top" data-html="true"
+            title="<h3>Hello world</h3><p>Lorem ipsum dolor sit amet.</p>">Tooltip with html</button>
+
+        <hr>
+
+        <!-- TRIGGER WITH JS -->
+        <button class="btn btn-secondary" onclick="showTooltip()">Show Tooltip</button>
+
+        <button class="btn btn-secondary" onclick="hideTooltip()">Hide Tooltip</button>
+
+        <button class="btn btn-secondary" onclick="toggleTooltip()">Toggle Tooltip</button>
+
+
+    </div>
+
+    <div style="margin-top: 500px;"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
+    </script>
+
+    <script>
+        //init tooltip
+        $('[data-toggle="tooltip"]').tooltip();
+
+        function showTooltip(){
+            $('#hello').tooltip('show');
+        }
+
+        function hideTooltip(){
+            $('#hello').tooltip('hide');
+        }
+
+        function toggleTooltip(){
+            $('#hello').tooltip('toggle');
+        }
+
+        //Tooltip events
+        $('#hello').on('show.bs.tooltip',function(){
+            console.log('Tooltip Show');
+        });
+
+        $('#hello').on('shown.bs.tooltip',function(){
+            console.log('Tooltip Shown');
+        });
+
+        $('#hello').on('hide.bs.tooltip',function(){
+            console.log('Tooltip Hide');
+        });
+
+        $('#hello').on('hidden.bs.tooltip',function(){
+            console.log('Tooltip Hidden');
+        });
+    </script>
+</body>
+</html>

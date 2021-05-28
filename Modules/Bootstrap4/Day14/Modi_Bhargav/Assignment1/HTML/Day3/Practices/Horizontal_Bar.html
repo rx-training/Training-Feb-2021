@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <title>Basic Layout</title>
+    <style>
+        .col-md-3 {
+            margin-top: 150px;
+            height: 50vh;
+        }
+        .col-md-9{
+            margin-top: 150px;
+        }
+        .topnav {
+            overflow: hidden;
+            background-color: rgb(25, 114, 155);
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: rgb(201, 69, 69);
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top py-3">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand ml-5">
+                <img src="../../../Asset/img/radix.jpg" width="150" height="100">
+            </a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-5">
+                    <li class="nav-item">
+                        <a href="../../../index.html" class="nav-link h2 px-5">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../../HTML/index1.html" class="nav-link h2 px-5 text-primary">HTML</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../../CSS/index2.html" class="nav-link h2 px-5">CSS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../../BOOTSTRAP/index3.html" class="nav-link h2 px-5">BOOTSTRAP</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 bg-dark text-white">
+                <h1 class="text-success">HTML Topic</h1>
+                <ul>
+                    <li>
+                        <h3>Day:3</h3>
+                        <ul>
+                            <li>
+                                <h5>Practices</h5>
+                                <ul>
+                                    <li><a href="../Practices/Article.html">Article_File</a></li>
+                                    <li><a href="#">Horizontal_Bar</a></li>
+                                    <li><a href="../Practices/HR_work.html">HR_Department</a></li>
+                                    <li><a href="../Practices/login.html">Login_Page</a></li>
+                                    <li><a href="../Practices/Report_Card.html">Student_Report_Card</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h5>Assignment</h5>
+                                <ul>
+                                    <li><a href="../Assignment/index.html">Form_Page</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-9">
+                <nav>
+                    <div class="topnav">
+                        <a class="active" href="#Home">Home</a>
+                        <a href="#AboutUs">AboutUs</a>
+                        <a href="#ContactUs">ContactUs</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+
+

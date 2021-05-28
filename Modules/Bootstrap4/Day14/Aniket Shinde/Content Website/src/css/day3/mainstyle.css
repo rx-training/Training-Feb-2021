@@ -1,0 +1,84 @@
+td {
+    border: 1px solid #554744;
+    padding: 10px;
+    border-collapse: collapse;
+}
+th {
+    border: 1px solid #554744;
+    padding: 10px;
+    background-color: crimson;
+    color: white;
+    border-collapse: collapse;
+}
+table{
+    margin: auto;
+    text-align: center;
+}
+h1{
+    text-align: center;
+    color: crimson;
+    font-weight: bold;
+}
+ol{
+    color: crimson;
+}
+label{
+    color: crimson;
+    margin-top: 10px;
+}
+input[type="text"], input[type="password"],input[type="number"], input[type="email"], input[type="date"], input[type="tel"]{
+    width: 100%;
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type="submit"]{
+    margin-top: 10px;
+    height: 40px;
+    width: 100%;
+    background-color: crimson;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#employeeForm form label{
+    color: crimson;
+    display: inline-block;
+}
+select{
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#horizontalNavbar nav{
+    background-color: crimson;
+}
+#horizontalNavbar nav a:hover{
+    text-decoration: underline;
+}
+@media (max-width : 578px){
+    h1{
+        font-size: 30px;
+    }
+    td, th {
+        padding: 5px;
+        font-size: 15px;
+    }
+}
+@media (max-width : 372px){
+    h1{
+        font-size: 20px;
+    }
+    td, th {
+        padding: 5px;
+        font-size: 13px;
+    }
+}
+

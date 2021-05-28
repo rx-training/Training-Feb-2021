@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            text-align: center;
+            background: darkslategrey;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h2>Date format : DD/MM/YYYY</h2>
+            <form>
+                <input type="text" id="textbox1" placeholder="Enter date" name="textbox1">
+                <input type="submit" placeholder="Enter date" onclick="date_check()">
+                <p id="demo"></p>
+            </form>  
+        </div>
+    </div>
+    <script>
+        function date_check(){
+            var value_tb = document.getElementById("textbox1").value;
+            document.getElementById("demo").innerHTML = value_tb;
+            var input_date = value_tb.split('/');
+            var dd = parseInt(input_date[0]);
+            var mm = parseInt(input_date[1]);
+            var yy = parseInt(input_date[2]);
+            if(value_tb == NaN){
+                    if(dd <= 31)
+                    {
+                        console.log("Valid date")
+                    if(mm <=12)
+                    {
+                        console.log("Valid month");
+                    }
+                    else{
+                        console.log("Invalid month")
+                    }
+                    if(yy <= 2021)
+                    {
+                        console.log("Valid year");
+                    }
+                    else{
+                        console.log("Invalid year");
+                    }
+                }
+                else{
+                    console.log("Invalid date");
+                }
+            }
+            else{
+                console.log("Date should be in number format only! Please enter correct date");
+            }
+            
+        }  
+    </script>
+</body>
+</html>

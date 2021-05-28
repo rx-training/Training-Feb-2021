@@ -1,0 +1,32 @@
+.card {
+  margin: 2rem auto;
+  max-width: 40rem;
+  box-shadow: 2px 5px 10px rgb(160, 160, 160);
+  border: 1px solid #dddddd;
+  background-image: linear-gradient(to bottom right, #88bb55 15%, #f3f3f3 40%);
+  transition: all 0.3s linear;
+}
+.card .col-md-4 {
+  text-align: center;
+  padding-top: 3rem;
+}
+.card .col-md-2 {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  /* border: 1px solid red; */
+}
+.card .col-md-4 img {
+  border: 5px solid #3d5c1e;
+  border-radius: 50%;
+}
+.card .card-title {
+  padding-top: 1rem;
+}
+.card .idadd {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.card:hover {
+  box-shadow: 2px 7px 18px rgb(141, 141, 141);
+}

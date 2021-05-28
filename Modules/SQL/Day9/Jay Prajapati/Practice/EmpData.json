@@ -1,0 +1,19 @@
+{
+    "EmpsData" :
+        [
+            {
+                "Emp": {
+                        "id": "1",
+                        "Name": "Jhon Doe",
+                        "Department": "Banking"
+                }  
+            },
+            {
+                "Emp" : {
+                        "id": "2",
+                        "Name": "Adam Smith",
+                        "Department": "Service"
+                }
+            }
+        ]
+}
