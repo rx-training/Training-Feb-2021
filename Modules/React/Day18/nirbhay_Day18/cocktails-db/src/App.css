@@ -1,0 +1,221 @@
+body {
+  background: linear-gradient(to right, #ff8080 60%, #ffe8e8 40%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-top: 2rem;
+}
+#root {
+  background: linear-gradient(to right, #ff8080 60%, #ffe8e8 40%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  box-shadow: 2px 2px 20px #52282883;
+  height: 90vh;
+  margin: 0 auto;
+  padding: 0;
+  overflow: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+#root::-webkit-scrollbar {
+  width: 0.3rem;
+}
+#root::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+#root::-webkit-scrollbar-thumb {
+  background-color: #ff9292;
+}
+
+/* Navbar CSS */
+.navbar .navbar-brand svg {
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  margin-right: 0.3rem;
+}
+.navbar .navbar-brand {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.navbar .navbar-brand {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.navbar .navbar-nav li a {
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.navbar .input-group {
+  width: 14rem;
+}
+.navbar form .form-control {
+  font-size: 0.8rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  box-shadow: 1px 1px 10px #5228282c;
+  padding: 0;
+  border: none;
+  padding-left: 1rem;
+}
+.navbar form .form-control::placeholder {
+  color: #cacaca;
+}
+.navbar form .btn {
+  border-radius: 2rem;
+  background: #ff8080;
+  width: 3rem;
+  padding: 0.2rem;
+  box-shadow: 1px 1px 10px #5228282c;
+}
+
+/* Home page CSS */
+.home .cocktailglass {
+  height: 80vh;
+  width: 26vw;
+  position: absolute;
+  left: 60%;
+  right: 40%;
+  bottom: 0%;
+  transform: translateX(-10.5vw);
+}
+.saturate {
+  filter: drop-shadow(-20px 5px 20px rgba(0, 0, 0, 0.164));
+}
+.home .lemon {
+  height: 10vh;
+  width: 12vh;
+  position: absolute;
+  right: 20%;
+  bottom: 7%;
+}
+.home .btnordernow {
+  background: #ff9292;
+  box-shadow: 1px 1px 10px #52282827;
+  width: 8rem;
+  border-radius: 2rem;
+}
+.home .btnordernow:hover {
+  background: #ca4c4c;
+}
+.home .btnordernow:active {
+  background: #ac4141;
+}
+
+.home .imggroup {
+  position: absolute;
+  left: 5%;
+  width: 40%;
+  bottom: 7%;
+}
+.home .imggroup img {
+  box-shadow: 2px 20px 20px #5228287a;
+}
+.home .imggroup img:nth-child(1) {
+  height: 7vh;
+}
+.home .imggroup img:nth-child(2) {
+  height: 9vh;
+}
+.home .imggroup img:nth-child(3) {
+  height: 11vh;
+}
+.home .imggroup img:nth-child(4) {
+  height: 9vh;
+}
+.home .imggroup img:nth-child(5) {
+  height: 7vh;
+}
+
+.home .links {
+  position: absolute;
+  right: 0.8rem;
+  bottom: 1rem;
+}
+.home .links ul {
+  list-style: none;
+  list-style-type: none;
+}
+.home .links li {
+  background: #ff8080;
+  height: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+}
+.home .links a svg {
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+.home .cocktailmix {
+  position: absolute;
+  width: 35%;
+  bottom: 50%;
+}
+.home .cocktailsdiv {
+  height: 100px;
+  margin: 0 auto;
+  animation-name: slideup;
+  animation-duration: 1.5s;
+}
+
+/* Aniamation for taggle */
+@keyframes slideup {
+  from {
+    margin-top: 10rem;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+.home .cocktailsdiv .row .col .card {
+  background: none;
+  border: none;
+  border-radius: 0;
+}
+.home .cocktailsdiv .row .col .card .card-img-top {
+  border-radius: 0;
+}
+.home .cocktailsdiv .row .col .card .card-text {
+  font-size: 0.7rem;
+}
+
+/* Medai Queries */
+@media screen and (max-width: 768px) {
+  .home > img {
+    display: none;
+  }
+  .home .imggroup {
+    width: 80%;
+  }
+  body {
+    background: linear-gradient(to right, #ff8080 90%, #ffe8e8 30%);
+    padding: 0;
+  }
+  #root {
+    background: #ff8080 !important;
+    height: 100vh;
+  }
+  #root * {
+    color: #ffffff !important;
+  }
+  #root .navbar form input {
+    color: #000000 !important;
+  }
+}
+@media screen and (max-width: 991px) {
+  .navbar {
+    background: #00000041;
+    z-index: 1;
+  }
+}
