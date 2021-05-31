@@ -181,60 +181,6 @@ get getMotherPhone(){
 get referenceTelNo(){
   return this.StudentForm.controls.ReferenceDetails.get('Address')?.get('TelNo');
 }
-/// Student Dummy Data
-
-s : Student = {
-  Name :{
-  FirstName:"Adam",
-  MiddleName:"John",
-  LastName:"Smith"
-},
-DOB:new Date('1/2/2011'),
-PlaceOfBirth:"vijapur",
-FirstLanguage:"Gujarati",
-Address:{
-  City:"Vijapur",
-  State:"Gujarat",
-  Pin :"123456"
-},
-Father:{
-  Name:{
-    FirstName:"Shaileshbhai",
-    MiddleName:"Amrutlal",
-    LastName:"Prjapati"
-  },
-  Email:"abc@gmail.com",
-  EducationQualification:"dfhaf",
-  Profession:"dfjahif",
-  Designation:"djfau",
-  Phone:"1234523432"
-},
-Mother:{
-  Name:{
-    FirstName:"dfhald",
-    MiddleName:"dfjad",
-    LastName:"erjfnvl"
-  },
-  Email:"dfhad@gmail.com",
-  EducationQualification:"faenfd",
-  Profession:"fhaunvdfc",
-  Designation:"faufnd",
-  Phone:"1234567890"
-},
-EmergencyContactList:[
-  {
-    Relation :"gsjirh",
-    Number:"1234567890"
-  }
-  ],
-  ReferenceDetails:{
-    ReferenceThrough:"hgflhj",
-    Address:{
-      City:"ahffj",
-    TelNo:"1234567890"
-    }
-  }
-}
 
 LoadData(){
   this.StudentForm.patchValue(this.s);
