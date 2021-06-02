@@ -1,8 +1,10 @@
 const mongoose = require("mongoose")
 const express = require('express')
 const accountRouter = express.Router();
-const account = require("../../Model/account");
-const Account = mongoose.model('Account', account)
+// const account = require("../../Model/account");
+// const Account = mongoose.model('Account', account)
+const netbanking = require("../../Model/netbanking");
+const NetBanking = mongoose.model("NetBanking", netbanking);
 const verifyToken = require("../../Middleware/verifyToken");
 const ensureToken = require("../../Middleware/ensureToken");
 const miniStatement = require("../../Model/ministatement")
@@ -19,20 +21,23 @@ class demoAccount {
     }
 
     static async credit(req, res) {
-        const account = await Account
-            .updateOne({ accountNo: req.params.accountNo }, {
+        const account = await NetBanking
+            .updateOne({ accountNo: req.body.accountNo }, {
 
                 $inc: {
-                    balance: req.params.amount
+                    balance: req.body.amount
                 }
             })
         if (account.nModified == 1) {
             const statement = new MiniStatemet({
                 date: new Date(),
-                amount: req.params.amount
+                amount: req.body.amount,
+                debitAccountNo:req.body.accountNo,
+                creditAccountNo:req.body.accountNo,
+                type:'Credit'
             })
 
-            const a1 = statement.save();
+            const a1 = await statement.save();
             res.json(a1)
 
             transporter1.transporter.sendMail(transporter1.mailOptionsCredit, function (error, info) {
@@ -46,30 +51,37 @@ class demoAccount {
             });
         }
         else {
-            res.json("Error");
+            res.json("Not Moddified");
         }
 
 
     }
+    static async delete(req,res){
+        const account=await NetBanking.deleteOne({accountNo:req.body.accountNo})
+        res.json(account)
+    }
     static async debit(req, res) {
-        const account = await Account
-            .updateOne({ accountNo: req.params.accountNo }, {
+        const account = await NetBanking
+            .updateOne({ accountNo: req.body.accountNo }, {
 
                 $inc: {
-                    balance: -req.params.amount
+                    balance: -req.body.amount
                 }
             })
         if (account.nModified == 1) {
             const statement = new MiniStatemet({
                 date: new Date(),
-                amount: req.params.amount
+                amount: req.body.amount,
+                debitAccountNo:req.body.accountNo,
+                creditAccountNo:req.body.accountNo,
+                type:'Debit'
             })
 
-            const a1 = statement.save();
+            const a1 = await statement.save();
             res.json(a1)
         }
         else {
-            res.json("Error");
+            res.json("Not Modified");
         }
 
     }
@@ -84,16 +96,28 @@ class demoAccount {
     static async NEFT(req,res){
     
        
-       const debitAccount=await Account.updateOne({accountNo:req.body.debitAccount},{
+       const debitAccount=await NetBanking.updateOne({accountNo:req.body.debitAccountNo},{
            $inc :{
-                balance:-parseInt(req.params.amount)
+                balance:-parseInt(req.body.amount)
            }
        })
-       const creditAccount=await Account.updateOne({accountNo:req.body.creditAccount},{
+       const creditAccount=await NetBanking.updateOne({accountNo:req.body.creditAccountNo},{
         $inc :{
-             balance:req.params.amount
+             balance:req.body.amount
         }
     })
+    if (creditAccount.nModified == 1) {
+        const statement = new MiniStatemet({
+            date: new Date(),
+            amount: req.body.amount,
+            debitAccountNo:req.body.debitAccountNo,
+            creditAccountNo:req.body.creditAccountNo,
+            type:'NEFT'
+        })
+
+        const a1 = await statement.save();
+        res.json(a1)
+    }
     res.json(creditAccount)
     }
    
@@ -109,14 +133,17 @@ class demoAccount {
 accountRouter.post("/insertAccount",verifyToken, ensureToken, demoAccount.insertAccount)
 
 // API for credit amount from the account
-accountRouter.get("/credit/:accountNo/:amount", verifyToken, ensureToken, demoAccount.credit)
+accountRouter.post("/credit",verifyToken,ensureToken, demoAccount.credit)
 
 // API for debit amount from the account
-accountRouter.get("/debit/:accountNo/:amount", verifyToken, ensureToken, demoAccount.debit)
+accountRouter.post("/debit", verifyToken, ensureToken, demoAccount.debit)
 
 // API for getting mini satatement for tranjaction
-accountRouter.get("/miniStatement", verifyToken, ensureToken, demoAccount.miniStatement)
+accountRouter.post("/miniStatement", verifyToken, ensureToken, demoAccount.miniStatement)
 
 // API for NEFT
-accountRouter.get("/NEFT/:amount", verifyToken, ensureToken, demoAccount.NEFT)
+accountRouter.post("/NEFT", verifyToken, ensureToken, demoAccount.NEFT)
+
+// API for DELETE
+accountRouter.post("/delete",verifyToken,ensureToken,demoAccount.delete)
 module.exports = accountRouter;

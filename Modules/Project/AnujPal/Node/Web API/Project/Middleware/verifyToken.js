@@ -15,7 +15,7 @@ const verifyToken=(req, res, next)=> {
       next();
     } else {
       // Forbidden
-      res.send("Forbidden")
+      res.json("Forbidden");
     }
   
   }

@@ -7,7 +7,17 @@ const statementSchema = new mongoose.Schema({
     },
     amount: {
         type: Number
+    },
+    debitAccountNo:{
+        type:Number
+    },
+    creditAccountNo:{
+        type:Number
+    },
+    type:{
+        type:String
     }
+
 
 })
 
