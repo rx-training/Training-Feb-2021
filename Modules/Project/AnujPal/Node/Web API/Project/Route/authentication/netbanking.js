@@ -102,6 +102,6 @@ netBankingRouter.post(
   demoNetBanking.signup
 );
 
-netBankingRouter.get("/getCustomer/:accountNo",demoNetBanking.getCustomer)
+netBankingRouter.get("/getCustomer/:accountNo",verifyToken,ensureToken,demoNetBanking.getCustomer)
 
 module.exports = netBankingRouter;

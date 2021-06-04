@@ -4,11 +4,9 @@ import { MdAccountBalanceWallet } from "react-icons/md";
 import { FaRupeeSign } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import Logo from "../../components/Images/bank.jpg";
-import './home.scss'
+import "./home.scss";
 
-
-
-import { Navbar } from "../../components/Portal/Navbar"
+import { Navbar } from "../../components/Portal/Navbar";
 
 export const Home = (props) => {
   const [state, setstate] = useState(false);
@@ -19,9 +17,11 @@ export const Home = (props) => {
     ProjectService.getCustomer(props.match.params.id).then((res) => {
       setCustomer(res.data[0]);
     });
-    ProjectService.MiniStatement().then((res) => {
-      setStatement(res.data);
-    });
+    ProjectService.MiniStatementById({ accountNo: props.match.params.id }).then(
+      (res) => {
+        setStatement(res.data);
+      }
+    );
   }, []);
   // const Submit = async (e) => {
   //   e.preventDefault();
@@ -84,69 +84,61 @@ export const Home = (props) => {
             </div>
           </div>
         </div>
-        <div className="row mt-5" >
+        <div className="row mt-5">
           <div className="col-md-10 m-4 col-lg-5" id="statement">
-          <h3 className="text-center mb-5">Recent 10 Tranjactions</h3>
+            <h3 className="text-center mb-5">Recent 10 Tranjactions</h3>
             <table className="table bg-ligt">
               <tr>
-                <td className="h6" style={{color:"#064420"}}>Debit Account</td>
-                <td className="h6" style={{color:"#064420"}}>Credit Account</td>
-                <td className="h6" style={{color:"#064420"}}>Date</td>
-                <td className="h6" style={{color:"#064420"}}>Amount</td>
-                <td className="h6" style={{color:"#064420"}}>Type</td>
+                <td
+                  className="h6 border border-success"
+                  style={{ color: "#064420" }}
+                >
+                  Debit Account
+                </td>
+                <td
+                  className="h6 border border-success"
+                  style={{ color: "#064420" }}
+                >
+                  Credit Account
+                </td>
+                <td
+                  className="h6 border border-success"
+                  style={{ color: "#064420" }}
+                >
+                  Date
+                </td>
+                <td
+                  className="h6 border border-success"
+                  style={{ color: "#064420" }}
+                >
+                  Amount
+                </td>
+                <td
+                  className="h6 border border-success"
+                  style={{ color: "#064420" }}
+                >
+                  Type
+                </td>
               </tr>
 
               <tbody>
                 {statement.map((item) => {
                   return (
                     <tr>
-                      <td>{item.debitAccountNo}</td>
-                      <td>{item.creditAccountNo}</td>
-                      <td>{item.date}</td>
-                      <td>{item.amount}</td>
-                      <td>{item.type}</td>
+                      <td className="border border-success">
+                        {item.debitAccountNo}
+                      </td>
+                      <td className="border border-success">
+                        {item.creditAccountNo}
+                      </td>
+                      <td className="border border-success">{item.date}</td>
+                      <td className="border border-success">{item.amount}</td>
+                      <td className="border border-success">{item.type}</td>
                     </tr>
                   );
                 })}
               </tbody>
             </table>
-            {/* <form class="p-4 p-md-5 border rounded-3 bg-light">
-              <h3 className="text-center mb-5">Deposit</h3>
-              <div class="form-floating mb-3">
-                <input
-                  type="number"
-                  class="form-control"
-                  placeholder="Account Number"
-                  onChange={(e) => {
-                    setCredit({ ...credit, [e.target.name]: e.target.value });
-                  }}
-                  name="accountNo"
-                  value={credit.accountNo}
-                />
-              </div>
-              <div class="form-floating mb-3">
-                <input
-                  type="number"
-                  class="form-control"
-                  placeholder="Amount"
-                  name="amount"
-                  value={credit.amount}
-                  onChange={(e) => {
-                    setCredit({ ...credit, [e.target.name]: e.target.value });
-                  }}
-                />
-              </div>
-              <div id="recaptcha-container"></div>
-
-              <button
-                class="w-100 btn btn-lg btn-primary mt-3 "
-                type="submit"
-                onClick={Submit}
-              >
-                Submit
-              </button>
-              <hr class="my-4" />
-            </form> */}
           </div>
           <div class=" col m-4 card card border-0" style={{ width: "18rem" }}>
             <img class="card-img-top" src={Logo} alt="Card  cap" />

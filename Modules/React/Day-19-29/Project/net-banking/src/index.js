@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import axios from 'axios'
 
-axios.defaults.headers.common['Authorization']='Bearer' + localStorage.getItem('Token')
+axios.defaults.headers.common['Authorization']='Bearer'  + localStorage.getItem('Token')
 
 ReactDOM.render(
   <React.StrictMode>

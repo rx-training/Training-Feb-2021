@@ -3,7 +3,6 @@ import Logo from "../Images/3.jpg";
 import { FaFacebookF } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { AiOutlineTwitter } from "react-icons/ai";
-
 import './navbar.scss'
 export const Navbar = (props) => {
 const{id}=props
@@ -53,12 +52,12 @@ const{id}=props
             </a>
           </li>
           <li class="nav-item mx-3 ">
-            <a class="nav-link" href="#why">
+            <a class="nav-link"  href={`http://localhost:3000/Portal/${id}/About`}>
               About Us
             </a>
           </li>
         </ul>
-        <div>
+        <div id="spans">
           <span className="p-3 h4"><FaFacebookF></FaFacebookF></span>
           <span className="p-3 h4"><AiFillInstagram></AiFillInstagram></span>
           <span className="p-3 h4"><AiOutlineTwitter></AiOutlineTwitter></span>

@@ -59,12 +59,12 @@ export const Portal = (props) => {
       <Navbar id={props.match.params.id} />
       <div className="container">
         <div className="row m-3">
-          <div className="col mt-2">
+          <div className="col  col-xs-12 mt-2">
             <h3 className="text-center ">
               Mr {customer.fname} {customer.mname} {customer.lname}
             </h3>
           </div>
-          <div className="col   ">
+          <div className="col  col-xs-12   ">
             <span className="h2">
               <MdAccountBalanceWallet />
             </span>{" "}
@@ -72,7 +72,7 @@ export const Portal = (props) => {
             <span className="h4 pull-right">
               <FaRupeeSign />
             </span>
-            <div style={{ float: "right" }}>
+            <div  style={{ float: "right" }}>
               <span className="mr-2 h2" onClick={LogOut}>
                 {" "}
                 <FiLogOut />
@@ -82,7 +82,7 @@ export const Portal = (props) => {
             </div>
           </div>
         </div>
-        <div className="row mt-5">
+        <div  className="row mt-5">
           <div className="col-md-10 m-4 col-lg-5">
             <form class="p-4 p-md-5 border rounded-3 bg-light">
               <h3 className="text-center mb-5">Deposit</h3>

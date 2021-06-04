@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../../src/components/Images/3.jpg";
 import { AiFillHome } from 'react-icons/ai';
+import '../components/Portal/navbar.scss'
 export const Navbar = () => {
   return (
     <nav class="navbar navbar-expand-md navbar-light bg-light">
@@ -22,34 +23,28 @@ export const Navbar = () => {
       <div class="collapse navbar-collapse mr-5 ml-5" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto align-items-center  ">
           <li class="nav-item active ml-5 ">
-            <a class="nav-link" href="#Home">
+            <a class="nav-link  " href="#Home">
             Home
             </a>
           </li>
           <li class="nav-item ml-5">
-            <a class="nav-link " href="#About">
+            <a class="nav-link  " href="#about">
               About
             </a>
           </li>
           <li class="nav-item ml-5 ">
-            <a class="nav-link" href="#why">
+            <a class="nav-link " href="#why">
               Why To Choose Us
             </a>
           </li>
          
 
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            Search
-          </button>
-        </form>
+        <form class="d-flex m-2">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success ml-2" type="submit">Search</button>
+      </form>
+        
       </div>
     </nav>
   );

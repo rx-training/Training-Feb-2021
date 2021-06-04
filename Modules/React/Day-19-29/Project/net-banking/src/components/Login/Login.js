@@ -4,26 +4,25 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../Login/login.scss";
 import ProjectService from "../../Services/LoginService";
 import { Navbar } from "../Navbar";
+import Logo from "../Images/3.jpg";
 
 export const Login = (props) => {
- let tempMessage=""
- let tempAccountNo=""
+  let tempMessage = "";
+  let tempAccountNo = "";
   const [loginData, setLogindata] = useState({ userId: "", pass: "" });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await ProjectService.login(loginData).then(async (res) => {
-      localStorage.setItem("Token", res.data.token);
-      tempMessage=res.data.message
-      tempAccountNo=res.data.accountNo
-    
-    })
-    if(tempMessage ==="Invalid userid or Password !!!!!!!!!!!")
-    {
-      alert("Invalid userid or Password !!!!!!!!!!!")
-    }
-    else{
-      alert("You Successfully Login To the system")
+      console.log(res.data.token);
+      localStorage.setItem('Token', res.data.token);
+      tempMessage = res.data.message;
+      tempAccountNo = res.data.accountNo;
+    });
+    if (tempMessage === "Invalid userid or Password !!!!!!!!!!!") {
+      alert("Invalid userid or Password !!!!!!!!!!!");
+    } else {
+      alert("You Successfully Login To the system");
       props.history.push(`/Portal/${tempAccountNo}`);
     }
 
@@ -82,7 +81,7 @@ export const Login = (props) => {
                 />
                 {/* <label for="password">Password</label> */}
               </div>
-       
+
               <div className="row mt-3">
                 <div className="col">
                   {" "}
@@ -97,7 +96,7 @@ export const Login = (props) => {
                 <div className="col text-center">
                   {" "}
                   <button
-                    className="btn btn-secondary btn-lg w-100"
+                    className="btn btn-secondary btn-lg w-100 custom"
                     onClick={Register}
                   >
                     Register
@@ -112,6 +111,7 @@ export const Login = (props) => {
             </form>
           </div>
         </div>
+      
       </div>
     </>
   );

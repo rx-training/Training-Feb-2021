@@ -3,6 +3,7 @@ import axios from "axios";
 const LOGIN_BASE_URL = "http://localhost:5000/home/netBanking";
 const ACCOUNT_BASE_URL="http://localhost:5000/home/account"
 const STATEMENT="http://localhost:5000/home/account/ministatement"
+const ADMIN="http://localhost:5000/home/admin"
 
 class LoginService {
   login(object) {
@@ -28,11 +29,25 @@ class LoginService {
   Delete(object){
     return axios.post(ACCOUNT_BASE_URL + "/delete",object);
   }
+  MiniStatementById(object){
+    return axios.post(ACCOUNT_BASE_URL + "/ministatementById",object);
+  }
   MiniStatement(){
     return axios.post(STATEMENT );
   }
-
+  getAllUser(){
+    return axios.get(ADMIN + "/users")
+  }
+  getAllAdmin(){
+    return axios.get(ADMIN + "/getAllAdmin")
+  }
   
+  AdminDelete(obj){
+    return axios.post(ADMIN + "/delete",obj)
+  }
+  AdminRegister(obj){
+    return axios.post(ADMIN + "/register",obj)
+  }
 
   
 
