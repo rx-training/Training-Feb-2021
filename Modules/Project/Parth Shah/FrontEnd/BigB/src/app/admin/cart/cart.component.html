@@ -1,0 +1,56 @@
+
+<div class="row no-gutters">
+    <div class="col-md-8 p-0">
+
+      
+
+<div class="container">
+    <h3>Create Cart Here</h3>
+            <form [formGroup]="cartForm"  (ngSubmit)="SubmitData()">
+                <div class="form-group">
+                  <label for="catid">Enter Cart Id</label>
+                  <input type="text" class="form-control" formControlName="caId">
+                </div>
+                <div class="form-group">
+                  <label for="catName">Enter Time</label>
+                  <input type="text" class="form-control"  formControlName="times">
+                </div>
+              
+                <button type="submit" class="btn btn-primary">Submit</button><br><br>
+                    <button (click)='update()' class="btn btn-outline-secondary btn-lg btn-block" >Update</button>
+              </form>
+      
+
+    </div>
+</div>
+
+
+    <div class="col-md-4 p-0 m-0">
+        <div class="card m-2">
+            <div class="card-header">
+                Table to see All Cart List
+            </div>
+            <div class="card-body table-responsive box1">
+
+                <table class="table">
+                    <tbody *ngFor='let cart of cartList; let idx= index;'>
+                        <tr>
+                            <th>cart Id</th>
+                            <td> {{cart.cartId}} </td>
+                        </tr>
+                        <tr>
+                            <th>Time</th>
+                            <td> {{cart.time}} </td>
+                        </tr>
+                        <tr>
+                            <td><button class="btn btn-dark" (click)= 'edit(cart)'> Edit </button> </td>
+                            <td> <button class="btn btn-danger" (click)= 'delete(cart.cartId)'> Delete </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
