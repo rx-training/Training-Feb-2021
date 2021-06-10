@@ -22,17 +22,19 @@ class demoNetBanking {
       var userId = cryptr.decrypt(iterator.userId);
       var pass = cryptr.decrypt(iterator.pass);
       if (userId == req.body.userId && pass == req.body.pass) {
-        const token = jwt.sign({ iterator }, process.env.SECRET,
-        //    {
-        //   expiresIn: "1h",
-        // }
+        const token = jwt.sign(
+          { iterator },
+          process.env.SECRET
+          //    {
+          //   expiresIn: "1h",
+          // }
         );
         await res.json({
           token: token,
           message: "you successfully login to the system",
-          accountNo: iterator.accountNo
+          accountNo: iterator.accountNo,
         });
-         count=1
+        count = 1;
         transporter1.transporter.sendMail(
           transporter1.mailOptionsLogin,
           function (error, info) {
@@ -43,11 +45,11 @@ class demoNetBanking {
             }
           }
         );
-        break
+        break;
       }
     }
     if (count == 0) {
-      res.json({message:"Invalid userid or Password !!!!!!!!!!!"});
+      res.json({ message: "Invalid userid or Password !!!!!!!!!!!" });
     }
   }
 
@@ -58,19 +60,18 @@ class demoNetBanking {
       userId: userId,
       pass: pass,
       role: req.body.role,
-      fname:req.body.fname,
-      mname:req.body.mname,
-      lname:req.body.lname,
-      email:req.body.email,
-      phoneNo:req.body.phoneNo,
-      accountNo:req.body.accountNo,
-      CIF:req.body.CIF,
-      balance:req.body.balance,
-      branchName:req.body.branchName,
-      IFSC:req.body.IFSC,
-      branchCity:req.body.branchCity
-
-
+      fname: req.body.fname,
+      mname: req.body.mname,
+      lname: req.body.lname,
+      email: req.body.email,
+      phoneNo: req.body.phoneNo,
+      accountNo: req.body.accountNo,
+      CIF: req.body.CIF,
+      balance: req.body.balance,
+      branchName: req.body.branchName,
+      IFSC: req.body.IFSC,
+      branchCity: req.body.branchCity,
+      CRN: req.body.CRN,
     });
     const a1 = await user.save();
     transporter1.transporter.sendMail(
@@ -85,9 +86,14 @@ class demoNetBanking {
     );
     res.json(a1);
   }
-  static async getCustomer(req,res){
-    const users = await NetBanking.find({accountNo:req.params.accountNo});
-    res.json(users)
+  static async getCustomer(req, res) {
+    const users = await NetBanking.find({ accountNo: req.params.accountNo });
+    res.json(users);
+  }
+
+  static async getCustomerByCRN(req,res){
+    const users = await NetBanking.find({ CRN: req.body.CRN });
+    res.json(users);
   }
 }
 
@@ -97,11 +103,22 @@ netBankingRouter.post("/login", demoNetBanking.login);
 // API for signup the Sysyem
 netBankingRouter.post(
   "/signup",
-//   verifyToken,
-//   ensureToken,
+  //   verifyToken,
+  //   ensureToken,
   demoNetBanking.signup
 );
 
-netBankingRouter.get("/getCustomer/:accountNo",verifyToken,ensureToken,demoNetBanking.getCustomer)
+netBankingRouter.get(
+  "/getCustomer/:accountNo",
+  verifyToken,
+  ensureToken,
+  demoNetBanking.getCustomer
+);
+netBankingRouter.post(
+  "/getCustomerByCRN",
+  verifyToken,
+  ensureToken,
+  demoNetBanking.getCustomerByCRN
+);
 
 module.exports = netBankingRouter;

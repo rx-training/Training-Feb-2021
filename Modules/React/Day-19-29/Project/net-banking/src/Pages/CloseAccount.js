@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { useState,useEffect } from "react";
 import ProjectService from "../Services/LoginService";
 import { Navbar } from "../components/Portal/Navbar";
 import { MdAccountBalanceWallet } from "react-icons/md";
@@ -9,13 +9,17 @@ import Logo from "../components/Images/bank.jpg";
 
 export const CloseAccount = (props) => {
     const [customer, setCustomer] = useState({})
-    const [closeAccount, setCloseAccount] = useState({accountNo:props.match.params.id})
+    const [CRN, setCRN] = useState([])
+    const [closeAccount,setCloseAccount] = useState({accountNo:props.match.params.id})
     useEffect(() => {
         ProjectService.getCustomer(props.match.params.id).then((res) => {
           setCustomer(res.data[0]);
         });
+        ProjectService.getCustomerByCRN({CRN:customer.CRN}).then((res)=>{
+          setCRN(res.data)
+        })
    
-      }, []);
+      }, [props.match.params.id,customer.CRN]);
     const LogOut = (e) => {
         localStorage.clear();
         props.history.push("/");
@@ -84,16 +88,17 @@ export const CloseAccount = (props) => {
                 <form class="p-4 p-md-5 border rounded-3 bg-light">
                   <h3 className="text-center mb-5">Close Account</h3>
                   <div class="form-floating mb-3">
-                    <input
-                      type="number"
-                      class="form-control"
-                      placeholder="Account Number"
-
-                    //   onChange={(e) => {
-                    //     setDebit({ ...debit, [e.target.name]: e.target.value });
-                    //   }}
-                      value={closeAccount.accountNo}
-                    />
+                  <select
+                  className="form-control"
+                  onChange={(e) => {
+                    setCloseAccount({ ...CloseAccount, closeAccount: e.target.value });
+                  }}
+                >
+                  <option selected> debit Account Number</option>
+                  {CRN.map((item, key) => {
+                    return <option key={key}>{item.accountNo}</option>;
+                  })}
+                </select>
                   </div>
        
                   <div id="recaptcha-container"></div>

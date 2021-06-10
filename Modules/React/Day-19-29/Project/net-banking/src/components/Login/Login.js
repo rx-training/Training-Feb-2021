@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../Login/login.scss";
 import ProjectService from "../../Services/LoginService";
 import { Navbar } from "../Navbar";
-import Logo from "../Images/3.jpg";
 
 export const Login = (props) => {
   let tempMessage = "";
@@ -23,7 +22,7 @@ export const Login = (props) => {
       alert("Invalid userid or Password !!!!!!!!!!!");
     } else {
       alert("You Successfully Login To the system");
-      props.history.push(`/Portal/${tempAccountNo}`);
+      props.history.push(`/Portal/${tempAccountNo}/NEFT`);
     }
 
     // props.history.push("/Portal");

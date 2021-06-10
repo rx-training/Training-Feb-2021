@@ -11,13 +11,14 @@ export const Withdrawl = (props) => {
   const [customer, setCustomer] = useState({});
   const [state, setstate] = useState(false);
   const [debit, setDebit] = useState({ accountNo: "", amount: "" });
+  
   useEffect(() => {
     ProjectService.getCustomer(props.match.params.id).then((res) => {
       setCustomer(res.data[0]);
     });
     setstate(false);
     setDebit({ accountNo: "", amount: "" });
-  }, [state]);
+  }, [state,props.match.params.id]);
   const LogOut = (e) => {
     localStorage.clear();
     props.history.push("/");

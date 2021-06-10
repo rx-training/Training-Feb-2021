@@ -9,52 +9,33 @@ import "./home.scss";
 import { Navbar } from "../../components/Portal/Navbar";
 
 export const Home = (props) => {
-  const [state, setstate] = useState(false);
+  // const [state, setstate] = useState(false);
+  const [MiniStatement, setMiniStatement] = useState({
+    startingDate: "",
+    endingDate: "",
+    accountNo:props.match.params.id
+  });
   const [customer, setCustomer] = useState({});
   const [statement, setStatement] = useState([]);
-  // const [credit, setCredit] = useState({ accountNo: "", amount: "" });
+  const [showTranjaction, setShowTranjaction] = useState(false);
   useEffect(() => {
     ProjectService.getCustomer(props.match.params.id).then((res) => {
       setCustomer(res.data[0]);
     });
-    ProjectService.MiniStatementById({ accountNo: props.match.params.id }).then(
-      (res) => {
-        setStatement(res.data);
-      }
-    );
-  }, []);
-  // const Submit = async (e) => {
-  //   e.preventDefault();
-  //   let recaptcha = new FireBase.auth.RecaptchaVerifier("recaptcha-container");
-  //   let number = "+918128501852";
-  //   await FireBase.auth()
-  //     .signInWithPhoneNumber(number, recaptcha)
-  //     .then((res) => {
-  //       let code = prompt("enter otp", "");
-  //       if (code == null) return;
-  //       res
-  //         .confirm(code)
-  //         .then((result) => {
-  //           ProjectService.credit(credit)
-  //             .then((res1) => {
-  //               console.log(res1.data);
-  //               setstate(true);
-  //             })
-  //             .catch((err) => {
-  //               console.log(err);
-  //             });
-  //         })
-  //         .catch((err) => {
-  //           console.log(err.message);
-  //         });
-  //     })
-  //     .catch((err) => {
-  //       console.log(err.message);
-  //     });
-  // };
+    
+  }, [props.match.params.id]);
+
   const LogOut = (e) => {
     localStorage.clear();
     props.history.push("/");
+  };
+  const Find = (e) => {
+    e.preventDefault()
+    console.log(MiniStatement);
+    ProjectService.MiniStatementById(MiniStatement).then((res)=>{
+      setStatement(res.data)
+    })
+    setShowTranjaction(!showTranjaction)
   };
   return (
     <>
@@ -84,10 +65,96 @@ export const Home = (props) => {
             </div>
           </div>
         </div>
+
         <div className="row mt-5">
           <div className="col-md-10 m-4 col-lg-5" id="statement">
-            <h3 className="text-center mb-5">Recent 10 Tranjactions</h3>
-            <table className="table bg-ligt">
+            <form className="bg-light p-4 m-4 mt-5" id="addBenficiaryForm">
+              <input
+                type="date"
+                className="form-control mt-3"
+                name="startingDate"
+                onChange={(e) => {
+                  setMiniStatement({
+                    ...MiniStatement,
+                    [e.target.name]: e.target.value,
+                  });
+                }}
+              />
+              <input
+                type="date"
+                className="form-control mt-3"
+                name="endingDate"
+                onChange={(e) => {
+                  setMiniStatement({
+                    ...MiniStatement,
+                    [e.target.name]: e.target.value,
+                  });
+                }}
+              />
+              <button
+                type="button"
+                className="mt-3 btn w-100 btn-primary"
+                onClick={Find}
+              >
+                Find
+              </button>
+            </form>
+            {showTranjaction ? (
+              <table className="table bg-ligt">
+                <tr>
+                  <td
+                    className="h6 border border-success"
+                    style={{ color: "#064420" }}
+                  >
+                    Debit Account
+                  </td>
+                  <td
+                    className="h6 border border-success"
+                    style={{ color: "#064420" }}
+                  >
+                    Credit Account
+                  </td>
+                  <td
+                    className="h6 border border-success"
+                    style={{ color: "#064420" }}
+                  >
+                    Date
+                  </td>
+                  <td
+                    className="h6 border border-success"
+                    style={{ color: "#064420" }}
+                  >
+                    Amount
+                  </td>
+                  <td
+                    className="h6 border border-success"
+                    style={{ color: "#064420" }}
+                  >
+                    Type
+                  </td>
+                </tr>
+
+                <tbody>
+                  {statement.map((item) => {
+                    return (
+                      <tr>
+                        <td className="border border-success">
+                          {item.debitAccountNo}
+                        </td>
+                        <td className="border border-success">
+                          {item.creditAccountNo}
+                        </td>
+                        <td className="border border-success">{item.date}</td>
+                        <td className="border border-success">{item.amount}</td>
+                        <td className="border border-success">{item.type}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            ) : null}
+            {/* <h3 className="text-center mb-5">Recent 10 Tranjactions</h3> */}
+            {/* <table className="table bg-ligt">
               <tr>
                 <td
                   className="h6 border border-success"
@@ -138,7 +205,7 @@ export const Home = (props) => {
                   );
                 })}
               </tbody>
-            </table>
+            </table> */}
           </div>
           <div class=" col m-4 card card border-0" style={{ width: "18rem" }}>
             <img class="card-img-top" src={Logo} alt="Card  cap" />

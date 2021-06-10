@@ -5,6 +5,8 @@ const accountRouter = express.Router();
 // const Account = mongoose.model('Account', account)
 const netbanking = require("../../Model/netbanking");
 const NetBanking = mongoose.model("NetBanking", netbanking);
+const loan = require("../../Model/loan");
+const Loan = mongoose.model("Loan", loan);
 const verifyToken = require("../../Middleware/verifyToken");
 const ensureToken = require("../../Middleware/ensureToken");
 const miniStatement = require("../../Model/ministatement");
@@ -43,7 +45,7 @@ class demoAccount {
       });
 
       const a1 = await statement.save();
-      res.json(a1);
+      res.json({ statementDetaile: a1, creditDetails: account });
 
       transporter1.transporter.sendMail(
         transporter1.mailOptionsCredit,
@@ -55,8 +57,6 @@ class demoAccount {
           }
         }
       );
-    } else {
-      res.json("Not Moddified");
     }
   }
   static async delete(req, res) {
@@ -84,9 +84,7 @@ class demoAccount {
       });
 
       const a1 = await statement.save();
-      res.json(a1);
-    } else {
-      res.json("Not Modified");
+      res.json({ statementDetaile: a1, creditDetails: account });
     }
   }
 
@@ -122,21 +120,35 @@ class demoAccount {
       });
 
       const a1 = await statement.save();
-      res.json(a1);
+      res.json({ statementDetaile: a1, creditDetails: creditAccount });
     }
-    res.json(creditAccount);
   }
+
   static async miniStatementById(req, res) {
+    var cutoff = new Date(req.body.startingDate);
+    var cutoff1 = new Date(req.body.endingDate);
+
+    // MyModel.find({modificationDate: {$lt: cutoff}}, function (err, docs) { ... });
     const statements = await MiniStatemet.find({
       $or: [
         { debitAccountNo: req.body.accountNo },
         { creditAccountNo: req.body.accountNo },
       ],
-    });
-    res.json(statements)
-  }
-}
+    date:{
+      $gte:cutoff,
+      $lte: cutoff1
+    }
+    })
+   
+    
+   
+    
 
+    res.json(statements);
+    console.log(cutoff);
+  }
+
+}
 // API for inserting the account information
 accountRouter.post(
   "/insertAccount",
@@ -172,4 +184,18 @@ accountRouter.post(
   ensureToken,
   demoAccount.miniStatementById
 );
+
+accountRouter.post("/LoanApprove", async (req, res) => {
+  let count = await Loan.estimatedDocumentCount();
+  const loanUser = new Loan({
+    loanNo: count + 501,
+    CRN: req.body.CRN,
+    accountNo: req.body.accountNo,
+    amount: req.body.amount,
+    duration: req.body.duration,
+  });
+  const a1 = await loanUser.save();
+  res.json(a1);
+  console.log(count);
+});
 module.exports = accountRouter;

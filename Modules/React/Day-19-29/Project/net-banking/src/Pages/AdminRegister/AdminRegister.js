@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import react from "react";
+import {  useState } from "react";
+
 import ProjectService from '../../Services/LoginService'
 
 export const AdminRegister = (props) => {

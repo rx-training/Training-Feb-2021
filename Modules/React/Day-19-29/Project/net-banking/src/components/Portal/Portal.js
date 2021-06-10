@@ -4,26 +4,35 @@ import { MdAccountBalanceWallet } from "react-icons/md";
 import { FaRupeeSign } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import Logo from "../Images/bank.jpg";
-import FireBase from '../../Fire-Base/FireBase'
+import FireBase from "../../Fire-Base/FireBase";
 import "./portal.scss";
 
 import { Navbar } from "./Navbar";
 
 export const Portal = (props) => {
   const [state, setstate] = useState(false);
+
   const [customer, setCustomer] = useState({});
   const [credit, setCredit] = useState({ accountNo: "", amount: "" });
+
   useEffect(() => {
-    ProjectService.getCustomer(props.match.params.id).then((res) => {
+     ProjectService.getCustomer(props.match.params.id).then((res) => {
       setCustomer(res.data[0]);
     });
+
     setstate(false);
     setCredit({ accountNo: "", amount: "" });
-  }, [state]);
-  const Submit = async(e) => {
+  }, [state,props.match.params.id]);
+  // useEffect(async () => {
+  //    ProjectService.getCustomerByCRN({ CRN: customer.CRN }).then((res) => {
+  //     setCRN(res.data);
+  //   });
+
+  // }, [customer.CRN]);
+  const Submit = async (e) => {
     e.preventDefault();
     let recaptcha = new FireBase.auth.RecaptchaVerifier("recaptcha-container");
-    let number =  '+918128501852';
+    let number = "+918128501852";
     await FireBase.auth()
       .signInWithPhoneNumber(number, recaptcha)
       .then((res) => {
@@ -32,31 +41,30 @@ export const Portal = (props) => {
         res
           .confirm(code)
           .then((result) => {
-            ProjectService.credit(credit).then((res1) => {
-              console.log(res1.data);
-              setstate(true);
-            }).catch((err)=>{
-              console.log(err);
-            });
+            ProjectService.credit(credit)
+              .then((res1) => {
+                console.log(res1.data);
+                setstate(true);
+              })
+              .catch((err) => {
+                console.log(err);
+              });
           })
           .catch((err) => {
-            console.log("Error during res.confirm(code");
+            console.log(err.message);
           });
       })
       .catch((err) => {
         console.log(err.message);
       });
-
   };
-  const LogOut=(e)=>{
-    localStorage.clear()
-    props.history.push('/');
-    
-
-  }
+  const LogOut = (e) => {
+    localStorage.clear();
+    props.history.push("/");
+  };
   return (
     <>
-      <Navbar id={props.match.params.id} />
+      <Navbar id={props.match.params.id} CRN={customer.CRN} />
       <div className="container">
         <div className="row m-3">
           <div className="col  col-xs-12 mt-2">
@@ -72,7 +80,7 @@ export const Portal = (props) => {
             <span className="h4 pull-right">
               <FaRupeeSign />
             </span>
-            <div  style={{ float: "right" }}>
+            <div style={{ float: "right" }}>
               <span className="mr-2 h2" onClick={LogOut}>
                 {" "}
                 <FiLogOut />
@@ -82,7 +90,7 @@ export const Portal = (props) => {
             </div>
           </div>
         </div>
-        <div  className="row mt-5">
+        <div className="row mt-5">
           <div className="col-md-10 m-4 col-lg-5">
             <form class="p-4 p-md-5 border rounded-3 bg-light">
               <h3 className="text-center mb-5">Deposit</h3>

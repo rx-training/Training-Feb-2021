@@ -30,3 +30,16 @@
     background: transparent !important;
     font-weight: bold;
   }
+#dropdownMenuButton{
+  background: transparent;
+  outline: none;
+  color: #064420;
+  border: none;
+  border-style: none;
+  font-weight: bold;
+  opacity: 0.7;
+}
+
+#dropdownMenuButton:hover{
+  opacity: 1;
+}

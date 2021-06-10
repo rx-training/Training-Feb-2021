@@ -9,18 +9,37 @@ import FireBase from "../Fire-Base/FireBase";
 export const NEFT = (props) => {
   const [customer, setCustomer] = useState({});
   const [state, setstate] = useState(false);
+  const [CRN, setCRN] = useState([]);
   const [NEFT, setNEFT] = useState({
     debitAccountNo: "",
     creditAccountNo: "",
     amount: "",
   });
+
   useEffect(() => {
+   
     ProjectService.getCustomer(props.match.params.id).then((res) => {
       setCustomer(res.data[0]);
     });
+    ProjectService.getCustomerByCRN({CRN:customer.CRN}).then((res1)=>{
+      setCRN(res1.data)
+    })
     setstate(false);
-    setNEFT({ debitAccountNo: "", creditAccountNo: "", amount: "" });
-  }, [state]);
+  }, [state,customer.balance,customer.CRN,props.match.params.id]);
+  // useEffect(async() => {
+  //   await ProjectService.getCustomer(props.match.params.id).then((res) => {
+  //     setCustomer(res.data[0]);
+  //   });
+  //   setstate(false);
+  //   setNEFT({ debitAccountNo: "", creditAccountNo: "", amount: "" });
+  //   console.log(NEFT);
+  // }, [state]);
+  // useEffect(async () => {
+  //   console.log(customer.CRN);
+  //    await ProjectService.getCustomerByCRN({ CRN: customer.CRN}).then((res) => {
+
+  //   });
+  // }, [state]);
   const LogOut = (e) => {
     localStorage.clear();
     props.history.push("/");
@@ -48,30 +67,11 @@ export const NEFT = (props) => {
           })
           .catch((err) => {
             console.log(err.message);
-            // if(err){
-            //    FireBase.auth(). signInWithPhoneNumber(number,recaptcha).then((res)=>{
-            //         let code = prompt("enter otp", "");
-            //         if (code == null) return;
-            //         res
-            //         .confirm(code)
-            //         .then((result) => {
-            //           ProjectService.NEFT(NEFT).then((res1) => {
-            //             console.log(res1.data);
-            //             setstate(true);
-            //           }).catch((err)=>{
-            //             console.log(err);
-            //           });
-            //         })
-            //     })
-            // }
           });
       })
       .catch((err) => {
         console.log(err.message);
       });
-    // ProjectService.NEFT(NEFT).then((res)=>{
-    //     console.log(res.data);
-    // })
     setstate(true);
   };
   return (
@@ -107,29 +107,32 @@ export const NEFT = (props) => {
             <form class="p-4 p-md-5 border rounded-3 bg-light">
               <h3 className="text-center mb-5">NEFT</h3>
               <div class="form-floating mb-3">
-                <input
-                  type="number"
-                  class="form-control"
-                  placeholder="Debit Account Number"
+                <select
+                  className="form-control"
                   onChange={(e) => {
-                    setNEFT({ ...NEFT, [e.target.name]: e.target.value });
+                    setNEFT({ ...NEFT, debitAccountNo: e.target.value });
                   }}
-                  name="debitAccountNo"
-                  value={NEFT.debitAccountNo}
-                />
+                >
+                  <option selected> debit Account Number</option>
+                  {CRN.map((item, key) => {
+                    return <option key={key}>{item.accountNo}</option>;
+                  })}
+                </select>
               </div>
               <div class="form-floating mb-3">
-                <input
-                  type="number"
-                  class="form-control"
-                  placeholder="Credit Account Number"
+                <select
+                  className="form-control"
                   onChange={(e) => {
-                    setNEFT({ ...NEFT, [e.target.name]: e.target.value });
+                    setNEFT({ ...NEFT, creditAccountNo: e.target.value });
                   }}
-                  name="creditAccountNo"
-                  value={NEFT.creditAccountNo}
-                />
+                >
+                  <option selected> Credit Account Number</option>
+                  {CRN.map((item, key) => {
+                    return <option key={key}>{item.accountNo}</option>;
+                  })}
+                </select>
               </div>
+            
               <div class="form-floating mb-3">
                 <input
                   type="number"

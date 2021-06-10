@@ -58,6 +58,10 @@ const netBankingSchema = new mongoose.Schema({
     IFSC:{
         type:Number,
         required:true
+    },
+    CRN:{
+        type:Number,
+        required:true
     }
 
 

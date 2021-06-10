@@ -20,8 +20,8 @@ export const SignUp = (props) => {
     branchName: "",
     IFSC: "",
     branchCity: "",
+    CRN:""
   });
-  let phoneNo=signUp.phoneNo
   const Register = async(e,phoneNo) => {
     e.preventDefault();
     let recaptcha = new FireBase.auth.RecaptchaVerifier("recaptcha-container");
@@ -92,6 +92,15 @@ export const SignUp = (props) => {
               ></input>
             </div>
           </div>
+          <input
+            type="text"
+            className="form-control mt-3"
+            placeholder="Customer Relationship Number"
+            name="CRN"
+            onChange={(e) => {
+              setsignUp({ ...signUp, [e.target.name]: e.target.value });
+            }}
+          ></input>
           <input
             type="text"
             className="form-control mt-3"
@@ -197,6 +206,7 @@ export const SignUp = (props) => {
               setsignUp({ ...signUp, [e.target.name]: e.target.value });
             }}
           ></input>
+   
           <div
             id="recaptcha-container"
             data-size="compact"

@@ -1,6 +1,5 @@
 import React from "react";
 import Logo from "../../src/components/Images/3.jpg";
-import { AiFillHome } from 'react-icons/ai';
 import '../components/Portal/navbar.scss'
 export const Navbar = () => {
   return (

@@ -4,6 +4,7 @@ const LOGIN_BASE_URL = "http://localhost:5000/home/netBanking";
 const ACCOUNT_BASE_URL="http://localhost:5000/home/account"
 const STATEMENT="http://localhost:5000/home/account/ministatement"
 const ADMIN="http://localhost:5000/home/admin"
+const Benificiary="http://localhost:5000/home/benificiary"
 
 class LoginService {
   login(object) {
@@ -16,9 +17,21 @@ class LoginService {
   getCustomer(CustomerId){
     return axios.get(LOGIN_BASE_URL + "/getCustomer/" + CustomerId);
   }
+  getCustomerByCRN(obj){
+    return axios.post(LOGIN_BASE_URL + "/getCustomerByCRN",obj );
+  }
 
   credit(object){
     return axios.post(ACCOUNT_BASE_URL + "/credit",object);
+  }
+  loanApprove(object){
+    return axios.post(ACCOUNT_BASE_URL + "/loanApprove",object);
+  }
+  AddBenificiary(object){
+    return axios.post(Benificiary + "/addUser",object);
+  }
+  getBenificiary(){
+    return axios.post(Benificiary + "/getBenificiery");
   }
   debit(object){
     return axios.post(ACCOUNT_BASE_URL + "/debit",object);
