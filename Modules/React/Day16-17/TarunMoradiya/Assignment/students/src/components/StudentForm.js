@@ -59,16 +59,31 @@ export default function StudentForm(props) {
         setEditItem(true);
         setId(res.data._id);
 
+        //date
+        const newDate = new Date(res.data.dob).toISOString().substr(0, 10);
+
+        //country
+        const ck = countries.find((c) => c.name === res.data.country);
+        //state
+        setStates(csc.getStatesOfCountry(ck.isoCode));
+
+        const st = states.find((s) => s.name === res.data.state);
+        //city
+        if (st) setCities(csc.getCitiesOfState(ck.isoCode, st.isoCode));
+        else setCities(csc.getCitiesOfCountry(ck.isoCode));
+
         setStudent({
           firstName: res.data.firstName,
           middleName: res.data.middleName,
           lastName: res.data.lastName,
-          dob: res.data.dob,
+          dob: newDate,
           birthPlace: res.data.birthPlace,
           lang: res.data.lang,
           city: res.data.city,
           state: res.data.state,
+          stateCode: st ? st.isoCode : "",
           country: res.data.country,
+          countryCode: ck.isoCode,
           email: res.data.email,
           pin: res.data.pin,
           img: { file: res.data.img },
@@ -174,6 +189,7 @@ export default function StudentForm(props) {
         return { ...student, stateCode: val };
       });
       val = csc.getStateByCode(val).name;
+      console.log(val);
     }
     setStudent((student) => {
       return { ...student, [nam]: val };
