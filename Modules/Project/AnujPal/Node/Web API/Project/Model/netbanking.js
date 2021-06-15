@@ -62,6 +62,10 @@ const netBankingSchema = new mongoose.Schema({
     CRN:{
         type:Number,
         required:true
+    },
+    address:{
+        type:String,
+        required:true
     }
 
 

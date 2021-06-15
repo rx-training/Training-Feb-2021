@@ -136,6 +136,11 @@ export const Home = (props) => {
 
                 <tbody>
                   {statement.map((item) => {
+                    let tempDate=new Date(item.date)
+                    let month=tempDate.getMonth() +1
+                    let year=tempDate.getFullYear()
+                    let day=tempDate.getDate() 
+                    let date=`${day}/${month}/${year}`
                     return (
                       <tr>
                         <td className="border border-success">
@@ -144,7 +149,7 @@ export const Home = (props) => {
                         <td className="border border-success">
                           {item.creditAccountNo}
                         </td>
-                        <td className="border border-success">{item.date}</td>
+                        <td className="border border-success">{date}</td>
                         <td className="border border-success">{item.amount}</td>
                         <td className="border border-success">{item.type}</td>
                       </tr>

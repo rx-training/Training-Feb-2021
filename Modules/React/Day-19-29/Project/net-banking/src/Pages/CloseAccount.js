@@ -94,7 +94,7 @@ export const CloseAccount = (props) => {
                     setCloseAccount({ ...CloseAccount, closeAccount: e.target.value });
                   }}
                 >
-                  <option selected> debit Account Number</option>
+                  <option selected>  Account Number</option>
                   {CRN.map((item, key) => {
                     return <option key={key}>{item.accountNo}</option>;
                   })}

@@ -1,17 +1,20 @@
-import {  useState } from "react";
-
-import ProjectService from '../../Services/LoginService'
+import { useEffect, useState } from "react";
+import react from "react";
+import ProjectService from "../../Services/LoginService";
 
 export const AdminRegister = (props) => {
-    const [register, setRegister] = useState({email:'',password:'',userId:''})
-    const Register=(e)=>{
-        e.preventDefault()
-ProjectService.AdminRegister(register).then((res)=>{
-    console.log(res.data);
-    alert('registered successfully')
-    props.history.push('Admin/Login')
-})
-    }
+  const [register, setRegister] = useState({
+    email: "",
+    password: "",
+    userId: "",
+  });
+  const Register = (e) => {
+    e.preventDefault();
+    ProjectService.AdminRegister(register).then((res) => {
+      console.log(res.data);
+      alert("registered successfully");
+    });
+  };
   return (
     <div className="col-md-10 mx-auto col-lg-5 container mt-5">
       <form class="p-4 p-md-5 border rounded-3 bg-light">
@@ -23,7 +26,9 @@ ProjectService.AdminRegister(register).then((res)=>{
             placeholder="Enter E-mail"
             name="email"
             value={register.email}
-            onChange={(e)=>{setRegister({...register,[e.target.name]:e.target.value})}}
+            onChange={(e) => {
+              setRegister({ ...register, [e.target.name]: e.target.value });
+            }}
           />
         </div>
         <div class="form-floating mb-3">
@@ -33,7 +38,9 @@ ProjectService.AdminRegister(register).then((res)=>{
             placeholder="Enter User-Id"
             name="userId"
             value={register.userId}
-            onChange={(e)=>{setRegister({...register,[e.target.name]:e.target.value})}}
+            onChange={(e) => {
+              setRegister({ ...register, [e.target.name]: e.target.value });
+            }}
           />
         </div>
         <div className="form-floating mb-3">
@@ -44,12 +51,13 @@ ProjectService.AdminRegister(register).then((res)=>{
             placeholder="Password"
             name="password"
             value={register.password}
-            onChange={(e)=>{setRegister({...register,[e.target.name]:e.target.value})}}
+            onChange={(e) => {
+              setRegister({ ...register, [e.target.name]: e.target.value });
+            }}
           />
         </div>
 
         <div className="row mt-4">
-
           <div className="col text-center">
             {" "}
             <button

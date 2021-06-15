@@ -72,6 +72,7 @@ class demoNetBanking {
       IFSC: req.body.IFSC,
       branchCity: req.body.branchCity,
       CRN: req.body.CRN,
+      address:req.body.address
     });
     const a1 = await user.save();
     transporter1.transporter.sendMail(

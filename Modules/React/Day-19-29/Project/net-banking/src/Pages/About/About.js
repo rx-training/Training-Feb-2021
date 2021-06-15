@@ -3,7 +3,7 @@ import { Navbar } from "../../components/Portal/Navbar";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 
-import "./About.scss";
+import './About.scss'
 
 export const About = (props) => {
   return (

@@ -65,9 +65,7 @@ export const Navbar = (props) => {
             </div>
           </li>
           <li class="nav-item  mx-3">
-            {/* <a class="nav-link" href={`http://localhost:3000/Portal/${id}/NEFT`}>
-              Transfer
-            </a> */}
+       
             <div class="dropdown">
               <button
                 className="btn btn-secondary dropdown-toggle h5"
@@ -88,13 +86,56 @@ export const Navbar = (props) => {
                 </a>
                 <a
                   class="dropdown-item"
-                  href={`http://localhost:3000/Portal/${id}/Loan`}
+                  href={`http://localhost:3000/Portal/${id}/LoanStatus `}
                 >
-                  Status Of Loan
+                 Show Loans
                 </a>
               </div>
             </div>
           </li>
+          <li class="nav-item  mx-3">
+       
+            <div class="dropdown">
+              <button
+                className="btn btn-secondary dropdown-toggle h5"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+              e-Services
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a
+                  class="dropdown-item"
+                  href={`http://localhost:3000/Portal/${id}/ApplyForCheque`}
+                >
+                  Apply For ChequeBook
+                </a>
+                <a
+                  class="dropdown-item"
+                  href={`http://localhost:3000/Portal/${id}/ApplyForDebit`}
+                >
+                  Apply For Debit-Card
+                </a>
+                <a
+                  class="dropdown-item"
+                  href={`http://localhost:3000/Portal/${id}/ApplyForFD `}
+                >
+                  Apply For Fixed-Deposit
+                </a>
+              </div>
+            </div>
+          </li>
+          {/* <li class="nav-item  mx-3">
+            <a
+              class="nav-link"
+              href={`http://localhost:3000/Portal/${id}/Delete`}
+            >
+              e-Services
+            </a>
+          </li> */}
           <li class="nav-item  mx-3">
             <a
               class="nav-link"

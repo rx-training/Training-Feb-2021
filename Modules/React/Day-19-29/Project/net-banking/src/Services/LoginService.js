@@ -45,6 +45,18 @@ class LoginService {
   MiniStatementById(object){
     return axios.post(ACCOUNT_BASE_URL + "/ministatementById",object);
   }
+  GetLoans(object){
+    return axios.post(ACCOUNT_BASE_URL + "/getLoans",object);
+  }
+  chequeBookRequest(object){
+    return axios.post(ACCOUNT_BASE_URL + "/chequeBookRequest",object)
+  }
+  debitCardRequest(object){
+    return axios.post(ACCOUNT_BASE_URL + "/debitCardRequest",object)
+  }
+  EMI(){
+    return axios.post(ACCOUNT_BASE_URL + "/EMI")
+  }
   MiniStatement(){
     return axios.post(STATEMENT );
   }

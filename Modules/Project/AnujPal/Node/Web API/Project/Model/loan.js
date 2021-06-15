@@ -24,6 +24,16 @@ const LoanSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  date:{
+      type:Date,
+      required:true
+
+  },EMI:{
+    type:Number
+  },
+ monthRemaining:{
+    type:Number
+  }
 });
 
 module.exports = LoanSchema;

@@ -7,11 +7,16 @@ const netbanking = require("../../Model/netbanking");
 const NetBanking = mongoose.model("NetBanking", netbanking);
 const loan = require("../../Model/loan");
 const Loan = mongoose.model("Loan", loan);
+const checkBookRequest = require("../../Model/chequeBook");
+const CheckBookRequest = mongoose.model("CheckBookRequest", checkBookRequest);
+const debitCardRequest = require("../../Model/debitCard");
+const DebitCardRequest = mongoose.model("DebitCardRequest", debitCardRequest);
 const verifyToken = require("../../Middleware/verifyToken");
 const ensureToken = require("../../Middleware/ensureToken");
 const miniStatement = require("../../Model/ministatement");
 const MiniStatemet = mongoose.model("Statements", miniStatement);
 const transporter1 = require("../../email/email");
+const schedule = require("node-schedule");
 
 class demoAccount {
   static async insertAccount(req, res) {
@@ -19,7 +24,7 @@ class demoAccount {
       accountNo: req.body.accountNo,
       accountHolderName: req.body.accountHolderName,
       CIF: req.body.CIF,
-      branchCode: req.body.branchCode,
+      branchName: req.body.branchName,
       balance: req.body.balance,
     });
     const a1 = account.save();
@@ -134,20 +139,87 @@ class demoAccount {
         { debitAccountNo: req.body.accountNo },
         { creditAccountNo: req.body.accountNo },
       ],
-    date:{
-      $gte:cutoff,
-      $lte: cutoff1
-    }
+      date: {
+        $gte: cutoff,
+        $lte: cutoff1,
+      },
     })
-   
-    
-   
-    
+      .limit(10)
+      .sort({ date: -1 });
 
     res.json(statements);
     console.log(cutoff);
   }
+  static async chequeBookRequest(req, res) {
+    const checkBookRequest = new CheckBookRequest({
+      accountNo: req.body.accountNo,
+      name: `${req.body.fname} ${req.body.mname} ${req.body.lname}`,
+      CIF: req.body.CIF,
+      branchName: req.body.branchName,
+      address: req.body.address,
+    });
+    const a1 = await checkBookRequest.save();
+    res.json(a1);
+  }
+  static async debitCardRequest(req, res) {
+    const request = new DebitCardRequest({
+      accountNo: req.body.accountNo,
+      CRN: req.body.CRN,
+      name: req.body.name,
+      address: req.body.address,
+      cardType: req.body.cardType,
+    });
+    const a1 = await request.save();
+    res.json(a1);
+  }
+  static async EMI(req, res) {
+    const updateDoc = {
+      $inc: {
+        monthRemaining: -1,
+      },
+    };
 
+    const loans = await Loan.find({});
+
+    const demoLoanNo = loans.filter((item) => {
+      return item.monthRemaining !== 0;
+    });
+
+    let result = demoLoanNo.map((a) => a.loanNo);
+    let result1 = demoLoanNo.map((a) => a.accountNo);
+    let result2 = demoLoanNo.map((a) => a.EMI);
+
+    const loan = await Loan.updateMany({ loanNo: result }, updateDoc);
+    // const netBanking=await NetBanking.updateMany({accountNo:result1},updateDoc1)
+    const myFunction = async (item) => {
+      const user = await Loan.find({ accountNo: item });
+      const EMI = user[0].EMI;
+      const updateDoc1 = {
+        $inc: {
+          balance: -EMI,
+        },
+      };
+      const netBanking1 = await NetBanking.updateOne(
+        { accountNo: item },
+        updateDoc1
+      );
+      if (netBanking1.nModified === 1) {
+        const statement = new MiniStatemet({
+          debitAccountNo: item,
+          creditAccountNo: "101",
+          amount: EMI,
+          type: "EMI Deduction",
+          date: new Date(),
+        });
+        const a1 = statement.save();
+        console.log(a1);
+      }
+    };
+
+    const netBanking = result1.forEach(myFunction);
+
+    res.json({ loan: loan });
+  }
 }
 // API for inserting the account information
 accountRouter.post(
@@ -184,10 +256,24 @@ accountRouter.post(
   ensureToken,
   demoAccount.miniStatementById
 );
+accountRouter.post(
+  "/chequeBookRequest",
+  verifyToken,
+  ensureToken,
+  demoAccount.chequeBookRequest
+);
+accountRouter.post(
+  "/debitCardRequest",
+  verifyToken,
+  ensureToken,
+  demoAccount.debitCardRequest
+);
+accountRouter.post("/EMI", verifyToken, ensureToken, demoAccount.EMI);
 
 accountRouter.post("/LoanApprove", async (req, res) => {
   let count = await Loan.estimatedDocumentCount();
   const loanUser = new Loan({
+    date: new Date(),
     loanNo: count + 501,
     CRN: req.body.CRN,
     accountNo: req.body.accountNo,
@@ -198,4 +284,13 @@ accountRouter.post("/LoanApprove", async (req, res) => {
   res.json(a1);
   console.log(count);
 });
+accountRouter.post("/getLoans", async (req, res) => {
+  const loans = await Loan.find({ CRN: req.body.CRN });
+  res.json(loans);
+});
+
+schedule.scheduleJob("*/10 * * * * *", async () => {
+  demoAccount.EMI;
+});
+
 module.exports = accountRouter;
