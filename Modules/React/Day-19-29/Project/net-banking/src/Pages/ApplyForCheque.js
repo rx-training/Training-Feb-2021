@@ -75,7 +75,7 @@ export const ApplyForCheque = (props) => {
               Delivery Address
             </small>
           </div>
-          <input
+          <textarea
             type="text"
             placeholder="Address"
             className="form-control  "

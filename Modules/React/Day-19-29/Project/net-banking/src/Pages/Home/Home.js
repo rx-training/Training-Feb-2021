@@ -13,7 +13,7 @@ export const Home = (props) => {
   const [MiniStatement, setMiniStatement] = useState({
     startingDate: "",
     endingDate: "",
-    accountNo:props.match.params.id
+    accountNo: props.match.params.id,
   });
   const [customer, setCustomer] = useState({});
   const [statement, setStatement] = useState([]);
@@ -22,7 +22,6 @@ export const Home = (props) => {
     ProjectService.getCustomer(props.match.params.id).then((res) => {
       setCustomer(res.data[0]);
     });
-    
   }, [props.match.params.id]);
 
   const LogOut = (e) => {
@@ -30,12 +29,12 @@ export const Home = (props) => {
     props.history.push("/");
   };
   const Find = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     console.log(MiniStatement);
-    ProjectService.MiniStatementById(MiniStatement).then((res)=>{
-      setStatement(res.data)
-    })
-    setShowTranjaction(!showTranjaction)
+    ProjectService.MiniStatementById(MiniStatement).then((res) => {
+      setStatement(res.data);
+    });
+    setShowTranjaction(!showTranjaction);
   };
   return (
     <>
@@ -136,11 +135,11 @@ export const Home = (props) => {
 
                 <tbody>
                   {statement.map((item) => {
-                    let tempDate=new Date(item.date)
-                    let month=tempDate.getMonth() +1
-                    let year=tempDate.getFullYear()
-                    let day=tempDate.getDate() 
-                    let date=`${day}/${month}/${year}`
+                    let tempDate = new Date(item.date);
+                    let month = tempDate.getMonth() + 1;
+                    let year = tempDate.getFullYear();
+                    let day = tempDate.getDate();
+                    let date = `${day}/${month}/${year}`;
                     return (
                       <tr>
                         <td className="border border-success">
@@ -158,59 +157,6 @@ export const Home = (props) => {
                 </tbody>
               </table>
             ) : null}
-            {/* <h3 className="text-center mb-5">Recent 10 Tranjactions</h3> */}
-            {/* <table className="table bg-ligt">
-              <tr>
-                <td
-                  className="h6 border border-success"
-                  style={{ color: "#064420" }}
-                >
-                  Debit Account
-                </td>
-                <td
-                  className="h6 border border-success"
-                  style={{ color: "#064420" }}
-                >
-                  Credit Account
-                </td>
-                <td
-                  className="h6 border border-success"
-                  style={{ color: "#064420" }}
-                >
-                  Date
-                </td>
-                <td
-                  className="h6 border border-success"
-                  style={{ color: "#064420" }}
-                >
-                  Amount
-                </td>
-                <td
-                  className="h6 border border-success"
-                  style={{ color: "#064420" }}
-                >
-                  Type
-                </td>
-              </tr>
-
-              <tbody>
-                {statement.map((item) => {
-                  return (
-                    <tr>
-                      <td className="border border-success">
-                        {item.debitAccountNo}
-                      </td>
-                      <td className="border border-success">
-                        {item.creditAccountNo}
-                      </td>
-                      <td className="border border-success">{item.date}</td>
-                      <td className="border border-success">{item.amount}</td>
-                      <td className="border border-success">{item.type}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table> */}
           </div>
           <div class=" col m-4 card card border-0" style={{ width: "18rem" }}>
             <img class="card-img-top" src={Logo} alt="Card  cap" />

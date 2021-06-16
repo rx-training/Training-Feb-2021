@@ -20,14 +20,14 @@ export const SignUp = (props) => {
     branchName: "",
     IFSC: "",
     branchCity: "",
-    CRN:"",
-    address:''
+    CRN: "",
+    address: "",
   });
-  const Register = async(e) => {
+  const Register = async (e) => {
     e.preventDefault();
-   
+
     let recaptcha = new FireBase.auth.RecaptchaVerifier("recaptcha-container");
-    let number =  '+918128501852';
+    let number = "+918128501852";
     await FireBase.auth()
       .signInWithPhoneNumber(number, recaptcha)
       .then((res) => {
@@ -38,7 +38,7 @@ export const SignUp = (props) => {
           .then(() => {
             ProjectService.signUp(signUp).then((res1) => {
               console.log(res1.data);
-              alert('You Successfully Registered')
+              alert("You Successfully Registered");
             });
           })
           .catch((err) => {
@@ -48,8 +48,6 @@ export const SignUp = (props) => {
       .catch((err) => {
         console.log(err.message);
       });
-    
-     
   };
   return (
     <>
@@ -61,6 +59,7 @@ export const SignUp = (props) => {
           <div className="row">
             <div className="col">
               <input
+                required
                 type="text"
                 placeholder="First Name"
                 className="form-control"
@@ -133,7 +132,7 @@ export const SignUp = (props) => {
               setsignUp({ ...signUp, [e.target.name]: e.target.value });
             }}
           ></input>
-            <input
+          {/* <input
             type="textarea"
             className="form-control mt-3"
             placeholder="Address"
@@ -141,7 +140,15 @@ export const SignUp = (props) => {
             onChange={(e) => {
               setsignUp({ ...signUp, [e.target.name]: e.target.value });
             }}
-          ></input>
+          ></input> */}
+          <textarea
+            className="form-control mt-3"
+            placeholder="Address"
+            name="address"
+            onChange={(e) => {
+              setsignUp({ ...signUp, [e.target.name]: e.target.value });
+            }}
+          ></textarea>
           <input
             type="text"
             className="form-control mt-3"
@@ -151,7 +158,7 @@ export const SignUp = (props) => {
               setsignUp({ ...signUp, [e.target.name]: e.target.value });
             }}
           ></input>
-        
+
           <label className="h4 mt-4 mb-4 text-center">Account Details</label>
           <input
             type="number"
@@ -219,13 +226,13 @@ export const SignUp = (props) => {
               setsignUp({ ...signUp, [e.target.name]: e.target.value });
             }}
           ></input>
-   
+
           <div
             id="recaptcha-container"
             data-size="compact"
             style={{ width: "400px" }}
           ></div>
-  
+
           <button
             type="submit"
             className="btn btn-primary mt-5 w-100"

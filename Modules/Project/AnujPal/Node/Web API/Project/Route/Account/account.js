@@ -128,6 +128,36 @@ class demoAccount {
       res.json({ statementDetaile: a1, creditDetails: creditAccount });
     }
   }
+  static async FDNEFT(req, res) {
+    const debitAccount = await NetBanking.updateOne(
+      { accountNo: req.body.debitAccountNo },
+      {
+        $inc: {
+          balance: -parseInt(req.body.amount),
+        },
+      }
+    );
+    const creditAccount = await NetBanking.updateOne(
+      { accountNo: req.body.creditAccountNo },
+      {
+        $inc: {
+          balance: req.body.amount,
+        },
+      }
+    );
+    if (creditAccount.nModified == 1) {
+      const statement = new MiniStatemet({
+        date: new Date(),
+        amount: req.body.amount,
+        debitAccountNo: req.body.debitAccountNo,
+        creditAccountNo: req.body.creditAccountNo,
+        type: "FD",
+      });
+
+      const a1 = await statement.save();
+      res.json({ statementDetaile: a1, creditDetails: creditAccount });
+    }
+  }
 
   static async miniStatementById(req, res) {
     var cutoff = new Date(req.body.startingDate);
@@ -245,6 +275,7 @@ accountRouter.post(
 
 // API for NEFT
 accountRouter.post("/NEFT", verifyToken, ensureToken, demoAccount.NEFT);
+accountRouter.post("/FDNEFT", verifyToken, ensureToken, demoAccount.FDNEFT);
 
 // API for DELETE
 accountRouter.post("/delete", verifyToken, ensureToken, demoAccount.delete);

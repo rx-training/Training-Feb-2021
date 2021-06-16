@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Navbar } from "../components/Portal/Navbar";
 import ProjectService from "../Services/LoginService";
+import FireBase from '../Fire-Base/FireBase'
 
 export const ApplyForFD = (props) => {
   const [customer, setCustomer] = useState({});
@@ -10,9 +11,34 @@ export const ApplyForFD = (props) => {
       setCustomer(res.data[0]);
     });
   }, []);
-  const Apply = (e) => {
-    e.preventDefault();
-    alert("You Applied fro the FD");
+  const Apply = async(e) => {
+    e.preventDefault()
+    let recaptcha = new FireBase.auth.RecaptchaVerifier("recaptcha-container");
+    let number = "+918128501852";
+    await FireBase.auth()
+      .signInWithPhoneNumber(number, recaptcha)
+      .then((res) => {
+        let code = prompt("enter otp", "");
+        if (code == null) return;
+        res
+          .confirm(code)
+          .then(() => {
+            ProjectService.FDNEFT({
+              debitAccountNo: props.match.params.id,
+              creditAccountNo: 110,
+              amount: FD.amount,
+            }).then((res) => {
+              console.log(res.data);
+            });
+          })
+          .catch((err) => {
+            console.log(err.message);
+          });
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+
   };
   const calculateMoney = (e) => {
     e.preventDefault();
@@ -108,11 +134,13 @@ export const ApplyForFD = (props) => {
               </button>
             </div>
           </div>
+          <div className="mt-4" id="recaptcha-container"></div>
           <div className="mt-5 ">
-            <button className="btn btn-secondary w-100" onClick={Apply}>
+            <button className="btn btn-secondary w-100 " onClick={Apply}>
               Apply
             </button>
           </div>
+      
         </form>
       </div>
     </>

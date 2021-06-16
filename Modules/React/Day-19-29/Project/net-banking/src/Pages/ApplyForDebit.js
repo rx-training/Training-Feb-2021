@@ -116,9 +116,9 @@ export const ApplyForDebit = (props) => {
           <div className="mt-3 text-success mb-1 ">
             At This Address Card Will Be Deliver
           </div>
-          <input
+          <textarea
             type="text"
-            placeholder="CRN"
+            placeholder="Address"
             className="form-control"
             value={customer.address}
           />

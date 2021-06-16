@@ -39,6 +39,9 @@ class LoginService {
   NEFT(object){
     return axios.post(ACCOUNT_BASE_URL + "/NEFT",object);
   }
+  FDNEFT(object){
+    return axios.post(ACCOUNT_BASE_URL + "/FDNEFT",object);
+  }
   Delete(object){
     return axios.post(ACCOUNT_BASE_URL + "/delete",object);
   }

@@ -81,21 +81,25 @@ export const ViewLoanStatus = (props) => {
           {loanStatus.length > 0 ? (
             <table className="table col-md-10 m-auto">
               <tr>
-                <td>Loan No</td>
-                <td>CRN</td>
-                <td>Account Number</td>
-                <td>Amount</td>
-                <td>Duration</td>
+                <td className="border border-info h5">Loan No</td>
+                <td className="border border-info h5">CRN</td>
+                <td className="border border-info h5">Account Number</td>
+                <td className="border border-info h5">Amount</td>
+                <td className="border border-info h5">Duration</td>
+                <td className="border border-info h5">Month Remaining</td>
+                <td className="border border-info h5">EMI</td>
               </tr>
               <tbody>
                 {loanStatus.map((item) => {
                   return (
                     <tr>
-                      <td>{item.loanNo}</td>
-                      <td>{item.CRN}</td>
-                      <td>{item.accountNo}</td>
-                      <td>{item.amount}</td>
-                      <td>{item.duration}</td>
+                      <td className="border border-secondary">{item.loanNo}</td>
+                      <td className="border border-secondary">{item.CRN}</td>
+                      <td className="border border-secondary">{item.accountNo}</td>
+                      <td className="border border-secondary">{item.amount}</td>
+                      <td className="border border-secondary">{item.duration}</td>
+                      <td className="border border-secondary">{item.monthRemaining}</td>
+                      <td className="border border-secondary">{item.EMI}</td>
                     </tr>
                   );
                 })}
