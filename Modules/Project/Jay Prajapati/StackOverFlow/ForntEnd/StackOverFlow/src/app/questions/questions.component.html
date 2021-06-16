@@ -1,0 +1,31 @@
+<!-- {{allQuestions | json}} -->
+
+<div class="row py-5">
+  <div class="col-auto mr-auto h3">All Questions</div>
+  <div class="col-auto"><button class="btn btn-primary" (click)="askQuestion()">Ask Question</button></div>
+</div>
+<h6>{{allQuestions.length}} Questions</h6>
+<hr>
+<div class="container-fluid ">
+  <div class="row border-bottom" *ngFor="let q of allQuestions;">
+    <div class="col-lg-1">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link p-1 m-1 text-center" href="#">{{q.vote}}<br><small>votes</small></a>
+          <a class="nav-link border border-success bg-success rounded text-center text-light"
+            href="#">{{q.answers.length}}<br><small>answers</small></a>
+          <a class="nav-link m-1 text-center" href="#">{{q.totalViews}} <small>views</small></a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg-11">
+      <a class="nav-link rounded text-primary font-weight-bold" href="questions/{{q.questionId}}">{{q.question1}}</a>
+      <p class="pl-3">{{q.questionBody}}</p>
+      <span *ngFor="let t of q.tags" class="pl-3">
+        <button type="button" class="btn btn-secondary">{{t.tagName}}</button>
+      </span>
+    </div>
+    
+  </div>
+  
+</div>
