@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder, Validators,FormArray } from '@angular/forms';
+import { Router } from '@angular/router';
 import { QuestionsService } from '../questions.service';
 import { UsersService } from '../users.service';
 
@@ -13,7 +14,7 @@ export class AskQuestionComponent implements OnInit {
   //questionForm!:FormGroup;
   currentUser : any;
   userId? : any;
-  constructor(private fb : FormBuilder, private questions : QuestionsService,private user : UsersService) { }
+  constructor(private fb : FormBuilder, private questions : QuestionsService,private user : UsersService,private route : Router) { }
 
   ngOnInit(): void {
     this.userId = localStorage.getItem('userId');
@@ -51,7 +52,10 @@ export class AskQuestionComponent implements OnInit {
     console.log(this.questionForm.value);
     
     this.user.postQuestion(this.userId,this.questionForm.value).subscribe(
-      res=>console.log(res)
+      res=>{
+        this.route.navigate(['']);
+        console.log(res);
+      }
     );
   }
 

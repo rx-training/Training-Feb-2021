@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { UsersRoutingModule } from './users/users-routing.module';
+import {environment} from '../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,7 @@ export class UsersService {
 
   constructor(private http : HttpClient) { }
 
-  private baseUrl = "https://localhost:44303/api";
+  private baseUrl = environment.baseUrl;
 
   httpHeaders = new HttpHeaders({
     'content-type' : 'application/json',

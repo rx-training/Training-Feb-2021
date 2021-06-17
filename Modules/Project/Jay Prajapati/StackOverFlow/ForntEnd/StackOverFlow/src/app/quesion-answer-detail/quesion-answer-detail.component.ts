@@ -46,21 +46,29 @@ export class QuesionAnswerDetailComponent implements OnInit {
   submit(){
     
     this.userService.postAnswer(this.userId,this.queId,this.answerForm.value).subscribe(
-      res=>console.log(res)
+      res=>{
+        location.reload();
+        console.log(res)}
     );
   }
   UpVoteQuestion(){
     this.userService.giveUpVoteToQuestion(this.userId,this.queId).subscribe(
-      (res : any)=>{
-        console.log(res.message);
-        
-      }
+      (res: any)=>{
+        if(res.status == "Fail"){
+          alert(res.message);
+        }
+        location.reload();
+        console.log(res)}
     )
   }
 
   DownVoteQuestion(){
     this.userService.giveDownVoteToQuestion(this.userId,this.queId).subscribe(
       (res : any)=>{
+        if(res.status == "Fail"){
+          alert(res.message);
+        }
+        location.reload();
         console.log(res.message);
       }
     )
@@ -68,22 +76,35 @@ export class QuesionAnswerDetailComponent implements OnInit {
 
   BookmarkQuestion(){
     this.userService.bookmarkQuestion(this.userId,this.queId).subscribe(
-      (res:any)=>{
-        console.log(res.message);
-      }
+      (res: any)=>{
+        if(res.status == "Fail"){
+          alert(res.message);
+        }
+        location.reload();
+        console.log(res)}
     )
   }
 
 
   UpVoteAnswer(ansId : number){
     this.userService.giveUpVoteToAnswer(this.userId,this.queId,ansId).subscribe(
-      res=>console.log(res)
+      (res: any)=>{
+        if(res.status == "Fail"){
+          alert(res.message);
+        }
+        location.reload();
+        console.log(res)}
     )
   }
 
   DownVoteAnswer(ansId : number){
     this.userService.giveDownVoteToAnswer(this.userId,this.queId,ansId).subscribe(
-      res=>console.log(res)
+      (res: any)=>{
+        if(res.status == "Fail"){
+          alert(res.message);
+        }
+        location.reload();
+        console.log(res)}
     )
 
   }

@@ -1,20 +1,20 @@
 <div class="row position-fixed my-nav" >
     <div class="container ">
-      <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top  shadow-lg ">
+      <nav class="navbar navbar-expand-md bg-light navbar-light fixed-top  shadow-lg ">
         <div class="dropdown">
           <button class="navbar-toggler" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
             id="dropdownLink">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="dropdown-menu d-sm-none " aria-labelledby="dropdownLink">
-            <a  routerLink='/home' routerLinkActive=""><strong class="ml-2">HOME</strong></a>
+          <div class="dropdown-menu d-md-none " aria-labelledby="dropdownLink">
+            <a  routerLink='/home' routerLinkActive="" class="text-dark nav-link"><strong class="ml-2">HOME</strong></a>
             <p class="ml-2">PUBLIC</p>
             <a  routerLink='/questions' routerLinkActive=""class="dropdown-item"><i class="fa fa-globe"></i> Questions</a>
-            <a  routerLink='/tags' routerLinkActive=""class="dropdown-item">Tags</a>
+            <!-- <a  routerLink='/tags' routerLinkActive=""class="dropdown-item">Tags</a> -->
             <a routerLink='/users' routerLinkActive=""class="dropdown-item">Users</a>
-            <p class="ml-2">FIND A JOB</p>
+            <!-- <p class="ml-2">FIND A JOB</p>
             <a href="" class="dropdown-item">Jobs</a>
-            <a href="" class="dropdown-item">Companies</a>
+            <a href="" class="dropdown-item">Companies</a> -->
           </div>
         </div>
         <a href="index.html" class="navbar-brand d-none d-md-block"><img src="../assets/Images/Logo.png"
@@ -71,7 +71,7 @@
   
   
   <div class="row mt-5 pt-2 mx-0">
-    <div class="col-md-2 col-sm-3 d-none d-sm-block bg-light border-right shadow-sm">
+    <div class="col-md-2 col-sm-3 d-none d-md-block bg-light border-right shadow-sm">
       <div class="container-fluid my-sidenav">
         <ul class="nav flex-column">
           <li class="nav-item">
@@ -80,18 +80,18 @@
           <li class="nav-item">PUBLIC
             <a class="nav-link text-dark" routerLink='/questions'routerLinkActive="active-item"><i class="fa fa-globe"> Question</i></a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link text-dark" routerLink='/tags' routerLinkActive="active-item">Tags</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link text-dark" routerLink='/users' routerLinkActive="active-item">Users</a>
           </li>
-          <li class="nav-item">FIND A JOB
+          <!-- <li class="nav-item">FIND A JOB
             <a class="nav-link text-dark" routerLink='/' >Jobs</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-dark" href="#">Companies</a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>

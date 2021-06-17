@@ -58,7 +58,7 @@
             </div>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary" (click)="submit()">Put Answer</button>
+                    <button type="submit" class="btn btn-primary" [disabled]="answerForm.invalid"  (click)="submit()">Put Answer</button>
                 </div>
             </form>
         </div>
