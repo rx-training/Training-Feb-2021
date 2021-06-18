@@ -29,25 +29,7 @@ export const NEFT1 = (props) => {
     CRN: "",
   });
   const [CRN, setCRN] = useState([]);
-  // const fetchData = async () => {
-  //   await f1();
-  //   f2();
-  // };
-  // const f1 =async () => {
-  //  await ProjectService.getCustomer(props.match.params.id).then((res) => {
-  //     setCustomer(res.data[0]);
-  //   });
-  // };
-  // const f2 = async() => {
-  //  await ProjectService.getCustomerByCRN({ CRN: customer.CRN }).then((res1) => {
-  //     setCRN(res1.data);
-  //     setstate2(true);
-  //     console.log(customer.CRN);
-  //   });
-  // };
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+ 
   useEffect( () => {
      ProjectService.getCustomer(props.match.params.id).then((res) => {
       setCustomer(res.data[0]);
@@ -297,16 +279,7 @@ export const NEFT1 = (props) => {
                     })}
                   </select>
                 </div>
-                {/* <div class="form-floating mb-3">
-                  <input
-                    className="form-control"
-                    name="creditAccountNo"
-                    placeholder="Credit Account Number"
-                    onChange={(e) => {
-                      setNEFT({ ...NEFT, [e.target.name]: e.target.value });
-                    }}
-                  />
-                </div> */}
+          
                 <div class="form-floating mb-3">
                   <select className="form-control">
                     <option selected> Credit Account Number</option>

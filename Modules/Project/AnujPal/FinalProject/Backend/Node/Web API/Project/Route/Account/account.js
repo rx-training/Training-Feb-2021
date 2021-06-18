@@ -15,6 +15,8 @@ const verifyToken = require("../../Middleware/verifyToken");
 const ensureToken = require("../../Middleware/ensureToken");
 const miniStatement = require("../../Model/ministatement");
 const MiniStatemet = mongoose.model("Statements", miniStatement);
+const nominee=require('../../Model/nominee')
+const Nominee =mongoose.model('Nominee',nominee)
 const transporter1 = require("../../email/email");
 const schedule = require("node-schedule");
 
@@ -250,6 +252,26 @@ class demoAccount {
 
     res.json({ loan: loan });
   }
+  static async addNominee(req,res){
+    const nominee= new Nominee({
+      accountNo:req.body.accountNo,
+      name:req.body.name,
+      DOB:req.body.DOB,
+      relation:req.body.relation,
+      equity:req.body.equity
+
+    })
+    const a1=await nominee.save()
+    res.json(a1)
+  }
+  static async viewNominee(req,res){
+    const viewNominee=await Nominee.find({accountNo:req.body.accountNo})
+    res.json(viewNominee)
+  }
+  static async deleteNominee(req,res){
+    const user= await Nominee.deleteOne({_id:req.body._id})
+    res.json(user)
+  }
 }
 // API for inserting the account information
 accountRouter.post(
@@ -300,6 +322,9 @@ accountRouter.post(
   demoAccount.debitCardRequest
 );
 accountRouter.post("/EMI", verifyToken, ensureToken, demoAccount.EMI);
+accountRouter.post("/addNominee", verifyToken, ensureToken, demoAccount.addNominee);
+accountRouter.post("/viewNominee", verifyToken, ensureToken, demoAccount.viewNominee);
+accountRouter.post("/deleteNominee", verifyToken, ensureToken, demoAccount.deleteNominee);
 
 accountRouter.post("/LoanApprove", async (req, res) => {
   let count = await Loan.estimatedDocumentCount();
@@ -320,8 +345,6 @@ accountRouter.post("/getLoans", async (req, res) => {
   res.json(loans);
 });
 
-schedule.scheduleJob("*/10 * * * * *", async () => {
-  demoAccount.EMI;
-});
+
 
 module.exports = accountRouter;

@@ -17,7 +17,7 @@ export const AdminRegister = (props) => {
   };
   return (
     <div className="col-md-10 mx-auto col-lg-5 container mt-5">
-      <form class="p-4 p-md-5 border rounded-3 bg-light">
+      <form class="p-4 p-md-5 mt-5  col-md-6 mx-auto border rounded-3 bg-light">
         <h3 className="text-center mb-5">Admin Register</h3>
         <div class="form-floating mb-3">
           <input
