@@ -22,7 +22,7 @@ export const Login = (props) => {
       alert("Invalid userid or Password !!!!!!!!!!!");
     } else {
       alert("You Successfully Login To the system");
-      props.history.push(`/Portal/${tempAccountNo}/NEFT`);
+      props.history.push(`/Home/${tempAccountNo}`);
     }
 
     // props.history.push("/Portal");

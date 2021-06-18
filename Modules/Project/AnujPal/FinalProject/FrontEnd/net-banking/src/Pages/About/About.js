@@ -11,7 +11,7 @@ export const About = (props) => {
       <Navbar id={props.match.params.id} />
       <section>
         <div className="container ">
-          <div className=" mt-5" id="about">
+          <div className=" mt-5 col-md-6" id="about">
             <div className="row">
               <div className="col">
                 {" "}

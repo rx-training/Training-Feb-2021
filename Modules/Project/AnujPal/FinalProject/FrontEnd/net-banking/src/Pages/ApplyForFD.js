@@ -77,7 +77,7 @@ export const ApplyForFD = (props) => {
   };
   return (
     <>
-      <Navbar />
+      <Navbar id={props.match.params.id} />
       <div className="col-md-6 mx-auto mt-5">
         <form className="bg-light p-4 m-4 mt-5" id="signUpForm">
           <h3 className="text-center mb-5 ">Apply For Fixed Deposit</h3>

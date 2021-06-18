@@ -64,13 +64,19 @@ export const Home = (props) => {
             </div>
           </div>
         </div>
-
+        <marquee className="text-danger mt-3 fw-bold">
+          Our Bank Never Ask For Confidencial Information Such As PIN and OTP
+          from customers.Only any such call can be made by only
+          fraudsters.Please do not share personal Information{" "}
+        </marquee>
         <div className="row mt-5">
-          <div className="col-md-10 m-4 col-lg-5" id="statement">
+          <div className="col-md-10 m-4 col-lg-5 mb-3" id="statement">
             <form className="bg-light p-4 m-4 mt-5" id="addBenficiaryForm">
+              <h3 className="text-center mb-5">Statements</h3>
+              <lable className="h6">Enter Starting Date</lable>
               <input
                 type="date"
-                className="form-control mt-3"
+                className="form-control mt-2"
                 name="startingDate"
                 onChange={(e) => {
                   setMiniStatement({
@@ -79,17 +85,20 @@ export const Home = (props) => {
                   });
                 }}
               />
-              <input
-                type="date"
-                className="form-control mt-3"
-                name="endingDate"
-                onChange={(e) => {
-                  setMiniStatement({
-                    ...MiniStatement,
-                    [e.target.name]: e.target.value,
-                  });
-                }}
-              />
+              <div className="mt-3">
+                <lable className="h6">Enter Ending Date</lable>
+                <input
+                  type="date"
+                  className="form-control mt-2"
+                  name="endingDate"
+                  onChange={(e) => {
+                    setMiniStatement({
+                      ...MiniStatement,
+                      [e.target.name]: e.target.value,
+                    });
+                  }}
+                />
+              </div>
               <button
                 type="button"
                 className="mt-3 btn w-100 btn-primary"
