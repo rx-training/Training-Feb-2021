@@ -1,4 +1,3 @@
-
 import { React, useState } from "react";
 import { Navbar } from "../../components/Portal/Navbar";
 import { useEffect } from "react";
@@ -18,14 +17,14 @@ export const Loan = (props) => {
   });
   const [CRN, setCRN] = useState([]);
   const [customer, setCustomer] = useState({});
-  useEffect( () => {
-     ProjectService.getCustomer(props.match.params.id).then((res) => {
+  useEffect(() => {
+    ProjectService.getCustomer(props.match.params.id).then((res) => {
       setCustomer(res.data[0]);
     });
     ProjectService.getCustomerByCRN({ CRN: Loan.CRN }).then((res) => {
       setCRN(res.data);
     });
-  }, [Loan.CRN,props.match.params.id]);
+  }, [Loan.CRN, props.match.params.id]);
   const LogOut = (e) => {
     localStorage.clear();
     props.history.push("/");
@@ -78,16 +77,15 @@ export const Loan = (props) => {
         alert(`EMI For 4 Year Is :  ` + EMI3);
         break;
 
-        default:
-          break;
+      default:
+        break;
     }
   };
 
-  schedule.scheduleJob("m-job","0 0 1 * *", async () => {
+  schedule.scheduleJob("m-job", "0 0 1 * *", async () => {
     await ProjectService.EMI().then((res) => {
       console.log(res.data);
     });
-    
   });
   return (
     <>

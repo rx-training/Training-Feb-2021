@@ -24,8 +24,27 @@ export const NEFT = (props) => {
       setCRN(res1.data);
     });
     setstate(false);
-  }, [state, customer.balance, customer.CRN, props.match.params.id]);
+  }, [
+    state,
+    customer.balance,
+    customer.CRN,
+    props.match.params.id,
+    NEFT.debitAccountNo,
+  ]);
+  // useEffect(async() => {
+  //   await ProjectService.getCustomer(props.match.params.id).then((res) => {
+  //     setCustomer(res.data[0]);
+  //   });
+  //   setstate(false);
+  //   setNEFT({ debitAccountNo: "", creditAccountNo: "", amount: "" });
+  //   console.log(NEFT);
+  // }, [state]);
+  // useEffect(async () => {
+  //   console.log(customer.CRN);
+  //    await ProjectService.getCustomerByCRN({ CRN: customer.CRN}).then((res) => {
 
+  //   });
+  // }, [state]);
   const LogOut = (e) => {
     localStorage.clear();
     props.history.push("/");
@@ -113,8 +132,20 @@ export const NEFT = (props) => {
                   }}
                 >
                   <option selected> Credit Account Number</option>
+
                   {CRN.map((item, key) => {
-                    return <option key={key}>{item.accountNo}</option>;
+                    return (
+                      <option
+                        disabled={
+                          item.accountNo === parseInt(NEFT.debitAccountNo)
+                            ? true
+                            : null
+                        }
+                        key={key}
+                      >
+                        {item.accountNo}
+                      </option>
+                    );
                   })}
                 </select>
               </div>
