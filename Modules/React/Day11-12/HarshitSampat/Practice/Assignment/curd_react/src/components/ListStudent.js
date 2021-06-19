@@ -17,13 +17,13 @@ export default class ListStudent extends Component {
   }
 
   editStudent = (id) => {
-    this.props.history.push(`/add-student/${id}`);
+    this.props.history.push(`/edit-student/${id}`);
   };  
 
   deleteStudent=(id)=>{
      StudentService.deleteStudent(id).then((res) => {
        this.setState({
-         students: this.state.students.filter((student) => student.studentId !== id),
+         students: this.state.students.filter(student => student.studentId !== id),
        });
      });
   };
@@ -32,10 +32,19 @@ export default class ListStudent extends Component {
     this.props.history.push(`/view-student/${id}`);
   };
 
+  addStudent=(id)=>{
+      this.props.history.push(`/add-student/`);
+  }
+
   render() {
     console.log(this.state.students);
     return (
       <div>
+        <div className="row">
+          <button className="btn btn-primary mt-3 mb-3" onClick={this.addStudent}>  
+            Add Employee
+          </button>
+        </div>
         <table className="table table-striped table-bordered">
           <thead>
             <tr>

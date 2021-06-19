@@ -1,0 +1,203 @@
+@font-face {
+        font-family: 'housing_phoenix';
+        font-display: swap;
+        src: local('housing_phoenix'), url('http://c.housingcdn.com/s/assets/style.50d3979f.woff2') format('woff2'), url('http://c.housingcdn.com/s/assets/style.cc868f08.woff') format('woff'), url('http://c.housingcdn.com/s/assets/style.3d86ac94.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      *,
+      ::before,
+      ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font: inherit;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      @media (min-width:1100px) {
+
+        *,
+        ::before,
+        ::after {
+          -webkit-font-smoothing: antialiased;
+        }
+      }
+
+      ::before,
+      ::after {
+        -webkit-font-smoothing: antialiased;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      .pixel {
+        display: none;
+      }
+
+      html {
+        font-size: 14px;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        position: relative;
+        font-family: Rubik, Helvetica, sans-serif;
+        font-style: normal;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      body.fixed {
+        overflow: hidden;
+      }
+
+      @media (min-width:1100px) {
+        body {
+          font-weight: 300;
+        }
+      }
+
+      a {
+        background-color: transparent;
+        color: inherit;
+        -webkit-text-decoration: none;
+        text-decoration: none;
+      }
+
+      b,
+      strong {
+        font-weight: 500;
+      }
+
+      button,
+      input,
+      select {
+        border: none;
+        border-radius: 0;
+        outline: none;
+      }
+
+      input[type='number'],
+      input[type='number']::-webkit-inner-spin-button,
+      input[type='number']::-webkit-outer-spin-button {
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+        appearance: textfield;
+      }
+
+      h2 {
+        font-weight: inherit;
+      }
+
+      img,
+      a {
+        border: none;
+        outline: none;
+      }
+
+      select {
+        background: transparent;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .app {
+        min-height: 100%;
+      }
+      @font-face {
+        font-family: 'Rubik';
+        font-display: swap;
+        font-weight: 400;
+        font-style: normal;
+        src: url('http://c.housingcdn.com/s/assets/regular.6b0b2176.woff2');
+      }
+
+      @font-face {
+        font-family: 'Rubik';
+        font-display: swap;
+        font-weight: 500;
+        font-style: normal;
+        src: url('http://c.housingcdn.com/s/assets/medium.aea082bc.woff2');
+      }
+
+      .css-159dnqk {
+        height: 100%;
+      }
+
+      .css-159dnqk:empty {
+        height: 300px;
+        background: url(http://c.housingcdn.com/s/assets/apex-loader.1f7cf347.svg) no-repeat bottom;
+        background-size: 100px 100px;
+      }
+    .css-15pudgq {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            -webkit-transform: translateY(0);
+            -ms-transform: translateY(0);
+            transform: translateY(0);
+            width: 100%;
+            height: 44px;
+            font-size: 12px;
+            background-color: #5e23dc;
+            -webkit-transition: -webkit-transform 0.2s;
+            -webkit-transition: transform 0.2s;
+            transition: transform 0.2s;
+            position: absolute;
+            background-color: transparent;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.45), transparent);
+            width: 980px;
+            margin: 20px auto 0;
+            position: absolute;
+            left: 50%;
+            z-index: 2;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+            top: 0;
+            background: none;
+          }
+
+          .css-15pudgq .dashboard-button,
+          .css-15pudgq .section {
+            border-left: none;
+          }
+
+          .css-15pudgq .dashboard-button:hover,
+          .css-15pudgq .section:hover {
+            background-color: transparent;
+          }
+          .css-12bkj11 {
+              height: 100%;
+              padding: 13px 0;
+              width: 173px;
+            }
+            .css-1i05ck0 {
+                display: inline-block;
+                object-fit: cover;
+                height: 18px;
+              }

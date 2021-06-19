@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/',getrentAgreement)
 
 //Post request
-router.post('/addRequest',addrentAgreement)
+router.post('/',addrentAgreement)
 
 //delete request
 router.delete('/',deleterequest)

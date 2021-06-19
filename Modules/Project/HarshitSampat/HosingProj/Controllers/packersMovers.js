@@ -8,7 +8,7 @@ const {PackersAndMovers} = require('../Models/PackersAndMovers')
 exports.getpackerAndMovers = async (req,res)=>{
         if(req.params.id){
             //get Packers movers details by id
-            const getPackerAndMoversData = await Interior.findById(req.params.id)
+            const getPackerAndMoversData = await PackersAndMovers.findById(req.params.id)
             if(!getPackerAndMoversData) res.send("Could not get what you want")
     
             //send response
@@ -22,7 +22,7 @@ exports.getpackerAndMovers = async (req,res)=>{
     }
 
 //add new data to users which want packers and movers
-exports.addNewData_PackersANd_Mmovers = async (req,res)=>{
+exports.addNewData_Packers_ANd_Movers = async (req,res)=>{
 
    const NewData = new  PackersAndMovers({
     User:req.body.User,

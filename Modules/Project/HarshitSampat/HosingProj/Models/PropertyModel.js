@@ -1,6 +1,6 @@
 //import modules
-const mongoose = require('Mongoose')
-const {User} = require('../Models/userModel')
+const mongoose = require('mongoose')
+const { User } = require("./userModel");
 
 //create schema
 const propertySchema = new mongoose.Schema({
@@ -20,15 +20,14 @@ const propertySchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    Image:{
+     Image:{
         data:Buffer,
-        ContentType:String,
-        
+        contentType:String
     }
 })
 
 //create model
-const Property = mongoose.model('Properties', propertySchema)
+const Property = mongoose.model('Property', propertySchema)
 
 //export mmodule
-module.exports = Property
+module.exports = {Property}

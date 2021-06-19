@@ -24,11 +24,11 @@ router.get('/',(req,res)=>{
 
 //api routers
 router.use('/api/interior',interiorMatrials);
-router.use('/api/packersAndMovers',verifyTOken ,packersAndMoversRoute);
+router.use('/api/packersAndMovers',packersAndMoversRoute);
 router.use('/api/payment',verifyTOken,payment)
-router.use('/api/property',proprty);
-router.use('/api/propertyManagement',verifyTOken,propertyManagement);
-router.use('/api/rentAgreement',verifyTOken,rentAgreement);
+router.use('/api/property/',proprty);
+router.use('/api/propertyManagement',propertyManagement);
+router.use('/api/rentAgreement',rentAgreement);
 router.use('/api/rent',rent);
 router.use('/api/soalarrooftop',solarRooftop)
 router.use('/api/user',user)
