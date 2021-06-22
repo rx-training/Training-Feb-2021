@@ -2,10 +2,15 @@ const mongoose = require("mongoose");
 const express = require("express");
 const adminRouter = express();
 const netbanking = require("../../Model/netbanking");
-const admin=require('../../Model/admin')
-const Admin=mongoose.model('Admin',admin)
+const admin = require("../../Model/admin");
+const Admin = mongoose.model("Admin", admin);
 const NetBanking = mongoose.model("netbankings", netbanking);
 const user = require("../../Model/netbanking");
+const checkBookRequest = require("../../Model/chequeBook");
+const CheckBookRequest = mongoose.model("CheckBookRequest", checkBookRequest);
+const debitCard = require("../../Model/debitCard");
+
+const DebitCardRequest = mongoose.model("DebitCardRequest", debitCard);
 // const admin=require('../../Model/admin')
 // const Admin=mongoose.model('Admin',admin)
 var cryptr = require("cryptr"),
@@ -14,16 +19,12 @@ const jwt = require("jsonwebtoken");
 
 class demoAdmin {
   static async getAllUser(req, res) {
-
     const users = await NetBanking.find();
     res.json(users);
-
   }
   static async getAllAdmin(req, res) {
-
     const users = await Admin.find();
     res.json(users);
-
   }
 
   static async DeleteUser(req, res) {
@@ -35,14 +36,58 @@ class demoAdmin {
     res.json(user);
     // }
   }
-  static async registerAdmin(req,res){
-      const admin= new Admin({
-          userId:req.body.userId,
-          password:req.body.password,
-          email:req.body.email
-      })
-      const a1= await admin.save()
-      res.json(a1)
+  static async registerAdmin(req, res) {
+    const admin = new Admin({
+      userId: req.body.userId,
+      password: req.body.password,
+      email: req.body.email,
+    });
+    const a1 = await admin.save();
+    res.json(a1);
+  }
+  static async checkBookRequest(req, res) {
+    const checkBook = await CheckBookRequest.find({});
+    res.json(checkBook);
+  }
+  static async debitCardRequest(req, res) {
+    const debitCard = await DebitCardRequest.find({});
+    res.json(debitCard);
+  }
+  static async debitCardStatus(req, res) {
+    if (req.body.status === "Rejected") {
+      const debitCard = await DebitCardRequest.deleteOne({ _id: req.body._id });
+      res.json(debitCard);
+    } else {
+      const debitCard = await DebitCardRequest.updateOne(
+        { _id: req.body._id },
+        {
+          $set: {
+            status: req.body.status,
+          },
+        }
+      );
+      res.json(debitCard);
+    }
+  }
+  static async checkBookStatus(req, res) {
+    if (req.body.status === "Rejected") {
+      const debitCard = await CheckBookRequest.deleteOne({ _id: req.body._id });
+      res.json(debitCard);
+    } else {
+      const checkBook = await CheckBookRequest.updateOne(
+        { _id: req.body._id },
+        {
+          $set: {
+            status: req.body.status,
+          },
+        }
+      );
+      res.json(checkBook);
+    }
+  }
+  static async getCheckBookRequest(req, res) {
+    const checkBook = await CheckBookRequest.find({});
+    res.json(checkBook);
   }
 }
 
@@ -55,7 +100,12 @@ adminRouter.get("/getAllAdmin", demoAdmin.getAllAdmin);
 adminRouter.post("/delete", demoAdmin.DeleteUser);
 
 // API fro register admin
-adminRouter.post('/register',demoAdmin.registerAdmin)
+adminRouter.post("/register", demoAdmin.registerAdmin);
+adminRouter.post("/checkBookRequest", demoAdmin.checkBookRequest);
+adminRouter.post("/debitCardRequest", demoAdmin.debitCardRequest);
+adminRouter.post("/debitCardStatus", demoAdmin.debitCardStatus);
+adminRouter.get("/getCheckBookRequest", demoAdmin.getCheckBookRequest);
+adminRouter.post("/checkBookStatus", demoAdmin.checkBookStatus);
 
 module.exports = adminRouter;
 
