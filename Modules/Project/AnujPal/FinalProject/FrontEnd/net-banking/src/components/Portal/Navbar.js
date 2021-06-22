@@ -1,13 +1,20 @@
 import React from "react";
 import Logo from "../Images/3.jpg";
-import { FaFacebookF } from "react-icons/fa";
-import { AiFillInstagram } from "react-icons/ai";
-import { AiOutlineTwitter } from "react-icons/ai";
+import { BsFillPersonFill } from "react-icons/bs";
+// import { FaFacebookF } from "react-icons/fa";
+// import { AiFillInstagram } from "react-icons/ai";
+// import { AiOutlineTwitter } from "react-icons/ai";
 import "./navbar.scss";
+import { Redirect } from "react-router-dom";
+
 export const Navbar = (props) => {
   const { id } = props;
+  const editProfile = () => {
+    console.log("hii");
+    return <Redirect to={`/`} />;
+  };
   return (
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <nav class="navbar navbar-expand-md navbar-light bg-light row">
       <a className="navbar-brand" href="http://localhost:3000/">
         <img style={{ height: "60px", width: "100px" }} alt="logo" src={Logo} />
       </a>
@@ -30,8 +37,6 @@ export const Navbar = (props) => {
               Home
             </a>
           </li>
-     
-
 
           <li class="nav-item  mx-3">
             {/* <a class="nav-link" href={`http://localhost:3000/Portal/${id}/NEFT`}>
@@ -65,7 +70,6 @@ export const Navbar = (props) => {
             </div>
           </li>
           <li class="nav-item  mx-3">
-       
             <div class="dropdown">
               <button
                 className="btn btn-secondary dropdown-toggle h5"
@@ -75,7 +79,7 @@ export const Navbar = (props) => {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-               Loan
+                Loan
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a
@@ -88,13 +92,12 @@ export const Navbar = (props) => {
                   class="dropdown-item"
                   href={`http://localhost:3000/Portal/${id}/LoanStatus `}
                 >
-                 Show Loans
+                  Show Loans
                 </a>
               </div>
             </div>
           </li>
           <li class="nav-item  mx-3">
-       
             <div class="dropdown">
               <button
                 className="btn btn-secondary dropdown-toggle h5"
@@ -104,7 +107,7 @@ export const Navbar = (props) => {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-              e-Services
+                e-Services
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a
@@ -125,12 +128,10 @@ export const Navbar = (props) => {
                 >
                   Apply For Fixed-Deposit
                 </a>
-         
               </div>
             </div>
           </li>
           <li class="nav-item  mx-3">
-       
             <div class="dropdown">
               <button
                 className="btn btn-secondary dropdown-toggle h5"
@@ -140,7 +141,7 @@ export const Navbar = (props) => {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-               Nomination
+                Nomination
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a
@@ -155,19 +156,10 @@ export const Navbar = (props) => {
                 >
                   View Nominee
                 </a>
-           
-     
               </div>
             </div>
           </li>
-          {/* <li class="nav-item  mx-3">
-            <a
-              class="nav-link"
-              href={`http://localhost:3000/Portal/${id}/Delete`}
-            >
-              e-Services
-            </a>
-          </li> */}
+
           <li class="nav-item  mx-3">
             <a
               class="nav-link"
@@ -185,15 +177,17 @@ export const Navbar = (props) => {
             </a>
           </li>
         </ul>
-        <div id="spans">
-          <span className="p-3 h4">
-            <FaFacebookF></FaFacebookF>
-          </span>
-          <span className="p-3 h4">
-            <AiFillInstagram></AiFillInstagram>
-          </span>
-          <span className="p-3 h4">
-            <AiOutlineTwitter></AiOutlineTwitter>
+        <div id="spans" className="p-2 nav-link mx-3  text-center ">
+          <span className="p-3 h4 " onClick={editProfile}>
+            <a
+              className="mt-0"
+              href={`http://localhost:3000/Portal/${id}/editProfile`}
+            >
+              {" "}
+              <BsFillPersonFill className="h1 text-center" />
+              <br />
+              <span className="h5 ml-4 mt-0">Profile</span>
+            </a>
           </span>
         </div>
       </div>

@@ -9,7 +9,6 @@ import { FiLogOut } from "react-icons/fi";
 export const ViewLoanStatus = (props) => {
   const [loanStatus, setLoanStatus] = useState([]);
   const [customer, setCustomer] = useState({})
-  const [CRN, setCRN] = useState({ CRN: "" });
   const [state, setstate] = useState(false);
   useEffect(() => {
  ProjectService.getCustomer(props.match.params.id).then((res) => {
@@ -19,7 +18,7 @@ export const ViewLoanStatus = (props) => {
   }, [props.match.params.id]);
   const LoanStatus = (e) => {
     e.preventDefault();
-    ProjectService.GetLoans({ CRN: CRN.CRN }).then((res) => {
+    ProjectService.GetLoans({ CRN: customer.CRN }).then((res) => {
       setLoanStatus(res.data);
     });
     setstate(true);
@@ -66,9 +65,10 @@ export const ViewLoanStatus = (props) => {
               className="form-control"
               placeholder="Customer Relationship Number "
               name="CRN"
-              onChange={(e) => {
-                setCRN({ ...CRN, CRN: e.target.value });
-              }}
+              value={customer.CRN}
+              // onChange={(e) => {
+              //   setCRN({ ...CRN, CRN: e.target.value });
+              // }}
             ></input>
             <button className="btn btn-primary w-100 mt-4" onClick={LoanStatus}>
               Submit{" "}

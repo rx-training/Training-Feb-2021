@@ -37,7 +37,7 @@ export const ApplyForDebit = (props) => {
         res
           .confirm(code)
           .then((result) => {
-            ProjectService.debitCardRequest({
+            ProjectService.addDebitCardRequest({
               CRN: customer.CRN,
               accountNo: customer.accountNo,
               address: customer.address,

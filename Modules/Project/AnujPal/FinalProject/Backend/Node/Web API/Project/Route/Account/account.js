@@ -15,8 +15,8 @@ const verifyToken = require("../../Middleware/verifyToken");
 const ensureToken = require("../../Middleware/ensureToken");
 const miniStatement = require("../../Model/ministatement");
 const MiniStatemet = mongoose.model("Statements", miniStatement);
-const nominee=require('../../Model/nominee')
-const Nominee =mongoose.model('Nominee',nominee)
+const nominee = require("../../Model/nominee");
+const Nominee = mongoose.model("Nominee", nominee);
 const transporter1 = require("../../email/email");
 const schedule = require("node-schedule");
 
@@ -160,6 +160,36 @@ class demoAccount {
       res.json({ statementDetaile: a1, creditDetails: creditAccount });
     }
   }
+  static async loanNEFT(req, res) {
+    const debitAccount = await NetBanking.updateOne(
+      { accountNo: 110 },
+      {
+        $inc: {
+          balance: -parseInt(req.body.amount),
+        },
+      }
+    );
+    const creditAccount = await NetBanking.updateOne(
+      { accountNo: req.body.accountNo },
+      {
+        $inc: {
+          balance: req.body.amount,
+        },
+      }
+    );
+    if (creditAccount.nModified == 1) {
+      const statement = new MiniStatemet({
+        date: new Date(),
+        amount: req.body.amount,
+        debitAccountNo: 110,
+        creditAccountNo: req.body.accountNo,
+        type: "Loan Approve",
+      });
+
+      const a1 = await statement.save();
+      res.json({ statementDetaile: a1, creditDetails: creditAccount });
+    }
+  }
 
   static async miniStatementById(req, res) {
     var cutoff = new Date(req.body.startingDate);
@@ -182,27 +212,32 @@ class demoAccount {
     res.json(statements);
     console.log(cutoff);
   }
-  static async chequeBookRequest(req, res) {
+  static async checkBookRequest(req, res) {
     const checkBookRequest = new CheckBookRequest({
       accountNo: req.body.accountNo,
-      name: `${req.body.fname} ${req.body.mname} ${req.body.lname}`,
+      name:req.body.name,
       CIF: req.body.CIF,
       branchName: req.body.branchName,
       address: req.body.address,
+      status: req.body.status,
     });
     const a1 = await checkBookRequest.save();
     res.json(a1);
   }
-  static async debitCardRequest(req, res) {
-    const request = new DebitCardRequest({
-      accountNo: req.body.accountNo,
-      CRN: req.body.CRN,
-      name: req.body.name,
-      address: req.body.address,
-      cardType: req.body.cardType,
-    });
-    const a1 = await request.save();
-    res.json(a1);
+  static async addDebitCardRequest(req, res) {
+ 
+    const request =await DebitCardRequest.insertMany([
+      {
+        accountNo: req.body.accountNo,
+        CRN: req.body.CRN,
+        name: req.body.name,
+        address: req.body.address,
+        cardType: req.body.cardType,
+        status: req.body.status,
+      },
+    ]);
+    res.json(request)
+   
   }
   static async EMI(req, res) {
     const updateDoc = {
@@ -252,25 +287,24 @@ class demoAccount {
 
     res.json({ loan: loan });
   }
-  static async addNominee(req,res){
-    const nominee= new Nominee({
-      accountNo:req.body.accountNo,
-      name:req.body.name,
-      DOB:req.body.DOB,
-      relation:req.body.relation,
-      equity:req.body.equity
-
-    })
-    const a1=await nominee.save()
-    res.json(a1)
+  static async addNominee(req, res) {
+    const nominee = new Nominee({
+      accountNo: req.body.accountNo,
+      name: req.body.name,
+      DOB: req.body.DOB,
+      relation: req.body.relation,
+      equity: req.body.equity,
+    });
+    const a1 = await nominee.save();
+    res.json(a1);
   }
-  static async viewNominee(req,res){
-    const viewNominee=await Nominee.find({accountNo:req.body.accountNo})
-    res.json(viewNominee)
+  static async viewNominee(req, res) {
+    const viewNominee = await Nominee.find({ accountNo: req.body.accountNo });
+    res.json(viewNominee);
   }
-  static async deleteNominee(req,res){
-    const user= await Nominee.deleteOne({_id:req.body._id})
-    res.json(user)
+  static async deleteNominee(req, res) {
+    const user = await Nominee.deleteOne({ _id: req.body._id });
+    res.json(user);
   }
 }
 // API for inserting the account information
@@ -310,21 +344,37 @@ accountRouter.post(
   demoAccount.miniStatementById
 );
 accountRouter.post(
-  "/chequeBookRequest",
+  "/checkBookRequest",
   verifyToken,
   ensureToken,
-  demoAccount.chequeBookRequest
+  demoAccount.checkBookRequest
 );
 accountRouter.post(
-  "/debitCardRequest",
+  "/addDebitCardRequest",
   verifyToken,
   ensureToken,
-  demoAccount.debitCardRequest
+  demoAccount.addDebitCardRequest
 );
 accountRouter.post("/EMI", verifyToken, ensureToken, demoAccount.EMI);
-accountRouter.post("/addNominee", verifyToken, ensureToken, demoAccount.addNominee);
-accountRouter.post("/viewNominee", verifyToken, ensureToken, demoAccount.viewNominee);
-accountRouter.post("/deleteNominee", verifyToken, ensureToken, demoAccount.deleteNominee);
+accountRouter.post(
+  "/addNominee",
+  verifyToken,
+  ensureToken,
+  demoAccount.addNominee
+);
+accountRouter.post(
+  "/viewNominee",
+  verifyToken,
+  ensureToken,
+  demoAccount.viewNominee
+);
+accountRouter.post(
+  "/deleteNominee",
+  verifyToken,
+  ensureToken,
+  demoAccount.deleteNominee
+);
+accountRouter.post("/loanNEFT", verifyToken, ensureToken, demoAccount.loanNEFT);
 
 accountRouter.post("/LoanApprove", async (req, res) => {
   let count = await Loan.estimatedDocumentCount();
@@ -344,7 +394,5 @@ accountRouter.post("/getLoans", async (req, res) => {
   const loans = await Loan.find({ CRN: req.body.CRN });
   res.json(loans);
 });
-
-
 
 module.exports = accountRouter;

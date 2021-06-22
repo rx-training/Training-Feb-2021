@@ -1,31 +1,29 @@
-import {React,useState,useEffect} from "react";
-import ProjectService from '../../Services/LoginService'
+import { React, useState, useEffect } from "react";
+import ProjectService from "../../Services/LoginService";
 
 export const AdminLogin = (props) => {
-    const [login, setLogin] = useState({userId:'',password:''});
-    const [user, setUser] = useState([]);
-    useEffect(() => {
-        
-    ProjectService.getAllAdmin().then((res)=>{
-        setUser(res.data)
-    })
-    }, [])
+  const [login, setLogin] = useState({ userId: "", password: "" });
+  const [user, setUser] = useState([]);
+  useEffect(() => {
+    ProjectService.getAllAdmin().then((res) => {
+      setUser(res.data);
+    });
+  }, []);
   const Register = () => {
     props.history.push("/Admin/Register");
   };
-  const Login=(e)=>{
-      e.preventDefault()
-    const result=user.filter(item=>
-        item.userId===login.userId &&item.password===login.password
-    )
-    if(result.length>0){
-        alert("success")
-        props.history.push('/Admin/Dashboard')
+  const Login = (e) => {
+    e.preventDefault();
+    const result = user.filter(
+      (item) => item.userId === login.userId && item.password === login.password
+    );
+    if (result.length > 0) {
+      alert("success");
+      props.history.push("/Admin/Dashboard");
+    } else {
+      alert("UserId or password is wrong");
     }
-    else{
-        alert("UserId or password is wrong")
-    }
-  }
+  };
   return (
     <>
       <div className="col-md-10  col-lg-5 container mt-5 ">
@@ -37,14 +35,13 @@ export const AdminLogin = (props) => {
               className="form-control"
               placeholder="Enter User-Id"
               name="userId"
-                onChange={(e) => {
-                  setLogin({
-                    ...login,
-                    [e.target.name]: e.target.value,
-                  });
-                }}
+              onChange={(e) => {
+                setLogin({
+                  ...login,
+                  [e.target.name]: e.target.value,
+                });
+              }}
             />
-      
           </div>
           <div className="form-floating mb-3">
             <input
@@ -53,12 +50,12 @@ export const AdminLogin = (props) => {
               id="floatingPassword"
               placeholder="Password"
               name="password"
-                onChange={(e) => {
-                  setLogin({
-                    ...login,
-                    [e.target.name]: e.target.value,
-                  });
-                }}
+              onChange={(e) => {
+                setLogin({
+                  ...login,
+                  [e.target.name]: e.target.value,
+                });
+              }}
             />
             {/* <label for="password">Password</label> */}
           </div>

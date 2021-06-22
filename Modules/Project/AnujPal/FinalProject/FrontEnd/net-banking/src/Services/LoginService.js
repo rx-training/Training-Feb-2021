@@ -1,108 +1,111 @@
 import axios from "axios";
 
 const LOGIN_BASE_URL = "http://localhost:5000/home/netBanking";
-const ACCOUNT_BASE_URL="http://localhost:5000/home/account"
-const STATEMENT="http://localhost:5000/home/account/ministatement"
-const ADMIN="http://localhost:5000/home/admin"
-const Benificiary="http://localhost:5000/home/benificiary"
+const ACCOUNT_BASE_URL = "http://localhost:5000/home/account";
+const STATEMENT = "http://localhost:5000/home/account/ministatement";
+const ADMIN = "http://localhost:5000/home/admin";
+const Benificiary = "http://localhost:5000/home/benificiary";
 
 class LoginService {
   login(object) {
-    return axios.post(LOGIN_BASE_URL + "/login",object);
+    return axios.post(LOGIN_BASE_URL + "/login", object);
   }
 
-  signUp(object){
-    return axios.post(LOGIN_BASE_URL + "/signUp",object);
+  signUp(object) {
+    return axios.post(LOGIN_BASE_URL + "/signUp", object);
   }
-  getCustomer(CustomerId){
+  editUser(object) {
+    return axios.post(LOGIN_BASE_URL + "/editUser", object);
+  }
+  getCustomer(CustomerId) {
     return axios.get(LOGIN_BASE_URL + "/getCustomer/" + CustomerId);
   }
-  getCustomerByCRN(obj){
-    return axios.post(LOGIN_BASE_URL + "/getCustomerByCRN",obj );
+  getCustomerByCRN(obj) {
+    return axios.post(LOGIN_BASE_URL + "/getCustomerByCRN", obj);
   }
 
-  credit(object){
-    return axios.post(ACCOUNT_BASE_URL + "/credit",object);
+  credit(object) {
+    return axios.post(ACCOUNT_BASE_URL + "/credit", object);
   }
-  loanApprove(object){
-    return axios.post(ACCOUNT_BASE_URL + "/loanApprove",object);
+  loanApprove(object) {
+    return axios.post(ACCOUNT_BASE_URL + "/loanApprove", object);
   }
-  AddBenificiary(object){
-    return axios.post(Benificiary + "/addUser",object);
+  loanNEFT(object) {
+    return axios.post(ACCOUNT_BASE_URL + "/loanNEFT", object);
   }
-  getBenificiary(){
+  AddBenificiary(object) {
+    return axios.post(Benificiary + "/addUser", object);
+  }
+  getBenificiary() {
     return axios.post(Benificiary + "/getBenificiery");
   }
-  debit(object){
-    return axios.post(ACCOUNT_BASE_URL + "/debit",object);
+  deleteBenificiary(object) {
+    return axios.post(Benificiary + "/deleteBenificiary", object);
   }
-  NEFT(object){
-    return axios.post(ACCOUNT_BASE_URL + "/NEFT",object);
+  debit(object) {
+    return axios.post(ACCOUNT_BASE_URL + "/debit", object);
   }
-  FDNEFT(object){
-    return axios.post(ACCOUNT_BASE_URL + "/FDNEFT",object);
+  NEFT(object) {
+    return axios.post(ACCOUNT_BASE_URL + "/NEFT", object);
   }
-  Delete(object){
-    return axios.post(ACCOUNT_BASE_URL + "/delete",object);
+  FDNEFT(object) {
+    return axios.post(ACCOUNT_BASE_URL + "/FDNEFT", object);
   }
-  MiniStatementById(object){
-    return axios.post(ACCOUNT_BASE_URL + "/ministatementById",object);
+  Delete(object) {
+    return axios.post(ACCOUNT_BASE_URL + "/delete", object);
   }
-  GetLoans(object){
-    return axios.post(ACCOUNT_BASE_URL + "/getLoans",object);
+  MiniStatementById(object) {
+    return axios.post(ACCOUNT_BASE_URL + "/ministatementById", object);
   }
-  addNominee(object){
-    return axios.post(ACCOUNT_BASE_URL + "/addNominee",object);
+  GetLoans(object) {
+    return axios.post(ACCOUNT_BASE_URL + "/getLoans", object);
   }
-  viewNominee(object){
-    return axios.post(ACCOUNT_BASE_URL + "/viewNominee",object);
+  addNominee(object) {
+    return axios.post(ACCOUNT_BASE_URL + "/addNominee", object);
   }
-  deleteNominee(object){
-    return axios.post(ACCOUNT_BASE_URL + "/deleteNominee",object);
+  viewNominee(object) {
+    return axios.post(ACCOUNT_BASE_URL + "/viewNominee", object);
   }
-  chequeBookRequest(object){
-    return axios.post(ACCOUNT_BASE_URL + "/chequeBookRequest",object)
+  deleteNominee(object) {
+    return axios.post(ACCOUNT_BASE_URL + "/deleteNominee", object);
   }
-  debitCardRequest(object){
-    return axios.post(ACCOUNT_BASE_URL + "/debitCardRequest",object)
+  chequeBookRequest(object) {
+    return axios.post(ACCOUNT_BASE_URL + "/chequeBookRequest", object);
   }
-  EMI(){
-    return axios.post(ACCOUNT_BASE_URL + "/EMI")
+  getCheckBookRequest(object) {
+    return axios.get(ADMIN + "/getCheckBookRequest", object);
   }
-  MiniStatement(){
-    return axios.post(STATEMENT );
+  addDebitCardRequest(object) {
+    return axios.post(ACCOUNT_BASE_URL + "/addDebitCardRequest", object);
   }
-  getAllUser(){
-    return axios.get(ADMIN + "/users")
+  EMI() {
+    return axios.post(ACCOUNT_BASE_URL + "/EMI");
   }
-  getAllAdmin(){
-    return axios.get(ADMIN + "/getAllAdmin")
+  MiniStatement() {
+    return axios.post(STATEMENT);
   }
-  
-  AdminDelete(obj){
-    return axios.post(ADMIN + "/delete",obj)
+  getAllUser() {
+    return axios.get(ADMIN + "/users");
   }
-  AdminRegister(obj){
-    return axios.post(ADMIN + "/register",obj)
+  getAllAdmin() {
+    return axios.get(ADMIN + "/getAllAdmin");
+  }
+  debitCardRequest() {
+    return axios.post(ADMIN + "/debitCardRequest");
+  }
+  debitCardStatus(object) {
+    return axios.post(ADMIN + "/debitCardStatus",object);
+  }
+  checkBookStatus(object) {
+    return axios.post(ADMIN + "/checkBookStatus",object);
   }
 
-  
-
-//   createStudent(Student) {
-//     return axios.post(STUDENT_API_BASE_URL, Student);
-//   }
-
-//   getStudentById(StudentId) {
-//     return axios.get(STUDENT_API_BASE_URL + "/" + StudentId);
-//   }
-
-//   updateStudent(Student, StudentId) {
-//     return axios.put(STUDENT_API_BASE_URL + "/" + StudentId, Student);
-//   }
-
-//   deleteStudent(StudentId) {
-//     return axios.delete(STUDENT_API_BASE_URL + "/" + StudentId);
-//   }
+  AdminDelete(obj) {
+    return axios.post(ADMIN + "/delete", obj);
+  }
+  AdminRegister(obj) {
+    return axios.post(ADMIN + "/register", obj);
+  }
 }
 
 export default new LoginService();

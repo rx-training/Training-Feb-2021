@@ -95,6 +95,12 @@ export const NEFT1 = (props) => {
       });
     // setstate(true);
   };
+  const Remove=(id)=>{
+    ProjectService.deleteBenificiary({_id:id}).then((res)=>{
+      console.log(res.data);
+    })
+
+  }
   return (
     <>
       <Navbar id={props.match.params.id} />
@@ -127,7 +133,7 @@ export const NEFT1 = (props) => {
         <div className="row">
           <div className="col-md-10 m-4 col-lg-5">
             <h3 className="text-center mb-5">Beneficiary</h3>
-            <table className="table">
+            <table className="table ">
               <tr>
                 <td>Account Number</td>
                 <td>Name</td>
@@ -136,7 +142,7 @@ export const NEFT1 = (props) => {
               </tr>
               {ben.map((item) => {
                 return (
-                  <tr>
+                  <tr className="p-5">
                     <td>{item.accountNo}</td>
                     <td>
                       {item.fname} {item.mname} {item.lname}
@@ -148,6 +154,14 @@ export const NEFT1 = (props) => {
                         onClick={TransferMoney}
                       >
                         Transfer
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        className="btn btn-danger"
+                        onClick={()=>{Remove(item._id)}}
+                      >
+                        Remove
                       </button>
                     </td>
                   </tr>

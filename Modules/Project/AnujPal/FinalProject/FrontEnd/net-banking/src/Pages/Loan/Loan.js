@@ -5,6 +5,7 @@ import { MdAccountBalanceWallet } from "react-icons/md";
 import { FaRupeeSign } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import schedule from "node-schedule";
+import FireBase from '../../Fire-Base/FireBase'
 
 import ProjectService from "../../Services/LoginService";
 
@@ -29,17 +30,44 @@ export const Loan = (props) => {
     localStorage.clear();
     props.history.push("/");
   };
-  const Apply = (e) => {
+  const Apply = async(e) => {
     e.preventDefault();
-    ProjectService.loanApprove(Loan).then((res) => {
-      console.log(res.data);
-    });
-    ProjectService.credit({
-      accountNo: Loan.accountNo,
-      amount: Loan.amount,
-    }).then((res) => {
-      console.log(res.data);
-    });
+    // ProjectService.loanApprove(Loan).then((res) => {
+    //   console.log(res.data);
+    // });
+    // ProjectService.loanNEFT({
+    //   accountNo: Loan.accountNo,
+    //   amount: Loan.amount,
+    // }).then((res) => {
+    //   console.log(res.data);
+    // });
+    let recaptcha = new FireBase.auth.RecaptchaVerifier("recaptcha-container");
+    let number = "+918128501852";
+    await FireBase.auth()
+      .signInWithPhoneNumber(number, recaptcha)
+      .then((res) => {
+        let code = prompt("enter otp", "");
+        if (code == null) return;
+        res
+          .confirm(code)
+          .then((result) => {
+            ProjectService.loanApprove(Loan).then((res) => {
+              console.log(res.data);
+            });
+            ProjectService.loanNEFT({
+              accountNo: Loan.accountNo,
+              amount: Loan.amount,
+            }).then((res) => {
+              console.log(res.data);
+            });
+          })
+          .catch((err) => {
+            console.log(err.message);
+          });
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   };
   const claculateEMI = (e) => {
     e.preventDefault();
@@ -175,7 +203,7 @@ export const Loan = (props) => {
                 </button>
               </div>
             </div>
-
+            <div id="recaptcha-container" className="mt-4"></div>
             <button
               type="button"
               className="btn btn-primary w-100 mt-5"

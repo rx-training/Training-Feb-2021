@@ -22,6 +22,10 @@ const debitCardSchema = new mongoose.Schema({
     address:{
         type:String,
         required:true
+    },
+    status:{
+        type:String,
+        default:'Pending'
     }
 })
 

@@ -23,6 +23,9 @@ import { Withdrawl } from "./Pages/Withdrawl";
 import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 import { ApplyForNominee } from './Pages/ApplyForNominee';
 import { ViewNominee } from './Pages/viewNominee';
+import { EditProfile } from './Pages/editProfile';
+import { CheckBookRequest } from './Pages/checkBookRequest';
+import { DebitCardRequest } from './Pages/debitCardRequest';
 
 
 function App() {
@@ -33,9 +36,12 @@ function App() {
           <Route path="/" exact component={Login}></Route>
           <Route path="/Admin/Login" exact component={AdminLogin}></Route>
           <Route path="/Admin/Dashboard" exact component={Admin}></Route>
+          <Route path="/Admin/checkBookRequest" exact component={CheckBookRequest}></Route>
+          <Route path="/Admin/debitCardRequest" exact component={DebitCardRequest}></Route>
           <Route path="/Admin/Register" exact component={AdminRegister}></Route>
           <Route path="/Navbar" exact component={Navbar}></Route>
           <PrivateRoute path="/Portal/:id" exact component={Portal}></PrivateRoute>
+          <PrivateRoute path="/Portal/:id/editProfile" exact component={EditProfile}></PrivateRoute>
           <PrivateRoute path="/Portal/:id/ApplyForCheque" exact component={ApplyForCheque}></PrivateRoute>
           <PrivateRoute path="/Portal/:id/ApplyForDebit" exact component={ApplyForDebit}></PrivateRoute>
           <PrivateRoute path="/Portal/:id/ApplyForFD" exact component={ApplyForFD}></PrivateRoute>

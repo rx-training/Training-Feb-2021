@@ -91,7 +91,24 @@ class demoNetBanking {
     const users = await NetBanking.find({ accountNo: req.params.accountNo });
     res.json(users);
   }
-
+static async editUser(req,res){
+  const user=await NetBanking.update({_id:req.body._id},{$set:{
+    fname:req.body.fname,
+    mname:req.body.mname,
+    lname:req.body.lname,
+    email:req.body.email,
+    phoneNo:req.body.phoneNo,
+    accountNo: req.body.accountNo,
+    CIF: req.body.CIF,
+    balance: req.body.balance,
+    branchName: req.body.branchName,
+    IFSC: req.body.IFSC,
+    branchCity: req.body.branchCity,
+    CRN: req.body.CRN,
+    address:req.body.address
+  }})
+  res.json(user)
+}
   static async getCustomerByCRN(req,res){
     const users = await NetBanking.find({ CRN: req.body.CRN });
     res.json(users);
@@ -100,6 +117,7 @@ class demoNetBanking {
 
 // API for login the system
 netBankingRouter.post("/login", demoNetBanking.login);
+netBankingRouter.post("/editUser", demoNetBanking.editUser);
 
 // API for signup the Sysyem
 netBankingRouter.post(

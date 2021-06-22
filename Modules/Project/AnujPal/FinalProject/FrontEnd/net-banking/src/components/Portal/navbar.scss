@@ -1,3 +1,7 @@
+*{
+  margin:0;
+  padding: 0;
+}
 .nav-link {
   color: #064420 !important;
   font-size:medium!important;
@@ -42,4 +46,18 @@
 
 #dropdownMenuButton:hover{
   opacity: 1;
+}
+
+.editProfile{
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+#spans{
+  margin-left: 1000px;
+}
+
+}
+a{
+  color:#064420
 }
