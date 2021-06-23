@@ -242,6 +242,7 @@ export const SignUp = (props) => {
           </button>
         </form>
       </div>
+      
     </>
   );
 };

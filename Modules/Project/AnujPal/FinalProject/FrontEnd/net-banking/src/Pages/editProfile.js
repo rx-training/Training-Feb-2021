@@ -160,9 +160,10 @@ export const EditProfile = (props) => {
                 className="form-control"
                 placeholder="Balance"
                 name="balance"
-                onChange={(e) => {
-                  setUpdate({ ...update, [e.target.name]: e.target.value });
-                }}
+                value={update.balance}
+                // onChange={(e) => {
+                //   setUpdate({ ...update, [e.target.name]: e.target.value });
+                // }}
               />
               <div class="input-group-append">
                 <span class="input-group-text">

@@ -9,6 +9,14 @@ const user = require("../../Model/netbanking");
 const checkBookRequest = require("../../Model/chequeBook");
 const CheckBookRequest = mongoose.model("CheckBookRequest", checkBookRequest);
 const debitCard = require("../../Model/debitCard");
+const nodeMailer = require("node-mailer");
+const {
+  transporter,
+  debitCardApprovedRequest,
+  debitCardRejectedRequest,
+  checkBookRejectedRequest,
+  checkBookApprovedRequest,
+} = require("../../email/email");
 
 const DebitCardRequest = mongoose.model("DebitCardRequest", debitCard);
 // const admin=require('../../Model/admin')
@@ -57,6 +65,16 @@ class demoAdmin {
     if (req.body.status === "Rejected") {
       const debitCard = await DebitCardRequest.deleteOne({ _id: req.body._id });
       res.json(debitCard);
+      await transporter.sendMail(
+        debitCardRejectedRequest,
+        function (error, info) {
+          if (error) {
+            console.log(error.message);
+          } else {
+            console.log("Email sent: " + info.response);
+          }
+        }
+      );
     } else {
       const debitCard = await DebitCardRequest.updateOne(
         { _id: req.body._id },
@@ -67,12 +85,32 @@ class demoAdmin {
         }
       );
       res.json(debitCard);
+      await transporter.sendMail(
+        debitCardApprovedRequest,
+        function (error, info) {
+          if (error) {
+            console.log(error.message);
+          } else {
+            console.log("Email sent: " + info.response);
+          }
+        }
+      );
     }
   }
   static async checkBookStatus(req, res) {
     if (req.body.status === "Rejected") {
       const debitCard = await CheckBookRequest.deleteOne({ _id: req.body._id });
       res.json(debitCard);
+      await transporter.sendMail(
+        checkBookRejectedRequest,
+        function (error, info) {
+          if (error) {
+            console.log(error.message);
+          } else {
+            console.log("Email sent: " + info.response);
+          }
+        }
+      );
     } else {
       const checkBook = await CheckBookRequest.updateOne(
         { _id: req.body._id },
@@ -83,6 +121,16 @@ class demoAdmin {
         }
       );
       res.json(checkBook);
+      await transporter.sendMail(
+        checkBookApprovedRequest,
+        function (error, info) {
+          if (error) {
+            console.log(error.message);
+          } else {
+            console.log("Email sent: " + info.response);
+          }
+        }
+      );
     }
   }
   static async getCheckBookRequest(req, res) {

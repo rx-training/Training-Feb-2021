@@ -24,10 +24,10 @@ class demoNetBanking {
       if (userId == req.body.userId && pass == req.body.pass) {
         const token = jwt.sign(
           { iterator },
-          process.env.SECRET
-          //    {
-          //   expiresIn: "1h",
-          // }
+          process.env.SECRET,
+             {
+            expiresIn: "1h",
+          }
         );
         await res.json({
           token: token,

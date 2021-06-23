@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Navbar } from "../components/Portal/Navbar";
 import ProjectService from "../Services/LoginService";
+import { AiOutlineCopyright } from "react-icons/ai";
 
 export const ViewNominee = (props) => {
+  var todayDate=new Date()
+  var lastUpdateddate=`${todayDate.getDate()}/${todayDate.getMonth()+1}/${todayDate.getFullYear()}`
   const [customer, setCustomer] = useState({});
   const [CRN, setCRN] = useState([]);
   const [accountNo, setAccountNo] = useState({ accountNo: "" });
@@ -89,6 +92,22 @@ export const ViewNominee = (props) => {
           </tbody>
         </table>
       </div>
+      <hr className="bg-secondary"/>
+      <article className="container mb-5 ">
+      <div className="row">
+      <div className="col">
+      <small className="ml-3">Last Updated On :</small><small className="ml-2 ">{lastUpdateddate}</small>
+        <small className="ml-3 ">|</small>
+        <small className="ml-3 ">Visitors : 27591024</small>
+      </div>
+
+
+        <div className="col">
+          <small className="float-right mr-3">Copyright <AiOutlineCopyright/> {todayDate.getFullYear()} Internet Banking project.All Rights Reserved </small>
+        </div>
+      </div>
+   
+      </article>
     </>
   );
 };

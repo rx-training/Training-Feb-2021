@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import { AiOutlineCopyright } from "react-icons/ai";
 import { Navbar } from "../../components/Portal/Navbar";
 import { useEffect } from "react";
 import { MdAccountBalanceWallet } from "react-icons/md";
@@ -10,6 +11,8 @@ import FireBase from '../../Fire-Base/FireBase'
 import ProjectService from "../../Services/LoginService";
 
 export const Loan = (props) => {
+  var todayDate=new Date()
+  var lastUpdateddate=`${todayDate.getDate()}/${todayDate.getMonth()+1}/${todayDate.getFullYear()}`
   const [Loan, setLoan] = useState({
     CRN: "",
     accountNo: "",
@@ -214,6 +217,22 @@ export const Loan = (props) => {
           </form>
         </div>
       </div>
+      <hr className="bg-secondary"/>
+      <article className="container mb-5 ">
+      <div className="row">
+      <div className="col">
+      <small className="ml-3">Last Updated On :</small><small className="ml-2 ">{lastUpdateddate}</small>
+        <small className="ml-3 ">|</small>
+        <small className="ml-3 ">Visitors : 27591024</small>
+      </div>
+
+
+        <div className="col">
+          <small className="float-right mr-3">Copyright <AiOutlineCopyright/> {todayDate.getFullYear()} Internet Banking project.All Rights Reserved </small>
+        </div>
+      </div>
+   
+      </article>
     </>
   );
 };

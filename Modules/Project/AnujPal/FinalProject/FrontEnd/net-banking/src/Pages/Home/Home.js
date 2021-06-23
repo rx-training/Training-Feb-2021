@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
 import ProjectService from "../../Services/LoginService";
 import { MdAccountBalanceWallet } from "react-icons/md";
+import { AiOutlineCopyright } from "react-icons/ai";
 import { FaRupeeSign } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import Logo from "../../components/Images/bank.jpg";
@@ -9,6 +10,8 @@ import "./home.scss";
 import { Navbar } from "../../components/Portal/Navbar";
 
 export const Home = (props) => {
+  var todayDate=new Date()
+  var lastUpdateddate=`${todayDate.getDate()}/${todayDate.getMonth()+1}/${todayDate.getFullYear()}`
   // const [state, setstate] = useState(false);
   const [MiniStatement, setMiniStatement] = useState({
     startingDate: "",
@@ -47,30 +50,30 @@ export const Home = (props) => {
             </h3>
           </div>
           <div className="col   ">
-            <span className="h2">
+            <small className="h2">
               <MdAccountBalanceWallet />
-            </span>{" "}
-            <span className="ml-2 h4">{customer.balance}</span>{" "}
-            <span className="h4 pull-right">
+            </small>{" "}
+            <small className="ml-2 h4">{customer.balance}</small>{" "}
+            <small className="h4 pull-right">
               <FaRupeeSign />
-            </span>
+            </small>
             <div style={{ float: "right" }}>
-              <span className="mr-2 h2" onClick={LogOut}>
+              <small className="mr-2 h2" onClick={LogOut}>
                 {" "}
-                <FiLogOut />
-              </span>
+                <FiLogOut id="logout"/>
+              </small>
               <br></br>
-              <span className="h6 ">Logout</span>
+              <small className="h6 ">Logout</small>
             </div>
           </div>
         </div>
-        <marquee className="text-danger mt-3 fw-bold">
+        <marquee scrollamount="10" className="text-danger mt-3 fw-bold">
           Our Bank Never Ask For Confidencial Information Such As PIN and OTP
           from customers.Only any such call can be made by only
           fraudsters.Please do not share personal Information{" "}
         </marquee>
         <div className="row mt-5">
-          <div className="col-md-10 m-4 col-lg-5 mb-3" id="statement">
+          <div className="col-md-10 m-4 col-lg-5 mb-3 rounded-corner" id="statement">
             <form className="bg-light p-4 m-4 mt-5" id="addBenficiaryForm">
               <h3 className="text-center mb-5">Statements</h3>
               <lable className="h6">Enter Starting Date</lable>
@@ -185,6 +188,23 @@ export const Home = (props) => {
           </div>
         </div>
       </div>
+      <hr className="bg-secondary"/>
+      <article className="container mb-5 ">
+      <div className="row">
+      <div className="col">
+      <small className="ml-3">Last Updated On :</small><small className="ml-2 ">{lastUpdateddate}</small>
+        <small className="ml-3 ">|</small>
+        <small className="ml-3 ">Visitors : 27591024</small>
+      </div>
+
+
+        <div className="col">
+          <small className="float-right mr-3">Copyright <AiOutlineCopyright/> {todayDate.getFullYear()} Internet Banking project.All Rights Reserved </small>
+        </div>
+      </div>
+   
+      </article>
+ 
     </>
   );
 };

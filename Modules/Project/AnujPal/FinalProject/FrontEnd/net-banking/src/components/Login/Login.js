@@ -4,6 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../Login/login.scss";
 import ProjectService from "../../Services/LoginService";
 import { Navbar } from "../Navbar";
+import{IoLogoTwitter} from 'react-icons/io'
+import{AiFillYoutube,AiFillLinkedin,AiFillFacebook,AiFillInstagram} from 'react-icons/ai'
 
 export const Login = (props) => {
   let tempMessage = "";
@@ -112,6 +114,38 @@ export const Login = (props) => {
         </div>
       
       </div>
+      <artical className="" id="exclusiveOffers">
+        <h3 className="text-center mx-auto mt-3">
+          <span>        Connect With Us            </span>
+         
+        </h3>
+        <div>
+        <div className="row text-center mt-3 bg-light">
+          
+      
+         
+          <div className="col " style={{float:'left'}}>
+          <span className="display-4  instagram" >< AiFillInstagram/></span><br></br><span className="display-5 instagram h4 mt-4 ml-0">Instagram</span>
+          </div>
+          <div className="col " style={{float:'left'}}>
+          <span className="display-4 facebook" >< AiFillFacebook/></span><br></br><span className="display-5 facebook h4 mt-4 ml-0">Facebook</span>
+          </div>
+          <div className="col " style={{float:'left'}}>
+          <span className="display-4 twitter" ><IoLogoTwitter/></span><br></br><span className="display-5 twitter h4 mt-4 ml-0">Twitter</span>
+          </div>
+          <div className="col " style={{float:'left'}}>
+          <span className="display-4 youTube" ><AiFillYoutube/></span><br></br><span className="display-5 youTube  h4 mt-4 ml-0">YouTube</span>
+          </div>
+          <div className="col " style={{float:'left'}}>
+          <span className="display-4 linkedIn" ><AiFillLinkedin/></span><br></br><span className="display-5  h4 mt-4 ml-0 linkedIn">linkedIn</span>
+          </div>
+         
+      
+
+        </div>
+        </div>
+     
+      </artical>
     </>
   );
 };

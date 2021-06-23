@@ -15,73 +15,90 @@ export const DebitCardRequest = () => {
         ? "Rejected"
         : "Approved";
     console.log(status, status1);
-    ProjectService.debitCardStatus({_id:id,status:status1}).then((res)=>{
+    ProjectService.debitCardStatus({ _id: id, status: status1 }).then((res) => {
       console.log(res.data);
-    })
+    });
   };
   return (
     <>
-      <nav class="navbar navbar-expand-md navbar-light bg-light row">
-        <a class="navbar-brand" href="www.google.com">
-          Admin
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+         <nav class="navbar navbar-expand-md navbar-light bg-light row p-2 m-2">
+          <a
+            class="navbar-brand mr-5 ml-5"
+            href={`http://localhost:3000/Admin/Dashboard`}
+          >
+            Admin
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto align-items-center  ">
-            <li class="nav-item mx-3">
-              <a
-                class="nav-link "
-                href={`http://localhost:3000/Admin/Dashboard`}
-              >
-                Home
-              </a>
-            </li>
+          <div
+            class="collapse navbar-collapse ml-5 "
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav mr-auto align-items-center  ">
+              <li class="nav-item ml-5">
+                <a
+                  class="nav-link  "
+                  href={`http://localhost:3000/Admin/login`}
+                >
+                  Back To Login
+                </a>
+              </li>
+              <li class="nav-item ml-5">
+                <a
+                  class="nav-link  "
+                  href={`http://localhost:3000/Admin/Dashboard`}
+                >
+                  Home
+                </a>
+              </li>
 
-            <li class="nav-item  mx-3">
-              {/* <a class="nav-link" href={`http://localhost:3000/Portal/${id}/NEFT`}>
+              <li class="nav-item  ml-5">
+                {/* <a class="nav-link" href={`http://localhost:3000/Portal/${id}/NEFT`}>
               Transfer
             </a> */}
-              <div class="dropdown">
-                <button
-                  class="btn btn-secondary dropdown-toggle h5"
-                  type="button"
-                  id="dropdownMenuButton"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Requests
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a
-                    class="dropdown-item"
-                    href={`http://localhost:3000/Admin/checkBookRequest`}
+                <div class="dropdown">
+                  <button
+                    class="btn btn-secondary dropdown-toggle h5"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
                   >
-                    CheckBook Requests
-                  </a>
-                  <a
-                    className="dropdown-item"
-                    href={`http://localhost:3000/Admin/debitCardRequest`}
+                    Requests
+                  </button>
+                  <div
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton"
                   >
-                    Debit Card Request
-                  </a>
+                    <a
+                      class="dropdown-item"
+                      href={`http://localhost:3000/Admin/checkBookRequest`}
+                    >
+                      CheckBook Requests
+                    </a>
+                    <a
+                      className="dropdown-item"
+                      href={`http://localhost:3000/Admin/debitCardRequest`}
+                    >
+                      Debit Card Request
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
+              </li>
+            </ul>
+          </div>
+        </nav>
       <div className="container">
         <h3 className="text-center">Debit Card Requests</h3>
         <table className="table col-md-8 mx-auto mt-5">

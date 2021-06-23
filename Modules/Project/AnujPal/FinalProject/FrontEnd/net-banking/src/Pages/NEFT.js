@@ -1,4 +1,5 @@
 import { React, useEffect, useState } from "react";
+import { AiOutlineCopyright } from "react-icons/ai";
 import { Navbar } from "../components/Portal/Navbar";
 import { MdAccountBalanceWallet } from "react-icons/md";
 import { FaRupeeSign } from "react-icons/fa";
@@ -7,6 +8,8 @@ import ProjectService from "../Services/LoginService";
 import Logo from "../components/Images/bank.jpg";
 import FireBase from "../Fire-Base/FireBase";
 export const NEFT = (props) => {
+  var todayDate=new Date()
+  var lastUpdateddate=`${todayDate.getDate()}/${todayDate.getMonth()+1}/${todayDate.getFullYear()}`
   const [customer, setCustomer] = useState({});
   const [state, setstate] = useState(false);
   const [CRN, setCRN] = useState([]);
@@ -192,6 +195,22 @@ export const NEFT = (props) => {
           </div>
         </div>
       </div>
+      <hr className="bg-secondary"/>
+      <article className="container mb-5 ">
+      <div className="row">
+      <div className="col">
+      <small className="ml-3">Last Updated On :</small><small className="ml-2 ">{lastUpdateddate}</small>
+        <small className="ml-3 ">|</small>
+        <small className="ml-3 ">Visitors : 27591024</small>
+      </div>
+
+
+        <div className="col">
+          <small className="float-right mr-3">Copyright <AiOutlineCopyright/> {todayDate.getFullYear()} Internet Banking project.All Rights Reserved </small>
+        </div>
+      </div>
+   
+      </article>
     </>
   );
 };

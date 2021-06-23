@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { AiOutlineCopyright } from "react-icons/ai";
 import { Navbar } from "../components/Portal/Navbar";
 import ProjectService from "../Services/LoginService";
 import FireBase from '../Fire-Base/FireBase'
 
 export const ApplyForCheque = (props) => {
+  var todayDate=new Date()
+  var lastUpdateddate=`${todayDate.getDate()}/${todayDate.getMonth()+1}/${todayDate.getFullYear()}`
   const [customer, setustomer] = useState({});
   useEffect(() => {
     ProjectService.getCustomer(props.match.params.id).then((res) => {
@@ -113,6 +116,22 @@ export const ApplyForCheque = (props) => {
           <button className="btn btn-secondary w-100 mt-4" onClick={Apply}>Apply</button>
         </form>
       </div>
+      <hr className="bg-secondary"/>
+      <article className="container mb-5 ">
+      <div className="row">
+      <div className="col">
+      <small className="ml-3">Last Updated On :</small><small className="ml-2 ">{lastUpdateddate}</small>
+        <small className="ml-3 ">|</small>
+        <small className="ml-3 ">Visitors : 27591024</small>
+      </div>
+
+
+        <div className="col">
+          <small className="float-right mr-3">Copyright <AiOutlineCopyright/> {todayDate.getFullYear()} Internet Banking project.All Rights Reserved </small>
+        </div>
+      </div>
+   
+      </article>
     </>
   );
 };
