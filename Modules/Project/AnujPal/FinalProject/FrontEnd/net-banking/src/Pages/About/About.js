@@ -9,7 +9,7 @@ export const About = (props) => {
   return (
     <>
       <Navbar id={props.match.params.id} />
-      <section>
+      <section id="about1">
         <div className="container ">
           <div className=" mt-5 col-md-6" id="about">
             <div className="row">
