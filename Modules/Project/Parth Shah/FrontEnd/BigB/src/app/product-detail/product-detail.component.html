@@ -1,0 +1,53 @@
+<!-- <div class="card bg-dark text-white">
+    <img src="../../assets/img/{{productImg}}" class="card-img" alt="..." height="350px" width="50px">
+    <div class="card-img-overlay">
+      
+    </div>
+  </div> -->
+
+  <div class="container">
+  <div class="card mb-3 m-5" style="max-width: 1040px; background-color: #93ee7c;">
+    <div class="row no-gutters">
+      <div class="col-md-8">
+        <img src="../../assets/img/{{productImg}}"  class="rounded" alt="..." height="350px" width="600px"> 
+      </div>
+      <div class="col-md-4">
+        <div class="card-body">
+          <h5 class="card-title font-italic display-4">{{prod.productName}}</h5>
+          <p class="card-text font-italic"><small class="text-muted h4">Price :  ₹{{prod.productPrice}}</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h4 class="font-italic">About Product : </h4>
+    <p>{{prod.productDescription}}</p>
+  </div>
+
+  <div>
+    <h4 class="font-italic">Ingredients : </h4>
+    <p>{{prod.ingredients}}</p>
+  </div>
+
+  <div>
+    <h4 class="h5 font-italic text-danger">Cash On Delievery Availaible at every Product</h4>
+  </div>
+  <div>
+    <h4 class="font-italic">Return Policy:  </h4>
+    <p>There is No return Policy</p>
+  </div>
+  <div>
+    <h4 class="font-italic">Other Product Info : </h4>
+    <p>EAN Code: 10000148</p>
+  </div>
+  <div>
+    <button type="button" class="btn btn-outline-success m-1" routerLink="buy/{{prod.productId}}" routerLinkActive="active">Buy Now</button>
+    <button type="button" class="btn btn-outline-warning m-1" routerLink="cart/{{prod.productId}}" routerLinkActive="active">Add to Basket</button>
+
+  </div>
+  
+<router-outlet></router-outlet>
+
+</div>
+  

@@ -1,0 +1,12 @@
+.nav-item .nav-link{
+    color: whitesmoke;
+    font-size: larger;
+    
+}
+
+nav li a:hover  {
+    color: red; 
+    background-color: #93ee7c;
+    font-weight: bold;
+    color: inherit;
+  }

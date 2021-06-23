@@ -1,0 +1,47 @@
+
+
+
+<div class="card my-3">
+
+    <div class="card-body" style="background-color: #93ee7c;">
+     
+
+        <form [formGroup]="buyForm">
+            <div class="form-group">
+                <label for="catName" class="h5">Enter Shipping Address</label>
+                <input type="text" class="form-control"  formControlName="shipAddress">
+              </div>
+             
+            <div class="form-group">
+    
+                <select formControlName="countId" class="form-control" (change)="onChangeCountry($event.target.value)" >
+                  <option value="" class="h5">Select Country ...</option>
+                  <option *ngFor="let country of countryList" [value]="country.countryId">{{country.countryName}}</option>
+                </select>
+                </div>
+              <div class="form-group">
+                <select formControlName="ciId" class="form-control"  >
+                  <option value="" selected class="h5">Select City...</option>
+                  <option *ngFor="let city of city" [value]="city.cityId">{{city.cityName}}</option>
+      
+                </select>
+              </div>          
+          
+            <div class="form-group">
+              <label for="catName" class="h5">Enter Product Qty</label>
+              <input type="number" class="form-control"  formControlName="pQty">
+            </div>
+        
+    
+    
+            </form>
+    
+    
+            <button class="btn btn-outline-danger btn-lg btn-block" (click)="SubmitData()" routerLink="buymessage" routerLinkActive="active"  >Order</button>
+
+
+
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
