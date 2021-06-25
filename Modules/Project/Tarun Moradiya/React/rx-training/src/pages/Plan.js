@@ -46,7 +46,7 @@ export default function Plan({ match }) {
       setDays(res.data.days);
       setLoading(false);
     });
-  }, []);
+  }, [id]);
 
   //show and hide modal
   const handleClose = () => {
