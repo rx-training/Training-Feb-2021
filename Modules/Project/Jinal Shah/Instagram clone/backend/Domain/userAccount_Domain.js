@@ -16,24 +16,15 @@ class accLogic {
                 res.json({ users })
                 return;
             })
+    }
 
-        //res.send(users)
-
-        /* user.findOne({ _id: req.params.id })
-            .select("-userPWD")
-            .then(users => {
-                Post.find({ postedBy: req.params.id })
-                    .populate("postedBy", "_id userID")
-                    .exec((err, posts) => {
-                        if (err) {
-                            return res.status(422).json({ error: err })
-                        }
-                        else { return res.json({ users, posts }) }
-                        //res.send(user)
-                    })
-            }).catch(err => {
-                return res.status(404).json({ error: "User not found" })
-            }) */
+    async getDetails(req, res) {
+        user.find({ _id: req.params.id })
+            .select("followers following")
+            .then((users) => {
+                res.json({ users })
+                return;
+            })
     }
 
     async follow(req, res) {

@@ -118,6 +118,14 @@ class UserService {
       })
    }
 
+   getDetails(t1, id) {
+      return axios.get(USER_API_BASE_URL + '/userAccounts/details/' + id, {
+         headers: {
+            token: `${t1}`
+         }
+      })
+   }
+
    updatePost(t1, id, updatedData) {
       console.log(id)
       return axios.put(USER_API_BASE_URL + `/userPost/${id}`, updatedData, {

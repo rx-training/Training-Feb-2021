@@ -15,13 +15,13 @@ export default function UserProfile(props) {
    const [following, setFolllowing] = useState([])
    const [followers, setFolllowers] = useState([])
 
+   const [details, setDetails] = useState([])
+
    useEffect(() => {
 
       UserService.getUserById(t1, id)
          .then(result => {
-            //console.log(result.data.users[0])
             setProfile(result.data.users[0])
-            //console.log(result.data.users[0].followers)
             setFolllowing(result.data.users[0].following)
             setFolllowers(result.data.users[0].followers)
          })
@@ -31,6 +31,13 @@ export default function UserProfile(props) {
          .then(result => {
             //console.log(result)
             setData(result.data.mypost)
+         })
+         .catch(err => console.log(err))
+
+      UserService.getDetails(t1, id)
+         .then(result => {
+            //console.log(result.data.users[0])
+            setDetails(result.data.users[0].followers)
          })
          .catch(err => console.log(err))
 
@@ -48,6 +55,7 @@ export default function UserProfile(props) {
             //console.log(res)
          })
          .catch(err => console.log(err))
+
    }
 
    const unfollowUser = () => {
@@ -60,6 +68,7 @@ export default function UserProfile(props) {
             //console.log(res)
          })
          .catch(err => console.log(err))
+
    }
 
 
@@ -91,39 +100,19 @@ export default function UserProfile(props) {
                            <h6>{following.length} following</h6>
                         </div>
 
-
-                        {followers.length > 0 ?
-                           followers.map(user => {
-                              return (
-                                 <div>
-                                    {(user._id === t2) ?
-                                       <button className="btn btn-block btn-primary" onClick={() => unfollowUser()}  >
-                                          UnFollow
-                                       </button>
-                                       :
-                                       <button className="btn btn-block btn-primary" onClick={() => followUser()}  >
-                                          Follow
-                                       </button>
-                                    }
-                                 </div>
-                              )
-                           })
+                        {details.includes(t2) ?
+                           <>
+                              <button className="btn btn-block btn-primary" onClick={() => unfollowUser()}  >
+                                 UnFollow
+                              </button>
+                           </>
                            :
-                           <h1>follow</h1>
+                           <>
+                              <button className="btn btn-block btn-primary" onClick={() => followUser()}  >
+                                 Follow
+                              </button>
+                           </>
                         }
-
-
-                        {/* {followers.includes(t2) == true ?
-
-                           <button className="btn btn-block btn-primary" onClick={() => unfollowUser()}  >
-                              UnFollow
-                           </button>
-                           :
-                           <button className="btn btn-block btn-primary" onClick={() => followUser()}  >
-                              Follow
-                           </button>
-
-                        } */}
 
                      </div>
                   </div>

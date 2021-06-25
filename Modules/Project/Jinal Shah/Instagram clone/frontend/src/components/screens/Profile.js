@@ -88,7 +88,7 @@ export default function Profile(props) {
                                                 return (
                                                    <div className="row m-2">
                                                       <div className="rounded-circle">
-                                                         <img className="rounded-circle border border-dark mr-3" src={item.profilePic} height="40px" width="40px" />
+                                                         <img className="rounded-circle border border-dark mr-3" src={`${imgURL}/${item.profilePic}`} height="40px" width="40px" />
                                                       </div>
                                                       <div className="font-weight-bold mt-2" data-dismiss="modal" onClick={() => handleLink(item._id)}>
 
@@ -135,7 +135,7 @@ export default function Profile(props) {
                                                 return (
                                                    <div className="row m-2">
                                                       <div >
-                                                         <img className="rounded-circle border border-dark mr-3" src={item.profilePic} height="40px" width="40px" />
+                                                         <img className="rounded-circle border border-dark mr-3" src={`${imgURL}/${item.profilePic}`} height="40px" width="40px" />
                                                       </div>
 
                                                       <div className="font-weight-bold mt-2" data-dismiss="modal" onClick={() => handleLink(item._id)}>

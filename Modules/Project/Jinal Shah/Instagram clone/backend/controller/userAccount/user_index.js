@@ -85,6 +85,11 @@ class userAccountController {
         domain.search(req, res)
     }
 
+    static async getDetails(req, res) {
+        const domain = new userAccount_Domain();
+        domain.getDetails(req, res)
+    }
+
 }
 
 router.post('/signup', userAccountController.insert)
@@ -102,6 +107,8 @@ router.put('/unfollow', userAccountController.unfollow)
 
 
 router.get('/:id', userAccountController.getbyid)
+router.get('/details/:id', userAccountController.getDetails)
+
 router.put('/:id', userAccountController.update)
 router.delete('/:id', userAccountController.delete)
 
