@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var total = 99.99;
+        var freeshipping=false;
+
+        if(total>50)
+          freeshipping = true;
+        console.log(freeshipping);
+    </script>
+
+    
+<script>
+    var total = 99.99;
+    var freeshipping=false;
+
+    if(total>=100)
+      freeshipping = true;
+    console.log(freeshipping);
+</script>
+
+<script>
+    var total = 150;
+    var freeshipping;
+    var savings;
+
+    if(total>=100){
+      freeshipping = true;
+      savings=29.99;
+    }else{
+        freeshipping=false;
+        savings=0;
+    }
+    console.log(savings);
+</script>
+
+<script>
+    var orderType = 'business';
+    var shipMethod;
+
+    if(orderType=='business'){
+      shipMethod = 'FEDX';
+    }
+    else if(orderType=='personal'){
+        shipMethod='UPS ground'
+    }
+    else
+        shipMethod = 'usps'
+    console.log(shipMethod);
+</script>
+
+
+<script>
+    var orderType = 'personal';
+    var shipMethod;
+
+    switch(orderType){
+        case 'business': 
+            shipMethod='FEDX';
+            break;
+        case 'personal':
+            shipMethod ='UPS Ground';
+            break;
+        default:
+            shipMethod = 'USPS';
+    }
+    console.log(shipMethod);
+</script>
+
+<script>
+    var orderTotal = 99.99
+    var discount;
+
+    switch(true){
+        case orderTotal >= 50 && orderTotal < 75:
+            discount = 10;
+            break;
+        case orderTotal >=75 && orderTotal < 100:
+            discount = 20;
+            break;
+        case orderTotal >=100:
+            discount = 30;
+            break;
+        default:
+            discount=0;
+    }
+    console.log(discount);
+</script>
+</body>
+</html>

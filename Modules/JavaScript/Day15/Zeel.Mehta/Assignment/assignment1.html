@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+        
+        <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha-384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script>
+        function myFunction(result) {
+    document.getElementById("myForm").reset();
+    
+    
+  }
+    </script>
+    
+            <title>
+                document
+            </title>
+            <script src="assets/ass.js"></script>
+    </head>
+<body>
+    <div class="container col-lg-4 ">
+        <h1>Calculator</h1>
+        <form id="myForm" class="bg-light">
+            <div class="form-group">
+                <label  class="form-control-label">Enter First Number : </label>
+                <input type="number" id="num1" name="num1" class="form-control"><br>
+            
+                <label  class="form-control-label">Enter Second Number : </label>
+                <input type="number" id="num2" name="num2" class="form-control"><br>
+            
+                <label>Select operation you want to perform : </label><br>
+
+            <div class="form-check">
+                <input type="radio"   name="sum" value="add"  class="form-check-input" >
+                <label>Addition</label><br>
+                <input type="radio"  name="sum" value="sub" class="form-check-input">
+                <label>Substraction</label><br>
+                <input type="radio"  name="sum" value="mul" class="form-check-input">
+                <label>Multiplication</label><br>
+                <input type="radio"   name="sum" value="div" class="form-check-input">
+                <label>Division</label>
+            </div>
+            <button type="button" onclick="displayRadioValue(num1.value,num2.value)"  class="btn btn-outline-dark btn-block">Calculate</button>
+            <button type="button" onclick="myFunction(result)"  class="btn btn-outline-dark btn-block">Reset</button>
+            <br><input type="text" id="result" name="result" class="form-control h1" disabled>
+        </div>
+        </form>
+                 
+        
+    </div>   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "paresh-gohil",
+  "version": "1.0.0",
+  "description": "",
+  "main": "practice_exercise.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "nodemon --inspect assignment.js",
+    "serve": "nodemon assignment.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

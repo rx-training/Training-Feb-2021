@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .col-1{
+            border: 1px solid blue;
+            padding: 20px;
+        }
+        @media screen and (max-width: 500px){
+            .col-1{
+                border: 1px solid red;
+                padding: 40px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="col-1">
+        <h1>This is Heading</h1>
+        <p>
+            You cannot be sure how HTML will be displayed.
+            Large or small screens, and resized windows will create different results.
+            With HTML, you cannot change the display by adding extra spaces or extra lines in your HTML code.
+            The browser will automatically remove any extra spaces and lines when the page is displayed
+        </p>
+    </div>
+</body>
+</html>

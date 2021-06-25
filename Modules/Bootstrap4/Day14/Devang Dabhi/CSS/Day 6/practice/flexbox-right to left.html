@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Universal Selector</title>
+    <style>
+    .item3>flex-container {
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: yellow;
+}
+
+.item3>.flex-container > div {
+  background-color: skyblue;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+      
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main main main'
+    'footer footer footer footer footer footer';
+  grid-gap: 3px;
+  background-color: black;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+/* for tablets */
+@media only screen and (max-width: 700px) {
+    .grid-container{
+<div class="item3">
+grid-template-columns:1fr;
+        grid-template-areas: 'header header header header '
+	'header header header header '
+        'menu menu menu menu '
+        'main main main main '
+        'footer footer footer footer';
+    }
+} 
+
+  /* for mobiles */
+@media only screen and (max-width: 400px) {
+    .grid-container{
+grid-template-columns:1fr;
+<div class="item3">	
+        grid-template-areas: 'header header header'
+	'header header header'
+        'menu menu menu'
+        'main main main'
+        'main main main'
+        'footer footer footer;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+  <div class="item1">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+    <div class="container">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse"  >
+            <span class="navbar-toggler-icon">
+            </span>
+        </button>
+        <p><img src="devanglogo.jpg" alt="DEVANG-LOGO"  height= 100; width=100></p>  
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="../../../HTML/website.html" class="nav-link">HTML</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../../../CSS/css starting.html" class="nav-link">CSS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../../../Bootstrap/Starting.html" class="nav-link">Bootstrap</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../../../Javascript/starting.html" class="nav-link">Javascript</a>
+                </li>
+            </ul>
+        </div>        
+    </div>
+</nav>
+
+</div>
+
+<div class="item2">
+    <div class="container text-end">
+    <div>
+    <h6><button type="button" class="collapsible">Day 4</button></h6>
+    <hr>
+    <h6><button type="button" class="collapsible">Practice</button></h6>
+
+    <ul>
+                <h6><li><a href="../../Day 4/practice/displayproperties.html">Display Properties</a></li></h6>
+                <h6><li><a href="../../Day 4/practice/H1 And H3 tag.html">H1 And H3 tag</a></li></h6>
+                <h6><li><a href="../../Day 4/practice/Paragraph.border.html"">Paragraph Border</a></li></h6>
+                <h6><li><a href="../../Day 4/practice/Student.html">Student</a></li></h6>
+                <h6><li><a href="../../Day 4/practice/Universal_selector.html">Universal Selector</a></li></h6>
+    </ul>
+    </div>
+    <div class="text-center">
+     <h6> <button type="button" class="collapsible">Assignment</button></h6>
+      <ul>
+        <h6><li><a href="../../Day 4/Assignment/Resume.html">Resume</a></li></h6>
+      </ul>
+    </div>
+    <div>
+      <h6><button type="button" class="collapsible">Day Video Exercise</button></h6>
+      <ul>
+        <h6><li><a href="../../Day 4/Video Exercise/Video_Exercise.html">Task 1</a></li></h6>
+      </ul>
+    </div>
+    </div>
+
+    <div class="container text-end">
+    <div>
+    <h6><button type="button" class="collapsible">Day 5</button></h6>
+    <hr>
+    <h6><button type="button" class="collapsible">Practice</button></h6>
+
+    <ul>
+            <h6><li><a href="../../Day 5/Practice/absolute.html" >Absolute</a></li></h6>
+            <h6><li><a href="../../Day 5/Practice/fixed.html" >Fixed</a></li></h6>
+            <h6><li><a href="../../Day 5/Practice/inline-block.html" >inline-block</a></li></h6>
+            <h6><li><a href="../../Day 5/Practice/overflow-property.html" >Overflow Property</a></li></h6>
+            <h6><li><a href="../../Day 5/Practice/relative.html">relative</a></li></h6>
+            <h6><li><a href="../../Day 5/Practice/static.html" >Static</a></li></65>
+
+    </ul>
+    </div>
+    <div class="text-center">
+     <h6> <button type="button" class="collapsible">Assignment</button></h6>
+      <ul>
+      <h6><li><a href="../../Day 5/Assignment/home.html" target="blank" >Task-Project</a></li></h6>
+      </ul>
+    </div>
+    <div>
+      <h6><button type="button" class="collapsible">Day Video Exercise</button></h6>
+      <ul>
+      <h6><li><a href="../../Day 5/Video/video-exercise.html">Task 1</a></li></h6>
+      <h6><li><a href="../../Day 5/Video/marjin-padding-border.html">Maggin-padding Border</a></li></65>
+      </ul>
+    </div>
+
+    <div>
+    <h6><button type="button" class="collapsible">Day 6</button></h6>
+    <hr>
+    <h6><button type="button" class="collapsible">Practice</button></h6>
+
+    <ul>
+            <h6><li><a href="../../Day 6/practice/box model.html">Box Model</a></li></h6>
+            <h6><li><a href="../../Day 6/practice/flexbox.html" >Flexbox</a></li></h6>
+            <h6><li><a href="../../Day 6/practice/flexbox_image_gallery.html">Gallery</a></li></h6>
+            <h6><li><a href="../../Day 6/practice/flexbox-right to left.html">Right to left</a></li></h6>
+    </ul>
+    </div>
+    <div class="text-center">
+     <h6> <button type="button" class="collapsible">Assignment</button></h6>
+      <ul>
+      <h6><li><a href="../../Day 6/assignment/website.html" target="blank" >Task-Project</a></li></h6>
+      </ul>
+    </div>
+    <div>
+    <h6><button type="button" class="collapsible">Day 7</button></h6>
+    <hr>
+    <h6><button type="button" class="collapsible">Practice</button></h6>
+
+    <ul>
+            <h6><li><a href="../../Day 7/practical/border.html">Border</a></li></h6>
+            <h6><li><a href="../../Day 7/practical/breakpoint.html">Breakpoint</a></li></h6>
+            <h6><li><a href="../../Day 7/practical/font size.html">Font-size</a></li></h6>
+            <h6><li><a href="../../Day 7/practical/Hide-Element.html">Hide Element</a></li></h6>
+    </ul>
+    </div>
+    <div class="text-center">
+     <h6> <button type="button" class="collapsible">Assignment</button></h6>
+      <ul>
+      <h6><li><a href="../../Day 7/assignment/photo album.html">Photo Album</a></li></h6>
+      </ul>
+    </div>
+    <div>
+    <h6><button type="button" class="collapsible">Day 8</button></h6>
+    <hr>
+    <h6><button type="button" class="collapsible">Practice</button></h6>
+
+    <ul>
+            <h6><li><a href="../../Day 8/practical/sort.html">Align Content</a></li></h6>
+            <h6><li><a href="../../Day 8/practical/grid-area Property.html">grid Area</a></li></h6>
+            <h6><li><a href="../../Day 8/practical/grid-displayproperties.html">grid Dispaly</a></li></h6>
+            <h6><li><a href="../../Day 8/practical/grid-template-columns.html">Grid Column</a></li></h6>
+            <h6><li><a href="../../Day 8/practical/grid-template-rows.html">Grid Row</a></li></h6>
+            <h6><li><a href="../../Day 8/practical/justify-content Property.html">justify-contect</a></li></h6>
+            <h6><li><a href="../../Day 8/practical/responsive .html">responsive</a></li></h6>
+            <h6><li><a href="../../Day 8/practical/row and column gap.html">row and column gap</a></li></h6>
+            <h6><li><a href="../../Day 8/practical/sort.html">Sort</a></li></h6>
+    </ul>
+    </div>
+    <div class="text-center">
+     <h6> <button type="button" class="collapsible">Assignment</button></h6>
+      <ul>
+      <h6><li><a href="../../Day 8/Assignment/website.html" target="blank">Task-Project</a></li></h6>
+      </ul>
+    </div>
+    </div>
+    
+
+    </div>
+  <div class="item3">
+ 
+<div class="flex-container">
+  <div class="item1">Tensions between China and India are a recent phenomenon. Both are new postcolonial states. The former is heir to the expansionist Qing Empire and is a revisionist power. It seeks to rewrite the rigged rules of the game of the international order.</div>
+  <div class="item2">European powers and the United States forced this order down Chinese gullets when it was going through decline, disorder and disgrace. India is the child of the British Empire that seeks to preserve the status quo.</div>
+  <div class="item3">It no longer identifies with the Mughal Empire, Britain’s predecessor.</div> 
+</div>
+
+  </div>  
+  <div class="item4">
+    <footer class="main-footer py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row text-center">
+        <div class="col-md-6 ml-auto">
+            <p class="lead">Copyright &Copy;2017</p>
+        </div>
+        </div>
+    </div>
+</footer>
+  </div>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
+

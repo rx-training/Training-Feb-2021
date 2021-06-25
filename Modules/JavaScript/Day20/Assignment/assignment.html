@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Document</title>
+    <script>
+        var temp0 = 0;
+        var temp1 = 0;
+        var temp2 = 0;
+        var temp3 = 0;
+        function one() {
+            temp0 = temp0 + 1;
+
+
+            if (temp0 > 0) {
+                var Product1 = [{ "ProductID": 1, "ProductName": "Cheese", "Price": 100 * temp0, "Quantity": temp0 }]
+                localStorage.setItem('Product1', JSON.stringify(Product1));
+
+
+            }
+        }
+        function two() {
+            temp1 = temp1 + 1;
+
+
+            if (temp1 > 0) {
+                var Product2 = [{ "ProductID": 2, "ProductName": "Pen", "Price": 150 * temp1, "Quantity": temp1 * 2 }]
+                localStorage.setItem('Product2', JSON.stringify(Product2));
+
+
+            }
+        }
+
+
+        function three() {
+            temp2 = temp2 + 1;
+
+
+            if (temp2 > 0) {
+                var Product3 = [{ "ProductID": 3, "ProductName": "Butter", "Price": 100 * temp2, "Quantity": temp2 }]
+                localStorage.setItem('Product3', JSON.stringify(Product3));
+
+
+            }
+        }
+
+
+        function four() {
+            temp3 = temp3 + 1;
+
+
+            if (temp3 > 0) {
+                var Product4 = [{ "ProductID": 4, "ProductName": "Pencil", "Price": 10 * temp3, "Quantity": temp3 }]
+                localStorage.setItem('Product4', JSON.stringify(Product4));
+
+
+            }
+        }
+
+            function Summary()
+            {
+                var getItem1=JSON.parse(localStorage.getItem('Product1'));
+                var getItem2=JSON.parse(localStorage.getItem('Product2'));
+                var getItem3=JSON.parse(localStorage.getItem('Product3'));
+                var getItem4=JSON.parse(localStorage.getItem('Product4'));
+       
+                console.log(getItem1[0].ProductID);
+     
+                document.getElementById('table').innerHTML=`<tr>   <th>ProductId</th>
+            <th>ProductName</th>
+            <th>Price</th>
+            <th>Quantity</th></tr>
+                <tr><td>${getItem1[0].ProductID}</td><td>${getItem1[0].ProductName}</td><td>${getItem1[0].Price}</td><td>${getItem1[0].Quantity}</td></tr>
+                <tr><td>${getItem2[0].ProductID}</td><td>${getItem2[0].ProductName}</td><td>${getItem2[0].Price}</td><td>${getItem2[0].Quantity}</td></tr>
+                <tr><td>${getItem3[0].ProductID}</td><td>${getItem3[0].ProductName}</td><td>${getItem3[0].Price}</td><td>${getItem3[0].Quantity}</td></tr>
+                <tr><td>${getItem4[0].ProductID}</td><td>${getItem4[0].ProductName}</td><td>${getItem4[0].Price}</td><td>${getItem4[0].Quantity}</td></tr>
+                <tr><th colspan = "4">Total Price To Paid Is: ${getItem1[0].Price+getItem2[0].Price+getItem3[0].Price+getItem4[0].Price}</th></tr>`
+               
+     
+
+            }
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container h-50 w-50 border primary mt-5">
+        <center>
+            <h3>CART</h3>
+        </center>
+        <table class="table ">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">ProductID</th>
+                    <th scope="col">ProductName</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>1</td>
+                    <td>Cheese</td>
+                    <td>100</td>
+                    <td>1</td>
+                    <td><input type="button" class="btn btn-primary" value="AddToCart" onclick="one()"></button></td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>2</td>
+                    <td>Pen</td>
+                    <td>150</td>
+                    <td>2</td>
+                    <td><input type="button" class="btn btn-primary" value="AddToCart" onclick="two()"></button></td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>3</td>
+                    <td> Butter</td>
+                    <td>100</td>
+                    <td>1</td>
+                    <td><input type="button" class="btn btn-primary" value="AddToCart" onclick="three()"></button></td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>4</td>
+                    <td> Pencul</td>
+                    <td>10</td>
+                    <td>1</td>
+                    <td><input type="button" class="btn btn-primary" value="AddToCart" onclick="four()"></button></td>
+                </tr>
+            </tbody>
+        </table>
+        <input type="button" class="btn btn-success mx-auto" value="Summary" onclick="Summary()">
+        <table  class="table mt-5" >
+            <tbody id="table">
+         
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

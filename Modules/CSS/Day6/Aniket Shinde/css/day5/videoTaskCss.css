@@ -1,0 +1,98 @@
+
+  
+  #day5Video h1 {
+    margin-top: 70px;
+    color: crimson;
+    text-align: center;
+  }
+  
+  #day5Video p {
+    font-family: verdana;
+    font-size: 20px;
+    padding: 20px 20px 15px;
+  }
+  /* id selector */
+  #day5Video #ul1{
+      width: 300px;
+      display: inline-block;
+      float: left;
+      margin: 20px 15px 10px;
+      text-decoration: cyan;
+  }
+
+  /* class selector */
+  #day5Video .licircle{
+        list-style-type: circle;
+  }
+  #day5Video .lisquare{
+    list-style-type: square;
+}
+
+/* pseudo classes
+first-child class */
+#day5Video .lisquare :first-child { color: darkcyan;  padding: 5px 5px 5px;}
+
+/*nth child class */
+#day5Video #ul1 :nth-child(odd){ background-color : #d5c1ff}
+#day5Video #ul1 :nth-child(even){ background-color : #ffffff}
+
+#day5Video header{
+    width: 100%;
+    position: fixed;
+    background-color: blueviolet;
+    margin-top: 80px;
+    
+}
+#day5Video header #ulheader li{
+    display: inline-block;
+    padding: 0px 20px 0px;
+    color: white;
+}
+#day5Video .jazzingText{
+    display: inline-block;
+    border: 1px solid crimson;
+    font-size: 15px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+    text-decoration: underline;
+    line-height: 1.25;
+    color: indigo;
+    background-color: ivory;
+}
+#day5Video .div1{
+    width: 300px;
+    height: 200px;
+    background-color: lightcoral;
+    display: block;
+    clear: both;
+    border: 1px solid crimson;
+    margin: 15px;
+}
+#day5Video .div2{
+    width: 300px;
+    height: 200px;
+    background-color: lightgreen;
+    float: left;
+    border: 1px solid crimson;
+    margin: 15px;
+}
+#day5Video .div3{
+    width: 300px;
+    height: 200px;
+    display: inline-block;
+    background-color: lightgoldenrodyellow;
+    float: left;
+    border: 1px solid crimson;
+    margin: 15px;
+}
+#day5Video .div4{
+    width: 300px;
+    height: 200px;
+    display: inline-block;
+    background-color: lightblue;
+    float: left;
+    clear: left;
+    border: 1px solid crimson;
+    margin: 15px;
+}

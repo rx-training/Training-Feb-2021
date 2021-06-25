@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Element</title>
+    <style>
+        .demo {
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 500px;
+    background : 
+    #ec73e298;
+   
+    }
+        #myh3{
+            font-family:'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <div class="demo">
+        <h2>Array Element like:- Push , Pop , Shifting , Deleting</h2>
+
+    <h3 id="myh3"></h3>
+    <script>
+        var arrList=["A","B","C","D","E"]
+        // like push, pop, shifting, deleting element
+        var myh3=document.getElementById("myh3");
+        myh3.innerHTML="arrList: ["+arrList+"] <br><br>";
+        myh3.innerHTML+="Push 2 elements (F,G) into arrList: <br><br>";
+        arrList.push("F");
+        arrList.push("G");
+        myh3.innerHTML+="arrList: ["+arrList+"] <br><br><br>";
+        myh3.innerHTML+="Pop one time from arrList: <br><br>";
+        arrList.pop();
+        myh3.innerHTML+="arrList: ["+arrList+"] <br><br><br>";
+        myh3.innerHTML+="Shift one time from arrList: <br><br>";
+        arrList.shift();
+        myh3.innerHTML+="arrList: ["+arrList+"] <br><br><br>";
+        myh3.innerHTML+="Deleting last two element from arrList: <br><br>";
+        delete arrList[4];
+        delete arrList[3];
+        myh3.innerHTML+="arrList: ["+arrList+"] <br><br><br>";
+    </script>
+    </div>
+    </center>
+</body>
+</html>

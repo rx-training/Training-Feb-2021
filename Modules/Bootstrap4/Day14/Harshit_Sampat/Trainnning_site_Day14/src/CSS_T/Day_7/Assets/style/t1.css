@@ -1,0 +1,14 @@
+.body {
+    background-color: rgb(220, 255, 124);
+  }
+  .div{
+    border: 7px solid darkblue;
+    background-color: rgb(133, 158, 233);
+  }
+  
+  @media (max-width: 500px) {
+    .div {
+      border-color: red;
+    }
+  }
+  

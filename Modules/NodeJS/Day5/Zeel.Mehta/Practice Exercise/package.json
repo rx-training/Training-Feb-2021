@@ -1,0 +1,14 @@
+{
+  "name": "practice-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "practice4.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "nodemon --inspect practice4.js",
+    "serve": "nodemon practice4.js",
+    "start": "node serve"
+  },
+  "author": "",
+  "license": "ISC"
+}

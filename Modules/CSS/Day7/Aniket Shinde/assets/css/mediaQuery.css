@@ -1,0 +1,37 @@
+body{
+    font-family: monospace;
+    font-size: 20px;
+}
+header{
+    border: 2px solid aqua;
+    height: 100px;
+    width: 100%;
+    background-color: crimson;
+    text-align: center;
+}
+[class *= "col-"]{
+    width: 100%;
+    background-color: lightcoral;
+    float: left;
+}
+  /* for large tablets */
+  @media only screen and (min-width: 700px) {
+    header {background: blue;}
+
+    .col-s-4{width: 33.33%; background-color: lightgreen;}
+    .col-s-8{width: 66.67%; background-color: lightpink;}
+    .col-s-12{width: 100%; background-color: lightskyblue;}
+    
+
+  } 
+
+  /* for extra large laptops / desktops */
+  @media only screen and (min-width: 1000px) {
+    header {background: pink;}
+
+    .col-3{width: 25%; background-color: lightgreen;}
+    .col-6{width: 50%; background-color: lightpink;}
+    .col-12{width: 100%; background-color: lightskyblue;}
+
+  }
+

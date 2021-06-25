@@ -1,0 +1,67 @@
+[
+    {
+        "username":"nirbhay",
+        "enroll-number":1010,
+        "subjects-marks":[
+            {"subject":"C language","marks":85},
+            {"subject":"Data Structure","marks":90},
+            {"subject":"Algorithms","marks":65},
+            {"subject":"Computer Networks","marks":80},
+            {"subject":"TOC","marks":77}
+        ],
+        "Total":397,
+        "Percentage":79.4
+    },
+    {
+        "username":"rahul",
+        "enroll-number":1010,
+        "subjects-marks":[
+            {"subject":"C language","marks":78},
+            {"subject":"Data Structure","marks":65},
+            {"subject":"Algorithms","marks":76},
+            {"subject":"Computer Networks","marks":56},
+            {"subject":"TOC","marks":46}
+        ],
+        "Total":321,
+        "Percentage":64.2
+    },
+    {
+        "username":"niyati",
+        "enroll-number":1010,
+        "subjects-marks":[
+            {"subject":"C language","marks":90},
+            {"subject":"Data Structure","marks":76},
+            {"subject":"Algorithms","marks":88},
+            {"subject":"Computer Networks","marks":94},
+            {"subject":"TOC","marks":83}
+        ],
+        "Total":731,
+        "Percentage":86.2
+    },
+    {
+        "username":"shubham",
+        "enroll-number":1010,
+        "subjects-marks":[
+            {"subject":"C language","marks":76},
+            {"subject":"Data Structure","marks":86},
+            {"subject":"Algorithms","marks":69},
+            {"subject":"Computer Networks","marks":79},
+            {"subject":"TOC","marks":55}
+        ],
+        "Total":365,
+        "Percentage":73
+    },
+    {
+        "username":"prashant",
+        "enroll-number":1010,
+        "subjects-marks":[
+            {"subject":"C language","marks":72},
+            {"subject":"Data Structure","marks":76},
+            {"subject":"Algorithms","marks":72},
+            {"subject":"Computer Networks","marks":55},
+            {"subject":"TOC","marks":69}
+        ],
+        "Total":344,
+        "Percentage":68.8
+    }
+]

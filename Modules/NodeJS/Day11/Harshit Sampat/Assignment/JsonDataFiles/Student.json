@@ -1,0 +1,64 @@
+[
+    {
+        "studentID":1,
+        "studentName":"John Doe",
+        "result":
+            {
+                "Enlgish":90,
+                "Math":98,
+                "science":99
+            },
+        "Fees":{
+               "feesId":1,
+               "studentId":1,
+               "stundeName":"Samules Jaforson",
+               "Fees_status":"Completed"
+        }
+    },
+    {
+        "studentID":2,
+        "studentName":"Samules Jaforson",
+        "result":
+            {
+                "Enlgish":95,
+                "Math":100,
+                "science":100
+            },
+        "Fees":
+            {
+                "feesId":2,
+                "studentId":2,
+                "stundeName":"JohnDoe",
+                "Fees_status":"Completed"
+            }
+    },
+    {
+        "studentID":3,
+        "studentName":"Jem json",
+        "result":
+            {
+                "Enlgish":100,
+                "Math":100,
+                "science":100
+            },
+        "Fees":{
+             "feesId":3,
+             "studentId":3,
+             "stundeName":"Jem json",
+             "Fees_status":"Completed"
+        }
+    }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Css components</title>
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="container mt-3">
+        <ul class="nav justify-content-between">
+          <li class="col-md-3 nav-item dropdown">
+            <a href="#" class="btn btn-primary nav-link dropdown-toggle" data-toggle="dropdown">2: Utilities</a>
+            <div class="dropdown-menu">
+                <a href="../Practice day9/2_2_basic_typography.html" class="dropdown-item">2.2 Basic Typography</a>
+                <a href="../Practice day9/2_3_text_alignment_and_display.html" class="dropdown-item">2.3 Text Alignment & Display</a>
+                <a href="../Practice day9/2_4_Floats _and_fixed-positions.html" class="dropdown-item">2.4 Floats & Positions</a>
+                <a href="../Practice day9/2_5_colors_backgrounds.html" class="dropdown-item">2.5 Colors & Background</a>
+                <a href="../Practice day9/2_6_spacing.html" class="dropdown-item">2.6 Spacing</a>
+                <a href="../Practice day9/2_7_sizing.html" class="dropdown-item">2.7 Sizing</a>
+                <a href="../Practice day9/2_8_media_breakpoints.html" class="dropdown-item">2.8 Breakpoints</a>
+            </div>
+          </li>
+          <li class="col-md-3 nav-item dropdown">
+            <a href="#" class="btn btn-success nav-link dropdown-toggle" data-toggle="dropdown">3: CSS Components</a>
+            <div class="dropdown-menu">
+              <a href="../Practice day9/3_2_buttons.html" class="dropdown-item">Buttons</a>
+              <a href="../Practice day9/3_3_navbar.html" class="dropdown-item">Navbar</a>
+              <a href="../Practice day9/3_4_listgroups_badges.html" class="dropdown-item">Listgroup & Badges</a>
+              <a href="../Practice day9/3_5_forms.html" class="dropdown-item">Forms</a>
+              <a href="../Practice day9/3_6_input_groups.html" class="dropdown-item">InputsGroups</a>
+              <a href="../Practice day9/3_7_alerts_progressbar.html" class="dropdown-item">Alert & Progressbar</a>
+              <a href="../Practice day9/3_8_tables_pagination.html" class="dropdown-item">Tables & Pagination</a>
+              <a href="../Practice day9/3_9_cards.html" class="dropdown-item">Cards</a>
+            </div>
+          </li>
+          <li class="col-md-3 nav-item dropdown">
+            <a href="#" class="btn btn-warning nav-link dropdown-toggle" data-toggle="dropdown">4: Grid & Flexbox</a>
+            <div class="dropdown-menu">
+              <a href="../Practice/4_2_grid_system.html" class="dropdown-item">Grid System</a>
+              <a href="../Practice/4_3_grid_alignments.html" class="dropdown-item">Grid Alignments</a>
+              <a href="../Practice/4_4_flexbox.html" class="dropdown-item">Flexbox</a>
+              <a href="../Practice/4_5_automargin_wrapping.html" class="dropdown-item">Auto Margins and Wrapping</a>
+            </div>
+          </li>
+          <li class="col-md-3 nav-item dropdown">
+            <a href="#" class="btn btn-danger nav-link dropdown-toggle" data-toggle="dropdown">5: Javascript Widgets</a>
+            <div class="dropdown-menu">
+              <a href="../Practice/5_2_carousel.html" class="dropdown-item">Carousel</a>
+              <a href="../Practice/5_3_collapse_accordion.html" class="dropdown-item">Collapse & Accordion</a>
+              <a href="../Practice/5_4_tooltips.html" class="dropdown-item">Tooltips</a>
+              <a href="../Practice/5_5_popovers.html" class="dropdown-item">Popovers</a>
+              <a href="../Practice/5_6_modals.html" class="dropdown-item">Modals</a>
+            </div>
+          </li>
+        </ul>
+    </div>
+
+        <h1 class="text-center my-2">Input Groups & Addons</h1>
+        <!-- Input Groups -->
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">@</span>
+            </div>
+            <input type="text" class="form-control" name="username" placeholder="Username">
+        </div>
+        <div class="input-group mb-3">
+            <input type="email" class="form-control" name="email" placeholder="Enter Email">
+            <div class="input-group-append">
+                <span class="input-group-text">@example.com</span>
+            </div>
+        </div>
+        <label for="profile-url">Choose Profile URL</label>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">http://example.com/member</span>
+            </div>
+            <input type="email" id="profile-url" class="form-control" name="email" placeholder="Enter Profile url">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+            </div>
+            <input type="text" class="form-control" name="dollar">
+            <div class="input-group-append">
+                <span class="input-group-text">.00</span>
+            </div>
+        </div>
+    
+        <!-- Larger -->
+        <div class="input-group input-group-lg mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">@</span>
+            </div>
+            <input type="text" class="form-control" name="username" placeholder="Username">
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <input type="checkbox" aria-label="Checkbox for following text input">
+              </div>
+            </div>
+            <input type="text" class="form-control">
+          </div>
+          
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+              <input type="radio">
+              </div>
+            </div>
+            <input type="text" class="form-control">
+          </div>
+          
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search here...">
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="button">Search</button>
+            </div>
+          </div>
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

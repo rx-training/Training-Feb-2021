@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>Calculator</title>
+    
+    <script>
+        
+    function calculate() {
+    var a = parseInt(document.getElementById("num1").value);
+    var b = parseInt(document.getElementById("num2").value);
+    var add = document.getElementById("add").checked;
+    var sub = document.getElementById("subtract").checked;
+    var mul = document.getElementById("mul").checked;
+    var div = document.getElementById("div").checked;
+  
+    if (isNaN(a)) {
+
+      document.getElementById("wrong-num-1").innerHTML = "Enter first number";
+      document.getElementById("answer").innerHTML = "";
+    } 
+    else if (isNaN(b)) {
+
+      document.getElementById("wrong-num-1").innerHTML = "";
+      document.getElementById("wrong-num-2").innerHTML ="Enter second number";
+      document.getElementById("answer").innerHTML = "";
+    } 
+
+    else {
+      
+        switch (true) {
+        case add:
+          document.getElementById("answer").innerHTML = a + b;
+          document.getElementById("wrong-selection").innerHTML = "";
+          break;
+
+        case sub:
+          document.getElementById("answer").innerHTML = a - b;
+          document.getElementById("wrong-selection").innerHTML = "";
+          break;
+
+        case mul:
+          document.getElementById("answer").innerHTML = a * b;
+          document.getElementById("wrong-selection").innerHTML = "";
+          break;
+
+        case div:
+          document.getElementById("answer").innerHTML = a / b;
+          document.getElementById("wrong-selection").innerHTML = "";
+          break;
+          
+        default:
+          document.getElementById("wrong-num-1").innerHTML = "";
+          document.getElementById("wrong-num-2").innerHTML = "";
+          document.getElementById("wrong-selection").innerHTML = "Please select";
+          document.getElementById("answer").innerHTML = "";
+          break;
+      }
+    }
+    return false;
+  }
+
+    </script>
+
+  </head>
+  <body>
+
+
+    <div class="container">
+      <div>
+
+        <div>
+          <h1 class="text-danger">Calculator</h1>
+        </div>
+
+    <div class="container">
+        <form>
+            <div class="form-group m-5">
+              <label class="form-label">Enter first number :</label>
+              <input type="number" id="num1" placeholder="Enter first number"required>
+            </div>
+  
+            <!--validation-->
+            <p class="text-danger" id="wrong-num-1"></p>
+  
+            <div class="form-group m-5">
+              <label class="form-label">Enter second number:</label>
+              <input
+                type="number" id="num2" placeholder="Enter second number" required >
+            </div>
+  
+            <p class="text-danger" id="wrong-num-2"></p>
+  
+            <div class="form-group m-5">
+              <div class="form-check">
+
+                <input type="radio" class="form-check-input" id="add" name="Calculate" required>
+                <label class="form-check-label" for="Addition"> Addition </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="Calculate" id="subtract" required>
+                <label class="form-check-label" for="Subtraction">Subtraction</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="Calculate" id="mul" required>
+                <label class="form-check-label" for="Multiplication">Multiplication</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="Calculate" id="div" required>
+                <label class="form-check-label" for="Division"> Division </label>
+              </div>
+  
+              <p class="text-danger" id="wrong-selection"></p>
+  
+              <div class="mt-1">
+                <button class="btn btn-dark" type="reset">Reset</button>
+                <button class="btn btn-success" type="button" onclick="calculate()">Calculate</button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <h3>Answer : <span id="answer"></span></h3>
+        </div>
+      </div>
+  
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

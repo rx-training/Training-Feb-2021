@@ -1,0 +1,15 @@
+{
+  "name": "connecteddata",
+  "version": "1.0.0",
+  "main": "population.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tarun Moradiya",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "fawn": "^2.1.5",
+    "mongoose": "^5.12.4"
+  }
+}

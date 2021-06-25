@@ -1,0 +1,114 @@
+CREATE TABLE STUDENT
+(
+	StudentID int PRIMARY KEY NOT NULL,
+	StudentName varchar(15) NOT NULL,
+	TotalFees decimal(8,0),
+	RemainingAmt int
+)
+GO
+
+INSERT INTO STUDENT VALUES
+(1,'MEERA',20000,1000),
+(2,'RAHUL',30000,500),
+(3,'SIMRAN',23000,1500),
+(4,'ADITYA',25000,2000),
+(5,'GAURI',33000,5000)
+GO
+
+CREATE TABLE COURSE
+(
+	CourseID int PRIMARY KEY NOT NULL,
+	CourseName varchar(15) NOT NULL,
+	TotalFees decimal(8,0),
+)
+GO
+
+INSERT INTO COURSE VALUES
+(1,'PYTHON',33000),
+(2,'JAVA',25000),
+(3,'.NET',23000),
+(4,'JS',30000),
+(5,'PHP',20000)
+GO
+
+CREATE TABLE COURSE_ENROLLES
+(
+	StudentID int NOT NULL FOREIGN KEY REFERENCES STUDENT(StudentID),
+	CourseID int NOT NULL FOREIGN KEY REFERENCES COURSE(CourseID)
+)
+GO
+
+INSERT INTO COURSE_ENROLLES VALUES
+(1,5),
+(2,4),
+(3,2),
+(4,1),
+(5,3)
+GO
+
+CREATE TABLE FEE_PAYMENT
+(
+	StudentID INT NOT NULL FOREIGN KEY REFERENCES STUDENT(StudentID),
+	AmountPaid DECIMAL(8,0) NOT NULL,
+	DOP DATE
+)
+GO
+
+INSERT INTO FEE_PAYMENT VALUES
+(1,30000,'27-FEB-2021'),
+(2,22000,'13-DEC-2020'),
+(3,27000,'5-NOV-2020'),
+(4,32000,'24-JAN-2021'),
+(5,25000,'9-FEB-2021')
+GO
+
+SELECT * FROM STUDENT
+SELECT * FROM COURSE
+SELECT * FROM COURSE_ENROLLES
+SELECT * FROM FEE_PAYMENT
+GO
+
+/* Create an insert trigger on CourseEnrolled Table, record 
+should be updated in TotalFees Field on the Student table for 
+the respective student.*/
+
+ALTER TRIGGER CourseE 
+ON COURSE_ENROLLES 
+FOR INSERT
+AS
+BEGIN	
+	SELECT * FROM inserted
+	DECLARE @TAM DECIMAL(8,0)
+	SELECT  @TAM=TotalFees+1000 FROM COURSE WHERE CourseID =
+	(SELECT CourseID FROM inserted)
+	UPDATE STUDENT SET TotalFees=@TAM WHERE StudentID=
+	(SELECT StudentID FROM inserted)
+	SELECT * FROM STUDENT
+END
+GO
+
+INSERT INTO COURSE_ENROLLES VALUES
+(1,2);
+
+/*Create an insert trigger on FeePayment, record should be 
+updated in RemainingAmt Field of the Student Table for the 
+respective student.*/
+
+ALTER TRIGGER FEES 
+ON FEE_PAYMENT 
+FOR INSERT
+AS
+BEGIN	
+	SELECT * FROM inserted
+	DECLARE @RAMOUNT INT
+	SELECT  @RAMOUNT=RemainingAmt+10000 FROM STUDENT WHERE StudentID =
+	(SELECT StudentID FROM inserted)
+	UPDATE STUDENT SET RemainingAmt=@RAMOUNT WHERE StudentID=
+	(SELECT StudentID FROM inserted)
+	SELECT * FROM STUDENT
+END
+GO
+
+INSERT INTO FEE_PAYMENT VALUES
+(1,30000,'27-FEB-2021')
+

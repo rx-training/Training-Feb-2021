@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Convert String to Array</title>
+    </head>
+    <style>
+        .demo {
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 350px;
+    background : 
+    #d5f13598;
+        }
+    </style>
+<body>
+    <center>
+        <div class="demo">
+   
+    <h2>Convert String to Array</h2>
+
+<p>Click "Try it" to display the first array element, after a string split.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var str = "T,a,r,u,n";
+  var arr = str.split(",");
+  document.getElementById("demo").innerHTML = arr[0];
+}
+</script>
+</div>
+</center>
+
+</body>
+</html>

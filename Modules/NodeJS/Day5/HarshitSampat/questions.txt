@@ -1,0 +1,34 @@
+1. 	It was Sunday on Jan 1, 2006. What was the day of the week Jan 1, 2010?
+
+A.	Sunday
+B.	Saturday
+C.	Friday
+D.	Wednesday
+
+2. 	What was the day of the week on 28th May, 2006?
+
+A.	Thursday
+B.	Friday
+C.	Saturday
+D.	Sunday
+
+3. 	What was the day of the week on 17th June, 1998?
+
+A.	Monday
+B.	Tuesday
+C.	Wednesday
+D.	Thursday
+
+4. 	What will be the day of the week 15th August, 2010?
+
+A.	Sunday
+B.	Monday
+C.	Tuesday
+D.	Friday
+
+5. 	Today is Monday. After 61 days, it will be:
+
+A.	Wednesday
+B.	Saturday
+C.	Tuesday
+D.	Thursday

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+        
+        <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha-384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    </head>
+    <link rel="stylesheet" href="task.css">
+<body>
+    <div class="container py-5 col-lg-9">
+        <div >
+            <input type="button" value="Insert Data" class="btn btn-dark btn-block" onclick="window.location.href = 'emp1.html'">
+        </div>
+   
+        <button class="btn btn-danger" onclick="productList(table1)">...Click...</button>
+            <table class="table table-border" id="table1"> 
+                
+            </table>
+    </div>
+    <script>
+        myObj;
+        var product_list=JSON.stringify(myObj);     
+        localStorage.setItem("productList",product_list);
+
+        function productList(table1){
+            var product_list=localStorage.getItem("productList");
+            var plist=JSON.parse(product_list);
+            console.log(plist);
+            var counter=0;
+            var trtd="<tr> "+
+                      "<th>No</th>"+
+                      "<th>Name</th>"+
+                      "<th>Price</th>"+
+                      "<th>Location</th>"+
+                      "<th></th>"+
+                      "</tr>";
+            for (const item of plist) {
+                trtd+="<tr>"+
+                  
+                      "<td><input id='eno' name='no' class='form-control'  type='text' value="+(++counter)+"></td>"+
+                      "<td><input id='ename' name='no' class='form-control'  type='text' value="+item.Name+"></td>"+
+                      "<td><input id='eprice' name='no' class='form-control'  type='text' value="+item.Price+"></td>"+
+                      "<td><input id='eloc' name='no' class='form-control'  type='text' value="+item.Location+"></td>"+
+                      "<td><button class='btn btn-danger' onclick='getUpdate(eno,ename,eprice,eloc)'>Update</button></td>"+
+                      "</tr>";
+            }
+            table1.innerHTML=trtd;
+        }
+        function getUpdate(eno,ename,eprice,eloc)
+        {
+            var myObj = JSON.parse(plist);
+                
+            var product_list=JSON.stringify(myObj);
+            
+            
+        }
+    </script>
+    
+    
+</body>
+</html>

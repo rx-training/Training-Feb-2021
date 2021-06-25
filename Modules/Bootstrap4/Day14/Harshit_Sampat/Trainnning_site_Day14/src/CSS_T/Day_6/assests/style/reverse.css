@@ -1,0 +1,16 @@
+.box1{background:green;}
+      .box2{background:blue;}
+      .box3{background:red;}
+      .box4{background:magenta;}
+      .box5{background:yellow;}
+      .box6{background:pink;}
+      
+      .box{
+         font-size:35px;
+         padding:15px;
+      }
+      .container{
+         display:inline-flex;
+         border:3px solid black;
+         flex-direction:row-reverse;
+      }

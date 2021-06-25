@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <title>website</title>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+
+<style>
+ 
+</style>
+</head>
+<body>
+    
+
+<div class="topnav">
+    <image><img1 class="jpg"></img1></image>
+  <!-- <img src="/Modules/CSS/Day6/practice/img1.jpg">Home</img> -->
+  <img src="img/mlogo.png" width="50" height="50" alt="">
+  <a href="#REDMINE" onclick="toogleActiveLink('REDMINE')">REDMINE</a>
+  <a href="#HTML" onclick="toogleActiveLink('HTML')">HTML</a>
+  <a href="#CSS"onclick="toogleActiveLink('CSS')">CSS</a>
+  <a href="#BOOTSTRAP"onclick="toogleActiveLink('BOOTSTRAP')">BOOTSTRAP</a>
+  <a href="#JAVA"onclick="toogleActiveLink('JAVA')">JAVA</a>
+  
+</div>
+
+
+<div class="sidenav" class="menu">
+  <div id="REDMINE" style="display:none">REDMINE
+            <ul>
+                <li>
+                    <a href="#">DAY1</a>
+                    <ul>
+                        <li><a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/Redmine&GIT/Day1/shubham sharma/demo.txt">Demo</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">DAY2</a>
+                    <ul>
+                    <li><a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/Redmine&GIT/Day2/index.html">Index</a></li>
+                    <li><a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/Redmine&GIT/Day2/learning.html">Learning</a></li>
+                    </ul>
+                </li>
+             </ul>
+    </div>     
+  <div id="HTML" style="display:none">HTML
+        <ul>
+            <li>
+                <a href="#">DAY3</a>
+			<ul<li><a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/HTML/Day3/assingment.html">Assingment</a></li></ul>
+            </li>
+        </ul>
+  </div>
+   <div id="CSS" style="display:none">CSS
+            <li>
+                <li>
+                    <a href="#">DAY4</a>
+                    <ul>
+				        <li><a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/CSS/Day4/practice/practice1.html">practice1</a></li>
+                        <li><a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/CSS/Day4/practice/practice2.html">practice2</a></li>
+                        <li><a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/CSS/Day4/practice/practice3&4.html">practice3&4</a></li>
+                        <li><a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/CSS/Day4/practice/practice5.html">practice5</a></li>
+                        <li><a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/CSS/Day4/assingment/resume.html">Assingment</a></li>
+                    </ul>
+                </li>
+            </li>
+            <li>
+                <a href="#">DAY5</a>
+				<a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/CSS/Day5/practice/floatdiv.html">PRACTICE</a>
+                <a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/CSS/Day5/assingment/application.html">Assingment</a>
+            </li>
+            <li>
+                <a href="#">DAY6</a>
+				<a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/CSS/Day6/practice/flexbox.html">PRACTICE</a>
+                <a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/CSS/Day6/assingment/website.html">Assingment</a> 
+            </li>
+            <li>
+                <a href="#">DAY7</a>
+				<a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/CSS/Day6/practice/practice1.html">PRACTICE1</a>
+                <a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/CSS/Day6/practice/practice2.html">PRACTICE2</a>
+                <a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/CSS/Day6/practice/practice3.html">PRACTICE3</a>
+                <a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/CSS/Day6/assingment/assing.html">Assingment</a> 
+            </li>
+            <li>
+                <a href="#">DAY8</a>
+				<a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/CSS/Day6/practice/gridpractice.html">PRACTICE</a>
+                <a href="E:/tranini-reposhubh/Training-Feb-2021/Modules/CSS/Day6/assingment/assingment2.html">Assingment</a> 
+            </li>
+        </ul>
+  </div>
+
+  <a href="#python">python</a>
+  <a href="#JAVA">JAVA</a>
+  <a href="#JAVASCRIPT">JAVASCRIPT</a>
+  <a href="#PHP">PHP</a>
+    
+  </div>
+
+ <div class="divbackground">
+    
+ </div>
+ <script>
+     function toogleActiveLink(id){
+         var div = document.getElementById(id);
+           if(id == 'HTML' ){
+            div.style.display = 'block'; 
+           }else{
+            var div1 = document.getElementById('HTML');
+            div1.style.display = 'none'; 
+           }
+           if(id == 'CSS' ){
+            div.style.display = 'block'; 
+           }else{
+            var div1 = document.getElementById('CSS');
+            div1.style.display = 'none'; 
+           }
+           if(id == 'JAVA' ){
+            div.style.display = 'block'; 
+           }else{
+            var div1 = document.getElementById('JAVA');
+            div1.style.display = 'none'; 
+           }
+           if(id == 'BOOTSTRAP' ){
+            div.style.display = 'block'; 
+           }else{
+            var div1 = document.getElementById('BOOTSTRAP');
+            div1.style.display = 'none'; 
+           }
+           if(id == 'REDMINE' ){
+            div.style.display = 'block'; 
+           }else{
+            var div1 = document.getElementById('REDMINE');
+            div1.style.display = 'none'; 
+           }
+     }
+ </script>
+
+</body>
+</html>

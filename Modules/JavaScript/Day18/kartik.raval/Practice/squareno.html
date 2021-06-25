@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square number</title>
+</head>
+<body>  
+    <p id="demo"></p>
+    <script>
+        function displaysquare(square){
+            document.getElementById("demo").innerHTML = "Square of 5 is "+ square;
+        }
+        function square_no(num1, callback)
+        {
+            return callback(num1 * num1);
+        }
+        square_no(5, displaysquare);
+    </script>
+</body>
+</html>

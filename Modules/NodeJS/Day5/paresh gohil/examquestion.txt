@@ -1,0 +1,20 @@
+                                         math-exam
+
+1. Let R be a relation on the set L of lines defined by l1 R l2 if l1 is perpendicular to l2, then relation R is
+(a) reflexive and symmetric
+(b) symmetric and transitive
+(c) equivalence relation
+(d) symmetric
+
+2. Given triangles with sides T1 : 3, 4, 5; T2 : 5, 12, 13; T3 : 6, 8, 10; T4 : 4, 7, 9 and a relation R in set of triangles defined as R = {(Δ1, Δ2) : Δ1 is similar to Δ2}. Which triangles belong to the same equivalence class?
+(a) T1 and T2
+(b) T2 and T3
+(c) T1 and T3
+(d) T1 and T4
+
+3. Given set A ={1, 2, 3} and a relation R = {(1, 2), (2, 1)}, the relation R will be
+(a) reflexive if (1, 1) is added
+(b) symmetric if (2, 3) is added
+(c) transitive if (1, 1) is added
+(d) symmetric if (3, 2) is added
+

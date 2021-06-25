@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+        <script type="text/javascript">
+            function validate()
+            {
+                flag=0;
+                errorMessage="";
+                var list=[];
+                    if(txtName.value=="")
+                    {
+                        flag=1;
+                        list.push("Name can not be blank");
+                    }
+                    if(txtAddress.value=="")
+                    {
+                        flag=1;
+                        list.push("Address can not be blank");
+                    }
+                    if(flag==1)
+                    {
+                        for(i=0;i<list.length;i++)
+                        {
+                            errorMessage+=list[i]+"</br>";
+                        }
+                        error.innerHTML=errorMessage;
+                    }
+            }
+        </script>
+</head>
+<body>
+    <form >
+        <input id="txtName" type="text">
+        <input id="txtAddress" type="text">
+        <input onclick="validate(txtName,txtAddress,error)" type="button">
+    </form>
+    <span id="error">
+ 
+    </span>
+</body>
+</html>

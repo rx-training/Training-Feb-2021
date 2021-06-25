@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Form</title>
+        <script>
+            var stateObject = {
+            "India": { 
+            "Gujarat": ["Rajkot", "Ahmedabad","Surat"],
+            "Mumbai": ["Churchgate", "Thane"],
+            "Delhi": ["Noida", "South Delhi"]
+            },
+            "USA":
+             {
+            "California": ["Dunt", "texas"],
+            "Gorgea": ["indiana", "zeland"]
+            },
+
+             "Canada": {
+            "Alberta": ["Acadia", "Bighorn"],
+            "Columbia": ["Washington", "vancover"]
+            },
+            }
+
+            window.onload = function () {
+            var countySel = document.getElementById("countySel"),
+            stateSel = document.getElementById("stateSel"),
+            districtSel = document.getElementById("districtSel");
+            for (var country in stateObject) {
+            countySel.options[countySel.options.length] = new Option(country, country);
+            }
+            countySel.onchange = function () {
+            stateSel.length = 1; 
+            districtSel.length = 1; 
+            if (this.selectedIndex < 1) return; 
+            for (var state in stateObject[this.value]) {
+            stateSel.options[stateSel.options.length] = new Option(state, state);
+            }
+            }
+            countySel.onchange(); 
+            stateSel.onchange = function () {
+            districtSel.length = 1; 
+            if (this.selectedIndex < 1) return;
+            var district = stateObject[countySel.value][this.value];
+            for (var i = 0; i < district.length; i++) {
+            districtSel.options[districtSel.options.length] = new Option(district[i], district[i]);
+            }
+            }
+            }
+
+            function store () {
+                 var inputfirstname= document.getElementById("firstname");
+                 var inputlastname= document.getElementById("lastname");
+                 var inputphone= document.getElementById("phone");
+                // var inputcity= document.getElementById("city");
+
+                 localStorage.setItem("firstname", inputfirstname.value);
+                 localStorage.setItem("lastname", inputlastname.value);
+                 localStorage.setItem("phone", inputphone.value);
+
+                 //localStorage.setItem("city", inputcity.value);         
+                        };
+
+            </script>
+
+        <style>
+            * {
+                background-color:whitesmoke;
+                box-sizing: border-box;
+                }
+                form {border: 3px solid whitesmoke}
+
+            body { font-size: large;}
+
+
+            input[type=text], 
+            input[type=lname],
+            input[type=tel] 
+
+            {
+              width: 100%;
+              padding: 12px 20px;
+              margin: 8px 0;
+              box-sizing: border-box;
+            }
+
+            button {
+                background-color: olivedrab;
+                color: white;
+                padding: 15px 25px;
+                margin: 8px 0;
+                border: none;
+                width: 100%;
+                }
+            </style>
+
+    </head>
+<body>
+    <form>
+   <center> <h2>Form</h2></center>
+
+<div class="container">
+    <h3>Employee detail Form</h3>
+    <label for="fname" id="firstname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Name" required><br><br>
+
+    <label for="lname" id="lastname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Last Name"  required><br><br>
+
+    <label for="phone" id="phone">Phone number:</label>
+    <input type="tel" id="phone" name="phone" placeholder="12345-67899" pattern="[0-9]{5}-[0-9]{5}" required><br><br>
+
+    Select Country: <select name="state" id="countySel" size="1" id="city">
+        <option value="" selected="selected">Select Country</option>
+        </select>
+        <br>
+        <br>
+        Select State: <select name="country" id="stateSel" size="1">
+        <option value="" selected="selected">Please select Country first</option>
+        </select>
+        <br>
+        <br>
+        Select District: <select name="district" id="districtSel" size="1">
+        <option value="" selected="selected">Please select State first</option>
+        </select><br><br>
+
+        <button type="submit" onclick="store()" > Submit </button> 
+    </form>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html> 
