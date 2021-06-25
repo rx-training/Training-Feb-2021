@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder, Validators,FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -53,8 +54,17 @@ export class AskQuestionComponent implements OnInit {
     
     this.user.postQuestion(this.userId,this.questionForm.value).subscribe(
       res=>{
+        alert("Question Post Successfully");
         this.route.navigate(['']);
         console.log(res);
+        
+      },
+      err=>{
+        if(err instanceof HttpErrorResponse){
+          if(err.status === 401){
+            this.route.navigate(['login'])
+          }
+        }
       }
     );
   }

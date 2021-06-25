@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StackOverFlow.Models;
 
 namespace StackOverFlow.Migrations
 {
     [DbContext(typeof(StackOverFlowContext))]
-    partial class StackOverFlowContextModelSnapshot : ModelSnapshot
+    [Migration("20210623054450_VoteDetailTable")]
+    partial class VoteDetailTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -46,6 +46,7 @@ namespace StackOverFlow.Controllers
         public ActionResult<Answer> PostAnswer(int userid,int queId, Answer ans)
         {
             var user = userManager.Users.First(x => x.UserName == User.Identity.Name);
+            
             if (!_unitOfWork.AppUsers.ValidateUser(user.Id, userid))
             {
                 return Unauthorized();
@@ -93,6 +94,7 @@ namespace StackOverFlow.Controllers
         public ActionResult GiveUpVoteToAns(int userId,int queId,int ansId)
         {
             var user = userManager.Users.First(x => x.UserName == User.Identity.Name);
+            var voteDetail = _unitOfWork.Vote.Find(v => v.AppUserId == userId && v.AnswerId == ansId).Any();
             if (!_unitOfWork.AppUsers.ValidateUser(user.Id, userId))
             {
                 return Ok(new Response()
@@ -105,15 +107,37 @@ namespace StackOverFlow.Controllers
             {
                 return Ok(new Response() { Status = "Fail", Message = "Question not Exist" });
             }
-            var ans = _unitOfWork.Answer.GetById(ansId);
+            
             if(_unitOfWork.AppUsers.GetById(userId).Reputation < 50)
             {
                 return Ok(new Response() { Status = "Fail", Message = "You must have atleast 50 Reputaion points to give vote" });
             }
-            ans.Vote += 1;
-            _unitOfWork.Answer.UpdateAnswer(ansId,ans);
-            _unitOfWork.Complete();
-            return Ok(ans);
+            if (voteDetail)
+            {
+                return Ok(new Response() { Status = "Fail", Message = "You have already voted to this Answer" });
+            }
+            var ans = _unitOfWork.Answer.GetById(ansId);
+            var appUser = _unitOfWork.AppUsers.Find(a => a.UserId == ans.UserId).FirstOrDefault();
+            if (appUser.ApplicationUserId == user.Id)
+            {
+                return Ok(new Response() { Status = "Fail", Message = "You Cannot give Vote to Your Answer" });
+            }
+                
+                ans.Vote += 1;
+                _unitOfWork.Answer.UpdateAnswer(ansId, ans);
+                var vote = new Vote();
+                vote.AppUserId = userId;
+                vote.AnswerId = ansId;
+                vote.timeOfVote = DateTime.Now;
+                _unitOfWork.Vote.Add(vote);
+
+                
+                appUser.Reputation += 1;
+                _unitOfWork.AppUsers.UpdateUser(appUser.UserId, appUser);
+
+                _unitOfWork.Complete();
+                return Ok(ans);
+            
 
         }
 
@@ -122,6 +146,7 @@ namespace StackOverFlow.Controllers
         public ActionResult GiveDownVoteToAns(int userId, int queId, int ansId)
         {
             var user = userManager.Users.First(x => x.UserName == User.Identity.Name);
+            var voteDetail = _unitOfWork.Vote.Find(v => v.AppUserId == userId && v.AnswerId == ansId).Any();
             if (!_unitOfWork.AppUsers.ValidateUser(user.Id, userId))
             {
                 return Ok(new Response()
@@ -135,12 +160,26 @@ namespace StackOverFlow.Controllers
                 return Ok(new Response() { Status = "Fail", Message = "Quesion Not Exist" });
             }
             var ans = _unitOfWork.Answer.GetById(ansId);
+            var appUser = _unitOfWork.AppUsers.Find(a => a.UserId == ans.UserId).FirstOrDefault();
             if (_unitOfWork.AppUsers.GetById(userId).Reputation < 50)
             {
                 return Ok(new Response() { Status = "Fail", Message = "You must have atleast 50 Reputaion points to give vote" });
             }
+            if (voteDetail)
+            {
+                return Ok(new Response() { Status = "Fail", Message = "You have already voted to this Answer" });
+            }
+            if (appUser.ApplicationUserId == user.Id)
+            {
+                return Ok(new Response() { Status = "Fail", Message = "You Cannot give Vote to Your Answer" });
+            }
             ans.Vote -= 1;
             _unitOfWork.Answer.UpdateAnswer(ansId, ans);
+            var vote = new Vote();
+            vote.AppUserId = userId;
+            vote.AnswerId = ansId;
+            vote.timeOfVote = DateTime.Now;
+            _unitOfWork.Vote.Add(vote);
             _unitOfWork.Complete();
             return Ok(ans);
 

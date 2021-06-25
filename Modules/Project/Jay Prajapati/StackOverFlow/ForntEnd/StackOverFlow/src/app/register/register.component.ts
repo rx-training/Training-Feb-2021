@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder,Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import {AuthenticationService} from '../authentication.service';
-
+import {PasswordStrengthValidator} from '../Validation/password-strength.validators';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -16,8 +16,8 @@ export class RegisterComponent implements OnInit {
     Username: ['',[Validators.required,Validators.minLength(3)]],
     FullName : ['',Validators.required],
     Email : ['',[Validators.required,Validators.email]],
-    Password : ['',[Validators.required,Validators.pattern('((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30})')]] //
-  });
+    Password : ['',[Validators.required,PasswordStrengthValidator]] ///((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30})/gm
+  });//"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
   ngOnInit(): void {
   }
 
@@ -40,16 +40,20 @@ export class RegisterComponent implements OnInit {
     .subscribe(
       res => {
         if(res.status == "Success"){
-          console.log(res.status);
+          alert(res.message);
           this.route.navigate(['login']);
+        }else{
+          alert(res.message)  
         }
-        console.log(res)
-      }
+        
+      },
+      err=>alert(err.error.message)
       
     )
   }
 
   loginUser(){
     this.route.navigate(['login']);
+        
   }
 }

@@ -10,7 +10,7 @@
             <a  routerLink='/home' routerLinkActive="" class="text-dark nav-link"><strong class="ml-2">HOME</strong></a>
             <p class="ml-2">PUBLIC</p>
             <a  routerLink='/questions' routerLinkActive=""class="dropdown-item"><i class="fa fa-globe"></i> Questions</a>
-            <!-- <a  routerLink='/tags' routerLinkActive=""class="dropdown-item">Tags</a> -->
+            <a  routerLink='/tags' routerLinkActive=""class="dropdown-item">Tags</a>
             <a routerLink='/users' routerLinkActive=""class="dropdown-item">Users</a>
             <!-- <p class="ml-2">FIND A JOB</p>
             <a href="" class="dropdown-item">Jobs</a>
@@ -20,20 +20,20 @@
         <a href="index.html" class="navbar-brand d-none d-md-block"><img src="../assets/Images/Logo.png"
             alt="StackOverFlow" width="150px"></a>
   
-        <ul class="nav mr-auto">
+        <!-- <ul class="nav mr-auto">
           <li class="nav-item">
             <a href=""  class="nav-link text-dark">Products</a>
           </li>
   
-        </ul>
+        </ul> -->
         <a href="index.html" class="navbar-brand d-md-none  ">
           <img src="../assets/Images/smalLogo.png" alt="StackOverFlow" width="35px">
   
         </a>
-        <form class="form-inline my-2 my-lg-0 d-none d-lg-block ml-auto">
+        <!-- <form class="form-inline my-2 my-lg-0 d-none d-lg-block ml-auto">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+          <button class="btn btn-outline-success my-2 my-sm-0"(click) = "SearchQuestion()"type="submit">Search</button>
+        </form> -->
   
         <ul class="nav ml-auto" >
           <li class="nav-item" [class.d-none]="!isUserLoggedIn()">
@@ -50,6 +50,10 @@
           </li>
           <li class="nav-item"[class.d-none]="!isUserLoggedIn()">
             <a href="" class="nav-link text-dark px-2" data-toggle="tooltip" data-placement="bottom" title="Stack Exchange"><i class="fa fa-stack-exchange"></i></a>
+          </li>
+          <li class="nav-item"[class.d-none]="!isUserLoggedIn()">
+            <button type="button" class="nav-link text-dark px-2 border-0 bg-light"
+            data-toggle="tooltip" data-placement="bottom" title="Log Out" (click)="logOutUser()"><i class="fa fa-sign-out" aria-hidden="true"></i></button>
           </li>
           <li class="nav-item"[class.d-none]="isUserLoggedIn()">
             <a routerLink="/login" class="nav-link text-dark px-2">Login</a>
@@ -78,11 +82,11 @@
             <a class="nav-link text-dark" routerLink='/home' routerLinkActive="active-item"><strong>Home</strong></a>
           </li>
           <li class="nav-item">PUBLIC
-            <a class="nav-link text-dark" routerLink='/questions'routerLinkActive="active-item"><i class="fa fa-globe"> Question</i></a>
+            <a class="nav-link text-dark" routerLink='/questions'routerLinkActive="active-item"><i class="fa fa-globe d-none d-lg-inline"></i> Question</a>
           </li>
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link text-dark" routerLink='/tags' routerLinkActive="active-item">Tags</a>
-          </li> -->
+          </li>
           <li class="nav-item">
             <a class="nav-link text-dark" routerLink='/users' routerLinkActive="active-item">Users</a>
           </li>

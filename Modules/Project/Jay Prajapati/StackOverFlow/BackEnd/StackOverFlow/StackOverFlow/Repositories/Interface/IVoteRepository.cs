@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace StackOverFlow.Repositories.Interface
 {
-    public interface ITagRepository : IGenericRepository<Tag>
+    public interface IVoteRepository : IGenericRepository<Vote>
     {
-        public List<Tag> getByQueId(int queId);
-        public List<string> getDistinctTag();
-
-
     }
 }

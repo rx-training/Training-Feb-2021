@@ -23,5 +23,9 @@ export class QuestionsService {
     return this.http.get(this.baseUrl +'/Home/question/' + queid);
   }
 
+  searchQuestion(Que : string){
+    
+    return this.http.get(`${this.baseUrl}/Home/SearchQuetsion/${Que}`);
+  }
 
 }

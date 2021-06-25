@@ -36,6 +36,7 @@ namespace StackOverFlow.UnitOfWorkPattern
             WorkExperience = new WorkExperienceRepository(context);
             WhereUserLikeToWork = new WhereUserLikeToWorkRepository(context);
             TechnologiesUsedByUserInJob = new TechnologiesUsedByUserInJobRepository(context);
+            Vote = new VoteRepository(context);
 
         }
 
@@ -78,6 +79,7 @@ namespace StackOverFlow.UnitOfWorkPattern
         public IWorkExperienceRepository WorkExperience { get; private set; }
         public IWhereUserLikeToWorkRepository WhereUserLikeToWork { get; private set; }
 
+        public IVoteRepository Vote { get; private set; }
         public int Complete()
         {
             return _context.SaveChanges();

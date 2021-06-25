@@ -15,6 +15,8 @@ import { QuesionAnswerDetailComponent } from './quesion-answer-detail/quesion-an
 import { AskQuestionComponent } from './ask-question/ask-question.component';
 import { AuthGuard } from './auth.guard';
 import {TokenInterceptorService} from './token-interceptor.service';
+import { AuthenticationService } from './authentication.service';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import {TokenInterceptorService} from './token-interceptor.service';
     PageNotFoundComponent,
     QuesionAnswerDetailComponent,
     AskQuestionComponent,
+    
     
   ],
   imports: [
@@ -37,7 +40,7 @@ import {TokenInterceptorService} from './token-interceptor.service';
     TagsModule,
     UsersModule
   ],
-  providers: [AuthGuard,
+  providers: [AuthGuard,AuthenticationService,
   {
     provide : HTTP_INTERCEPTORS,
     useClass : TokenInterceptorService,

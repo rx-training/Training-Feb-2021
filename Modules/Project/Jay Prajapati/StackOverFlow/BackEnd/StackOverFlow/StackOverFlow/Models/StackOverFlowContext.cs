@@ -39,6 +39,7 @@ namespace StackOverFlow.Models
         public virtual DbSet<VwUserQadetail> VwUserQadetails { get; set; }
         public virtual DbSet<WhereUserLikeToWork> WhereUserLikeToWorks { get; set; }
         public virtual DbSet<WorkExperience> WorkExperiences { get; set; }
+        public DbSet<Vote> Votes { get; set; }
 
 //        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 //        {

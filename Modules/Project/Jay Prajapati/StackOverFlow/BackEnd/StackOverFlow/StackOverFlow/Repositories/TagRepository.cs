@@ -19,5 +19,10 @@ namespace StackOverFlow.Repositories
             var tags = _cont.Tags.Where(t => t.QuestionId == queId).ToList();
             return tags;
         }
+        public List<string> getDistinctTag()
+        {
+            var tags = _cont.Tags.Select(t => t.TagName).Distinct().ToList();
+            return tags;
+        }
     }
 }

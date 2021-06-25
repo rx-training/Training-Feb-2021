@@ -8,6 +8,7 @@ import { ActivityComponent } from './activity/activity.component';
 import { DevelopStoryComponent } from './develop-story/develop-story.component';
 import { EditProfileAndSettingsComponent } from './edit-profile-and-settings/edit-profile-and-settings.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BookmarkedQuestionsComponent } from './bookmarked-questions/bookmarked-questions.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     UserProfileComponent,
     ActivityComponent,
     DevelopStoryComponent,
-    EditProfileAndSettingsComponent
+    EditProfileAndSettingsComponent,
+    BookmarkedQuestionsComponent
   ],
   imports: [
     CommonModule,

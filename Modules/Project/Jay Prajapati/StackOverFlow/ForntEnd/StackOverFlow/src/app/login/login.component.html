@@ -3,7 +3,7 @@
 <!-- login form -->
 <div class="container mt-5 pt-5">
     <div class="row justify-content-md-center">
-        <div class="col-md-4">
+        <div class="col-lg-6">
             <div class="card">
             <div class="card-header">
                 <h2>Login Form</h2>
@@ -42,11 +42,11 @@
         
                 </div>
                 
-        
-                <button class="btn btn-primary mr-2" type="submit" (click)='loginUser()'>
+    
+                <button class="btn btn-primary btn-block" [disabled]="loginForm.invalid" type="submit" (click)='loginUser()'>
                     Login
-                </button>
-                <button class="btn btn-primary" type="submit" (click)='registerUser()'>
+                </button><br>
+                <button class="btn btn-block border-none bg-light text-primary my-2" type="submit" (click)='registerUser()'>
                     You don't have an Account
                 </button>
             </form>

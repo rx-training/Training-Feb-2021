@@ -51,5 +51,12 @@ namespace StackOverFlow.Repositories
         {
             return null;
         }
+
+        public IEnumerable<object> FindQuestion(string quesPart)
+        {
+            var questions = context.Questions.Where(q => q.Question1.Contains(quesPart.Trim())).AsEnumerable();
+            return questions;
+        }
+
     }
 }

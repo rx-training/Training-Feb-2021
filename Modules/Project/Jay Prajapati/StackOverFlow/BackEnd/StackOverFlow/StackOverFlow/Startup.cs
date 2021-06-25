@@ -62,6 +62,7 @@ namespace StackOverFlow
             services.AddTransient<IVwUserQADetailRepository, VwUserQADetailRepository>();
             services.AddTransient<IWorkExperienceRepository, WorkExperienceRepository>();
             services.AddTransient<IWhereUserLikeToWorkRepository, WhereUserLikeToWorkRepository>();
+            services.AddTransient<IVoteRepository, VoteRepository>();
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
 
@@ -115,7 +116,7 @@ namespace StackOverFlow
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseCors(options =>
-            options.WithOrigins("http://localhost:4200")
+            options.AllowAnyOrigin()
             .AllowAnyMethod()
             .AllowAnyHeader());
 

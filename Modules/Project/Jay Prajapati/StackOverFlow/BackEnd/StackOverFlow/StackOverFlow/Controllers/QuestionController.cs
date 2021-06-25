@@ -91,6 +91,8 @@ namespace StackOverFlow.Controllers
         public ActionResult GiveUpVoteToQue(int userid,int queId)
         {
             var user = userManager.Users.First(x => x.UserName == User.Identity.Name);
+            
+            var voteDetails = _unitOfWork.Vote.Find(u => u.AppUserId == userid && u.QuestionId == queId).Any();
             if (!_unitOfWork.AppUsers.ValidateUser(user.Id, userid))
             {
                 return Ok(new Response() {
@@ -101,9 +103,30 @@ namespace StackOverFlow.Controllers
             {
                 return Ok(new Response() { Status = "Fail", Message = "You must have atleast 50 Reputaion points to give vote" });
             }
+            if (voteDetails)
+            {
+                return Ok(new Response() { Status = "Fail", Message = "You have already Voted to this Question" });
+            }
+            
             Question que = _unitOfWork.Question.GetById(queId);
+            var appUser = _unitOfWork.AppUsers.Find(a => a.UserId == que.UserId).FirstOrDefault();
+            if (appUser.ApplicationUserId == user.Id)
+            {
+                return Ok(new Response() { Status = "Fail", Message = "You Cannot give Vote to Your Question" });
+            }
             que.Vote += 1;
             _unitOfWork.Question.UpdateQuestion(queId, que);
+            
+
+            Vote vote = new Vote();
+            vote.AppUserId = userid;
+            vote.QuestionId = queId;
+            vote.timeOfVote = DateTime.Now;
+            _unitOfWork.Vote.Add(vote);
+
+            
+            appUser.Reputation += 1;
+            _unitOfWork.AppUsers.UpdateUser(appUser.UserId, appUser);
             _unitOfWork.Complete();
             return Ok(que);
         }
@@ -113,6 +136,7 @@ namespace StackOverFlow.Controllers
         public ActionResult GiveDownVoteToQue(int userid, int queId)
         {
             var user = userManager.Users.First(x => x.UserName == User.Identity.Name);
+            var voteDetails = _unitOfWork.Vote.Find(u => u.AppUserId == userid && u.QuestionId == queId).Any();
             if (!_unitOfWork.AppUsers.ValidateUser(user.Id, userid))
             {
                 return Ok(new Response()
@@ -125,9 +149,23 @@ namespace StackOverFlow.Controllers
             {
                 return Ok(new Response() { Status = "Fail", Message = "You must have atleast 50 Reputaion points to give vote" });
             }
+            if (voteDetails)
+            {
+                return Ok(new Response() { Status = "Fail", Message = "You have already Voted to this Question" });
+            }
             Question que = _unitOfWork.Question.GetById(queId);
+            var appUser = _unitOfWork.AppUsers.Find(a => a.UserId == que.UserId).FirstOrDefault();
+            if (appUser.ApplicationUserId == user.Id)
+            {
+                return Ok(new Response() { Status = "Fail", Message = "You Cannot give Vote to Your Question" });
+            }
             que.Vote -= 1;
             _unitOfWork.Question.UpdateQuestion(queId, que);
+            Vote vote = new Vote();
+            vote.AppUserId = userid;
+            vote.QuestionId = queId;
+            vote.timeOfVote = DateTime.Now;
+            _unitOfWork.Vote.Add(vote);
             _unitOfWork.Complete();
             return Ok(que);
         }
@@ -166,6 +204,7 @@ namespace StackOverFlow.Controllers
         }
 
 
+        
 
 
     }

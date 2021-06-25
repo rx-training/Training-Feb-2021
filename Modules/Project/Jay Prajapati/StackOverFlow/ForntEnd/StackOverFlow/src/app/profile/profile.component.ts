@@ -1,4 +1,6 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsersService } from '../users.service';
 
 @Component({
@@ -10,12 +12,19 @@ export class ProfileComponent implements OnInit {
 
   currentUser : any;
   currentUserId : any;
-  constructor(private userService : UsersService) { }
+  constructor(private userService : UsersService,private route : Router) { }
 
   ngOnInit(): void {
     this.currentUserId = localStorage.getItem('userId');
-    this.userService.getUserById(this.currentUserId).subscribe(
-      res=>this.currentUser = res
+    this.userService.getCurrentUser().subscribe(
+      res=>this.currentUser = res,
+      err=>{
+        if(err instanceof HttpErrorResponse){
+          if(err.status === 401){
+            this.route.navigate(['login'])
+          }
+        }
+      }
     )
   }
 

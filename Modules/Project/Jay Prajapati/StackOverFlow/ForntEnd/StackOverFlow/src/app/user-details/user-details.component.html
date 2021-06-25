@@ -1,15 +1,15 @@
 <!-- {{user | json}} -->
-<div class="container-fluid mt-5 pt-5">
-    <div class="row">
-        <div class="col-md-3">
+<div class="container-fluid px-0 mt-5 pt-5">
+    <div class="row px-0">
+        <div class="col-xl-3">
             <div class="card">
                 <div class="card-body">
                     <div class="display-1 text-warning text-center"><img src="../../assets/Images/avatar.png"
                             alt="dfhad" width="140px"></div>
 
-                    <h3 class="text-center">{{user.reputation}} REPUTATION</h3>
+                    <h5 class="text-center pt-2">{{user.reputation}} REPUTATION</h5>
                 </div>
-                <div class="card-footer">
+                <div class="card-footer text-center">
                     <small class="border border-warning rounded py-1 px-2 m-1 text-warning"><i
                             class="fa fa-circle text-warning"></i> 100</small>
                     <small class="border rounded py-1 px-2 m-1"><i class="fa fa-circle"></i> 50</small>
@@ -18,11 +18,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-xl-6">
             <h2>{{user.fullName}}</h2>
             <p>{{user.aboutUser}}</p>
         </div>
-        <div class="col-md-3">
+        <div class="col-xl-3">
             <div class="row">
                 <div class="col">
                     <h4>{{user.answers.length}}</h4>
@@ -45,15 +45,15 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid mt-4 px-0">
         <h3>Top Posts <small class="text-muted">{{user.answers.length + user.questions.length}}</small></h3>
         <hr>
-        <div class="container-fluid">
+        <div class="container-fluid px-0">
 
 
-            <ul *ngFor="let q of user.questions;index as idx" class="">
+            <ul *ngFor="let q of user.questions;index as idx" class="container-fluid px-0">
 
-                <a routerLink="/questions/{{q.questionId}}" class="list-group-item "><strong>{{idx+1}}. </strong> {{q.question1}}<span class="float-right small text-dark">{{q.timeOfAsk}}</span></a>
+                <a routerLink="/questions/{{q.questionId}}" class="list-group-item "><strong>{{idx+1}}. </strong> {{q.question1}}<span class="float-right small text-dark d-none d-md-inline">{{q.timeOfAsk}}</span></a>
                 
 
             </ul>

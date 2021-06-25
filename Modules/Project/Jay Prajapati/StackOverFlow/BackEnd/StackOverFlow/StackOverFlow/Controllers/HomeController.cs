@@ -23,6 +23,20 @@ namespace StackOverFlow.Controllers
             this._userManager = userManager;
         }
 
+        //[HttpGet]
+        //[Route("isLoggedIn")]
+        //public Boolean IsLoggedIn()
+        //{
+        //    var user = _userManager.Users.FirstOrDefault(x => x.UserName == User.Identity.Name)!;
+        //    if (user != null)
+        //    {
+        //        return true;
+        //    }
+        //    return false;
+
+        //}
+
+        // Users
         [HttpGet]
         [Route("allUsers")]
         public ActionResult GetAllUsers()
@@ -48,6 +62,15 @@ namespace StackOverFlow.Controllers
             return Ok(user);
         }
 
+        [HttpGet]
+        [Route("SearchUser/{user}")]
+        public ActionResult SearchUser(string user)
+        {
+            var users = _unitOfWork.AppUsers.SearchUser(user);
+            return Ok(users);
+        }
+
+        //Questions
 
         [HttpGet]
         [Route("topQuestions")]
@@ -88,7 +111,18 @@ namespace StackOverFlow.Controllers
             return Ok(Que);
         }
 
+        [HttpGet]
+        [Route("SearchQuetsion/{Que}")]
+        public ActionResult SearchQuestion(string Que)
+        {
+            var ques = _unitOfWork.Question.FindQuestion(Que);
+            return Ok(ques);
+        }
 
+        
+
+
+        // Answers
         [HttpGet]
         [Route("answers")]
         public ActionResult<IEnumerable<Answer>> GetAnswer(int queId)
@@ -99,6 +133,15 @@ namespace StackOverFlow.Controllers
             return Ok(ans);
         }
 
+        //Tags
+        [HttpGet]
+        [Route("allTags")]
+        public ActionResult GerAllTags()
+        {
+            var tags = _unitOfWork.Tag.getDistinctTag();
+   
+            return Ok(tags);
+        }
 
 
     }

@@ -15,6 +15,9 @@
         </div>
         <div class="col-10">
             <p>{{queAnsDetails.questionBody}}</p>
+            <span *ngFor="let t of queAnsDetails.tags" class="pl-3">
+                <button type="button" class="btn btn-secondary">{{t.tagName}}</button>
+              </span>
         </div>
     </div>
     <hr>

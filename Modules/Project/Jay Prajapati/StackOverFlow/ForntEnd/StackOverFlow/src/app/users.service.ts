@@ -13,10 +13,10 @@ export class UsersService {
 
   private baseUrl = environment.baseUrl;
 
-  httpHeaders = new HttpHeaders({
-    'content-type' : 'application/json',
-    'Authorization': 'dfahdufendcjnvadjbviusdnvail'
-  });
+  // httpHeaders = new HttpHeaders({
+  //   'content-type' : 'application/json',
+  //   'Authorization': 'dfahdufendcjnvadjbviusdnvail'
+  // });
 
   // User Services
   getUserById(userId : number){
@@ -33,6 +33,10 @@ export class UsersService {
 
   putUser(userId : number,user : any){
     return this.http.put(`${this.baseUrl}/User/${userId}`, user);
+  }
+
+  searchUser(user : string){
+    return this.http.get(`${this.baseUrl}/Home/SearchUser/${user}`);
   }
 
 
@@ -71,5 +75,16 @@ export class UsersService {
     return this.http.get(`${this.baseUrl}/${userId}/Answer/${queId}/DownVote/${ansId}`);
   }
   
+
+  // Tags
+
+  getAllTags(){
+    return this.http.get(`${this.baseUrl}/Home/allTags`);
+  }
+
+  // Bookmarked Questions
+  getBookmarked(userId : number){
+    return this.http.get(`${this.baseUrl}/User/bookmarked/${userId}`);
+  }
 
 }

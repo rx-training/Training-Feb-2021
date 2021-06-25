@@ -17,16 +17,16 @@
           </ul>        -->
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link border rounded p-2 m-2 text-center small" routerLink="/questions/{{q.questionId}}">{{q.votesForQuestion}}<br>Votes</a>
+              <a class="nav-link border rounded p-2 m-2 text-center small d-lg-block d-none" routerLink="/questions/{{q.questionId}}">{{q.votesForQuestion}}<br>Votes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link border border-success rounded p-2 m-2 text-center small" routerLink="/questions/{{q.questionId}}">{{q.numberOfAnswers}}<br>Ans</a>
+              <a class="nav-link border border-success rounded p-2 m-2 text-center small  d-lg-block d-none" routerLink="/questions/{{q.questionId}}">{{q.numberOfAnswers}}<br>Ans</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link border rounded p-2 m-2 text-center small" routerLink="/questions/{{q.questionId}}">{{q.totalViews}}<br>Views</a>
+              <a class="nav-link border rounded p-2 m-2 text-center small d-lg-block d-none" routerLink="/questions/{{q.questionId}}">{{q.totalViews}}<br>Views</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link m-2 rounded text-center" routerLink="/questions/{{q.questionId}}">{{q.question}}</a>
+              <p><a class="nav-link m-2 rounded text-center" routerLink="/questions/{{q.questionId}}">{{q.question}}</a></p>
             </li>
           </ul>
     </div>

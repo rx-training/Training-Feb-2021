@@ -13,5 +13,6 @@ namespace StackOverFlow.Repositories.Interface
         public IEnumerable<Question> GetAllQuestions();
         public IEnumerable<object> GetQADetail();
         public IEnumerable<object> GetQADetailById();
+        public IEnumerable<object> FindQuestion(string quesPart);
     }
 }

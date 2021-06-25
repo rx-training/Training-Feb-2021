@@ -42,6 +42,7 @@ namespace StackOverFlow.Controllers
         //    return Ok(user); 
         //}
 
+        
 
 
         //GET: api/<UserController>
@@ -98,6 +99,21 @@ namespace StackOverFlow.Controllers
             _unitOfWork.AppUsers.UpdateUser(id, appUser);
             _unitOfWork.Complete();
             return user;
+        }
+
+        // bookmarkedQuestions
+        [HttpGet]
+        [Route("bookmarked/{id}")]
+        public ActionResult GetBookmarkedQuestions(int id)
+        {
+            var u = userManager.Users.AsNoTracking().First(x => x.UserName == User.Identity.Name);
+            if (!_unitOfWork.AppUsers.ValidateUser(u.Id, id))
+            {
+                return Unauthorized();
+            }
+            var bookmarked = _unitOfWork.Bookmark.GetBookmarkedDetails(id);
+            return Ok(bookmarked);
+
         }
 
         

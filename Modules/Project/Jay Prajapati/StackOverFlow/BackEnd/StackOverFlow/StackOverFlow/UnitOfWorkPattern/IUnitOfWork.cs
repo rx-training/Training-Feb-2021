@@ -28,6 +28,7 @@ namespace StackOverFlow.UnitOfWorkPattern
         IWorkExperienceRepository WorkExperience { get; }
         IWhereUserLikeToWorkRepository WhereUserLikeToWork { get; }
         ITechnologiesUsedByUserInJobRepository TechnologiesUsedByUserInJob { get; }
+        IVoteRepository Vote { get; }
         int Complete();
     }
 }

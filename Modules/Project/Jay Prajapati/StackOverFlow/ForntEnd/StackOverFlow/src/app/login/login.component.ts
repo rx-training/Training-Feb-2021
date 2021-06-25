@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 
 import {AuthenticationService} from '../authentication.service';
+import { PasswordStrengthValidator } from '../Validation/password-strength.validators';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   loginForm = this.fb.group({
     Username: ['',[Validators.required,Validators.minLength(3)]],
-    Password : ['',[Validators.required,Validators.pattern('((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30})')]]
+    Password : ['',[Validators.required,PasswordStrengthValidator]]
   });
   ngOnInit(): void {
   }
@@ -37,23 +38,40 @@ export class LoginComponent implements OnInit {
     this._auth.loginUser(this.loginForm.value)
       .subscribe(
         (res: any) => {
-          if (res.response.status == "Success") {
+             
+       if(res.token != undefined){
             localStorage.setItem('token', res.token);
             localStorage.setItem('userId',res.user);
-            // console.log(res);
-            // this.currentUserToken = res;
-            // this.childEvent.emit("Hello World");
-            console.log(res.response.message);
+            alert("Login Successfully done");
+            //console.log(res);
+            //this.currentUserToken = res;
+            //console.log(res.message);
             //console.log(res.token);
             this.route.navigate(['']);
+       } else{
+        alert("username or password incorrect!");
+       }
+         
+
+          // if (res.status == "Success") {
+          //   localStorage.setItem('token', res.token);
+          //   localStorage.setItem('userId',res.user);
+          //   alert(res.message);
+          //   //console.log(res);
+          //   //this.currentUserToken = res;
+          //   console.log(res.message);
+          //   //console.log(res.token);
+          //   this.route.navigate(['']);
               
-          } else {
-            alert(res.message);
-          }
+          // } else {
+          //   alert(res.message);
+          // }
 
 
         },
-
+        // (err : any) => {
+        //   alert(err.message);
+        // }
       );
 
       

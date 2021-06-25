@@ -12,5 +12,6 @@ namespace StackOverFlow.Repositories.Interface
 
         public bool ValidateUser(string cred, int id);
         public void UpdateUser(int id, AppUser user);
+        public IEnumerable<AppUser> SearchUser(string user);
     }
 }

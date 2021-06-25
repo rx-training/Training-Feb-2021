@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {QuestionsService} from '../questions.service';
 import {Router} from '@angular/router';
 
+import { FormBuilder, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-questions',
   templateUrl: './questions.component.html',
@@ -9,8 +11,14 @@ import {Router} from '@angular/router';
 })
 export class QuestionsComponent implements OnInit {
 
+  serachedQuestions : any;
   allQuestions : any;
-  constructor(private questions: QuestionsService,private route: Router) { }
+  constructor(private fb : FormBuilder,
+    private questions: QuestionsService,private route: Router) { }
+
+    searchForm = this.fb.group({
+      Que: ['', [Validators.required, Validators.minLength(10)]],
+    });
   ngOnInit(): void {
     
     this.questions.getAllQuestions().subscribe(
@@ -27,7 +35,34 @@ export class QuestionsComponent implements OnInit {
   askQuestion(){
     this.route.navigate(['ask-question']);
   }
+  SearchQuestion(){
+    var que = this.searchForm.get('Que')!.value;
+    if(que != ''){
+      this.questions.searchQuestion(que).subscribe(
+        (res : any)=>{
+          if(res.length == 0){
+            alert("Not Found");
+          }
+          else{
+            this.allQuestions = res; 
+          console.log(res)
+          }
+          
+        }
+      );
+    }else{
 
+      this.questions.getAllQuestions().subscribe(
+        res=>{
+          this.allQuestions = res;
+          console.log(res);
+          console.log(this.allQuestions)
+        },
+        err=>console.log(err)
+      )
+
+    }
+  }
 
 
 }

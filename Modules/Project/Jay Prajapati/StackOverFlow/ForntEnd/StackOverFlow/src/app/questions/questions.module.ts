@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { QuestionsRoutingModule } from './questions-routing.module';
 import { QuestionsComponent } from './questions.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,7 +14,9 @@ import { QuestionsComponent } from './questions.component';
   ],
   imports: [
     CommonModule,
-    QuestionsRoutingModule
+    FormsModule,
+    QuestionsRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class QuestionsModule { }

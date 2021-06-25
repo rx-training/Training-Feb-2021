@@ -40,6 +40,13 @@ namespace StackOverFlow.Repositories
             return true;
         }
 
+        public IEnumerable<AppUser> SearchUser(string user)
+        {
+            
+            var users = context.AppUsers.Where(u => u.FullName.Contains(user.Trim())).AsEnumerable();
+            return users;
+        }
+
         
     }
 }

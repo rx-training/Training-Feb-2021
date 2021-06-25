@@ -73,12 +73,13 @@ namespace StackOverFlow.Controllers
                 _unitOfWork.Complete();
 
 
-                var res = new Response { Status = "Success", Message = "User Login Sucessfully!" };
+                //var res = new Response { Status = "Success", Message = "User Login Sucessfully!" };
                 return Ok(new
                 {
                     token = new JwtSecurityTokenHandler().WriteToken(token),
                     expiration = token.ValidTo,
-                    response = res,
+                    Status = "Success",
+                    Message = "User Login Successfully!",
                     user = appUser.UserId
                 }) ;
             }
