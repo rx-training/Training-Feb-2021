@@ -15,6 +15,7 @@ export default function Home(props) {
    const postedBy = localStorage.getItem('user')
    const [storyData, setStoryData] = useState([])
    const [view, setView] = useState([])
+   const [comment, setComment] = useState("")
 
    useEffect(() => {
       UserService.allPost(token)
@@ -37,7 +38,7 @@ export default function Home(props) {
          })
          .catch(err => { console.log(err) })
 
-   }, [])
+   })
 
    const makeComment = (text, postId) => {
 
@@ -61,6 +62,8 @@ export default function Home(props) {
          }).catch(err => {
             console.log(err)
          })
+
+      setComment("")
 
    }
 
@@ -400,7 +403,7 @@ export default function Home(props) {
                                              makeComment(e.target[0].value, item._id)
 
                                           }}>
-                                             <input placeholder="Add a comment..." className="w-100 border-0 p-3" />
+                                             <input placeholder="Add a comment..." className="w-100 border-0 p-3" name="comment" value={comment} onChange={(e) => setComment(e.target.value)} />
                                              <button className="btn btn-rpimary position-absolute btn-post mr-3">
                                                 post
                                              </button>
