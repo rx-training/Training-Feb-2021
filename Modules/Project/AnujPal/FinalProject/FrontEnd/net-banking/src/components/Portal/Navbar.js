@@ -1,25 +1,27 @@
 import React from "react";
 import Logo from "../Images/3.jpg";
-import { BsFillPersonFill } from "react-icons/bs";
+import { ImProfile } from "react-icons/im";
 // import { FaFacebookF } from "react-icons/fa";
 // import { AiFillInstagram } from "react-icons/ai";
 // import { AiOutlineTwitter } from "react-icons/ai";
 import "./navbar.scss";
-import { Redirect } from "react-router-dom";
 
 export const Navbar = (props) => {
   const { id } = props;
-  const editProfile = () => {
-    console.log("hii");
-    return <Redirect to={`/`} />;
-  };
+  // const editProfile = () => {
+  //   console.log("hii");
+  //   return <Redirect to={`/`} />;
+  // };
   return (
-    <nav class="navbar navbar-expand-md navbar-light bg-light row">
+    <nav
+      className="navbar navbar-expand-lg navbar-light bg-light"
+      style={{ backgroundColor: "#FFEEDB" }}
+    >
       <a className="navbar-brand" href="http://localhost:3000/">
-        <img style={{ height: "60px", width: "100px" }} alt="logo" src={Logo} />
+        <img height="70" width="100" alt="logo" src={Logo} />
       </a>
       <button
-        class="navbar-toggler"
+        className="navbar-toggler"
         type="button"
         data-toggle="collapse"
         data-target="#navbarSupportedContent"
@@ -27,24 +29,27 @@ export const Navbar = (props) => {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span className="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse " id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto align-items-center  ">
-          <li class="nav-item mx-3">
-            <a class="nav-link " href={`http://localhost:3000/Home/${id}`}>
+      <div
+        className="collapse navbar-collapse d-lg-flex justify-content-between     "
+        id="navbarSupportedContent"
+      >
+        <ul className="navbar-nav text-center pt-2 ms-4  ">
+          <li className="nav-item mx-3">
+            <a className="nav-link " href={`http://localhost:3000/Home/${id}`}>
               Home
             </a>
           </li>
 
-          <li class="nav-item  mx-3">
+          <li className="nav-item  mx-3">
             {/* <a class="nav-link" href={`http://localhost:3000/Portal/${id}/NEFT`}>
               Transfer
             </a> */}
-            <div class="dropdown">
+            <div className="dropdown">
               <button
-                class="btn btn-secondary dropdown-toggle h5"
+                className="btn btn-secondary dropdown-toggle h5"
                 type="button"
                 id="dropdownMenuButton"
                 data-toggle="dropdown"
@@ -176,20 +181,20 @@ export const Navbar = (props) => {
               About Us
             </a>
           </li>
+          <li class="nav-item mx-3 ">
+            <div className="me-auto " style={{ marginLeft: "0px" }}>
+              <a
+                className=" nav-link"
+                href={`http://localhost:3000/Portal/${id}/editProfile`}
+              >
+                {/* <button className=" btn btn-sm btn-outline-secondary ">Profile</button> */}
+                <ImProfile className="h2" />
+
+                <span> Profile</span>
+              </a>
+            </div>
+          </li>
         </ul>
-        <div id="spans" className="p-2 nav-link mx-3  text-center ">
-          <span className="p-3 h4 " onClick={editProfile}>
-            <a
-              className="mt-0"
-              href={`http://localhost:3000/Portal/${id}/editProfile`}
-            >
-              {" "}
-              <BsFillPersonFill className="h1 text-center" />
-              <br />
-              <span className="h5 ml-4 mt-0">Profile</span>
-            </a>
-          </span>
-        </div>
       </div>
     </nav>
   );

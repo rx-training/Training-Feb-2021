@@ -8,10 +8,18 @@ import { FiLogOut } from "react-icons/fi";
 import ProjectService from "../Services/LoginService";
 import Logo from "../components/Images/bank.jpg";
 import FireBase from "../Fire-Base/FireBase";
+import { Carousel } from "react-bootstrap";
+import image1 from "../components/Images/24.jpg";
+import image2 from "../components/Images/25.jpg";
+import image3 from "../components/Images/26.jpg";
+import { ImCross } from "react-icons/im";
+import { BiTransferAlt } from "react-icons/bi";
 
 export const NEFT1 = (props) => {
-  var todayDate=new Date()
-  var lastUpdateddate=`${todayDate.getDate()}/${todayDate.getMonth()+1}/${todayDate.getFullYear()}`
+  var todayDate = new Date();
+  var lastUpdateddate = `${todayDate.getDate()}/${
+    todayDate.getMonth() + 1
+  }/${todayDate.getFullYear()}`;
   const [ben, setBen] = useState([]);
   const [state1, setstate1] = useState(false);
   // const [state2, setstate2] = useState(false);
@@ -31,12 +39,12 @@ export const NEFT1 = (props) => {
     CRN: "",
   });
   const [CRN, setCRN] = useState([]);
- 
-  useEffect( () => {
-     ProjectService.getCustomer(props.match.params.id).then((res) => {
+
+  useEffect(() => {
+    ProjectService.getCustomer(props.match.params.id).then((res) => {
       setCustomer(res.data[0]);
     });
-     ProjectService.getCustomerByCRN({ CRN: customer.CRN }).then(
+    ProjectService.getCustomerByCRN({ CRN: customer.CRN }).then(
       async (res1) => {
         setCRN(res1.data);
       }
@@ -44,7 +52,7 @@ export const NEFT1 = (props) => {
     ProjectService.getBenificiary().then((res) => {
       setBen(res.data);
     });
-  }, [customer,props.match.params.id]);
+  }, [customer, props.match.params.id]);
   const Register = (e) => {
     e.preventDefault();
     ProjectService.AddBenificiary(addBenificiary)
@@ -97,18 +105,17 @@ export const NEFT1 = (props) => {
       });
     // setstate(true);
   };
-  const Remove=(id)=>{
-    ProjectService.deleteBenificiary({_id:id}).then((res)=>{
+  const Remove = (id) => {
+    ProjectService.deleteBenificiary({ _id: id }).then((res) => {
       console.log(res.data);
-    })
-
-  }
+    });
+  };
   return (
     <>
       <Navbar id={props.match.params.id} />
       <div className="container">
-        <div className="row m-3">
-          <div className="col mt-2">
+        <div className="row ">
+          <div className="col ">
             <h3 className="text-center ">
               Mr {customer.fname} {customer.mname} {customer.lname}
             </h3>
@@ -122,7 +129,7 @@ export const NEFT1 = (props) => {
               <FaRupeeSign />
             </span>
             <div style={{ float: "right" }}>
-              <span className="mr-2 h2" onClick={LogOut}>
+              <span className="me-5 h2" onClick={LogOut}>
                 {" "}
                 <FiLogOut />
               </span>
@@ -132,38 +139,37 @@ export const NEFT1 = (props) => {
           </div>
         </div>
 
-        <div className="row">
+        <div className="row mt-3 ">
           <div className="col-md-10 m-4 col-lg-5">
             <h3 className="text-center mb-5">Beneficiary</h3>
-            <table className="table ">
-              <tr>
+            <table className="table">
+              <tr className="text-center">
                 <td>Account Number</td>
                 <td>Name</td>
                 <td>IFSC</td>
-                <td>Action</td>
+                <td colSpan="2">Action</td>
               </tr>
               {ben.map((item) => {
                 return (
-                  <tr className="p-5">
+                  <tr className="p-5 text-center">
                     <td>{item.accountNo}</td>
                     <td>
                       {item.fname} {item.mname} {item.lname}
                     </td>
                     <td>{item.IFSC}</td>
                     <td>
-                      <button
-                        className="btn btn-primary"
-                        onClick={TransferMoney}
-                      >
-                        Transfer
+                      <button className="btn   " onClick={TransferMoney}>
+                        <BiTransferAlt className="h3 text-success" />
                       </button>
                     </td>
                     <td>
                       <button
-                        className="btn btn-danger"
-                        onClick={()=>{Remove(item._id)}}
+                        className="btn text-danger"
+                        onClick={() => {
+                          Remove(item._id);
+                        }}
                       >
-                        Remove
+                        <ImCross className="h6" />
                       </button>
                     </td>
                   </tr>
@@ -281,7 +287,7 @@ export const NEFT1 = (props) => {
             {Transfer ? (
               <form class="p-4 p-md-5 border rounded-3 bg-light mt-5">
                 <h3 className="text-center mb-5">NEFT</h3>{" "}
-                <div class="form-floating mb-3">
+                <div class="form-group-sm mb-3">
                   {" "}
                   <select
                     className="form-control"
@@ -295,8 +301,7 @@ export const NEFT1 = (props) => {
                     })}
                   </select>
                 </div>
-          
-                <div class="form-floating mb-3">
+                <div class="form-group-sm mb-3">
                   <select className="form-control">
                     <option selected> Credit Account Number</option>
                     {ben.map((item) => {
@@ -304,7 +309,7 @@ export const NEFT1 = (props) => {
                     })}
                   </select>
                 </div>
-                <div class="form-floating mb-3">
+                <div class="form-group-sm mb-3">
                   <input
                     type="number"
                     class="form-control"
@@ -318,7 +323,7 @@ export const NEFT1 = (props) => {
                 </div>
                 <div id="recaptcha-container"></div>
                 <button
-                  class="w-100 btn btn-lg btn-primary mt-3 "
+                  class="w-100 btn  btn-primary mt-3 "
                   type="submit"
                   onClick={Submit}
                 >
@@ -329,7 +334,7 @@ export const NEFT1 = (props) => {
             ) : null}
           </div>
 
-          <div class=" col m-4 card card border-0" style={{ width: "18rem" }}>
+          <div class=" col m-4 card card border-0 " style={{ width: "18rem" }}>
             <img class="card-img-top" src={Logo} alt="Card  cap" />
             <div class="card-body">
               <h5 class="card-title text-center">About Our Bank</h5>
@@ -347,21 +352,53 @@ export const NEFT1 = (props) => {
           </div>
         </div>
       </div>
-      <hr className="bg-secondary"/>
-      <article className="container mb-5 ">
       <div className="row">
-      <div className="col">
-      <small className="ml-3">Last Updated On :</small><small className="ml-2 ">{lastUpdateddate}</small>
-        <small className="ml-3 ">|</small>
-        <small className="ml-3 ">Visitors : 27591024</small>
-      </div>
-
-
-        <div className="col">
-          <small className="float-right mr-3">Copyright <AiOutlineCopyright/> {todayDate.getFullYear()} Internet Banking project.All Rights Reserved </small>
+        <div class=" col-lg-11 m-4 card card border-0 mx-auto">
+          <Carousel>
+            <Carousel.Item className="">
+              <img
+                style={{ marginTop: "50px", height: "300px" }}
+                className="d-block w-100"
+                src={image1}
+                alt="First slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                style={{ marginTop: "50px", height: "300px" }}
+                className="d-block w-100"
+                src={image2}
+                alt="Second slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                style={{ marginTop: "50px", height: "300px" }}
+                className="d-block w-100  card-img-top"
+                src={image3}
+                alt="Third slide"
+              />
+            </Carousel.Item>
+          </Carousel>
         </div>
       </div>
-   
+      <hr className="bg-secondary" />
+      <article className="container mb-5 ">
+        <div className="row">
+          <div className="col">
+            <small className="ml-3">Last Updated On :</small>
+            <small className="ml-2 ">{lastUpdateddate}</small>
+            <small className="ml-3 ">|</small>
+            <small className="ml-3 ">Visitors : 27591024</small>
+          </div>
+
+          <div className="col">
+            <small className="float-right mr-3">
+              Copyright <AiOutlineCopyright /> {todayDate.getFullYear()}{" "}
+              Internet Banking project.All Rights Reserved{" "}
+            </small>
+          </div>
+        </div>
       </article>
     </>
   );
