@@ -6,12 +6,18 @@ import { FaRupeeSign } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import Logo from "../../components/Images/bank.jpg";
 import "./home.scss";
+import { Carousel } from "react-bootstrap";
+import image1 from "../../../src/components/Images/24.jpg";
+import image2 from "../../../src/components/Images/25.jpg";
+import image3 from "../../../src/components/Images/26.jpg";
 
 import { Navbar } from "../../components/Portal/Navbar";
 
 export const Home = (props) => {
-  var todayDate=new Date()
-  var lastUpdateddate=`${todayDate.getDate()}/${todayDate.getMonth()+1}/${todayDate.getFullYear()}`
+  var todayDate = new Date();
+  var lastUpdateddate = `${todayDate.getDate()}/${
+    todayDate.getMonth() + 1
+  }/${todayDate.getFullYear()}`;
   // const [state, setstate] = useState(false);
   const [MiniStatement, setMiniStatement] = useState({
     startingDate: "",
@@ -43,7 +49,7 @@ export const Home = (props) => {
     <>
       <Navbar id={props.match.params.id} />
       <div className="container">
-        <div className="row m-3">
+        <div className="row ">
           <div className="col mt-2">
             <h3 className="text-center ">
               Mr {customer.fname} {customer.mname} {customer.lname}
@@ -57,10 +63,10 @@ export const Home = (props) => {
             <small className="h4 pull-right">
               <FaRupeeSign />
             </small>
-            <div style={{ float: "right" }}>
+            <div className="me-5" style={{ float: "right" }}>
               <small className="mr-2 h2" onClick={LogOut}>
                 {" "}
-                <FiLogOut id="logout"/>
+                <FiLogOut id="logout" />
               </small>
               <br></br>
               <small className="h6 ">Logout</small>
@@ -72,11 +78,14 @@ export const Home = (props) => {
           from customers.Only any such call can be made by only
           fraudsters.Please do not share personal Information{" "}
         </marquee>
-        <div className="row mt-5">
-          <div className="col-md-10 m-4 col-lg-5 mb-3 rounded-corner" id="statement">
+        <div className="row mt-3">
+          <div
+            className="col-md-10 m-4 col-lg-5 mb-3 rounded-corner"
+            id="statement"
+          >
             <form className="bg-light p-4 m-4 mt-5" id="addBenficiaryForm">
               <h3 className="text-center mb-5">Statements</h3>
-              <lable className="h6">Enter Starting Date</lable>
+              <label className="h6">Enter Starting Date</label>
               <input
                 type="date"
                 className="form-control mt-2"
@@ -89,7 +98,7 @@ export const Home = (props) => {
                 }}
               />
               <div className="mt-3">
-                <lable className="h6">Enter Ending Date</lable>
+                <label className="h6">Enter Ending Date</label>
                 <input
                   type="date"
                   className="form-control mt-2"
@@ -152,6 +161,9 @@ export const Home = (props) => {
                     let year = tempDate.getFullYear();
                     let day = tempDate.getDate();
                     let date = `${day}/${month}/${year}`;
+                    ProjectService.getCustomerByAccountNumber({accountNo:item.debitAccountNo}).then((res)=>{
+                      console.log(res.data)
+                    })
                     return (
                       <tr>
                         <td className="border border-success">
@@ -170,6 +182,7 @@ export const Home = (props) => {
               </table>
             ) : null}
           </div>
+
           <div class=" col m-4 card card border-0" style={{ width: "18rem" }}>
             <img class="card-img-top" src={Logo} alt="Card  cap" />
             <div class="card-body">
@@ -187,24 +200,55 @@ export const Home = (props) => {
             </div>
           </div>
         </div>
-      </div>
-      <hr className="bg-secondary"/>
-      <article className="container mb-5 ">
-      <div className="row">
-      <div className="col">
-      <small className="ml-3">Last Updated On :</small><small className="ml-2 ">{lastUpdateddate}</small>
-        <small className="ml-3 ">|</small>
-        <small className="ml-3 ">Visitors : 27591024</small>
-      </div>
-
-
-        <div className="col">
-          <small className="float-right mr-3">Copyright <AiOutlineCopyright/> {todayDate.getFullYear()} Internet Banking project.All Rights Reserved </small>
+        <div className="row">
+          <div class=" col-lg-11 m-4 card card border-0 mx-auto" >
+            <Carousel>
+              <Carousel.Item className="">
+                <img
+                  style={{ marginTop: "50px", height: "300px" }}
+                  className="d-block w-100"
+                  src={image1}
+                  alt="First slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  style={{ marginTop: "50px", height: "300px" }}
+                  className="d-block w-100"
+                  src={image2}
+                  alt="Second slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  style={{ marginTop: "50px", height: "300px" }}
+                  className="d-block w-100  card-img-top"
+                  src={image3}
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+            </Carousel>
+          </div>
         </div>
       </div>
-   
+      <hr className="bg-secondary h5" />
+      <article className="container mb-5 ">
+        <div className="row">
+          <div className="col">
+            <small className="ml-3">Last Updated On :</small>
+            <small className="ml-2 ">{lastUpdateddate}</small>
+            <small className="ml-3 ">|</small>
+            <small className="ml-3 ">Visitors : 27591024</small>
+          </div>
+
+          <div className="col">
+            <small className="float-right mr-3">
+              Copyright <AiOutlineCopyright /> {todayDate.getFullYear()}{" "}
+              Internet Banking project.All Rights Reserved{" "}
+            </small>
+          </div>
+        </div>
       </article>
- 
     </>
   );
 };

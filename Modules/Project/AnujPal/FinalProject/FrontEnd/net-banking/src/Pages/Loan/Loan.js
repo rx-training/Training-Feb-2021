@@ -6,19 +6,23 @@ import { MdAccountBalanceWallet } from "react-icons/md";
 import { FaRupeeSign } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import schedule from "node-schedule";
-import FireBase from '../../Fire-Base/FireBase'
+import FireBase from "../../Fire-Base/FireBase";
 
 import ProjectService from "../../Services/LoginService";
 
 export const Loan = (props) => {
-  var todayDate=new Date()
-  var lastUpdateddate=`${todayDate.getDate()}/${todayDate.getMonth()+1}/${todayDate.getFullYear()}`
+  var todayDate = new Date();
+  var lastUpdateddate = `${todayDate.getDate()}/${
+    todayDate.getMonth() + 1
+  }/${todayDate.getFullYear()}`;
   const [Loan, setLoan] = useState({
     CRN: "",
     accountNo: "",
     amount: "",
     duration: "",
   });
+  const [emi, setEmi] = useState(0);
+  const [monthRemaining, setMonthRemaining] = useState(0);
   const [CRN, setCRN] = useState([]);
   const [customer, setCustomer] = useState({});
   useEffect(() => {
@@ -33,7 +37,7 @@ export const Loan = (props) => {
     localStorage.clear();
     props.history.push("/");
   };
-  const Apply = async(e) => {
+  const Apply = async (e) => {
     e.preventDefault();
     // ProjectService.loanApprove(Loan).then((res) => {
     //   console.log(res.data);
@@ -54,7 +58,14 @@ export const Loan = (props) => {
         res
           .confirm(code)
           .then((result) => {
-            ProjectService.loanApprove(Loan).then((res) => {
+            ProjectService.loanApprove({
+              CRN: Loan.CRN,
+              accountNo: Loan.accountNo,
+              duration: Loan.duration,
+              amount: Loan.amount,
+              EMI: emi,
+              monthRemaining: monthRemaining,
+            }).then((res) => {
               console.log(res.data);
             });
             ProjectService.loanNEFT({
@@ -72,7 +83,7 @@ export const Loan = (props) => {
         console.log(err.message);
       });
   };
-  const claculateEMI = (e) => {
+  const claculateEMI = async (e) => {
     e.preventDefault();
     let option = Loan.duration;
     let amount = parseInt(Loan.amount);
@@ -83,6 +94,9 @@ export const Loan = (props) => {
           amount += parseInt((amount * intrest) / 100);
         }
         let EMI = parseInt(amount / 12);
+        setEmi(EMI);
+
+        setMonthRemaining(12);
         alert(`EMI For 1 Year Is :  ` + EMI);
         break;
       case "2 year":
@@ -90,6 +104,8 @@ export const Loan = (props) => {
           amount += parseInt((amount * intrest) / 100);
         }
         let EMI1 = parseInt(amount / 24);
+        await setEmi(EMI1);
+        setMonthRemaining(24);
         alert(`EMI For 2 Year Is :  ` + EMI1);
         break;
       case "3 year":
@@ -97,14 +113,18 @@ export const Loan = (props) => {
           amount += parseInt((amount * intrest) / 100);
         }
         let EMI2 = parseInt(amount / 36);
+        setEmi(EMI2);
+        setMonthRemaining(36);
         alert(`EMI For 3 Year Is :  ` + EMI2);
         break;
       case "4 year":
         for (let index = 0; index < 4; index++) {
           amount += parseInt((amount * intrest) / 100);
         }
-        let EMI3 = parseInt(amount / 48);
 
+        let EMI3 = parseInt(amount / 48);
+        setEmi(EMI3);
+        setMonthRemaining(48);
         alert(`EMI For 4 Year Is :  ` + EMI3);
         break;
 
@@ -217,21 +237,23 @@ export const Loan = (props) => {
           </form>
         </div>
       </div>
-      <hr className="bg-secondary"/>
+      <hr className="bg-secondary" />
       <article className="container mb-5 ">
-      <div className="row">
-      <div className="col">
-      <small className="ml-3">Last Updated On :</small><small className="ml-2 ">{lastUpdateddate}</small>
-        <small className="ml-3 ">|</small>
-        <small className="ml-3 ">Visitors : 27591024</small>
-      </div>
+        <div className="row">
+          <div className="col">
+            <small className="ml-3">Last Updated On :</small>
+            <small className="ml-2 ">{lastUpdateddate}</small>
+            <small className="ml-3 ">|</small>
+            <small className="ml-3 ">Visitors : 27591024</small>
+          </div>
 
-
-        <div className="col">
-          <small className="float-right mr-3">Copyright <AiOutlineCopyright/> {todayDate.getFullYear()} Internet Banking project.All Rights Reserved </small>
+          <div className="col">
+            <small className="float-right mr-3">
+              Copyright <AiOutlineCopyright /> {todayDate.getFullYear()}{" "}
+              Internet Banking project.All Rights Reserved{" "}
+            </small>
+          </div>
         </div>
-      </div>
-   
       </article>
     </>
   );

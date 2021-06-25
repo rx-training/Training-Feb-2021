@@ -80,9 +80,9 @@ export const ViewLoanStatus = (props) => {
         </div>
       </div>
       {state ? (
-        <div className="row text-center w-50  container">
+        <div className=" text-center w-75  container m-auto">
           {loanStatus.length > 0 ? (
-            <table className="table col-md-10 m-auto">
+            <table className="table col-md-10 mx-auto  ">
               <tr>
                 <td className="border border-info h5">Loan No</td>
                 <td className="border border-info h5">CRN</td>

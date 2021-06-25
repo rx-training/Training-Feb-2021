@@ -18,7 +18,7 @@ export const Admin = () => {
   return (
     <>
       <div>
-        <nav class="navbar navbar-expand-md navbar-light bg-light row p-2 m-2">
+        <nav class="navbar navbar-expand-md navbar-light bg-light  p-2 m-2">
           <a
             class="navbar-brand mr-5 ml-5"
             href={`http://localhost:3000/Admin/Dashboard`}

@@ -1,11 +1,15 @@
 import React from "react";
 import { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "../Login/login.scss";
 import ProjectService from "../../Services/LoginService";
 import { Navbar } from "../Navbar";
-import{IoLogoTwitter} from 'react-icons/io'
-import{AiFillYoutube,AiFillLinkedin,AiFillFacebook,AiFillInstagram} from 'react-icons/ai'
+import { IoLogoTwitter } from "react-icons/io";
+import {
+  AiFillYoutube,
+  AiFillLinkedin,
+  AiFillFacebook,
+  AiFillInstagram,
+} from "react-icons/ai";
 
 export const Login = (props) => {
   let tempMessage = "";
@@ -16,7 +20,7 @@ export const Login = (props) => {
     e.preventDefault();
     await ProjectService.login(loginData).then(async (res) => {
       console.log(res.data.token);
-      localStorage.setItem('Token', res.data.token);
+      localStorage.setItem("Token", res.data.token);
       tempMessage = res.data.message;
       tempAccountNo = res.data.accountNo;
     });
@@ -38,10 +42,10 @@ export const Login = (props) => {
       <div className="container col-xl-10 col-xxl-8  ">
         <div className=" row  align-items-center g-lg-5 py-5  ">
           <div className="col-lg-7 text-center text-lg-start ">
-            <h1 className="display-4 font-weight-bold lh-1 mb-3">
+            <h1 className="display-4 font-weight-bold lh-1 mb-3 text-center">
               Online Internet Banking Dummy Project
             </h1>
-            <p className="col-lg-10 fs-4">
+            <p className="col-lg-10 fs-4 ml-5 text-center ">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Blanditiis natus tempora provident maxime voluptate corrupti,
               molestiae commodi, recusandae earum beatae ullam nulla non sint.
@@ -49,9 +53,9 @@ export const Login = (props) => {
               ratione dolorum
             </p>
           </div>
-          <div class="col-md-10 mx-auto col-lg-5">
-            <form class="p-4 p-md-5 border rounded-3 bg-light">
-              <div class="form-floating mb-3">
+          <div className="col-md-10 mx-auto col-lg-5">
+            <form className="p-4 p-md-5 border rounded-3 bg-light">
+              <div className="form-group-sm mb-3">
                 <input
                   type="email"
                   className="form-control"
@@ -63,13 +67,16 @@ export const Login = (props) => {
                       [e.target.name]: e.target.value,
                     });
                   }}
-                />
-                {/* <label htmlFor="UserId">User Id</label> */}
+                /> 
+        
+  
+
+               
               </div>
-              <div className="form-floating mb-3">
+              <div className="form-group-sm mb-3">
                 <input
                   type="password"
-                  class="form-control"
+                  className="form-control"
                   id="floatingPassword"
                   placeholder="Password"
                   name="pass"
@@ -87,7 +94,7 @@ export const Login = (props) => {
                 <div className="col">
                   {" "}
                   <button
-                    class="w-100 btn btn-lg btn-primary"
+                    className="w-100 btn btn-lg btn-primary"
                     onClick={handleSubmit}
                     type="submit"
                   >
@@ -105,47 +112,59 @@ export const Login = (props) => {
                 </div>
               </div>
 
-              <hr class="my-4" />
+              <hr className="my-4" />
               <small className="text-muted">
                 By clicking Sign up, you agree to the terms of use.
               </small>
             </form>
           </div>
         </div>
-      
       </div>
-      <artical className="" id="exclusiveOffers">
+      <article className="" id="exclusiveOffers">
         <h3 className="text-center mx-auto mt-3">
-          <span>        Connect With Us            </span>
-         
+          <span> Connect With Us </span>
         </h3>
         <div>
-        <div className="row text-center mt-3 bg-light">
-          
-      
-         
-          <div className="col " style={{float:'left'}}>
-          <span className="display-4  instagram" >< AiFillInstagram/></span><br></br><span className="display-5 instagram h4 mt-4 ml-0">Instagram</span>
+          <div className="row text-center mt-3 bg-light">
+            <div className="col " style={{ float: "left" }}>
+              <span className="h1  instagram">
+                <AiFillInstagram />
+              </span>
+              <br></br>
+              <span className=" instagram h5 mt-4 ml-0">Instagram</span>
+            </div>
+            <div className="col " style={{ float: "left" }}>
+              <span className="h1 facebook">
+                <AiFillFacebook />
+              </span>
+              <br></br>
+              <span className=" facebook h4 mt-4 ml-0">Facebook</span>
+            </div>
+            <div className="col " style={{ float: "left" }}>
+              <span className="h1 twitter">
+                <IoLogoTwitter />
+              </span>
+              <br></br>
+              <span className=" twitter h4 mt-4 ml-0">Twitter</span>
+            </div>
+            <div className="col " style={{ float: "left" }}>
+              <span className="h1 youTube">
+                <AiFillYoutube />
+              </span>
+              <br></br>
+              <span className=" youTube  h4 mt-4 ml-0">YouTube</span>
+            </div>
+            <div className="col " style={{ float: "left" }}>
+              <span className="h1 linkedIn">
+                <AiFillLinkedin />
+              </span>
+              <br></br>
+              <span className="  h4 mt-4 ml-0 linkedIn">linkedIn</span>
+            </div>
           </div>
-          <div className="col " style={{float:'left'}}>
-          <span className="display-4 facebook" >< AiFillFacebook/></span><br></br><span className="display-5 facebook h4 mt-4 ml-0">Facebook</span>
-          </div>
-          <div className="col " style={{float:'left'}}>
-          <span className="display-4 twitter" ><IoLogoTwitter/></span><br></br><span className="display-5 twitter h4 mt-4 ml-0">Twitter</span>
-          </div>
-          <div className="col " style={{float:'left'}}>
-          <span className="display-4 youTube" ><AiFillYoutube/></span><br></br><span className="display-5 youTube  h4 mt-4 ml-0">YouTube</span>
-          </div>
-          <div className="col " style={{float:'left'}}>
-          <span className="display-4 linkedIn" ><AiFillLinkedin/></span><br></br><span className="display-5  h4 mt-4 ml-0 linkedIn">linkedIn</span>
-          </div>
-         
-      
-
         </div>
-        </div>
-     
-      </artical>
+      </article>
+    
     </>
   );
 };

@@ -23,6 +23,9 @@ class LoginService {
   getCustomerByCRN(obj) {
     return axios.post(LOGIN_BASE_URL + "/getCustomerByCRN", obj);
   }
+  getCustomerByAccountNumber(obj) {
+    return axios.post(ACCOUNT_BASE_URL + "/getCustomerByAccountNumber", obj);
+  }
 
   credit(object) {
     return axios.post(ACCOUNT_BASE_URL + "/credit", object);

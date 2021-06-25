@@ -7,9 +7,15 @@ import { FiLogOut } from "react-icons/fi";
 import ProjectService from "../Services/LoginService";
 import Logo from "../components/Images/bank.jpg";
 import FireBase from "../Fire-Base/FireBase";
+import { Carousel } from "react-bootstrap";
+import image1 from "../components/Images/24.jpg"
+import image2 from "../components/Images/25.jpg";
+import image3 from "../components/Images/26.jpg";
 export const NEFT = (props) => {
-  var todayDate=new Date()
-  var lastUpdateddate=`${todayDate.getDate()}/${todayDate.getMonth()+1}/${todayDate.getFullYear()}`
+  var todayDate = new Date();
+  var lastUpdateddate = `${todayDate.getDate()}/${
+    todayDate.getMonth() + 1
+  }/${todayDate.getFullYear()}`;
   const [customer, setCustomer] = useState({});
   const [state, setstate] = useState(false);
   const [CRN, setCRN] = useState([]);
@@ -86,8 +92,8 @@ export const NEFT = (props) => {
     <>
       <Navbar id={props.match.params.id} />
       <div className="container">
-        <div className="row m-3">
-          <div className="col mt-2">
+        <div className="row ">
+          <div className="col ">
             <h3 className="text-center ">
               Mr {customer.fname} {customer.mname} {customer.lname}
             </h3>
@@ -101,7 +107,7 @@ export const NEFT = (props) => {
               <FaRupeeSign />
             </span>
             <div style={{ float: "right" }}>
-              <span className="mr-2 h2" onClick={LogOut}>
+              <span className="me-5 h2" onClick={LogOut}>
                 {" "}
                 <FiLogOut />
               </span>
@@ -110,11 +116,11 @@ export const NEFT = (props) => {
             </div>
           </div>
         </div>
-        <div className="row mt-5">
+        <div className="row mt-3">
           <div className="col-md-10 m-4 col-lg-5">
             <form class="p-4 p-md-5 border rounded-3 bg-light">
               <h3 className="text-center mb-5">NEFT</h3>
-              <div class="form-floating mb-3">
+              <div class="form-group-sm mb-3">
                 <select
                   className="form-control"
                   onChange={(e) => {
@@ -127,7 +133,7 @@ export const NEFT = (props) => {
                   })}
                 </select>
               </div>
-              <div class="form-floating mb-3">
+              <div class="form-group-sm mb-3">
                 <select
                   className="form-control"
                   onChange={(e) => {
@@ -153,7 +159,7 @@ export const NEFT = (props) => {
                 </select>
               </div>
 
-              <div class="form-floating mb-3">
+              <div class="form-group-sm mb-3">
                 <input
                   type="number"
                   class="form-control"
@@ -195,21 +201,54 @@ export const NEFT = (props) => {
           </div>
         </div>
       </div>
-      <hr className="bg-secondary"/>
-      <article className="container mb-5 ">
       <div className="row">
-      <div className="col">
-      <small className="ml-3">Last Updated On :</small><small className="ml-2 ">{lastUpdateddate}</small>
-        <small className="ml-3 ">|</small>
-        <small className="ml-3 ">Visitors : 27591024</small>
-      </div>
-
-
-        <div className="col">
-          <small className="float-right mr-3">Copyright <AiOutlineCopyright/> {todayDate.getFullYear()} Internet Banking project.All Rights Reserved </small>
+        <div class=" col-lg-11 m-4 card card border-0 mx-auto">
+          <Carousel>
+            <Carousel.Item className="">
+              <img
+                style={{ marginTop: "50px", height: "300px" }}
+                className="d-block w-100"
+                src={image1}
+                alt="First slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                style={{ marginTop: "50px", height: "300px" }}
+                className="d-block w-100"
+                src={image2}
+                alt="Second slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                style={{ marginTop: "50px", height: "300px" }}
+                className="d-block w-100  card-img-top"
+                src={image3}
+                alt="Third slide"
+              />
+            </Carousel.Item>
+          </Carousel>
         </div>
       </div>
-   
+
+      <hr className="bg-secondary fw-bold" />
+      <article className="container mb-5 ">
+        <div className="row">
+          <div className="col">
+            <small className="ml-3">Last Updated On :</small>
+            <small className="ml-2 ">{lastUpdateddate}</small>
+            <small className="ml-3 ">|</small>
+            <small className="ml-3 ">Visitors : 27591024</small>
+          </div>
+
+          <div className="col">
+            <small className="float-right mr-3">
+              Copyright <AiOutlineCopyright /> {todayDate.getFullYear()}{" "}
+              Internet Banking project.All Rights Reserved{" "}
+            </small>
+          </div>
+        </div>
       </article>
     </>
   );

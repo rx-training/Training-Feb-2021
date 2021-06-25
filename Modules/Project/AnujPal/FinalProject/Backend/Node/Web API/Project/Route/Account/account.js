@@ -215,7 +215,7 @@ class demoAccount {
   static async checkBookRequest(req, res) {
     const checkBookRequest = new CheckBookRequest({
       accountNo: req.body.accountNo,
-      name:req.body.name,
+      name: req.body.name,
       CIF: req.body.CIF,
       branchName: req.body.branchName,
       address: req.body.address,
@@ -225,8 +225,7 @@ class demoAccount {
     res.json(a1);
   }
   static async addDebitCardRequest(req, res) {
- 
-    const request =await DebitCardRequest.insertMany([
+    const request = await DebitCardRequest.insertMany([
       {
         accountNo: req.body.accountNo,
         CRN: req.body.CRN,
@@ -236,8 +235,7 @@ class demoAccount {
         status: req.body.status,
       },
     ]);
-    res.json(request)
-   
+    res.json(request);
   }
   static async EMI(req, res) {
     const updateDoc = {
@@ -305,6 +303,10 @@ class demoAccount {
   static async deleteNominee(req, res) {
     const user = await Nominee.deleteOne({ _id: req.body._id });
     res.json(user);
+  }
+  static async getCustomerByAccountNumber(req,res){
+    const user=await NetBanking.find({accountNo:req.body.accountNo})
+    res.json(user)
   }
 }
 // API for inserting the account information
@@ -375,6 +377,7 @@ accountRouter.post(
   demoAccount.deleteNominee
 );
 accountRouter.post("/loanNEFT", verifyToken, ensureToken, demoAccount.loanNEFT);
+accountRouter.post("/getCustomerByAccountNumber", verifyToken, ensureToken, demoAccount.getCustomerByAccountNumber);
 
 accountRouter.post("/LoanApprove", async (req, res) => {
   let count = await Loan.estimatedDocumentCount();
@@ -385,10 +388,11 @@ accountRouter.post("/LoanApprove", async (req, res) => {
     accountNo: req.body.accountNo,
     amount: req.body.amount,
     duration: req.body.duration,
+    EMI: req.body.EMI,
+    monthRemaining: req.body.monthRemaining,
   });
   const a1 = await loanUser.save();
   res.json(a1);
-  console.log(count);
 });
 accountRouter.post("/getLoans", async (req, res) => {
   const loans = await Loan.find({ CRN: req.body.CRN });
