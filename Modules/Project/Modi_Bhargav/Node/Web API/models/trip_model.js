@@ -1,58 +1,48 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const tripSchema = new mongoose.Schema({
-  customerId: {
+const citytripSchema = new mongoose.Schema({
+  customerNumber: {
     type: Number,
-    required: true
   },
-  tripId: {
-    type: Number,
-    required: true
+  driverEmail: {
+    type: String,
+  },
+  driverNumber: {
+    type: String,
+  },
+  ScheduleDate: {
+    type: Date,
+  },
+  Schedule: {
+    type: String,
   },
   dateTime: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   Source: {
     type: String,
-    required: true,
-    minlength: 2,
-    maxlength: 50
   },
   Destination: {
     type: String,
-    required: true,
-    minlength: 2,
-    maxlength: 50
   },
-  carType2: {
+  carType: {
     type: String,
-    required: true,
-    minlength: 2,
-    maxlength: 50
   },
-  Distance: {
-    type: Number,
-    required: true,
-    minlength: 1,
-    maxlength: 3
+  carModel: {
+    type: String,
+  },
+  carNumber: {
+    type: String,
   },
   fareDetails: {
     type: Number,
-    required: true,
-    minlength: 2,
-    maxlength: 4
   },
-  paymentType: {
+  Reason: {
     type: String,
-    required: true,
   },
-  carId: {
-    type: Number,
-    required: true
-  }
-})
+});
 
-const Trip = mongoose.model('trip', tripSchema)
+const CityTrip = mongoose.model("cityTrip", citytripSchema);
 
-module.exports = Trip
+module.exports = CityTrip;

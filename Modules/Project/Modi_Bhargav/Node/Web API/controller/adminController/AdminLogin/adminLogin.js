@@ -1,40 +1,60 @@
+const cityDriver = require("../../../models/cityCar");
+const outstationDriver = require("../../../models/outstationCars");
+const rentalDriver = require("../../../models/rentalCar");
 const express = require("express");
 const routerDriver = express.Router();
-const jwt = require('jsonwebtoken');
-const decrypts = require('../../../crypto/crypto')
-const Drivers = require('../../../models/Drivers_model')
+
+const jwt = require("jsonwebtoken");
 
 class Login {
   static async driverLogin(req, res) {
     const driverData = {
-      driverName: req.body.driverName,
-      passWord: req.body.passWord,
-    }
+      Email1: req.body.Email,
+      passWord1: req.body.passWord,
+    };
     let token = jwt.sign({ driverData }, global.config.secretKey, {
       algorithm: global.config.algorithm,
-      expiresIn: '5m'
+      expiresIn: "24h",
     });
-    const driverDatas = await Drivers.find().select('driverName passWord')
-    var flag = 0;
-    for (var i of driverDatas) {
-      if (driverData.driverName == i.driverName && driverData.passWord == decrypts.decrypt(i.passWord)) {
-        flag = 1
-        break;
-      }
-    }
-    if (flag == 1) {
+
+    const cityDriver1 = await cityDriver.findOne({
+      Email: driverData.Email1,
+      passWord: driverData.passWord1,
+    });
+    const outstationDriver1 = await outstationDriver.findOne({
+      Email: driverData.Email1,
+      passWord: driverData.passWord1,
+    });
+
+    const rentalDriver1 = await rentalDriver.findOne({
+      Email: driverData.Email1,
+      passWord: driverData.passWord1,
+    });
+    if (cityDriver1 !== null) {
       res.status(200).send({
-        message: 'Login Successful',
-        Token: token
+        message: "Login Successful cityDriver",
+        Token: token,
+        cityDriver1,
       });
-    }
-    else {
+    } else if (outstationDriver1 !== null) {
+      res.status(200).send({
+        message: "Login Successful outstationDriver",
+        Token: token,
+        outstationDriver1,
+      });
+    } else if (rentalDriver1 !== null) {
+      res.status(200).send({
+        message: "Login Successful rentalDriver",
+        Token: token,
+        rentalDriver1,
+      });
+    } else {
       res.status(401).send({
-        message: 'Login Failed'
+        message: "Login Failed",
       });
     }
   }
 }
-routerDriver.post('/', Login.driverLogin)
+routerDriver.post("/", Login.driverLogin);
 
-module.exports = routerDriver
+module.exports = routerDriver;
