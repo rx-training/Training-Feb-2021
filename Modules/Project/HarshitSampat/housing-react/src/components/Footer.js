@@ -20,34 +20,34 @@ function Footer() {
 
           <div>
             <section>
-              <span className="partenersSpan">Partners</span>
               <a
                 title="India's most trusted Real Estate Community"
                 href="https://www.indianrealestateforum.com/"
-                target="_blanck"
                 className="communityTilte"
-              ></a>
+              >
+                <span className="partenersSpan">Partners </span>
+              </a>
               <a
                 title="Makan"
                 href="https://www.makaan.com/"
-                target="_blanck"
+                
                 className="makanTitle"
-              ></a>
+              >.</a>
               <a
                 title="Proptiger"
                 href="https://www.proptiger.com/"
-                target="_blanck"
+                
                 className="propertigerTitle"
-              ></a>
+              >.</a>
             </section>
           </div>
-          
+
           <div className="flats-city">
             <div className="item-count">
               <a
                 className="item css-t99auo"
                 href="/in/buy/real-estate-mumbai"
-                target="_blank"
+              
               >
                 Real estate in Mumbai
               </a>
@@ -436,6 +436,234 @@ function Footer() {
               >
                 New Projects in Ghaziabad
               </a>
+            </div>
+          </div>
+
+          <div className="css-91v8jw">
+            <div className="css-1pm2x0l">
+              <img
+                src="//c.housingcdn.com/demand/s/common/assets/housing.df1a39a7.png"
+                className="css-1b2zfjq"
+                alt="Housing.com"
+                decoding="async"
+              />
+              <div className="css-metqbo">
+                <img
+                  src="//c.housingcdn.com/demand/s/common/assets/gptw.6303ca11.png"
+                  className="css-1ng9s81"
+                  alt="Great Places to work - Housing.com"
+                  decoding="async"
+                />
+              </div>
+              <div className="css-u0a6qi">
+                © 2012-21 Locon Solutions Pvt. Ltd.
+              </div>
+            </div>
+            <div className="css-1ywe5zi">
+              <div className="css-mwxbls">
+                <div className="css-g9daoc">Company</div>
+                <div className="css-xclhr7">
+                  <a
+                    rel="nofollow"
+                    target="_blank"
+                    className="css-yafbxc"
+                    href="/careers"
+                  >
+                    Careers
+                  </a>
+                  <a
+                    rel="nofollow"
+                    target="_blank"
+                    className="css-yafbxc"
+                    href="/about"
+                  >
+                    About Us
+                  </a>
+                  <a
+                    rel="nofollow"
+                    target="_blank"
+                    className="css-yafbxc"
+                    href="/partners"
+                  >
+                    For Partners
+                  </a>
+                  <a
+                    rel="nofollow"
+                    target="_blank"
+                    className="css-yafbxc"
+                    href="/terms-of-use"
+                  >
+                    Terms
+                  </a>
+                  <a
+                    rel="nofollow"
+                    target="_blank"
+                    className="css-yafbxc"
+                    href="/privacy-policy"
+                  >
+                    Privacy Policy
+                  </a>
+                  <a
+                    rel="nofollow"
+                    target="_blank"
+                    className="css-yafbxc"
+                    href="/contact-us"
+                  >
+                    Contact Us
+                  </a>
+                  <a
+                    rel="nofollow"
+                    target="_blank"
+                    className="css-yafbxc"
+                    href="/unsubscribe"
+                  >
+                    Unsubscribe
+                  </a>
+                </div>
+              </div>
+              <div className="css-mwxbls">
+                <div className="css-g9daoc">Partner Sites</div>
+                <div className="css-xclhr7">
+                  <a
+                    rel="noreferrer"
+                    href="https://www.proptiger.com/"
+                    target="_blank"
+                    className="css-yafbxc"
+                  >
+                    Proptiger
+                  </a>
+                  <a
+                    rel="noreferrer"
+                    href="https://www.makaan.com/"
+                    target="_blank"
+                    className="css-yafbxc"
+                  >
+                    Makaan
+                  </a>
+                  <a
+                    rel="noreferrer"
+                    href="https://www.indianrealestateforum.com/"
+                    target="_blank"
+                    className="css-yafbxc"
+                  >
+                    IREF
+                  </a>
+                  <a
+                    rel="noreferrer"
+                    href="https://www.realestate.com.au/"
+                    target="_blank"
+                    className="css-yafbxc"
+                  >
+                    realestate.com.au
+                  </a>
+                  <a
+                    rel="noreferrer"
+                    href="https://realtor.com/"
+                    target="_blank"
+                    className="css-yafbxc"
+                  >
+                    realtor.com
+                  </a>
+                  <a
+                    rel="noreferrer"
+                    href="https://www.99.co/"
+                    target="_blank"
+                    className="css-yafbxc"
+                  >
+                    99.co
+                  </a>
+                </div>
+              </div>
+              <div className="css-mwxbls">
+                <div className="css-g9daoc">Explore</div>
+                <div className="css-xclhr7">
+                  <a
+                    rel="noreferrer"
+                    href="https://housing.com/news/"
+                    target="_blank"
+                    className="css-yafbxc"
+                  >
+                    News
+                  </a>
+                  <a
+                    rel="noreferrer"
+                    href="https://housing.com/home-loans/"
+                    target="_blank"
+                    className="css-yafbxc"
+                  >
+                    Home Loans
+                  </a>
+                  <a
+                    rel="noreferrer"
+                    target="_blank"
+                    className="css-yafbxc"
+                    href="/sitemap"
+                  >
+                    Sitemap
+                  </a>
+                  <a
+                    rel="noreferrer"
+                    href="https://housing.com/international"
+                    target="_blank"
+                    className="css-yafbxc"
+                  >
+                    International
+                  </a>
+                </div>
+              </div>
+              <div className="css-mwxbls">
+                <div className="css-g9daoc">Follow</div>
+                <div className="css-xclhr7">
+                  <a
+                    rel="nofollow"
+                    href="https://www.facebook.com/housing.co.in"
+                    
+                    className="css-yafbxc"
+                  >
+                    Facebook
+                  </a>
+                  <a
+                    rel="nofollow"
+                    href="https://instagram.com/housingindia/"
+                    
+                    className="css-yafbxc"
+                  >
+                    Instagram
+                  </a>
+                  <a
+                    rel="nofollow"
+                    href="https://twitter.com/housing"
+                    
+                    className="css-yafbxc"
+                  >
+                    Twitter
+                  </a>
+                  <a
+                    rel="nofollow"
+                    href="https://www.linkedin.com/company/2741657"
+                    
+                    className="css-yafbxc"
+                  >
+                    LinkedIn
+                  </a>
+                  <a
+                    rel="nofollow"
+                    href="https://www.pinterest.com/housingindia/"
+                    
+                    className="css-yafbxc"
+                  >
+                    Pinterest
+                  </a>
+                  <a
+                    rel="nofollow"
+                    href="https://www.youtube.com/user/HousingY"
+                    
+                    className="css-yafbxc"
+                  >
+                    Youtube
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

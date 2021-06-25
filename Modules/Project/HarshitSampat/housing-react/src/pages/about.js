@@ -2,6 +2,7 @@ import React from 'react'
 import  '../Styles/about.css'
 import img from '../Images/logo-4.png'
 import { BsHeartFill } from "react-icons/bs";
+import Footer from "../components/Footer";
 // import profile from "../Images/profile-about.jpg";
 
 function about() {
@@ -101,6 +102,7 @@ function about() {
 \
           </div>
         </div>
+        <Footer/>
       </>
     );
 }

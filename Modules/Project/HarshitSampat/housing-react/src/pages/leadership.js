@@ -2,6 +2,7 @@ import React from 'react'
 import "../Styles/leadership.css";
 import img from "../Images/logo-4.png";
 import { BsHeartFill } from "react-icons/bs";
+import Footer from "../components/Footer";
 
 function leadership() {
     return (
@@ -38,6 +39,7 @@ function leadership() {
             </a>
           </div>
         </div>
+        <Footer/>
       </>
     );
 }

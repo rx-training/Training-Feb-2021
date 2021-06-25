@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from "../components/Footer";
 
  const Error = () => {
     
@@ -14,6 +15,7 @@ import React from 'react'
            <h4 className="text-center text-light mt-5 mb-5"> Click here to revert Main page</h4>
           </a>
         </div>
+        <Footer/>
       </>
     );
 }

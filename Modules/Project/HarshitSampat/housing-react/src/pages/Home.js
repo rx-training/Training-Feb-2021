@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Navbar1 from "../components/Navbar";
 import SearchNavbar from "../components/SearchNavbar";
 import payrent from "../Images/card-images/payRent.svg";
@@ -7,32 +7,26 @@ import movers from "../Images/card-images/movers.svg";
 import furniture from "../Images/card-images/furniture.svg";
 import property from "../Images/card-images/propertyManagement.svg";
 import topProject from "../Images/topproject.png";
-import axios from 'axios'
-import Footer from '../components/Footer'
-
-
+// import axios from "axios";
+import Footer from "../components/Footer";
 
 function Home() {
-  const [allData,setAllData] = useState([]);
-  const [filterData,setFilterData] = useState(allData);
+  // const [allData, setAllData] = useState([]);
+  // const [filterData, setFilterData] = useState(allData);
 
-  const handleSearch = (event) =>{
+  const handleSearch = (event) => {};
 
-  }
-
-  useEffect(()=>{
-    axios("https://jsonplaceholder.typicode.com/albums/1/photos")
-    .then(response=>{
-      console.log(response.data)
-      setAllData(response.data)
-      setFilterData(response.data);
-    })
-    .catch(error =>{
-      console.log('Error getting fake data:' +error);
-    });
-
-    
-  },[]);
+  // useEffect(() => {
+  //   axios("https://jsonplaceholder.typicode.com/albums/1/photos")
+  //     .then((response) => {
+  //       console.log(response.data);
+  //       setAllData(response.data);
+  //       setFilterData(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Error getting fake data:" + error);
+  //     });
+  // }, []);
 
   const city = "Ahmedabad";
   return (
@@ -207,7 +201,7 @@ function Home() {
 
           <div className="spotlight-background-image ">
             <a
-              href="/artsland-projects"
+              href="/Project/artsland-projects"
               className="text-light bold bg-dark  ml-5"
             >
               View Project Details
@@ -245,7 +239,7 @@ function Home() {
                   Strolling Track, Gymnasium, Badminton Court, and Swimming
                   Pool.
                 </p>
-                <a href="/buy/top-project" className="btn btn-primary">
+                <a href="/Project/top-project" className="btn btn-primary">
                   View Details
                 </a>
               </div>
@@ -362,11 +356,10 @@ function Home() {
           </header>
         </section>
       </div>
-        
-        <div>
-          <Footer></Footer>
-          </div>
-      
+
+      <div>
+        <Footer></Footer>
+      </div>
     </>
   );
 }

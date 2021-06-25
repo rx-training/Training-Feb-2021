@@ -3,12 +3,12 @@ import { Navbar, Nav } from "react-bootstrap";
 import logo from "../Images/logo-4.png";
 import { CgProfile, } from "react-icons/cg";
 import { BsHeartFill } from "react-icons/bs";
-import {NavLink , BrowserRouter as Router,Link,Route} from 'react-router-dom'
-import Modal from 'react-modal'
+import { BrowserRouter as Router} from 'react-router-dom'
+// import Modal from 'react-modal'
 
 
 export default function Navbar1() {
-  const [loginlIsOpen, setloginIsOpen] = useState(false);
+  // const [loginlIsOpen, setloginIsOpen] = useState(false);
   return (
     // code for navabar
     <Navbar

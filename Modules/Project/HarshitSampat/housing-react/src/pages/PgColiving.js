@@ -7,6 +7,7 @@ import movers from "../Images/card-images/movers.svg";
 import furniture from "../Images/card-images/furniture.svg";
 import property from "../Images/card-images/propertyManagement.svg";
 import topProject from "../Images/topproject.png";
+import Footer from "../components/Footer";
 
 function PgColiving() {
     const city = "Ahmedabad"
@@ -356,6 +357,7 @@ function PgColiving() {
             </header>
           </section>
         </div>
+        <Footer/>
       </>
     );
 }

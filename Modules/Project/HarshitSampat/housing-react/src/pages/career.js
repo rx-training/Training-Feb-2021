@@ -4,6 +4,7 @@ import img from "../Images/logo-4.png";
 import { BsHeartFill } from "react-icons/bs";
 import banner from '../Images/careerPoster.jpg'
 import banner1 from '../Images/careerimg2.jpg'
+import Footer from "../components/Footer";
 
 
 function career() {
@@ -54,6 +55,7 @@ function career() {
           <img src={banner1} alt="img-2" className="carrer-img-2"/>
 
         </div>
+        <Footer/>
       </>
     );
 }

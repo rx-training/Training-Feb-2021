@@ -2,6 +2,7 @@ import React from "react";
 import "../Styles/culture.css";
 import img from "../Images/logo-4.png";
 import { BsHeartFill } from "react-icons/bs";
+import Footer from "../components/Footer";
 
 function culture() {
   return (
@@ -71,6 +72,7 @@ function culture() {
           </article>
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 }
