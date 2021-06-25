@@ -82,7 +82,7 @@ export default function Department(props) {
 
   return (
     <tr>
-      <td>
+      <td className="text-light">
         {editItem ? (
           <form onSubmit={handleEdit} className="form-inline my-2 ">
             <div className="input-group w-100">

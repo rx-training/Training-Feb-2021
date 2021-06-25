@@ -56,7 +56,7 @@ class TechGroupDomain {
     if (!tGrp)
       return res.status(404).send("TechGroup with given id not found!!!");
 
-    //delete users in TechGroup
+    //delete tech in TechGroup
     await Technology.deleteMany({ techGroup: req.params.id });
 
     debug("deleted tGrp: ", tGrp);

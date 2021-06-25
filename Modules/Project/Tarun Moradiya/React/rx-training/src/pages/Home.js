@@ -27,7 +27,11 @@ export default function Home() {
   if (loadingTechGrps) {
     return (
       <div className="container">
-        <img src={loadingGif} alt="Loading..." className="img-fluid" />
+        <img
+          src={loadingGif}
+          alt="Loading..."
+          className="img-fluid d-block m-auto"
+        />
       </div>
     );
   }

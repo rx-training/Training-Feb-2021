@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const Day_API_BASE_URL = "http://localhost:5000/plans";
+const Day_API_BASE_URL = `${process.env.REACT_APP_URL}/plans`;
 // axios.defaults.headers.common["Authorization"] = localStorage.getItem("token");
 
 class DayService {

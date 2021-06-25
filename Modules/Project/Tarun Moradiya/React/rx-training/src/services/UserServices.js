@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const user_API_BASE_URL = "http://localhost:5000/users";
+const user_API_BASE_URL = `${process.env.REACT_APP_URL}/users`;
 // axios.defaults.headers.common["Authorization"] = localStorage.getItem("token");
 
 class UserServices {

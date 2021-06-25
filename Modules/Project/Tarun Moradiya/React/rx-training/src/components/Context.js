@@ -100,7 +100,7 @@ export default function Context(props) {
         <Card.Title>{context.context}</Card.Title>
       </Accordion.Toggle>
       <Accordion.Collapse eventKey={context._id}>
-        <p className="lead p-3">{context.description}</p>
+        <p style={{whiteSpace: 'pre-line'}} className="lead p-3">{context.description}</p>
       </Accordion.Collapse>
     </Card>
   );

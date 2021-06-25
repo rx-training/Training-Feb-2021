@@ -156,98 +156,96 @@ export default function Plan({ match }) {
   }
 
   return (
-    <Container fluid="md">
-      <Row className="m-auto">
-        <Col md="3">
-          <Sidebar days={days} />
-        </Col>
-        <Col md="8">
-          <div className="clearfix p-2">
-            {isAdminUser === true && (
-              <>
-                <button
-                  className="btn btn-warning float-right ml-2"
-                  onClick={handleShowDay}
-                >
-                  <i className="fas fa-plus"></i>
-                </button>
-                {displayAddForm && (
-                  <AddDay
-                    id="add-tech-type"
-                    inpDayRef={inpDayRef}
-                    show={showDay}
-                    handleClose={handleCloseDay}
-                    add={addDay}
-                  />
-                )}
-                <button
-                  onClick={handleDeleteBtn}
-                  className="btn btn-danger float-right ml-2"
-                >
-                  <i className="fas fa-trash"></i>
-                </button>
-                <button
-                  onClick={handleShow}
-                  className="btn btn-primary float-right ml-2"
-                >
-                  <i className="fas fa-pen"></i>
-                </button>
-                <button
-                  className="btn btn-secondary float-right ml-2"
-                  onClick={handleShowCsv}
-                >
-                  <i className="fas fa-file-csv"></i>
-                </button>
-              </>
-            )}
-            {diplayUpdateForm && (
-              <UpdatePlan
-                id="add-tech-type"
-                inpRef={inpRef}
-                show={show}
-                handleClose={handleClose}
-                update={handleUpdate}
-                plan={plan}
-              />
-            )}
-
-            {displayAddCsvForm && (
-              <AddCsvFile
-                id="add-days"
-                func={addDays}
-                handleClose={handleCloseCsv}
-                show={showCsv}
-              />
-            )}
-            {loadingTitle ? (
-              <img
-                src={loadingGif}
-                alt="Loading..."
-                className="img-fluid d-block mx-auto"
-              />
-            ) : (
-              <h1 className="display-3">{`${tech.name} ${plan.name}`}</h1>
-            )}
-          </div>
-          <hr />
-          {days.map((day) => (
-            <Day
-              key={day._id}
-              day={day}
-              planId={plan._id}
-              deleteDay={deleteDay}
-              updateDay={updateDay}
+    <Row className="m-0">
+      <Col md="3">
+        <Sidebar days={days} />
+      </Col>
+      <Col md="8">
+        <div className="clearfix p-2">
+          {isAdminUser === true && (
+            <>
+              <button
+                className="btn btn-warning float-right ml-2"
+                onClick={handleShowDay}
+              >
+                <i className="fas fa-plus"></i>
+              </button>
+              {displayAddForm && (
+                <AddDay
+                  id="add-tech-type"
+                  inpDayRef={inpDayRef}
+                  show={showDay}
+                  handleClose={handleCloseDay}
+                  add={addDay}
+                />
+              )}
+              <button
+                onClick={handleDeleteBtn}
+                className="btn btn-danger float-right ml-2"
+              >
+                <i className="fas fa-trash"></i>
+              </button>
+              <button
+                onClick={handleShow}
+                className="btn btn-primary float-right ml-2"
+              >
+                <i className="fas fa-pen"></i>
+              </button>
+              <button
+                className="btn btn-secondary float-right ml-2"
+                onClick={handleShowCsv}
+              >
+                <i className="fas fa-file-csv"></i>
+              </button>
+            </>
+          )}
+          {diplayUpdateForm && (
+            <UpdatePlan
+              id="add-tech-type"
+              inpRef={inpRef}
+              show={show}
+              handleClose={handleClose}
+              update={handleUpdate}
+              plan={plan}
             />
-          ))}
-          {loadingNew && (
+          )}
+
+          {displayAddCsvForm && (
+            <AddCsvFile
+              id="add-days"
+              func={addDays}
+              handleClose={handleCloseCsv}
+              show={showCsv}
+            />
+          )}
+          {loadingTitle ? (
             <img
               src={loadingGif}
               alt="Loading..."
               className="img-fluid d-block mx-auto"
             />
+          ) : (
+            <h1 className="display-3">{`${tech.name} ${plan.name}`}</h1>
           )}
-        </Col>
-      </Row>
-    </Container>
+        </div>
+        <hr />
+        {days.map((day) => (
+          <Day
+            key={day._id}
+            day={day}
+            planId={plan._id}
+            deleteDay={deleteDay}
+            updateDay={updateDay}
+          />
+        ))}
+        {loadingNew && (
+          <img
+            src={loadingGif}
+            alt="Loading..."
+            className="img-fluid d-block mx-auto"
+          />
+        )}
+      </Col>
+    </Row>
   );
 }

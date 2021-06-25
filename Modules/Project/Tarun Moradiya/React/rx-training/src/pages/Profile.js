@@ -40,7 +40,7 @@ export default function Profile() {
         </Card.Header>
         <Card.Body>
           <Table bordered striped>
-            <thead>
+            <thead className="text-light">
               <tr>
                 <th>Name</th>
                 <td>{user.name}</td>

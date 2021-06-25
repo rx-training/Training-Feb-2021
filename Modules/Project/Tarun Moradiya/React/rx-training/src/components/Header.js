@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { TechGroupContext } from "../contexts/techGroupContext";
 import MainDropdown from "./MainDropdown";
-
+import Loading from "./Loading";
 import loadingGif from "../images/gif/loading-arrow.gif";
 import { AuthContext } from "../contexts/authContext";
 
@@ -25,11 +25,7 @@ export default function Header() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto" id="nav">
             {loadingTechGrps ? (
-              <img
-                src={loadingGif}
-                alt="Loading..."
-                className="img-fluid m-auto h-100"
-              />
+              <Loading />
             ) : (
               techGroups.map((grp) => <MainDropdown key={grp._id} grp={grp} />)
             )}

@@ -90,7 +90,7 @@ export default function UsersPage() {
           </button>
           {diplayAddForm && (
             <AddUser
-              id="add-department"
+              id="add-user"
               func={addUser}
               inpRef={inpRef}
               handleClose={handleClose}
@@ -105,7 +105,7 @@ export default function UsersPage() {
           </button>
           {diplayAddCsvForm && (
             <AddCsvFile
-              id="add-department"
+              id="add-users"
               func={addUsers}
               handleClose={handleCloseCsv}
               show={showCsv}
@@ -176,7 +176,7 @@ export default function UsersPage() {
           <Card.Body>
             <Table striped bordered hover>
               <thead>
-                <tr className="text-capitalize">
+                <tr className="text-capitalize text-light">
                   <th>name</th>
                   <th>username</th>
                   <th>email</th>

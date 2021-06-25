@@ -23,7 +23,7 @@ const Technology = mongoose.model("Technology", techSchema);
 async function validateTech(tech) {
   const schema = Joi.object({
     name: Joi.string().required(),
-    name: Joi.ObjectId().required(),
+    techGroup: Joi.ObjectId().required(),
   });
 
   return await schema.validate(tech);

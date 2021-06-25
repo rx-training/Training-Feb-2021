@@ -1,5 +1,6 @@
 const { Technology, validateTech: validate } = require("../models/technology");
 const { Plan } = require("../models/plan");
+const { Module } = require("../models/module");
 const debug = require("debug")("rx:tech");
 const { User } = require("../models/user");
 
@@ -114,7 +115,9 @@ class TechnologyDomain {
       if (!tech)
         return res.status(404).send("Technology with given id not found!!!");
 
-      await Plan.findOneAndRemove({ tech: req.params.id });
+      //delete plans and modules
+      await Plan.deleteMany({ tech: req.params.id });
+      await Module.deleteMany({ tech: req.params.id });
 
       //response
       res.send(tech);

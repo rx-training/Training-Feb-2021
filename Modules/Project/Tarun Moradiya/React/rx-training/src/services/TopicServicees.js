@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const TOPIC_API_BASE_URL = "http://localhost:5000/modules";
+const TOPIC_API_BASE_URL = `${process.env.REACT_APP_URL}/modules`;
 // axios.defaults.headers.common["Authorization"] = localStorage.getItem("token");
 
 class TopicService {

@@ -17,7 +17,7 @@ import { AuthContext } from "../contexts/authContext";
 import { ModuleContext } from "../contexts/moduleContext";
 
 import socketIOClient from "socket.io-client";
-const ENDPOINT = "http://127.0.0.1:5000";
+const ENDPOINT = process.env.REACT_APP_ENDPOINT;
 
 export default function Topic(props) {
   const [contents, setContents] = useState([]);
@@ -110,6 +110,7 @@ export default function Topic(props) {
 
   //add content
   const addContent = async (newContent) => {
+    setShow(false);
     await setLoadingNew(true);
     const res = await contentServices.createContent(
       props.module._id,
@@ -117,7 +118,6 @@ export default function Topic(props) {
       newContent
     );
     if (res.data) setContents((contents) => [...contents, res.data]);
-    setShow(false);
     setDisplayAddForm(false);
     setLoadingNew(false);
   };
@@ -172,6 +172,7 @@ export default function Topic(props) {
             setProgress((progress) =>
               progress.filter((prog) => prog.progressId !== data.progressId)
             );
+            setLoading(false);
           }, 1000);
         }
       }

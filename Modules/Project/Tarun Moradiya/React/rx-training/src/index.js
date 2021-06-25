@@ -11,7 +11,7 @@ import { ModuleProvider } from "./contexts/moduleContext";
 import { UserProvider } from "./contexts/userContext";
 import { DepartmentProvider } from "./contexts/deptContext";
 import { AuthProvider } from "./contexts/authContext";
-// import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 ReactDOM.render(
   <AuthProvider>

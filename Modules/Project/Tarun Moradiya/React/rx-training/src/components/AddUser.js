@@ -75,6 +75,7 @@ export default function AddUser(props) {
                   type="checkbox"
                   className="form-check-input"
                   value={user.isAdmin}
+                  checked={user.isAdmin}
                   onChange={(e) =>
                     setUser({ ...user, isAdmin: e.target.checked })
                   }

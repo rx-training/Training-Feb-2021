@@ -36,7 +36,7 @@ export default function Users(props) {
       <Card.Body>
         <Table striped bordered hover>
           <thead>
-            <tr className="text-capitalize">
+            <tr className="text-capitalize text-light">
               <th>name</th>
               <th>username</th>
               <th>email</th>

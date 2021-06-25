@@ -3,11 +3,11 @@ import "./App.scss";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { AuthContext } from "./contexts/authContext";
 import { Suspense } from "react";
-import Loading from "./components/Loading";
 import Profile from "./pages/Profile";
 import ForgotPassword from "./pages/ForgotPassword";
 import ChangePassword from "./pages/ChangePassword";
 import ResetPassword from "./pages/ResetPassword";
+import FallbackUI from "./components/FallbackUI";
 
 const Header = lazy(() => import("./components/Header"));
 const Home = lazy(() => import("./pages/Home"));
@@ -20,10 +20,9 @@ const Login = lazy(() => import("./pages/Login"));
 
 function App() {
   const { userIsLoggedIn, isAdminUser } = useContext(AuthContext);
-
   return (
     <>
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<FallbackUI />}>
         {userIsLoggedIn && <Header />}
         <Switch>
           <Route exact path="/">

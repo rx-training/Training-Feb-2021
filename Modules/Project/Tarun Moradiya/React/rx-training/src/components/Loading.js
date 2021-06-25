@@ -1,10 +1,11 @@
 import React from "react";
-import { Container, Spinner } from "react-bootstrap";
+import { Spinner } from "react-bootstrap";
 
 export default function Loading() {
   return (
-    <Container>
-      <Spinner className="m-auto " animation="grow" size="sm" />
-    </Container>
+    <div className="mx-5">
+      <Spinner animation="grow" />
+      <Spinner animation="grow" size="sm" />
+    </div>
   );
 }

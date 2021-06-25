@@ -41,7 +41,7 @@ class AuthDomain {
       const user = await User.findOne({ email: req.body.email });
       if (!user) return res.json({ msg: "user does not exist" });
       const recoverToken = await user.generateRecoverToken();
-      const resetUrl = "http://localhost:3000/reset-password";
+      const resetUrl = `${process.env.reactOrigin}/reset-password`;
       const subject = "Reset Password";
       const msg = `
       <!DOCTYPE html>

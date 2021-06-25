@@ -1,5 +1,5 @@
 import axios from "axios";
-const Tech_API_BASE_URL = "http://localhost:5000/technologies";
+const Tech_API_BASE_URL = `${process.env.REACT_APP_URL}/technologies`;
 
 // axios.defaults.headers.common["Authorization"] = localStorage.getItem("token");
 

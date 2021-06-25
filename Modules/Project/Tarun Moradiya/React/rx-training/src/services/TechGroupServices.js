@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const TechGroup_API_BASE_URL = "http://localhost:5000/techgroups";
+const TechGroup_API_BASE_URL = `${process.env.REACT_APP_URL}/techgroups`;
 // axios.defaults.headers.common["Authorization"] = localStorage.getItem("token");
 
 class TechGroupService {

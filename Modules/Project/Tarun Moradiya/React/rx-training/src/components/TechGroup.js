@@ -175,7 +175,7 @@ export default function TechGroup(props) {
               />
             )}
             {addItem ? (
-              <li className="list-group-item">
+              <li className="list-group-item bg-light border-info">
                 <form onSubmit={handleSubmit} className="form-inline">
                   <div className="input-group">
                     <input

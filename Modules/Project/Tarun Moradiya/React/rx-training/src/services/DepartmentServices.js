@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const Department_API_BASE_URL = "http://localhost:5000/departments";
+const Department_API_BASE_URL = `${process.env.REACT_APP_URL}/departments`;
 // axios.defaults.headers.common["Authorization"] = localStorage.getItem("token");
 
 class DepartmentGroupService {

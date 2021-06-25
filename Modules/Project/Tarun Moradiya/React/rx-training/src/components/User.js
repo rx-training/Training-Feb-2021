@@ -86,7 +86,7 @@ export default function User(props) {
   }
 
   return (
-    <tr>
+    <tr className="text-light">
       <td>{user.name}</td>
       <td>{user.username}</td>
       <td>{user.email}</td>

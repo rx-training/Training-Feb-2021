@@ -46,7 +46,7 @@ export default function Departments() {
           </Card.Header>
           <Card.Body>
             <Table striped bordered hover>
-              <thead>
+              <thead className="text-light">
                 <tr>
                   <th>Name</th>
                   <th style={{ width: "20%" }}>Actions</th>
