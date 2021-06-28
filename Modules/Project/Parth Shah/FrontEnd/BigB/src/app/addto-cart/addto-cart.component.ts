@@ -43,6 +43,7 @@ export class AddtoCartComponent implements OnInit {
       
       }
     ).subscribe(res => console.log(res));
+    alert('Successfully Added to cart');
     location.reload();
   }
 

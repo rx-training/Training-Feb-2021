@@ -130,12 +130,7 @@ namespace BigBasketPro.Controllers
 
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
 
-            var customer = new Customer();
-            customer.BigBasketUserId = user.Id;
-            customer.CustName = model.CustomerName;
-            customer.PhoneNo = model.PhoneNumber;
-            customer.Address = model.Address;
-            _customer.Create(customer);
+           
 
             if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
                 await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));

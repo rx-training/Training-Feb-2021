@@ -26,10 +26,10 @@ const routes: Routes = [
    children: [
     {path: 'buy/:productId' , component: BuyNowComponent , canActivate:[UserAuthGuard]},
     {path: 'cart/:productId' , component: AddtoCartComponent,  canActivate:[UserAuthGuard]},
-  {path: 'buymessage/:productId' ,component:BuyMessageComponent },
-    {path: 'cartmessage/:productId' ,component:CartMessageComponent }
+  {path: 'buymessage' ,component:BuyMessageComponent },
 
    ]},
+   {path: 'cartmessage' ,component:CartMessageComponent },
 
    
   {

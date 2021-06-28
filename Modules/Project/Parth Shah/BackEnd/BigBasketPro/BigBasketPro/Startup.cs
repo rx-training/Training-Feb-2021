@@ -36,6 +36,19 @@ namespace BigBasketPro
         {
 
             services.AddControllers();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: "policy1",
+                                  builder =>
+                                  {
+                                      builder.AllowAnyOrigin()
+                                             .AllowAnyMethod()
+                                             .AllowAnyHeader();
+                                  });
+            });
+
+
             //For Identity
             services.AddIdentity<BigBasketUser, IdentityRole>()
             .AddEntityFrameworkStores<BigBasketProjectContext>()
@@ -95,14 +108,14 @@ namespace BigBasketPro
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BigBasketPro v1"));
             }
-            app.UseCors(x => x
-        .AllowAnyOrigin()
-        .AllowAnyMethod()
-        .AllowAnyHeader());
+
+          
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors("policy1");
+
 
             app.UseAuthentication();
 

@@ -67,7 +67,7 @@ return this.http.post(`${baseUrl}Authentication/login`,data);
 
 
   postCategory(category): Observable<Category> {
-    return this.http.post<Category>(`${baseUrl}Category`, JSON.stringify(category))
+    return this.http.post<Category>(`${baseUrl}Category`, category)
 
   } 
 

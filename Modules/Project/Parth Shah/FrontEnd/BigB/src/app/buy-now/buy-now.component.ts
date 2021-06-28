@@ -93,6 +93,7 @@ SubmitData(){
     
     }
   ).subscribe(res => console.log(res));
+  alert('Product order Successfully');
   location.reload();
 }
  

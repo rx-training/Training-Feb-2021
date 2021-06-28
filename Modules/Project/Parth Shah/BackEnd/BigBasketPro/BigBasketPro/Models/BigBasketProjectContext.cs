@@ -34,15 +34,15 @@ namespace BigBasketPro.Models
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Sale> Sales { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+      /*  protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-VBU96E5\\SQLEXPRESS01;Initial Catalog=BigBasketProject;Integrated Security=True;");
+            optionsBuilder.UseSqlServer("Data Source=20.198.103.48;Initial Catalog=BigBasket;User ID=radix-trainees;Password=radix-trainees1;");
 
-            /* if (!optionsBuilder.IsConfigured)
-             {
- #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-             }*/
-        }
+           *//* if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+            }*//*
+        }*/
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
