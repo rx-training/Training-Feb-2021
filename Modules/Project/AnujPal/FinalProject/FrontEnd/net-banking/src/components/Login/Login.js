@@ -10,6 +10,8 @@ import {
   AiFillFacebook,
   AiFillInstagram,
 } from "react-icons/ai";
+import background from "../Images/green_smiley.png";
+import background1 from "../Images/red_smiley.png";
 
 export const Login = (props) => {
   let tempMessage = "";
@@ -39,13 +41,13 @@ export const Login = (props) => {
   return (
     <>
       <Navbar></Navbar>
-      <div className="container col-xl-10 col-xxl-8  ">
-        <div className=" row  align-items-center g-lg-5 py-5  ">
+      <div className="container  ">
+        <div className=" row    py-5  ">
           <div className="col-lg-7 text-center text-lg-start ">
             <h1 className="display-4 font-weight-bold lh-1 mb-3 text-center">
               Online Internet Banking Dummy Project
             </h1>
-            <p className="col-lg-10 fs-4 ml-5 text-center ">
+            <p className=" fs-5 ml-3 text-center ">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Blanditiis natus tempora provident maxime voluptate corrupti,
               molestiae commodi, recusandae earum beatae ullam nulla non sint.
@@ -53,8 +55,8 @@ export const Login = (props) => {
               ratione dolorum
             </p>
           </div>
-          <div className="col-md-10 mx-auto col-lg-5">
-            <form className="p-4 p-md-5 border rounded-3 bg-light">
+          <div className="col-lg-5 ">
+            <form className="p-4 p-lg-5 border rounded-3 bg-light">
               <div className="form-group-sm mb-3">
                 <input
                   type="email"
@@ -67,11 +69,7 @@ export const Login = (props) => {
                       [e.target.name]: e.target.value,
                     });
                   }}
-                /> 
-        
-  
-
-               
+                />
               </div>
               <div className="form-group-sm mb-3">
                 <input
@@ -120,6 +118,198 @@ export const Login = (props) => {
           </div>
         </div>
       </div>
+      <article className="container">
+        <div className="row  mx-3 ">
+          <div className=" col-md-3 g-3 ">
+            <div className="border border-dark">
+              <div
+                className=" text-center w-100 "
+                style={{
+                  backgroundColor: "#c0c0c0",
+                  position: "relative",
+                  height: "3rem",
+                  padding: "13px 0",
+                }}
+              >
+                <img
+                  src={background}
+                  alt="emote"
+                  style={{ position: "absolute", top: "0", left: "0" }}
+                  className="mt-0 "
+                />
+                <span
+                  class=" mt-2 text-center "
+                  style={{ color: "#098809", fontWeight: "bold" }}
+                >
+                  ALWAYS
+                </span>
+              </div>
+              <p className="text-center mt-3">
+                keep your computer <br /> free of malware
+              </p>
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-3 g-3 ">
+            <div className="border border-dark">
+              <div
+                className=" text-center w-100 "
+                style={{
+                  backgroundColor: "#c0c0c0",
+                  position: "relative",
+                  height: "3rem",
+                  padding: "13px 0",
+                }}
+              >
+                <img
+                  alt="emote"
+                  src={background}
+                  style={{ position: "absolute", top: "0", left: "0" }}
+                  className="mt-0 "
+                />
+                <span
+                  class=" mt-2 text-center "
+                  style={{ color: "#098809", fontWeight: "bold" }}
+                >
+                  ALWAYS
+                </span>
+              </div>
+              <p className="text-center mt-3">
+                change your passwords <br /> periodically
+              </p>
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-3 g-3 ">
+            <div className="border border-dark">
+              <div
+                className=" text-center w-100 "
+                style={{
+                  backgroundColor: "#c0c0c0",
+                  position: "relative",
+                  height: "3rem",
+                  padding: "13px 0",
+                }}
+              >
+                <img
+                  alt="emote"
+                  src={background1}
+                  style={{ position: "absolute", top: "0", left: "0" }}
+                  className="mt-0 "
+                />
+                <span
+                  class=" mt-2 text-center text-danger "
+                  style={{ fontWeight: "bold" }}
+                >
+                  NEVER
+                </span>
+              </div>
+              <p className="text-center mt-3">
+                respond to any communication <br /> seeking your passwords
+              </p>
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-3 g-3 ">
+            <div className="border border-dark">
+              <div
+                className=" text-center w-100 "
+                style={{
+                  backgroundColor: "#c0c0c0",
+                  position: "relative",
+                  height: "3rem",
+                  padding: "13px 0",
+                }}
+              >
+                <img
+                  alt="emote"
+                  src={background1}
+                  style={{ position: "absolute", top: "0", left: "0" }}
+                  className="mt-0 "
+                />
+                <span
+                  class=" mt-2 text-center text-danger "
+                  style={{ fontWeight: "bold" }}
+                >
+                  NEVER
+                </span>
+              </div>
+              <p className="text-center mt-3">
+                reveal your passwords or <br />
+                card details to anyone
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article className="container">
+        <p
+          className="text-center text-primary mt-5"
+          style={{ fontSize: "30px" }}
+        >
+          FOR YOUR OWN SECURITY
+        </p>
+        <div className="row m-4 ">
+          <div class="col-md-6 ">
+            <h3
+              className=" text-danger h4 mt-3 "
+              style={{ fontWeight: "normal" }}
+            >
+              Please ensure the following before logging into Online Banking
+            </h3>
+
+            <ul class="phishing_list p-3">
+              <li className="mt-2">
+                The URL in your browser address bar begins with "https".
+              </li>
+              <li>The address or status bar displays the padlock symbol.</li>
+              <li>
+                Click the padlock to view and verify the security certificate.
+              </li>
+              <li>
+                The address bar turns green indicating that the site is secured
+                with an SSL Certificate that meets the Extended Validation
+                Standard.
+              </li>
+              <li>
+                (SSL is compatible for IE 7.0 and above, Mozilla Firefox 3.1 and
+                above, Opera 9.5 and above, Safari 3.5 and above, Google
+                Chrome).
+              </li>
+              <li>
+                The address bar turns green indicating that the site is secured
+                with an SSL Certificate that meets the Extended Validation
+                Standard.
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6 ">
+            <h3
+              className=" text-danger h4 mt-3"
+              style={{ fontWeight: "normal" }}
+            >
+              Beware of Phishing attacks
+            </h3>
+
+            <ul class="phishing_list p-3">
+              <li className="mt-2">
+                Phishing is a fraudulent attempt, usually made through email,
+                phone calls, SMS etc seeking your personal and confidential
+                information.
+              </li>
+              <li>
+                State Bank or any of its representative never sends you
+                email/SMS or calls you over phone to get your personal
+                information,password or one time SMS (high security) password.
+                Any such e-mail/SMS or phone call is an attempt to fraudulently
+                withdraw money from your account through Internet Banking. Never
+                respond to such email/SMS or phone call. Please report
+                immediately on report.phishing@sbi.co.in if you receive any such
+                email/SMS or Phone call. Please lock your user access
+                immediately, if you have accidentally revealed your
+                credentials.Click here to lock.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
       <article className="" id="exclusiveOffers">
         <h3 className="text-center mx-auto mt-3">
           <span> Connect With Us </span>
@@ -164,7 +354,6 @@ export const Login = (props) => {
           </div>
         </div>
       </article>
-    
     </>
   );
 };

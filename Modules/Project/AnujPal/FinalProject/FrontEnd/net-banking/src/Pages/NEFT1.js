@@ -185,7 +185,7 @@ export const NEFT1 = (props) => {
                 Add Beneficiary
               </button>
             </div>
-            {state1 ? (
+            {/* {state1 ? (
               <div className="mx-auto mt-5">
                 <form className="bg-light p-4 m-4 mt-5" id="addBenficiaryForm">
                   <h3 className="text-center mb-5 ">
@@ -283,8 +283,8 @@ export const NEFT1 = (props) => {
                   </button>
                 </form>
               </div>
-            ) : null}
-            {Transfer ? (
+            ) : null} */}
+            {/* {Transfer ? (
               <form class="p-4 p-md-5 border rounded-3 bg-light mt-5">
                 <h3 className="text-center mb-5">NEFT</h3>{" "}
                 <div class="form-group-sm mb-3">
@@ -331,7 +331,7 @@ export const NEFT1 = (props) => {
                 </button>
                 <hr class="my-4" />
               </form>
-            ) : null}
+            ) : null} */}
           </div>
 
           <div class=" col m-4 card card border-0 " style={{ width: "18rem" }}>
@@ -350,6 +350,167 @@ export const NEFT1 = (props) => {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-lg-6 mx-auto   ">
+          {state1 ? (
+            <div className=" mt-5  ">
+              <form
+                className="bg-light p-4 m-4 mt-5 "
+                id="addBenficiaryForm"
+              >
+                <h3 className="text-center mb-5 ">Beneficiary Register Form</h3>
+                <div className="row">
+                  <div className="col">
+                    <input
+                      type="text"
+                      placeholder="First Name"
+                      className="form-control"
+                      name="fname"
+                      onChange={(e) => {
+                        setAddBenificiary({
+                          ...addBenificiary,
+                          [e.target.name]: e.target.value,
+                        });
+                      }}
+                    ></input>
+                  </div>
+                  <div className="col">
+                    {" "}
+                    <input
+                      type="text"
+                      placeholder="Middle Name"
+                      className="form-control"
+                      onChange={(e) => {
+                        setAddBenificiary({
+                          ...addBenificiary,
+                          [e.target.name]: e.target.value,
+                        });
+                      }}
+                      name="mname"
+                    ></input>
+                  </div>
+                  <div className="col">
+                    {" "}
+                    <input
+                      type="text"
+                      placeholder="Last Name"
+                      className="form-control"
+                      onChange={(e) => {
+                        setAddBenificiary({
+                          ...addBenificiary,
+                          [e.target.name]: e.target.value,
+                        });
+                      }}
+                      name="lname"
+                    ></input>
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  className="form-control mt-3"
+                  placeholder="Customer Relationship Number"
+                  name="CRN"
+                  onChange={(e) => {
+                    setAddBenificiary({
+                      ...addBenificiary,
+                      [e.target.name]: e.target.value,
+                    });
+                  }}
+                ></input>
+                <input
+                  type="text"
+                  className="form-control mt-3"
+                  placeholder="Account Number"
+                  name="accountNo"
+                  onChange={(e) => {
+                    setAddBenificiary({
+                      ...addBenificiary,
+                      [e.target.name]: e.target.value,
+                    });
+                  }}
+                ></input>
+
+                <input
+                  type="text"
+                  className="form-control mt-3"
+                  placeholder="IFSC Code"
+                  name="IFSC"
+                  onChange={(e) => {
+                    setAddBenificiary({
+                      ...addBenificiary,
+                      [e.target.name]: e.target.value,
+                    });
+                  }}
+                ></input>
+                <button
+                  type="submit"
+                  className="btn btn-secondary mt-5 w-100"
+                  onClick={Register}
+                >
+                  Register
+                </button>
+              </form>
+            </div>
+          ) : null}
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-md-6 mx-auto">
+          {Transfer ? (
+            <form class="p-4 p-md-5 border rounded-3 bg-light mt-5">
+              <h3 className="text-center mb-5">NEFT</h3>{" "}
+              <div class="form-group-sm mb-3">
+                {" "}
+                <select
+                  className="form-control"
+                  onChange={(e) => {
+                    setNEFT({ ...NEFT, debitAccountNo: e.target.value });
+                  }}
+                >
+                  <option selected> debit Account Number</option>
+                  {CRN.map((item, key) => {
+                    return <option key={key}>{item.accountNo}</option>;
+                  })}
+                </select>
+              </div>
+              <div class="form-group-sm mb-3">
+                <select
+                  className="form-control"
+                  onChange={(e) => {
+                    setNEFT({ ...NEFT, creditAccountNo: e.target.value });
+                  }}
+                >
+                  <option selected> Credit Account Number</option>
+                  {ben.map((item) => {
+                    return <option>{item.accountNo}</option>;
+                  })}
+                </select>
+              </div>
+              <div class="form-group-sm mb-3">
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Amount"
+                  name="amount"
+                  value={NEFT.amount}
+                  onChange={(e) => {
+                    setNEFT({ ...NEFT, [e.target.name]: e.target.value });
+                  }}
+                />
+              </div>
+              <div id="recaptcha-container"></div>
+              <button
+                class="w-100 btn  btn-primary mt-3 "
+                type="submit"
+                onClick={Submit}
+              >
+                Submit
+              </button>
+              <hr class="my-4" />
+            </form>
+          ) : null}
         </div>
       </div>
       <div className="row">

@@ -29,6 +29,12 @@ const statementSchema = new mongoose.Schema({
     },
     type:{
         type:String
+    },
+    dname:{
+        type:String
+    },
+    cname:{
+        type:String
     }
 
 

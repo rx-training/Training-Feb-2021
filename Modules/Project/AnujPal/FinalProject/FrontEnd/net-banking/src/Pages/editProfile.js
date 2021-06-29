@@ -87,16 +87,7 @@ export const EditProfile = (props) => {
               ></input>
             </div>
           </div>
-          <input
-            type="text"
-            className="form-control mt-3"
-            placeholder="Customer Relationship Number"
-            name="CRN"
-            onChange={(e) => {
-              setUpdate({ ...update, [e.target.name]: e.target.value });
-            }}
-            value={update.CRN}
-          ></input>
+     
 
           <input
             type="email"
@@ -137,9 +128,7 @@ export const EditProfile = (props) => {
             placeholder="Account Number"
             name="accountNo"
             value={update.accountNo}
-            onChange={(e) => {
-              setUpdate({ ...update, [e.target.name]: e.target.value });
-            }}
+          
           ></input>
           <div className="row mt-3">
             <div className="col">
@@ -149,9 +138,7 @@ export const EditProfile = (props) => {
                 placeholder="CIF"
                 name="CIF"
                 value={update.CIF}
-                onChange={(e) => {
-                  setUpdate({ ...update, [e.target.name]: e.target.value });
-                }}
+              
               ></input>
             </div>
             <div className="col input-group">
@@ -189,9 +176,9 @@ export const EditProfile = (props) => {
             className="form-control mt-3"
             name="IFSC"
             value={update.IFSC}
-            onChange={(e) => {
-              setUpdate({ ...update, [e.target.name]: e.target.value });
-            }}
+            // onChange={(e) => {
+            //   setUpdate({ ...update, [e.target.name]: e.target.value });
+            // }}
           ></input>
           <input
             type="text"

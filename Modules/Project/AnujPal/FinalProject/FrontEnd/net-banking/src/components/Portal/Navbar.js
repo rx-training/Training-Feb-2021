@@ -182,6 +182,14 @@ export const Navbar = (props) => {
             </a>
           </li>
           <li class="nav-item mx-3 ">
+            <a
+              class="nav-link"
+              href={`http://localhost:3000/Portal/${id}/FAQ`}
+            >
+              FAQ
+            </a>
+          </li>
+          <li class="nav-item ml-5 ">
             <div className="me-auto " style={{ marginLeft: "0px" }}>
               <a
                 className=" nav-link"

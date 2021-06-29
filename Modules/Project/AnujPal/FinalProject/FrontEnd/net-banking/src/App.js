@@ -27,9 +27,11 @@ import { EditProfile } from "./Pages/editProfile";
 import { CheckBookRequest } from "./Pages/checkBookRequest";
 import { DebitCardRequest } from "./Pages/debitCardRequest";
 import { Practice } from "./Pages/Practice";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import 'bootstrap/dist/js/bootstrap.bundle'
-import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/js/bootstrap.bundle'
+
+
+import { FAQ } from "./Pages/FAQ";
 
 function App() {
   return (
@@ -117,6 +119,11 @@ function App() {
             path="/Portal/:id/NEFT"
             exact
             component={NEFT}
+          ></PrivateRoute>
+          <PrivateRoute
+            path="/Portal/:id/FAQ"
+            exact
+            component={FAQ}
           ></PrivateRoute>
           <PrivateRoute
             path="/Portal/:id/Delete"

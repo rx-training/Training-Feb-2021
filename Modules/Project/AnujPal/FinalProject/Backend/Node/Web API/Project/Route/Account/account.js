@@ -49,6 +49,7 @@ class demoAccount {
         debitAccountNo: req.body.accountNo,
         creditAccountNo: req.body.accountNo,
         type: "Credit",
+
       });
 
       const a1 = await statement.save();
@@ -116,9 +117,14 @@ class demoAccount {
           balance: req.body.amount,
         },
       }
+     
     );
     if (creditAccount.nModified == 1) {
-      const statement = new MiniStatemet({
+      const debit=await NetBanking.find({accountNo:req.body.debitAccountNo})
+      const credit=await NetBanking.find({accountNo:req.body.creditAccountNo})
+      const statement = await new MiniStatemet({
+        dname:debit[0].fname,
+        cname:credit[0].fname,
         date: new Date(),
         amount: req.body.amount,
         debitAccountNo: req.body.debitAccountNo,
@@ -128,6 +134,9 @@ class demoAccount {
 
       const a1 = await statement.save();
       res.json({ statementDetaile: a1, creditDetails: creditAccount });
+    }
+    else{
+      res.json({debitAccount,creditAccount})
     }
   }
   static async FDNEFT(req, res) {
@@ -148,13 +157,17 @@ class demoAccount {
       }
     );
     if (creditAccount.nModified == 1) {
-      const statement = new MiniStatemet({
+      const debit=await NetBanking.find({accountNo:req.body.debitAccountNo})
+      const credit=await NetBanking.find({accountNo:110})
+      const statement = await new MiniStatemet({
+        dname:debit[0].fname,
+        cname:credit[0].fname,
         date: new Date(),
         amount: req.body.amount,
         debitAccountNo: req.body.debitAccountNo,
-        creditAccountNo: req.body.creditAccountNo,
+        creditAccountNo: 110,
         type: "FD",
-      });
+      })
 
       const a1 = await statement.save();
       res.json({ statementDetaile: a1, creditDetails: creditAccount });
@@ -178,13 +191,17 @@ class demoAccount {
       }
     );
     if (creditAccount.nModified == 1) {
-      const statement = new MiniStatemet({
+      const debit=await NetBanking.find({accountNo:110})
+      const credit=await NetBanking.find({accountNo:req.body.accountNo})
+      const statement = await new MiniStatemet({
+        dname:debit[0].fname,
+        cname:credit[0].fname,
         date: new Date(),
         amount: req.body.amount,
         debitAccountNo: 110,
-        creditAccountNo: req.body.accountNo,
+        creditAccountNo: req.body.creditAccountNo,
         type: "Loan Approve",
-      });
+      })
 
       const a1 = await statement.save();
       res.json({ statementDetaile: a1, creditDetails: creditAccount });

@@ -22,7 +22,7 @@ export const Navbar = () => {
       <div class="collapse navbar-collapse mr-5 ml-5" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto align-items-center  ">
           <li class="nav-item active ml-5 ">
-            <a class="nav-link  " href="#Home">
+            <a class="nav-link  " href="http://localhost:3000/">
             Home
             </a>
           </li>
