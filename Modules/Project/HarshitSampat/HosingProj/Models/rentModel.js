@@ -8,7 +8,6 @@ const rentSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: true,
     },
-    LandlordDetails: {
         LandLord_Name: {
             type: String,
             required: true
@@ -28,9 +27,8 @@ const rentSchema = new mongoose.Schema({
         Pan_No: {
             type: String,
             required: true
-        }
-    },
-    Property: {
+        },
+    
         Address: {
             type: String,
             required: true
@@ -42,9 +40,8 @@ const rentSchema = new mongoose.Schema({
         Bhk: {
             type: String,
             required: true
-        }
-    },
-    Payment_Details:{
+        },
+    
         paymen_Mode: {
             type: String,
             require: true
@@ -57,9 +54,6 @@ const rentSchema = new mongoose.Schema({
             type: String,
             require: true
         }
-    }
-
-
 })
 
 //create model

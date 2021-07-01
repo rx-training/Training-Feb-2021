@@ -8,7 +8,7 @@ const rentAgreementSchema = new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         required:true
     },
-    LandlordDetails: {
+
         LandLord_Name: {
             type: String,
             required: true
@@ -28,9 +28,8 @@ const rentAgreementSchema = new mongoose.Schema({
         Pan_No: {
             type: String,
             required: true
-        }
-    },
-    Tenant_Details:[{
+        },
+    
         FullName:{
             type:String,
             required:true
@@ -49,9 +48,8 @@ const rentAgreementSchema = new mongoose.Schema({
         },
         PanNo:{
             type:String
-        }
-    }], 
-    Property: {
+        },
+     
         Address: {
             type: String,
             required: true
@@ -69,7 +67,7 @@ const rentAgreementSchema = new mongoose.Schema({
             required:true
         },
         State:{
-            type:Number,
+            type:String,
             required:true
         },
         Property_Type: {
@@ -79,9 +77,8 @@ const rentAgreementSchema = new mongoose.Schema({
         Bhk: {
             type: String,
             required: true
-        }
-    },
-    AgreeMentDetails:{
+        },
+    
         StartDate:{
             type:Date,
             reqired:true
@@ -91,7 +88,7 @@ const rentAgreementSchema = new mongoose.Schema({
             required:true
         },
         rent_Payment_Date:{
-            type:Number,
+            type:Date,
             required:true
         },
         Security_amount:{
@@ -108,8 +105,8 @@ const rentAgreementSchema = new mongoose.Schema({
         },
         IncrementPercentage:{
             type:Number
-        }
-    },
+        },
+    
     FurnitureItems:[{
         type:String
     }],

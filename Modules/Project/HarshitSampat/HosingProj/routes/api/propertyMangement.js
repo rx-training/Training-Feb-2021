@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/',getPropertyManagementRequest)
 
 //add new payment deails
-router.post('/addRequest',addPropertymanagementRequest)
+router.post('/',addPropertymanagementRequest)
 
 //delete payment details
 router.delete('/',deleterequest)

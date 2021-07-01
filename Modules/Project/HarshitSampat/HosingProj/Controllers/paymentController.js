@@ -17,7 +17,7 @@ exports.getPayment = async(req,res)=>{
         // get all payment 
         const getAllPaymentDetails = await Payment.find()
         res.send(getAllpaymentDetails)
-    }
+    }   
 
 }
 

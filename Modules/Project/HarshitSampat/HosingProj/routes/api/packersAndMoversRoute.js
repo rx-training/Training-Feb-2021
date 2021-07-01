@@ -1,5 +1,8 @@
 // import require modules
-const { getpackerAndMovers, addNewData_PackersANd_Mmovers } = require('../../Controllers/packersMovers');
+const {
+  getpackerAndMovers,
+  addNewData_Packers_ANd_Movers,
+} = require("../../Controllers/packersMovers");
 const express = require('express');
 const router = express.Router();
 
@@ -8,6 +11,6 @@ const router = express.Router();
 router.get('/', getpackerAndMovers);
 
 //post request 
-router.post('/', addNewData_PackersANd_Mmovers)
+router.post("/", addNewData_Packers_ANd_Movers);
 
 module.exports = router

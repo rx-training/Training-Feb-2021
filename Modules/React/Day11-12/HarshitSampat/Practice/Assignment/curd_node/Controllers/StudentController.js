@@ -113,10 +113,10 @@ exports.updateStudent = async (req, res) => {
   if (req.body.Img) student.Img = req.body.Img;
   console.log(student)
   //save to database
-  const updatestudent = student.save()
- 
+  
+ student.save()
   //send response
-  res.send(updatestudent);
+  res.send();
 };
 
 //delete student
@@ -131,5 +131,5 @@ exports.deleteStudent = async (req, res) => {
     return res.status(401).send("Student with this id is not found");
 
   //send response
-  res.send(Student);
+  res.send('Data Deleted');
 };

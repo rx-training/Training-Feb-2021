@@ -6,8 +6,10 @@ const router = express.Router();
 //get payment
 router.get('/',getProperty)
 
+router.get("/:id", getProperty);
+
 //add new payment deails
-router.post('/addRequest',addNewProperty)
+router.post('/',addNewProperty)
 
 
 //export modules

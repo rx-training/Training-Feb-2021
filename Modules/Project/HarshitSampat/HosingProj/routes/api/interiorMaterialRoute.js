@@ -9,7 +9,7 @@ router.get('/',getInterriorDetails)
 
 //post request for interior
 router.post('/',addNewInteriorDetails)
-
+    
 //exports modules
 module.exports = router
 

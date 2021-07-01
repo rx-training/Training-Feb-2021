@@ -25,25 +25,19 @@ exports.getrent = async(req,res)=>{
 exports.addRent= async(req,res)=>{
     
     const addRequest = new Rent({
-        user:req.body.User,
-        LandlordDetails: {
+            
+            User:req.body.User,
             LandLord_Name:req.body.LandLord_Name,
             Landlord_Phone_No: req.body.Landlord_Phone_No,
             IFSC_Code: req.body.IFSC_Code,
             Bank_Account_No: req.body.Bank_Account_No,
-            Pan_No: req.body.Pan_No
-        },
-        Property: {
+            Pan_No: req.body.Pan_No,
             Address: req.body.Address,
             Property_Type: req.body.Property_Type,
-            Bhk: req.body.Bhk
-        },
-        Payment_Details:{
+            Bhk: req.body.Bhk,
             paymen_Mode: req.body.paymen_Mode,
             Amount: req.body.Amount,
             choose_Payment_Mode: req.body.choose_Payment_Mode
-        }
-    
     })
     //save to database
     await addRequest.save()

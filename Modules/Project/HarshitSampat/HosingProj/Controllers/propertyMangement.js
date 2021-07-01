@@ -25,7 +25,7 @@ exports.getPropertyManagementRequest = async(req,res)=>{
 exports.addPropertymanagementRequest= async(req,res)=>{
     
     const addRequest = new propertyManagement({
-        user:req.body.User,
+        User:req.body.User,         
         Property_City:req.body.Property_City,
         House_Configuration:req.body.House_Configuration,
         ExpectedRent:req.body.ExpectedRent,

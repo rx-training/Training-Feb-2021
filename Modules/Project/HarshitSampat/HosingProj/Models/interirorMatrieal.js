@@ -10,7 +10,6 @@ const interiorSchema = new mongoose.Schema({
     },
     City:{
         type:String,
-        required:true
     },
     pinCode:{
         type:Number,
