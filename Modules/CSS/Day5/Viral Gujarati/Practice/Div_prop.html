@@ -7,52 +7,94 @@
     <title>Document</title>
 
     <style>
-        .static
-          {
-          position: static;
-          border: 3px solid #73AD21;
-        
-            }
-        .relative
-        {
-          position: relative;
-          width: 400px;
-          height: 200px;
-          border: 3px solid #73AD21;
-                }
-        
-        .absolute
-                {
-          position: absolute;
-          top: 80px;
-          right: 0;
-          width: 200px;
-          height: 100px;
-          border: 3px solid #73AD21;
-                }
-         .fixed
-                {
-          position: fixed;
-          bottom: 0;
-          right: 0;
-          width: 300px;
-          border: 3px solid #73AD21;
+
+        #main{
+            position: relative;
+            height: auto;
+            width: auto;
+            top: 50px;
+            left: 50px;
+            border: 3px solid;
+            background-color: cyan;
         }
-            </style>
-        </head>
-        
-        <body>
-            <div class="static">
-                This div element has static position
-            </div>
-            <div class="relative">
-                This div element has  relative position
-                <div class="absolute">This div element has absolute position</div>
-            </div>
-            <div class="fixed">
-                This div element has fixed position
-            </div>
-        
-        
+        #div1{
+            position:absolute;
+            top: 130px;
+            left: 0px;
+            height: auto;
+            width: auto;
+            border:2px solid black;
+            background-color: darkcyan;
+        }
+        #div2{
+            position:fixed;
+            height: 100px;
+            top:30px;
+            right:20px;
+            border: 2px solid black;
+            background-color: darkgrey;
+        }
+        #div3{
+            position:sticky;
+            top:0px;
+            height:60px;
+            width: 100%;
+            border: 2px solid black;
+            z-index: 1;
+            background-color: darkseagreen;
+
+        }
+        #div4{
+            position: relative;
+            left: 400px;
+            overflow: auto;
+            height: 200px;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid skyblue;
+            background-color:forestgreen;
+            z-index: 1;
+
+
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Position Examples</h1>
+
+    <div id="main">
+    <h2>Reletive position</h2>
+    
+        <div id="div1">
+            <h2>Absolute position</h2>
+        </div>
+
+        <div id="div2">
+            <h2>Fixed position</h2>
+        </div>
+
+        <div id="div3">
+            <h2>Sticky position</h2>
+        </div>
+
+    </div>
+
+    <div id="div4">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quidem sit, blanditiis inventore quo reiciendis maiores. Blanditiis dignissimos, vitae quia exercitationem harum eligendi! A aperiam itaque, blanditiis laborum sint vero!
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae quia fugit rem hic sint. Omnis quae ipsum voluptates magni. Repellat nulla distinctio incidunt illo nemo quo iusto, fugit id illum!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, molestiae itaque commodi beatae modi vero quas voluptates veniam totam consequuntur ab nihil? Voluptatibus ea eos voluptate, beatae natus esse enim?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse in maiores non accusamus quas magni! Alias quaerat fugiat hic, ut itaque labore sint deserunt id odio doloribus, voluptate enim voluptatibus!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, in expedita ab culpa eaque omnis, itaque veniam pariatur soluta animi porro illo consequuntur? Modi quibusdam architecto iste repudiandae, vel quae.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem cum assumenda corrupti quod atque quisquam nulla animi perferendis maiores fugiat praesentium minima cumque veritatis itaque libero maxime, ad dignissimos veniam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et ipsam ipsum enim possimus minus facere veniam, maiores non explicabo quas mollitia temporibus perspiciatis quam adipisci eos voluptatem unde fuga. Voluptatum?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, distinctio minima dolorum fugit corporis, sed nihil, velit aut cupiditate quod incidunt consequatur quibusdam nobis modi doloribus quam accusantium accusamus sunt?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores repellat laborum, dolores voluptates sapiente molestiae ab nulla animi. Maiores qui dolore est facilis esse ullam nostrum sint, magni commodi fugiat.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, labore voluptatem optio libero unde placeat dicta velit, quod tempore quisquam suscipit provident magni minus voluptate aliquam quia. Nesciunt, illum mollitia!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta nemo porro consectetur, in sed animi nihil, dolore similique distinctio, necessitatibus non! Similique pariatur officia temporibus laudantium cum magni eligendi neque.
+
+        </p>
+    </div>
 </body>
 </html>

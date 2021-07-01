@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.css'
 import './index.css';
 import Greeting from './components/helloWorld';
 import StudentIDCard2 from './components/studentIDCard2';
@@ -9,9 +10,9 @@ import StudentIDCard5 from './components/studentIDCard5';
 import StudentIDCard6 from './components/studentIDCard6';
 
 const students=[
-  {sid:"1001", name:"Vishal Sagar", dob:"14-10-1996", clg:"Gujarat Technological University", clgadd:"Nigam nagar, Chandkheda, Ahmedabad, Gujarat 382424"},
-  {sid:"1002", name:"Shubham Bhosle", dob:"01-04-1998", clg:"Gujarat Technological University", clgadd:"Nigam nagar, Chandkheda, Ahmedabad, Gujarat 382424"},
-  {sid:"1003", name:"Nirav Patel", dob:"06-04-1998", clg:"Gujarat Technological University", clgadd:"Nigam nagar, Chandkheda, Ahmedabad, Gujarat 382424"},
+  {sid:"1001", name:"Vishal Sagar", dob:"14-10-1996", clg:"Gujarat Technological University", clgadd:"Nigam nagar, Chandkheda, Ahmedabad, Gujarat 382424",logo:"https://upload.wikimedia.org/wikipedia/en/thumb/9/93/Gujarat-Technological-University-Logo.png/220px-Gujarat-Technological-University-Logo.png"},
+  {sid:"1002", name:"Shubham Bhosle", dob:"01-04-1998", clg:"Gujarat Technological University", clgadd:"Nigam nagar, Chandkheda, Ahmedabad, Gujarat 382424",logo:"https://upload.wikimedia.org/wikipedia/en/thumb/9/93/Gujarat-Technological-University-Logo.png/220px-Gujarat-Technological-University-Logo.png"},
+  {sid:"1003", name:"Nirav Patel", dob:"06-04-1998", clg:"Gujarat Technological University", clgadd:"Nigam nagar, Chandkheda, Ahmedabad, Gujarat 382424",logo:"https://upload.wikimedia.org/wikipedia/en/thumb/9/93/Gujarat-Technological-University-Logo.png/220px-Gujarat-Technological-University-Logo.png"}
 ];
 
 function StudentDetails(){
@@ -25,7 +26,7 @@ function StudentDetails(){
       <hr/>
       <StudentIDCard5 students={students} />
       <StudentIDCard6 student={students[1]}>
-        <p>Student Details</p>
+        <p>Student-ID Card</p>
       </StudentIDCard6>
     </section>
   );
