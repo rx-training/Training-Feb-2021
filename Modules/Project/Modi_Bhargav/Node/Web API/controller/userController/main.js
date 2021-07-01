@@ -1,10 +1,8 @@
-const express = require('express');
+const express = require("express");
 const router2 = express.Router();
 
-const customers = require("./customersData/customer")
-const trips = require("./tripDetails/trips")
+const customers = require("./customersData/customer");
 
-router2.use('/customer',customers)
-router2.use('/trip',trips)
+router2.use("/customer", customers);
 
-module.exports = router2
+module.exports = router2;

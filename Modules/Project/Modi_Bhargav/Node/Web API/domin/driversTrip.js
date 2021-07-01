@@ -1,36 +1,57 @@
-const Driver = require('../models/Drivers_model')
-const Trip = require('../models/trip_model')
-const Car = require('../models/cars_model')
+const cityTrip = require("../models/trip_model");
+const outstationTrip = require("../models/outstation_trip");
+const rentalTrip = require("../models/rental_trip");
 const express = require("express");
-const drivertripRouter = express.Router({ mergeParams: true });
-
+const driverTripRouter = express.Router({ mergeParams: true });
 
 class DriverTrip {
   static async drivertripFind(req, res) {
+    const cityTriphistory = await cityTrip.find();
+    const outstationTriphistory = await outstationTrip.find();
+    const rentalTriphistory = await rentalTrip.find();
 
-    const ID2 = parseInt(req.params.id)
-    const selectData = await Driver.find({ driverId: ID2 }).select('-__v')
-    if (selectData.length == 0) return res.status(404).send("Your Drivers Data Is Not Found")
-
-    const tripDetails = await Trip.find()
-    var tripData = []
-    for (var i of tripDetails) {
-      const carDetail = await Car.find({ carId: i.carId })
-        .populate('driverData')
-      for (var j of carDetail) {
-        if (j.driverData.driverId == ID2) {
-          const tripDetail = await Trip.find({tripId:i.tripId})
-          tripData.push(tripDetail)
-        }
-      }
+    try {
+      res.send({ cityTriphistory, outstationTriphistory, rentalTriphistory });
+    } catch (ex) {
+      console.log(ex.message);
     }
-    if (tripData.length == 0) return res.status(404).send("No Trip By driver")
+  }
+  static async driverTrips(req, res) {
+    const ID = parseInt(req.params.id);
 
-    res.send(tripData)
+    const cityTrips = await cityTrip.find({ driverNumber: ID });
+    const cityCustomer = await cityTrip.find({ customerNumber: ID });
+
+    const outstationTrips = await outstationTrip.find({
+      driverNumber: ID,
+    });
+    const outstationCustomer = await outstationTrip.find({
+      customerNumber: ID,
+    });
+
+    const rentalTrips = await rentalTrip.find({ driverNumber: ID });
+    const rentalCustomer = await rentalTrip.find({
+      customerNumber: ID,
+    });
+
+    if (cityTrips.length != 0) {
+      res.status(200).send(cityTrips);
+    } else if (cityCustomer.length != 0) {
+      res.status(200).send(cityCustomer);
+    } else if (outstationCustomer.length != 0) {
+      res.status(200).send(outstationCustomer);
+    } else if (rentalCustomer.length != 0) {
+      res.status(200).send(rentalCustomer);
+    } else if (outstationTrips.length != 0) {
+      res.status(200).send(outstationTrips);
+    } else if (rentalTrips.length != 0) {
+      res.status(200).send(rentalTrips);
+    } else {
+      res.status(404).send("Your Data is Not Avilable");
+    }
   }
 }
+driverTripRouter.get("/", DriverTrip.drivertripFind);
+driverTripRouter.get("/:id", DriverTrip.driverTrips);
 
-drivertripRouter.get('/', DriverTrip.drivertripFind)
-
-module.exports = drivertripRouter
-
+module.exports = driverTripRouter;

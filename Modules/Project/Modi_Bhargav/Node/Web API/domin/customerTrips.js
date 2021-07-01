@@ -1,30 +1,26 @@
-const Customer = require('../models/customers_model')
-const Trip = require('../models/trip_model')
+const cityTrip = require("../models/trip_model");
+const outstationTrip = require("../models/outstation_trip");
+const rentalTrip = require("../models/rental_trip");
 const express = require("express");
 const cusTripsRouter = express.Router({ mergeParams: true });
 
 class customerTrip {
   static async custripFind(req, res) {
+    const ID = parseInt(req.params.id);
 
-    const ID = parseInt(req.params.id)
-    const selectData = await Customer.find({ customerId: ID }).select('-__v')
-    if (selectData.length == 0) return res.status(404).send("Your Id Is Not Avilable")
+    const cityTriphistory = await cityTrip.find({ customerNumber: ID });
+    const outstationTriphistory = await outstationTrip.find({
+      customerNumber: ID,
+    });
+    const rentalTriphistory = await rentalTrip.find({ customerNumber: ID });
 
-    const tripDetails = await Trip.find()
-    var customerData = []
-    for (var i of tripDetails) {
-      // console.log(i)
-      if (i.customerId == ID) {
-        const tripData = await Trip.find({ tripId: i.tripId })
-        customerData.push(tripData)
-      }
+    try {
+      res.send({ cityTriphistory, outstationTriphistory, rentalTriphistory });
+    } catch (ex) {
+      console.log(ex.message);
     }
-    if (customerData.length == 0) return res.status(404).send("Not a Any Trip details Avilable")
+  }
+}
+cusTripsRouter.get("/", customerTrip.custripFind);
 
-    res.send(customerData)
-  };
-};
-
-cusTripsRouter.get('/', customerTrip.custripFind)
-
-module.exports = cusTripsRouter
+module.exports = cusTripsRouter;

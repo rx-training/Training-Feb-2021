@@ -1,52 +1,50 @@
-const nodemailer = require('nodemailer');
+const nodemailer = require("nodemailer");
 
-var OTP
+var OTP;
 
 class validateOTP {
-
-  static createOTP(){
-    var code = '0123456789';
-    var otp = '';
-    for(let i=1; i<=6; i++)
-    {
-      otp += code[Math.floor(Math.random() * 10)]
+  static createOTP() {
+    var code = "0123456789";
+    var OTP1 = "";
+    for (let i = 1; i <= 6; i++) {
+      OTP1 += code[Math.floor(Math.random() * 10)];
     }
-    console.log(otp)
-    return otp;
+    console.log(OTP1);
+    OTP = OTP1;
+    return OTP1;
   }
 
   static sendOTP(email) {
     var transporter = nodemailer.createTransport({
-      service: 'gmail',
+      service: "gmail",
       auth: {
-        user: 'modibhargav1998@gmail.com',
-        pass: 'Bhai@267'
-      }
+        user: "modibhargav1998@gmail.com",
+        pass: "Bhai@321",
+      },
     });
 
-    OTP = this.createOTP()
+    OTP = this.createOTP();
     var mailOptions = {
-      from: 'modibhargav1998@gmail.com',
+      from: "modibhargav1998@gmail.com",
       to: email,
-      subject: 'Verify OTP',
-      html: `<h1 style = "color:green;">Please Verify Your OTP:</h1><h2 style="color:black;">${OTP}</h2>`
+      subject: "Verify OTP",
+      html: `<h1 style = "color:green;">Please Verify Your OTP:</h1><h2 style="color:black;">${OTP}</h2>`,
     };
     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
         console.log(error);
       } else {
-        console.log('Email sent: ' + info.response);
+        console.log("Email sent: " + info.response);
       }
     });
   }
   static verifyOTP(ID) {
     if (OTP == ID) {
       return true;
-    }
-    else {
+    } else {
       return false;
     }
   }
 }
 
-module.exports = validateOTP
+module.exports = validateOTP;
