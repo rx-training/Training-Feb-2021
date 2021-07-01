@@ -22,8 +22,8 @@ var cust = /** @class */ (function () {
             console.log("Please enter valid name for booking");
         }
         else {
-            console.log("Customer ID " + cusid[0].cusName + " have booked tabel");
-            console.log("Booking token is:", getToken(1));
+            console.log("Customer ID " + cusid[1].cusName + " have booked tabel");
+            console.log("Booking token is:", getToken(10));
         }
         // function getToken(length){
         //     var result=[];

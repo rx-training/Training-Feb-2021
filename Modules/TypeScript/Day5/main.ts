@@ -13,7 +13,7 @@ let e = new cust();
 let f = new Restaurants();
 
 
-let op : number = 1 ; 
+let op : number = 2 ; 
 switch(op) {
     
      // details 
