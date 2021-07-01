@@ -1,125 +1,99 @@
-import React, { Component } from "react";
-import StudentService from "../services/StudentService";
+import React from "react";
+import { UseForm } from "./UseForm";
+import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../components/Form/form.scss";
+import StudentService from "../services/StudentService";
 
-export default class Form extends Component {
-  constructor(props) {
-    super(props);
+export const UpdateStudent = (props) => {
+  let temp = "";
+  const [values, handleChange] = UseForm(temp);
+  const [state, setstate] = useState(false);
+  useEffect(() => {
+    StudentService.getStudentById(props.match.params.id).then((res) => {
+      setCurrentStudent(res.data[0]);
+      setstate(true);
+    });
+  }, []);
 
-    this.state = {
-      country: {
-        please: [],
-        India: ["Gujarat", "Maharashtra", "Punjab", "UP"],
-        Australia: ["California", "Texas", "Florida"],
-        Canada: ["Alberta", "Columbia"],
-      },
-
-      selectedState: "Gujarat",
-      selectedCountry: "India",
-      selectedDegree: "BE",
-      states: {
-        Gujarat: ["Ahmedabad", "Surat", "Bhavnagar"],
-        Maharashtra: ["Mumbai", "Pune"],
-        Punjab: ["Ludhiana", "Amritsar"],
-        UP: ["Lucknow", "Unnao"],
-        California: ["Los-Angeles", "San-joe"],
-        Texas: ["Houseton", "Dallas"],
-        Florida: ["Miami", "Tampa"],
-        Alberta: ["Calgarie", "Airtdri"],
-        Columbia: ["Cali", "Santa-Marta"],
-      },
-      Id: "",
-      fname: "",
-      mname: "",
-      lname: "",
-      ffname: "",
-      fmname: "",
-      flname: "",
-      DOB: "",
-      email: "",
-      collegeName: "",
-      studentImage: null,
-      collegeLogo: "",
-      student: {},
-      students: [],
-      idError: "",
-      nameError: "",
-      dateError: "",
-      emailError: "",
-      collegeNameError: "",
-      fnameError: "",
-      submit: false,
-      selectedCity: "",
-    };
-    this.studentImage = React.createRef();
-    this.collegeLogo = React.createRef();
+  if (state) {
   }
-  handleChange = (e) => {
-    this.edit();
-    const name = e.target.name;
-    if (name === "studentImage") {
-      this.setState({
-        studentImage: e.target.files[0].name,
-      });
-    } else if (name === "collegeLogo") {
-      this.setState({
-        collegeLogo: e.target.files[0].name,
-      });
-    } else {
-      this.setState({
-        [e.target.name]: e.target.value,
-      });
-    }
+  const [currentStudent, setCurrentStudent] = useState({
+    Id: "",
+    fname: "",
+    mname: "",
+    lname: "",
+    selectedCountry: "India",
+    selectedState: "gujarat",
+    selectedDegree:'BCA'
+  });
+  let country1 = currentStudent.selectedCountry;
 
-    this.formValidation(e);
+  const country = {
+    please: [],
+    India: ["Gujarat", "Maharashtra", "Punjab", "UP"],
+    Australia: ["California", "Texas", "Florida"],
+    Canada: ["Alberta", "Columbia"],
   };
-  formValidation = (e) => {
+  const states = {
+    Gujarat: ["Ahmedabad", "Surat", "Bhavnagar"],
+    Maharashtra: ["Mumbai", "Pune"],
+    Punjab: ["Ludhiana", "Amritsar"],
+    UP: ["Lucknow", "Unnao"],
+    California: ["Los-Angeles", "San-joe"],
+    Texas: ["Houseton", "Dallas"],
+    Florida: ["Miami", "Tampa"],
+    Alberta: ["Calgarie", "Airtdri"],
+    Columbia: ["Cali", "Santa-Marta"],
+  };
+  console.log(states["Gujarat"]);
+  const [Error, setError] = useState({
+    idError: "",
+    nameError: "",
+    dateError: "",
+    emailError: "",
+    fnameError: "",
+    collegeNameError: "",
+  });
+
+  const formValidation = (e) => {
     const input = e.target.name;
     const val = e.target.value;
     switch (input) {
-      case "ID":
+      case "Id":
         if (val < 0) {
-          this.setState({
-            idError: "number can not be negative",
-            show: true,
-          });
+          setError({ ...Error, idError: "Id cannot be negative" });
         } else if (val.length <= 0) {
-          this.setState({
-            idError: "ID can not be blank",
-            show: true,
-          });
+          setError({ ...Error, idError: "Id cannot be blank" });
         } else {
-          this.setState({
-            idError: "",
-          });
+          setError({ ...Error, idError: null });
         }
 
         break;
 
-      case ("fname", "mname", "lname"):
+      case "fname":
+      case "mname":
+      case "lname":
         if (val.length <= 0) {
-          this.setState({
+          setError({
+            ...Error,
             nameError: "first name,niddlename or lastname cannot be blank",
-            show: true,
           });
         } else {
-          this.setState({
-            nameError: "",
-          });
+          setError({ ...Error, nameError: null });
         }
         break;
 
-      case ("ffname", "fmname", "flname"):
+      case "ffname":
+      case "fmname":
+      case "flname":
         if (val.length <= 0) {
-          this.setState({
+          setError({
+            ...Error,
             fnameError: "first name,niddlename or lastname cannot be blank",
-            show: true,
           });
         } else {
-          this.setState({
-            fnameError: "",
-          });
+          setError({ ...Error, fnameError: null });
         }
         break;
 
@@ -128,106 +102,45 @@ export default class Form extends Component {
           "^(1[0-2]|0[1-9])/(3[01]|[12][0-9]|0[1-9])/[0-9]{4}$"
         );
         if (!regex.test(val)) {
-          this.setState({
-            dateError: "Enter valid format",
-          });
+          setError({ ...Error, dateError: "Enter Valid Date Format" });
         } else {
-          this.setState({
-            dateError: "",
-          });
+          setError({ ...Error, dateError: null });
         }
         break;
 
       case "email":
         const regex1 = new RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
         if (!regex1.test(val)) {
-          console.log(regex1.test(val));
-          this.setState({
-            emailError: "Enter valid e-mail Address",
-          });
+          setError({ ...Error, emailError: "Enter Valid E-mail Format" });
         } else {
-          this.setState({
-            emailError: "",
-          });
+          setError({ ...Error, emailError: null });
         }
         break;
 
       case "collegeName":
         if (val.length <= 0) {
-          this.setState({
-            collegeNameError: "CollegeName cannot be blank",
-            show: true,
+          setError({
+            ...Error,
+            collegeNameError: "CollegeName cannot be empty",
           });
         } else {
-          this.setState({
-            show: false,
-          });
+          setError({ ...Error, collegeNameError: null });
         }
         break;
       default:
-        console.log("All is correct");
-        break;
     }
   };
-  handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(this.state);
 
-    StudentService.updateStudent(this.state, this.props.match.params.id).then(
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    StudentService.updateStudent(currentStudent, props.match.params.id).then(
       (res) => {
         console.log(res.data);
       }
     );
-    alert("Edited Successfully")
-    this.props.history.push("/");
+    props.history.push("/");
   };
-
-  componentDidMount() {
-    StudentService.getStudentById(this.props.match.params.id).then((res) => {
-      this.setState({ student: res.data[0] });
-    });
-  }
-  edit = () => {
-    const {
-      Id,
-      fname,
-      lname,
-      mname,
-      ffname,
-      fmnane,
-      flname,
-      collegeName,
-      collegeLogo,
-      studentImage,
-      email,
-      selectedCountry,
-      selectedDegree,
-      selectedState,
-      selectedCity,
-      DOB
-    } = this.state.student;
-    this.setState({
-      Id,
-      fname,
-      lname,
-      mname,
-      ffname,
-      fmnane,
-      flname,
-      collegeName,
-      collegeLogo,
-      studentImage,
-      email,
-      selectedCountry,
-      selectedDegree,
-      selectedState,
-      selectedCity,
-      DOB
-    });
-  };
-
-  render() {
-    const students = this.props.students;
+  if (state) {
     return (
       <React.Fragment>
         <div className="container mx-auto p-2  ">
@@ -241,11 +154,13 @@ export default class Form extends Component {
                   className="form-control "
                   placeholder="Enter ID"
                   name="Id"
-                  disabled="true"
-                  value={this.props.match.params.id}
-                  onChange={this.handleChange}
+                  value={currentStudent.Id}
+                  onChange={(e) =>
+                    setCurrentStudent({ ...currentStudent, Id: e.target.value })
+                  }
+                  onInput={formValidation}
                 />
-                <div className="text-danger"> {this.state.idError}</div>
+                <div className="text-danger"> {Error.idError}</div>
               </div>
             </div>
             <div class="form-group w-50 mx-auto mt-3 row">
@@ -256,8 +171,13 @@ export default class Form extends Component {
                   className="form-control "
                   placeholder="Enter first name"
                   name="fname"
-                  value={this.state.fname}
-                  onChange={this.handleChange}
+                  onChange={(e) =>
+                    setCurrentStudent({
+                      ...currentStudent,
+                      fname: e.target.value,
+                    })
+                  }
+                  onInput={formValidation}
                 />
               </div>
               <div className="col">
@@ -266,8 +186,14 @@ export default class Form extends Component {
                   className="form-control "
                   placeholder="Enter middle name"
                   name="mname"
-                  onChange={this.handleChange}
-                  value={this.state.mname}
+                  onChange={(e) =>
+                    setCurrentStudent({
+                      ...currentStudent,
+                      mname: e.target.value,
+                    })
+                  }
+                  onInput={formValidation}
+                  value={currentStudent.mname}
                 />
               </div>
               <div className="col">
@@ -276,11 +202,17 @@ export default class Form extends Component {
                   className="form-control "
                   placeholder="Enter last name"
                   name="lname"
-                  onChange={this.handleChange}
-                  value={this.state.lname}
+                  onChange={(e) =>
+                    setCurrentStudent({
+                      ...currentStudent,
+                      lname: e.target.value,
+                    })
+                  }
+                  onInput={formValidation}
+                  value={currentStudent.lname}
                 />
               </div>
-              <div className="text-danger"> {this.state.nameError}</div>
+              <div className="text-danger"> {Error.nameError}</div>
             </div>
 
             <div className="form-group w-50 mx-auto mt-3 row">
@@ -291,11 +223,17 @@ export default class Form extends Component {
                   className="form-control "
                   placeholder="Enter date of birth"
                   name="DOB"
-                  onChange={this.handleChange}
-                  value={this.state.DOB}
+                  onChange={(e) =>
+                    setCurrentStudent({
+                      ...currentStudent,
+                      DOB: e.target.value,
+                    })
+                  }
+                  onInput={formValidation}
+                  value={currentStudent.DOB}
                 />
               </div>
-              <div className="text-danger"> {this.state.dateError}</div>
+              <div className="text-danger"> {Error.dateError}</div>
             </div>
             <div className="form-group w-50 mx-auto mt-3 row">
               <label className="h5">Enter E-mail </label>
@@ -303,13 +241,19 @@ export default class Form extends Component {
                 <input
                   type="text"
                   className="form-control "
-                  placeholder="Enter date of birth"
+                  placeholder="Enter e-mail"
                   name="email"
-                  onChange={this.handleChange}
-                  value={this.state.email}
+                  onChange={(e) =>
+                    setCurrentStudent({
+                      ...currentStudent,
+                      email: e.target.value,
+                    })
+                  }
+                  onInput={formValidation}
+                  value={currentStudent.email}
                 />
               </div>
-              <div className="text-danger"> {this.state.emailError}</div>
+              <div className="text-danger"> {Error.emailError}</div>
             </div>
             <div class="form-group w-50 mx-auto mt-3 row">
               <label className="h5">Father Name</label>
@@ -319,9 +263,14 @@ export default class Form extends Component {
                   className="form-control "
                   placeholder="Enter first name"
                   name="ffname"
-                  // value={this.state.fname}
-                  onChange={this.handleChange}
-                  value={this.state.ffname}
+                  value={currentStudent.ffname}
+                  onChange={(e) =>
+                    setCurrentStudent({
+                      ...currentStudent,
+                      ffname: e.target.value,
+                    })
+                  }
+                  onInput={formValidation}
                 />
               </div>
               <div className="col">
@@ -330,8 +279,13 @@ export default class Form extends Component {
                   className="form-control "
                   placeholder="Enter middle name"
                   name="fmname"
-                  onChange={this.handleChange}
-                  value={this.state.fmname}
+                  onChange={(e) =>
+                    setCurrentStudent({
+                      ...currentStudent,
+                      fmname: e.target.value,
+                    })
+                  }
+                  value={currentStudent.fmname}
                 />
               </div>
               <div className="col">
@@ -340,27 +294,30 @@ export default class Form extends Component {
                   className="form-control "
                   placeholder="Enter last name"
                   name="flname"
-                  onChange={this.handleChange}
-                  value={this.state.flname}
+                  onChange={(e) =>
+                    setCurrentStudent({
+                      ...currentStudent,
+                      flname: e.target.value,
+                    })
+                  }
+                  value={currentStudent.flname}
                 />
               </div>
-              <div className="text-danger"> {this.state.fnameError}</div>
+              <div className="text-danger"> {Error.fnameError}</div>
             </div>
             <div className="form-group w-50 mx-auto mt-3 mb-5 row">
               <div className="col">
                 <label className="h5">Education Qualification</label>
                 <select
                   className="w-100 h-75"
+                  name="selectedDegree"
                   onChange={(e) => {
-                    this.setState({ selectedDegree: e.target.value });
+                    setCurrentStudent({...currentStudent,
+                      selectedDegree: e.currentTarget.value,
+                    });
                   }}
                 >
-                  {this.state.submit ? (
-                    <option selected>please select</option>
-                  ) : (
-                    <option>please select</option>
-                  )}
-
+                  <option selected>please select</option>
                   <option>BE</option>
                   <option>ME</option>
                   <option>BCA</option>
@@ -374,17 +331,14 @@ export default class Form extends Component {
                 <label className="h5">Select Country Name</label>
                 <select
                   className="w-100 h-75"
-                  onChange={(e) => {
-                    this.setState({ selectedCountry: e.target.value });
-                  }}
+                  onChange={(e) =>
+                    setCurrentStudent({
+                      ...currentStudent,
+                      selectedCountry: e.target.value,
+                    })
+                  }
                 >
-                  {this.state.submit ? (
-                    <option selected value="please">
-                      please select country
-                    </option>
-                  ) : (
-                    <option value="please">please select country</option>
-                  )}
+                  <option selected>please select country</option>
 
                   <option value="India">India</option>
                   <option value="Australia">Australia</option>
@@ -399,29 +353,25 @@ export default class Form extends Component {
                 <select
                   className="w-100 h-75"
                   id="state"
-                  onChange={(e) => {
-                    this.setState({ selectedState: e.target.value });
-                  }}
+                  name="selectedState"
+                  onChange={(e) =>
+                    setCurrentStudent({
+                      ...currentStudent,
+                      selectedState: e.target.value,
+                    })
+                  }
                 >
-                  {this.state.submit ? (
-                    <option selected value="please select state">
-                      please select state
-                    </option>
-                  ) : (
-                    <option value="please select state">
-                      please select state
-                    </option>
-                  )}
+                  <option selected value="please select state">
+                    please select state
+                  </option>
 
-                  {this.state.country[this.state.selectedCountry].map(
-                    (e, key) => {
-                      return (
-                        <option key={key} value={e}>
-                          {e}
-                        </option>
-                      );
-                    }
-                  )}
+                  {country[currentStudent.selectedCountry].map((e, key) => {
+                    return (
+                      <option key={key} value={e}>
+                        {e}
+                      </option>
+                    );
+                  })}
                 </select>
               </div>
             </div>
@@ -432,20 +382,17 @@ export default class Form extends Component {
                   className="w-100 h-75"
                   id="city"
                   name="selectedCity"
-                  onChange={(e) => {
-                    this.setState({ selectedCity: e.target.value });
-                  }}
+                  onChange={(e) =>
+                    setCurrentStudent({
+                      ...currentStudent,
+                      selectedCity: e.target.value,
+                    })
+                  }
                 >
-                  {this.state.submit ? (
-                    <option selected value="please select city">
-                      please select city
-                    </option>
-                  ) : (
-                    <option value="please select city">
-                      please select city
-                    </option>
-                  )}
-                  {this.state.states[this.state.selectedState].map((e, key) => {
+                  <option selected value="please select city">
+                    please select city
+                  </option>
+                  {states[currentStudent.selectedState].map((e, key) => {
                     return (
                       <option key={key} value={e}>
                         {e}
@@ -464,9 +411,15 @@ export default class Form extends Component {
                   className="form-control "
                   placeholder="Select Profile Picture"
                   id="image"
-                  onChange={this.handleChange}
                   name="studentImage"
-                  ref={this.studentImage}
+                  onChange={(e) =>
+                    setCurrentStudent({
+                      ...currentStudent,
+                      studentImage: e.target.value,
+                    })
+                  }
+
+                  // ref={this.studentImage}
                 />
               </div>
             </div>
@@ -478,11 +431,17 @@ export default class Form extends Component {
                   className="form-control "
                   placeholder="Enter College Name"
                   name="collegeName"
-                  onChange={this.handleChange}
-                  value={this.state.collegeName}
+                  onChange={(e) =>
+                    setCurrentStudent({
+                      ...currentStudent,
+                      collegeName: e.target.value,
+                    })
+                  }
+                  onInput={formValidation}
+                  value={currentStudent.collegeName}
                 />
               </div>
-              <div className="text-danger"> {this.state.collegeNameError}</div>
+              <div className="text-danger"> {Error.collegeNameError}</div>
             </div>
             <div class="form-group w-50 mx-auto m-3 row">
               <label className="h5 mt-4 mb-3">Select College Logo</label>
@@ -492,22 +451,30 @@ export default class Form extends Component {
                   className="form-control "
                   placeholder="Select College Logo"
                   name="collegeLogo"
-                  onChange={this.handleChange}
-                  ref={this.collegeLogo}
+                  onChange={(e) =>
+                    setCurrentStudent({
+                      ...currentStudent,
+                      collegeLogo: e.target.value,
+                    })
+                  }
+                  // ref={this.collegeLogo}
                 />
               </div>
             </div>
             <div class="form-group w-50 mx-auto m-3">
               <button
-                className="btn w-100 btn-primary mt-4"
-                onClick={this.handleSubmit}
+                className="btn w-100 btn-success mt-4"
+                // disabled={this.state.submit}
+                onClick={handleSubmit}
               >
-                Edit
+                Submit
               </button>
             </div>
           </form>
         </div>
       </React.Fragment>
     );
+  } else {
+    return null;
   }
-}
+};
