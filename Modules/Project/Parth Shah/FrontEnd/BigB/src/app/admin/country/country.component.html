@@ -1,0 +1,52 @@
+<div class="row no-gutters">
+    <div class="col-md-8 p-0">
+
+      
+
+<div class="container">
+    <h3  class="text-center text-secondary font-italic">Create Country Here</h3>
+            <form [formGroup]="countForm"  >
+             
+                <div class="form-group">
+                  <label for="catName">Enter Country Name</label>
+                  <input type="text" class="form-control"  formControlName="coName">
+                </div>
+              
+                <button (click)="SubmitData()" class="btn btn-primary">Submit</button><br><br>
+                    <button (click)='update()' class="btn btn-outline-secondary btn-lg btn-block" >Update</button>
+              </form>
+      
+
+    </div>
+</div>
+
+
+    <div class="col-md-4 p-0 m-0">
+        <div class="card m-2">
+            <div class="card-header">
+                Table to see All Country List
+            </div>
+            <div class="card-body table-responsive box1">
+
+                <table class="table">
+                    <tbody *ngFor='let country of CountryList; let idx= index;'>
+                        <tr>
+                            <th>Id</th>
+                            <td> {{country.countryId}} </td>
+                        </tr>
+                        <tr>
+                            <th>Country Name</th>
+                            <td> {{country.countryName}} </td>
+                        </tr>
+                        <tr>
+                            <td><button class="btn btn-dark" (click)= 'edit(country)'> Edit </button> </td>
+                            <td> <button class="btn btn-danger" (click)= 'delete(country.countryId)'> Delete </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>

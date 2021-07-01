@@ -1,0 +1,71 @@
+<div class="row no-gutters">
+    <div class="col-md-8 p-0">
+
+      
+<!-- 
+            <form [formGroup]="Cat" (ngSubmit)="SubmitData()">
+                <div class="form-group">
+                    <label for="Catid">Enter Category ID</label>
+                    <input type="text" formControlName="catId" class="form-control" placeholder="Enter Category Id">
+
+                </div>
+                <div class="form-group">
+                    <label for="Catname">Enter Category Name</label>
+                    <input type="text" formControlName="catName" class="form-control" placeholder="Enter Category Name">
+
+                </div>
+                <div *ngIf="!boolVal">
+                    <button type="submit" class="btn btn-secondary">Create Category</button><br>
+                    <span *ngIf="Cat.invalid">All valid Detail require for Submit</span>
+                </div>
+
+            </form> -->
+
+<div class="container">
+    <h3 class="text-center text-secondary font-italic">Create Category Here</h3>
+            <form [formGroup]="Cat"  >
+              
+                <div class="form-group">
+                  <label for="catName">Enter Category Name</label>
+                  <input type="text" class="form-control"  formControlName="catName">
+                </div>
+              
+                <button  (click)='SubmitData()'class="btn btn-primary">Submit</button><br><br>
+              <button (click)='update()' class="btn btn-outline-secondary btn-lg btn-block" >Update</button>
+
+              </form>
+      
+
+    </div>
+</div>
+
+
+    <div class="col-md-4 p-0 m-0">
+        <div class="card m-2">
+            <div class="card-header">
+                Table to see All Category
+            </div>
+            <div class="card-body table-responsive box1">
+
+                <table class="table">
+                    <tbody *ngFor='let category of CatList; let idx= index;'>
+                        <tr>
+                            <th>Id</th>
+                            <td> {{category.categoryId}} </td>
+                        </tr>
+                        <tr>
+                            <th>Category Name</th>
+                            <td> {{category.categoryName}} </td>
+                        </tr>
+                        <tr>
+                            <td><button class="btn btn-dark" (click)= 'edit(category)'> Edit </button> </td>
+                            <td> <button class="btn btn-danger" (click)= 'delete(category.categoryId)'> Delete </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>

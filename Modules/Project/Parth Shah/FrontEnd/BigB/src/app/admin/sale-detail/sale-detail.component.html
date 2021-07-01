@@ -1,0 +1,65 @@
+<h3  class="text-center text-secondary font-italic">Sale Customer Detail with their Cart Id and Product</h3>
+
+<div class="card m-2">
+    <div class="card-header">
+        Table to see All Sale Customer  Details 
+    </div>
+    <div class="card-body table-responsive box1">
+
+        <table class="table">
+            <tbody *ngFor='let sale of saleDetailList; let idx= index;'>
+                <tr>
+                    <th>Cart ID </th>
+                    <td> {{sale.saleId}} </td>
+                </tr>
+                <tr>
+                    <th>Product Price</th>
+                    <td> {{sale.productPrice}} </td>
+                </tr>
+                <tr>
+                    <th>invoice Amount</th>
+                    <td> {{sale.invoiceAmount}} </td>
+                </tr>
+                <tr>
+                    <th>Product quantity</th>
+                    <td> {{sale.productQty}} </td>
+                </tr>
+                <tr>
+                    <th>invoice Date</th>
+                    <td> {{sale.invoiceDate}} </td>
+                </tr>
+
+                <tr>
+                    <th>Customer Name</th>
+                    <td> {{sale.custName}} </td>
+                </tr>
+
+                <tr>
+                    <th>Address</th>
+                    <td> {{sale.address}} </td>
+                </tr>
+
+                <tr>
+                    <th>city Name</th>
+                    <td> {{sale.cityName}} </td>
+                </tr>
+
+                <tr>
+                    <th>prodcut Name</th>
+                    <td> {{sale.productName}} </td>
+                </tr>
+
+                <tr>
+                    <th>country  Name</th>
+                    <td> {{sale.countryName}} </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="p-3 bg-light"></td>
+                </tr>
+              
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

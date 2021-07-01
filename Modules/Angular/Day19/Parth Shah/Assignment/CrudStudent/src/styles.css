@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+li a:hover  {
+    background-color: #1c1c1c;
+  }
+ 
+ 
+  .card-header{
+      background-color: lightblue;
+  }
+  li a{
+font-weight: bold;
+color:red;
+  }
+  .nav-link{
+      color:tomato;
+  }
+  body{
+      background-color: #1c1c3c;
+  }
