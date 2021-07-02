@@ -84,10 +84,15 @@ export default function Module({ match }) {
 
   //delete module
   const handleDeleteBtn = async () => {
-    await setLoading(true);
-    await deleteModule(module._id);
-    setLoading(false);
-    history.push("/");
+    const del = window.confirm(
+      `Are You Sure, You Want To Delete ${module.name} ?`
+    );
+    if (del) {
+      await setLoading(true);
+      await deleteModule(module._id);
+      setLoading(false);
+      history.push("/");
+    }
   };
 
   //update module name

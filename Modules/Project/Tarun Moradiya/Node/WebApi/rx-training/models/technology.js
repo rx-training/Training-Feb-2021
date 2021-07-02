@@ -16,6 +16,14 @@ const techSchema = new mongoose.Schema({
   },
 });
 
+techSchema.post("save", function (error, doc, next) {
+  if (error.name === "MongoError" && error.code === 11000) {
+    next(new Error("Tech must be unique"));
+  } else {
+    next(error);
+  }
+});
+
 //create class
 const Technology = mongoose.model("Technology", techSchema);
 

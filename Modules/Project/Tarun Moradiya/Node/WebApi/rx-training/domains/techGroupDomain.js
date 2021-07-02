@@ -1,50 +1,74 @@
 const { TechGroup, validate } = require("../models/techGroup");
 const { Technology } = require("../models/technology");
+const { User } = require("../models/user");
 
 const debug = require("debug")("rx:tGrp");
 
 class TechGroupDomain {
   //To get TechGroups
   async getTechGroups(req, res) {
-    //check if id given
-    if (req.params.id) {
-      //get data with id
-      const tGrp = await TechGroup.findById(req.params.id);
+    try {
+      const user = await User.findById(req.user._id);
 
-      //if not in db return
-      if (!tGrp)
-        return res.status(404).send("TechGroup with given id not found!!!");
+      //check if id given
+      if (req.params.id) {
+        if (req.user.isAdmin !== true) {
+          const check = user.permissions.tGrps.find((p) => p === req.params.id);
+          if (!check)
+            return res.status(404).send("user has not permission !!!");
+        }
 
-      //response
-      res.send(tGrp);
-    } else {
-      //get all data
-      const tGrps = await TechGroup.find();
+        //get data with id
+        const tGrp = await TechGroup.findById(req.params.id);
 
-      //response
-      res.send(tGrps);
+        //if not in db return
+        if (!tGrp)
+          return res.status(404).send("TechGroup with given id not found!!!");
+
+        //response
+        res.send(tGrp);
+      } else {
+        //get all data
+        const tGrps = await TechGroup.find();
+        let permittedTGrps = [];
+        if (user.isAdmin) permittedTGrps = tGrps;
+        else {
+          permittedTGrps = tGrps.filter((t) =>
+            user.permissions.tGrps.includes(t._id)
+          );
+        }
+        //response
+        res.send(permittedTGrps);
+      }
+    } catch (error) {
+      debug(error);
+      res.send(error);
     }
   }
 
   //To insert TechGroup
   async insertTechGroup(req, res) {
-    //validate user input
-    const { error } = await validate(req.body);
+    try {
+      //validate user input
+      const { error } = await validate(req.body);
 
-    //if error return
-    if (error) return res.status(400).send(error.details[0].message);
+      //if error return
+      if (error) return res.status(400).send(error.details[0].message);
 
-    //create
-    let tGrp = new TechGroup({
-      name: req.body.name,
-    });
+      //create
+      let tGrp = new TechGroup({
+        name: req.body.name,
+      });
 
-    //save to db
-    await tGrp.save();
+      //save to db
+      await tGrp.save();
 
-    //response
-    debug(tGrp);
-    res.send(tGrp);
+      //response
+      debug(tGrp);
+      res.json({ success: true, tGrp });
+    } catch (error) {
+      res.json({ success: false, error: error.message });
+    }
   }
 
   //To delete a TechGroup

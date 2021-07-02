@@ -5,6 +5,7 @@ import { TechContext } from "../contexts/techContext";
 import { TechGroupContext } from "../contexts/techGroupContext";
 import { AuthContext } from "../contexts/authContext";
 import styled from "styled-components";
+import { Button, Accordion, Card } from "react-bootstrap";
 
 export default function TechGroup(props) {
   const [grpTechs, setGrpTechs] = useState([]);
@@ -51,9 +52,14 @@ export default function TechGroup(props) {
   //delete tech group
   const handleDeleteBtn = async () => {
     try {
-      await setLoading(true);
-      await deleteTechGroup(grp._id);
-      await setLoading(false);
+      const del = window.confirm(
+        `Are You Sure, You Want To Delete ${grp.name} ?`
+      );
+      if (del) {
+        await setLoading(true);
+        await deleteTechGroup(grp._id);
+        await setLoading(false);
+      }
     } catch (error) {
       console.error(error);
     }
@@ -95,11 +101,11 @@ export default function TechGroup(props) {
   //add new tech
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newTech = await addTech(grp._id);
+    addTech(grp._id);
     await setAddItem(false);
   };
 
-  if (!isAdminUser && grpTechs.length === 0) return null;
+  // if (!isAdminUser && grpTechs.length === 0) return null;
 
   if (loading) {
     return (
@@ -114,7 +120,7 @@ export default function TechGroup(props) {
       <StyledTechGroup className="shadow">
         <div
           id="box-header"
-          className="card-header bg-info p-4 text-light font-weight-bold"
+          className="card-header bg-info p-4 text-light font-weight-bold clearfix"
         >
           {editItem ? (
             <form onSubmit={handleEdit} className="form-inline my-2 ">
@@ -138,7 +144,7 @@ export default function TechGroup(props) {
             <>
               <h4 className="d-inline-block">{grp.name}</h4>
               {isAdminUser === true && (
-                <>
+                <div className="float-right">
                   <button
                     className="btn btn-warning float-right ml-2"
                     onClick={handleAddBtn}
@@ -157,13 +163,13 @@ export default function TechGroup(props) {
                   >
                     <i className="fas fa-pen"></i>
                   </button>
-                </>
+                </div>
               )}
             </>
           )}
         </div>
         <div id="box-body" className="card-body bg-info">
-          <ul className="list-group">
+          <Accordion className="list-group">
             {grpTechs.map((tech) => (
               <Tech key={`${tech._id}${tech.name}`} tech={tech} />
             ))}
@@ -196,7 +202,7 @@ export default function TechGroup(props) {
                 </form>
               </li>
             ) : null}
-          </ul>
+          </Accordion>
         </div>
       </StyledTechGroup>
     </div>

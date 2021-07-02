@@ -47,9 +47,14 @@ export default function Context(props) {
 
   //handle delete context button
   const handleDeleteBtn = async () => {
-    await setLoading(true);
-    await props.deleteContext(context._id);
-    setLoading(false);
+    const del = window.confirm(
+      `Are You Sure, You Want To Delete ${context.context} ?`
+    );
+    if (del) {
+      await setLoading(true);
+      await props.deleteContext(context._id);
+      setLoading(false);
+    }
   };
 
   if (loading) {
@@ -100,7 +105,9 @@ export default function Context(props) {
         <Card.Title>{context.context}</Card.Title>
       </Accordion.Toggle>
       <Accordion.Collapse eventKey={context._id}>
-        <p style={{whiteSpace: 'pre-line'}} className="lead p-3">{context.description}</p>
+        <p style={{ whiteSpace: "pre-line" }} className="lead p-3">
+          {context.description}
+        </p>
       </Accordion.Collapse>
     </Card>
   );

@@ -1,7 +1,7 @@
 import logo from "../images/logo.jpg";
 import { LinkContainer } from "react-router-bootstrap";
-import React, { useContext } from "react";
-import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
+import React, { useContext, useState, useEffect } from "react";
+import { Navbar, Nav, Container, NavDropdown, Button } from "react-bootstrap";
 import { TechGroupContext } from "../contexts/techGroupContext";
 import MainDropdown from "./MainDropdown";
 import Loading from "./Loading";
@@ -12,6 +12,30 @@ export default function Header() {
   const { techGroups, loadingTechGrps, loadingNewTechGrp } =
     useContext(TechGroupContext);
   const { logout, isAdminUser, userEmail } = useContext(AuthContext);
+
+  const [low, setLow] = useState(0);
+  const [high, setHigh] = useState(3);
+
+  useEffect(() => {
+    setLow(0);
+    setHigh(3);
+    console.log(techGroups);
+    console.log(techGroups.length);
+  }, [techGroups]);
+
+  const handleLeft = () => {
+    if (low > 0) {
+      setHigh((high) => high - 1);
+      setLow((low) => low - 1);
+    }
+  };
+
+  const handleRight = () => {
+    if (high < techGroups.length - 1) {
+      setHigh((high) => high + 1);
+      setLow((low) => low + 1);
+    }
+  };
 
   return (
     <Navbar bg="white" id="header" variant="light" expand="lg" collapseOnSelect>
@@ -27,7 +51,33 @@ export default function Header() {
             {loadingTechGrps ? (
               <Loading />
             ) : (
-              techGroups.map((grp) => <MainDropdown key={grp._id} grp={grp} />)
+              <>
+                {techGroups.length > 4 && (
+                  <Button
+                    variant="outline-dark"
+                    className="border-0 font-weight-bold mx-4"
+                    onClick={handleLeft}
+                    disabled={low === 0}
+                  >
+                    <i className="fas fa-caret-left"></i>
+                  </Button>
+                )}
+                {techGroups.map(
+                  (grp, index) =>
+                    index >= low &&
+                    index <= high && <MainDropdown key={grp._id} grp={grp} />
+                )}
+                {techGroups.length > 4 && (
+                  <Button
+                    variant="outline-dark"
+                    className="border-0 font-weight-bold mx-4"
+                    onClick={handleRight}
+                    disabled={high === techGroups.length - 1}
+                  >
+                    <i className="fas fa-caret-right"></i>
+                  </Button>
+                )}
+              </>
             )}
             <NavDropdown
               title={<i className="fas fa-users-cog"></i>}

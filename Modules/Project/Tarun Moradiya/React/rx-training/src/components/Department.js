@@ -63,9 +63,14 @@ export default function Department(props) {
   };
 
   const handleDeleteBtnClick = async () => {
-    setLoading(true);
-    await deleteDepartment(dept._id);
-    setLoading(false);
+    const del = window.confirm(
+      `Are You Sure, You Want To Delete ${dept.name} ?`
+    );
+    if (del) {
+      setLoading(true);
+      await deleteDepartment(dept._id);
+      setLoading(false);
+    }
   };
 
   if (loading) {

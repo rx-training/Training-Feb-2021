@@ -8,13 +8,36 @@ const deptSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
+    unique: true,
   },
-  permissions: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Technology",
-    },
-  ],
+  permissions: {
+    techs: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Technology",
+      },
+    ],
+    tGrps: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "TechGroup",
+      },
+    ],
+  },
+  // permissions: [
+  //   {
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     ref: "Technology",
+  //   },
+  // ],
+});
+
+deptSchema.post("save", function (error, doc, next) {
+  if (error.name === "MongoError" && error.code === 11000) {
+    next(new Error("Department must be unique"));
+  } else {
+    next(error);
+  }
 });
 
 //create class

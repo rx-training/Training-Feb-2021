@@ -4,10 +4,11 @@ const TechGroup_API_BASE_URL = `${process.env.REACT_APP_URL}/techgroups`;
 // axios.defaults.headers.common["Authorization"] = localStorage.getItem("token");
 
 class TechGroupService {
-  getTechGroups() {
+  getTechGroups(source) {
     return axios.get(TechGroup_API_BASE_URL, {
       headers: {
         Authorization: localStorage.getItem("token"),
+        cancelToken: source.token,
       },
     });
   }

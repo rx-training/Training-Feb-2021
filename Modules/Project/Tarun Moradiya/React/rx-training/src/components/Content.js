@@ -48,9 +48,14 @@ export default function Content(props) {
 
   //handle delete content button
   const handleDeleteBtn = async () => {
-    setLoading(true);
-    await props.deleteContent(content._id);
-    setLoading(false);
+    const del = window.confirm(
+      `Are You Sure, You Want To Delete ${content.contentName} ?`
+    );
+    if (del) {
+      setLoading(true);
+      await props.deleteContent(content._id);
+      setLoading(false);
+    }
   };
 
   if (loading) {

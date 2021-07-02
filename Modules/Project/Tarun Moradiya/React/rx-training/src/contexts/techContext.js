@@ -38,10 +38,14 @@ function TechProvider(props) {
         name: techName,
         techGroup: grpId,
       });
-      await setTechs([...techs, res.data]);
+      if (res.data.success === true) {
+        await setTechs([...techs, res.data.tech]);
+        await setLoadingNewTech({ load: false });
+      } else {
+        await setLoadingNewTech({ load: false });
+        alert(res.data.error);
+      }
       await setTechName("");
-      await setLoadingNewTech({ load: false });
-      return res.data;
     } catch (error) {
       console.error(error);
     }

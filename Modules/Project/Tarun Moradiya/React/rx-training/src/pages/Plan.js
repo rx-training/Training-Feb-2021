@@ -80,10 +80,15 @@ export default function Plan({ match }) {
 
   //delete plan
   const handleDeleteBtn = async () => {
-    await setLoading(true);
-    await deletePlan(plan._id);
-    setLoading(false);
-    history.push("/");
+    const del = window.confirm(
+      `Are You Sure, You Want To Delete ${plan.name} ?`
+    );
+    if (del) {
+      await setLoading(true);
+      await deletePlan(plan._id);
+      setLoading(false);
+      history.push("/");
+    }
   };
 
   //update plan

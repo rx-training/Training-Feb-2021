@@ -16,11 +16,13 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
+    unique: true,
   },
   email: {
     type: String,
     required: true,
     trim: true,
+    unique: true,
   },
   password: {
     type: String,
@@ -37,12 +39,26 @@ const userSchema = new mongoose.Schema({
     default: false,
   },
   resetPasswordToken: String,
-  permissions: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Technology",
-    },
-  ],
+  permissions: {
+    techs: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Technology",
+      },
+    ],
+    tGrps: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "TechGroup",
+      },
+    ],
+  },
+  // permissions: [
+  //   {
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     ref: "Technology",
+  //   },
+  // ],
 });
 
 //create method
