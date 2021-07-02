@@ -222,6 +222,18 @@ export default function Topic(props) {
   //   }
   // }, [progressMsg]);
 
+  //handle delete content button
+  const handleDeleteBtn = async () => {
+    const del = window.confirm(
+      `Are You Sure, You Want To Delete ${topic.topic} ?`
+    );
+    if (del) {
+      setLoading(true);
+      await props.deleteTopic(topic._id);
+      setLoading(false);
+    }
+  };
+
   if (loading) {
     return (
       <Card.Body>
@@ -255,7 +267,7 @@ export default function Topic(props) {
               />
             )}
             <button
-              onClick={() => props.deleteTopic(topic._id)}
+              onClick={handleDeleteBtn}
               className="btn btn-danger float-right ml-2"
             >
               <i className="fas fa-trash"></i>

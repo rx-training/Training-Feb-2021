@@ -50,9 +50,15 @@ function DepartmentProvider(props) {
     setLoadingNewDepartment(true);
     const res = await departmentServices.createDepartment({ name });
     console.log(res);
-    setDepartments([...departments, res.data]);
     setDisplayAddForm(false);
-    setLoadingNewDepartment(false);
+    if (res.data.success === true) {
+      setDepartments([...departments, res.data.dept]);
+      setLoadingNewDepartment(false);
+    } else {
+      console.log(res.data);
+      setLoadingNewDepartment(false);
+      alert(res.data.error);
+    }
   };
 
   //update tech-group

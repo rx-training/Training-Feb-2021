@@ -56,9 +56,14 @@ export default function User(props) {
   };
 
   const handleDeleteBtnClick = async () => {
-    setLoading(true);
-    await deleteUser(user._id);
-    setLoading(false);
+    const del = window.confirm(
+      `Are You Sure, You Want To Delete ${user.username} ?`
+    );
+    if (del) {
+      setLoading(true);
+      await deleteUser(user._id);
+      setLoading(false);
+    }
   };
 
   const handleUpdateUser = (newUser) => {

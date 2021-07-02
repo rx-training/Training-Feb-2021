@@ -17,8 +17,8 @@ ReactDOM.render(
   <AuthProvider>
     <UserProvider>
       <DepartmentProvider>
-        <TechGroupProvider>
-          <TechProvider>
+        <TechProvider>
+          <TechGroupProvider>
             <PlanProvider>
               <ModuleProvider>
                 <Router>
@@ -26,8 +26,8 @@ ReactDOM.render(
                 </Router>
               </ModuleProvider>
             </PlanProvider>
-          </TechProvider>
-        </TechGroupProvider>
+          </TechGroupProvider>
+        </TechProvider>
       </DepartmentProvider>
     </UserProvider>
   </AuthProvider>,

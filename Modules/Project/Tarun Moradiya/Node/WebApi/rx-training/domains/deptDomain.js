@@ -29,23 +29,27 @@ class DepartmentDomain {
 
   //To insert Department
   async insertDepartment(req, res) {
-    //validate user input
-    const { error } = await validate(req.body);
+    try {
+      //validate user input
+      const { error } = await validate(req.body);
 
-    //if error return
-    if (error) return res.status(400).send(error.details[0].message);
+      //if error return
+      if (error) return res.status(400).send(error.details[0].message);
 
-    //create
-    let dept = new Department({
-      name: req.body.name,
-    });
+      //create
+      let dept = new Department({
+        name: req.body.name,
+      });
 
-    //save to db
-    dept = await dept.save();
+      //save to db
+      dept = await dept.save();
 
-    //response
-    debug(dept);
-    res.send(dept);
+      //response
+      debug(dept);
+      res.json({ success: true, dept });
+    } catch (error) {
+      res.json({ success: false, error: error.message });
+    }
   }
 
   //To delete a Department

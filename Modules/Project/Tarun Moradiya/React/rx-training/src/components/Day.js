@@ -83,9 +83,12 @@ export default function Day(props) {
 
   //handle delete day button
   const handleDeleteBtn = async () => {
-    await setLoading(true);
-    await props.deleteDay(day._id);
-    setLoading(false);
+    const del = window.confirm(`Are You Sure, You Want To Delete ${day.day} ?`);
+    if (del) {
+      await setLoading(true);
+      await props.deleteDay(day._id);
+      setLoading(false);
+    }
   };
 
   //delete context

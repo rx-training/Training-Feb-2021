@@ -9,8 +9,8 @@ export default function AddTechGrp(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     props.setShow(false);
-    await addTechGroup();
     props.setShowForm(false);
+    addTechGroup();
   };
   return (
     <Modal show={props.show} onHide={props.handleClose}>

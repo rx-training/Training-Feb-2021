@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import techGroupServices from "../services/TechGroupServices";
 import { AuthContext } from "./authContext";
+import axios from "axios";
+import { TechContext } from "./techContext";
 
 const TechGroupContext = React.createContext();
 
@@ -11,11 +13,24 @@ function TechGroupProvider(props) {
   const [loadingNewTechGrps, setLoadingNewTechGrps] = useState(false);
   const { userIsLoggedIn } = useContext(AuthContext);
 
+  const { techs } = useContext(TechContext);
+
   //get tech-groups
-  const getData = async () => {
+  const getData = async (source) => {
     try {
-      const res = await techGroupServices.getTechGroups();
+      const res = await techGroupServices.getTechGroups(source);
       await setTechGroups(res.data);
+      console.log(
+        "filtered tech groups",
+        res.data.filter((data) => {
+          const filteredTechs = techs.filter(
+            (tech) => data._id === tech.techGroup
+          );
+          console.log(filteredTechs);
+          console.log(data);
+          return filteredTechs;
+        })
+      );
       await setLoadingTechGrps(false);
     } catch (error) {
       console.error(error);
@@ -23,7 +38,9 @@ function TechGroupProvider(props) {
   };
 
   useEffect(() => {
-    if (userIsLoggedIn) getData();
+    const source = axios.CancelToken.source();
+    if (userIsLoggedIn) getData(source);
+    return () => source.cancel();
   }, [userIsLoggedIn]);
 
   //add new tech-group
@@ -31,9 +48,14 @@ function TechGroupProvider(props) {
     try {
       await setLoadingNewTechGrps(true);
       const res = await techGroupServices.createTechGroup({ name: grpName });
-      await setTechGroups([...techGroups, res.data]);
+      if (res.data.success === true) {
+        await setTechGroups([...techGroups, res.data.tGrp]);
+        await setLoadingNewTechGrps(false);
+      } else {
+        await setLoadingNewTechGrps(false);
+        alert(res.data.error);
+      }
       await setGrpName("");
-      await setLoadingNewTechGrps(false);
     } catch (error) {
       console.error(error);
     }

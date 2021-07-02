@@ -9,8 +9,8 @@ export default function MainDropDown({ grp }) {
   const { techs, loadingTechs, loadingNewTech } = useContext(TechContext);
   const { isAdminUser } = useContext(AuthContext);
 
-  if (!isAdminUser && !techs.find((tech) => tech.techGroup === grp._id))
-    return null;
+  // if (!isAdminUser && !techs.find((tech) => tech.techGroup === grp._id))
+  //   return null;
   return (
     <NavDropdown title={grp.name} className="ml-2">
       {loadingTechs ? (

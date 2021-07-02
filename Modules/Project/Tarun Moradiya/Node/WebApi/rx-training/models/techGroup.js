@@ -7,7 +7,16 @@ const techGroupSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
+    unique: true,
   },
+});
+
+techGroupSchema.post("save", function (error, doc, next) {
+  if (error.name === "MongoError" && error.code === 11000) {
+    next(new Error("Tech Group must be unique"));
+  } else {
+    next(error);
+  }
 });
 
 //create class

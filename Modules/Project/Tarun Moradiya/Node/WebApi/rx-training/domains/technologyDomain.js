@@ -13,7 +13,7 @@ class TechnologyDomain {
       //check if id given
       if (req.params.id) {
         if (req.user.isAdmin !== true) {
-          const check = user.permissions.find((p) => p === req.params.id);
+          const check = user.permissions.techs.find((p) => p === req.params.id);
           if (!check)
             return res.status(404).send("user has not permission !!!");
         }
@@ -33,7 +33,7 @@ class TechnologyDomain {
         if (user.isAdmin) permittedTechs = techs;
         else {
           permittedTechs = techs.filter((t) =>
-            user.permissions.includes(t._id)
+            user.permissions.techs.includes(t._id)
           );
         }
         // debug("permitted: ", permittedTechs);
@@ -66,9 +66,9 @@ class TechnologyDomain {
       await tech.save();
       debug(tech);
       //response
-      res.send(tech);
+      res.send({ success: true, tech });
     } catch (error) {
-      res.send(error);
+      res.send({ success: false, error: error.message });
     }
   }
 

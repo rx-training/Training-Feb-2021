@@ -4,12 +4,16 @@ import { TechGroupContext } from "../contexts/techGroupContext";
 import TechGroupPermission from "./TechGroupPermission";
 
 export default function SetPermissions(props) {
-  const [permissions, setPermissions] = useState([]);
+  const [permissions, setPermissions] = useState({ techs: [], tGrps: [] });
+  const [techPermissions, setTechPermissions] = useState([]);
+  const [grpPermissions, setGrpPermissions] = useState([]);
   const { techGroups } = useContext(TechGroupContext);
 
   useEffect(() => {
     console.log("set permissions rerenderd");
     setPermissions(props.permissions);
+    setTechPermissions(props.permissions.techs);
+    setGrpPermissions(props.permissions.tGrps);
   }, [props]);
 
   return (
@@ -26,6 +30,10 @@ export default function SetPermissions(props) {
             grp={grp}
             permissions={permissions}
             setPermissions={setPermissions}
+            techPermissions={techPermissions}
+            setTechPermissions={setTechPermissions}
+            grpPermissions={grpPermissions}
+            setGrpPermissions={setGrpPermissions}
           />
         ))}
       </Modal.Body>
