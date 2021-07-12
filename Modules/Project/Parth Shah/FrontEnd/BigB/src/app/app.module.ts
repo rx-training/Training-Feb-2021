@@ -18,6 +18,9 @@ import { AddtoCartComponent } from './addto-cart/addto-cart.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BuyMessageComponent } from './buy-message/buy-message.component';
 import { CartMessageComponent } from './cart-message/cart-message.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserBasketComponent } from './user-basket/user-basket.component';
+import { UserOrderComponent } from './user-order/user-order.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { CartMessageComponent } from './cart-message/cart-message.component';
     PageNotFoundComponent,
     BuyMessageComponent,
     CartMessageComponent,
+    UserProfileComponent,
+    UserBasketComponent,
+    UserOrderComponent,
   ],
   imports: [
     BrowserModule,

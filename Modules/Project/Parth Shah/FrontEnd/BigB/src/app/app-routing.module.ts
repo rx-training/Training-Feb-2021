@@ -13,10 +13,16 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { UserAuthGuard } from './user-auth.guard';
 import { BuyMessageComponent } from './buy-message/buy-message.component';
 import { CartMessageComponent } from './cart-message/cart-message.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserBasketComponent } from './user-basket/user-basket.component';
+import { UserOrderComponent } from './user-order/user-order.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component:  HomeComponent}, 
+  {path : 'profile', component: UserProfileComponent},
+  {path : 'basket', component: UserBasketComponent},
+  {path : 'userorder', component: UserOrderComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component:RegisterComponent },
   {path:'adminLogin',component:AdminLoginComponent},

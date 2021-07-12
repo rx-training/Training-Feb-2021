@@ -1,0 +1,129 @@
+<!-- <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-2 font-italic text-success text-center">Welcome {{customer.custName}}!</h1>
+    </div>
+  </div> -->
+
+
+  <header class="main-header py-2 text-white" style="background-color: #93ee7c;">
+    <div class="container">
+        <div class="row">
+                <h1 class="text-dark py-1 h3 font-italic">
+                   Welcome {{customer.custName}}!
+                </h1>
+        </div>
+    </div>
+
+</header>
+  <!-- <div class="card m-2">
+    <div class="card-header">
+        Table to see All Customers
+    </div>
+    <div class="card-body table-responsive box1">
+
+        <table class="table">
+            <tbody >
+               
+                <tr>
+                    <th>Customer Name</th>
+                    <td> {{customer.custName}} </td>
+                </tr>
+                <tr>
+                    <th>Address </th>
+                    <td> {{customer.address}} </td>
+                </tr>
+                <tr>
+                    <th>Phone Number</th>
+                    <td> {{customer.phoneNo}} </td>
+                </tr>
+                
+                <tr>
+                    <td><button class="btn btn-dark"  > Edit </button> </td>
+                    <td> <button class="btn btn-danger"  > Delete </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+     <h1 class="text-success text-center py-2"><i class="fa fa-user"> User Profile</i></h1> <hr>
+
+     <div class="card bg-light border-success">
+      <div class="card-body">
+      <h4>Name: </h4> <p>{{customer.custName}} </p>
+      <h4>Address:</h4> <p>{{customer.address}}</p>
+      <h4>Mobile Number:</h4><p>{{customer.phoneNo}}</p>
+      <button type="button" class="btn btn-outline-success btn-lg btn-block" (click)= 'edit(customer)' data-toggle="modal" data-target="#staticBackdrop"> <i class="fa fa-user"> </i> Edit Profile</button>
+      </div>
+    </div>
+    </div>
+    <div class="col-md-3 py-2">
+
+      <div class="card text-center bg-warning text-dark mb-3 ">
+        <div class="card-body">
+            <h3>Carts</h3>
+            <h1 class="display-4">
+                <i class="fa fa-pencil"></i>
+            </h1>
+            <a routerLink="/basket" routerLinkActive="active" class="btn btn-outline-dark btn-sm" >View</a>
+        </div>
+    </div>
+
+     <div class="card text-center bg-success text-white mb-3">
+         <div class="card-body">
+             <h3>Orders</h3>
+             <h1 class="display-4">
+                 <i class="fa fa-folder-open-o"></i>
+             </h1>
+             <a routerLink="/userorder" routerLinkActive="active" class="btn btn-outline-light btn-sm">View</a>
+         </div>
+     </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Edit Changes </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+                  <form [formGroup]="custForm" >
+                     
+                      <div class="form-group">
+                        <label for="catName">Enter Customer Name</label>
+                        <input type="text" class="form-control"  formControlName="cuName">
+                      </div>
+                      <div class="form-group">
+                          <label for="catName">Enter Address </label>
+                          <input type="text" class="form-control"  formControlName="add">
+                        </div>
+      
+                        <div class="form-group">
+                          <label for="catName">Enter Phone Number</label>
+                          <input type="number" class="form-control"  formControlName="PhNo">
+                        </div>
+                    
+                    </form>
+            
+      
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)='update()' >Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>

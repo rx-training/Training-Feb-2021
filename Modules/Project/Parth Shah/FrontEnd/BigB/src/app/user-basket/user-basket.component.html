@@ -1,0 +1,44 @@
+<header class="main-header py-2 text-white" style="background-color: #93ee7c;">
+    <div class="container">
+        <div class="row">
+                <h1 class="text-dark py-1 h3 font-italic">
+                </h1>
+        </div>
+    </div>
+
+</header>
+
+
+<div class="card m-2">
+    <div class="card-header">
+        Your carts
+    </div>
+    <div class="card-body table-responsive box1">
+
+        <table class="table">
+            <tbody *ngFor="let cart of cartDetail">
+                
+                <tr>
+                    <th>Product Name</th>
+                    <td> {{cart.productName}} </td>
+                </tr>
+
+                <tr>
+                    <th>Product Price</th>
+                    <td> {{cart.productPrice}} </td>
+                </tr>
+               
+                <tr>
+                    <th>Product Description</th>
+                    <td> {{cart.productDescription}} </td>
+                </tr>
+               
+                
+                <tr>
+                    <td colspan="2" class="p-3 bg-light"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div> 

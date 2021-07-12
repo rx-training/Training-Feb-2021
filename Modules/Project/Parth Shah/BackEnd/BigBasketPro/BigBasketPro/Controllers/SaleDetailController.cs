@@ -14,9 +14,12 @@ namespace BigBasketPro.Controllers
     public class SaleDetailController : ControllerBase
     {
         private IbbSaleDetail BbSaleDetail;
-        public SaleDetailController(IbbSaleDetail SDetails)
+
+        private ICustomer Customer;
+        public SaleDetailController(IbbSaleDetail SDetails, ICustomer customer)
         {
             BbSaleDetail = SDetails;
+            Customer = customer;
         }
 
         [HttpGet]
@@ -25,5 +28,13 @@ namespace BigBasketPro.Controllers
             return BbSaleDetail.GetAll();
         }
 
+        [HttpGet]
+        [Route("saleDetail/{customerId}")]
+        public ActionResult GetsaleDetail(int customerId)
+        {
+            var cust = Customer.Find(a => a.CustId == customerId).FirstOrDefault();
+            var detail = BbSaleDetail.Find(c => c.CustName == cust.CustName).ToList();        
+            return Ok(detail);
+        }
     }
 }

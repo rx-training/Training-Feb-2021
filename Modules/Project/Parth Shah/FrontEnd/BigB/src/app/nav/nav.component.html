@@ -17,23 +17,34 @@
               <a class="nav-link" routerLink="" routerLinkActive="active">Home</a>
             </li> -->
             <li class="nav-item ">
-              <a class="nav-link" routerLink="home" routerLinkActive="active" >Home<span class="sr-only">(current)</span></a>
+              <a class="nav-link" routerLink="home" routerLinkActive="active" ><i class="fa fa-home green-color">Home</i><span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link"  routerLink="login" routerLinkActive="active" *ngIf="!authService.loggedIn()">LogIn</a>
+              <a class="nav-link"  routerLink="login" routerLinkActive="active" *ngIf="!authService.loggedIn()"><i class="fa fa-sign-in" aria-hidden="true">LogIn</i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link"  routerLink="register" routerLinkActive="active" *ngIf="!authService.loggedIn()">SignUp</a>
+              <a class="nav-link"  routerLink="register" routerLinkActive="active" *ngIf="!authService.loggedIn()"><i class="fa fa-user-plus">SignUp</i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link"  routerLink="adminLogin" routerLinkActive="active"  *ngIf="!authService.loggedIn()" >Admin</a>
+              <a class="nav-link"  routerLink="adminLogin" routerLinkActive="active"  *ngIf="!authService.loggedIn()" ><i class="fa fa-user" aria-hidden="true">Admin</i></a>
             </li>
 
          
           
             <li class="nav-item">
-              <a class="nav-link"  style="cursor:pointer;" *ngIf="authService.loggedIn()"  (click)="authService.logOut()">LogOut</a>
+              <a class="nav-link "  style="cursor:pointer;" *ngIf="authService.loggedIn()"  (click)="authService.logOut()" ><i class="fa fa-sign-out" aria-hidden="true">Logout</i></a>
 
+            </li>
+
+            <li class="nav-item  dropdown">
+              <a class="nav-link dropdown-toggle"  style="cursor:pointer;" *ngIf="authService.loggedIn()"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true">Profile</i></a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" routerLink="profile" routerLinkActive="active" href="#">My Profile</a>
+                <a class="dropdown-item" routerLink="basket" routerLinkActive="active">My Basket</a>
+                <a class="dropdown-item" routerLink="userorder" routerLinkActive="active">My Order</a>
+
+                
+              </div>
             </li>
           
           </ul>
