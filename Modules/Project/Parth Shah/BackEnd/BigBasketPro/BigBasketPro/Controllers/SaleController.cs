@@ -14,9 +14,11 @@ namespace BigBasketPro.Controllers
     public class SaleController : ControllerBase
     {
         private ISale Sale;
-        public SaleController(ISale sales)
+        private IProduct Product;
+        public SaleController(ISale sales, IProduct product)
         {
             Sale = sales;
+            Product = product;
         }
 
         // GET: api/Products
@@ -35,6 +37,9 @@ namespace BigBasketPro.Controllers
 
 
         }
+
+
+      
 
         // PUT: api/Products/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

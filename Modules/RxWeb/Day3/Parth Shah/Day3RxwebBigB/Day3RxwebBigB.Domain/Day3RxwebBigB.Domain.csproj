@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Day3RxwebBigB.BoundedContext\Day3RxwebBigB.BoundedContext.csproj" />
+    <ProjectReference Include="..\Day3RxwebBigB.UnitOfWork\Day3RxwebBigB.UnitOfWork.csproj" />
+    <ProjectReference Include="..\Day3RxwebBigB.Models\Day3RxwebBigB.Models.csproj" />
+    <ProjectReference Include="..\Day3RxwebBigB.Infrastructure\Day3RxwebBigB.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MasterDomain\" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+</Project>

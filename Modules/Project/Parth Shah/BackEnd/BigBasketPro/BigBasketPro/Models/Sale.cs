@@ -22,6 +22,7 @@ namespace BigBasketPro.Models
         public virtual City City { get; set; }
         public virtual Country Country { get; set; }
         public virtual Customer Cust { get; set; }
+        [System.Text.Json.Serialization.JsonIgnore]
         public virtual Product Product { get; set; }
     }
 }

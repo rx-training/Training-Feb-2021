@@ -51,7 +51,8 @@ return this.http.post(`${baseUrl}Authentication/login`,data);
   logOut()
   {
   
-     localStorage.removeItem('token')
+    //  localStorage.removeItem('token')
+     localStorage.clear();
         this.router.navigate(['home'])
   }
 
@@ -150,6 +151,8 @@ return this.http.post(`${baseUrl}Authentication/login`,data);
     return this.http.put<Sale>(`${baseUrl}sale/${id}`, JSON.stringify(sale), this.httpOptions)
   }
 
+  
+
   //country
   getCountry() : Observable<Country[]> {
     return this.http.get<Country[]>(`${baseUrl}Country`);
@@ -193,6 +196,9 @@ getCustomer() : Observable<Customer[]> {
     return this.http.get<Customer[]>(`${baseUrl}Customer`);
   }
 
+  getCustomerbyId(id) {
+    return this.http.get<Customer[]>(`${baseUrl}Customer/${id}`);
+  }
   postCustomer(customer): Observable<Customer> {
     return this.http.post<Customer>(`${baseUrl}Customer`, JSON.stringify(customer), this.httpOptions)
 
@@ -212,6 +218,10 @@ getCustomer() : Observable<Customer[]> {
     return this.http.get<Cart[]>(`${baseUrl}Cart`);
   }
 
+  getCartbyId(id) {
+    return this.http.get<Cart[]>(`${baseUrl}Cart/${id}`);
+  }
+
   postCart(cart): Observable<Cart> {
     return this.http.post<Cart>(`${baseUrl}Cart`, JSON.stringify(cart), this.httpOptions)
   } 
@@ -222,7 +232,10 @@ getCustomer() : Observable<Customer[]> {
   deleteCart(cartId){
     return this.http.delete<Cart>(`${baseUrl}Cart/${cartId}`, this.httpOptions);
   }
-
+    
+  getCartbyCustomerId(customerId){
+    return this.http.get(`${baseUrl}Cart/cartDetail/${customerId}`);
+  }
 
 
 //get Prodct Detail
@@ -243,6 +256,10 @@ SaleCustomerDetail() : Observable<SaleCustomerDetail[]> {
 saleDetail() : Observable<SaleDetail[]> {
   return this.http.get<SaleDetail[]>(`${baseUrl}saledetail`);
 
+}
+
+getSalebyCustomerId(customerId){
+  return this.http.get(`${baseUrl}SaleDetail/saleDetail/${customerId}`);
 }
 
 }

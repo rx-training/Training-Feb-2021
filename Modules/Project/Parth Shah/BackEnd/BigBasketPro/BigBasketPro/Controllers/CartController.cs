@@ -15,9 +15,12 @@ namespace BigBasketPro.Controllers
     {
         private ICart Cart;
 
-        public CartController(ICart carts)
+        private IProduct Product;
+
+        public CartController(ICart carts, IProduct product)
         {
             Cart = carts;
+            Product = product;
         }
 
 
@@ -38,6 +41,24 @@ namespace BigBasketPro.Controllers
 
 
         }
+
+
+        [HttpGet]
+        [Route("cartDetail/{customerId}")]
+        public ActionResult GetCartDetail(int customerId)
+        {
+
+            var k = Cart.Find(c=>c.CustId == customerId).ToArray();
+            var l = k.Length;
+            var product = new List<Product>();
+            for (var i = 0;i<k.Length;i++)
+            {
+                var p = Product.Find(p => p.ProductId == k[i].ProductId).FirstOrDefault();
+                product.Add(p);
+            }
+            return Ok(product);
+        }
+
 
         // PUT: api/Products/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

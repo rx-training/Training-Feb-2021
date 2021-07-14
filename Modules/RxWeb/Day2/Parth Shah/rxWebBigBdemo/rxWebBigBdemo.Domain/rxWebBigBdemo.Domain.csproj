@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\rxWebBigBdemo.BoundedContext\rxWebBigBdemo.BoundedContext.csproj" />
+    <ProjectReference Include="..\rxWebBigBdemo.UnitOfWork\rxWebBigBdemo.UnitOfWork.csproj" />
+    <ProjectReference Include="..\rxWebBigBdemo.Models\rxWebBigBdemo.Models.csproj" />
+    <ProjectReference Include="..\rxWebBigBdemo.Infrastructure\rxWebBigBdemo.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+</Project>
