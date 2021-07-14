@@ -1,0 +1,32 @@
+{
+  "projects": {
+    "api": "Day3RxwebBigB.Api",
+    "model": "Day3RxwebBigB.Models",
+    "context": "Day3RxwebBigB.BoundedContext",
+    "domain": "Day3RxwebBigB.Domain",
+	"unitOfWork": "Day3RxwebBigB.UnitOfWork",
+    "infrastructure": "Day3RxwebBigB.Infrastructure",
+    "azureFunctionHttp":"",
+    "portal":"",
+    "azureFunctionBackground":""
+  },
+  "path": {
+    "dbConnection": {
+      "main": "Database.ConnectionString.Main"
+    },
+    "folder": {
+      "model": "DbEntities",
+      "context": "",
+	  "enums": "",
+	  "localizeValidationMessage": "wwwroot"
+    }
+  },
+  "annotations": {
+    "rxweb": false
+  },
+  "config": {
+    "generateEnums": false,
+    "commanTableSchema": "dbo",
+    "validationMessageLocalizationId": "15"
+  }
+}
